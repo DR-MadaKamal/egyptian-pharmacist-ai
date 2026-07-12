@@ -19,14 +19,14 @@ export default function Home({ drugs, diseases, onBrowse, onInterview }) {
     <div className="space-y-6">
       <div className="text-center py-6 md:py-10">
         <h1 className="text-3xl md:text-4xl font-bold text-nile mb-2">
-          منصة التفاعلات الدوائية المصرية
+         الصيدلي المصري الشامل
         </h1>
         <p className="text-gray-600 text-base md:text-lg">
-          Egyptian Drug Interaction Platform
+          Complete Egyptian Pharmacist AI
         </p>
         <p className="text-gray-500 text-sm mt-2 max-w-xl mx-auto">
-          مرجع شامل للتفاعلات الدوائية والدوائية-مرضية مع وضع المقابلة 
-          — Comprehensive DDI & Drug-Disease Reference with Interview Mode
+          مرجع ذكي شامل للتفاعلات الدوائية والدوائية-مرضية مع تقييم بالذكاء الاصطناعي
+          — Smart comprehensive DDI & Drug-Disease Reference with AI Interview Mode
         </p>
       </div>
 

@@ -14,7 +14,7 @@ export default function Navbar({ tabs, activeTab, onTabChange }) {
             className="flex items-center gap-2 text-lg md:text-xl font-bold tracking-tight"
           >
             <span className="text-gold text-2xl">⚕️</span>
-            <span className="hidden xs:inline">Drug Interact</span>
+            <span className="hidden xs:inline">Pharma AI</span>
             <span className="text-gold text-base md:text-lg">🇪🇬</span>
           </button>
 

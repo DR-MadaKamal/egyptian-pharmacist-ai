@@ -1,4 +1,4 @@
-const STORAGE_KEY = 'egyptian-drug-interactions'
+const STORAGE_KEY = 'egyptian-pharmacist-ai'
 
 function loadUserData() {
   try {

@@ -83,7 +83,7 @@ export default function App() {
       </main>
 
       <footer className="bg-nile text-white/70 text-center text-sm py-3 px-4">
-        Egyptian Drug Interaction Platform | منصة التفاعلات الدوائية المصرية
+        Complete Egyptian Pharmacist AI | الصيدلي المصري الشامل
       </footer>
     </div>
   )
