@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gold: #C9A84C;
+  --color-gold-light: #E8D48B;
+  --color-gold-dark: #A68B3E;
+  --color-nile: #1B3A5C;
+  --color-nile-light: #2C5F8A;
+  --color-sand: #F5E6C8;
+  --color-sand-dark: #E0CAA0;
+  --color-severity-contraindicated: #8E0000;
+  --color-severity-severe: #D32F2F;
+  --color-severity-moderate: #F57C00;
+  --color-severity-minor: #FFA000;
+}
