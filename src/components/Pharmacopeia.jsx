@@ -1,4 +1,4 @@
-import { dataSources, dataSourceCategories } from '../config/data-sources.js'
+import { dataSources } from '../config/data-sources.js'
 
 const SECTION_CARDS = [
   {

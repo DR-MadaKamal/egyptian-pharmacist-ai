@@ -256,13 +256,3 @@ export function getSourcesByCategory(category) {
   const ids = dataSourceCategories[category] || []
   return ids.map(id => getSourceById(id)).filter(Boolean)
 }
-
-export async function consumeSource(sourceId) {
-  const { consumeSource } = await import('../../scripts/consumers/index.mjs')
-  return consumeSource(sourceId)
-}
-
-export async function consumeAllSources() {
-  const { consumeAllSources } = await import('../../scripts/consumers/index.mjs')
-  return consumeAllSources()
-}

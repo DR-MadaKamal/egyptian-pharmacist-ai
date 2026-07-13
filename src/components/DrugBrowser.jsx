@@ -216,7 +216,7 @@ export default function DrugBrowser({ drugs, onViewDrug }) {
             {drug.edaOnly ? (
               drug.edaRf && drug.edaRf.length > 0 ? (
                 <div className="mt-1 space-y-0.5">
-                  {drug.edaRf.map(([route, form, pmin, pmax], i) => (
+                  {drug.edaRf.map(([route, _form, pmin, pmax], i) => (
                     <div key={i} className="text-[10px] text-gold-dark font-bold">
                       EGP {pmin}{pmin !== pmax ? `-${pmax}` : ''} | {route}
                     </div>

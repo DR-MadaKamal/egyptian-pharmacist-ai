@@ -122,7 +122,7 @@ export default function PriceList({ drugs, onViewDrug }) {
               {drug.edaOnly ? (
                 drug.edaRf && drug.edaRf.length > 0 ? (
                   <div className="text-right">
-                    {drug.edaRf.map(([route, form, pmin, pmax], i) => (
+                    {drug.edaRf.map(([route, _form, pmin, pmax], i) => (
                       <div key={i} className="text-xs whitespace-nowrap leading-relaxed">
                         <span className="font-bold text-gold-dark">EGP {pmin}{pmin !== pmax ? `-${pmax}` : ''}</span>
                         <span className="text-gray-500 mx-1">|</span>
