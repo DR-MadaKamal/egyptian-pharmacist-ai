@@ -1,6 +1,6 @@
 import { severityConfig } from '../utils/interactions.js'
 
-export default function Home({ drugs, diseases, onBrowse, onInterview, onPrices }) {
+export default function Home({ drugs, diseases, onBrowse, onInterview, onPrices, onPharmacopeia }) {
   const totalInteractions = drugs.reduce((s, d) => s + d.drugInteractions.length + d.diseaseInteractions.length, 0)
   const contraindicated = drugs.reduce((s, d) =>
     s + d.drugInteractions.filter(i => i.severity === 'contraindicated').length +
@@ -64,15 +64,18 @@ export default function Home({ drugs, diseases, onBrowse, onInterview, onPrices 
         </div>
       </div>
 
-      <div className="flex gap-3">
-        <button onClick={onBrowse} className="flex-1 bg-nile text-white py-3 rounded-xl font-bold hover:bg-nile-light transition-colors">
-          🔍 تصفح الأدوية / Browse Drugs
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+        <button onClick={onBrowse} className="bg-nile text-white py-3 rounded-xl font-bold hover:bg-nile-light transition-colors">
+          💊 الأدوية / Drugs
         </button>
-        <button onClick={onPrices} className="flex-1 bg-green-700 text-white py-3 rounded-xl font-bold hover:bg-green-600 transition-colors">
+        <button onClick={onInterview} className="bg-gold text-nile py-3 rounded-xl font-bold hover:bg-gold-light transition-colors">
+          🎓 المقابلة / Interview
+        </button>
+        <button onClick={onPharmacopeia} className="bg-green-700 text-white py-3 rounded-xl font-bold hover:bg-green-600 transition-colors">
+          📋 الدستور / Pharmacopeia
+        </button>
+        <button onClick={onPrices} className="bg-purple-700 text-white py-3 rounded-xl font-bold hover:bg-purple-600 transition-colors">
           💰 الأسعار / Prices
-        </button>
-        <button onClick={onInterview} className="flex-1 bg-gold text-nile py-3 rounded-xl font-bold hover:bg-gold-light transition-colors">
-          🎓 بدء المقابلة / Start Interview
         </button>
       </div>
 

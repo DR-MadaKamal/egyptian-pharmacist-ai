@@ -5,22 +5,16 @@ import { getUserDrugs, getUserDiseases } from './utils/store.js'
 import { loadEdaDrugs } from './utils/edaLoader.js'
 import Navbar from './components/Navbar.jsx'
 import Home from './components/Home.jsx'
-import DrugBrowser from './components/DrugBrowser.jsx'
+import DrugHub from './components/DrugHub.jsx'
 import DrugDetail from './components/DrugDetail.jsx'
-import InteractionCheck from './components/InteractionCheck.jsx'
-import DiseaseCheck from './components/DiseaseCheck.jsx'
 import InterviewMode from './components/InterviewMode.jsx'
-import DrugForm from './components/DrugForm.jsx'
-import PriceList from './components/PriceList.jsx'
+import Pharmacopeia from './components/Pharmacopeia.jsx'
 
 const TABS = {
   home: { label: 'الرئيسية', labelEn: 'Home', icon: '🏠' },
-  browse: { label: 'تصفح الأدوية', labelEn: 'Browse', icon: '🔍' },
-  prices: { label: 'الأسعار', labelEn: 'Prices', icon: '💰' },
-  interact: { label: 'تفاعل دواء-دواء', labelEn: 'Drug-Drug', icon: '⚡' },
-  disease: { label: 'تفاعل دواء-مرض', labelEn: 'Drug-Disease', icon: '🩺' },
+  drugs: { label: 'الأدوية', labelEn: 'Drugs', icon: '💊' },
   interview: { label: 'المقابلة', labelEn: 'Interview', icon: '🎓' },
-  add: { label: 'إضافة دواء', labelEn: 'Add Drug', icon: '➕' },
+  pharmacopeia: { label: 'الدستور واللوائح', labelEn: 'Pharmacopeia', icon: '📋' },
 }
 
 export default function App() {
@@ -45,12 +39,16 @@ export default function App() {
 
   const handleAddDrug = () => {
     setRefreshKey(k => k + 1)
-    setTab('browse')
+    setTab('drugs')
   }
 
   const handleViewDrug = (id) => {
     setSelectedDrugId(id)
     setTab('detail')
+  }
+
+  const handleDrugsTab = () => {
+    setTab('drugs')
   }
 
   return (
@@ -62,37 +60,29 @@ export default function App() {
           <Home
             drugs={allDrugs}
             diseases={allDiseases}
-            onBrowse={() => setTab('browse')}
+            onBrowse={() => setTab('drugs')}
             onInterview={() => setTab('interview')}
-            onPrices={() => setTab('prices')}
+            onPrices={() => setTab('drugs')}
+            onPharmacopeia={() => setTab('pharmacopeia')}
           />
         )}
-        {tab === 'browse' && (
-          <DrugBrowser drugs={allDrugs} onViewDrug={handleViewDrug} />
+        {tab === 'drugs' && (
+          <DrugHub drugs={allDrugs} diseases={allDiseases} onViewDrug={handleViewDrug} onAddDrug={handleAddDrug} />
         )}
         {tab === 'detail' && selectedDrugId && (
           <DrugDetail
             drugId={selectedDrugId}
             drugs={allDrugs}
             diseases={allDiseases}
-            onBack={() => setTab('browse')}
+            onBack={handleDrugsTab}
             onViewDrug={handleViewDrug}
           />
-        )}
-        {tab === 'prices' && (
-          <PriceList drugs={allDrugs} onViewDrug={handleViewDrug} />
-        )}
-        {tab === 'interact' && (
-          <InteractionCheck drugs={allDrugs} onViewDrug={handleViewDrug} />
-        )}
-        {tab === 'disease' && (
-          <DiseaseCheck drugs={allDrugs} diseases={allDiseases} onViewDrug={handleViewDrug} />
         )}
         {tab === 'interview' && (
           <InterviewMode drugs={allDrugs} diseases={allDiseases} />
         )}
-        {tab === 'add' && (
-          <DrugForm onSuccess={handleAddDrug} />
+        {tab === 'pharmacopeia' && (
+          <Pharmacopeia drugs={allDrugs} />
         )}
       </main>
 

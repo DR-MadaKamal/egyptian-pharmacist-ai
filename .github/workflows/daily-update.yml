@@ -33,6 +33,9 @@ jobs:
       - name: Generate EDA supplement cross-reference
         run: node scripts/generate-eda-supplement.mjs /tmp/egyptian-drugs.json
 
+      - name: Enrich missing data from cross-references
+        run: node scripts/enrich-eda-data.mjs /tmp/egyptian-drugs.json
+
       - name: Health-check and consume all data sources
         run: node scripts/consume-all-sources.mjs
 
