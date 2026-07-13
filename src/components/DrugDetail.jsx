@@ -26,9 +26,11 @@ export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug
   if (drug.edaOnly) {
     return (
       <div className="space-y-4">
-        <button onClick={onBack} className="text-nile hover:text-gold-dark font-bold text-sm">
-          ← الرجوع للقائمة / Back to list
-        </button>
+        <nav className="flex items-center gap-2 text-sm text-gray-500">
+          <button onClick={onBack} className="text-nile hover:text-gold-dark font-medium">💊 الأدوية / Drugs</button>
+          <span>/</span>
+          <span className="text-gray-800 font-medium truncate">{drug.nameAr}</span>
+        </nav>
 
         <div className="bg-white border border-sand-dark rounded-xl p-4 md:p-6">
           <div className="flex items-start gap-4">
@@ -146,9 +148,11 @@ export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug
 
   return (
     <div className="space-y-4">
-      <button onClick={onBack} className="text-nile hover:text-gold-dark font-bold text-sm">
-        ← الرجوع للقائمة / Back to list
-      </button>
+      <nav className="flex items-center gap-2 text-sm text-gray-500">
+        <button onClick={onBack} className="text-nile hover:text-gold-dark font-medium">💊 الأدوية / Drugs</button>
+        <span>/</span>
+        <span className="text-gray-800 font-medium truncate">{drug.nameAr}</span>
+      </nav>
 
       <div className="bg-white border border-sand-dark rounded-xl p-4 md:p-6">
         <div className="flex items-start gap-4">
