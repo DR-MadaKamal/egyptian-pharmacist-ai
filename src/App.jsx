@@ -9,6 +9,9 @@ import DrugHub from './components/DrugHub.jsx'
 import DrugDetail from './components/DrugDetail.jsx'
 import InterviewMode from './components/InterviewMode.jsx'
 import Pharmacopeia from './components/Pharmacopeia.jsx'
+import AdminLogin from './components/AdminLogin.jsx'
+import AdminPanel from './components/AdminPanel.jsx'
+import ScrollToTop from './components/ScrollToTop.jsx'
 
 const TABS = {
   home: { label: 'الرئيسية', labelEn: 'Home', icon: '🏠' },
@@ -22,6 +25,7 @@ export default function App() {
   const [selectedDrugId, setSelectedDrugId] = useState(null)
   const [refreshKey, setRefreshKey] = useState(0)
   const [edaDrugs, setEdaDrugs] = useState(null)
+  const [isAdmin, setIsAdmin] = useState(false)
 
   useEffect(() => {
     loadEdaDrugs().then(setEdaDrugs)
@@ -36,11 +40,6 @@ export default function App() {
   const allDiseases = useMemo(() => {
     return [...builtInDiseases, ...getUserDiseases()]
   }, [refreshKey])
-
-  const handleAddDrug = () => {
-    setRefreshKey(k => k + 1)
-    setTab('drugs')
-  }
 
   const handleViewDrug = (id) => {
     setSelectedDrugId(id)
@@ -67,7 +66,7 @@ export default function App() {
           />
         )}
         {tab === 'drugs' && (
-          <DrugHub drugs={allDrugs} diseases={allDiseases} onViewDrug={handleViewDrug} onAddDrug={handleAddDrug} />
+          <DrugHub drugs={allDrugs} diseases={allDiseases} onViewDrug={handleViewDrug} />
         )}
         {tab === 'detail' && selectedDrugId && (
           <DrugDetail
@@ -84,11 +83,28 @@ export default function App() {
         {tab === 'pharmacopeia' && (
           <Pharmacopeia drugs={allDrugs} />
         )}
+        {tab === 'admin-login' && (
+          <AdminLogin onLogin={() => { setIsAdmin(true); setTab('admin') }} />
+        )}
+        {tab === 'admin' && isAdmin && (
+          <AdminPanel allDrugs={allDrugs} onLogout={() => { setIsAdmin(false); setTab('home') }} onViewDrug={handleViewDrug} />
+        )}
       </main>
 
       <footer className="bg-nile text-white/70 text-center text-sm py-3 px-4">
-        Complete Egyptian Pharmacist AI | الصيدلي المصري الشامل
+        <div className="flex items-center justify-center gap-4">
+          <span>Complete Egyptian Pharmacist AI | الصيدلي المصري الشامل</span>
+          <button
+            onClick={() => isAdmin ? setTab('admin') : setTab('admin-login')}
+            className="text-white/40 hover:text-white/70 text-xs transition-colors"
+            title="Admin Panel"
+          >
+            ⚙️
+          </button>
+        </div>
       </footer>
+
+      <ScrollToTop />
     </div>
   )
 }

@@ -2,16 +2,14 @@ import { useState } from 'react'
 import DrugBrowser from './DrugBrowser.jsx'
 import PriceList from './PriceList.jsx'
 import InteractionHub from './InteractionHub.jsx'
-import DrugForm from './DrugForm.jsx'
 
 const SUB_TABS = {
   browse: { label: 'تصفح', labelEn: 'Browse', icon: '🔍' },
   prices: { label: 'الأسعار', labelEn: 'Prices', icon: '💰' },
   interactions: { label: 'التفاعلات', labelEn: 'Interactions', icon: '⚡' },
-  add: { label: 'إضافة', labelEn: 'Add Drug', icon: '➕' },
 }
 
-export default function DrugHub({ drugs, diseases, onViewDrug, onAddDrug }) {
+export default function DrugHub({ drugs, diseases, onViewDrug }) {
   const [subTab, setSubTab] = useState('browse')
 
   return (
@@ -38,7 +36,6 @@ export default function DrugHub({ drugs, diseases, onViewDrug, onAddDrug }) {
       {subTab === 'browse' && <DrugBrowser drugs={drugs} onViewDrug={onViewDrug} />}
       {subTab === 'prices' && <PriceList drugs={drugs} onViewDrug={onViewDrug} />}
       {subTab === 'interactions' && <InteractionHub drugs={drugs} diseases={diseases} onViewDrug={onViewDrug} />}
-      {subTab === 'add' && <DrugForm onSuccess={onAddDrug} />}
     </div>
   )
 }
