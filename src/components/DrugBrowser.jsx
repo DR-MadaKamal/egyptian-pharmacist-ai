@@ -276,6 +276,29 @@ export default function DrugBrowser({ drugs, onViewDrug }) {
         ))}
       </div>
 
+      {(query || category || routeFilter) && (
+        <div className="flex flex-wrap gap-1.5">
+          {query && (
+            <span className="inline-flex items-center gap-1 bg-blue-50 text-blue-700 px-2 py-1 rounded-full text-xs">
+              بحث: {query}
+              <button onClick={() => { setQuery(''); setPage(1) }} className="hover:text-blue-900">✕</button>
+            </span>
+          )}
+          {category && (
+            <span className="inline-flex items-center gap-1 bg-green-50 text-green-700 px-2 py-1 rounded-full text-xs">
+              {category}
+              <button onClick={() => { setCategory(''); setPage(1) }} className="hover:text-green-900">✕</button>
+            </span>
+          )}
+          {routeFilter && (
+            <span className="inline-flex items-center gap-1 bg-purple-50 text-purple-700 px-2 py-1 rounded-full text-xs">
+              {ROUTE_LABELS[routeFilter] || routeFilter}
+              <button onClick={() => { setRouteFilter(''); setPage(1) }} className="hover:text-purple-900">✕</button>
+            </span>
+          )}
+        </div>
+      )}
+
       {pageItems.length < allFiltered.length && (
         <div className="text-center">
           <button
