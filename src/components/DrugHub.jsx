@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import DrugBrowser from './DrugBrowser.jsx'
 import PriceList from './PriceList.jsx'
 import InteractionHub from './InteractionHub.jsx'
@@ -9,8 +9,17 @@ const SUB_TABS = {
   interactions: { label: 'التفاعلات', labelEn: 'Interactions', icon: '⚡' },
 }
 
+const STORAGE_KEY = 'drughub-subtab'
+
 export default function DrugHub({ drugs, diseases, onViewDrug }) {
-  const [subTab, setSubTab] = useState('browse')
+  const [subTab, setSubTab] = useState(() => {
+    const saved = localStorage.getItem(STORAGE_KEY)
+    return saved && SUB_TABS[saved] ? saved : 'browse'
+  })
+
+  useEffect(() => {
+    localStorage.setItem(STORAGE_KEY, subTab)
+  }, [subTab])
 
   return (
     <div className="space-y-4">
