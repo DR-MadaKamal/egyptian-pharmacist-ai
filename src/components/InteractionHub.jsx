@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { severityConfig } from '../utils/interactions.js'
 import InteractionCheck from './InteractionCheck.jsx'
 import DiseaseCheck from './DiseaseCheck.jsx'
 
@@ -27,6 +28,15 @@ export default function InteractionHub({ drugs, diseases, onViewDrug }) {
             دواء-مرض / Drug-Disease
           </button>
         </div>
+      </div>
+
+      <div className="flex flex-wrap gap-3 text-xs text-gray-500">
+        {['contraindicated', 'severe', 'moderate', 'minor'].map(s => (
+          <span key={s} className="flex items-center gap-1">
+            <span className={`inline-block w-3 h-3 rounded-full ${severityConfig[s].color}`} />
+            {severityConfig[s].emoji} {s.charAt(0).toUpperCase() + s.slice(1)}
+          </span>
+        ))}
       </div>
 
       {mode === 'drug-drug' && <InteractionCheck drugs={drugs} onViewDrug={onViewDrug} />}

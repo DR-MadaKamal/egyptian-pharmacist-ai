@@ -15,6 +15,17 @@ export default function InteractionCheck({ drugs, onViewDrug }) {
 
   const getIntCount = (d) => (d.drugInteractions?.length || 0) + (d.diseaseInteractions?.length || 0)
 
+  const getWorstSeverity = (d) => {
+    const all = [...(d.drugInteractions || []), ...(d.diseaseInteractions || [])]
+    if (all.some(i => i.severity === 'contraindicated')) return 'contraindicated'
+    if (all.some(i => i.severity === 'severe')) return 'severe'
+    if (all.some(i => i.severity === 'moderate')) return 'moderate'
+    if (all.some(i => i.severity === 'minor')) return 'minor'
+    return null
+  }
+
+  const sevColors = { contraindicated: 'bg-red-500', severe: 'bg-orange-500', moderate: 'bg-yellow-500', minor: 'bg-blue-400' }
+
   const handleCheck = () => {
     if (!drugA || !drugB) return
     setResult(checkDrugDrugInteraction(drugs, drugA.id, drugB.id))
@@ -49,6 +60,7 @@ export default function InteractionCheck({ drugs, onViewDrug }) {
                 <div className="absolute z-10 w-full mt-1 bg-white border border-sand-dark rounded-lg shadow-lg max-h-48 overflow-y-auto">
                   {resultsA.map(d => {
                     const ic = getIntCount(d)
+                    const ws = getWorstSeverity(d)
                     return (
                       <button key={d.id} onClick={() => { setDrugA(d); setDrugAQuery(''); setShowA(false); setResult(null) }}
                         className="w-full text-right px-3 py-2 hover:bg-sand text-sm flex justify-between items-center">
@@ -56,7 +68,10 @@ export default function InteractionCheck({ drugs, onViewDrug }) {
                           <span className="text-gray-500">{d.nameEn}</span>
                           {ic > 0 && <span className="text-[10px] bg-orange-100 text-orange-700 px-1.5 py-0.5 rounded-full">{ic}</span>}
                         </span>
-                        <span className="font-bold text-nile">{d.nameAr}</span>
+                        <span className="flex items-center gap-2">
+                          {ws && <span className={`inline-block w-2 h-2 rounded-full ${sevColors[ws]}`} />}
+                          <span className="font-bold text-nile">{d.nameAr}</span>
+                        </span>
                       </button>
                     )
                   })}
@@ -90,6 +105,7 @@ export default function InteractionCheck({ drugs, onViewDrug }) {
                 <div className="absolute z-10 w-full mt-1 bg-white border border-sand-dark rounded-lg shadow-lg max-h-48 overflow-y-auto">
                   {resultsB.map(d => {
                     const ic = getIntCount(d)
+                    const ws = getWorstSeverity(d)
                     return (
                       <button key={d.id} onClick={() => { setDrugB(d); setDrugBQuery(''); setShowB(false); setResult(null) }}
                         className="w-full text-right px-3 py-2 hover:bg-sand text-sm flex justify-between items-center">
@@ -97,7 +113,10 @@ export default function InteractionCheck({ drugs, onViewDrug }) {
                           <span className="text-gray-500">{d.nameEn}</span>
                           {ic > 0 && <span className="text-[10px] bg-orange-100 text-orange-700 px-1.5 py-0.5 rounded-full">{ic}</span>}
                         </span>
-                        <span className="font-bold text-nile">{d.nameAr}</span>
+                        <span className="flex items-center gap-2">
+                          {ws && <span className={`inline-block w-2 h-2 rounded-full ${sevColors[ws]}`} />}
+                          <span className="font-bold text-nile">{d.nameAr}</span>
+                        </span>
                       </button>
                     )
                   })}
