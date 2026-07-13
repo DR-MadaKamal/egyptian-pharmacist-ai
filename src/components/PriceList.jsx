@@ -115,9 +115,7 @@ export default function PriceList({ drugs, onViewDrug }) {
               <div className="font-bold text-nile text-sm">{drug.nameAr}</div>
               <div className="text-xs text-gray-500 truncate">{drug.nameEn}</div>
               <div className="text-xs text-gray-400 mt-0.5">
-                {drug.edaOnly
-                  ? (drug.edaMfrs || []).join(', ') || 'EDA Listed'
-                  : (drug.manufacturerAr || drug.manufacturerEn)}
+                {(drug.edaOnly ? (drug.edaMfrs || []).join(', ') : (drug.manufacturerAr || drug.manufacturerEn)) || 'غير متوفر'}
               </div>
             </div>
             <div className="text-left shrink-0 mr-3">
@@ -125,9 +123,10 @@ export default function PriceList({ drugs, onViewDrug }) {
                 drug.edaRf && drug.edaRf.length > 0 ? (
                   <div className="text-right">
                     {drug.edaRf.map(([route, form, pmin, pmax], i) => (
-                      <div key={i} className="text-xs whitespace-nowrap">
+                      <div key={i} className="text-xs whitespace-nowrap leading-relaxed">
                         <span className="font-bold text-gold-dark">EGP {pmin}{pmin !== pmax ? `-${pmax}` : ''}</span>
-                        <span className="text-gray-500 mr-1">| {route}/{form}</span>
+                        <span className="text-gray-500 mx-1">|</span>
+                        <span className="text-gray-600">{route}</span>
                       </div>
                     ))}
                   </div>
@@ -140,7 +139,7 @@ export default function PriceList({ drugs, onViewDrug }) {
                 )
               ) : (
                 drug.prices.map((p, i) => (
-                  <div key={i} className="text-sm">
+                  <div key={i} className="text-sm leading-relaxed">
                     <span className="font-bold text-gold-dark">{p.price} {p.unit}</span>
                     <span className="text-xs text-gray-500 mr-1">– {p.form}</span>
                   </div>

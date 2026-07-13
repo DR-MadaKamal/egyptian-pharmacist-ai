@@ -38,9 +38,11 @@ export async function loadEdaDrugs() {
     pregnancyAr: '',
     breastfeedingEn: '',
     breastfeedingAr: '',
-    manufacturerEn: (item.m || [])[0] || '',
+    manufacturerEn: (item.m || [])[0] || 'غير متوفر',
     manufacturerAr: '',
-    prices: (item.p || []).map(p => ({ form: 'أقراص', formEn: 'Tablets', price: p, unit: 'EGP' })),
+    prices: (item.p || []).length >= 2
+      ? [{ form: 'نطاق سعري', formEn: 'Price range', price: '' + item.p[0] + ' - ' + item.p[1], unit: 'EGP' }]
+      : [],
     imageUrl: '',
     drugInteractions: [],
     diseaseInteractions: [],
@@ -79,9 +81,11 @@ export async function loadEdaDrugs() {
     pregnancyAr: '',
     breastfeedingEn: '',
     breastfeedingAr: '',
-    manufacturerEn: (item.m || [])[0] || '',
+    manufacturerEn: (item.m || [])[0] || 'غير متوفر',
     manufacturerAr: '',
-    prices: (item.p || []).map(p => ({ form: 'أقراص', formEn: 'Tablets', price: p, unit: 'EGP' })),
+    prices: (item.p || []).length >= 2
+      ? [{ form: 'نطاق سعري', formEn: 'Price range', price: '' + item.p[0] + ' - ' + item.p[1], unit: 'EGP' }]
+      : [],
     imageUrl: '',
     drugInteractions: [],
     diseaseInteractions: [],

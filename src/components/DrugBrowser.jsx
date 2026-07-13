@@ -183,12 +183,8 @@ export default function DrugBrowser({ drugs, onViewDrug }) {
             </div>
             {drug.edaOnly ? (
               <div className="text-xs text-gray-500 mt-2">
-                {drug.edaBrands && drug.edaBrands.length > 0 && (
-                  <div>🏷 {drug.edaBrands.slice(0, 3).join(', ')}{drug.edaBrands.length > 3 ? ` +${drug.edaBrands.length - 3}` : ''}</div>
-                )}
-                {drug.edaMfrs && drug.edaMfrs.length > 0 && (
-                  <div className="mt-1">🏭 {drug.edaMfrs.join(', ')}</div>
-                )}
+                <div>🏷 {(drug.edaBrands && drug.edaBrands.length > 0) ? drug.edaBrands.slice(0, 3).join(', ') + (drug.edaBrands.length > 3 ? ` +${drug.edaBrands.length - 3}` : '') : 'غير متوفر'}</div>
+                <div className="mt-1">🏭 {(drug.edaMfrs && drug.edaMfrs.length > 0) ? drug.edaMfrs.join(', ') : 'غير متوفر'}</div>
                 {drug.edaRoutes && drug.edaRoutes.length > 0 && (
                   <div className="mt-1 flex flex-wrap gap-1">
                     {drug.edaRoutes.map(rt => (
@@ -217,12 +213,26 @@ export default function DrugBrowser({ drugs, onViewDrug }) {
               </div>
               <span className="text-xs text-gray-400">{drug.manufacturerEn || ''}</span>
             </div>
-            {drug.prices && drug.prices.length > 0 && (
-              <div className="mt-1 text-xs text-gold-dark font-bold">
-                {drug.edaOnly
-                  ? `${Math.min(...drug.edaPriceRange)} - ${Math.max(...drug.edaPriceRange)} EGP`
-                  : `${drug.prices[0].price} ${drug.prices[0].unit}${drug.prices.length > 1 ? ` (+${drug.prices.length - 1})` : ''}`}
-              </div>
+            {drug.edaOnly ? (
+              drug.edaRf && drug.edaRf.length > 0 ? (
+                <div className="mt-1 space-y-0.5">
+                  {drug.edaRf.map(([route, form, pmin, pmax], i) => (
+                    <div key={i} className="text-[10px] text-gold-dark font-bold">
+                      EGP {pmin}{pmin !== pmax ? `-${pmax}` : ''} | {route}
+                    </div>
+                  ))}
+                </div>
+              ) : drug.edaPriceRange && drug.edaPriceRange.length > 0 ? (
+                <div className="mt-1 text-xs text-gold-dark font-bold">
+                  EGP {drug.edaPriceRange[0]} – {drug.edaPriceRange[1]}
+                </div>
+              ) : null
+            ) : (
+              drug.prices && drug.prices.length > 0 && (
+                <div className="mt-1 text-xs text-gold-dark font-bold">
+                  {drug.prices[0].price} {drug.prices[0].unit}{drug.prices.length > 1 ? ` (+${drug.prices.length - 1})` : ''}
+                </div>
+              )
             )}
           </div>
         ))}

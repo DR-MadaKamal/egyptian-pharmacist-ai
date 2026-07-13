@@ -56,18 +56,14 @@ export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug
 
         <Section title="📋 معلومات التسجيل / Registration Info">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            {drug.edaBrands && drug.edaBrands.length > 0 && (
-              <div className="bg-gray-50 rounded-lg p-3">
-                <span className="text-xs font-bold text-gray-400 uppercase">🏷 العلامات التجارية / Brand Names</span>
-                <div className="text-sm text-gray-700 mt-1">{drug.edaBrands.join(', ')}</div>
-              </div>
-            )}
-            {drug.edaMfrs && drug.edaMfrs.length > 0 && (
-              <div className="bg-gray-50 rounded-lg p-3">
-                <span className="text-xs font-bold text-gray-400 uppercase">🏭 الشركات المصنعة / Manufacturers</span>
-                <div className="text-sm text-gray-700 mt-1">{drug.edaMfrs.join(', ')}</div>
-              </div>
-            )}
+            <div className="bg-gray-50 rounded-lg p-3">
+              <span className="text-xs font-bold text-gray-400 uppercase">🏷 العلامات التجارية / Brand Names</span>
+              <div className="text-sm text-gray-700 mt-1">{(drug.edaBrands && drug.edaBrands.length > 0) ? drug.edaBrands.join(', ') : 'غير متوفر / N/A'}</div>
+            </div>
+            <div className="bg-gray-50 rounded-lg p-3">
+              <span className="text-xs font-bold text-gray-400 uppercase">🏭 الشركات المصنعة / Manufacturers</span>
+              <div className="text-sm text-gray-700 mt-1">{(drug.edaMfrs && drug.edaMfrs.length > 0) ? drug.edaMfrs.join(', ') : 'غير متوفر / N/A'}</div>
+            </div>
             {drug.edaRoutes && drug.edaRoutes.length > 0 && (
               <div className="bg-gray-50 rounded-lg p-3">
                 <span className="text-xs font-bold text-gray-400 uppercase">📦 طرق التعاطي / Routes</span>
@@ -218,18 +214,27 @@ export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug
         </Section>
       </div>
 
-      {drug.prices && drug.prices.length > 0 && (
+      {(drug.prices && drug.prices.length > 0) || (drug.edaRf && drug.edaRf.length > 0) ? (
         <Section title="💰 الأسعار / Prices">
           <div className="space-y-1">
-            {drug.prices.map((p, i) => (
-              <div key={i} className="flex items-center justify-between bg-gray-50 rounded-lg px-3 py-2 text-sm">
-                <span className="font-bold text-gold-dark">{p.price} {p.unit}</span>
-                <span className="text-gray-600">{p.form}</span>
-              </div>
-            ))}
+            {drug.edaRf && drug.edaRf.length > 0 ? (
+              drug.edaRf.map(([route, form, pmin, pmax], i) => (
+                <div key={i} className="flex items-center justify-between bg-gray-50 rounded-lg px-3 py-2 text-sm">
+                  <span className="font-bold text-gold-dark">EGP {pmin}{pmin !== pmax ? ` – ${pmax}` : ''}</span>
+                  <span className="text-gray-600">{route} / {form}</span>
+                </div>
+              ))
+            ) : drug.prices && drug.prices.length > 0 ? (
+              drug.prices.map((p, i) => (
+                <div key={i} className="flex items-center justify-between bg-gray-50 rounded-lg px-3 py-2 text-sm">
+                  <span className="font-bold text-gold-dark">{p.price} {p.unit}</span>
+                  <span className="text-gray-600">{p.form}</span>
+                </div>
+              ))
+            ) : null}
           </div>
         </Section>
-      )}
+      ) : null}
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <Section title="⚡ التفاعلات الدوائية / Drug Interactions">
