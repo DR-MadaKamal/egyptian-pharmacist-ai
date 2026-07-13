@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useMemo } from 'react'
 import { severityConfig } from '../utils/interactions.js'
 
 function AnimatedCounter({ end, suffix }) {
@@ -38,6 +38,21 @@ export default function Home({ drugs, diseases, recentlyViewed, onBrowse, onInte
     const q = quickQuery.toLowerCase()
     return d.nameEn?.toLowerCase().includes(q) || d.nameAr?.includes(q)
   }).slice(0, 5)
+
+  const enrichedDrugs = useMemo(() => drugs.filter(d => !d.edaOnly), [drugs])
+  const [featuredDrugs, setFeaturedDrugs] = useState(() => {
+    const shuffled = [...(drugs.filter(d => !d.edaOnly))].sort(() => Math.random() - 0.5)
+    return shuffled.slice(0, 6)
+  })
+  const [expandedDrug, setExpandedDrug] = useState(null)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const shuffled = [...enrichedDrugs].sort(() => Math.random() - 0.5)
+      setFeaturedDrugs(shuffled.slice(0, 6))
+    }, 15000)
+    return () => clearInterval(interval)
+  }, [enrichedDrugs])
   const totalInteractions = drugs.reduce((s, d) => s + d.drugInteractions.length + d.diseaseInteractions.length, 0)
   const contraindicated = drugs.reduce((s, d) =>
     s + d.drugInteractions.filter(i => i.severity === 'contraindicated').length +
@@ -49,8 +64,6 @@ export default function Home({ drugs, diseases, recentlyViewed, onBrowse, onInte
   )
 
   const categories = [...new Set(drugs.map(d => d.category))].length
-
-  const featuredDrugs = drugs.slice(0, 6)
 
   return (
     <div className="space-y-6">
@@ -178,8 +191,11 @@ export default function Home({ drugs, diseases, recentlyViewed, onBrowse, onInte
         <h2 className="text-lg font-bold text-nile mb-3">أدوية مختارة / Featured Drugs</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
           {featuredDrugs.map(drug => (
-            <div key={drug.id} className="bg-white border border-sand-dark rounded-xl p-3 text-center hover:shadow-md transition-shadow cursor-pointer"
-              onClick={() => onBrowse()}
+            <div key={drug.id}
+              onClick={() => setExpandedDrug(expandedDrug?.id === drug.id ? null : drug)}
+              className={`bg-white border rounded-xl p-3 text-center hover:shadow-md transition-all cursor-pointer ${
+                expandedDrug?.id === drug.id ? 'border-gold shadow-lg ring-2 ring-gold scale-105 z-10' : 'border-sand-dark'
+              }`}
             >
               <div className="text-2xl mb-1">{drug.formEmoji || '💊'}</div>
               <div className="font-bold text-nile text-sm">{drug.nameAr}</div>
@@ -188,6 +204,45 @@ export default function Home({ drugs, diseases, recentlyViewed, onBrowse, onInte
             </div>
           ))}
         </div>
+
+        {expandedDrug && (
+          <div className="mt-4 bg-white border border-gold rounded-xl p-5 shadow-lg">
+            <div className="flex items-start justify-between mb-3">
+              <button onClick={() => setExpandedDrug(null)} className="text-gray-400 hover:text-gray-600 text-lg">✕</button>
+              <div className="text-right flex-1 mr-3">
+                <h3 className="text-xl font-bold text-nile">{expandedDrug.nameAr}</h3>
+                <p className="text-gray-500">{expandedDrug.nameEn}</p>
+              </div>
+              <div className="text-4xl">{expandedDrug.formEmoji || '💊'}</div>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3 text-sm">
+              {expandedDrug.scientificNameAr && (
+                <div><span className="text-xs text-gray-400 block">الاسم العلمي</span><span className="text-gray-700">{expandedDrug.scientificNameAr}</span></div>
+              )}
+              {expandedDrug.categoryAr && (
+                <div><span className="text-xs text-gray-400 block">التصنيف</span><span className="text-gray-700">{expandedDrug.categoryAr}</span></div>
+              )}
+              {expandedDrug.manufacturerEn && (
+                <div><span className="text-xs text-gray-400 block">الشركة المصنعة</span><span className="text-gray-700">{expandedDrug.manufacturerAr || expandedDrug.manufacturerEn}</span></div>
+              )}
+              {expandedDrug.activeIngredientAr && (
+                <div><span className="text-xs text-gray-400 block">المادة الفعالة</span><span className="text-gray-700">{expandedDrug.activeIngredientAr}</span></div>
+              )}
+              {expandedDrug.prices && expandedDrug.prices.length > 0 && (
+                <div><span className="text-xs text-gray-400 block">السعر</span><span className="text-gold-dark font-bold">{expandedDrug.prices[0].price} {expandedDrug.prices[0].unit}</span></div>
+              )}
+              {expandedDrug.descriptionAr && (
+                <div className="col-span-full"><span className="text-xs text-gray-400 block">الوصف</span><p className="text-gray-600 text-xs">{expandedDrug.descriptionAr}</p></div>
+              )}
+            </div>
+            <button
+              onClick={() => { onBrowse() }}
+              className="mt-3 text-xs text-blue-600 hover:underline"
+            >
+              عرض التفاصيل الكاملة / View full details →
+            </button>
+          </div>
+        )}
       </div>
     </div>
   )
