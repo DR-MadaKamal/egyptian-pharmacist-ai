@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import { drugCategories, drugCategoriesAr } from '../data/drugs.js'
 import { edaSupplement } from '../data/eda-supplement.js'
-import { searchEda } from '../utils/edaLoader.js'
+import Highlight from './Highlight.jsx'
 
 const PAGE_SIZE = 50
 
@@ -215,9 +215,9 @@ export default function DrugBrowser({ drugs, onViewDrug }) {
             <div className="flex items-start justify-between gap-2">
               <div className="text-right flex-1">
                 <div className={`font-bold text-nile ${drug.edaOnly ? 'text-base' : 'text-lg'}`}>
-                  {drug.edaOnly ? drug.nameAr : drug.nameAr}
+                  <Highlight text={drug.nameAr} query={query} />
                 </div>
-                <div className="text-sm text-gray-500">{drug.nameEn}</div>
+                <div className="text-sm text-gray-500"><Highlight text={drug.nameEn} query={query} /></div>
                 <div className="flex items-center gap-1.5 mt-1">
                   {drug.edaOnly ? (
                     <span className="bg-blue-50 text-blue-700 text-xs px-2 py-0.5 rounded-full">EDA Listed</span>
