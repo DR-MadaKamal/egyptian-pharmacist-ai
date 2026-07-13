@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { getDrugById, getDrugInteractions, getDiseaseInteractions, severityConfig } from '../utils/interactions.js'
 import { edaSupplement } from '../data/eda-supplement.js'
 
@@ -14,6 +15,19 @@ export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug
       {children}
     </div>
   )
+
+  const CopyBtn = ({ text }) => {
+    const [copied, setCopied] = useState(false)
+    return (
+      <button
+        onClick={() => navigator.clipboard.writeText(text).then(() => { setCopied(true); setTimeout(() => setCopied(false), 1500) })}
+        className="text-xs text-gray-400 hover:text-nile ml-2 shrink-0"
+        title="Copy / نسخ"
+      >
+        {copied ? '✓' : '📋'}
+      </button>
+    )
+  }
 
   const Biline = ({ label, ar, en }) => (
     <div className="mb-2">
@@ -36,7 +50,10 @@ export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug
           <div className="flex items-start gap-4">
             <div className="text-5xl">💊</div>
             <div className="flex-1">
-              <h2 className="text-2xl md:text-3xl font-bold text-nile">{drug.nameAr}</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-nile">
+                {drug.nameAr}
+                <CopyBtn text={`${drug.nameAr} - ${drug.nameEn}`} />
+              </h2>
               <p className="text-gray-500 text-lg">{drug.nameEn}</p>
               <div className="flex flex-wrap gap-2 mt-2">
                 {drug.dataSource === 'MOHMED' ? (
@@ -158,7 +175,10 @@ export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug
         <div className="flex items-start gap-4">
           <div className="text-5xl">{drug.formEmoji || '💊'}</div>
           <div className="flex-1">
-            <h2 className="text-2xl md:text-3xl font-bold text-nile">{drug.nameAr}</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-nile">
+              {drug.nameAr}
+              <CopyBtn text={`${drug.nameAr} - ${drug.nameEn}`} />
+            </h2>
             <p className="text-gray-500 text-lg">{drug.nameEn}</p>
             <div className="flex flex-wrap gap-2 mt-2">
               <span className="bg-sand text-nile px-3 py-1 rounded-full text-sm">{drug.categoryAr}</span>
