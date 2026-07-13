@@ -65,6 +65,18 @@ export default function App() {
     }
   })
 
+  useEffect(() => {
+    const handler = (e) => {
+      if ((e.key === '/' || (e.ctrlKey && e.key === '/')) && !['INPUT', 'TEXTAREA', 'SELECT'].includes(e.target.tagName)) {
+        e.preventDefault()
+        const search = document.querySelector('input[type="text"]')
+        search?.focus()
+      }
+    }
+    window.addEventListener('keydown', handler)
+    return () => window.removeEventListener('keydown', handler)
+  }, [])
+
   const handleViewDrug = (id) => {
     setSelectedDrugId(id)
     setTab('detail')
