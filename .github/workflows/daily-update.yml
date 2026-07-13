@@ -21,7 +21,8 @@ jobs:
 
       - run: npm ci
 
-      - name: Download latest EDA data
+      # ── Consume all 15 EDA data sources ──
+      - name: Download EDDB drug data (mirror)
         run: |
           curl -L -o /tmp/egyptian-drugs.json \
             "https://raw.githubusercontent.com/karem505/egyptian-drug-database/main/data/egyptian-drugs.json"
@@ -31,6 +32,13 @@ jobs:
 
       - name: Generate EDA supplement cross-reference
         run: node scripts/generate-eda-supplement.mjs /tmp/egyptian-drugs.json
+
+      - name: Health-check and consume all data sources
+        run: node scripts/consume-all-sources.mjs
+
+      # ── Validate generated data quality ──
+      - name: Validate EDA data quality
+        run: node scripts/validate-eda-data.mjs
 
       - name: Build
         run: npm run build

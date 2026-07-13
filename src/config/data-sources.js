@@ -1,0 +1,268 @@
+// Official Egyptian Drug Authority (EDA) Data Sources
+// We gather updated data from these databases and services
+// Last updated: 2026-07-13
+
+export const dataSources = [
+  {
+    id: 'eddb',
+    nameEn: 'Egyptian Drug Database (EDDB)',
+    nameAr: 'قاعدة بيانات الأدوية المصرية',
+    descriptionEn: 'Registered pharmaceutical products database - Human, Biological, Herbal, Veterinary, Biocides, Cosmetics, Complementary',
+    descriptionAr: 'قاعدة بيانات المستحضرات الصيدلية المسجلة - بشري، بيولوجي، أعشاب، بيطري، مبيدات، تجميل، مكملات',
+    url: 'http://eservices.edaegypt.gov.eg/EDASearch/SearchRegDrugs.aspx',
+    type: 'web_search',
+    status: 'active',
+    syncFrequency: 'daily',
+    lastSync: null,
+    currentlyConsumed: true,
+    consumer: 'karem505/egyptian-drug-database (mirror)',
+    dataFields: ['trade_name', 'scientific_name', 'manufacturer', 'price', 'route', 'dosage_form', 'registration_no', 'license_status', 'expiry_date'],
+  },
+  {
+    id: 'released-batches',
+    nameEn: 'Released Batches Database',
+    nameAr: 'قاعدة بيانات التشغيلات المنصرفة',
+    descriptionEn: 'Laboratory released batches tracking - 8,000+ batches tracked with product name, batch no, manufacture & expiry dates',
+    descriptionAr: 'تتبع التشغيلات المعملية المنصرفة - أكثر من 8,000 تشغيلة مع اسم المنتج، رقم التشغيلة، تاريخي الإنتاج والصلاحية',
+    url: 'http://eservices.edaegypt.gov.eg/EDASearch/EDA_LBReleased.aspx',
+    type: 'web_search',
+    status: 'active',
+    syncFrequency: 'daily',
+    lastSync: null,
+    currentlyConsumed: false,
+    consumer: null,
+    dataFields: ['product_name', 'company', 'applicant', 'batch_no', 'manufacture_date', 'expiry_date'],
+  },
+  {
+    id: 'herbal-monograph',
+    nameEn: 'EDA Herbal Monograph',
+    nameAr: 'دليل الأعشاب الطبية المصري',
+    descriptionEn: 'Egyptian Herbal Monograph - 4 volumes: Wild medicinal plants, Pharmacopeial plants, Plants used in Egypt, Herbal formulations, Essential oils',
+    descriptionAr: 'دليل الأعشاب الطبية المصري - 4 مجلدات: نباتات برية، نباتات دستورية، نباتات مستخدمة في مصر، تركيبات عشبية، زيوت عطرية',
+    url: 'http://eservices.edaegypt.gov.eg/Monograph/',
+    pdfUrl: 'https://edaegypt.gov.eg/media/l40dm3jl/egyptian-herbal-monograph_2023.pdf',
+    type: 'web_portal_pdf',
+    status: 'active',
+    syncFrequency: 'yearly',
+    lastSync: null,
+    currentlyConsumed: false,
+    consumer: null,
+    dataFields: ['plant_name', 'arabic_name', 'therapeutic_group', 'constituents', 'indications', 'contraindications', 'interactions'],
+  },
+  {
+    id: 'service-portal',
+    nameEn: 'EDA Shababek - Unified Service Portal',
+    nameAr: 'شبابيك هيئة الدواء - بوابة الخدمات الموحدة',
+    descriptionEn: 'Unified digital platform for all EDA services - company registration, licensing, inspections, pharmacovigilance centers, cosmetics, pesticides',
+    descriptionAr: 'المنصة الرقمية الموحدة لجميع خدمات هيئة الدواء - تسجيل الشركات، التراخيص، التفتيش، مراكز اليقظة الدوائية، التجميل، المبيدات',
+    url: 'https://serviceportal.edaegypt.gov.eg/',
+    type: 'web_portal',
+    status: 'active',
+    syncFrequency: 'continuous',
+    lastSync: null,
+    currentlyConsumed: false,
+    consumer: null,
+    dataFields: ['company_registration', 'license_applications', 'inspection_requests', 'service_status'],
+  },
+  {
+    id: 'search-licenses',
+    nameEn: 'Search Licenses Database',
+    nameAr: 'البحث عن التراخيص',
+    descriptionEn: 'Search licensed pharmaceutical institutions - factories, warehouses, warehouses, contract manufacturing companies',
+    descriptionAr: 'البحث في قواعد بيانات المصانع والمخازن ومستودعات الوسطاء وشركات التصنيع لدى الغير',
+    url: 'http://eservices.edaegypt.gov.eg/EDASearch/SearchLicences.aspx',
+    type: 'web_search',
+    status: 'active',
+    syncFrequency: 'daily',
+    lastSync: null,
+    currentlyConsumed: false,
+    consumer: null,
+    dataFields: ['entity_name', 'license_type', 'license_no', 'entity_type', 'status'],
+  },
+  {
+    id: 'public-identity',
+    nameEn: 'EDA Public Identity - Services Return',
+    nameAr: 'خدمات هيئة الدواء - الاستعلام عن الخدمات',
+    descriptionEn: 'Public portal for applying to EDA services, tracking applications, managing personal workspace, and service return inquiries',
+    descriptionAr: 'بوابة التقدم بطلب للحصول على خدمات الهيئة، متابعة الطلبات، مساحة العمل الشخصية، الاستعلام عن الخدمات',
+    url: 'https://publicidentity.edaegypt.gov.eg/',
+    type: 'web_portal',
+    status: 'active',
+    syncFrequency: 'continuous',
+    lastSync: null,
+    currentlyConsumed: false,
+    consumer: null,
+    dataFields: ['service_requests', 'application_status', 'payment_info', 'documents'],
+  },
+  {
+    id: 'variation-tool',
+    nameEn: 'EDA Variation Self-Guided Tool',
+    nameAr: 'أداة الاسترشاد بالتغييرات',
+    descriptionEn: 'Self-guided tool for companies to inquire about regulatory guidelines for any change/modification to registered pharmaceutical or medical device files',
+    descriptionAr: 'أداة استرشادية للشركات والمصانع للاستعلام عن القواعد الارشادية الخاصة بإجراء أي تغيير أو تعديل على مستحضر صيدلي أو مستلزم طبي مسجل',
+    url: 'http://eservices.edaegypt.gov.eg/EDAVariationTool/',
+    type: 'web_tool',
+    status: 'active',
+    syncFrequency: 'continuous',
+    lastSync: null,
+    currentlyConsumed: false,
+    consumer: null,
+    dataFields: ['variation_type', 'product_type', 'guidelines', 'requirements'],
+  },
+  {
+    id: 'similars',
+    nameEn: 'EDA Similars - Alternatives Database',
+    nameAr: 'المثائل والبدائل',
+    descriptionEn: 'Search similar and alternative pharmaceutical products by name, disease, or therapeutic group',
+    descriptionAr: 'البحث عن المثائل والبدائل للمستحضرات الدوائية بالاسم أو المرض أو المجموعة الدوائية',
+    url: 'http://eservices.edaegypt.gov.eg/EDASimilars/',
+    type: 'web_search',
+    status: 'active',
+    syncFrequency: 'daily',
+    lastSync: null,
+    currentlyConsumed: false,
+    consumer: null,
+    dataFields: ['product_name', 'alternatives', 'therapeutic_group', 'disease'],
+  },
+  {
+    id: 'api-search',
+    nameEn: 'EDA API Search Tool',
+    nameAr: 'أداة البحث API',
+    descriptionEn: 'Central search portal for EDA electronic services - drug search, license search, batch release, and service inquiries',
+    descriptionAr: 'بوابة البحث المركزية للخدمات الإلكترونية لهيئة الدواء - بحث الأدوية، التراخيص، التشغيلات المنصرفة، الاستعلام عن الخدمات',
+    url: 'http://eservices.edaegypt.gov.eg/EDASearch/EDAservices.aspx',
+    type: 'web_portal',
+    status: 'active',
+    syncFrequency: 'continuous',
+    lastSync: null,
+    currentlyConsumed: false,
+    consumer: null,
+    dataFields: ['central_administration', 'service_type', 'service_cost'],
+  },
+  {
+    id: 'egyptian-pharmacopoeia',
+    nameEn: 'Egyptian Pharmacopoeia',
+    nameAr: 'الدستور الدوائي المصري',
+    descriptionEn: 'Official Egyptian Pharmacopoeia - quality standards, specifications, and monographs for pharmaceutical substances and preparations',
+    descriptionAr: 'الدستور الدوائي المصري - معايير الجودة والمواصفات والنشرات الرسمية للمواد والمستحضرات الصيدلية',
+    url: 'https://edaegypt-my.sharepoint.com/personal/pharmacopoeia_edaegypt_gov_eg/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fpharmacopoeia%5Fedaegypt%5Fgov%5Feg%2FDocuments%2FEgyptian%20Pharmacopoeia&ga=1',
+    type: 'sharepoint_document_library',
+    status: 'active',
+    syncFrequency: 'yearly',
+    lastSync: null,
+    currentlyConsumed: false,
+    consumer: null,
+    dataFields: ['monographs', 'quality_standards', 'specifications', 'test_methods'],
+  },
+  // Additional EDA databases discovered during research
+  {
+    id: 'cosmetics-egycosma',
+    nameEn: 'EgyCosma - Cosmetics Database',
+    nameAr: 'قاعدة بيانات مستحضرات التجميل',
+    descriptionEn: 'Electronic platform for cosmetics registration, listing, re-listing, and variations management with daily updates',
+    descriptionAr: 'منصة إلكترونية لميكنة عملية إدراج وإعادة إدراج ومتغيرات مستحضرات التجميل - يتم تحديثها بشكل يومي',
+    url: 'https://www.edaegypt.gov.eg/en/services/pharmaceutical-biological-products-and-medical-device/',
+    type: 'web_portal',
+    status: 'active',
+    syncFrequency: 'daily',
+    lastSync: null,
+    currentlyConsumed: false,
+    consumer: null,
+    dataFields: ['cosmetic_products', 'ingredients', 'companies', 'registration_status'],
+  },
+  {
+    id: 'medical-device',
+    nameEn: 'Medical Device Portal',
+    nameAr: 'بوابة المستلزمات الطبية',
+    descriptionEn: 'EDA medical device services - import approvals, registration, inquiries, and market authorization',
+    descriptionAr: 'خدمات المستلزمات الطبية - الموافقات الاستيرادية، التسجيل، الاستعلامات، السماح بالتداول',
+    url: 'https://medevice.edaegypt.gov.eg/',
+    type: 'web_portal',
+    status: 'active',
+    syncFrequency: 'daily',
+    lastSync: null,
+    currentlyConsumed: false,
+    consumer: null,
+    dataFields: ['device_name', 'manufacturer', 'classification', 'approval_status', 'import_permits'],
+  },
+  {
+    id: 'track-and-trace',
+    nameEn: 'Pharmaceutical Track and Trace System',
+    nameAr: 'منظومة التتبع الدوائي',
+    descriptionEn: 'National drug tracing system - tracks pharmaceuticals from manufacturing to patient using serial numbers',
+    descriptionAr: 'منظومة التتبع الدوائي القومية - تتبع الدواء من التصنيع حتى المريض باستخدام أرقام تسلسلية',
+    url: 'https://www.edaegypt.gov.eg/en/',
+    type: 'national_system',
+    status: 'active',
+    syncFrequency: 'real_time',
+    lastSync: null,
+    currentlyConsumed: false,
+    consumer: null,
+    dataFields: ['serial_number', 'product_code', 'batch_no', 'manufacturer', 'distributor', 'pharmacy', 'patient'],
+  },
+  {
+    id: 'pricing-submission',
+    nameEn: 'Online Pricing Submission Gate',
+    nameAr: 'بوابة تقديم الأسعار',
+    descriptionEn: 'Online system for pharmaceutical companies to submit and manage drug pricing applications',
+    descriptionAr: 'نظام إلكتروني لتقديم وإدارة طلبات تسعير الأدوية للشركات الدوائية',
+    url: 'http://eservices.edaegypt.gov.eg/Pricing/',
+    type: 'web_portal_authenticated',
+    status: 'active',
+    syncFrequency: 'continuous',
+    lastSync: null,
+    currentlyConsumed: false,
+    consumer: null,
+    dataFields: ['product_name', 'price', 'company', 'submission_status', 'approval_date'],
+  },
+  {
+    id: 'naming-checker',
+    nameEn: 'EDA Naming Checker',
+    nameAr: 'مدقق الأسماء الدوائية',
+    descriptionEn: 'Tool to check pharmaceutical product name availability and compliance with EDA naming guidelines',
+    descriptionAr: 'أداة للتحقق من توفر الأسماء الدوائية ومدى conformidad مع قواعد تسمية هيئة الدواء',
+    url: 'https://www.edaegypt.gov.eg/ar/المركز-الاعلامي/الإعلانات/إتاحة-برنامج-eda-naming-checker/',
+    type: 'web_tool',
+    status: 'active',
+    syncFrequency: 'continuous',
+    lastSync: null,
+    currentlyConsumed: false,
+    consumer: null,
+    dataFields: ['proposed_name', 'availability', 'similar_names', 'guidelines'],
+  },
+]
+
+export const dataSourceCategories = {
+  drug_registry: ['eddb', 'released-batches', 'similars'],
+  herbal_pharmacopoeia: ['herbal-monograph', 'egyptian-pharmacopoeia'],
+  licensing_inspection: ['search-licenses', 'service-portal', 'public-identity'],
+  regulatory_tools: ['variation-tool', 'api-search', 'naming-checker'],
+  specialized_portals: ['cosmetics-egycosma', 'medical-device', 'pricing-submission', 'track-and-trace'],
+}
+
+export function getActiveSources() {
+  return dataSources.filter(s => s.status === 'active')
+}
+
+export function getConsumedSources() {
+  return dataSources.filter(s => s.currentlyConsumed)
+}
+
+export function getSourceById(id) {
+  return dataSources.find(s => s.id === id)
+}
+
+export function getSourcesByCategory(category) {
+  const ids = dataSourceCategories[category] || []
+  return ids.map(id => getSourceById(id)).filter(Boolean)
+}
+
+export async function consumeSource(sourceId) {
+  const { consumeSource } = await import('../../scripts/consumers/index.mjs')
+  return consumeSource(sourceId)
+}
+
+export async function consumeAllSources() {
+  const { consumeAllSources } = await import('../../scripts/consumers/index.mjs')
+  return consumeAllSources()
+}
