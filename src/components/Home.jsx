@@ -30,6 +30,9 @@ function AnimatedCounter({ end, suffix }) {
 
 export default function Home({ drugs, diseases, recentlyViewed, onBrowse, onInterview, onPrices, onPharmacopeia, onSearch }) {
   const [quickQuery, setQuickQuery] = useState('')
+  const [tipDismissed, setTipDismissed] = useState(() => {
+    try { return sessionStorage.getItem('tip-dismissed') === 'true' } catch { return false }
+  })
   const suggestions = drugs.filter(d => {
     if (!quickQuery.trim() || quickQuery.length < 2) return false
     const q = quickQuery.toLowerCase()
@@ -79,6 +82,22 @@ export default function Home({ drugs, diseases, recentlyViewed, onBrowse, onInte
           </div>
         ))}
       </div>
+
+      {!tipDismissed && (
+        <div className="bg-amber-50 border border-amber-200 rounded-xl p-3 md:p-4 flex items-start gap-3">
+          <span className="text-xl">☀️</span>
+          <div>
+            <p className="font-bold text-amber-800 text-sm">نصيحة موسمية / Seasonal Tip</p>
+            <p className="text-amber-700 text-xs mt-1">
+              يُفضل تخزين الأدوية في مكان بارد وجاف بعيداً عن أشعة الشمس المباشرة. حرارة الصيف قد تؤثر على فاعلية بعض الأدوية.
+            </p>
+            <p className="text-amber-600 text-xs mt-0.5">
+              Store medicines in a cool, dry place away from direct sunlight. Summer heat can affect the effectiveness of some medications.
+            </p>
+          </div>
+          <button onClick={() => { setTipDismissed(true); try { sessionStorage.setItem('tip-dismissed', 'true') } catch {} }} className="text-amber-400 hover:text-amber-600 shrink-0">✕</button>
+        </div>
+      )}
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
         <div className="bg-red-50 border border-red-200 rounded-xl p-3 md:p-4">
