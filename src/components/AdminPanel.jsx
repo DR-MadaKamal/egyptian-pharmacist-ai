@@ -1,10 +1,15 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import DrugForm from './DrugForm.jsx'
 import { getUserDrugs, deleteUserDrug } from '../utils/store.js'
 
 export default function AdminPanel({ allDrugs, onLogout, onViewDrug }) {
   const [subTab, setSubTab] = useState('dashboard')
   const [refreshKey, setRefreshKey] = useState(0)
+  const [syncInfo, setSyncInfo] = useState(null)
+
+  useEffect(() => {
+    fetch('/egyptian-pharmacist-ai/data/sync-manifest.json').then(r => r.json()).then(setSyncInfo).catch(() => {})
+  }, [])
 
   const userDrugs = useMemo(() => getUserDrugs(), [refreshKey])
 
@@ -71,6 +76,18 @@ export default function AdminPanel({ allDrugs, onLogout, onViewDrug }) {
               <div className="text-xs text-gray-600">أدوية مضافة / User Added</div>
             </div>
           </div>
+
+          {syncInfo && (
+            <div className="bg-white border border-sand-dark rounded-xl p-4">
+              <h3 className="font-bold text-nile text-sm mb-2">🔄 آخر تحديث / Last Sync</h3>
+              <div className="text-xs text-gray-500 space-y-1">
+                <p>آخر مزامنة: {syncInfo.lastSync || 'غير متوفر'}</p>
+                {syncInfo.sources && (
+                  <p>المصادر المتاحة: {syncInfo.sources.filter(s => s.healthy).length} / {syncInfo.sources.length}</p>
+                )}
+              </div>
+            </div>
+          )}
 
           {userDrugs.length > 0 && (
             <div className="bg-white border border-sand-dark rounded-xl overflow-hidden">
