@@ -51,6 +51,7 @@ export default function DrugBrowser({ drugs, onViewDrug }) {
   const [routeFilter, setRouteFilter] = useState('')
   const [page, setPage] = useState(1)
   const [showEda, setShowEda] = useState(false)
+  const [focused, setFocused] = useState(false)
 
   const enriched = useMemo(() => drugs.filter(d => !d.edaOnly), [drugs])
   const edaOnly = useMemo(() => drugs.filter(d => d.edaOnly), [drugs])
@@ -105,21 +106,58 @@ export default function DrugBrowser({ drugs, onViewDrug }) {
     return allFiltered.slice(0, page * PAGE_SIZE)
   }, [allFiltered, page])
 
+  const suggestions = useMemo(() => {
+    const q = query.toLowerCase().trim()
+    if (!q || q.length < 2) return []
+    const matches = drugs.filter(d => {
+      if (d.nameEn?.toLowerCase().includes(q)) return true
+      if (d.nameAr?.includes(q)) return true
+      if (d.scientificNameEn?.toLowerCase().includes(q)) return true
+      if (d.scientificNameAr?.includes(q)) return true
+      return false
+    })
+    return matches.slice(0, 5)
+  }, [drugs, query])
+
   const handleLoadMore = () => setPage(p => p + 1)
+
+  const handleSuggestionClick = (name) => {
+    setQuery(name)
+    setFocused(false)
+    setPage(1)
+  }
 
   return (
     <div className="space-y-4">
       <h2 className="text-2xl font-bold text-nile">🔍 تصفح الأدوية / Drug Browser</h2>
 
       <div className="flex flex-col sm:flex-row gap-3">
-        <input
-          type="text"
-          value={query}
-          onChange={e => { setQuery(e.target.value); setPage(1) }}
-          placeholder="ابحث باسم الدواء (عربي/English)..."
-          className="flex-1 px-4 py-2.5 border border-sand-dark rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-gold text-right"
-          dir="auto"
-        />
+        <div className="relative flex-1">
+          <input
+            type="text"
+            value={query}
+            onChange={e => { setQuery(e.target.value); setPage(1) }}
+            onFocus={() => setFocused(true)}
+            onBlur={() => setTimeout(() => setFocused(false), 200)}
+            placeholder="ابحث باسم الدواء (عربي/English)..."
+            className="w-full px-4 py-2.5 border border-sand-dark rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-gold text-right"
+            dir="auto"
+          />
+          {focused && suggestions.length > 0 && (
+            <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-sand-dark rounded-xl shadow-lg z-10 overflow-hidden">
+              {suggestions.map(d => (
+                <button
+                  key={d.id}
+                  onMouseDown={() => handleSuggestionClick(d.nameAr || d.nameEn)}
+                  className="w-full text-right px-4 py-2.5 text-sm hover:bg-sand transition-colors border-b border-gray-100 last:border-b-0"
+                >
+                  <span className="text-gray-800">{d.nameAr}</span>
+                  <span className="text-gray-400 mr-2 text-xs">{d.nameEn}</span>
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
         <select
           value={category}
           onChange={e => { setCategory(e.target.value); setPage(1) }}
