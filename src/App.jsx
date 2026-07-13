@@ -126,6 +126,10 @@ export default function App() {
             ⚙️
           </button>
         </div>
+        <div className="mt-2 text-white/30 text-xs flex items-center justify-center gap-3">
+          <span><kbd className="bg-white/10 px-1.5 py-0.5 rounded text-white/50">/</kbd> بحث / Search</span>
+          <span><kbd className="bg-white/10 px-1.5 py-0.5 rounded text-white/50">Esc</kbd> إغلاق / Close</span>
+        </div>
       </footer>
 
       <ScrollToTop />
