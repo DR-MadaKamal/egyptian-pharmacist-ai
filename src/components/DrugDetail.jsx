@@ -72,10 +72,10 @@ export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug
                 <div className="flex flex-wrap gap-1.5 mt-1">
                   {drug.edaRoutes.map(rt => {
                     const parts = rt.split('.')
-                    const emoji = {'ORAL':'💊','TOPICAL':'🧴','INJECTION':'💉','SPRAY':'🌫️','OPHTHALMIC':'👁️','OTIC':'👂','VAGINAL':'🩺','RECTAL':'🩸','EFF':'💊'}[parts[0]] || '📦'
+                    const colors = {'ORAL':'bg-blue-100 text-blue-700','TOPICAL':'bg-green-100 text-green-700','INJECTION':'bg-red-100 text-red-700','SPRAY':'bg-purple-100 text-purple-700','OPHTHALMIC':'bg-cyan-100 text-cyan-700','OTIC':'bg-yellow-100 text-yellow-700','VAGINAL':'bg-pink-100 text-pink-700','RECTAL':'bg-orange-100 text-orange-700','EFF':'bg-indigo-100 text-indigo-700'}
                     return (
-                      <span key={rt} className="inline-flex items-center gap-1 bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">
-                        {emoji} {parts[1] === parts[0] ? parts[0] : rt}
+                      <span key={rt} className={`inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium ${colors[parts[0]] || 'bg-gray-100 text-gray-700'}`}>
+                        {parts[1] === parts[0] ? parts[0] : rt}
                       </span>
                     )
                   })}
