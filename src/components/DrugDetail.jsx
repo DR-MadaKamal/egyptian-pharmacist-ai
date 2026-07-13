@@ -1,4 +1,5 @@
 import { getDrugById, getDrugInteractions, getDiseaseInteractions, severityConfig } from '../utils/interactions.js'
+import { edaSupplement } from '../data/eda-supplement.js'
 
 export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug }) {
   const drug = getDrugById(drugs, drugId)
@@ -37,6 +38,11 @@ export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug
             <div className="flex flex-wrap gap-2 mt-2">
               <span className="bg-sand text-nile px-3 py-1 rounded-full text-sm">{drug.categoryAr}</span>
               <span className="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-sm">{drug.category}</span>
+              {edaSupplement.find(e => e.id === drug.id)?.verified && (
+                <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-bold" title="Verified against Egyptian Drug Authority database">
+                  ✓ EDA Verified
+                </span>
+              )}
             </div>
           </div>
         </div>

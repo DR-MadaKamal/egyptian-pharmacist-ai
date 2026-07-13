@@ -1,6 +1,7 @@
 import { useState, useMemo } from 'react'
 import { searchDrugs } from '../utils/interactions.js'
 import { drugCategories, drugCategoriesAr } from '../data/drugs.js'
+import { edaSupplement } from '../data/eda-supplement.js'
 
 export default function DrugBrowser({ drugs, onViewDrug }) {
   const [query, setQuery] = useState('')
@@ -57,6 +58,9 @@ export default function DrugBrowser({ drugs, onViewDrug }) {
                 <div className="flex items-center gap-1.5 mt-1">
                   <span className="bg-sand text-nile text-xs px-2 py-0.5 rounded-full">{drug.categoryAr}</span>
                   <span className="text-[10px] text-gray-400">{drug.category}</span>
+                  {edaSupplement.find(e => e.id === drug.id)?.verified && (
+                    <span className="text-[10px] text-green-600 font-bold" title="Verified by EDA">✓ EDA</span>
+                  )}
                 </div>
               </div>
               <div className="text-3xl">{drug.formEmoji || '💊'}</div>

@@ -1,3 +1,5 @@
+import { edaSupplement } from '../data/eda-supplement.js'
+
 const severityOrder = { contraindicated: 4, severe: 3, moderate: 2, minor: 1 }
 
 export const severityConfig = {
@@ -82,15 +84,21 @@ export function checkDrugDiseaseInteraction(drugs, diseases, drugId, diseaseId) 
   return { ...inter, drug, disease }
 }
 
+const _aliasMap = {}
+for (const entry of edaSupplement) {
+  _aliasMap[entry.id] = [entry.nameEn, entry.nameAr, ...entry.brandAliases.flatMap(a => [a.en, a.ar])]
+    .filter(Boolean).map(s => s.toLowerCase())
+}
+
 export function searchDrugs(drugs, query) {
   const q = query.toLowerCase().trim()
   if (!q) return drugs
-  return drugs.filter(d =>
-    d.nameEn.toLowerCase().includes(q) ||
-    d.nameAr.includes(q) ||
-    d.category.toLowerCase().includes(q) ||
-    d.categoryAr.includes(q)
-  )
+  return drugs.filter(d => {
+    if (d.nameEn.toLowerCase().includes(q) || d.nameAr.includes(q) ||
+        d.category.toLowerCase().includes(q) || d.categoryAr.includes(q)) return true
+    const aliases = _aliasMap[d.id]
+    return aliases && aliases.some(a => a.includes(q))
+  })
 }
 
 export function searchDiseases(diseases, query) {

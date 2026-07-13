@@ -1,0 +1,134 @@
+name: Daily EDA Data Sync
+
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Download latest EDA data from karem505/egyptian-drug-database
+        run: |
+          curl -L -o /tmp/egyptian-drugs.json \
+            "https://raw.githubusercontent.com/karem505/egyptian-drug-database/main/data/egyptian-drugs.json"
+
+      - name: Run cross-reference script
+        run: |
+          node -e "
+          const fs = require('fs');
+          const drugs = JSON.parse(fs.readFileSync('src/data/drugs.js', 'utf-8'));
+          const eda = JSON.parse(fs.readFileSync('/tmp/egyptian-drugs.json', 'utf-8'));
+
+          const norm = s => s?.toLowerCase().replace(/[^a-z0-9\\s]/g, '').trim().replace(/\\s+/g, ' ') || '';
+
+          const edaByName = {};
+          const edaBySci = {};
+          for (const r of eda) {
+            const sci = norm(r.scientific_name || '');
+            if (sci) {
+              if (!edaBySci[sci]) edaBySci[sci] = [];
+              edaBySci[sci].push(r);
+            }
+            for (const field of ['commercial_name_en', 'commercial_name_ar']) {
+              const parts = (r[field] || '').split(/\\s+/);
+              for (let i = 0; i < Math.min(parts.length, 3); i++) {
+                const key = norm(parts.slice(0, i + 1).join(' '));
+                if (key && key.length >= 3) {
+                  if (!edaByName[key]) edaByName[key] = [];
+                  edaByName[key].push(r);
+                }
+              }
+            }
+          }
+
+          const supplement = [];
+          for (const drug of drugs) {
+            const entry = {
+              id: drug.id, nameEn: drug.nameEn, nameAr: drug.nameAr,
+              prices: drug.prices || [],
+              brandAliases: [], edaPrices: [], edaManufacturers: [], verified: false
+            };
+
+            const nameKey = norm(drug.nameEn);
+            let matches = [];
+            const firstWord = nameKey.split(/\\s+/)[0];
+            if (firstWord && firstWord.length >= 3) matches = edaByName[firstWord] || [];
+
+            if (matches.length === 0) {
+              const words = nameKey.split(/\\s+/);
+              for (let len = Math.min(words.length, 3); len >= 2; len--) {
+                const combo = norm(words.slice(0, len).join(' '));
+                if (combo.length >= 4) {
+                  matches = edaByName[combo] || [];
+                  if (matches.length > 0) break;
+                }
+              }
+            }
+
+            if (matches.length > 5) {
+              matches = matches.filter(m => {
+                const mn = norm(m.commercial_name_en);
+                return mn.includes(firstWord) || norm(m.commercial_name_ar).includes(firstWord);
+              });
+            }
+
+            if (matches.length === 0) {
+              const sciMatch = Object.entries(edaBySci).filter(([k]) => k.includes(nameKey));
+              if (sciMatch.length > 0) {
+                const seen = new Set();
+                matches = sciMatch.flatMap(([, v]) => v).filter(m => {
+                  const key = m.commercial_name_en + m.manufacturer;
+                  return seen.has(key) ? false : (seen.add(key), true);
+                });
+              }
+            }
+
+            if (matches.length > 0) {
+              entry.verified = true;
+              const seen = new Set();
+              for (const m of matches) {
+                const be = (m.commercial_name_en || '').trim();
+                if (be && !seen.has(be)) {
+                  seen.add(be);
+                  entry.brandAliases.push({ en: be, ar: (m.commercial_name_ar || '').trim() });
+                }
+              }
+              entry.edaPrices = [...new Set(matches.map(m => m.price_egp).filter(p => p != null))].sort((a, b) => a - b);
+              entry.edaManufacturers = [...new Set(matches.map(m => m.manufacturer).filter(Boolean))];
+            }
+            supplement.push(entry);
+          }
+
+          const verified = supplement.filter(e => e.verified).length;
+          console.log('Matched: ' + verified + '/' + supplement.length);
+
+          const out = '// Auto-generated from Egyptian Drug Authority (EDA) database\\n' +
+            '// Source: https://github.com/karem505/egyptian-drug-database\\n' +
+            '// Last updated: ' + new Date().toISOString().split('T')[0] + '\\n\\n' +
+            'export const edaSupplement = ' + JSON.stringify(supplement, null, 2) + ';\\n';
+
+          fs.writeFileSync('src/data/eda-supplement.js', out, 'utf-8');
+          "
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "EDA Sync Bot"
+          git config user.email "actions@github.com"
+          git add src/data/eda-supplement.js
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: daily EDA data sync [$(date +%Y-%m-%d)]"
+            git push
+          fi
