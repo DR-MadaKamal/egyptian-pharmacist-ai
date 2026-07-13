@@ -59,21 +59,30 @@ export default function DrugBrowser({ drugs, onViewDrug }) {
                   <span className="text-[10px] text-gray-400">{drug.category}</span>
                 </div>
               </div>
-              <div className="text-3xl">💊</div>
+              <div className="text-3xl">{drug.formEmoji || '💊'}</div>
             </div>
             <p className="text-xs text-gray-500 mt-2 line-clamp-2">{drug.description}</p>
-            <div className="flex gap-2 mt-2 text-xs">
-              {drug.drugInteractions.length > 0 && (
-                <span className="bg-orange-100 text-orange-700 px-2 py-0.5 rounded">
-                  {drug.drugInteractions.length} تفاعل دوائي
-                </span>
-              )}
-              {drug.diseaseInteractions.length > 0 && (
-                <span className="bg-blue-100 text-blue-700 px-2 py-0.5 rounded">
-                  {drug.diseaseInteractions.length} تفاعل مرضي
-                </span>
-              )}
+            <div className="flex items-center justify-between mt-2">
+              <div className="flex gap-2 text-xs">
+                {drug.drugInteractions.length > 0 && (
+                  <span className="bg-orange-100 text-orange-700 px-2 py-0.5 rounded">
+                    {drug.drugInteractions.length} تفاعل دوائي
+                  </span>
+                )}
+                {drug.diseaseInteractions.length > 0 && (
+                  <span className="bg-blue-100 text-blue-700 px-2 py-0.5 rounded">
+                    {drug.diseaseInteractions.length} تفاعل مرضي
+                  </span>
+                )}
+              </div>
+              <span className="text-xs text-gray-400">{drug.manufacturerEn || ''}</span>
             </div>
+            {drug.prices && drug.prices.length > 0 && (
+              <div className="mt-1 text-xs text-gold-dark font-bold">
+                {drug.prices[0].price} {drug.prices[0].unit}
+                {drug.prices.length > 1 ? ` (+${drug.prices.length - 1})` : ''}
+              </div>
+            )}
           </div>
         ))}
       </div>

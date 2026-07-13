@@ -7,6 +7,21 @@ export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug
   const drugInts = getDrugInteractions(drugs, drugId)
   const diseaseInts = getDiseaseInteractions(drugs, diseases, drugId)
 
+  const Section = ({ title, children }) => (
+    <div className="bg-white border border-sand-dark rounded-xl p-4">
+      <h3 className="font-bold text-nile text-lg mb-3">{title}</h3>
+      {children}
+    </div>
+  )
+
+  const Biline = ({ label, ar, en }) => (
+    <div className="mb-2">
+      <span className="text-xs font-bold text-gray-400 uppercase">{label}</span>
+      <p className="text-gray-700 text-sm">{ar}</p>
+      <p className="text-gray-500 text-xs">{en}</p>
+    </div>
+  )
+
   return (
     <div className="space-y-4">
       <button onClick={onBack} className="text-nile hover:text-gold-dark font-bold text-sm">
@@ -15,7 +30,7 @@ export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug
 
       <div className="bg-white border border-sand-dark rounded-xl p-4 md:p-6">
         <div className="flex items-start gap-4">
-          <div className="text-5xl">💊</div>
+          <div className="text-5xl">{drug.formEmoji || '💊'}</div>
           <div className="flex-1">
             <h2 className="text-2xl md:text-3xl font-bold text-nile">{drug.nameAr}</h2>
             <p className="text-gray-500 text-lg">{drug.nameEn}</p>
@@ -23,14 +38,70 @@ export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug
               <span className="bg-sand text-nile px-3 py-1 rounded-full text-sm">{drug.categoryAr}</span>
               <span className="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-sm">{drug.category}</span>
             </div>
-            <p className="text-gray-600 mt-3 text-sm leading-relaxed">{drug.description}</p>
           </div>
         </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="bg-white border border-sand-dark rounded-xl p-4">
-          <h3 className="font-bold text-nile text-lg mb-3">⚡ التفاعلات الدوائية / Drug Interactions</h3>
+        <Section title="🔬 الاسم العلمي / Scientific Name">
+          <Biline label="" ar={drug.scientificNameAr} en={drug.scientificNameEn} />
+        </Section>
+        <Section title="💊 المادة الفعالة / Active Ingredient">
+          <Biline label="" ar={drug.activeIngredientAr} en={drug.activeIngredientEn} />
+        </Section>
+      </div>
+
+      <Section title="📋 الوصف / Description">
+        <p className="text-gray-700 text-sm mb-1">{drug.description}</p>
+        <p className="text-gray-500 text-xs">{drug.descriptionAr}</p>
+      </Section>
+
+      <Section title="🩺 الاستخدامات / Indications">
+        <Biline label="" ar={drug.indicationAr} en={drug.indicationEn} />
+      </Section>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <Section title="⚙️ آلية العمل / Mechanism">
+          <Biline label="" ar={drug.mechanismAr} en={drug.mechanismEn} />
+        </Section>
+        <Section title="⚠️ الآثار الجانبية / Side Effects">
+          <Biline label="" ar={drug.sideEffectsAr} en={drug.sideEffectsEn} />
+        </Section>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <Section title="💊 الجرعة / Dosage">
+          <Biline label="" ar={drug.dosageAr} en={drug.dosageEn} />
+        </Section>
+        <Section title="🤰 الحمل / Pregnancy">
+          <Biline label="" ar={drug.pregnancyAr} en={drug.pregnancyEn} />
+        </Section>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <Section title="🍼 الرضاعة / Breastfeeding">
+          <Biline label="" ar={drug.breastfeedingAr} en={drug.breastfeedingEn} />
+        </Section>
+        <Section title="🏭 الشركة المصنعة / Manufacturer">
+          <Biline label="" ar={drug.manufacturerAr} en={drug.manufacturerEn} />
+        </Section>
+      </div>
+
+      {drug.prices && drug.prices.length > 0 && (
+        <Section title="💰 الأسعار / Prices">
+          <div className="space-y-1">
+            {drug.prices.map((p, i) => (
+              <div key={i} className="flex items-center justify-between bg-gray-50 rounded-lg px-3 py-2 text-sm">
+                <span className="font-bold text-gold-dark">{p.price} {p.unit}</span>
+                <span className="text-gray-600">{p.form}</span>
+              </div>
+            ))}
+          </div>
+        </Section>
+      )}
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <Section title="⚡ التفاعلات الدوائية / Drug Interactions">
           {drugInts.length === 0 ? (
             <p className="text-gray-400 text-sm">لا توجد تفاعلات دوائية مسجلة / No recorded drug interactions</p>
           ) : (
@@ -55,10 +126,9 @@ export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug
               ))}
             </div>
           )}
-        </div>
+        </Section>
 
-        <div className="bg-white border border-sand-dark rounded-xl p-4">
-          <h3 className="font-bold text-nile text-lg mb-3">🩺 التفاعلات المرضية / Disease Interactions</h3>
+        <Section title="🩺 التفاعلات المرضية / Disease Interactions">
           {diseaseInts.length === 0 ? (
             <p className="text-gray-400 text-sm">لا توجد تفاعلات مرضية مسجلة / No recorded disease interactions</p>
           ) : (
@@ -78,7 +148,7 @@ export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug
               ))}
             </div>
           )}
-        </div>
+        </Section>
       </div>
     </div>
   )

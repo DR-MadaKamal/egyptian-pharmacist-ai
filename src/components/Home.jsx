@@ -1,6 +1,6 @@
 import { severityConfig } from '../utils/interactions.js'
 
-export default function Home({ drugs, diseases, onBrowse, onInterview }) {
+export default function Home({ drugs, diseases, onBrowse, onInterview, onPrices }) {
   const totalInteractions = drugs.reduce((s, d) => s + d.drugInteractions.length + d.diseaseInteractions.length, 0)
   const contraindicated = drugs.reduce((s, d) =>
     s + d.drugInteractions.filter(i => i.severity === 'contraindicated').length +
@@ -68,6 +68,9 @@ export default function Home({ drugs, diseases, onBrowse, onInterview }) {
         <button onClick={onBrowse} className="flex-1 bg-nile text-white py-3 rounded-xl font-bold hover:bg-nile-light transition-colors">
           🔍 تصفح الأدوية / Browse Drugs
         </button>
+        <button onClick={onPrices} className="flex-1 bg-green-700 text-white py-3 rounded-xl font-bold hover:bg-green-600 transition-colors">
+          💰 الأسعار / Prices
+        </button>
         <button onClick={onInterview} className="flex-1 bg-gold text-nile py-3 rounded-xl font-bold hover:bg-gold-light transition-colors">
           🎓 بدء المقابلة / Start Interview
         </button>
@@ -80,7 +83,7 @@ export default function Home({ drugs, diseases, onBrowse, onInterview }) {
             <div key={drug.id} className="bg-white border border-sand-dark rounded-xl p-3 text-center hover:shadow-md transition-shadow cursor-pointer"
               onClick={() => onBrowse()}
             >
-              <div className="text-2xl mb-1">💊</div>
+              <div className="text-2xl mb-1">{drug.formEmoji || '💊'}</div>
               <div className="font-bold text-nile text-sm">{drug.nameAr}</div>
               <div className="text-xs text-gray-500">{drug.nameEn}</div>
               <div className="text-[10px] text-gray-400 mt-1">{drug.categoryAr}</div>

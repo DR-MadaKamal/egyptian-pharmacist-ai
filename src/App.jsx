@@ -10,10 +10,12 @@ import InteractionCheck from './components/InteractionCheck.jsx'
 import DiseaseCheck from './components/DiseaseCheck.jsx'
 import InterviewMode from './components/InterviewMode.jsx'
 import DrugForm from './components/DrugForm.jsx'
+import PriceList from './components/PriceList.jsx'
 
 const TABS = {
   home: { label: 'الرئيسية', labelEn: 'Home', icon: '🏠' },
   browse: { label: 'تصفح الأدوية', labelEn: 'Browse', icon: '🔍' },
+  prices: { label: 'الأسعار', labelEn: 'Prices', icon: '💰' },
   interact: { label: 'تفاعل دواء-دواء', labelEn: 'Drug-Drug', icon: '⚡' },
   disease: { label: 'تفاعل دواء-مرض', labelEn: 'Drug-Disease', icon: '🩺' },
   interview: { label: 'المقابلة', labelEn: 'Interview', icon: '🎓' },
@@ -54,6 +56,7 @@ export default function App() {
             diseases={allDiseases}
             onBrowse={() => setTab('browse')}
             onInterview={() => setTab('interview')}
+            onPrices={() => setTab('prices')}
           />
         )}
         {tab === 'browse' && (
@@ -67,6 +70,9 @@ export default function App() {
             onBack={() => setTab('browse')}
             onViewDrug={handleViewDrug}
           />
+        )}
+        {tab === 'prices' && (
+          <PriceList drugs={allDrugs} onViewDrug={handleViewDrug} />
         )}
         {tab === 'interact' && (
           <InteractionCheck drugs={allDrugs} onViewDrug={handleViewDrug} />
