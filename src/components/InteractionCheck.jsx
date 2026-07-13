@@ -13,6 +13,8 @@ export default function InteractionCheck({ drugs, onViewDrug }) {
   const resultsA = useMemo(() => drugAQuery && !drugA ? searchDrugs(drugs, drugAQuery).slice(0, 8) : [], [drugs, drugAQuery, drugA])
   const resultsB = useMemo(() => drugBQuery && !drugB ? searchDrugs(drugs, drugBQuery).slice(0, 8) : [], [drugs, drugBQuery, drugB])
 
+  const getIntCount = (d) => (d.drugInteractions?.length || 0) + (d.diseaseInteractions?.length || 0)
+
   const handleCheck = () => {
     if (!drugA || !drugB) return
     setResult(checkDrugDrugInteraction(drugs, drugA.id, drugB.id))
@@ -45,13 +47,19 @@ export default function InteractionCheck({ drugs, onViewDrug }) {
               />
               {showA && resultsA.length > 0 && (
                 <div className="absolute z-10 w-full mt-1 bg-white border border-sand-dark rounded-lg shadow-lg max-h-48 overflow-y-auto">
-                  {resultsA.map(d => (
-                    <button key={d.id} onClick={() => { setDrugA(d); setDrugAQuery(''); setShowA(false); setResult(null) }}
-                      className="w-full text-right px-3 py-2 hover:bg-sand text-sm flex justify-between">
-                      <span className="text-gray-500">{d.nameEn}</span>
-                      <span className="font-bold text-nile">{d.nameAr}</span>
-                    </button>
-                  ))}
+                  {resultsA.map(d => {
+                    const ic = getIntCount(d)
+                    return (
+                      <button key={d.id} onClick={() => { setDrugA(d); setDrugAQuery(''); setShowA(false); setResult(null) }}
+                        className="w-full text-right px-3 py-2 hover:bg-sand text-sm flex justify-between items-center">
+                        <span className="flex items-center gap-2">
+                          <span className="text-gray-500">{d.nameEn}</span>
+                          {ic > 0 && <span className="text-[10px] bg-orange-100 text-orange-700 px-1.5 py-0.5 rounded-full">{ic}</span>}
+                        </span>
+                        <span className="font-bold text-nile">{d.nameAr}</span>
+                      </button>
+                    )
+                  })}
                 </div>
               )}
             </div>
@@ -80,13 +88,19 @@ export default function InteractionCheck({ drugs, onViewDrug }) {
               />
               {showB && resultsB.length > 0 && (
                 <div className="absolute z-10 w-full mt-1 bg-white border border-sand-dark rounded-lg shadow-lg max-h-48 overflow-y-auto">
-                  {resultsB.map(d => (
-                    <button key={d.id} onClick={() => { setDrugB(d); setDrugBQuery(''); setShowB(false); setResult(null) }}
-                      className="w-full text-right px-3 py-2 hover:bg-sand text-sm flex justify-between">
-                      <span className="text-gray-500">{d.nameEn}</span>
-                      <span className="font-bold text-nile">{d.nameAr}</span>
-                    </button>
-                  ))}
+                  {resultsB.map(d => {
+                    const ic = getIntCount(d)
+                    return (
+                      <button key={d.id} onClick={() => { setDrugB(d); setDrugBQuery(''); setShowB(false); setResult(null) }}
+                        className="w-full text-right px-3 py-2 hover:bg-sand text-sm flex justify-between items-center">
+                        <span className="flex items-center gap-2">
+                          <span className="text-gray-500">{d.nameEn}</span>
+                          {ic > 0 && <span className="text-[10px] bg-orange-100 text-orange-700 px-1.5 py-0.5 rounded-full">{ic}</span>}
+                        </span>
+                        <span className="font-bold text-nile">{d.nameAr}</span>
+                      </button>
+                    )
+                  })}
                 </div>
               )}
             </div>
