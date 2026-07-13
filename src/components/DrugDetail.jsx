@@ -29,6 +29,25 @@ export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug
     )
   }
 
+  const ShareBtn = ({ drug }) => {
+    const [shared, setShared] = useState(false)
+    const handleShare = () => {
+      const url = `${window.location.origin}${window.location.pathname}?drug=${drug.id}`
+      if (navigator.share) {
+        navigator.share({ title: drug.nameAr, text: `${drug.nameAr} - ${drug.nameEn}`, url }).catch(() => {})
+      } else {
+        navigator.clipboard.writeText(`${drug.nameAr} - ${drug.nameEn}: ${url}`).then(() => {
+          setShared(true); setTimeout(() => setShared(false), 1500)
+        })
+      }
+    }
+    return (
+      <button onClick={handleShare} className="text-xs text-gray-400 hover:text-nile mr-2 shrink-0" title="مشاركة / Share">
+        {shared ? '✓' : '🔗'}
+      </button>
+    )
+  }
+
   const Biline = ({ label, ar, en }) => (
     <div className="mb-2">
       <span className="text-xs font-bold text-gray-400 uppercase">{label}</span>
@@ -52,6 +71,7 @@ export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug
             <div className="flex-1">
               <h2 className="text-2xl md:text-3xl font-bold text-nile">
                 {drug.nameAr}
+                <ShareBtn drug={drug} />
                 <CopyBtn text={`${drug.nameAr} - ${drug.nameEn}`} />
               </h2>
               <p className="text-gray-500 text-lg">{drug.nameEn}</p>
@@ -177,6 +197,7 @@ export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug
           <div className="flex-1">
             <h2 className="text-2xl md:text-3xl font-bold text-nile">
               {drug.nameAr}
+              <ShareBtn drug={drug} />
               <CopyBtn text={`${drug.nameAr} - ${drug.nameEn}`} />
             </h2>
             <p className="text-gray-500 text-lg">{drug.nameEn}</p>
