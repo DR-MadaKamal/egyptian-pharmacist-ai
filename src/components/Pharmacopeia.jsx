@@ -84,19 +84,18 @@ export default function Pharmacopeia({ drugs }) {
                     <div className="mt-3 pt-3 border-t border-gray-100">
                       <span className="text-xs font-bold text-gray-400 uppercase">المصادر / Sources</span>
                       <div className="space-y-1.5 mt-1">
-                        {srcs.map(s => (
-                          <div key={s.id} className="text-xs">
-                            <a
-                              href={s.url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-blue-600 hover:text-blue-800 hover:underline"
-                            >
-                              {s.nameEn}
-                            </a>
-                            <span className="text-gray-400 block">{s.nameAr}</span>
-                          </div>
-                        ))}
+                        {srcs.map(s => {
+                          const dotColor = s.currentlyConsumed ? 'bg-green-500' : s.status === 'active' ? 'bg-yellow-400' : 'bg-red-500'
+                          return (
+                            <div key={s.id} className="text-xs flex items-start gap-2">
+                              <span className={`inline-block w-2 h-2 rounded-full mt-1.5 shrink-0 ${dotColor}`} title={s.status} />
+                              <div>
+                                <a href={s.url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 hover:underline">{s.nameEn}</a>
+                                <span className="text-gray-400 block">{s.nameAr}</span>
+                              </div>
+                            </div>
+                          )
+                        })}
                       </div>
                     </div>
                   )}
