@@ -1,5 +1,32 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { severityConfig } from '../utils/interactions.js'
+
+function AnimatedCounter({ end, suffix }) {
+  const [val, setVal] = useState(0)
+  const ref = useRef(null)
+  const done = useRef(false)
+
+  useEffect(() => {
+    if (done.current) return
+    const obs = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        done.current = true
+        let start = 0
+        const step = Math.max(1, Math.floor(end / 30))
+        const interval = setInterval(() => {
+          start += step
+          if (start >= end) { setVal(end); clearInterval(interval) }
+          else setVal(start)
+        }, 30)
+        obs.disconnect()
+      }
+    }, { threshold: 0.5 })
+    if (ref.current) obs.observe(ref.current)
+    return () => obs.disconnect()
+  }, [end])
+
+  return <span ref={ref}>{val}{suffix}</span>
+}
 
 export default function Home({ drugs, diseases, recentlyViewed, onBrowse, onInterview, onPrices, onPharmacopeia, onSearch }) {
   const [quickQuery, setQuickQuery] = useState('')
@@ -46,7 +73,7 @@ export default function Home({ drugs, diseases, recentlyViewed, onBrowse, onInte
         ].map(stat => (
           <div key={stat.labelEn} className={`${stat.color} text-white rounded-xl p-3 md:p-4 text-center`}>
             <div className="text-2xl md:text-3xl mb-1">{stat.icon}</div>
-            <div className="text-xl md:text-2xl font-bold">{stat.value}</div>
+            <div className="text-xl md:text-2xl font-bold"><AnimatedCounter end={stat.value} suffix="" /></div>
             <div className="text-xs md:text-sm text-white/80">{stat.label}</div>
             <div className="text-[10px] text-white/50">{stat.labelEn}</div>
           </div>
