@@ -3,6 +3,8 @@ import { useState, useMemo } from 'react'
 export default function PriceList({ drugs, onViewDrug }) {
   const [query, setQuery] = useState('')
   const [sortBy, setSortBy] = useState('name')
+  const [page, setPage] = useState(1)
+  const PAGE_SIZE = 100
 
   const sorted = useMemo(() => {
     let result = [...drugs].filter(d => d.prices && d.prices.length > 0)
@@ -10,17 +12,27 @@ export default function PriceList({ drugs, onViewDrug }) {
       const q = query.toLowerCase()
       result = result.filter(d =>
         d.nameAr.includes(q) || d.nameEn.toLowerCase().includes(q) ||
-        d.manufacturerEn?.toLowerCase().includes(q) ||
-        d.manufacturerAr?.includes(q)
+        (d.manufacturerEn || '').toLowerCase().includes(q) ||
+        (d.edaBrands || []).some(b => b.toLowerCase().includes(q))
       )
     }
     switch (sortBy) {
-      case 'price-asc': result.sort((a, b) => (a.prices[0]?.price || 0) - (b.prices[0]?.price || 0)); break
-      case 'price-desc': result.sort((a, b) => (b.prices[0]?.price || 0) - (a.prices[0]?.price || 0)); break
+      case 'price-asc': result.sort((a, b) => {
+        const pa = a.edaPriceRange ? a.edaPriceRange[0] : (a.prices[0]?.price || 0)
+        const pb = b.edaPriceRange ? b.edaPriceRange[0] : (b.prices[0]?.price || 0)
+        return pa - pb
+      }); break
+      case 'price-desc': result.sort((a, b) => {
+        const pa = a.edaPriceRange ? a.edaPriceRange[1] : (a.prices[0]?.price || 0)
+        const pb = b.edaPriceRange ? b.edaPriceRange[1] : (b.prices[0]?.price || 0)
+        return pb - pa
+      }); break
       default: result.sort((a, b) => a.nameEn.localeCompare(b.nameEn))
     }
     return result
   }, [drugs, query, sortBy])
+
+  const pageItems = sorted.slice(0, page * PAGE_SIZE)
 
   return (
     <div className="space-y-4">
@@ -30,7 +42,7 @@ export default function PriceList({ drugs, onViewDrug }) {
         <input
           type="text"
           value={query}
-          onChange={e => setQuery(e.target.value)}
+          onChange={e => { setQuery(e.target.value); setPage(1) }}
           placeholder="ابحث باسم الدواء أو الشركة..."
           className="flex-1 px-4 py-2.5 border border-sand-dark rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-gold text-right"
           dir="auto"
@@ -51,28 +63,51 @@ export default function PriceList({ drugs, onViewDrug }) {
       </div>
 
       <div className="bg-white border border-sand-dark rounded-xl overflow-hidden">
-        {sorted.map(drug => (
+        {pageItems.map(drug => (
           <div
             key={drug.id}
             onClick={() => onViewDrug(drug.id)}
             className="flex items-center justify-between px-4 py-3 hover:bg-gray-50 cursor-pointer border-b border-gray-100 last:border-b-0"
           >
-            <div className="flex-1">
+            <div className="flex-1 min-w-0">
               <div className="font-bold text-nile text-sm">{drug.nameAr}</div>
-              <div className="text-xs text-gray-500">{drug.nameEn}</div>
-              <div className="text-xs text-gray-400 mt-0.5">{drug.manufacturerAr || drug.manufacturerEn}</div>
+              <div className="text-xs text-gray-500 truncate">{drug.nameEn}</div>
+              <div className="text-xs text-gray-400 mt-0.5">
+                {drug.edaOnly
+                  ? (drug.edaMfrs || []).join(', ') || 'EDA Listed'
+                  : (drug.manufacturerAr || drug.manufacturerEn)}
+              </div>
             </div>
-            <div className="text-left">
-              {drug.prices.map((p, i) => (
-                <div key={i} className="text-sm">
-                  <span className="font-bold text-gold-dark">{p.price} {p.unit}</span>
-                  <span className="text-xs text-gray-500 mr-1">– {p.form}</span>
-                </div>
-              ))}
+            <div className="text-left shrink-0 mr-3">
+              {drug.edaOnly ? (
+                drug.edaPriceRange.length > 0 && (
+                  <div className="text-sm font-bold text-gold-dark">
+                    EGP {drug.edaPriceRange[0]} – {drug.edaPriceRange[1]}
+                  </div>
+                )
+              ) : (
+                drug.prices.map((p, i) => (
+                  <div key={i} className="text-sm">
+                    <span className="font-bold text-gold-dark">{p.price} {p.unit}</span>
+                    <span className="text-xs text-gray-500 mr-1">– {p.form}</span>
+                  </div>
+                ))
+              )}
             </div>
           </div>
         ))}
       </div>
+
+      {pageItems.length < sorted.length && (
+        <div className="text-center">
+          <button
+            onClick={() => setPage(p => p + 1)}
+            className="px-6 py-2 bg-gold text-white rounded-xl hover:bg-gold-dark transition-colors"
+          >
+            عرض المزيد / Load More ({sorted.length - pageItems.length} متبقي)
+          </button>
+        </div>
+      )}
 
       {sorted.length === 0 && (
         <div className="text-center py-12 text-gray-500">

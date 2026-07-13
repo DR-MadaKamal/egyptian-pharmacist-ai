@@ -23,6 +23,76 @@ export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug
     </div>
   )
 
+  if (drug.edaOnly) {
+    return (
+      <div className="space-y-4">
+        <button onClick={onBack} className="text-nile hover:text-gold-dark font-bold text-sm">
+          ← الرجوع للقائمة / Back to list
+        </button>
+
+        <div className="bg-white border border-sand-dark rounded-xl p-4 md:p-6">
+          <div className="flex items-start gap-4">
+            <div className="text-5xl">💊</div>
+            <div className="flex-1">
+              <h2 className="text-2xl md:text-3xl font-bold text-nile">{drug.nameAr}</h2>
+              <p className="text-gray-500 text-lg">{drug.nameEn}</p>
+              <span className="inline-block bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm mt-2">EDA Listed</span>
+            </div>
+          </div>
+        </div>
+
+        <Section title="🔬 الاسم العلمي / Scientific Name">
+          <Biline label="" ar={drug.scientificNameAr} en={drug.scientificNameEn} />
+        </Section>
+
+        <Section title="📋 معلومات التسجيل / Registration Info">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            {drug.edaBrands && drug.edaBrands.length > 0 && (
+              <div className="bg-gray-50 rounded-lg p-3">
+                <span className="text-xs font-bold text-gray-400 uppercase">🏷 العلامات التجارية / Brand Names</span>
+                <div className="text-sm text-gray-700 mt-1">{drug.edaBrands.join(', ')}</div>
+              </div>
+            )}
+            {drug.edaMfrs && drug.edaMfrs.length > 0 && (
+              <div className="bg-gray-50 rounded-lg p-3">
+                <span className="text-xs font-bold text-gray-400 uppercase">🏭 الشركات المصنعة / Manufacturers</span>
+                <div className="text-sm text-gray-700 mt-1">{drug.edaMfrs.join(', ')}</div>
+              </div>
+            )}
+            {drug.edaRoutes && drug.edaRoutes.length > 0 && (
+              <div className="bg-gray-50 rounded-lg p-3">
+                <span className="text-xs font-bold text-gray-400 uppercase">📦 طرق التعاطي / Routes</span>
+                <div className="text-sm text-gray-700 mt-1">{drug.edaRoutes.join(', ')}</div>
+              </div>
+            )}
+          </div>
+        </Section>
+
+        {drug.edaPriceRange && drug.edaPriceRange.length > 0 && (
+          <Section title="💰 الأسعار / Prices">
+            <div className="text-lg font-bold text-gold-dark">
+              EGP {drug.edaPriceRange[0]} – {drug.edaPriceRange[1]}
+            </div>
+            <p className="text-xs text-gray-500 mt-1">
+              نطاق سعر معتمد من هيئة الدواء المصرية / Price range verified by the Egyptian Drug Authority
+            </p>
+          </Section>
+        )}
+
+        <Section title="⚠️ تنبيه / Notice">
+          <p className="text-sm text-gray-500">
+            هذا الدواء مسجل في قاعدة بيانات هيئة الدواء المصرية. لا تتوفر معلومات سريرية مفصلة.
+            يُرجى استشارة الطبيب أو الصيدلي للحصول على معلومات إضافية.
+          </p>
+          <p className="text-xs text-gray-400 mt-1">
+            This drug is registered in the Egyptian Drug Authority database. No detailed clinical information is available.
+            Please consult a physician or pharmacist for additional information.
+          </p>
+        </Section>
+      </div>
+    )
+  }
+
   return (
     <div className="space-y-4">
       <button onClick={onBack} className="text-nile hover:text-gold-dark font-bold text-sm">

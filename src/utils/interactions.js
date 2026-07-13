@@ -96,6 +96,7 @@ export function searchDrugs(drugs, query) {
   return drugs.filter(d => {
     if (d.nameEn.toLowerCase().includes(q) || d.nameAr.includes(q) ||
         d.category.toLowerCase().includes(q) || d.categoryAr.includes(q)) return true
+    if (d.edaBrands && d.edaBrands.some(b => b.toLowerCase().includes(q))) return true
     const aliases = _aliasMap[d.id]
     return aliases && aliases.some(a => a.includes(q))
   })

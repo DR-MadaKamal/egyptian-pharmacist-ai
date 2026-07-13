@@ -1,0 +1,56 @@
+import fs from 'fs'
+import path from 'path'
+
+const EDA_URL = 'https://raw.githubusercontent.com/karem505/egyptian-drug-database/main/data/egyptian-drugs.json'
+const EDA_FILE = process.argv[2] || resolveEdaPath()
+const OUT_DIR = path.resolve('public/data')
+const OUT_FILE = path.join(OUT_DIR, 'eda-drugs.json')
+
+function resolveEdaPath() {
+  const local = path.resolve('..', '..', 'C:\\Users\\mada_\\AppData\\Local\\Temp\\opencode\\egyptian-drugs.json')
+  if (fs.existsSync(local)) return local
+  return EDA_URL
+}
+
+async function main() {
+  let eda
+  if (EDA_FILE.startsWith('http')) {
+    const res = await fetch(EDA_FILE)
+    eda = await res.json()
+  } else {
+    eda = JSON.parse(fs.readFileSync(EDA_FILE, 'utf-8'))
+  }
+
+  const map = new Map()
+  for (const r of eda) {
+    const key = r.scientific_name.toUpperCase().replace(/\s+/g, ' ').trim()
+    if (!map.has(key)) {
+      map.set(key, { brands: new Set(), mfrs: new Set(), prices: [], routes: new Set() })
+    }
+    const d = map.get(key)
+    const brand = r.commercial_name_en.replace(/\s*\(.*?\)/g, '').trim()
+    if (brand) d.brands.add(brand)
+    if (r.manufacturer) d.mfrs.add(r.manufacturer)
+    if (r.price_egp) d.prices.push(r.price_egp)
+    if (r.route) d.routes.add(r.route)
+  }
+
+  const out = Array.from(map.entries()).map(([key, d]) => {
+    const brands = [...d.brands].slice(0, 5).filter(b => b)
+    const mfrs = [...d.mfrs].filter(Boolean).slice(0, 3)
+    const prices = d.prices.length > 0 ? [Math.min(...d.prices), Math.max(...d.prices)] : []
+    const routes = [...d.routes].filter(Boolean)
+    const o = { s: key }
+    if (brands.length) o.b = brands
+    if (mfrs.length) o.m = mfrs
+    if (prices.length) o.p = prices
+    if (routes.length) o.r = routes
+    return o
+  })
+
+  fs.mkdirSync(OUT_DIR, { recursive: true })
+  fs.writeFileSync(OUT_FILE, JSON.stringify(out), 'utf-8')
+  console.log(`Generated ${OUT_FILE}: ${out.length} drugs (${Math.round(Buffer.byteLength(JSON.stringify(out), 'utf-8') / 1024)} KB)`)
+}
+
+main().catch(console.error)
