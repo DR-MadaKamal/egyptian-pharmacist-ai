@@ -36,7 +36,16 @@ export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug
             <div className="flex-1">
               <h2 className="text-2xl md:text-3xl font-bold text-nile">{drug.nameAr}</h2>
               <p className="text-gray-500 text-lg">{drug.nameEn}</p>
-              <span className="inline-block bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm mt-2">EDA Listed</span>
+              <div className="flex flex-wrap gap-2 mt-2">
+                {drug.dataSource === 'MOHMED' ? (
+                  <span className="inline-block bg-purple-50 text-purple-700 px-3 py-1 rounded-full text-sm">Drug Guide 2024</span>
+                ) : (
+                  <span className="inline-block bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm">EDA Listed</span>
+                )}
+                {drug.edaGroups && drug.edaGroups.length > 0 && (
+                  <span className="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-xs">{drug.edaGroups[0]}</span>
+                )}
+              </div>
             </div>
           </div>
         </div>
@@ -65,8 +74,20 @@ export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug
                 <div className="text-sm text-gray-700 mt-1">{drug.edaRoutes.join(', ')}</div>
               </div>
             )}
+            {drug.edaGroups && drug.edaGroups.length > 0 && (
+              <div className="bg-gray-50 rounded-lg p-3">
+                <span className="text-xs font-bold text-gray-400 uppercase">🏷 التصنيف / Category</span>
+                <div className="text-sm text-gray-700 mt-1">{drug.edaGroups.join(', ')}</div>
+              </div>
+            )}
           </div>
         </Section>
+
+        {drug.pharmacology && (
+          <Section title="📖 معلومات دوائية / Pharmacology">
+            <p className="text-sm text-gray-700">{drug.pharmacology}</p>
+          </Section>
+        )}
 
         {drug.edaPriceRange && drug.edaPriceRange.length > 0 && (
           <Section title="💰 الأسعار / Prices">
@@ -74,19 +95,23 @@ export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug
               EGP {drug.edaPriceRange[0]} – {drug.edaPriceRange[1]}
             </div>
             <p className="text-xs text-gray-500 mt-1">
-              نطاق سعر معتمد من هيئة الدواء المصرية / Price range verified by the Egyptian Drug Authority
+              {drug.dataSource === 'MOHMED'
+                ? 'السعر حسب دليل الأدوية 2024 (قد يكون قديماً) / Price from 2024 Drug Guide (may be outdated)'
+                : 'نطاق سعر معتمد من هيئة الدواء المصرية / Price range verified by the Egyptian Drug Authority'}
             </p>
           </Section>
         )}
 
         <Section title="⚠️ تنبيه / Notice">
           <p className="text-sm text-gray-500">
-            هذا الدواء مسجل في قاعدة بيانات هيئة الدواء المصرية. لا تتوفر معلومات سريرية مفصلة.
-            يُرجى استشارة الطبيب أو الصيدلي للحصول على معلومات إضافية.
+            {drug.dataSource === 'MOHMED'
+              ? 'هذا الدواء من دليل الأدوية المصري (أسعار 2024). لا تتوفر معلومات سريرية مفصلة. يُرجى استشارة الطبيب أو الصيدلي.'
+              : 'هذا الدواء مسجل في قاعدة بيانات هيئة الدواء المصرية. لا تتوفر معلومات سريرية مفصلة. يُرجى استشارة الطبيب أو الصيدلي للحصول على معلومات إضافية.'}
           </p>
           <p className="text-xs text-gray-400 mt-1">
-            This drug is registered in the Egyptian Drug Authority database. No detailed clinical information is available.
-            Please consult a physician or pharmacist for additional information.
+            {drug.dataSource === 'MOHMED'
+              ? 'This drug is from the Egypt Drugs Guide (2024 prices). No detailed clinical information available. Please consult a physician or pharmacist.'
+              : 'This drug is registered in the Egyptian Drug Authority database. No detailed clinical information is available. Please consult a physician or pharmacist for additional information.'}
           </p>
         </Section>
       </div>
