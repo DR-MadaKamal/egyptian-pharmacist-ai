@@ -40,6 +40,7 @@ export async function loadEdaDrugs() {
     edaMfrs: item.m || [],
     edaRoutes: item.r || [],
     edaPriceRange: item.p || [],
+    constituents: item.c || [],
   }))
   return edaCache
 }
@@ -51,9 +52,10 @@ export function getEdaCache() {
 export function searchEda(edaDrugs, query) {
   const q = query.toLowerCase().trim()
   if (!q) return edaDrugs || []
-  return (edaDrugs || []).filter(d =>
-    d.nameEn.toLowerCase().includes(q) ||
-    d.nameAr.includes(q) ||
-    d.edaBrands.some(b => b.toLowerCase().includes(q))
-  )
+  return (edaDrugs || []).filter(d => {
+    if (d.nameEn.toLowerCase().includes(q) || d.nameAr.includes(q)) return true
+    if (d.edaBrands.some(b => b.toLowerCase().includes(q))) return true
+    if (d.constituents && d.constituents.some(c => c.toLowerCase().includes(q))) return true
+    return false
+  })
 }

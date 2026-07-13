@@ -17,14 +17,21 @@ export default function DrugBrowser({ drugs, onViewDrug }) {
   const filteredEnriched = useMemo(() => {
     const q = query.toLowerCase().trim()
     if (!q) return enriched
-    return enriched.filter(d =>
-      d.nameEn.toLowerCase().includes(q) ||
-      d.nameAr.includes(q) ||
-      d.category.toLowerCase().includes(q) ||
-      d.categoryAr.includes(q) ||
-      (edaSupplement.find(e => e.id === d.id)?.brandAliases || []).some(a =>
-        (a.en || a.ar).toLowerCase().includes(q))
-    )
+    return enriched.filter(d => {
+      if (d.nameEn.toLowerCase().includes(q) || d.nameAr.includes(q)) return true
+      if (d.category.toLowerCase().includes(q) || d.categoryAr.includes(q)) return true
+      if (d.scientificNameEn?.toLowerCase().includes(q) || d.scientificNameAr?.includes(q)) return true
+      if (d.activeIngredientEn?.toLowerCase().includes(q) || d.activeIngredientAr?.includes(q)) return true
+      // Search individual constituents in scientific name (multi-ingredient drugs)
+      if (d.scientificNameEn) {
+        const parts = d.scientificNameEn.split('+').map(s => s.trim())
+        if (parts.some(p => p.toLowerCase().includes(q))) return true
+      }
+      // Search EDA supplement brand aliases
+      if ((edaSupplement.find(e => e.id === d.id)?.brandAliases || []).some(a =>
+        (a.en || a.ar).toLowerCase().includes(q))) return true
+      return false
+    })
   }, [enriched, query])
 
   const filteredEda = useMemo(() => {

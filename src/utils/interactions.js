@@ -94,8 +94,16 @@ export function searchDrugs(drugs, query) {
   const q = query.toLowerCase().trim()
   if (!q) return drugs
   return drugs.filter(d => {
-    if (d.nameEn.toLowerCase().includes(q) || d.nameAr.includes(q) ||
-        d.category.toLowerCase().includes(q) || d.categoryAr.includes(q)) return true
+    if (d.nameEn.toLowerCase().includes(q) || d.nameAr.includes(q)) return true
+    if (d.category?.toLowerCase().includes(q) || d.categoryAr?.includes(q)) return true
+    if (d.scientificNameEn?.toLowerCase().includes(q) || d.scientificNameAr?.includes(q)) return true
+    if (d.activeIngredientEn?.toLowerCase().includes(q) || d.activeIngredientAr?.includes(q)) return true
+    // Search individual constituents (multi-ingredient drugs)
+    if (d.scientificNameEn) {
+      const parts = d.scientificNameEn.split('+').map(s => s.trim())
+      if (parts.some(p => p.toLowerCase().includes(q))) return true
+    }
+    if (d.constituents && d.constituents.some(c => c.toLowerCase().includes(q))) return true
     if (d.edaBrands && d.edaBrands.some(b => b.toLowerCase().includes(q))) return true
     const aliases = _aliasMap[d.id]
     return aliases && aliases.some(a => a.includes(q))
