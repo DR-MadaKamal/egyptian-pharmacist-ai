@@ -10,60 +10,60 @@ export const edaSupplement = [
     "prices": [],
     "brandAliases": [
       {
-        "en": "COUMADIN 5 MG 28 TABLETS (ILLEGAL IMPORT)",
-        "ar": "كومادين"
+        "en": "MAREVAN 1 MG 100 TAB.",
+        "ar": ""
       },
       {
-        "en": "HAEMOFARIN 1MG 100 TAB.",
-        "ar": "هايموفارين"
+        "en": "MAREVAN 3 MG 100 TAB.",
+        "ar": ""
       },
       {
-        "en": "HAEMOFARIN 2MG 100 TAB.",
-        "ar": "هايموفارين"
-      },
-      {
-        "en": "HAEMOFARIN 3MG 100 TAB.",
-        "ar": "هايموفارين"
-      },
-      {
-        "en": "HAEMOFARIN 5MG 100 TAB.",
-        "ar": "هايموفارين"
-      },
-      {
-        "en": "MAREVAN 1 MG 100 TAB. (N/A)",
-        "ar": "ماريفان"
-      },
-      {
-        "en": "MAREVAN 1 MG 102 TABS.",
-        "ar": "ماريفان"
-      },
-      {
-        "en": "MAREVAN 3 MG 100 TAB. (N/A)",
-        "ar": "ماريفان"
-      },
-      {
-        "en": "MAREVAN 3 MG 102 TABS.",
-        "ar": "ماريفان"
-      },
-      {
-        "en": "MAREVAN 5 MG 100 TAB. (N/A)",
-        "ar": "ماريفان"
-      },
-      {
-        "en": "MAREVAN 5 MG 102 TABS.",
-        "ar": "ماريفان"
+        "en": "MAREVAN 5 MG 100 TAB.",
+        "ar": ""
       },
       {
         "en": "MARIVANIL 1MG 50 TAB.",
-        "ar": "ماريفانيل"
+        "ar": ""
       },
       {
         "en": "MARIVANIL 3MG 50 TAB.",
-        "ar": "ماريفانيل"
+        "ar": ""
       },
       {
         "en": "MARIVANIL 5MG 50 TAB.",
-        "ar": "ماريفانيل"
+        "ar": ""
+      },
+      {
+        "en": "MAREVAN 1 MG 102 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "MAREVAN 3 MG 102 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "MAREVAN 5 MG 102 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "HAEMOFARIN 1MG 100 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "HAEMOFARIN 2MG 100 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "HAEMOFARIN 3MG 100 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "HAEMOFARIN 5MG 100 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "COUMADIN 5 MG 28 TABLETS",
+        "ar": ""
       }
     ],
     "edaPrices": [
@@ -94,18 +94,40 @@ export const edaSupplement = [
     "id": "2",
     "nameEn": "Aspirin",
     "nameAr": "أسبرين",
-    "prices": [],
+    "prices": [
+      {
+        "form": "أقراص",
+        "formEn": "Tablets",
+        "price": 78,
+        "unit": "EGP"
+      }
+    ],
     "brandAliases": [
       {
-        "en": "ASPIRIN PROTECT 100 MG 30 GASTRO-RESISTANT TABS.",
-        "ar": "أسبيرين بروتيكت 30 جاسترو-ريسيستانت"
+        "en": "VEGASKINE-D 20 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "VEGASKINE-D 240 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "ALEXOPRINE 75MG 200 CHEW. TAB.",
+        "ar": ""
+      },
+      {
+        "en": "ALEXOPRINE FORTE 300MG 200 TAB.",
+        "ar": ""
       }
     ],
     "edaPrices": [
-      78
+      23,
+      120,
+      140,
+      276
     ],
     "edaManufacturers": [
-      "MEMPHIS > BAYER BITTERFELD GMBH-GERMANY"
+      "ALEXANDRIA"
     ],
     "verified": true
   },
@@ -113,18 +135,174 @@ export const edaSupplement = [
     "id": "3",
     "nameEn": "Clopidogrel",
     "nameAr": "كلوبيدوجريل",
-    "prices": [],
+    "prices": [
+      {
+        "form": "أقراص",
+        "formEn": "Tablets",
+        "price": 32.4,
+        "unit": "EGP"
+      }
+    ],
     "brandAliases": [
+      {
+        "en": "PLATENOR 75MG 30 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "CLATEX 75 MG 30 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "IDIAVIX 75MG 10 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "STROKA 75MG 30 F.C. TAB.",
+        "ar": ""
+      },
+      {
+        "en": "THROMBO 75MG 30 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "MYOGREL 75MG 30 F.C. TAB.",
+        "ar": ""
+      },
+      {
+        "en": "PLAVIX 75 MG 28 F.C.TABS.",
+        "ar": ""
+      },
+      {
+        "en": "CONTRASTROKE 75MG 30 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "PLAVIX 300 MG 30 F.C.TABS.",
+        "ar": ""
+      },
+      {
+        "en": "SIGAGREL 75MG 10 F.C. TAB.",
+        "ar": ""
+      },
+      {
+        "en": "FIBROGREL 75MG 28 F.C. TAB.",
+        "ar": ""
+      },
+      {
+        "en": "ORGISTROK 75 MG 30 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "PLAVICARD 75MG 30 F.C. TAB.",
+        "ar": ""
+      },
+      {
+        "en": "SIGMAGREL 75MG 20 F.C. TAB.",
+        "ar": ""
+      },
+      {
+        "en": "BLOTAGRIL 75MG 30 F.C. TABS.",
+        "ar": ""
+      },
+      {
+        "en": "CLOPACIRC 75 MG 30 F.C.TABS.",
+        "ar": "كلوباسيرك"
+      },
+      {
+        "en": "CLOPEX AGREL 75MG 30 F.C.TAB",
+        "ar": "كلوبيكس أجريل"
+      },
+      {
+        "en": "ITOLAVIX 75 MG 30 F.C. TABS.",
+        "ar": "إتولافيكس"
+      },
+      {
+        "en": "VEXIDOGREL 75 MG 30 F.C. TAB",
+        "ar": "فيكسيدوجريل"
+      },
+      {
+        "en": "PLASMOS 75/75MG 10 F.C. TABS.",
+        "ar": ""
+      },
+      {
+        "en": "ANGOSMOOTH 75MG 30 F.C. TABS.",
+        "ar": "أنجوسموث"
+      },
+      {
+        "en": "BORGAVIX 75MG 30 F.C. TABLETS",
+        "ar": "بورجافيكس"
+      },
       {
         "en": "CLOPIDOGREL 75MG 10 F.C. TAB.",
         "ar": "كلوبيدوجريل"
+      },
+      {
+        "en": "PLAVEDAMOL 75MG 60 F.C. TABS.",
+        "ar": "بلافيدامول"
+      },
+      {
+        "en": "PLAVICTONAL 75MG 20 F.C. TAB.",
+        "ar": "بلافيكتونال"
+      },
+      {
+        "en": "COMPLAVIN 75/100 MG 30 F.C.TABS.",
+        "ar": ""
+      },
+      {
+        "en": "MYOGREL PLUS 75/75MG 30 F.C. TAB.",
+        "ar": ""
       }
     ],
     "edaPrices": [
-      32.4
+      30,
+      32.4,
+      33,
+      44,
+      48,
+      54,
+      60,
+      66,
+      75,
+      78,
+      85.5,
+      87,
+      108,
+      117,
+      120,
+      123,
+      145,
+      145.5,
+      150,
+      171,
+      207,
+      311,
+      331,
+      704
     ],
     "edaManufacturers": [
-      "FUTURE PHARMACEUTICAL INDUSTRIES (FPI) > NOVARTIS"
+      "MASH PREMIERE",
+      "MEDIZEN PHARMACEUTICAL INDUSTRIES",
+      "BORG",
+      "EGPI",
+      "COPAD PHARMA",
+      "MARCYRL PHARMACEUTICAL INDUSTRIES (MPI)",
+      "FUTURE PHARMACEUTICAL INDUSTRIES (FPI) > NOVARTIS",
+      "GYPTO PHARMA",
+      "UNIPHARMA CO. > NOVELL PHARMA",
+      "INTERNATIONAL DRUG AGENCY (IDI)",
+      "SIGMA > INTERNATIONAL TRADING OFFICE",
+      "ADWIA",
+      "EGPI > MEDISAVE DEVELOPED",
+      "HI-PHARM > EGYPHARMA-EGYPT",
+      "EVA PHARMA",
+      "MULTICARE",
+      "WESTERN PHARMACEUTICALS INDUSTRIES",
+      "SANOFI WINTHROP > SANOFI",
+      "SIGMA",
+      "MULTI-APEX",
+      "EIPICO",
+      "EUROPEAN EGYPTIAN PHARM. IND. > TECHNOPHARM",
+      "AL ESRAA PHARMACEUTICAL OPTIMA"
     ],
     "verified": true
   },
@@ -135,76 +313,184 @@ export const edaSupplement = [
     "prices": [],
     "brandAliases": [
       {
-        "en": "ALEXODIAB 1000MG 30 TABS",
-        "ar": "أليكسودياب"
-      },
-      {
-        "en": "ALEXODIAB 500 MG 30 TABS",
-        "ar": "أليكسودياب"
+        "en": "DIAQUIT 850MG 30 TAB.",
+        "ar": ""
       },
       {
         "en": "AMOPHAGE 500MG 30 TAB.",
-        "ar": "أموفاجي"
+        "ar": ""
       },
       {
-        "en": "ANDOGLYCEMIC XR 1000MG 20 EXT. REL. TABS.",
-        "ar": "أندوجليسيميك كسر 20 إكست. ريل"
+        "en": "DIAPHAGE 500MG 20 TAB.",
+        "ar": ""
       },
       {
-        "en": "ANDOGLYCEMIC XR 500MG 30 EXT. REL. TABS.",
-        "ar": "أندوجليسيميك كسر 30 إكست. ريل"
+        "en": "MEPAPHAGE 500MG 30 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "ALEXODIAB 1000MG 30 TABS",
+        "ar": ""
+      },
+      {
+        "en": "ALEXODIAB 500 MG 30 TABS",
+        "ar": ""
+      },
+      {
+        "en": "CIDOPHAGE 500 MG 10 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "ENGILOR 5/500 MG 30 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "MEGLUCON 850MG 30 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "GLYBFORMIN 5/500MG 30 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "METCLAMIDE 5/500MG 30 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "ENGILOR 2.5/500 MG 30 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "GLIFORM 2.5/500MG 20 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "DIAPHAGE 1000MG 30 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "DIAPHAGE 850MG S.R. 30 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "KELVAMET MR 500 MG 30 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "GLUOKAN 5/500MG 30 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "CIDOPHAGE 850MG 30 F.C. TABS",
+        "ar": ""
+      },
+      {
+        "en": "CIDOPHAGE 850MG 60 F.C. TABS",
+        "ar": ""
+      },
+      {
+        "en": "KELVAMET MR 1000 MG 30 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "DIAVANCE 5/500MG 30 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "METCLAMIDE 2.5/500MG 30 TAB.",
+        "ar": ""
       },
       {
         "en": "CIDOPHAGE 1000MG 20 F.C. TABS",
-        "ar": "سيدوفاجي"
+        "ar": ""
+      },
+      {
+        "en": "DOLCYL M 2/500MG 20 F.C.TABS.",
+        "ar": ""
+      },
+      {
+        "en": "METOGLIM M 3/500MG 30 F.C.TAB",
+        "ar": ""
+      },
+      {
+        "en": "GLIMET 2.5/400 MG 30 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "GLYBOFEN 5/500MG 30 F.C.TABS.",
+        "ar": ""
+      },
+      {
+        "en": "GLYBOFEN 5/850MG 30 F.C.TABS.",
+        "ar": ""
+      },
+      {
+        "en": "PIOMET 15/500 MG 10 F.C.TABS.",
+        "ar": ""
+      },
+      {
+        "en": "JANUMET 50/500MG 56 F.C. TAB.",
+        "ar": ""
+      },
+      {
+        "en": "JANUMET 50/850MG 56 F.C. TAB.",
+        "ar": ""
+      },
+      {
+        "en": "XIGDUO 5/1000 MG 56 F.C.TABS.",
+        "ar": ""
       },
       {
         "en": "CIDOPHAGE 1000MG 30 F.C. TABS",
         "ar": "سيدوفاجي"
       },
       {
-        "en": "CIDOPHAGE 500 MG 10 TAB.",
-        "ar": "سيدوفاجي"
+        "en": "GLUCOPHAGE XR 500 MG 30 TABS.",
+        "ar": "جلوكوفاجي كسر"
       },
       {
-        "en": "CIDOPHAGE 850MG 30 F.C. TABS",
-        "ar": "سيدوفاجي"
+        "en": "AMARYL M 2/500 MG 30 F.C.TABS.",
+        "ar": ""
       },
       {
-        "en": "CIDOPHAGE 850MG 60 F.C. TABS",
-        "ar": "سيدوفاجي"
+        "en": "DOLCYL M 2/1000MG 20 F.C.TABS.",
+        "ar": ""
       },
       {
-        "en": "DIAPHAGE 1000MG 30 F.C.TAB.",
-        "ar": "ديافاجي"
+        "en": "AMOPHAGE EXTRA 5/500MG 30 TAB.",
+        "ar": ""
       },
       {
-        "en": "DIAPHAGE 500MG 20 TAB.",
-        "ar": "ديافاجي"
+        "en": "DIAVANCE 2.5/500MG 30 F.C.TAB.",
+        "ar": ""
       },
       {
-        "en": "DIAPHAGE 850MG S.R. 30 TAB.",
-        "ar": "ديافاجي س.ر"
+        "en": "GLUCOVANCE 500/5MG 30 F.C.TAB.",
+        "ar": ""
       },
       {
-        "en": "DIAQUIT 850MG 30 TAB.",
-        "ar": "دياكويت"
+        "en": "GLYBOFEN 5/1000MG 30 F.C.TABS.",
+        "ar": ""
+      },
+      {
+        "en": "GLIPTUS PLUS 50/500MG 30 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "VILDAFORMIN 50/1000MG 30 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "VILGAT PLUS 50/500 MG 30 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "JANUMET 50/1000MG 56 F.C. TAB.",
+        "ar": ""
       },
       {
         "en": "EAFORMEAT 1000MG 10 F.C. TABS.",
         "ar": "إافورميات"
-      },
-      {
-        "en": "GLUCOLIGHT XR 1000MG 30 EX. REL .F.C. TAB.",
-        "ar": "جلوكوليغت كسر 30 إكس. ريل"
-      },
-      {
-        "en": "GLUCOLIGHT XR 500MG 30 F.C.TAB.",
-        "ar": "جلوكوليغت كسر"
-      },
-      {
-        "en": "GLUCOPHAGE 1000 MG 30 F.C.TABS.",
-        "ar": "جلوكوفاجي"
       },
       {
         "en": "GLUCOPHAGE 500 MG 50 F.C.TABS.",
@@ -215,776 +501,16 @@ export const edaSupplement = [
         "ar": "جلوكوفاجي كسر"
       },
       {
-        "en": "GLUCOPHAGE XR 500 MG 30 TABS.",
-        "ar": "جلوكوفاجي كسر"
-      },
-      {
-        "en": "JASPROMIN 1000MG EXT. REL. 100 F.C.TAB.",
-        "ar": "جاسبرومين إكست. ريل"
-      },
-      {
-        "en": "KELVAMET MR 1000 MG 30 TABS.",
-        "ar": "كيلفاميت مر"
-      },
-      {
-        "en": "KELVAMET MR 500 MG 30 TABS.",
-        "ar": "كيلفاميت مر"
-      },
-      {
-        "en": "MAXOPHAGE XR 1000MG 30 EXT. REL. TABS.",
-        "ar": "ماكسوفاجي كسر 30 إكست. ريل"
-      },
-      {
-        "en": "MEGLUCON 850MG 30 F.C.TAB.",
-        "ar": "ميجلوكون"
-      },
-      {
-        "en": "MEPAPHAGE 500MG 30 TAB.",
-        "ar": "ميبافاجي"
-      },
-      {
-        "en": "MEPAPHAGE XR 1000MG 30 F.C.TAB.",
-        "ar": "ميبافاجي كسر"
-      },
-      {
         "en": "MEPAPHAGE XR 850MG 30 F.C.TAB.",
         "ar": "ميبافاجي كسر"
       },
       {
-        "en": "METFORMIN-EL NASR 500MG 200 TAB.",
-        "ar": "ميتفورمين-إل ناسر"
-      },
-      {
-        "en": "METFORMIN-EVA XR 1000 MG 30 TABS.",
-        "ar": "ميتفورمين-إفا كسر"
-      },
-      {
-        "en": "METFORMIN-EVA XR 500 MG 30 TABS.",
-        "ar": "ميتفورمين-إفا كسر"
-      },
-      {
-        "en": "METFORMIN-EVA XR 750 MG 30 TABS.",
-        "ar": "ميتفورمين-إفا كسر"
-      },
-      {
-        "en": "METIANORMIN 1000 MG 30 EXT. REL. F.C.TABS.",
-        "ar": "ميتيانورمين 30 إكست. ريل"
-      },
-      {
-        "en": "METIANORMIN 500 MG 30 EXT. REL. F.C.TABS.",
-        "ar": "ميتيانورمين 30 إكست. ريل"
-      },
-      {
-        "en": "METIANORMIN 750 MG 30 EXT. REL. F.C.TABS.",
-        "ar": "ميتيانورمين 30 إكست. ريل"
-      },
-      {
-        "en": "AMARYL M 2/500 MG 30 F.C.TABS.",
-        "ar": "أماريل م 2/"
-      },
-      {
-        "en": "DOLCYL M 2/1000MG 20 F.C.TABS.",
-        "ar": "دولسيل م 2/"
-      },
-      {
-        "en": "DOLCYL M 2/500MG 20 F.C.TABS.",
-        "ar": "دولسيل م 2/"
-      },
-      {
-        "en": "GLUCORYL PLUS 1/500 MG 30 F.C. TABS.",
-        "ar": "جلوكوريل بلوس 1/"
-      },
-      {
-        "en": "GLUCORYL PLUS 2/500 MG 30 F.C. TABS.",
-        "ar": "جلوكوريل بلوس 2/"
-      },
-      {
-        "en": "METOGLIM M 3/500MG 30 F.C.TAB",
-        "ar": "ميتوجليم م 3/"
-      },
-      {
         "en": "AMOPHAGE EXTRA 2.5/500MG 30 TAB",
-        "ar": "أموفاجي إكسترا 2.5/"
-      },
-      {
-        "en": "AMOPHAGE EXTRA 5/500MG 30 TAB.",
-        "ar": "أموفاجي إكسترا 5/"
+        "ar": ""
       },
       {
         "en": "DIAVANCE 1.25/250MG 30 F.C.TAB.",
-        "ar": "ديافانسي 1.25/"
-      },
-      {
-        "en": "DIAVANCE 2.5/500MG 30 F.C.TAB.",
-        "ar": "ديافانسي 2.5/"
-      },
-      {
-        "en": "DIAVANCE 5/500MG 30 F.C.TAB.",
-        "ar": "ديافانسي 5/"
-      },
-      {
-        "en": "EUGLUMIDE PLUS 2.5/500 MG 30 F.C. TABS.",
-        "ar": "إوجلوميدي بلوس 2.5/"
-      },
-      {
-        "en": "EUGLUMIDE PLUS 5/500 MG 30 F.C. TABS.",
-        "ar": "إوجلوميدي بلوس 5/"
-      },
-      {
-        "en": "GLIMET 2.5/400 MG 30 F.C.TAB.",
-        "ar": "جليميت 2.5/"
-      },
-      {
-        "en": "GLIMET FORTE 5/800 MG 30 F.C.TAB.",
-        "ar": "جليميت فورتي 5/"
-      },
-      {
-        "en": "GLUCOVANCE 1000/5MG 30 F.C.TAB.",
-        "ar": "جلوكوفانسي 1000/"
-      },
-      {
-        "en": "GLUCOVANCE 500/2.5MG 30 F.C.TAB.",
-        "ar": "جلوكوفانسي 500/"
-      },
-      {
-        "en": "GLUCOVANCE 500/5MG 30 F.C.TAB.",
-        "ar": "جلوكوفانسي 500/"
-      },
-      {
-        "en": "GLUOKAN 5/500MG 30 F.C.TAB.",
-        "ar": "جلووكان 5/"
-      },
-      {
-        "en": "GLYBFORMIN 5/500MG 30 TAB.",
-        "ar": "جليبفورمين 5/"
-      },
-      {
-        "en": "GLYBOFEN 2.5/500MG 30 F.C.TABS.",
-        "ar": "جليبوفين 2.5/"
-      },
-      {
-        "en": "GLYBOFEN 5/1000MG 30 F.C.TABS.",
-        "ar": "جليبوفين 5/"
-      },
-      {
-        "en": "GLYBOFEN 5/500MG 30 F.C.TABS.",
-        "ar": "جليبوفين 5/"
-      },
-      {
-        "en": "GLYBOFEN 5/850MG 30 F.C.TABS. (N/A YET)",
-        "ar": "جليبوفين 5/"
-      },
-      {
-        "en": "MEBURIDE 2.5/500MG 20 F.C. TAB.",
-        "ar": "ميبوريدي 2.5/"
-      },
-      {
-        "en": "METCLAMIDE 2.5/500MG 30 TAB.",
-        "ar": "ميتكلاميدي 2.5/"
-      },
-      {
-        "en": "METCLAMIDE 5/500MG 30 TAB.",
-        "ar": "ميتكلاميدي 5/"
-      },
-      {
-        "en": "ANDOFLOZIN XR 12.5/1000 MG 20 F.C. TABS.",
-        "ar": "أندوفلوزين كسر 12.5/"
-      },
-      {
-        "en": "ANDOFLOZIN XR 25/1000 MG 20 F.C. TABS.",
-        "ar": "أندوفلوزين كسر 25/"
-      },
-      {
-        "en": "ATOMETAFLOZINE 12.5/1000MG 30 F.C. TABS.",
-        "ar": "أتوميتافلوزيني 12.5/"
-      },
-      {
-        "en": "ATOMETAFLOZINE 12.5/500MG 30 F.C. TABS.",
-        "ar": "أتوميتافلوزيني 12.5/"
-      },
-      {
-        "en": "EMPAGLIFORM 12.5/1000 MG 30 F.C. TABS.",
-        "ar": "إمباجليفورم 12.5/"
-      },
-      {
-        "en": "EMPAGLIFORM 12.5/500 MG 30 F.C. TABS.",
-        "ar": "إمباجليفورم 12.5/"
-      },
-      {
-        "en": "EMPAGLIFORM 5/1000 MG 30 F.C. TABS.",
-        "ar": "إمباجليفورم 5/"
-      },
-      {
-        "en": "EMPAGLIFORM 5/500 MG 30 F.C. TABS.",
-        "ar": "إمباجليفورم 5/"
-      },
-      {
-        "en": "EMPAGLIFORM XR 10/1000 MG 30 F.C. TABS.",
-        "ar": "إمباجليفورم كسر 10/"
-      },
-      {
-        "en": "EMPAGLIFORM XR 25/1000 MG 30 F.C. TABS.",
-        "ar": "إمباجليفورم كسر 25/"
-      },
-      {
-        "en": "GLIFLOZAMET XR 12.5/1000 MG 30 F.C.TABS.",
-        "ar": "جليفلوزاميت كسر 12.5/"
-      },
-      {
-        "en": "GLIFLOZAMET XR 25/1000 MG 30 F.C.TABS.",
-        "ar": "جليفلوزاميت كسر 25/"
-      },
-      {
-        "en": "GLUCOADJUST 12.5/500 MG 30 F.C. TABS.",
-        "ar": "جلوكوادجوست 12.5/"
-      },
-      {
-        "en": "GLUCOADJUST 5/500 MG 30 F.C. TABS.",
-        "ar": "جلوكوادجوست 5/"
-      },
-      {
-        "en": "MELLITOFIX MET 12.5/1000 MG 30 F.C. TABS.",
-        "ar": "ميلليتوفيكس ميت 12.5/"
-      },
-      {
-        "en": "MELLITOFIX MET 12.5/500 MG 30 F.C. TABS.",
-        "ar": "ميلليتوفيكس ميت 12.5/"
-      },
-      {
-        "en": "MELLITOFIX MET 5/1000 MG 30 F.C. TABS.",
-        "ar": "ميلليتوفيكس ميت 5/"
-      },
-      {
-        "en": "MELLITOFIX MET 5/500 MG 30 F.C. TABS.",
-        "ar": "ميلليتوفيكس ميت 5/"
-      },
-      {
-        "en": "MELLITOFIX MET XR 12.5/1000 MG 30 F.C. TABS.",
-        "ar": "ميلليتوفيكس ميت كسر 12.5/"
-      },
-      {
-        "en": "RAMETALINA XR 10/1000 MG 30 EXT. REL. F.C. TABS.",
-        "ar": "راميتالينا كسر 10/ 30 إكست. ريل"
-      },
-      {
-        "en": "RAMETALINA XR 12.5/1000 MG 30 EXT. REL. F.C. TABS.",
-        "ar": "راميتالينا كسر 12.5/ 30 إكست. ريل"
-      },
-      {
-        "en": "RAMETALINA XR 25/1000 MG 30 EXT. REL. F.C. TABS.",
-        "ar": "راميتالينا كسر 25/ 30 إكست. ريل"
-      },
-      {
-        "en": "RAMETALINA XR 5/1000 MG 30 EXT. REL. F.C. TABS.",
-        "ar": "راميتالينا كسر 5/ 30 إكست. ريل"
-      },
-      {
-        "en": "SYNJARDY 12.5/1000 MG 60 F.C. TABS.",
-        "ar": "سينجاردي 12.5/"
-      },
-      {
-        "en": "SYNJARDY 12.5/850 MG 60 F.C. TABS.",
-        "ar": "سينجاردي 12.5/"
-      },
-      {
-        "en": "SYNJARDY 5/1000 MG 60 F.C. TABS.",
-        "ar": "سينجاردي 5/"
-      },
-      {
-        "en": "SYNJARDY 5/850 MG 60 F.C. TABS.",
-        "ar": "سينجاردي 5/"
-      },
-      {
-        "en": "ANDOMETAGLIP 2.5/1000MG 20 EXT. REL. F.C. TABS.",
-        "ar": "أندوميتاجليب 2.5/ 20 إكست. ريل"
-      },
-      {
-        "en": "ANDOMETAGLIP 5/1000MG 20 EXT. REL. F.C. TABS.",
-        "ar": "أندوميتاجليب 5/ 20 إكست. ريل"
-      },
-      {
-        "en": "GLIPTALINA 2.5/1000MG 30 EXT. REL. F.C. TABS.",
-        "ar": "جليبتالينا 2.5/ 30 إكست. ريل"
-      },
-      {
-        "en": "GLIPTALINA 2.5/1000MG 30 F.C. TABS.",
-        "ar": "جليبتالينا 2.5/"
-      },
-      {
-        "en": "GLIPTALINA 2.5/500MG 30 F.C. TABS.",
-        "ar": "جليبتالينا 2.5/"
-      },
-      {
-        "en": "GLIPTALINA 2.5/850MG 30 F.C. TABS.",
-        "ar": "جليبتالينا 2.5/"
-      },
-      {
-        "en": "GLIPTALINA 5/1000MG 30 EXT. REL. F.C. TABS.",
-        "ar": "جليبتالينا 5/ 30 إكست. ريل"
-      },
-      {
-        "en": "GLUCOLIPTIN M XR 2.5/1000MG 30 F.C.TABS.",
-        "ar": "جلوكوليبتين م كسر 2.5/"
-      },
-      {
-        "en": "GLUCOLIPTIN M XR 5/1000MG 30 F.C.TABS.",
-        "ar": "جلوكوليبتين م كسر 5/"
-      },
-      {
-        "en": "PREVAGLIP PLUS 2.5/1000MG 30 F.C.TABS.",
-        "ar": "بريفاجليب بلوس 2.5/"
-      },
-      {
-        "en": "PREVAGLIP PLUS 2.5/500MG 30 F.C.TABS.",
-        "ar": "بريفاجليب بلوس 2.5/"
-      },
-      {
-        "en": "PREVAGLIP PLUS 2.5/850MG 30 F.C.TABS.",
-        "ar": "بريفاجليب بلوس 2.5/"
-      },
-      {
-        "en": "ATCOVILDUMET 50/1000 MG 30 F.C.TABS.",
-        "ar": "أتكوفيلدوميت 50/"
-      },
-      {
-        "en": "COVALMET 50/1000MG 10 F.C. TABS.",
-        "ar": "كوفالميت 50/"
-      },
-      {
-        "en": "COVALMET 50/1000MG 20 F.C. TABS.",
-        "ar": "كوفالميت 50/"
-      },
-      {
-        "en": "DIBAVALLY PLUS 50/1000 MG 14 TABS. (N/A)",
-        "ar": "ديبافاللي بلوس 50/"
-      },
-      {
-        "en": "DIBAVALLY PLUS 50/1000 MG 28 TABS.",
-        "ar": "ديبافاللي بلوس 50/"
-      },
-      {
-        "en": "FUTAVILDIX 50/1000 MG 30 F.C. TABS.",
-        "ar": "فوتافيلديكس 50/"
-      },
-      {
-        "en": "FUTAVILDIX 50/850 MG 30 F.C. TABS.",
-        "ar": "فوتافيلديكس 50/"
-      },
-      {
-        "en": "GALVUS MET 50/1000MG 30 F.C.TABS.",
-        "ar": "جالفوس ميت 50/"
-      },
-      {
-        "en": "GALVUS MET 50/500MG 30 F.C.TABS.",
-        "ar": "جالفوس ميت 50/"
-      },
-      {
-        "en": "GALVUS MET 50/850MG 30 F.C.TABS.",
-        "ar": "جالفوس ميت 50/"
-      },
-      {
-        "en": "GLIPTUS PLUS 50/1000MG 30 TABS.",
-        "ar": "جليبتوس بلوس 50/"
-      },
-      {
-        "en": "GLIPTUS PLUS 50/500MG 30 TABS.",
-        "ar": "جليبتوس بلوس 50/"
-      },
-      {
-        "en": "GLIPTUS PLUS 50/850MG 30 TABLETS",
-        "ar": "جليبتوس بلوس 50/"
-      },
-      {
-        "en": "ICANDRA PLUS 50/1000MG 30 F.C. TABS.",
-        "ar": "إكاندرا بلوس 50/"
-      },
-      {
-        "en": "METVILDAZONE 50/1000 MG 30 F.C.TABS.",
-        "ar": "ميتفيلدازوني 50/"
-      },
-      {
-        "en": "PHARMAVILDAMIN 50/1000 MG 30 F.C. TABS.",
-        "ar": "فارمافيلدامين 50/"
-      },
-      {
-        "en": "PHARMAVILDAMIN 50/850 MG 30 F.C. TABS.",
-        "ar": "فارمافيلدامين 50/"
-      },
-      {
-        "en": "SUGARLO PLUS 50/1000MG 30 F.C. TABS.",
-        "ar": "سوجارلو بلوس 50/"
-      },
-      {
-        "en": "SUGARLO PLUS 50/500MG 30 F.C. TABS.",
-        "ar": "سوجارلو بلوس 50/"
-      },
-      {
-        "en": "SUGARLO PLUS 50/850MG 30 F.C. TABS.",
-        "ar": "سوجارلو بلوس 50/"
-      },
-      {
-        "en": "VANVILDA PLUS 50/1000 MG 30 TABS.",
-        "ar": "فانفيلدا بلوس 50/"
-      },
-      {
-        "en": "VANVILDA PLUS 50/500 MG 30 TABS.",
-        "ar": "فانفيلدا بلوس 50/"
-      },
-      {
-        "en": "VANVILDA PLUS 50/850 MG 30 TABS.",
-        "ar": "فانفيلدا بلوس 50/"
-      },
-      {
-        "en": "VILDABETES 50/1000MG 30 F.C. TABS.",
-        "ar": "فيلدابيتيس 50/"
-      },
-      {
-        "en": "VILDAFORMIN 50/1000MG 30 TABS.",
-        "ar": "فيلدافورمين 50/"
-      },
-      {
-        "en": "VILDAGLUSE PLUS 50/1000 MG 30 TABS.",
-        "ar": "فيلداجلوسي بلوس 50/"
-      },
-      {
-        "en": "VILDAGLUSE PLUS 50/500 MG 30 TABS.",
-        "ar": "فيلداجلوسي بلوس 50/"
-      },
-      {
-        "en": "VILDAGLUSE PLUS 50/850 MG 30 TABS.",
-        "ar": "فيلداجلوسي بلوس 50/"
-      },
-      {
-        "en": "VILGAT PLUS 50/500 MG 30 TABS.",
-        "ar": "فيلجات بلوس 50/"
-      },
-      {
-        "en": "AVEROFAGE 15/500MG 30 F.C.TABS.",
-        "ar": "أفيروفاجي 15/"
-      },
-      {
-        "en": "AVEROFAGE 15/850MG 30 F.C.TABS.",
-        "ar": "أفيروفاجي 15/"
-      },
-      {
-        "en": "BIOGLITA PLUS 15/500MG 20 F.C.TABS.",
-        "ar": "بيوجليتا بلوس 15/"
-      },
-      {
-        "en": "BIOGLITA PLUS 15/500MG 30 F.C.TABS.",
-        "ar": "بيوجليتا بلوس 15/"
-      },
-      {
-        "en": "BIOGLITA PLUS 15/850MG 20 F.C.TABS. (N/A)",
-        "ar": "بيوجليتا بلوس 15/"
-      },
-      {
-        "en": "BIOGLITA PLUS 15/850MG 30 F.C.TABS.",
-        "ar": "بيوجليتا بلوس 15/"
-      },
-      {
-        "en": "DIABETIN PLUS 15/850MG 10 F.C.TABS.",
-        "ar": "ديابيتين بلوس 15/"
-      },
-      {
-        "en": "DIABETONORM PLUS 500/15 MG 15 F.C.TABS.",
-        "ar": "ديابيتونورم بلوس 500/"
-      },
-      {
-        "en": "DIABETONORM PLUS 850/15 MG 15 F.C.TABS.",
-        "ar": "ديابيتونورم بلوس 850/"
-      },
-      {
-        "en": "GLUSTACOMB 15/500 MG 20 F.C.TABS.",
-        "ar": "جلوستاكومب 15/"
-      },
-      {
-        "en": "GLUSTACOMB 15/850 MG 20 F.C.TABS.",
-        "ar": "جلوستاكومب 15/"
-      },
-      {
-        "en": "PIOGLUMET 15/500MG 10 F.C.TABS.",
-        "ar": "بيوجلوميت 15/"
-      },
-      {
-        "en": "PIOGLUMET 15/850MG 30 F.C.TABS.",
-        "ar": "بيوجلوميت 15/"
-      },
-      {
-        "en": "PIOMET 15/500 MG 10 F.C.TABS.",
-        "ar": "بيوميت 15/"
-      },
-      {
-        "en": "SUGANORM 15/500 MG 21 F.C.TABS.",
-        "ar": "سوجانورم 15/"
-      },
-      {
-        "en": "SUGANORM 15/850 MG 21 F.C.TABS.",
-        "ar": "سوجانورم 15/"
-      },
-      {
-        "en": "BOSTAGLIPT MET 50/1000 MG 30 F.C. TABS.",
-        "ar": "بوستاجليبت ميت 50/"
-      },
-      {
-        "en": "BOSTAGLIPT MET 50/850 MG 30 F.C. TABS.",
-        "ar": "بوستاجليبت ميت 50/"
-      },
-      {
-        "en": "GLAPTIVIA PLUS 50/1000MG 30 F.C.TAB.",
-        "ar": "جلابتيفيا بلوس 50/"
-      },
-      {
-        "en": "GLAPTIVIA PLUS 50/500MG 30 F.C.TAB.",
-        "ar": "جلابتيفيا بلوس 50/"
-      },
-      {
-        "en": "GLEPTOMET 50/1000MG 30 F.C.TABS.",
-        "ar": "جليبتوميت 50/"
-      },
-      {
-        "en": "GLEPTOMET 50/500MG 30 F.C.TABS.",
-        "ar": "جليبتوميت 50/"
-      },
-      {
-        "en": "GLIPTADALO PLUS 50/1000MG 30 F.C. TABS.",
-        "ar": "جليبتادالو بلوس 50/"
-      },
-      {
-        "en": "GLIPTADALO PLUS 50/500MG 30 F.C. TABS.",
-        "ar": "جليبتادالو بلوس 50/"
-      },
-      {
-        "en": "JANAGLIP PLUS 50/1000MG 28 F.C. TABS.",
-        "ar": "جاناجليب بلوس 50/"
-      },
-      {
-        "en": "JANUGLIPTIN PLUS 50/1000MG 7 F.C. TABS. (N/A)",
-        "ar": "جانوجليبتين بلوس 50/"
-      },
-      {
-        "en": "JANUMET 50/1000MG 56 F.C. TAB.",
-        "ar": "جانوميت 50/"
-      },
-      {
-        "en": "JANUMET 50/500MG 56 F.C. TAB.",
-        "ar": "جانوميت 50/"
-      },
-      {
-        "en": "JANUMET 50/850MG 56 F.C. TAB.",
-        "ar": "جانوميت 50/"
-      },
-      {
-        "en": "PHARMABETIC PLUS 50/1000MG 30 F.C. TABS.",
-        "ar": "فارمابيتيك بلوس 50/"
-      },
-      {
-        "en": "PHARMABETIC PLUS 50/500MG 30 F.C. TABS.",
-        "ar": "فارمابيتيك بلوس 50/"
-      },
-      {
-        "en": "SITAGLIFORM 50/1000MG 30 F.C. TABS.",
-        "ar": "سيتاجليفورم 50/"
-      },
-      {
-        "en": "SITAGLIFORM 50/500MG 30 F.C. TABS.",
-        "ar": "سيتاجليفورم 50/"
-      },
-      {
-        "en": "DAPABLIX MET XR 10 MG/1000 MG 30 EXT. REL. F.C.TABS.",
-        "ar": "دابابليكس ميت كسر / 30 إكست. ريل"
-      },
-      {
-        "en": "DAPAGLIF PLUS XR 10MG/1000MG 14 F.C. TABS.",
-        "ar": "داباجليف بلوس كسر /"
-      },
-      {
-        "en": "DAPAVELDACTIN PLUS 5/1000 MG 28 F.C. TABS.",
-        "ar": "دابافيلداكتين بلوس 5/"
-      },
-      {
-        "en": "DAPAVELDACTIN PLUS 5/850 MG 28 F.C. TABS.",
-        "ar": "دابافيلداكتين بلوس 5/"
-      },
-      {
-        "en": "DEXIGLOFOZIN PLUS 10/1000 MG 30 EXT. REL . F.C. TABS.",
-        "ar": "ديكسيجلوفوزين بلوس 10/ 30 إكست. ريل"
-      },
-      {
-        "en": "DEXIGLOFOZIN PLUS 10/500 MG 30 EXT. REL . F.C. TABS.",
-        "ar": "ديكسيجلوفوزين بلوس 10/ 30 إكست. ريل"
-      },
-      {
-        "en": "DIAFLOZIMET 10/1000 MG 30 EXT. REL . F.C. TABS.",
-        "ar": "ديافلوزيميت 10/ 30 إكست. ريل"
-      },
-      {
-        "en": "DIAFLOZIMET 10/500 MG 30 EXT. REL . F.C. TABS.",
-        "ar": "ديافلوزيميت 10/ 30 إكست. ريل"
-      },
-      {
-        "en": "DIAFLOZIMET 5/1000 MG 30 EXT. REL . F.C. TABS.",
-        "ar": "ديافلوزيميت 5/ 30 إكست. ريل"
-      },
-      {
-        "en": "DIAFLOZIMET 5/500 MG 30 EXT. REL . F.C. TABS.",
-        "ar": "ديافلوزيميت 5/ 30 إكست. ريل"
-      },
-      {
-        "en": "DIGLIFLOZ PLUS 10/1000MG 30 F.C. TABS.",
-        "ar": "ديجليفلوز بلوس 10/"
-      },
-      {
-        "en": "DIGLIFLOZ PLUS 5/1000MG 30 F.C. TABS.",
-        "ar": "ديجليفلوز بلوس 5/"
-      },
-      {
-        "en": "DIGLIFLOZ PLUS 5/850MG 30 F.C. TABS.",
-        "ar": "ديجليفلوز بلوس 5/"
-      },
-      {
-        "en": "FORFLOZIN PLUS 10/1000 MG 30 EXT. REL . F.C. TABS.",
-        "ar": "فورفلوزين بلوس 10/ 30 إكست. ريل"
-      },
-      {
-        "en": "FORFLOZIN PLUS 5/1000 MG 30 EXT. REL . F.C. TABS.",
-        "ar": "فورفلوزين بلوس 5/ 30 إكست. ريل"
-      },
-      {
-        "en": "FORMINODAB XR 10 MG/1000 MG 30 EXT. REL. F.C.TABS.",
-        "ar": "فورمينوداب كسر / 30 إكست. ريل"
-      },
-      {
-        "en": "FORMINODAB XR 5 MG/1000 MG 30 EXT. REL. F.C.TABS.",
-        "ar": "فورمينوداب كسر / 30 إكست. ريل"
-      },
-      {
-        "en": "METFOGLIZIN 5/850 MG 30 F.C. TABS.",
-        "ar": "ميتفوجليزين 5/"
-      },
-      {
-        "en": "XIGDUO 5/1000 MG 56 F.C.TABS.",
-        "ar": "كسيجدوو 5/"
-      },
-      {
-        "en": "DOWNBETES TRIO  10/5/1000 MG  20 EXTENDED RELEASE TABLETS",
-        "ar": "دوونبيتيس تريو 10/5/ 20 إكستينديد ريلياسي"
-      },
-      {
-        "en": "DOWNBETES TRIO 25/5/1000 MG 20 EXTENDED RELEASE TABLETS",
-        "ar": "دوونبيتيس تريو 25/5/ 20 إكستينديد ريلياسي"
-      },
-      {
-        "en": "EMPACOZA TRIO XR 10/5/1000 MG 30 F.C. TABS.",
-        "ar": "إمباكوزا تريو كسر 10/5/"
-      },
-      {
-        "en": "EMPACOZA TRIO XR 25/5/1000 MG 30 F.C. TABS.",
-        "ar": "إمباكوزا تريو كسر 25/5/"
-      },
-      {
-        "en": "LINGALABS PLUS 12.5/2.5/1000 MG 30 F.C. TABS.",
-        "ar": "لينجالابس بلوس 12.5/2.5/"
-      },
-      {
-        "en": "LINGALABS PLUS 25/5/1000 MG 30 F.C. TABS.",
-        "ar": "لينجالابس بلوس 25/5/"
-      },
-      {
-        "en": "MELLITOFIX TRIO 10/5/1000 MG 30 F.C. TABS.",
-        "ar": "ميلليتوفيكس تريو 10/5/"
-      },
-      {
-        "en": "MELLITOFIX TRIO 25/5/1000 MG 30 F.C. TABS.",
-        "ar": "ميلليتوفيكس تريو 25/5/"
-      },
-      {
-        "en": "ENGILOR 2.5/500 MG 30 TAB. (N/A)",
-        "ar": "إنجيلور 2.5/"
-      },
-      {
-        "en": "ENGILOR 5/500 MG 30 TAB.",
-        "ar": "إنجيلور 5/"
-      },
-      {
-        "en": "GLIFORM 2.5/500MG 20 TABS.",
-        "ar": "جليفورم 2.5/"
-      },
-      {
-        "en": "GLIPTINMIX 5/1000 MG 10 TABLETS",
-        "ar": "جليبتينميكس 5/"
-      },
-      {
-        "en": "KOMBIGLYZE XR 2.5/1000 MG 60 TABLETS",
-        "ar": "كومبيجليزي كسر 2.5/"
-      },
-      {
-        "en": "KOMBIGLYZE XR 5/1000 MG 30 TABLETS",
-        "ar": "كومبيجليزي كسر 5/"
-      },
-      {
-        "en": "SAXAPTIN PLUS 5/1000 MG 10 EXT. REL. F.C. TABS.",
-        "ar": "ساكسابتين بلوس 5/ 10 إكست. ريل"
-      },
-      {
-        "en": "GLIPTOPACK MET 12.5/1000 MG 30 TABS.",
-        "ar": "جليبتوباك ميت 12.5/"
-      },
-      {
-        "en": "GLIPTOPACK MET 12.5/500 MG 30 TABS.",
-        "ar": "جليبتوباك ميت 12.5/"
-      },
-      {
-        "en": "INHIBAMET 12.5/1000 MG 30 F.C. TABS.",
-        "ar": "إنهيباميت 12.5/"
-      },
-      {
-        "en": "INHIBAMET 12.5/500 MG 30 F.C. TABS.",
-        "ar": "إنهيباميت 12.5/"
-      },
-      {
-        "en": "PRANDAGLIM MET 12.5/1000 MG 30 F.C. TABS.",
-        "ar": "برانداجليم ميت 12.5/"
-      },
-      {
-        "en": "PRANDAGLIM MET 12.5/500 MG 30 F.C. TABS.",
-        "ar": "برانداجليم ميت 12.5/"
-      },
-      {
-        "en": "VIPDOMET 12.5/1000 MG 28 F.C. TABS.",
-        "ar": "فيبدوميت 12.5/"
-      },
-      {
-        "en": "VIPDOMET 12.5/500 MG 28 F.C. TABS.",
-        "ar": "فيبدوميت 12.5/"
-      },
-      {
-        "en": "MAGICNORM 1/500 MG 30 F.C. TABS.",
-        "ar": "ماجيكنورم 1/"
-      },
-      {
-        "en": "REPLITZA 1/500 MG 30 F.C. TABS.",
-        "ar": "ريبليتزا 1/"
-      },
-      {
-        "en": "REPLITZA 2/500 MG 30 F.C. TABS. (N/A)",
-        "ar": "ريبليتزا 2/"
-      },
-      {
-        "en": "VOKANAMET 150MG/1000MG 60 F.C. TABS.",
-        "ar": "فوكاناميت /"
-      },
-      {
-        "en": "VOKANAMET 150MG/850MG 60 F.C. TABS.",
-        "ar": "فوكاناميت /"
-      },
-      {
-        "en": "VOKANAMET 50MG/1000MG 60 F.C. TABS.",
-        "ar": "فوكاناميت /"
-      },
-      {
-        "en": "VOKANAMET 50MG/850MG 60 F.C. TABS.",
-        "ar": "فوكاناميت /"
+        "ar": ""
       }
     ],
     "edaPrices": [
@@ -1197,23 +723,396 @@ export const edaSupplement = [
     "id": "5",
     "nameEn": "Amlodipine",
     "nameAr": "أملوديبين",
-    "prices": [],
+    "prices": [
+      {
+        "form": "أقراص",
+        "formEn": "Tablets",
+        "price": 44,
+        "unit": "EGP"
+      }
+    ],
     "brandAliases": [
+      {
+        "en": "AMILO 10MG 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "AMILO 5 MG 30 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "VISCAL 5MG 10 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "NORVASC 5MG 10 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "NORVASC 5MG 30 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "REGCOR 5 MG 10 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "AMVASC 10MG 30 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "MYODURA 5 MG 30 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "NORTENS 5 MG 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "REGCOR 10 MG 10 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "MYODURA 10 MG 30 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "NORVASC 10 MG 10 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "NORVASC 10 MG 15 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "VASONORM 10MG 10 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "VASONORM 5 MG 10 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "LOADLESS 5/20MG 30 CAP",
+        "ar": ""
+      },
+      {
+        "en": "COVERAM 5/5MG 15 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "ALKAPRESS 5 MG 20 TAB.",
+        "ar": "ألكابريسس"
+      },
+      {
+        "en": "AMLOWEST 2.5MG 30 TAB.",
+        "ar": "أملوويست"
+      },
+      {
+        "en": "AMVASC 5MG 30 CAPSULES",
+        "ar": "أمفاسك"
+      },
+      {
+        "en": "PINAVASC 10MG 10 TABS.",
+        "ar": "بينافاسك"
+      },
+      {
+        "en": "VASOPINE 5 MG 30 TABS.",
+        "ar": "فاسوبيني"
+      },
+      {
+        "en": "WINDIPINE 5 MG 30 TAB.",
+        "ar": "وينديبيني"
+      },
+      {
+        "en": "ANCAVAZ 5/5 MG 20 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "COVERAM 10/10MG 15 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "COVERAM 10/5MG 15 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "COVERAM 5/10MG 15 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "ALKAPRESS 10 MG 30 TAB.",
+        "ar": "ألكابريسس"
+      },
+      {
+        "en": "AMLODIPINE 5 MG 30 TAB.",
+        "ar": "أملوديبيني"
+      },
+      {
+        "en": "CORONAVINE 5 MG 10 TAB.",
+        "ar": "كورونافيني"
+      },
+      {
+        "en": "VASOPINE 10 MG 10 TABS.",
+        "ar": "فاسوبيني"
+      },
+      {
+        "en": "VASOPINE 10 MG 30 TABS.",
+        "ar": "فاسوبيني"
+      },
+      {
+        "en": "WINDIPINE 10 MG 30 TAB.",
+        "ar": "وينديبيني"
+      },
+      {
+        "en": "CADUET 5/10MG 7 F.C. TAB",
+        "ar": ""
+      },
+      {
+        "en": "AMLOVERAN 5/5MG 30 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "ANCAVAZ 10/5 MG 20 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "ANCAVAZ 5/10 MG 20 TABS.",
+        "ar": ""
+      },
       {
         "en": "AMLODIPINE 10MG 20 TABS.",
         "ar": "أملوديبيني"
       },
       {
-        "en": "AMLODIPINE 5 MG 30 TAB.",
-        "ar": "أملوديبيني"
+        "en": "CARDIOVASC 10 MG 10 TAB.",
+        "ar": "كارديوفاسك"
+      },
+      {
+        "en": "AMLO-ACE 5/10 MG 10 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "LOADLESS 10/20MG 30 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "MAGNETREL 5/10MG 30 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "MAGNETREL 5/20MG 30 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "NORVAPRIL 5/10MG 30 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "NORVAPRIL 5/20MG 30 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "AMLOVERAN 10/5MG 30 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "AMLOVERAN 5/10MG 30 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "ANCAVAZ 10/10 MG 20 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "COVAPRENDO 5/5MG 30 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "TWYNSTA 80 / 5 MG 28 TAB.",
+        "ar": ""
       }
     ],
     "edaPrices": [
+      6,
+      7.25,
+      10,
+      11,
+      12,
+      12.5,
+      14,
+      16,
+      16.5,
+      17.4,
+      17.5,
+      19,
+      19.2,
+      20,
+      21,
+      22,
+      24,
+      25,
+      28.8,
+      30,
+      31.5,
+      32.4,
+      33,
+      33.6,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      39.5,
+      40,
+      40.5,
+      42,
+      43.5,
       44,
-      60
+      45,
+      46.5,
+      47,
+      48,
+      51.5,
+      52,
+      52.5,
+      54,
+      55.5,
+      58,
+      60,
+      62,
+      63,
+      64,
+      69,
+      72,
+      74,
+      75,
+      78,
+      79,
+      80,
+      84,
+      87,
+      88,
+      88.5,
+      90,
+      93,
+      95,
+      96,
+      97,
+      98,
+      99,
+      102,
+      108,
+      110,
+      111,
+      114,
+      118,
+      120,
+      122,
+      123,
+      124,
+      125,
+      126,
+      132,
+      133,
+      136,
+      138,
+      140,
+      141,
+      144,
+      146,
+      147,
+      148,
+      148.5,
+      150,
+      152,
+      153,
+      159,
+      160,
+      162,
+      163,
+      165,
+      168,
+      174,
+      176,
+      184,
+      186,
+      188,
+      192,
+      201,
+      208,
+      210,
+      216,
+      218,
+      219,
+      234,
+      247.5,
+      249,
+      250.5,
+      270
     ],
     "edaManufacturers": [
-      "AMRIYA"
+      "HIKMA PHARMA",
+      "ALFACURE PHARMACEUTICALS",
+      "AMRIYA",
+      "WESTERN PHARMACEUTICALS INDUSTRIES > WESTERN PHARMA",
+      "JAMJOOM PHARMACEUTICALS",
+      "EL NILE.",
+      "PHAROPHARMA",
+      "EPCI > ELRAZY PHARMACEUTICALS-EGYPT",
+      "GLOBAL NAPI PHARMACEUTICALS > WOCKHARDT",
+      "LOGESTIC PHARMA FOR PHARMACEUTICALS",
+      "PFIZER > VIATRIS EGYPT",
+      "UNIPHARMA",
+      "EIPICO",
+      "PHARCO",
+      "ARAB DRUG COMPANY (ADCO)",
+      "UP PHARMA",
+      "SANOFI",
+      "MARCYRL PHARMACEUTICAL INDUSTRIES (MPI)",
+      "MEDIZEN PHARMACEUTICAL INDUSTRIES > UTOPIA",
+      "FUTURE PHARMACEUTICAL INDUSTRIES (FPI) > UTOPIA",
+      "SIGMA > MASH PREMIERE",
+      "NOVARTIS",
+      "CHEMIPHARM",
+      "EVA PHARMA > NEXT PHARMA",
+      "GLOBAL NAPI PHARMACEUTICALS > TA PHARMA",
+      "DEBEIKY",
+      "ADWIA > ZETA PHARM",
+      "GLOBAL NAPI PHARMACEUTICALS",
+      "AL ESRAA PHARMACEUTICAL OPTIMA",
+      "PHARCO B",
+      "DELTA PHARMA > DEVARTLAB",
+      "MEDIZEN PHARMACEUTICAL INDUSTRIES > MIRA INTERNATIONAL",
+      "MEDIZEN PHARMACEUTICAL INDUSTRIES",
+      "NAPCO",
+      "DEBEIKY > ROYAL GROUP",
+      "ARAB CAPS > ROYAL GROUP",
+      "RAMEDA",
+      "MARCYRL PHARMACEUTICAL INDUSTRIES (MPI) > GEOPHARMA",
+      "ATCO PHARMA",
+      "AVERROES PHARMA-EGYPT",
+      "AVERROES PHARMA",
+      "MULTI-APEX",
+      "GLOBAL ADVANCED PHARMACEUTICALS (GAP)",
+      "EVA PHARMA",
+      "OCTOBER PHARMA",
+      "UNIPHARMA CO. > UNIPHARMA",
+      "PFIZER",
+      "MEMPHIS",
+      "BIOPHARM EGYPT > ANDALOUS PHARMA",
+      "ZETA PHARM",
+      "SERVIER",
+      "ANDALOUS PHARMA",
+      "P & C LABS",
+      "MERCK > AMOUN",
+      "UTOPIA PHARMA",
+      "UTOPIA",
+      "PARKVILLE PHARMACEUTICALS > PARKVILLE",
+      "BOEHRINGER INGELHEIM",
+      "INAD PHARMA",
+      "BIOXELL PHARMA"
     ],
     "verified": true
   },
@@ -1221,18 +1120,142 @@ export const edaSupplement = [
     "id": "6",
     "nameEn": "Enalapril",
     "nameAr": "إنالابريل",
-    "prices": [],
+    "prices": [
+      {
+        "form": "أقراص",
+        "formEn": "Tablets",
+        "price": 14,
+        "unit": "EGP"
+      }
+    ],
     "brandAliases": [
       {
+        "en": "PRES 10MG 30 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "PRES 20MG 30 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "ENALAP 20MG 10 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "RENITEC 5MG 28 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "ACAPRIL 20MG 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "ACAPRIL 5 MG 10 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "RENITEC 20MG 28 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "EZAPRIL 20 MG 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "EZAPRIL 20 MG 30 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "EZAPRIL 10 MG 20 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "EZAPRIL 10 MG 30 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "PRESSLIGHT 5 MG 10 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "PRESSLIGHT 10 MG 10 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "THIAPRIL 20/12.5MG 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "ENALAZIDE 10/12.5MG 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "CO-RENITEC 20/12.5MG 28 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "COMBIPRESS 20/12.5MG 30 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "EZAPRIL-CO 20/12.5MG 20 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "EZAPRIL-CO 20/12.5MG 30 TABS.",
+        "ar": ""
+      },
+      {
         "en": "ENALAPRIL MALEATE 20MG 10 TAB.",
-        "ar": "إنالابريل مالياتي"
+        "ar": ""
+      },
+      {
+        "en": "THIAZOPRIL 20/12.5 MG 10 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "CARE DIPINE PLUS 10/10 MG 30 F.C.TABS.",
+        "ar": ""
+      },
+      {
+        "en": "CARE DIPINE PLUS 10/20 MG 30 F.C.TABS.",
+        "ar": ""
       }
     ],
     "edaPrices": [
-      14
+      6.75,
+      7,
+      9,
+      10,
+      11,
+      14,
+      18,
+      20.25,
+      21,
+      25,
+      25.5,
+      30.6,
+      32,
+      42,
+      48,
+      54,
+      60,
+      69,
+      72,
+      97.5,
+      165
     ],
     "edaManufacturers": [
-      "OCTOBER PHARMA"
+      "ALFACURE PHARMACEUTICALS",
+      "EIPICO",
+      "OCTOBER PHARMA",
+      "MULTI-APEX",
+      "GLOBAL NAPI PHARMACEUTICALS",
+      "EL-OBOUR",
+      "MERCK SHARP & DOHME > GLOBAL NAPI PHARMACEUTICALS",
+      "GLOBAL NAPI PHARMACEUTICALS > MERCK SHARP & DOHME",
+      "MULTICARE",
+      "UNIPHARMA CO. > UNIPHARMA"
     ],
     "verified": true
   },
@@ -1240,15 +1263,174 @@ export const edaSupplement = [
     "id": "7",
     "nameEn": "Losartan",
     "nameAr": "لوسارتان",
-    "prices": [],
+    "prices": [
+      {
+        "form": "أقراص",
+        "formEn": "Tablets",
+        "price": 36,
+        "unit": "EGP"
+      }
+    ],
     "brandAliases": [
+      {
+        "en": "COZAAR 50MG 14 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "LOSARTAN 50MG 14 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "LOSAR PLUS 8 F.C. TAB",
+        "ar": ""
+      },
+      {
+        "en": "KANZAR 25MG 7 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "AMOSAR 25MG 20 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "LOSAR 50MG 28 F.C. TAB.",
+        "ar": ""
+      },
+      {
+        "en": "LORAZ 50/12.5MG 14 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "LOSARMEPHA-PLUS 7 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "COZAAR 100MG 14 F.C. TAB",
+        "ar": ""
+      },
+      {
+        "en": "KANZAR 50MG 7 F.C. TABS.",
+        "ar": ""
+      },
+      {
+        "en": "FORTZAAR 100/25MG 8 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "AMOSAR 50MG 30 F.C. TABS.",
+        "ar": ""
+      },
+      {
+        "en": "KANZAR 100MG 8 F.C. TABS.",
+        "ar": ""
+      },
+      {
+        "en": "AMOSAR 100MG 30 F.C. TABS.",
+        "ar": ""
+      },
+      {
+        "en": "LOZAPRESS 25MG 7 F.C. TAB.",
+        "ar": ""
+      },
+      {
+        "en": "REMTOZAR 100MG 10 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "LOSAPOTT 50 MG 14 F.C. TAB.",
+        "ar": ""
+      },
+      {
+        "en": "LOZAPRESS 50MG 14 F.C. TAB.",
+        "ar": ""
+      },
+      {
+        "en": "SANITRAN 50MG 10 F.C. TABS.",
+        "ar": ""
+      },
+      {
+        "en": "HYSARTAN 50/12.5 MG 10 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "LORAZ FORTE 100/25MG 28 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "LOSARTAN-AMRIYA 50MG 10 TAB.",
+        "ar": "لوسارتان-أمرييا"
+      },
+      {
+        "en": "HYZAAR 50/12.5MG 14 F.C. TAB.",
+        "ar": ""
+      },
+      {
+        "en": "LOZAPRESS-H  50/12.5MG 7 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "MODAZAR 25/100MG 8 F.C. TABS.",
+        "ar": ""
+      },
+      {
+        "en": "LOSARMEPHA-50 MG 14 F.C. TABS.",
+        "ar": "لوسارميفا"
+      },
+      {
+        "en": "KANZAR-H 100/25 MG 8 F.C. TABS.",
+        "ar": ""
+      },
+      {
+        "en": "LOSARTAN-COMP 50/12.5MG 14 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "LOSAZIDE 100/25MG 10 F.C. TABS.",
+        "ar": ""
+      },
+      {
+        "en": "LOSAZIDE 50/12.5MG 10 F.C.TABS.",
+        "ar": ""
+      },
+      {
+        "en": "LOSAZIDE 50/12.5MG 30 F.C.TABS.",
+        "ar": ""
+      },
+      {
+        "en": "REMTOZAR-D 25/100MG 10 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "LOSTAPRESSIN 25 MG 21 F.C. TABS.",
+        "ar": "لوستابريسسين"
+      },
+      {
+        "en": "LOSTAPRESSIN 50 MG 21 F.C. TABS.",
+        "ar": "لوستابريسسين"
+      },
+      {
+        "en": "HYZAAR 100/12.5 MG 14 F.C. TABS.",
+        "ar": "هيزار 100/"
+      },
+      {
+        "en": "KANZAR-H 50/12.5 MG 8 F.C. TABS.",
+        "ar": "كانزار-ه 50/"
+      },
       {
         "en": "LOSARTAN 100MG 14 SCORED F.C.TAB.",
         "ar": "لوسارتان 14 سكوريد"
       },
       {
-        "en": "LOSARTAN 50MG 14 TAB.",
-        "ar": "لوسارتان"
+        "en": "LOSTAPRESSIN 100 MG 14 F.C. TABS.",
+        "ar": "لوستابريسسين"
+      },
+      {
+        "en": "AMOSAR FORTE 100/25 MG 30 F.C.TAB.",
+        "ar": "أموسار فورتي 100/"
+      },
+      {
+        "en": "LOSTAPRESSIN PLUS 100/25MG 10 F.C. TABS.",
+        "ar": "لوستابريسسين بلوس 100/"
       },
       {
         "en": "LOSARTAN BLUEPHARMA 100MG 10 SCORED F.C.TAB",
@@ -1256,14 +1438,55 @@ export const edaSupplement = [
       }
     ],
     "edaPrices": [
+      9,
+      11,
+      13.5,
+      14.4,
+      15.6,
       18,
+      21.6,
+      24,
       25,
-      36
+      25.2,
+      27.75,
+      28.8,
+      32.4,
+      33,
+      34,
+      34.8,
+      36,
+      41,
+      51,
+      66,
+      74.5,
+      75,
+      82,
+      83,
+      102,
+      105,
+      108,
+      117
     ],
     "edaManufacturers": [
-      "MEPACO",
+      "AMOUN",
+      "MERCK SHARP & DOHME > GLOBAL NAPI PHARMACEUTICALS",
+      "MERCK SHARP & DOHME",
+      "HIKMA PHARMA",
       "PHAROPHARMA",
-      "BLUEPHARMA GENERICOS > NOOR SCIENTIFIC & TRADE"
+      "UNIPHARMA",
+      "SIGMA > ACINO",
+      "MEPACO",
+      "BLUEPHARMA GENERICOS > NOOR SCIENTIFIC & TRADE",
+      "AMRIYA",
+      "DELTA PHARMA",
+      "SIGMA",
+      "MEPACO > SPIMACO MISR",
+      "UP PHARMA",
+      "MERCK SHARP & DOHME > SOFICOPHARM",
+      "MERCK SHARP & DOHME > MULTIPHARMA",
+      "EGPI",
+      "EIPICO",
+      "EGYPHAR"
     ],
     "verified": true
   },
@@ -1274,56 +1497,84 @@ export const edaSupplement = [
     "prices": [],
     "brandAliases": [
       {
-        "en": "ADROBEGA 80MG 10 F.C. TAB.",
-        "ar": "أدروبيجا"
-      },
-      {
-        "en": "ANTICHOL 10 MG 10 F.C. TAB.",
-        "ar": "أنتيتشول"
-      },
-      {
-        "en": "ANTICHOL 20 MG 10 F.C. TAB.",
-        "ar": "أنتيتشول"
-      },
-      {
-        "en": "ATCOLIPOX 10 MG 30 CHEW. TABS.",
-        "ar": "أتكوليبوكس 30 تشيو"
-      },
-      {
-        "en": "ATCOLIPOX 20 MG 30 CHEW. TABS.",
-        "ar": "أتكوليبوكس 30 تشيو"
-      },
-      {
         "en": "ATOR 10 MG 7 TABS.",
-        "ar": "أتور"
+        "ar": ""
+      },
+      {
+        "en": "LIPICOLE 10MG 10 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "LIPITOR 10 MG 7 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "LIPITOR 20 MG 7 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "LIPITOR 40 MG 7 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "LIPITOR 80 MG 7 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "LIPITOR 10 MG 28 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "LIPITOR 20 MG 28 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "LIPITOR 40 MG 14 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "LIPITOR 80 MG 14 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "LIRIMAR 20 MG 10 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "LIRIMAR 80 MG 10 CAPS.",
+        "ar": ""
       },
       {
         "en": "ATOR 20 MG 10 F.C.TABS.",
-        "ar": "أتور"
+        "ar": ""
       },
       {
         "en": "ATOR 40 MG 10 F.C.TABS.",
-        "ar": "أتور"
+        "ar": ""
       },
       {
         "en": "ATOR 80 MG 10 F.C.TABS.",
-        "ar": "أتور"
+        "ar": ""
       },
       {
-        "en": "ATORSTAT 10MG 14 F.C.TAB.",
-        "ar": "أتورستات"
+        "en": "LIPONA 10MG 10 F.C.TAB.",
+        "ar": "ليبونا"
       },
       {
-        "en": "ATORSTAT 20MG 14 SCORED TABS.",
-        "ar": "أتورستات 14 سكوريد"
+        "en": "LIPONA 20MG 10 F.C.TAB.",
+        "ar": "ليبونا"
       },
       {
-        "en": "ATORSTAT 40MG 14 BISCORED TABS.",
-        "ar": "أتورستات 14 بيسكوريد"
+        "en": "LIPONA 40MG 10 F.C.TAB.",
+        "ar": "ليبونا"
       },
       {
-        "en": "ATORSTAT 80MG 10 BISCORED TABS.",
-        "ar": "أتورستات 10 بيسكوريد"
+        "en": "TORVAST 40MG 7 F.C.TAB.",
+        "ar": "تورفاست"
+      },
+      {
+        "en": "CADUET 5/10MG 7 F.C. TAB",
+        "ar": ""
       },
       {
         "en": "BORGASTATIN 10MG 10 TAB.",
@@ -1338,40 +1589,32 @@ export const edaSupplement = [
         "ar": "بورجاستاتين"
       },
       {
-        "en": "CHOLESTGLOB 80 MG 20 SCORED F.C. TAB.",
-        "ar": "تشوليستجلوب 20 سكوريد"
+        "en": "LIPOVAST 10MG 7 F.C.TAB.",
+        "ar": "ليبوفاست"
       },
       {
-        "en": "ECATROVA 20 MG 21 F.C. TABS.",
-        "ar": "إكاتروفا"
+        "en": "LIPOVAST 20MG 7 F.C.TAB.",
+        "ar": "ليبوفاست"
       },
       {
-        "en": "ECATROVA 40 MG 21 F.C. TABS.",
-        "ar": "إكاتروفا"
+        "en": "PREVENVAST 10 MG 10 TAB.",
+        "ar": "بريفينفاست"
       },
       {
-        "en": "FATESTATIN 10 MG 10 F.C.TABS.",
-        "ar": "فاتيستاتين"
+        "en": "EZASTATIN 10/10MG 30 TAB.",
+        "ar": ""
       },
       {
-        "en": "FATESTATIN 20 MG 10 F.C.TABS.",
-        "ar": "فاتيستاتين"
+        "en": "EZASTATIN 20/10MG 30 TAB.",
+        "ar": ""
       },
       {
-        "en": "FATESTATIN 80MG 10 F.C.TABS.",
-        "ar": "فاتيستاتين"
+        "en": "EZASTATIN 40/10MG 30 TAB.",
+        "ar": ""
       },
       {
-        "en": "HIPOLIXAVAST 10 MG 30 CHEW. TABS.",
-        "ar": "هيبوليكسافاست 30 تشيو"
-      },
-      {
-        "en": "HIPOLIXAVAST 20 MG 30 CHEW. TABS.",
-        "ar": "هيبوليكسافاست 30 تشيو"
-      },
-      {
-        "en": "LIPICOLE 10MG 10 TAB.",
-        "ar": "ليبيكولي"
+        "en": "ATORSTAT 10MG 14 F.C.TAB.",
+        "ar": "أتورستات"
       },
       {
         "en": "LIPICOLE 20MG 10 F.C.TAB.",
@@ -1402,280 +1645,56 @@ export const edaSupplement = [
         "ar": "ليبينورم"
       },
       {
-        "en": "LIPITOR 10 MG 28 TABS.",
-        "ar": "ليبيتور"
+        "en": "SIGMALIP 40MG 10 F.C.TAB.",
+        "ar": "سيجماليب"
       },
       {
-        "en": "LIPITOR 10 MG 7 TABS.",
-        "ar": "ليبيتور"
+        "en": "ADROBEGA 80MG 10 F.C. TAB.",
+        "ar": "أدروبيجا"
       },
       {
-        "en": "LIPITOR 20 MG 28 TABS.",
-        "ar": "ليبيتور"
-      },
-      {
-        "en": "LIPITOR 20 MG 7 TABS.",
-        "ar": "ليبيتور"
-      },
-      {
-        "en": "LIPITOR 40 MG 14 TABS.",
-        "ar": "ليبيتور"
-      },
-      {
-        "en": "LIPITOR 40 MG 7 TABS.",
-        "ar": "ليبيتور"
-      },
-      {
-        "en": "LIPITOR 80 MG 14 TABS.",
-        "ar": "ليبيتور"
-      },
-      {
-        "en": "LIPITOR 80 MG 7 TABS.",
-        "ar": "ليبيتور"
-      },
-      {
-        "en": "LIPOMAX 10MG 10 F.C. TABS. (N/A)",
+        "en": "LIPOMAX 10MG 10 F.C. TABS.",
         "ar": "ليبوماكس"
       },
       {
-        "en": "LIPOMAX 20MG 10 F.C. TABS. (N/A)",
+        "en": "LIPOMAX 20MG 10 F.C. TABS.",
         "ar": "ليبوماكس"
       },
       {
-        "en": "LIPOMAX 40MG 10 F.C. TABS. (N/A)",
+        "en": "LIPOMAX 40MG 10 F.C. TABS.",
         "ar": "ليبوماكس"
       },
       {
-        "en": "LIPONA 10MG 10 F.C.TAB.",
-        "ar": "ليبونا"
-      },
-      {
-        "en": "LIPONA 20MG 10 F.C.TAB.",
-        "ar": "ليبونا"
-      },
-      {
-        "en": "LIPONA 40MG 10 F.C.TAB.",
-        "ar": "ليبونا"
-      },
-      {
-        "en": "LIPOSEDRA 10 MG 30 F.C.TABS.",
-        "ar": "ليبوسيدرا"
-      },
-      {
-        "en": "LIPOSEDRA 20 MG 30 F.C.TABS.",
-        "ar": "ليبوسيدرا"
-      },
-      {
-        "en": "LIPOVAST 10MG 7 F.C.TAB.",
-        "ar": "ليبوفاست"
-      },
-      {
-        "en": "LIPOVAST 20MG 7 F.C.TAB.",
-        "ar": "ليبوفاست"
-      },
-      {
-        "en": "LIRIMAR 20 MG 10 CAPS.",
-        "ar": "ليريمار"
-      },
-      {
-        "en": "LIRIMAR 80 MG 10 CAPS.",
-        "ar": "ليريمار"
-      },
-      {
-        "en": "ORGOVASTIN 40MG 14 F.C.TAB.",
-        "ar": "أورجوفاستين"
-      },
-      {
-        "en": "PREVENVAST 10 MG 10 TAB.",
-        "ar": "بريفينفاست"
-      },
-      {
-        "en": "ROSTATINE 20MG 30 F.C.TAB. (N/A)",
+        "en": "ROSTATINE 20MG 30 F.C.TAB.",
         "ar": "روستاتيني"
-      },
-      {
-        "en": "SATOGLER 10MG 30 F.C. TABS.",
-        "ar": "ساتوجلير"
-      },
-      {
-        "en": "SATOGLER 20MG 30 F.C. TABS.",
-        "ar": "ساتوجلير"
       },
       {
         "en": "SIGMALIP 20 MG 10 F.C.TAB.",
         "ar": "سيجماليب"
       },
       {
-        "en": "SIGMALIP 40MG 10 F.C.TAB.",
-        "ar": "سيجماليب"
-      },
-      {
-        "en": "TORASTATIN 20MG 10 F.C.TAB.",
-        "ar": "توراستاتين"
-      },
-      {
         "en": "TORASTATIN 40MG 7 F.C.TAB.",
         "ar": "توراستاتين"
-      },
-      {
-        "en": "TORVAST 40MG 7 F.C.TAB.",
-        "ar": "تورفاست"
       },
       {
         "en": "VONTEROID 80MG 7 F.C. TAB.",
         "ar": "فونتيرويد"
       },
       {
-        "en": "AMLOSTAT 10/10 MG 10 F.C. TAB. (N/A)",
-        "ar": "أملوستات 10/"
-      },
-      {
-        "en": "AMLOSTAT 5/10 MG 10 F.C. TAB. (N/A)",
-        "ar": "أملوستات 5/"
-      },
-      {
-        "en": "AMLOSTEROLEN 10/40MG 14 F.C. TABS. (N/A)",
-        "ar": "أملوستيرولين 10/"
-      },
-      {
-        "en": "AMLOSTEROLEN 5/20MG 14 F.C. TAB. (N/A)",
-        "ar": "أملوستيرولين 5/"
-      },
-      {
-        "en": "AVIVATOR 10/10 MG 21 F.C. TAB. (N/A)",
-        "ar": "أفيفاتور 10/"
-      },
-      {
-        "en": "AVIVATOR 5/10 MG 21 F.C. TAB. (N/A)",
-        "ar": "أفيفاتور 5/"
-      },
-      {
-        "en": "CADUET 10/10 MG 7 F.C. TAB. (N/A)",
-        "ar": "كادويت 10/"
-      },
-      {
-        "en": "CADUET 5/10MG 7 F.C. TAB (N/A)",
-        "ar": "كادويت 5/"
-      },
-      {
-        "en": "HOLDIPROTECT 5/40MG 7 F.C. TABS. (N/A)",
-        "ar": "هولديبروتيكت 5/"
-      },
-      {
-        "en": "HOLDIPROTECT 5/80MG 7 F.C. TABS. (N/A)",
-        "ar": "هولديبروتيكت 5/"
-      },
-      {
-        "en": "LIPICLEAR 10/10 MG 14 F.C. TAB.",
-        "ar": "ليبيكليار 10/"
-      },
-      {
-        "en": "LIPICLEAR 10/20 MG 14 F.C.TAB.",
-        "ar": "ليبيكليار 10/"
-      },
-      {
-        "en": "LIPICLEAR 10/40MG 14 F.C.TAB.",
-        "ar": "ليبيكليار 10/"
-      },
-      {
-        "en": "LIPICLEAR 5/10 MG 14 F.C. TABS.",
-        "ar": "ليبيكليار 5/"
-      },
-      {
-        "en": "LIPICLEAR 5/20MG 14 F.C. TAB.",
-        "ar": "ليبيكليار 5/"
-      },
-      {
-        "en": "VASTODIPINE 5/10 MG 30 F.C. TABS. (N/A)",
-        "ar": "فاستوديبيني 5/"
-      },
-      {
-        "en": "VASTODIPINE 5/20 MG 30 F.C. TABS. (N/A)",
-        "ar": "فاستوديبيني 5/"
-      },
-      {
-        "en": "ATOREZA 10/10MG 28 F.C. TAB.",
-        "ar": "أتوريزا 10/"
-      },
-      {
-        "en": "ATOREZA 20/10MG 21 F.C. TAB.",
-        "ar": "أتوريزا 20/"
-      },
-      {
-        "en": "ATOREZA 40/10MG 28 F.C. TAB.",
-        "ar": "أتوريزا 40/"
-      },
-      {
-        "en": "ATOREZA 80/10MG 28 F.C. TAB.",
-        "ar": "أتوريزا 80/"
+        "en": "CADUET 10/10 MG 7 F.C. TAB.",
+        "ar": ""
       },
       {
         "en": "ATOZET 10/10MG 30 F.C. TAB.",
-        "ar": "أتوزيت 10/"
+        "ar": ""
       },
       {
         "en": "ATOZET 20/10MG 30 F.C. TAB.",
-        "ar": "أتوزيت 20/"
+        "ar": ""
       },
       {
         "en": "ATOZET 40/10MG 30 F.C. TAB.",
-        "ar": "أتوزيت 40/"
-      },
-      {
-        "en": "ATROZEMB 10/10MG 30 F.C. TAB.",
-        "ar": "أتروزيمب 10/"
-      },
-      {
-        "en": "ATROZEMB 20/10MG 30 F.C. TAB.",
-        "ar": "أتروزيمب 20/"
-      },
-      {
-        "en": "ATROZEMB 40/10MG 30 F.C. TAB.",
-        "ar": "أتروزيمب 40/"
-      },
-      {
-        "en": "ATROZEMB 80/10MG 30 F.C. TAB.",
-        "ar": "أتروزيمب 80/"
-      },
-      {
-        "en": "AZEMIBE 10/10MG 10 F.C. TABS.",
-        "ar": "أزيميبي 10/"
-      },
-      {
-        "en": "AZEMIBE 10/20MG 10 F.C. TABS.",
-        "ar": "أزيميبي 10/"
-      },
-      {
-        "en": "EZASTATIN 10/10MG 30 TAB.",
-        "ar": "إزاستاتين 10/"
-      },
-      {
-        "en": "EZASTATIN 20/10MG 30 TAB.",
-        "ar": "إزاستاتين 20/"
-      },
-      {
-        "en": "EZASTATIN 40/10MG 30 TAB.",
-        "ar": "إزاستاتين 40/"
-      },
-      {
-        "en": "LIPICONTROL 10/10MG 20 F.C. TABS.",
-        "ar": "ليبيكونترول 10/"
-      },
-      {
-        "en": "LIPICONTROL 10/20MG 20 F.C. TABS.",
-        "ar": "ليبيكونترول 10/"
-      },
-      {
-        "en": "LIPICONTROL 10/40MG 20 F.C. TABS.",
-        "ar": "ليبيكونترول 10/"
-      },
-      {
-        "en": "LIPICONTROL 10/80MG 20 F.C. TABS.",
-        "ar": "ليبيكونترول 10/"
-      },
-      {
-        "en": "PENCARD 20/10MG 10 F.C. TABS.",
-        "ar": "بينكارد 20/"
+        "ar": ""
       }
     ],
     "edaPrices": [
@@ -1814,140 +1833,124 @@ export const edaSupplement = [
     "prices": [],
     "brandAliases": [
       {
-        "en": "ALKOR 10 MG 14 F.C. TABS.",
-        "ar": "ألكور"
-      },
-      {
-        "en": "ALKOR 20MG 14 F.C. TAB.",
-        "ar": "ألكور"
-      },
-      {
-        "en": "ALKOR 40MG 14 F.C. TAB.",
-        "ar": "ألكور"
-      },
-      {
-        "en": "AMRISTATIN 20MG 10 F.C. TAB.",
-        "ar": "أمريستاتين"
-      },
-      {
-        "en": "AMRISTATIN 40MG 10 F.C. TAB.",
-        "ar": "أمريستاتين"
-      },
-      {
-        "en": "AMRISTATIN 80MG 10 F.C. TAB.",
-        "ar": "أمريستاتين"
-      },
-      {
-        "en": "CORVAST 20MG 7 F.C.TAB.",
-        "ar": "كورفاست"
-      },
-      {
-        "en": "CORVAST 40MG 7 F.C.TAB.",
-        "ar": "كورفاست"
-      },
-      {
-        "en": "CORVAST 80MG 7 F.C.TAB.",
-        "ar": "كورفاست"
-      },
-      {
-        "en": "LOW-STEROL 10MG 20 F.C. TAB. (N/A)",
-        "ar": "لوو-ستيرول"
-      },
-      {
-        "en": "MINALIP 20MG 7 F.C. TABS.",
-        "ar": "ميناليب"
-      },
-      {
-        "en": "SIMVACOR 20 MG 7 F.C. TAB.",
-        "ar": "سيمفاكور"
-      },
-      {
-        "en": "SIMVACOR 40MG 7 F.C. TAB.",
-        "ar": "سيمفاكور"
-      },
-      {
-        "en": "SIMVACOR 80MG 7 F.C.TAB.",
-        "ar": "سيمفاكور"
-      },
-      {
-        "en": "SIMVAGED 80MG 10 TAB.",
-        "ar": "سيمفاجيد"
-      },
-      {
-        "en": "SIMVASTAT 10MG 7 TAB.",
-        "ar": "سيمفاستات"
-      },
-      {
-        "en": "SIMVASTAT 20MG 7 TAB.",
-        "ar": "سيمفاستات"
-      },
-      {
-        "en": "ZOCOR 10 MG 7 F.C. TAB.",
-        "ar": "زوكور"
-      },
-      {
         "en": "ZOCOR 20 MG 7 TAB.",
-        "ar": "زوكور"
+        "ar": ""
       },
       {
         "en": "ZOCOR 40 MG 14TAB.",
-        "ar": "زوكور"
+        "ar": ""
       },
       {
-        "en": "ALKOR PLUS 10/20MG 14 TAB.",
-        "ar": "ألكور بلوس 10/"
+        "en": "SIMVAGED 80MG 10 TAB.",
+        "ar": ""
       },
       {
-        "en": "ALKOR PLUS 10/40MG 14 TAB",
-        "ar": "ألكور بلوس 10/"
+        "en": "SIMVASTAT 10MG 7 TAB.",
+        "ar": ""
       },
       {
-        "en": "ALTOMANIRA 10/40MG 21 TAB",
-        "ar": "ألتومانيرا 10/"
-      },
-      {
-        "en": "AZETASINE 10/10MG 10 F.C. TABS.",
-        "ar": "أزيتاسيني 10/"
-      },
-      {
-        "en": "CAZET 10/10MG 7 F.C. TAB.",
-        "ar": "كازيت 10/"
-      },
-      {
-        "en": "CAZET 10/20 7 F.C. TAB.",
-        "ar": "كازيت 10/20"
-      },
-      {
-        "en": "CAZET 10/40MG 7 F.C.TAB.",
-        "ar": "كازيت 10/"
-      },
-      {
-        "en": "DOWNSTEROLIN 10/20MG 28 F.C.TABS.",
-        "ar": "دوونستيرولين 10/"
-      },
-      {
-        "en": "DOWNSTEROLIN 10/40MG 28 F.C.TABS.",
-        "ar": "دوونستيرولين 10/"
-      },
-      {
-        "en": "GIVAROROCK 10/20 MG 14 TAB.",
-        "ar": "جيفاروروك 10/"
-      },
-      {
-        "en": "GIVAROROCK 10/40 MG 14 TAB.",
-        "ar": "جيفاروروك 10/"
+        "en": "SIMVASTAT 20MG 7 TAB.",
+        "ar": ""
       },
       {
         "en": "INEGY 10/10MG 14 TAB.",
-        "ar": "إنيجي 10/"
+        "ar": ""
       },
       {
         "en": "INEGY 10/20MG 14 TAB.",
-        "ar": "إنيجي 10/"
+        "ar": ""
       },
       {
         "en": "INEGY 10/40MG 14 TAB.",
-        "ar": "إنيجي 10/"
+        "ar": ""
+      },
+      {
+        "en": "ALKOR 20MG 14 F.C. TAB.",
+        "ar": ""
+      },
+      {
+        "en": "ALKOR 40MG 14 F.C. TAB.",
+        "ar": ""
+      },
+      {
+        "en": "CORVAST 20MG 7 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "CORVAST 40MG 7 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "CORVAST 80MG 7 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "ZOCOR 10 MG 7 F.C. TAB.",
+        "ar": ""
+      },
+      {
+        "en": "CAZET 10/20 7 F.C. TAB.",
+        "ar": ""
+      },
+      {
+        "en": "SIMVACOR 80MG 7 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "CAZET 10/40MG 7 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "LIPITRIN 10/10MG 14 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "LIPITRIN 10/20MG 14 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "LIPITRIN 10/40 MG 7 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "SIMEZET 10/10 MG 14 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "SIMEZET 10/40 MG 14 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "SIMVA-EZE 20/10MG 7 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "SIMVA-EZE 40/10MG 7 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "ALKOR 10 MG 14 F.C. TABS.",
+        "ar": ""
+      },
+      {
+        "en": "MINALIP 20MG 7 F.C. TABS.",
+        "ar": ""
+      },
+      {
+        "en": "SIMVACOR 40MG 7 F.C. TAB.",
+        "ar": ""
+      },
+      {
+        "en": "ALKOR PLUS 10/40MG 14 TAB",
+        "ar": ""
+      },
+      {
+        "en": "ALTOMANIRA 10/40MG 21 TAB",
+        "ar": ""
+      },
+      {
+        "en": "CAZET 10/10MG 7 F.C. TAB.",
+        "ar": ""
       },
       {
         "en": "JESTAMIVAM 10/10MG 30 TAB",
@@ -1962,108 +1965,8 @@ export const edaSupplement = [
         "ar": "جيستاميفام 10/"
       },
       {
-        "en": "LIPIDNORM CO 10/10MG 10 F.C. TABS.",
-        "ar": "ليبيدنورم كو 10/"
-      },
-      {
-        "en": "LIPITRIN 10/10MG 14 TAB.",
-        "ar": "ليبيترين 10/"
-      },
-      {
-        "en": "LIPITRIN 10/20MG 14 TAB.",
-        "ar": "ليبيترين 10/"
-      },
-      {
-        "en": "LIPITRIN 10/40 MG 7 TAB.",
-        "ar": "ليبيترين 10/"
-      },
-      {
-        "en": "LOWTIMIB COMP 10/20MG 10 F.C. TAB.",
-        "ar": "لووتيميب كومب 10/"
-      },
-      {
-        "en": "MINALIP PLUS 10/20MG 14 TABS.",
-        "ar": "ميناليب بلوس 10/"
-      },
-      {
-        "en": "MINALIP PLUS 10/40MG 7 TABS.",
-        "ar": "ميناليب بلوس 10/"
-      },
-      {
-        "en": "SIMEZET 10/10 MG 14 TAB.",
-        "ar": "سيميزيت 10/"
-      },
-      {
-        "en": "SIMEZET 10/40 MG 14 TAB.",
-        "ar": "سيميزيت 10/"
-      },
-      {
         "en": "SIMVA-EZE 10/10 MG 7 TAB.",
         "ar": "سيمفا-إزي 10/"
-      },
-      {
-        "en": "SIMVA-EZE 20/10MG 7 TAB.",
-        "ar": "سيمفا-إزي 20/"
-      },
-      {
-        "en": "SIMVA-EZE 40/10MG 7 TAB.",
-        "ar": "سيمفا-إزي 40/"
-      },
-      {
-        "en": "SIMVA-MAP 10/10MG 10 BILAYER F.C. TAB.",
-        "ar": "سيمفا-ماب 10/ 10 بيلايير"
-      },
-      {
-        "en": "SIMVA-MAP 10/20MG 10 BILAYER F.C. TAB.",
-        "ar": "سيمفا-ماب 10/ 10 بيلايير"
-      },
-      {
-        "en": "SIMVA-MAP 10/40MG 10 BILAYER F.C. TAB.",
-        "ar": "سيمفا-ماب 10/ 10 بيلايير"
-      },
-      {
-        "en": "SIMVA-MAP 10/80MG 10 BILAYER F.C. TAB.",
-        "ar": "سيمفا-ماب 10/ 10 بيلايير"
-      },
-      {
-        "en": "SIMVASTACARE 10/40 MG 21 TABS.",
-        "ar": "سيمفاستاكاري 10/"
-      },
-      {
-        "en": "SIMVASTIMIBE 10/20MG 30 TABS.",
-        "ar": "سيمفاستيميبي 10/"
-      },
-      {
-        "en": "SIMVASTIMIBE 10/40MG 30 TABS.",
-        "ar": "سيمفاستيميبي 10/"
-      },
-      {
-        "en": "SIMVASTIMIBE 10/80MG 20 TABS.",
-        "ar": "سيمفاستيميبي 10/"
-      },
-      {
-        "en": "SIMVAXIBE 10/10MG 21 F.C.TAB.",
-        "ar": "سيمفاكسيبي 10/"
-      },
-      {
-        "en": "SIMVAXIBE 10/20MG 21 F.C. TABS.",
-        "ar": "سيمفاكسيبي 10/"
-      },
-      {
-        "en": "SIMVAXIBE 10/40MG 21 F.C.TAB.",
-        "ar": "سيمفاكسيبي 10/"
-      },
-      {
-        "en": "TIMBESTATIN 10/20 MG 14 F.C.TAB.",
-        "ar": "تيمبيستاتين 10/"
-      },
-      {
-        "en": "TIMBESTATIN 10/20 MG 7 F.C.TAB.",
-        "ar": "تيمبيستاتين 10/"
-      },
-      {
-        "en": "VANISH 10/40MG 7 F.C. TABS.",
-        "ar": "فانيش 10/"
       },
       {
         "en": "VASTATINAL 10/10MG 7 TAB.",
@@ -2078,20 +1981,44 @@ export const edaSupplement = [
         "ar": "فاستاتينال 10/"
       },
       {
-        "en": "VETOSIMVAMEB 10/20MG 10 TABS.",
-        "ar": "فيتوسيمفاميب 10/"
+        "en": "SIMVACOR 20 MG 7 F.C. TAB.",
+        "ar": "سيمفاكور"
       },
       {
-        "en": "VETOSIMVAMEB 10/40MG 10 TABS.",
-        "ar": "فيتوسيمفاميب 10/"
+        "en": "ALKOR PLUS 10/20MG 14 TAB.",
+        "ar": "ألكور بلوس 10/"
       },
       {
-        "en": "ZETLIP PLUS 10/20MG 10 F.C. TAB.",
-        "ar": "زيتليب بلوس 10/"
+        "en": "GIVAROROCK 10/20 MG 14 TAB.",
+        "ar": "جيفاروروك 10/"
       },
       {
-        "en": "ZETLIP PLUS 10/40MG 10 F.C. TAB.",
-        "ar": "زيتليب بلوس 10/"
+        "en": "GIVAROROCK 10/40 MG 14 TAB.",
+        "ar": "جيفاروروك 10/"
+      },
+      {
+        "en": "VANISH 10/40MG 7 F.C. TABS.",
+        "ar": "فانيش 10/"
+      },
+      {
+        "en": "AMRISTATIN 20MG 10 F.C. TAB.",
+        "ar": "أمريستاتين"
+      },
+      {
+        "en": "AMRISTATIN 40MG 10 F.C. TAB.",
+        "ar": "أمريستاتين"
+      },
+      {
+        "en": "AMRISTATIN 80MG 10 F.C. TAB.",
+        "ar": "أمريستاتين"
+      },
+      {
+        "en": "LOW-STEROL 10MG 20 F.C. TAB.",
+        "ar": "لوو-ستيرول"
+      },
+      {
+        "en": "MINALIP PLUS 10/40MG 7 TABS.",
+        "ar": "ميناليب بلوس 10/"
       },
       {
         "en": "ZOCOZET 10/10MG 14 F.C. TAB.",
@@ -2102,8 +2029,8 @@ export const edaSupplement = [
         "ar": "زوكوزيت 10/"
       },
       {
-        "en": "MVASTACIN 20/500MG 10 EXT. REL F.C. TABS.",
-        "ar": "مفاستاسين 20/ 10 إكست. ريل"
+        "en": "MINALIP PLUS 10/20MG 14 TABS.",
+        "ar": "ميناليب بلوس 10/"
       }
     ],
     "edaPrices": [
@@ -2205,28 +2132,308 @@ export const edaSupplement = [
     "id": "10",
     "nameEn": "Spironolactone",
     "nameAr": "سبيرونولاكتون",
-    "prices": [],
+    "prices": [
+      {
+        "form": "أقراص",
+        "formEn": "Tablets",
+        "price": 16.8,
+        "unit": "EGP"
+      }
+    ],
     "brandAliases": [
       {
-        "en": "SPIRONOLACTONE (DELTA) 100MG 20 TAB.",
-        "ar": "سبيرونولاكتوني"
+        "en": "BALANCERON DROPS",
+        "ar": ""
       },
       {
-        "en": "SPIRONOLACTONE (DELTA) 25MG 10 TAB.",
-        "ar": "سبيرونولاكتوني"
+        "en": "ALDACTAZIDE 20 TAB",
+        "ar": ""
       },
       {
-        "en": "SPIRONOLACTONE (DELTA) 50MG 10 TAB.",
-        "ar": "سبيرونولاكتوني"
+        "en": "FABUGLYCINA 30 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "ROTAMAX  120ML SYRUP",
+        "ar": ""
+      },
+      {
+        "en": "ALDACTONE 25MG 20 TAB",
+        "ar": ""
+      },
+      {
+        "en": "ANDOVIT IRON 20 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "MEDAHEME 120 ML SYRUP",
+        "ar": ""
+      },
+      {
+        "en": "ALDACTONE 100MG 20 TAB",
+        "ar": ""
+      },
+      {
+        "en": "POTASAVE 100 MG 20 TAB",
+        "ar": ""
+      },
+      {
+        "en": "POTASAVE 25 MG 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "EPILACTONE 25MG 10 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "SPECTONE 25 MG 20 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "ANSCHLARIN SYRUP 120 ML",
+        "ar": ""
+      },
+      {
+        "en": "FERRMARRON SYRUP 100 ML",
+        "ar": ""
+      },
+      {
+        "en": "SPECTONE 100 MG 20 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "FABUGLYCINA SYRUP 120 ML",
+        "ar": ""
+      },
+      {
+        "en": "IDOMALTOL 30 MG 56 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "POTASPIRONO 25 MG 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "SPIROZIDE  25/25MG 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "EPILACTONE 100 MG 10 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "POTASPIRONO 100 MG 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "ODESPIRON 50/20MG 30 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "SPIRONOLACTONE 25MG 10 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "SPIRONOLACTONE 50MG 10 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "FEROSE 50MG/5ML 100ML SYRUP",
+        "ar": ""
+      },
+      {
+        "en": "ODESPIRON 100/20MG 30 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "SPIRONOLACTONE 100MG 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "FABUGLYCINA ORAL DROPS 30 ML",
+        "ar": ""
+      },
+      {
+        "en": "HYDROFERRIN 100MG/2ML 3 AMP.",
+        "ar": ""
+      },
+      {
+        "en": "FEROSE 100MG 30 CHEWABLE TAB.",
+        "ar": ""
+      },
+      {
+        "en": "HAEMOJET 100 MG  36 S.G.CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "HAEMOJET 50MG/5ML SYRUP 100ML",
+        "ar": ""
+      },
+      {
+        "en": "LASILACTONE 50/20 MG 30 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "SPIROMIDE 50/20MG 10 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "FRUSETONE 20/100 MG 10 F.C.TAB",
+        "ar": ""
+      },
+      {
+        "en": "SPIROMIDE 100/20MG 10 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "BOSTON BOSTOFER 30T S.R. TABS.",
+        "ar": "بوستون بوستوفير 30ت"
+      },
+      {
+        "en": "FERRITOP 15MG/5ML SYRUP 100 ML",
+        "ar": "فيرريتوب /"
+      },
+      {
+        "en": "SYTRON 27.5MG/5ML SYRUP 125 ML",
+        "ar": "سيترون /"
+      },
+      {
+        "en": "FRUSETONE 20/50MG 10 F.C. TABS.",
+        "ar": ""
+      },
+      {
+        "en": "HAEMOPOWER 100MG 30 CHEW. TABS.",
+        "ar": "هايموبووير 30 تشيو"
+      },
+      {
+        "en": "POLYSACC 100MG/5ML ELIXIR 60 ML",
+        "ar": "بوليساكك / إليكسير"
+      },
+      {
+        "en": "LASILACTONE 100/20MG 30 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "GOLDEN FER 10 MG/ML SYRUP 100 ML",
+        "ar": "جولدين فير /مل"
+      },
+      {
+        "en": "GOLDEN FER 100 MG 30 CHEW. TABS.",
+        "ar": "جولدين فير 30 تشيو"
+      },
+      {
+        "en": "COSMOFER 50MG/ML FOR INF. 5 AMPS.",
+        "ar": "كوسموفير /مل"
+      },
+      {
+        "en": "HYDROFERRIN 50MG/5ML SYRUP 100 ML",
+        "ar": "هيدروفيررين /"
+      },
+      {
+        "en": "HAEMOPOWER 50MG/ML ORAL DROPS 30 ML",
+        "ar": "هايموبووير /مل أورال"
+      },
+      {
+        "en": "FERCAYL 100MG/2ML 5 I.M. / I.V. AMP.",
+        "ar": "فيركايل / 5 . /"
+      },
+      {
+        "en": "HYDROFERRIN 50MG/ML ORAL DROPS 30 ML",
+        "ar": "هيدروفيررين /مل أورال"
       }
     ],
     "edaPrices": [
       3,
+      4,
       4.5,
-      16.8
+      5.9,
+      7,
+      7.25,
+      7.5,
+      9,
+      10,
+      10.5,
+      11,
+      11.25,
+      12,
+      16.2,
+      16.25,
+      16.8,
+      17.5,
+      18,
+      20,
+      21,
+      21.75,
+      22,
+      25.2,
+      33,
+      33.75,
+      34,
+      36,
+      38.5,
+      39,
+      44,
+      45,
+      46,
+      48.75,
+      54,
+      58.5,
+      59,
+      60,
+      64,
+      68,
+      75,
+      78,
+      90,
+      126,
+      135,
+      160,
+      186,
+      218,
+      220,
+      275,
+      470,
+      1600
     ],
     "edaManufacturers": [
-      "GLOBAL NAPI PHARMACEUTICALS > AL DELTA PHARMACEUTICALS TRADING CO."
+      "KAHIRA > SEARLE-CANADA",
+      "SEDICO",
+      "EIPICO",
+      "ALFACURE PHARMACEUTICALS",
+      "UNIPHARMA",
+      "KAHIRA",
+      "GLOBAL NAPI PHARMACEUTICALS > AL DELTA PHARMACEUTICALS TRADING CO.",
+      "DELTA GRAND PHARMA > EGYPHARMA-EGYPT",
+      "ANDALOUS PHARMA",
+      "AVERROES PHARMA-EGYPT",
+      "ORGANIX > BALANCE PHARMA",
+      "> NEW BOSTON PHARMACEUTICALS",
+      "PHARMACOSMOS A/S > PHAROPHARMA",
+      "HIKMA SPECIALIZED PHARMACEUTICALS",
+      "AMRIYA > EUROPEAN EGYPTIAN PHARM. IND.",
+      "PRAXO PHARM",
+      "SUNNY MEDICAL > LABORATORIES STEROP SA",
+      "SPIMACO > EIMC",
+      "HIKMA PHARMA",
+      "KAHIRA > ABBOTT LABORATORIES",
+      "ADWIA",
+      "MEDIZEN PHARMACEUTICAL INDUSTRIES",
+      "EUROPEAN EGYPTIAN PHARM. IND.",
+      "AMRIYA",
+      "BORG",
+      "MARCYRL PHARMACEUTICAL INDUSTRIES (MPI)",
+      "IDT BIOLOGICA GMBH > HIKMA PHARMA",
+      "SUNNY MEDICAL > MULTIPHARMA",
+      "PURITANS PRIDE",
+      "EVA PHARMA",
+      "LIFE SAVER > PROMAX PHARMACEUTICALS",
+      "MARCYRL PHARMACEUTICAL INDUSTRIES (MPI) > EGYPTIAN PHARMACEUTICAL CENTER",
+      "LEMOCAR FOR PHARMACEUTICAL INDUSTRY > BIO CARE",
+      "AMOUN",
+      "HIKMA PHARMA > JOHNSON & JOHNSON USA",
+      "PHARCO",
+      "SANOFI",
+      "EL NASR"
     ],
     "verified": true
   },
@@ -2238,27 +2445,27 @@ export const edaSupplement = [
     "brandAliases": [
       {
         "en": "CARDIXIN 0.25 MG 40 TABS.",
-        "ar": "كارديكسين"
-      },
-      {
-        "en": "CARDIXIN 500 MCG/2ML 5 AMPS.",
-        "ar": "كارديكسين /"
-      },
-      {
-        "en": "DIGOXICARD 0.05MG/ML ELIXIR 60 ML",
-        "ar": "ديجوكسيكارد /مل إليكسير"
-      },
-      {
-        "en": "LANOXIN 0.05MG/ML PAEDIATRIC ELIXIR",
-        "ar": "لانوكسين /مل بايدياتريك إليكسير"
+        "ar": ""
       },
       {
         "en": "LANOXIN 0.25 MG 100 TABS.",
-        "ar": "لانوكسين"
+        "ar": ""
       },
       {
         "en": "LANOXIN 0.5MG/2ML 5 AMPS.",
-        "ar": "لانوكسين /"
+        "ar": ""
+      },
+      {
+        "en": "CARDIXIN 500 MCG/2ML 5 AMPS.",
+        "ar": ""
+      },
+      {
+        "en": "DIGOXICARD 0.05MG/ML ELIXIR 60 ML",
+        "ar": ""
+      },
+      {
+        "en": "LANOXIN 0.05MG/ML PAEDIATRIC ELIXIR",
+        "ar": ""
       }
     ],
     "edaPrices": [
@@ -2281,23 +2488,199 @@ export const edaSupplement = [
     "id": "12",
     "nameEn": "Furosemide",
     "nameAr": "فوروسيميد",
-    "prices": [],
+    "prices": [
+      {
+        "form": "أقراص",
+        "formEn": "Tablets",
+        "price": 7.5,
+        "unit": "EGP"
+      }
+    ],
     "brandAliases": [
       {
+        "en": "FRUZEX 40MG 12 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "LAFUREX 20MG 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "LAFUREX 40MG 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "LASIX 40 MG 24 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "ODEMENT 40MG 10 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "SALEX 40 MG 20 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "LASIX 20MG/2ML 3 AMP.",
+        "ar": ""
+      },
+      {
+        "en": "DIUSEX 20MG/2ML 5 AMP.",
+        "ar": ""
+      },
+      {
+        "en": "DIUSEX 40MG/4ML 5 AMP.",
+        "ar": ""
+      },
+      {
         "en": "FUROSEMIDE 40MG 20 TAB.",
-        "ar": "فوروسيميدي"
+        "ar": ""
+      },
+      {
+        "en": "LAFUREX 20MG/2ML 5 AMP.",
+        "ar": ""
+      },
+      {
+        "en": "LAFUREX 40MG/4ML 3 AMP.",
+        "ar": ""
+      },
+      {
+        "en": "FURIXDAR 500 MG 10 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "FURORETIC 20 MG 30 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "FURORETIC 40 MG 30 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "OCTOSEMIDE-K E.R 10 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "SALEX 20 MG/2 ML 5 AMPS.",
+        "ar": "ساليكس /"
+      },
+      {
+        "en": "FURORETIC 500 MG 20 TABS.",
+        "ar": "فوروريتيك"
+      },
+      {
+        "en": "ODESPIRON 50/20MG 30 TABS.",
+        "ar": ""
       },
       {
         "en": "FUROSEMIDE 40MG/4ML 3 AMP.",
         "ar": "فوروسيميدي /"
+      },
+      {
+        "en": "SELECTOFUR 20MG/2ML 3 AMP.",
+        "ar": "سيليكتوفور /"
+      },
+      {
+        "en": "ODESPIRON 100/20MG 30 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "FUROSEMIDE-ALEX 40MG 20 TAB.",
+        "ar": "فوروسيميدي-أليكس"
+      },
+      {
+        "en": "LASILACTONE 50/20 MG 30 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "SPIROMIDE 50/20MG 10 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "FRUSETONE 20/100 MG 10 F.C.TAB",
+        "ar": ""
+      },
+      {
+        "en": "SPIROMIDE 100/20MG 10 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "FRUSETONE 20/50MG 10 F.C. TABS.",
+        "ar": ""
+      },
+      {
+        "en": "LASILACTONE 100/20MG 30 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "GENESEMIDE 20MG/5ML SYRUP 120 ML",
+        "ar": "جينيسيميدي /"
+      },
+      {
+        "en": "LASIPHAR 20MG/2ML I.M./I.V. 3 AMPS.",
+        "ar": "لاسيفار / ./"
+      },
+      {
+        "en": "LASIPHAR 40MG/4ML  I.M./I.V. 3 AMPS.",
+        "ar": "لاسيفار / ./"
+      },
+      {
+        "en": "FUROSEMIDE-ALEX 40MG 5 I.M. I.V. AMP.",
+        "ar": "فوروسيميدي-أليكس 5"
+      },
+      {
+        "en": "FUROSEMIDE-ALEX 20MG 5 I.M. I.V. AMPS.",
+        "ar": "فوروسيميدي-أليكس 5"
       }
     ],
     "edaPrices": [
+      1.3,
+      3.25,
       6.5,
-      7.5
+      7,
+      7.25,
+      7.5,
+      8.5,
+      9.5,
+      10,
+      11.25,
+      12,
+      12.25,
+      12.75,
+      13.5,
+      14.25,
+      18,
+      19,
+      21.75,
+      30,
+      33.75,
+      36,
+      47.5,
+      50,
+      56,
+      93,
+      126,
+      186
     ],
     "edaManufacturers": [
-      "SEDICO"
+      "GLOBAL NAPI PHARMACEUTICALS > AL DELTA PHARMACEUTICALS TRADING CO.",
+      "MISR",
+      "RAMEDA > PHARMADAR",
+      "DEBEIKY > VETOPHARM",
+      "DEBEIKY > VETOPHARM-EGYPT",
+      "SEDICO",
+      "ALEXANDRIA",
+      "MEDIZEN PHARMACEUTICAL INDUSTRIES > VODACHEM",
+      "AMOUN",
+      "EIMC > PHAROPHARMA",
+      "SEDICO > SANOFI",
+      "SANOFI",
+      "EL NASR",
+      "ARAB DRUG COMPANY (ADCO)",
+      "CID",
+      "PHARCO",
+      "OCTOBER PHARMA"
     ],
     "verified": true
   },
@@ -2308,643 +2691,83 @@ export const edaSupplement = [
     "prices": [],
     "brandAliases": [
       {
-        "en": "AIG ESOMEPRAZOLE 40 MG 21 CAPS.",
-        "ar": "أيج إسوميبرازولي"
-      },
-      {
-        "en": "AIG ESOMEPRAZOLE 40 MG 28 CAPS.",
-        "ar": "أيج إسوميبرازولي"
-      },
-      {
-        "en": "ARDOXIMAG 40 MG 14 TABS.",
-        "ar": "أردوكسيماج"
-      },
-      {
-        "en": "ATMIPRAZOLE 20 MG 20 CAPS.",
-        "ar": "أتميبرازولي"
-      },
-      {
-        "en": "ATMIPRAZOLE 40 MG 20 CAPS.",
-        "ar": "أتميبرازولي"
-      },
-      {
-        "en": "BIORAZO 20MG 14 CAPS.",
-        "ar": "بيورازو"
-      },
-      {
-        "en": "BIORAZO 20MG 7 CAPS. (N/A)",
-        "ar": "بيورازو"
-      },
-      {
-        "en": "BIORAZO 40MG 14 CAPS.",
-        "ar": "بيورازو"
-      },
-      {
-        "en": "BIORAZO 40MG 7 CAPS. (N/A)",
-        "ar": "بيورازو"
-      },
-      {
-        "en": "ESMATAC 20 MG 14 D.R. CAPS.",
-        "ar": "إسماتاك 14 د.ر"
-      },
-      {
-        "en": "ESMATAC 20 MG 7 D.R. CAPS. (N/A)",
-        "ar": "إسماتاك 7 د.ر"
-      },
-      {
-        "en": "ESMATAC 40 MG 14 D.R. CAPS. (N/A)",
-        "ar": "إسماتاك 14 د.ر"
-      },
-      {
-        "en": "ESMATAC 40 MG 28 D.R. CAPS.",
-        "ar": "إسماتاك 28 د.ر"
-      },
-      {
-        "en": "ESMOPROTON 20 MG 20 CAPS.",
-        "ar": "إسموبروتون"
-      },
-      {
-        "en": "ESMOPROTON 40 MG 20 CAPS.",
-        "ar": "إسموبروتون"
-      },
-      {
-        "en": "ESMOPUMP 20 MG 14 E.C.TABS.",
-        "ar": "إسموبومب 14 إ.ك"
-      },
-      {
-        "en": "ESMOPUMP 40 MG 14 F.C. TABS.",
-        "ar": "إسموبومب"
-      },
-      {
-        "en": "ESMORAP 10 MG 7 SACHETS",
-        "ar": "إسموراب"
-      },
-      {
-        "en": "ESMORAP 20 MG 14 CAPS.",
-        "ar": "إسموراب"
-      },
-      {
-        "en": "ESMORAP 20 MG 7 SACHETS",
-        "ar": "إسموراب"
-      },
-      {
-        "en": "ESMORAP 40 MG 14 CAPS.",
-        "ar": "إسموراب"
-      },
-      {
-        "en": "ESMORAP 40 MG 28 CAPS.",
-        "ar": "إسموراب"
-      },
-      {
-        "en": "ESMORAP 40 MG 7 SACHETS",
-        "ar": "إسموراب"
-      },
-      {
-        "en": "ESMORAP 40 MG POWDER FOR I.V. INF. VIAL",
-        "ar": "إسموراب"
-      },
-      {
-        "en": "ESO-PROTOCOL 20 MG 10 CAPS.",
-        "ar": "إسو-بروتوكول"
-      },
-      {
-        "en": "ESO-PROTOCOL 40MG 10 CAPS.",
-        "ar": "إسو-بروتوكول"
-      },
-      {
-        "en": "ESOGERDAZOLE 40 MG 14 DR. CAPS.",
-        "ar": "إسوجيردازولي 14 در"
-      },
-      {
-        "en": "ESOMELODAN 20MG 20 E.C. TABS. (N/A)",
-        "ar": "إسوميلودان 20 إ.ك"
-      },
-      {
-        "en": "ESOMELODAN 40MG 20 E.C. TABS.(N/A)",
-        "ar": "إسوميلودان 20 إ.ك"
-      },
-      {
-        "en": "ESOMELODAN 40MG 3 POWDER FOR I.V. INF. VIAL (N/A)",
-        "ar": "إسوميلودان 3"
-      },
-      {
-        "en": "ESOMEPEX 40 MG 14 ENTERIC COATED TAB.",
-        "ar": "إسوميبيكس 14 إنتيريك كواتيد"
-      },
-      {
-        "en": "ESOMEPEX 40 MG POWDER FOR I.V. INF. VIAL",
-        "ar": "إسوميبيكس"
-      },
-      {
-        "en": "ESOMEPRAZOLE-EVA 20MG 20 E.C. TABS.",
-        "ar": "إسوميبرازولي-إفا 20 إ.ك"
-      },
-      {
-        "en": "ESOMEPRAZOLE-EVA 40MG 20 E.C. TABS.",
-        "ar": "إسوميبرازولي-إفا 20 إ.ك"
-      },
-      {
-        "en": "ESOMEPRAZOLE-EVA 40MG 3 POWDER FOR I.V. INF. VIAL",
-        "ar": "إسوميبرازولي-إفا 3"
-      },
-      {
-        "en": "ESOMESALIX 40 MG 14 CAPS.",
-        "ar": "إسوميساليكس"
-      },
-      {
-        "en": "ESOMIUM 40MG 7 S.R. CAPS. (N/A)",
-        "ar": "إسوميوم"
-      },
-      {
-        "en": "ESOPIROXAN 20 MG 14 DEL. REL. H.G. CAPS.",
-        "ar": "إسوبيروكسان 14 ديل. ريل. ه.ج"
-      },
-      {
-        "en": "ESOPIROXAN 40 MG 14 DEL. REL. H.G. CAPS.",
-        "ar": "إسوبيروكسان 14 ديل. ريل. ه.ج"
-      },
-      {
-        "en": "ESOVAXOLE 20 MG 28 CAPS.",
-        "ar": "إسوفاكسولي"
-      },
-      {
-        "en": "ESOVAXOLE 40 MG 28 CAPS.",
-        "ar": "إسوفاكسولي"
-      },
-      {
-        "en": "EXEEDOGAST 40 MG 20 CAPS.",
-        "ar": "إكسيدوجاست"
-      },
-      {
-        "en": "EZOGAST 20MG 14 DELA. REL. CAPS.",
-        "ar": "إزوجاست 14 ديلا. ريل"
-      },
-      {
-        "en": "EZOGAST 40MG 14 DELA. REL. CAPS.",
-        "ar": "إزوجاست 14 ديلا. ريل"
-      },
-      {
-        "en": "EZOGAST 40MG 28 DELA. REL. CAPS.",
-        "ar": "إزوجاست 28 ديلا. ريل"
-      },
-      {
-        "en": "FULPRAZAL 40 MG 14 CAPS.",
-        "ar": "فولبرازال"
-      },
-      {
-        "en": "FULPRAZAL 40 MG 20 CAPS.",
-        "ar": "فولبرازال"
-      },
-      {
-        "en": "GESOMEZOL 40 MG 14 CAPS.",
-        "ar": "جيسوميزول"
-      },
-      {
-        "en": "KLEMAZICE 40MG 14 CAPS.",
-        "ar": "كليمازيسي"
-      },
-      {
-        "en": "MEGAPRAZOLE 20 MG POWDER FOR I.V. INF. VIAL",
-        "ar": "ميجابرازولي"
-      },
-      {
-        "en": "MEGAPRAZOLE 40 MG POWDER FOR I.V. INF. VIAL",
-        "ar": "ميجابرازولي"
-      },
-      {
-        "en": "MEPRADEB 40 MG 14 DEL. REL. CAPS.",
-        "ar": "ميبراديب 14 ديل. ريل"
-      },
-      {
-        "en": "MERAZODEL 20 MG POWDER FOR I.V. INF. VIAL (N/A)",
-        "ar": "ميرازوديل"
-      },
-      {
-        "en": "MERAZODEL 40 MG POWDER FOR I.V. INF. VIAL",
-        "ar": "ميرازوديل"
-      },
-      {
-        "en": "NEXICURE 10 MG 14 SACHETS",
-        "ar": "نيكسيكوري"
-      },
-      {
-        "en": "NEXICURE 2.5 MG 28 SACHETS",
-        "ar": "نيكسيكوري"
-      },
-      {
-        "en": "NEXICURE 20 MG 14 F.C.TABS.",
-        "ar": "نيكسيكوري"
-      },
-      {
-        "en": "NEXICURE 20 MG 20 F.C.TABS. (N/A)",
-        "ar": "نيكسيكوري"
-      },
-      {
-        "en": "NEXICURE 40 MG 20 F.C.TABS.",
-        "ar": "نيكسيكوري"
-      },
-      {
-        "en": "NEXICURE 5 MG 28 SACHETS",
-        "ar": "نيكسيكوري"
-      },
-      {
-        "en": "NEXIMASH 40 MG 14 CAPS.",
-        "ar": "نيكسيماش"
-      },
-      {
-        "en": "NEXIMASH 40 MG 28 CAPS.",
-        "ar": "نيكسيماش"
-      },
-      {
-        "en": "NEXIMASH 40 MG 7 CAPS.",
-        "ar": "نيكسيماش"
-      },
-      {
-        "en": "NEXIMERICAN 20 MG 14 CAPS.",
-        "ar": "نيكسيميريكان"
-      },
-      {
-        "en": "NEXIMERICAN 20 MG 21 CAPS. (N/A)",
-        "ar": "نيكسيميريكان"
-      },
-      {
-        "en": "NEXIMERICAN 20 MG 7 CAPS. (N/A)",
-        "ar": "نيكسيميريكان"
-      },
-      {
-        "en": "NEXIMERICAN 40 MG 14 CAPS.",
-        "ar": "نيكسيميريكان"
-      },
-      {
-        "en": "NEXIMERICAN 40 MG 21 CAPS. (N/A)",
-        "ar": "نيكسيميريكان"
-      },
-      {
-        "en": "NEXIMERICAN 40 MG 7 CAPS. (N/A)",
-        "ar": "نيكسيميريكان"
-      },
-      {
-        "en": "NEXIUM 10 MG 28 SACHETS",
-        "ar": "نيكسيوم"
-      },
-      {
-        "en": "NEXIUM 20 MG 14 F.C.TABS. (N/A)",
-        "ar": "نيكسيوم"
-      },
-      {
-        "en": "NEXIUM 20 MG 28 F.C.TABS.",
-        "ar": "نيكسيوم"
-      },
-      {
-        "en": "NEXIUM 40 MG 14 F.C.TABS. (N/A)",
-        "ar": "نيكسيوم"
-      },
-      {
-        "en": "NEXIUM 40 MG 28 F.C.TABS.",
-        "ar": "نيكسيوم"
-      },
-      {
-        "en": "NEXIUM 40 MG POWDER FOR I.V. INF. VIAL",
-        "ar": "نيكسيوم"
-      },
-      {
-        "en": "NIXPRAZOLE 40 MG 14 DELAYED REL. CAPS.",
-        "ar": "نيكسبرازولي 14 ديلاييد ريل"
-      },
-      {
-        "en": "ORGIXIUM 20 MG DR 21 CAPS.",
-        "ar": "أورجيكسيوم در"
-      },
-      {
-        "en": "ORGIXIUM 40 MG DR 21 CAPS.",
-        "ar": "أورجيكسيوم در"
-      },
-      {
-        "en": "PACIFIAL 20MG 21 DELA. REL. CAPS.",
-        "ar": "باسيفيال 21 ديلا. ريل"
-      },
-      {
-        "en": "PACIFIAL 40MG 21 DELA. REL. CAPS.",
-        "ar": "باسيفيال 21 ديلا. ريل"
-      },
-      {
-        "en": "PROTOPAN 20 MG 14 CAPS. (N/A)",
-        "ar": "بروتوبان"
-      },
-      {
-        "en": "PROTOPAN 20 MG 21 CAPS.",
-        "ar": "بروتوبان"
-      },
-      {
-        "en": "PROTOPAN 40 MG 14 CAPS. (N/A)",
-        "ar": "بروتوبان"
-      },
-      {
-        "en": "PROTOPAN 40 MG 21 CAPS.",
-        "ar": "بروتوبان"
-      },
-      {
-        "en": "RAZOPUMP 20 MG 14 DEL. REL. H.G. CAPS.",
-        "ar": "رازوبومب 14 ديل. ريل. ه.ج"
-      },
-      {
-        "en": "RAZOPUMP 40 MG 14 DEL. REL. H.G. CAPS.",
-        "ar": "رازوبومب 14 ديل. ريل. ه.ج"
-      },
-      {
-        "en": "REFLUTINAL 40 MG 28 H.G. CAPS",
-        "ar": "ريفلوتينال 28 ه.ج"
-      },
-      {
-        "en": "SERIOPRAZOLE 40 MG 20 CAPS.",
-        "ar": "سيريوبرازولي"
-      },
-      {
-        "en": "STOMICOPE 40 MG 30 CAPS.",
-        "ar": "ستوميكوبي"
-      },
-      {
-        "en": "STOMOPRAL 20 MG 14 CAPS.",
-        "ar": "ستوموبرال"
-      },
-      {
-        "en": "STOMOPRAL 40 MG 14 CAPS.",
-        "ar": "ستوموبرال"
-      },
-      {
-        "en": "ZOMEGIPRAL 40MG POWDER FOR I.V. INF. VIAL",
-        "ar": "زوميجيبرال"
-      },
-      {
-        "en": "AZGOVANC 20MG 7 CAPS.",
-        "ar": "أزجوفانك"
-      },
-      {
-        "en": "AZGOVANC 40MG 7 CAPS.",
-        "ar": "أزجوفانك"
-      },
-      {
-        "en": "DOWNOPRAZOL 20/1100MG 14 CAPS.",
-        "ar": "دوونوبرازول 20/"
-      },
-      {
-        "en": "DOWNOPRAZOL 20/1680MG PD. FOR ORAL SUSP. 30 SACHETS",
-        "ar": "دوونوبرازول 20/ بد. أورال"
-      },
-      {
-        "en": "DOWNOPRAZOL 20/1680MG PD. FOR ORAL SUSP. 7 SACHETS",
-        "ar": "دوونوبرازول 20/ بد. أورال"
-      },
-      {
-        "en": "DOWNOPRAZOL 40/1100MG 14 CAPS.",
-        "ar": "دوونوبرازول 40/"
-      },
-      {
-        "en": "DOWNOPRAZOL 40/1680MG PD. FOR ORAL SUSP. 30 SACHETS",
-        "ar": "دوونوبرازول 40/ بد. أورال"
-      },
-      {
-        "en": "DOWNOPRAZOL 40/1680MG PD. FOR ORAL SUSP. 7 SACHETS",
-        "ar": "دوونوبرازول 40/ بد. أورال"
-      },
-      {
-        "en": "DUDOMEZ 40/1100MG 10 CAPS.",
-        "ar": "دودوميز 40/"
-      },
-      {
-        "en": "DUDOMEZ 40/1680MG PD. FOR ORAL SUSP. 10 SACHET",
-        "ar": "دودوميز 40/ بد. أورال"
-      },
-      {
-        "en": "NEXIPRO 20/1680MG 7 SACHETS",
-        "ar": "نيكسيبرو 20/"
-      },
-      {
-        "en": "OMECARBEX 20/1100MG 20 CAPS.",
-        "ar": "أوميكاربيكس 20/"
-      },
-      {
-        "en": "OMECARBEX 40/1100MG 20 CAPS.",
-        "ar": "أوميكاربيكس 40/"
-      },
-      {
-        "en": "OMEHEALTH 40/1100 MG 7 CAPS.",
-        "ar": "أوميهيالث 40/"
-      },
-      {
-        "en": "OPRANATE 20/1100MG 10 CAPS.",
-        "ar": "أوبراناتي 20/"
-      },
-      {
-        "en": "OPRANATE 20/1680MG PD. FOR ORAL SUSP. 5 SACHET",
-        "ar": "أوبراناتي 20/ بد. أورال"
-      },
-      {
-        "en": "OPRANATE 40/1100MG 10 CAPS.",
-        "ar": "أوبراناتي 40/"
-      },
-      {
-        "en": "OPRANATE 40/1680MG PD. FOR ORAL SUSP. 5 SACHET",
-        "ar": "أوبراناتي 40/ بد. أورال"
-      },
-      {
-        "en": "STOMIGAS 20/1100 MG 20 CAPS.",
-        "ar": "ستوميجاس 20/"
-      },
-      {
-        "en": "STOMIGAS 20/1680MG PD. FOR ORAL SUSP. 10 SACHET",
-        "ar": "ستوميجاس 20/ بد. أورال"
-      },
-      {
-        "en": "STOMIGAS 40/1100 MG 20 CAPS.",
-        "ar": "ستوميجاس 40/"
-      },
-      {
-        "en": "STOMIGAS 40/1680MG PD. FOR ORAL SUSP. 10 SACHET",
-        "ar": "ستوميجاس 40/ بد. أورال"
-      },
-      {
-        "en": "TREATO-ULC 20/1100MG 14 CAPS.",
-        "ar": "ترياتو-أولك 20/"
-      },
-      {
-        "en": "TREATO-ULC 40/1100MG 14 CAPS.",
-        "ar": "ترياتو-أولك 40/"
-      },
-      {
-        "en": "WELGAZOLE 40/1100MG 20 H.G. CAPS.",
-        "ar": "ويلجازولي 40/ 20 ه.ج"
-      },
-      {
-        "en": "ZARROPRAZOLE 20/1100MG 28 CAPS.",
-        "ar": "زارروبرازولي 20/"
-      },
-      {
-        "en": "ZARROPRAZOLE 20/1680MG 10 SACHETS",
-        "ar": "زارروبرازولي 20/"
-      },
-      {
-        "en": "ZARROPRAZOLE 20/1680MG 30 SACHETS (N/A)",
-        "ar": "زارروبرازولي 20/"
-      },
-      {
-        "en": "ZARROPRAZOLE 40/1100 MG 28 CAPS",
-        "ar": "زارروبرازولي 40/"
-      },
-      {
-        "en": "EPIRAZOLE 20MG 14CAPS.",
-        "ar": "إبيرازولي"
-      },
-      {
-        "en": "ESTOHALT 10 MG 14 CAPS. (N/A)",
-        "ar": "إستوهالت"
-      },
-      {
-        "en": "ESTOHALT 40 MG 14 CAPS.",
-        "ar": "إستوهالت"
-      },
-      {
-        "en": "FASTCURE 10 MG 21 CAPS.",
-        "ar": "فاستكوري"
-      },
-      {
-        "en": "FASTCURE 20MG 14 CAPS.",
-        "ar": "فاستكوري"
-      },
-      {
-        "en": "FASTCURE 40MG 14 CAPS.",
-        "ar": "فاستكوري"
-      },
-      {
-        "en": "GASEC 20 MG 14 CAPS.",
-        "ar": "جاسيك"
-      },
-      {
-        "en": "GASEC 20 MG 7 CAPS.",
-        "ar": "جاسيك"
-      },
-      {
-        "en": "GASTRAZOLE 20 MG 14 CAPS.",
-        "ar": "جاسترازولي"
-      },
-      {
-        "en": "GASTROLOC 40MG 20 CAPS.",
-        "ar": "جاسترولوك"
-      },
-      {
-        "en": "HEALSEC 10 MG 14 CAPS.",
-        "ar": "هيالسيك"
-      },
-      {
-        "en": "HEALSEC 20 MG 14 CAPS.",
-        "ar": "هيالسيك"
-      },
-      {
-        "en": "HEALSEC 40 MG 14 CAPS.",
-        "ar": "هيالسيك"
-      },
-      {
-        "en": "HYPOSEC 20MG 14CAPS.",
-        "ar": "هيبوسيك"
-      },
-      {
-        "en": "LOSEC 20MG 7 CAPS.(CANCELLED)",
-        "ar": "لوسيك"
-      },
-      {
-        "en": "LOSEC 40MG/ML PWD. FOR I.V. INF. VIAL(CANCELLED)",
-        "ar": "لوسيك /مل بود"
-      },
-      {
-        "en": "LOSEC MUPS 10 MG 7 GASTRO-RESISTANT TABS.(CANCELLED)",
-        "ar": "لوسيك موبس 7 جاسترو-ريسيستانت"
-      },
-      {
-        "en": "NAPIZOLE 20MG 14 CAPS.",
-        "ar": "نابيزولي"
-      },
-      {
-        "en": "NAPIZOLE 40MG 14 CAPS.",
-        "ar": "نابيزولي"
-      },
-      {
-        "en": "NAPIZOLE 40MG/ML PWD. FOR I.V. INF. VIAL",
-        "ar": "نابيزولي /مل بود"
-      },
-      {
-        "en": "OMEGASTAZOLE 20MG 14 CAPS.",
-        "ar": "أوميجاستازولي"
-      },
-      {
-        "en": "OMEPAK 10 MG 14 CAPS.",
-        "ar": "أوميباك"
-      },
-      {
-        "en": "OMEPAK 20 MG 14 CAPS.",
-        "ar": "أوميباك"
-      },
-      {
-        "en": "OMEPAK 20 MG 7 CAPS.",
-        "ar": "أوميباك"
-      },
-      {
-        "en": "OMEPAK 40 MG 14 CAPS.",
-        "ar": "أوميباك"
-      },
-      {
-        "en": "OMEPAK 40 MG 7 CAPS.(N/A)",
-        "ar": "أوميباك"
-      },
-      {
-        "en": "OMEPRAL 20MG 14 CAPS.",
-        "ar": "أوميبرال"
-      },
-      {
-        "en": "OMEPRAZOLE-SPLENDID PHARMA 40 MG PWD. FOR I.V. INF. VIAL",
-        "ar": "أوميبرازولي-سبلينديد فارما بود"
+        "en": "LOSEC 20MG 7 CAPS.",
+        "ar": ""
       },
       {
         "en": "OMEZ 10MG 14 CAPS.",
-        "ar": "أوميز"
+        "ar": ""
       },
       {
         "en": "OMEZ 20MG 14 CAPS.",
-        "ar": "أوميز"
+        "ar": ""
       },
       {
         "en": "OMEZ 40MG 10 CAPS.",
-        "ar": "أوميز"
+        "ar": ""
       },
       {
         "en": "OMEZ 40MG 20 CAPS.",
-        "ar": "أوميز"
+        "ar": ""
       },
       {
-        "en": "OMEZ 40MG PWD. FOR I.V. INF. VIAL",
-        "ar": "أوميز بود"
+        "en": "TRIO-CLAR 42 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "GASEC 20 MG 7 CAPS.",
+        "ar": ""
       },
       {
         "en": "OMISEC 20MG 14CAPS.",
-        "ar": "أوميسيك"
-      },
-      {
-        "en": "PEPZOL 20 MG 14 CAPS.",
-        "ar": "بيبزول"
-      },
-      {
-        "en": "PEPZOL 40MG 14 CAPS.",
-        "ar": "بيبزول"
+        "ar": ""
       },
       {
         "en": "PEPZOL 40MG 7 CAPS.",
-        "ar": "بيبزول"
-      },
-      {
-        "en": "RISEK 10 MG 14 CAPS.",
-        "ar": "ريسيك"
+        "ar": ""
       },
       {
         "en": "RISEK 10 MG 7 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "RISEK 40 MG 7 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "BIORAZO 20MG 7 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "BIORAZO 40MG 7 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "GASEC 20 MG 14 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "HYPOSEC 20MG 14CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "OMEPAK 20 MG 7 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "OMEPAK 40 MG 7 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "PEPZOL 40MG 14 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "ZONELOCK 14 CAPSULES",
+        "ar": ""
+      },
+      {
+        "en": "RISEK 10 MG 14 CAPS.",
         "ar": "ريسيك"
       },
       {
@@ -2960,60 +2783,112 @@ export const edaSupplement = [
         "ar": "ريسيك"
       },
       {
-        "en": "RISEK 40 MG 7 CAPS.",
-        "ar": "ريسيك"
-      },
-      {
-        "en": "RISEK 40 MG PD. FOR I.V. INF. VIAL",
-        "ar": "ريسيك بد"
-      },
-      {
         "en": "ULSTOP 20MG 14 CAPS.",
         "ar": "أولستوب"
       },
       {
-        "en": "ESOMIUM 40MG 14 S.R. CAPS.",
-        "ar": "إسوميوم"
+        "en": "BIORAZO 20MG 14 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "BIORAZO 40MG 14 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "AZGOVANC 20MG 7 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "AZGOVANC 40MG 7 CAPS.",
+        "ar": ""
       },
       {
         "en": "SCORCH 20 MG 30 CAPS.",
-        "ar": "سكورتش"
+        "ar": ""
       },
       {
         "en": "SCORCH 40 MG 30 CAPS.",
-        "ar": "سكورتش"
+        "ar": ""
       },
       {
-        "en": "HELI-CURE 250/20/500 MG 14 ENTERIC COATED TAB.",
-        "ar": "هيلي-كوري 250/20/ 14 إنتيريك كواتيد"
+        "en": "OMEPAK 10 MG 14 CAPS.",
+        "ar": "أوميباك"
       },
       {
-        "en": "HELI-CURE 500/20/500 MG 14 ENTERIC COATED TAB.",
-        "ar": "هيلي-كوري 500/20/ 14 إنتيريك كواتيد"
+        "en": "OMEPAK 20 MG 14 CAPS.",
+        "ar": "أوميباك"
       },
       {
-        "en": "PEPTIC CARE 250 MG 14 E.C.TABS.",
-        "ar": "بيبتيك كاري 14 إ.ك"
+        "en": "OMEPAK 40 MG 14 CAPS.",
+        "ar": "أوميباك"
       },
       {
-        "en": "PEPTIC CARE 500 MG 14 E.C.TABS.",
-        "ar": "بيبتيك كاري 14 إ.ك"
+        "en": "OMEPRAL 20MG 14 CAPS.",
+        "ar": "أوميبرال"
       },
       {
-        "en": "TRIO-CLAR 42 CAPS.",
-        "ar": "تريو-كلار"
+        "en": "PEPZOL 20 MG 14 CAPS.",
+        "ar": "بيبزول"
       },
       {
-        "en": "NEXICURE PLUS 20 MG/1680MG 14 SACHETS",
-        "ar": "نيكسيكوري بلوس /"
+        "en": "ESMORAP 20 MG 14 CAPS.",
+        "ar": ""
       },
       {
-        "en": "NEXICURE PLUS 40 MG/1680 MG 14 SACHETS",
-        "ar": "نيكسيكوري بلوس /"
+        "en": "ESMORAP 40 MG 14 CAPS.",
+        "ar": ""
       },
       {
-        "en": "ZONELOCK 14 CAPSULES",
-        "ar": "زونيلوك"
+        "en": "ESMORAP 40 MG 28 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "NEXIMASH 40 MG 7 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "EPIRAZOLE 20MG 14CAPS.",
+        "ar": "إبيرازولي"
+      },
+      {
+        "en": "FASTCURE 20MG 14 CAPS.",
+        "ar": "فاستكوري"
+      },
+      {
+        "en": "FASTCURE 40MG 14 CAPS.",
+        "ar": "فاستكوري"
+      },
+      {
+        "en": "HEALSEC 10 MG 14 CAPS.",
+        "ar": "هيالسيك"
+      },
+      {
+        "en": "HEALSEC 20 MG 14 CAPS.",
+        "ar": "هيالسيك"
+      },
+      {
+        "en": "HEALSEC 40 MG 14 CAPS.",
+        "ar": "هيالسيك"
+      },
+      {
+        "en": "NAPIZOLE 20MG 14 CAPS.",
+        "ar": "نابيزولي"
+      },
+      {
+        "en": "NAPIZOLE 40MG 14 CAPS.",
+        "ar": "نابيزولي"
+      },
+      {
+        "en": "ESMORAP 10 MG 7 SACHETS",
+        "ar": ""
+      },
+      {
+        "en": "ESMORAP 20 MG 7 SACHETS",
+        "ar": ""
+      },
+      {
+        "en": "ESMORAP 40 MG 7 SACHETS",
+        "ar": ""
       }
     ],
     "edaPrices": [
@@ -3220,23 +3095,331 @@ export const edaSupplement = [
     "id": "14",
     "nameEn": "Ibuprofen",
     "nameAr": "إيبوبروفين",
-    "prices": [],
+    "prices": [
+      {
+        "form": "أقراص",
+        "formEn": "Tablets",
+        "price": 5,
+        "unit": "EGP"
+      }
+    ],
     "brandAliases": [
       {
-        "en": "IBUPROFEN 100MG/5ML SUSP. 120 ML",
-        "ar": "إبوبروفين /"
+        "en": "DOLO-D 20 TABS.",
+        "ar": ""
       },
       {
-        "en": "IBUPROFEN 400 MG 10 TAB.",
-        "ar": "إبوبروفين"
+        "en": "IBUFLEX 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "MYOFEN 30 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "CETAFEN 30 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "MEGAFEN 20 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "MEGAFEN 30 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "ANTIFLU 20 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "SINLERG 20 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "MUSLGIX 20 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "FAREX 20 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "MEPABRUFEN 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "MARK FAST 30 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "POWER CAPS 20 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "IBUFEN 2% SUSP. 60ML",
+        "ar": ""
+      },
+      {
+        "en": "IBUFEN 200MG 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "IBUFEN 400MG 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "CETAFEN PLUS 30 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "DOLO-D PLUS 20 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "PROFENAZONE 20 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "CETAFEN-N 120ML SUSP.",
+        "ar": ""
+      },
+      {
+        "en": "IBUFEN 2% SUSP. 120ML",
+        "ar": ""
+      },
+      {
+        "en": "IBUFLAM N 120ML SUSP.",
+        "ar": ""
+      },
+      {
+        "en": "PAROFEN 30 OBLONG TAB.",
+        "ar": ""
+      },
+      {
+        "en": "ALPHAFEN 600MG 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "ALPHAFEN 600MG 30 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "ALPHAFEN 800MG 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "BRUFEMOL-N SUSP. 60 ML",
+        "ar": ""
+      },
+      {
+        "en": "BRUFEN 200 MG 30 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "BRUFEN 400 MG 30 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "BRUFEN 600 MG 30 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "MARCOFEN 500MG 5 SUPP.",
+        "ar": ""
+      },
+      {
+        "en": "PROFINAL 200MG 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "BRUFEN FLU SUSP. 60 ML",
+        "ar": ""
+      },
+      {
+        "en": "PROFINAL 400MG 24 TAB.",
+        "ar": "بروفينال"
+      },
+      {
+        "en": "PROFINAL 600MG 20 TAB.",
+        "ar": "بروفينال"
+      },
+      {
+        "en": "ULTRAFEN 200MG 30 TAB.",
+        "ar": "أولترافين"
+      },
+      {
+        "en": "ACETAPROFEN 100ML SUSP.",
+        "ar": ""
+      },
+      {
+        "en": "ACETAPROFEN 120ML SUSP.",
+        "ar": ""
+      },
+      {
+        "en": "DOLO-D ORAL SUSP. 60 ML",
+        "ar": ""
+      },
+      {
+        "en": "GESIRELAX 20 F.C. TABS.",
+        "ar": ""
+      },
+      {
+        "en": "GICTONIF TOP. GEL 20 GM",
+        "ar": ""
+      },
+      {
+        "en": "BRUFEMOL-N SUSP. 120 ML",
+        "ar": "بروفيمول-ن"
+      },
+      {
+        "en": "FLABU 400MG 10 F.C.TAB.",
+        "ar": "فلابو"
+      },
+      {
+        "en": "FLAMOTAL 300 MG 5 SUPP.",
+        "ar": "فلاموتال 5 سوبب"
+      },
+      {
+        "en": "FLAMOTAL 500 MG 6 SUPP.",
+        "ar": "فلاموتال 6 سوبب"
+      },
+      {
+        "en": "ULTRAFEN 1% CREAM 15 GM",
+        "ar": "أولترافين 1%"
+      },
+      {
+        "en": "ULTRAFEN 200 MG 6 SUPP.",
+        "ar": "أولترافين 6 سوبب"
+      },
+      {
+        "en": "ULTRAFEN 400 MG 20 TAB.",
+        "ar": "أولترافين"
+      },
+      {
+        "en": "ULTRAFEN 500 MG 6 SUPP.",
+        "ar": "أولترافين 6 سوبب"
+      },
+      {
+        "en": "ULTRAFEN 600 MG 20 TAB.",
+        "ar": "أولترافين"
       }
     ],
     "edaPrices": [
+      2.25,
+      3.5,
+      3.75,
+      4,
+      4.5,
+      4.75,
+      4.8,
       5,
-      6
+      5.5,
+      5.6,
+      5.85,
+      6,
+      6.5,
+      6.75,
+      7,
+      7.5,
+      8,
+      9,
+      9.5,
+      11,
+      12,
+      12.75,
+      16,
+      17,
+      18,
+      19,
+      20,
+      22,
+      25,
+      25.2,
+      27,
+      28,
+      30,
+      31,
+      33,
+      34,
+      35,
+      37,
+      37.5,
+      38,
+      40,
+      41,
+      42,
+      44,
+      47,
+      48,
+      48.75,
+      54,
+      56,
+      57,
+      60,
+      69,
+      74,
+      78,
+      81,
+      86,
+      99,
+      106,
+      120,
+      132,
+      159
     ],
     "edaManufacturers": [
-      "SEDICO"
+      "KAHIRA",
+      "SIGMA > ASPIN PHARMACEUTICAL",
+      "SIGMA",
+      "RAMEDA",
+      "MEPACO",
+      "UNIPHARMA",
+      "MARCYRL PHARMACEUTICAL INDUSTRIES (MPI) > ALFACURE PHARMACEUTICALS",
+      "ALFACURE PHARMACEUTICALS",
+      "EVA PHARMA",
+      "ARAB DRUG COMPANY (ADCO)",
+      "KAHIRA > ABBOTT LABORATORIES",
+      "AVERROES PHARMA-EGYPT",
+      "COPAD PHARMA",
+      "DELTA PHARMA",
+      "GLOBAL NAPI PHARMACEUTICALS > FUTURE PHARMACEUTICAL INDUSTRIES (FPI)",
+      "MASH PREMIERE",
+      "ALEXANDRIA",
+      "MEMPHIS",
+      "HIKMA PHARMA",
+      "NOVARTIS",
+      "SEDICO",
+      "EIPICO > DOLORGIT",
+      "EGPI > JASPER FOR PHARMACEUTICAL INDUSTRIES",
+      "EIPICO",
+      "GLAXO SMITHKLINE",
+      "PHAROPHARMA",
+      "SANOFI",
+      "SIGMA > PEOPLE PHARMA",
+      "DELTA PHARMA > PEOPLE PHARMA",
+      "JULPHAR",
+      "EUROPEAN EGYPTIAN PHARM. IND.",
+      "SAFE PHARMA > MUP",
+      "INTERNATIONAL DRUG AGENCY (IDI) > NOVELL PHARMA",
+      "ZAMBON > PHARMACON",
+      "ADWIA",
+      "BORG",
+      "MUP",
+      "CHEMIPHARM",
+      "FUTURE PHARMACEUTICAL INDUSTRIES (FPI) > ASPIN PHARMACEUTICAL",
+      "SIGMA > HOCHSTER PHARMACEUTICAL INDUSTRIES",
+      "INTERNATIONAL DRUG INDUSTRIES > ANDALOUS PHARMA",
+      "MARCYRL PHARMACEUTICAL INDUSTRIES (MPI)",
+      "FUTURE PHARMACEUTICAL INDUSTRIES (FPI)",
+      "DEBEIKY > EGYPHARMA",
+      "WESTERN PHARMACEUTICALS INDUSTRIES",
+      "GLOBAL NAPI PHARMACEUTICALS > CONCORD PHARMACEUTICAL INDUSTRIES",
+      "EGYPHAR",
+      "PHAROPHARMA > EMA PHARM",
+      "ZAD",
+      "DBK PHARMA > PARKVILLE",
+      "AUG PHARMA"
     ],
     "verified": true
   },
@@ -3247,272 +3430,156 @@ export const edaSupplement = [
     "prices": [],
     "brandAliases": [
       {
-        "en": "ACTIFAST 50 MG 30 F.C.TAB.",
-        "ar": "أكتيفاست"
+        "en": "VOLTINAC-K 3 AMP.",
+        "ar": ""
       },
       {
-        "en": "ACTIFAST 50 MG 30 SACHETS",
-        "ar": "أكتيفاست"
+        "en": "DIMRA 20 F.C.TAB.",
+        "ar": ""
       },
       {
-        "en": "ACTIFAST 50 MG 6 SACHETS",
-        "ar": "أكتيفاست"
+        "en": "ARTHINEUR 10 CAPS.",
+        "ar": ""
       },
       {
-        "en": "ADWIFLAM 12.5MG INFANTS 5 SUPP.",
-        "ar": "أدويفلام إنفانتس 5 سوبب"
+        "en": "DICLAC 5% GEL 30 GM",
+        "ar": ""
       },
       {
-        "en": "ADWIFLAM 25 MG 20 F.C.TAB",
-        "ar": "أدويفلام"
+        "en": "NEUROFENAC 30 CAPS.",
+        "ar": ""
       },
       {
-        "en": "ADWIFLAM 25MG CHILDREN 5 SUPP.",
-        "ar": "أدويفلام تشيلدرين 5 سوبب"
+        "en": "DICLONERVE 30 CAPS.",
+        "ar": ""
       },
       {
-        "en": "ADWIFLAM 50 MG 10 SACHETS",
-        "ar": "أدويفلام"
+        "en": "FLOTAC 75MG 20 CAPS.",
+        "ar": ""
       },
       {
-        "en": "ADWIFLAM 50MG E.R. 20 CAPS.",
-        "ar": "أدويفلام إ.ر"
+        "en": "OLFEN 50MG 20 LACTAB",
+        "ar": ""
+      },
+      {
+        "en": "PHAROFEN 75MG 4 AMP.",
+        "ar": ""
+      },
+      {
+        "en": "ROMAFEN 1% GEL 20 GM",
+        "ar": ""
       },
       {
         "en": "ADWIFLAM 75MG 5 SUPP.",
-        "ar": "أدويفلام 5 سوبب"
-      },
-      {
-        "en": "ADWIFLAM 75MG/3ML 6  AMP.",
-        "ar": "أدويفلام /"
-      },
-      {
-        "en": "ANTIFLAM 25 MG 20 TABS.",
-        "ar": "أنتيفلام"
-      },
-      {
-        "en": "ANTIFLAM 50 MG 20 TABS.",
-        "ar": "أنتيفلام"
-      },
-      {
-        "en": "CATAFAST 50 MG 9 SACHET",
-        "ar": "كاتافاست"
-      },
-      {
-        "en": "CATAFLAM 15MG/ML ORAL DROPS 15 ML",
-        "ar": "كاتافلام /مل أورال"
-      },
-      {
-        "en": "CATAFLAM 25 MG 20 SUGAR C.TABS.",
-        "ar": "كاتافلام 20 سوجار ك"
-      },
-      {
-        "en": "CATAFLAM 50 MG 20 SUGAR C.TABS.",
-        "ar": "كاتافلام 20 سوجار ك"
+        "ar": ""
       },
       {
         "en": "CATAFLAM 75MG 5 SUPP.",
-        "ar": "كاتافلام 5 سوبب"
-      },
-      {
-        "en": "CATAFLAM 75MG/3ML 6 AMP.",
-        "ar": "كاتافلام /"
-      },
-      {
-        "en": "CATAFLY 2MG/ML SUSP. 140ML",
-        "ar": "كاتافلي /مل"
-      },
-      {
-        "en": "DECLOPEGAL K 50 MG  10 SACHETS",
-        "ar": "ديكلوبيجال ك"
-      },
-      {
-        "en": "DECLOPHEN FAST 50MG GR. FOR ORAL SUSP. 10 SACHETS",
-        "ar": "ديكلوفين فاست جر. أورال"
-      },
-      {
-        "en": "DECLOPHEN FAST 50MG GR. FOR ORAL SUSP. 30 SACHETS",
-        "ar": "ديكلوفين فاست جر. أورال"
-      },
-      {
-        "en": "DICLASIUM 50 MG 30 F.C. TABS.",
-        "ar": "ديكلاسيوم"
-      },
-      {
-        "en": "DICLOFLAM 50MG 10 SUGAR COATED TAB.",
-        "ar": "ديكلوفلام 10 سوجار كواتيد"
-      },
-      {
-        "en": "DICLOPRO K 50 MG 10 SACHET",
-        "ar": "ديكلوبرو ك"
-      },
-      {
-        "en": "DICLORAPID 50MG 30 F.C.TAB.",
-        "ar": "ديكلورابيد"
-      },
-      {
-        "en": "DICLOTAZEN 50 MG 10 SACHETS",
-        "ar": "ديكلوتازين"
-      },
-      {
-        "en": "DICLOTAZEN 50 MG 100 SACHETS",
-        "ar": "ديكلوتازين"
-      },
-      {
-        "en": "DICLOWAD 50MG 12 SACHETS.",
-        "ar": "ديكلوواد"
-      },
-      {
-        "en": "DOLPHIN K 15MG/ML ORAL DROPS 15 ML",
-        "ar": "دولفين ك /مل أورال"
-      },
-      {
-        "en": "DOLPHIN K 25MG 20 F.C. TAB.",
-        "ar": "دولفين ك"
-      },
-      {
-        "en": "DOLPHIN K 50MG 20 F.C. TAB.",
-        "ar": "دولفين ك"
-      },
-      {
-        "en": "DOLPHIN K 75MG 5 SUPP.",
-        "ar": "دولفين ك 5 سوبب"
-      },
-      {
-        "en": "DOLPHIN K 75MG S.R. 20 CAPS.",
-        "ar": "دولفين ك س.ر"
-      },
-      {
-        "en": "DOLPHIN K 75MG/3ML I.M. 3 AMP.",
-        "ar": "دولفين ك /"
-      },
-      {
-        "en": "DOLPHIN K 75MG/3ML I.M. 6 AMP.",
-        "ar": "دولفين ك /"
-      },
-      {
-        "en": "FLAMIFAST 50MG 30 ORALLY DISINTEGRATING TABS.",
-        "ar": "فلاميفاست 30 أوراللي ديسينتيجراتينج"
-      },
-      {
-        "en": "FLASH ACT 50MG 9 SACHETS",
-        "ar": "فلاش أكت"
-      },
-      {
-        "en": "INESTAFENAC 50 MG 10 SACHET",
-        "ar": "إنيستافيناك"
-      },
-      {
-        "en": "MIPAFLAM 25 MG 20 E.C. TABS.",
-        "ar": "ميبافلام 20 إ.ك"
+        "ar": ""
       },
       {
         "en": "MIPAFLAM 75MG 5 SUPP.",
-        "ar": "ميبافلام 5 سوبب"
+        "ar": ""
       },
       {
-        "en": "OFLAM 25 MG 10 QUICKTAB.",
-        "ar": "أوفلام 10 كويكتاب"
+        "en": "DICLAC-N 4% GEL 30 GM",
+        "ar": ""
       },
       {
-        "en": "OFLAM 50 MG 20 QUICKETAB.",
-        "ar": "أوفلام 20 كويكيتاب"
+        "en": "DICLAC-N 4% GEL 50 GM",
+        "ar": ""
       },
       {
-        "en": "POTAFEN 25 MG 20 F.C. TABS.",
-        "ar": "بوتافين"
+        "en": "DOLPHIN 50MG 10 SUPP.",
+        "ar": ""
       },
       {
-        "en": "POTAFEN 50 MG 20 F.C. TABS.",
-        "ar": "بوتافين"
+        "en": "OLFEN 75MG/2ML 6 AMP.",
+        "ar": ""
       },
       {
-        "en": "POTAFEN 75MG/3ML 3 AMP.",
-        "ar": "بوتافين /"
+        "en": "VOLTAREN 25MG 5 SUPP.",
+        "ar": ""
       },
       {
-        "en": "POTAFLAM 75MG/3ML 3 AMPS.",
-        "ar": "بوتافلام /"
+        "en": "VOLTAREN 50MG 20 TAB.",
+        "ar": ""
       },
       {
-        "en": "RAPIDINIX 50 MG 10 SACHETS",
-        "ar": "رابيدينيكس"
+        "en": "FLECTOR 50MG 30 CAPS.",
+        "ar": ""
       },
       {
-        "en": "RAPIDUS 50MG 20 F.C. TABS. (N/A)",
-        "ar": "رابيدوس"
+        "en": "DICLOPRO 1% GEL 50 GM",
+        "ar": ""
       },
       {
-        "en": "RAPIDUS 50MG 30 F.C. TABS.",
-        "ar": "رابيدوس"
+        "en": "DICLOPRO K 30 SACHETS",
+        "ar": ""
       },
       {
-        "en": "RAPIFLAM 25MG 10 ENTERIC COATED TAB.",
-        "ar": "رابيفلام 10 إنتيريك كواتيد"
+        "en": "FLEXILAX 30 F.C.TABS.",
+        "ar": ""
       },
       {
-        "en": "RAPIFLAM 50MG 10 ENTERIC COATED TAB.",
-        "ar": "رابيفلام 10 إنتيريك كواتيد"
+        "en": "RHEUMAFEN FORTE SUPP.",
+        "ar": ""
       },
       {
-        "en": "UNIRAPECURE 50 MG 30 F.C. TABS.",
-        "ar": "أونيرابيكوري"
-      },
-      {
-        "en": "VASTAFLAM 25MG 20 SUGAR C.TABS. (N/A)",
-        "ar": "فاستافلام 20 سوجار ك"
-      },
-      {
-        "en": "VASTAFLAM 50MG 20 SUGAR C.TABS.",
-        "ar": "فاستافلام 20 سوجار ك"
-      },
-      {
-        "en": "VOLTINAC-K 3 AMP. (N/A)",
-        "ar": "فولتيناك-ك"
-      },
-      {
-        "en": "ZITOXANAL 50 MG 30 CAPS.",
-        "ar": "زيتوكسانال"
+        "en": "DOLPHIN K 75MG 5 SUPP.",
+        "ar": ""
       },
       {
         "en": "ADWIFLAM EMULGEL 30 GM",
-        "ar": "أدويفلام إمولجيل"
+        "ar": ""
       },
       {
         "en": "ADWIFLAM EMULGEL 50 GM",
-        "ar": "أدويفلام إمولجيل"
+        "ar": ""
       },
       {
-        "en": "ANTIFLAM 1% EMULGEL 20 GM",
-        "ar": "أنتيفلام 1% إمولجيل"
+        "en": "DECLOPHEN 25MG 20 TAB.",
+        "ar": ""
       },
       {
-        "en": "ANUVA 50MG 10 DISPERSIBLE TAB.",
-        "ar": "أنوفا 10 ديسبيرسيبلي"
+        "en": "DECLOPHEN GEL 1% 30 GM",
+        "ar": ""
       },
       {
-        "en": "ARTHROFAST 150 MG 14 M.R. TABLETS",
-        "ar": "أرثروفاست"
+        "en": "DOLPHIN 25 MG 10 SUPP.",
+        "ar": ""
       },
       {
-        "en": "ARTICAVOL 75MG/3ML 3 AMP.",
-        "ar": "أرتيكافول /"
+        "en": "EPIFENAC 25 MG 5 SUPP.",
+        "ar": ""
       },
       {
-        "en": "BABY RELIEF 12.5 MG 10 SUPP.",
-        "ar": "بابي ريليف 10 سوبب"
+        "en": "PAIN RELIEFER 30 CAPS.",
+        "ar": ""
       },
       {
-        "en": "BABY RELIEF 12.5 MG 5 SUPP. (N/A)",
-        "ar": "بابي ريليف 5 سوبب"
+        "en": "EPIFENAC 50 MG 5 SUPP.",
+        "ar": "إبيفيناك 5 سوبب"
       },
       {
-        "en": "BABY RELIEF 25 MG 10 SUPP.",
-        "ar": "بابي ريليف 10 سوبب"
+        "en": "OLFEN 25 MG 30 LACTABS",
+        "ar": "أولفين 30 لاكتابس"
       },
       {
-        "en": "BABY RELIEF 25 MG 5 SUPP. (N/A)",
-        "ar": "بابي ريليف 5 سوبب"
+        "en": "ANTIFLAM 25 MG 20 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "ANTIFLAM 50 MG 20 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "CATAFAST 50 MG 9 SACHET",
+        "ar": ""
+      },
+      {
+        "en": "POTAFEN 75MG/3ML 3 AMP.",
+        "ar": ""
       },
       {
         "en": "DECLOFENAC 1% GEL 20 GM",
@@ -3527,464 +3594,40 @@ export const edaSupplement = [
         "ar": "ديكلوفيناك"
       },
       {
-        "en": "DECLOPHEN 0.1%  EYE DROPS 5 ML",
-        "ar": "ديكلوفين 0.1% إيي"
-      },
-      {
         "en": "DECLOPHEN 100MG 5 SUPP.",
         "ar": "ديكلوفين 5 سوبب"
-      },
-      {
-        "en": "DECLOPHEN 12.5MG 5 INFANTILE SUPP.",
-        "ar": "ديكلوفين 5 إنفانتيلي سوبب"
-      },
-      {
-        "en": "DECLOPHEN 25MG 20 TAB.",
-        "ar": "ديكلوفين"
-      },
-      {
-        "en": "DECLOPHEN 25MG 5 INFANTILE SUPP.",
-        "ar": "ديكلوفين 5 إنفانتيلي سوبب"
       },
       {
         "en": "DECLOPHEN 50 MG 20 TAB.",
         "ar": "ديكلوفين"
       },
       {
-        "en": "DECLOPHEN 75MG/3ML 3 AMPS.",
-        "ar": "ديكلوفين /"
-      },
-      {
-        "en": "DECLOPHEN 75MG/3ML 6 AMPS.",
-        "ar": "ديكلوفين /"
-      },
-      {
-        "en": "DECLOPHEN GEL 1% 30 GM",
-        "ar": "ديكلوفين 1%"
-      },
-      {
-        "en": "DECLOPHEN S.R. 100MG 8 CAPS.",
-        "ar": "ديكلوفين س.ر"
-      },
-      {
-        "en": "DICLAC 150 ID 20 PROLONGED R.TABS.",
-        "ar": "ديكلاك 150 إد 20 برولونجيد ر"
-      },
-      {
-        "en": "DICLAC 5% GEL 30 GM (N/A)",
-        "ar": "ديكلاك 5%"
-      },
-      {
-        "en": "DICLAC 75 ID 20 PROLONGED R.TABS.",
-        "ar": "ديكلاك 75 إد 20 برولونجيد ر"
-      },
-      {
-        "en": "DICLAC 75 ID 30 PROLONGED R.TABS.",
-        "ar": "ديكلاك 75 إد 30 برولونجيد ر"
-      },
-      {
-        "en": "DICLAC 75 MG/3ML 5 AMPS.",
-        "ar": "ديكلاك /"
-      },
-      {
-        "en": "DICLAC 75 MG/3ML 6 AMPS.",
-        "ar": "ديكلاك /"
-      },
-      {
-        "en": "DICLAC-N 4% GEL 30 GM",
-        "ar": "ديكلاك-ن 4%"
-      },
-      {
-        "en": "DICLAC-N 4% GEL 50 GM",
-        "ar": "ديكلاك-ن 4%"
-      },
-      {
-        "en": "DICLOFERAZ 50MG 30 DISPERSIBLE TAB.",
-        "ar": "ديكلوفيراز 30 ديسبيرسيبلي"
-      },
-      {
-        "en": "DICLOFERAZ 75MG/3ML 6 AMP. I.M I.V INF.",
-        "ar": "ديكلوفيراز /"
-      },
-      {
-        "en": "DICLONATRIUM SR 75MG 20 F.C. TABS.",
-        "ar": "ديكلوناتريوم سر"
-      },
-      {
-        "en": "DICLOPRO 150 MG ID 20 TABS.",
-        "ar": "ديكلوبرو إد"
-      },
-      {
-        "en": "DICLOSP S.R. 75MG 30 F.C. TABS.",
-        "ar": "ديكلوسب س.ر"
-      },
-      {
-        "en": "DIVIDO 75MG 30 DUAL RELEASE CAPS.",
-        "ar": "ديفيدو 30 دوال ريلياسي"
-      },
-      {
         "en": "DOLPHIN 12.5MG 10 SUPP.",
         "ar": "دولفين 10 سوبب"
-      },
-      {
-        "en": "DOLPHIN 25 MG 10 SUPP.",
-        "ar": "دولفين 10 سوبب"
-      },
-      {
-        "en": "DOLPHIN 3% TOPICAL GEL 30 GM",
-        "ar": "دولفين 3%"
-      },
-      {
-        "en": "DOLPHIN 3% TOPICAL GEL 60 GM",
-        "ar": "دولفين 3%"
-      },
-      {
-        "en": "DOLPHIN 5% TOPICAL GEL 30 GM",
-        "ar": "دولفين 5%"
-      },
-      {
-        "en": "DOLPHIN 50MG 10 SUPP.",
-        "ar": "دولفين 10 سوبب"
-      },
-      {
-        "en": "DOLPHIN 75MG/3ML I.M 3 AMPS.",
-        "ar": "دولفين /"
-      },
-      {
-        "en": "EPIFENAC 0.1% EYE DROPS 5 ML",
-        "ar": "إبيفيناك 0.1% إيي"
-      },
-      {
-        "en": "EPIFENAC 100 MG 5 RECTAL SUPP.",
-        "ar": "إبيفيناك 5 سوبب"
-      },
-      {
-        "en": "EPIFENAC 100 MG S.R. 10 CAPS.",
-        "ar": "إبيفيناك س.ر"
-      },
-      {
-        "en": "EPIFENAC 12.5 MG 5 SUPP.",
-        "ar": "إبيفيناك 5 سوبب"
-      },
-      {
-        "en": "EPIFENAC 25 MG 20 E.C. TAB.",
-        "ar": "إبيفيناك 20 إ.ك"
-      },
-      {
-        "en": "EPIFENAC 25 MG 5 SUPP.",
-        "ar": "إبيفيناك 5 سوبب"
-      },
-      {
-        "en": "EPIFENAC 50 MG 20 E.C. TABS.",
-        "ar": "إبيفيناك 20 إ.ك"
-      },
-      {
-        "en": "EPIFENAC 50 MG 5 SUPP.",
-        "ar": "إبيفيناك 5 سوبب"
-      },
-      {
-        "en": "EPIFENAC 75 MG S.R. 10 TABS.",
-        "ar": "إبيفيناك س.ر"
-      },
-      {
-        "en": "EPIFENAC 75 MG/3ML 3 I.M./I.V. AMP.",
-        "ar": "إبيفيناك / 3 ./"
-      },
-      {
-        "en": "FENACLOMEX 100MG S.R. 10 TABS.",
-        "ar": "فيناكلوميكس س.ر"
-      },
-      {
-        "en": "FLECTOR 50 MG 9 GRANULES IN SACHETS",
-        "ar": "فليكتور إن ساتشيتس"
-      },
-      {
-        "en": "FLOTAC 75MG 20 CAPS.",
-        "ar": "فلوتاك"
-      },
-      {
-        "en": "GOLDFENAC MR 75MG 20 TABS.",
-        "ar": "جولدفيناك مر"
-      },
-      {
-        "en": "INFLAGESIC 75MG/3ML 5 I.M./I.V. INF. AMPS.",
-        "ar": "إنفلاجيسيك / 5 ./"
-      },
-      {
-        "en": "INFLAMOFEN 3% FOAM 50 GM",
-        "ar": "إنفلاموفين 3%"
-      },
-      {
-        "en": "LIBRADICLAN 140 MG 7 MEDICATED PATCHES",
-        "ar": "ليبراديكلان 7 ميديكاتيد باتتشيس"
-      },
-      {
-        "en": "OLFEN 1% TOPICAL GEL 15 GM",
-        "ar": "أولفين 1%"
-      },
-      {
-        "en": "OLFEN 1% TOPICAL GEL 50 GM",
-        "ar": "أولفين 1%"
-      },
-      {
-        "en": "OLFEN 100MG S.R. 10 DEPOCAPS.",
-        "ar": "أولفين س.ر. 10 ديبوكابس"
-      },
-      {
-        "en": "OLFEN 25 MG 30 LACTABS",
-        "ar": "أولفين 30 لاكتابس"
-      },
-      {
-        "en": "OLFEN 50MG 20 LACTAB",
-        "ar": "أولفين 20 لاكتاب"
-      },
-      {
-        "en": "OLFEN 75MG/2ML 6 AMP.",
-        "ar": "أولفين /"
-      },
-      {
-        "en": "OPTOFLAME 0.1% EYE DROPS",
-        "ar": "أوبتوفلامي 0.1% إيي"
-      },
-      {
-        "en": "PHAROFEN 100MG 5 RECTAL SUPP.",
-        "ar": "فاروفين 5 سوبب"
-      },
-      {
-        "en": "PHAROFEN 75MG 4 AMP.",
-        "ar": "فاروفين"
-      },
-      {
-        "en": "PROTOFENAC 150 MG 10 SUST. REL. TABS.",
-        "ar": "بروتوفيناك 10 سوست. ريل"
-      },
-      {
-        "en": "PROTOFENAC 150 MG 20 SUST. REL. TABS.",
-        "ar": "بروتوفيناك 20 سوست. ريل"
-      },
-      {
-        "en": "RHEUMAFEN 100MG S.R.CAPS.",
-        "ar": "رهيومافين"
-      },
-      {
-        "en": "RHEUMAFEN 25MG 20 ENTERIC COATED TAB.",
-        "ar": "رهيومافين 20 إنتيريك كواتيد"
-      },
-      {
-        "en": "RHEUMAFEN 50MG 20 ENTERIC COATED TAB.",
-        "ar": "رهيومافين 20 إنتيريك كواتيد"
-      },
-      {
-        "en": "RHEUMAFEN 75 MG SR 10 CAPS.",
-        "ar": "رهيومافين سر"
-      },
-      {
-        "en": "RHEUMAFEN 75MG/3ML 4 AMP. FOR I.M.  INJ.",
-        "ar": "رهيومافين /"
-      },
-      {
-        "en": "RHEUMAFEN ACTI-GEL 1% GEL 15 GM",
-        "ar": "رهيومافين أكتي- 1%"
       },
       {
         "en": "RHEUMARENE 1% GEL 20 GM",
         "ar": "رهيوماريني 1%"
       },
       {
-        "en": "RHEUMARENE 100 MG 6 SUPP.",
-        "ar": "رهيوماريني 6 سوبب"
-      },
-      {
-        "en": "RHEUMARENE 25 MG 20 E.C. TAB.",
-        "ar": "رهيوماريني 20 إ.ك"
-      },
-      {
         "en": "RHEUMARENE 50MG 20 TAB.",
         "ar": "رهيوماريني"
-      },
-      {
-        "en": "RHEUMARENE 75MG/3ML 3 I.M. AMP.",
-        "ar": "رهيوماريني / 3"
-      },
-      {
-        "en": "RHUMAQUICK 50 MG 20 DISP. TABS.",
-        "ar": "رهوماكويك 20 ديسب"
-      },
-      {
-        "en": "ROMAFEN 1% GEL 20 GM",
-        "ar": "رومافين 1%"
-      },
-      {
-        "en": "ROMALEX 0.1% EYE DROPS 5 ML",
-        "ar": "روماليكس 0.1% إيي"
-      },
-      {
-        "en": "ROMALEX 100MG 5 RECTAL SUPP.",
-        "ar": "روماليكس 5 سوبب"
-      },
-      {
-        "en": "ROMALEX 25MG 5 RECTAL SUPP.",
-        "ar": "روماليكس 5 سوبب"
-      },
-      {
-        "en": "ROMALEX 75MG/3ML 3 I.M. AMPS.",
-        "ar": "روماليكس / 3"
-      },
-      {
-        "en": "ROMALEX 75MG/3ML 6 I.M. AMPS.",
-        "ar": "روماليكس / 6"
-      },
-      {
-        "en": "SIGMAFENAC 75 MG S.R. 30 CAP.",
-        "ar": "سيجمافيناك س.ر"
-      },
-      {
-        "en": "SWIXDICLO 0.1% EYE DROPS 10 ML",
-        "ar": "سويكسديكلو 0.1% إيي"
-      },
-      {
-        "en": "VANTOMOR 50MG 20 DISPERSIBLE TAB.",
-        "ar": "فانتومور 20 ديسبيرسيبلي"
       },
       {
         "en": "VOLTAREN 100MG 10 SUPP.",
         "ar": "فولتارين 10 سوبب"
       },
       {
-        "en": "VOLTAREN 12.5MG 5 SUPP. (CANCELLED)",
+        "en": "VOLTAREN 12.5MG 5 SUPP.",
         "ar": "فولتارين 5 سوبب"
       },
       {
-        "en": "VOLTAREN 25MG 30 ENTERIC COATED TAB.",
-        "ar": "فولتارين 30 إنتيريك كواتيد"
+        "en": "ACTIFAST 50 MG 6 SACHETS",
+        "ar": ""
       },
       {
-        "en": "VOLTAREN 25MG 5 SUPP.",
-        "ar": "فولتارين 5 سوبب"
-      },
-      {
-        "en": "VOLTAREN 50MG 20 TAB.",
-        "ar": "فولتارين"
-      },
-      {
-        "en": "VOLTAREN 75MG/3ML 3 I.M./I.V. INF. AMPS.",
-        "ar": "فولتارين / 3 ./"
-      },
-      {
-        "en": "VOLTAREN 75MG/3ML 6 I.M./I.V. INF. AMPS.",
-        "ar": "فولتارين / 6 ./"
-      },
-      {
-        "en": "VOLTAREN OPHTA 0.1% EYE DROPS 5 ML (N/A)",
-        "ar": "فولتارين أوفتا 0.1% إيي"
-      },
-      {
-        "en": "VOLTAREN SR 100MG 20 F.C.TAB.",
-        "ar": "فولتارين سر"
-      },
-      {
-        "en": "VOLTAREN SR 75MG 20 F.C.TAB.",
-        "ar": "فولتارين سر"
-      },
-      {
-        "en": "ZACAGLONE 75MG/3ML 3 I.M. AMP.",
-        "ar": "زاكاجلوني / 3"
-      },
-      {
-        "en": "ARTHINEUR 10 CAPS.",
-        "ar": "أرثينيور"
-      },
-      {
-        "en": "NEUROFENAC 30 CAPS.",
-        "ar": "نيوروفيناك"
-      },
-      {
-        "en": "PAIN RELIEFER 30 CAPS.",
-        "ar": "باين ريليفير"
-      },
-      {
-        "en": "DECLOPEGAL 1% TOPICAL GEL 50 GM",
-        "ar": "ديكلوبيجال 1%"
-      },
-      {
-        "en": "FLECTOR 1% TOPICAL GEL 25 GM",
-        "ar": "فليكتور 1%"
-      },
-      {
-        "en": "FLECTOR 50MG 30 CAPS.",
-        "ar": "فليكتور"
-      },
-      {
-        "en": "FLECTOR EP 1.3% TISSUGEL 5 PATCHES",
-        "ar": "فليكتور إب 1.3% تيسسوجيل"
-      },
-      {
-        "en": "DECLOPHEN PLUS 50/250MG 30 CAPS.",
-        "ar": "ديكلوفين بلوس 50/"
-      },
-      {
-        "en": "DICLONERVE 30 CAPS.",
-        "ar": "ديكلونيرفي"
-      },
-      {
-        "en": "DICLOPRO 1% GEL 50 GM",
-        "ar": "ديكلوبرو 1%"
-      },
-      {
-        "en": "VOLTAREN 1% EMULGEL 100 GM",
-        "ar": "فولتارين 1% إمولجيل"
-      },
-      {
-        "en": "VOLTAREN 1% EMULGEL 15 GM (N/A)",
-        "ar": "فولتارين 1% إمولجيل"
-      },
-      {
-        "en": "VOLTAREN 1% EMULGEL 25 GM",
-        "ar": "فولتارين 1% إمولجيل"
-      },
-      {
-        "en": "VOLTAREN 1% EMULGEL 50 GM",
-        "ar": "فولتارين 1% إمولجيل"
-      },
-      {
-        "en": "DICLOPRO K 30 SACHETS",
-        "ar": "ديكلوبرو ك"
-      },
-      {
-        "en": "DICLOPRO PLUS 50/500MG 20 TABS.",
-        "ar": "ديكلوبرو بلوس 50/"
-      },
-      {
-        "en": "DIMRA 20 F.C.TAB.",
-        "ar": "ديمرا"
-      },
-      {
-        "en": "FLEXILAX 30 F.C.TABS.",
-        "ar": "فليكسيلاكس"
-      },
-      {
-        "en": "METHOQUICK 50/500 MG 30 TABS.",
-        "ar": "ميثوكويك 50/"
-      },
-      {
-        "en": "MOVXIR  500/50MG 20 F.C. TABS.",
-        "ar": "موفكسير 500/"
-      },
-      {
-        "en": "DICLOPRO SR 75 MG 20TABS",
-        "ar": "ديكلوبرو سر"
-      },
-      {
-        "en": "OLFEN 75 D.A. 10 DEPOCAPS.",
-        "ar": "أولفين 75 د.أ. 10 ديبوكابس"
-      },
-      {
-        "en": "RHEUMAFEN FORTE SUPP.",
-        "ar": "رهيومافين فورتي سوبب"
-      },
-      {
-        "en": "VOLTINAC 75/20 MG/2ML 3 I.M. AMPS.",
-        "ar": "فولتيناك 75/ / 3"
+        "en": "CATAFLAM 75MG/3ML 6 AMP.",
+        "ar": ""
       }
     ],
     "edaPrices": [
@@ -4158,60 +3801,60 @@ export const edaSupplement = [
     "prices": [],
     "brandAliases": [
       {
-        "en": "ALEXCORDA 200 MG 30 TABLETS",
-        "ar": "أليكسكوردا"
-      },
-      {
-        "en": "AMIRON 150MG/3ML 6 I.V. AMP.",
-        "ar": "أميرون / 6"
-      },
-      {
-        "en": "AMIRON 200 MG 10 TABLETS",
-        "ar": "أميرون"
-      },
-      {
-        "en": "CARDIOMEP 150MG/3ML 6 I.V. AMP.",
-        "ar": "كارديوميب / 6"
-      },
-      {
-        "en": "CARDIOMEP 200 MG 30 TABS.",
-        "ar": "كارديوميب"
-      },
-      {
-        "en": "CARDIONORM 150MG/3ML 5 I.V. AMP.",
-        "ar": "كارديونورم / 5"
-      },
-      {
-        "en": "CORDARONE 200 MG 30 SCORED TABS.",
-        "ar": "كورداروني 30 سكوريد"
-      },
-      {
-        "en": "FARCODARONE 200MG 30 TABS.",
-        "ar": "فاركوداروني"
-      },
-      {
-        "en": "FARCODARONE CONCENTRATE 50MG/ML 5 AMP.",
-        "ar": "فاركوداروني كونسينتراتي /مل"
-      },
-      {
-        "en": "RONECARD 150MG/3ML I.V. AMP. (N/A)",
-        "ar": "رونيكارد /"
-      },
-      {
         "en": "RONECARD 200MG 30 TAB.",
-        "ar": "رونيكارد"
+        "ar": ""
       },
       {
         "en": "SEDACORON 200MG 20 TAB.",
-        "ar": "سيداكورون"
+        "ar": ""
       },
       {
-        "en": "SUNNYDARONE 150MG/3ML 5 I.V. AMPS.",
-        "ar": "سوننيداروني / 5"
+        "en": "AMIRON 200 MG 10 TABLETS",
+        "ar": ""
       },
       {
         "en": "VENTROMED 200MG 10 TABS.",
-        "ar": "فينتروميد"
+        "ar": ""
+      },
+      {
+        "en": "CARDIOMEP 200 MG 30 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "FARCODARONE 200MG 30 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "ALEXCORDA 200 MG 30 TABLETS",
+        "ar": ""
+      },
+      {
+        "en": "AMIRON 150MG/3ML 6 I.V. AMP.",
+        "ar": ""
+      },
+      {
+        "en": "RONECARD 150MG/3ML I.V. AMP.",
+        "ar": ""
+      },
+      {
+        "en": "CARDIOMEP 150MG/3ML 6 I.V. AMP.",
+        "ar": ""
+      },
+      {
+        "en": "CARDIONORM 150MG/3ML 5 I.V. AMP.",
+        "ar": ""
+      },
+      {
+        "en": "CORDARONE 200 MG 30 SCORED TABS.",
+        "ar": ""
+      },
+      {
+        "en": "SUNNYDARONE 150MG/3ML 5 I.V. AMPS.",
+        "ar": ""
+      },
+      {
+        "en": "FARCODARONE CONCENTRATE 50MG/ML 5 AMP.",
+        "ar": ""
       }
     ],
     "edaPrices": [
@@ -4246,18 +3889,195 @@ export const edaSupplement = [
     "id": "17",
     "nameEn": "Carbamazepine",
     "nameAr": "كاربامازيبين",
-    "prices": [],
+    "prices": [
+      {
+        "form": "أقراص",
+        "formEn": "Tablets",
+        "price": 4,
+        "unit": "EGP"
+      }
+    ],
     "brandAliases": [
+      {
+        "en": "TEGRETOL 200MG 30 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "ARBATEG 2% SUSP. 100 ML",
+        "ar": ""
+      },
+      {
+        "en": "ARBATEG 200 MG 30 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "MAZEMAL 200 MG 20 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "NEUROTOP 200MG 100 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "NEUROTOP 400MG 100 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "TEGRETOL 2% SYRUP 100ML",
+        "ar": ""
+      },
+      {
+        "en": "TONOCLONE 200MG 30 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "TONOCLONE 400MG 30 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "CARBAPEX 200 MG 30 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "CARBATOL 200 MG 20 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "TEGRAPIN 400 MG XR 10 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "CARBAPEX 200 MG CR 30 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "CARBAPEX 400 MG CR 30 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "TEGRAL 200 MG 50 SCORED TABS.",
+        "ar": ""
+      },
       {
         "en": "CARBAMAZEPINE 200MG XR 10 TAB.",
         "ar": "كاربامازيبيني كسر"
+      },
+      {
+        "en": "MAZEMAL 200 C.R. 20 F.C. TABS.",
+        "ar": "مازيمال 200 ك.ر"
+      },
+      {
+        "en": "MAZEMAL 400 C.R. 20 F.C. TABS.",
+        "ar": "مازيمال 400 ك.ر"
+      },
+      {
+        "en": "TEGRAPIN 100MG/5ML SUSP. 120ML",
+        "ar": "تيجرابين /"
+      },
+      {
+        "en": "EPIMAZEPINE 2% ORAL SUSP. 100ML",
+        "ar": "إبيمازيبيني 2% أورال"
+      },
+      {
+        "en": "ARBATEG 400 MG 10 EXT. REL. TABS.",
+        "ar": "أرباتيج 10 إكست. ريل"
+      },
+      {
+        "en": "CARBAPEX 100 MG 30 CHEWABLE TABS.",
+        "ar": "كاربابيكس 30 تشيوابلي"
+      },
+      {
+        "en": "ALEXTOL 100MG/5ML ORAL SUSP. 100ML",
+        "ar": "أليكستول / أورال"
+      },
+      {
+        "en": "CARBAMAZEPIN 200MG 10 TAB.U.S.P.33",
+        "ar": "كاربامازيبين .أو.س.ب.33"
+      },
+      {
+        "en": "NEUROFUTAL SR 400 MG 10 F.C. TABS.",
+        "ar": "نيوروفوتال سر"
+      },
+      {
+        "en": "TEGRETOL CR 200MG 20 F.C. DIVITAB.",
+        "ar": "تيجريتول كر ديفيتاب"
+      },
+      {
+        "en": "TEGRETOL CR 400MG 20 F.C. DIVITABS",
+        "ar": "تيجريتول كر ديفيتابس"
+      },
+      {
+        "en": "NEUROTOP RETARD 300MG 100 S.R. TAB.",
+        "ar": "نيوروتوب ريتارد"
+      },
+      {
+        "en": "NEUROTOP RETARD 600MG 100 S.R. TAB.",
+        "ar": "نيوروتوب ريتارد"
+      },
+      {
+        "en": "TONOCLONE RETARD 200MG C.R. 10 F.C. TAB.",
+        "ar": "تونوكلوني ريتارد ك.ر"
+      },
+      {
+        "en": "TONOCLONE RETARD 400MG C.R. 10 F.C. TAB.",
+        "ar": "تونوكلوني ريتارد ك.ر"
+      },
+      {
+        "en": "EPIMAZEPINE CR 200 MG 10 CONTROLLED RELEASE F.C. TABS.",
+        "ar": "إبيمازيبيني كر 10 كونترولليد ريلياسي"
+      },
+      {
+        "en": "EPIMAZEPINE CR 400 MG 10 CONTROLLED RELEASE F.C. TABS.",
+        "ar": "إبيمازيبيني كر 10 كونترولليد ريلياسي"
       }
     ],
     "edaPrices": [
-      4
+      3,
+      4,
+      5.25,
+      5.5,
+      6,
+      6.5,
+      7.5,
+      8,
+      8.5,
+      9.5,
+      10,
+      13.5,
+      16.5,
+      19.5,
+      24,
+      35,
+      37,
+      38,
+      52,
+      61,
+      75,
+      81,
+      89,
+      92,
+      106,
+      111,
+      140,
+      260,
+      410,
+      450,
+      720
     ],
     "edaManufacturers": [
-      "SIGMA"
+      "ALEXANDRIA",
+      "MEDIZEN PHARMACEUTICAL INDUSTRIES",
+      "SEDICO",
+      "SIGMA",
+      "MULTI-APEX",
+      "AMOUN",
+      "EIPICO",
+      "UNIPHARMA",
+      "FUTURE PHARMACEUTICAL INDUSTRIES (FPI)",
+      "GEROT PHARMA > B.P PHARMA",
+      "CID",
+      "NOVARTIS",
+      "UP PHARMA"
     ],
     "verified": true
   },
@@ -4269,63 +4089,63 @@ export const edaSupplement = [
     "brandAliases": [
       {
         "en": "CONVULEX 150MG 40 CAPS.",
-        "ar": "كونفوليكس"
+        "ar": ""
       },
       {
         "en": "CONVULEX 300MG 40 CAPS.",
-        "ar": "كونفوليكس"
-      },
-      {
-        "en": "DAVIKEN 500MG SR 30 F.C.TAB.",
-        "ar": "دافيكين سر"
-      },
-      {
-        "en": "DEPACOM 500MG 30 EXTENDED RELEASE  F.C.TAB.",
-        "ar": "ديباكوم 30 إكستينديد ريلياسي"
-      },
-      {
-        "en": "DEPAKINE 57.64MG/ML SYP. 125 ML",
-        "ar": "ديباكيني /مل سيب"
-      },
-      {
-        "en": "DEPALEPT 500MG/5ML VIAL FOR I.V. INF.",
-        "ar": "ديباليبت /"
-      },
-      {
-        "en": "MENTAVERS 250MG/5ML SYRUP 100ML",
-        "ar": "مينتافيرس /"
-      },
-      {
-        "en": "SEIZOLOW 250MG/5ML SYRUP 120ML",
-        "ar": "سايزولوو /"
-      },
-      {
-        "en": "VALPROEX CR 500 MG 30 F.C.TABS.",
-        "ar": "فالبرويكس كر"
-      },
-      {
-        "en": "VEDGE 5GM/100ML SYRUP 100ML",
-        "ar": "فيدجي /"
-      },
-      {
-        "en": "XOPLICT 250MG/5ML SYRUP 100ML",
-        "ar": "كسوبليكت /"
-      },
-      {
-        "en": "DEPAKINE CHRONO 500MG 30 SCORED PROLONGED REL. F.C. TAB.",
-        "ar": "ديباكيني تشرونو 30 سكوريد برولونجيد ريل"
-      },
-      {
-        "en": "VALPOEAST-SR  500MG 20 TAB.",
-        "ar": "فالبوياست-سر"
+        "ar": ""
       },
       {
         "en": "VALPOKINE 500MG 10 TAB.",
-        "ar": "فالبوكيني"
+        "ar": ""
+      },
+      {
+        "en": "VEDGE 5GM/100ML SYRUP 100ML",
+        "ar": ""
+      },
+      {
+        "en": "VALPOEAST-SR  500MG 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "DAVIKEN 500MG SR 30 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "XOPLICT 250MG/5ML SYRUP 100ML",
+        "ar": ""
+      },
+      {
+        "en": "SEIZOLOW 250MG/5ML SYRUP 120ML",
+        "ar": ""
+      },
+      {
+        "en": "DEPAKINE 57.64MG/ML SYP. 125 ML",
+        "ar": ""
+      },
+      {
+        "en": "MENTAVERS 250MG/5ML SYRUP 100ML",
+        "ar": ""
+      },
+      {
+        "en": "VALPROEX CR 500 MG 30 F.C.TABS.",
+        "ar": ""
+      },
+      {
+        "en": "DEPALEPT 500MG/5ML VIAL FOR I.V. INF.",
+        "ar": ""
       },
       {
         "en": "VEDGE 500MG 30 ENTERIC COATED S.R. TAB.",
-        "ar": "فيدجي 30 إنتيريك كواتيد"
+        "ar": ""
+      },
+      {
+        "en": "DEPACOM 500MG 30 EXTENDED RELEASE  F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "DEPAKINE CHRONO 500MG 30 SCORED PROLONGED REL. F.C. TAB.",
+        "ar": ""
       }
     ],
     "edaPrices": [
@@ -4366,18 +4186,227 @@ export const edaSupplement = [
     "id": "19",
     "nameEn": "Theophylline",
     "nameAr": "ثيوفيلين",
-    "prices": [],
+    "prices": [
+      {
+        "form": "أقراص",
+        "formEn": "Tablets",
+        "price": 14.5,
+        "unit": "EGP"
+      }
+    ],
     "brandAliases": [
+      {
+        "en": "EFANOL 10 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "EMERAL 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "ASMACID 30 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "ASMOLIN 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "TEPEDRONE 20 TAB",
+        "ar": ""
+      },
+      {
+        "en": "BRONCHALIN 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "TRI-BROXOL 10 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "EMERAL 5 ADULT SUPP.",
+        "ar": ""
+      },
+      {
+        "en": "EMERAL 5 PAED. SUPP.",
+        "ar": ""
+      },
+      {
+        "en": "FARCOSOLVIN 24 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "TRI-BROXOL SYRUP 100ML",
+        "ar": ""
+      },
+      {
+        "en": "THEOFAR 200MG S.R.CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "FARCOSOLVIN SYRUP 120ML",
+        "ar": ""
+      },
+      {
+        "en": "TUSSIPECT-N SYRUP 100ML",
+        "ar": ""
+      },
+      {
+        "en": "THEO 100MG S.R. 20 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "THEO 200MG S.R. 20 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "THEO 300MG S.R. 10 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "THEOFAR 100MG S.R. CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "THEOFAR 300MG S.R. CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "CIDOPHYLLINE I.V. 6 AMP.",
+        "ar": ""
+      },
+      {
+        "en": "GLUCOLYNAMINE I.V 6 AMPS.",
+        "ar": ""
+      },
+      {
+        "en": "AMRIPHYLLINE 100MG 5 SUPP.",
+        "ar": ""
+      },
+      {
+        "en": "AMRIPHYLLINE 300MG 5 SUPP.",
+        "ar": ""
+      },
+      {
+        "en": "QUIBRON T/SR 300MG 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "THEOPHYL -12 200MG 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "XANTHIUM SR 400MG 10 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "QUIBRON T/SR 300MG 100 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "NEO-MINOPHYLLINE SYRUP 120ML",
+        "ar": ""
+      },
+      {
+        "en": "VENTOPHYL 100MG S.R. 16 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "VENTOPHYL 200MG S.R. 16 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "MINOPHYLLINE 300MG 30 S.R.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "ETAPHYLLINE 500 MG/ 5ML 6 AMP.",
+        "ar": ""
+      },
+      {
+        "en": "TRISOLVIN 10 SOFT GELATIN CAPS.",
+        "ar": ""
+      },
       {
         "en": "THEOPHYLLINE 200MG S.R. 20 TAB.",
         "ar": "ثيوفيلليني س.ر"
+      },
+      {
+        "en": "FARCOPHYLLINE 125MG 5 PAED.SUPP.",
+        "ar": ""
+      },
+      {
+        "en": "MINOPHYLLINE 350MG 5 ADULT SUPP.",
+        "ar": ""
+      },
+      {
+        "en": "CIDOPHYLLINE 300MG/5ML I.M. 6 AMP.",
+        "ar": "سيدوفيلليني /"
+      },
+      {
+        "en": "AMRIPHYLLINE 0.05GM/5ML SYRUP 120ML",
+        "ar": ""
+      },
+      {
+        "en": "MINOPHYLLINE 125MG 5 INFANTILE SUPP.",
+        "ar": ""
+      },
+      {
+        "en": "UNIPHYLLIN CONTINUS 300 MG 20 CONTR.R.TABS.",
+        "ar": "أونيفيللين كونتينوس 20 كونتر.ر"
+      },
+      {
+        "en": "UNIPHYLLIN CONTINUS 400 MG 20 CONTR.R.TABS.",
+        "ar": "أونيفيللين كونتينوس 20 كونتر.ر"
       }
     ],
     "edaPrices": [
-      14.5
+      2.25,
+      2.6,
+      2.7,
+      2.75,
+      3,
+      3.5,
+      3.75,
+      4,
+      4.4,
+      4.75,
+      4.8,
+      5,
+      5.1,
+      5.2,
+      6,
+      6.25,
+      6.5,
+      6.7,
+      7.5,
+      9.2,
+      10,
+      11.75,
+      14.5,
+      15,
+      15.25,
+      21,
+      26,
+      30,
+      43,
+      90,
+      132
     ],
     "edaManufacturers": [
-      "AMRIYA"
+      "AMRIYA",
+      "CID",
+      "ALEXANDRIA",
+      "SMITHKLINE BEECHAM",
+      "GLAXO SMITHKLINE",
+      "PHARCO",
+      "MEMPHIS",
+      "EL NILE. > MUNDIPHARMA",
+      "DEBEIKY > SMB LABORATOIRES-BELGIUM",
+      "EIPICO",
+      "SIGMA > FUTURE PHARMACEUTICAL INDUSTRIES (FPI)",
+      "GLOBAL NAPI PHARMACEUTICALS > FUTURE PHARMACEUTICAL INDUSTRIES (FPI)",
+      "MISR"
     ],
     "verified": true
   },
@@ -4385,29 +4414,303 @@ export const edaSupplement = [
     "id": "20",
     "nameEn": "Prednisolone",
     "nameAr": "بريدنيزولون",
-    "prices": [],
+    "prices": [
+      {
+        "form": "أقراص",
+        "formEn": "Tablets",
+        "price": 13.2,
+        "unit": "EGP"
+      }
+    ],
     "brandAliases": [
+      {
+        "en": "M.P.A 40MG/ML VIAL",
+        "ar": ""
+      },
+      {
+        "en": "ACECZEMA CREAM 15 GM",
+        "ar": ""
+      },
+      {
+        "en": "PREDILONE 5MG 10 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "TETRACORT OINT. 20 GM",
+        "ar": ""
+      },
+      {
+        "en": "URBASON 4 MG 10 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "NEO-HAEMORRHAN 6 SUPP.",
+        "ar": ""
+      },
+      {
+        "en": "XILOPRED 4 MG 20 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "XILOPRED 16 MG 20 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "CORTIPHEN EYE DROPS 3 ML",
+        "ar": ""
+      },
+      {
+        "en": "CORTIPHEN EYE OINT. 5 GM",
+        "ar": ""
+      },
+      {
+        "en": "DEPO-MEDROL 40MG/ML VIAL",
+        "ar": ""
+      },
+      {
+        "en": "HOSTACORTIN H 5MG 30 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "TERGYNAN 10 VAGINAL TABS.",
+        "ar": ""
+      },
+      {
+        "en": "ACETASEE 1% EYE DROPS 5 ML",
+        "ar": ""
+      },
+      {
+        "en": "PREDNISOLONE 5 MG 20 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "PREDSOL 5MG/5ML SYRUP 50ML",
+        "ar": ""
+      },
+      {
+        "en": "XILONE 5MG/5ML SYRUP 100ML",
+        "ar": ""
+      },
+      {
+        "en": "PHENAMIDE-P EYE DROPS 5 ML",
+        "ar": ""
+      },
+      {
+        "en": "APICORTE FORTE 1% EYE DROPS",
+        "ar": ""
+      },
+      {
+        "en": "ORCHAPRED 0.5% EYE GEL 5 ML",
+        "ar": ""
+      },
+      {
+        "en": "PREDSOL 5MG/5ML SYRUP 125ML",
+        "ar": ""
+      },
+      {
+        "en": "PHAROGENTONE EAR DROPS 5 ML",
+        "ar": ""
+      },
+      {
+        "en": "PEDICORT 5MG/5ML SYP. 100 ML",
+        "ar": ""
+      },
+      {
+        "en": "PRED FORTE 1% EYE DROPS 5 ML",
+        "ar": ""
+      },
+      {
+        "en": "PREDNIS 5MG/5ML SYRUP 100 ML",
+        "ar": ""
+      },
+      {
+        "en": "APIGENT-P EYE/EAR DROPS 5 ML",
+        "ar": ""
+      },
+      {
+        "en": "APIGENT-P EYE/EAR OINT. 5 GM",
+        "ar": ""
+      },
+      {
+        "en": "ISOMAXIN EYE/EAR DROPS 10 ML",
+        "ar": ""
+      },
+      {
+        "en": "URBASON RETARD 4 MG 10 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "URBASON RETARD 8 MG 10 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "PHARMA PRED 1% EYE DROPS 5 ML",
+        "ar": ""
+      },
+      {
+        "en": "UNIPRIDOL 5MG/5ML SYP. 100 ML",
+        "ar": ""
+      },
+      {
+        "en": "SOLU-MEDROL 1GM I.M./I.V.VIAL",
+        "ar": ""
+      },
+      {
+        "en": "NEOPRED-P EYE/EAR SUSP. 10 ML",
+        "ar": ""
+      },
+      {
+        "en": "HOSTAPRED 5MG/5ML SYRUP 100 ML",
+        "ar": ""
+      },
+      {
+        "en": "ISOPTO CETAPRED EYE DROPS 5 ML",
+        "ar": ""
+      },
       {
         "en": "PREDNISOLONE 1% EYE DROPS 5 ML",
         "ar": "بريدنيسولوني 1% إيي"
       },
       {
-        "en": "PREDNISOLONE 20 MG 20 ORODISPERSIBLE TABS.",
-        "ar": "بريدنيسولوني 20 أوروديسبيرسيبلي"
+        "en": "SOLU-MEDROL 500MG I.M./I.V.VIAL",
+        "ar": ""
       },
       {
-        "en": "PREDNISOLONE 5 MG 20 TABS.",
-        "ar": "بريدنيسولوني"
+        "en": "ISOPTO STEROFRIN EYE DROPS 5 ML",
+        "ar": ""
+      },
+      {
+        "en": "OPTIPRED 10MG/ML EYE DROPS 5 ML",
+        "ar": "أوبتيبريد /مل إيي"
+      },
+      {
+        "en": "SALCODIN 10MG/ML EYE DROPS 5 ML",
+        "ar": "سالكودين /مل إيي"
+      },
+      {
+        "en": "ECONOPRED PLUS 1% EYE DROPS 5 ML",
+        "ar": "إكونوبريد بلوس 1% إيي"
+      },
+      {
+        "en": "CORTIBIOTAN EYE SUSP. DROPS 10 ML",
+        "ar": ""
+      },
+      {
+        "en": "NEO-HAEMORRHAN RECTAL OINT. 12 GM",
+        "ar": ""
+      },
+      {
+        "en": "PREDSOL FORTE 15MG/5ML SYRUP 60ML",
+        "ar": "بريدسول فورتي /"
+      },
+      {
+        "en": "XILONE FORTE 15MG/5ML SYRUP 100ML",
+        "ar": "كسيلوني فورتي /"
+      },
+      {
+        "en": "ORCHAPRED 1% SUSP. EYE DROPS 10 ML",
+        "ar": "أورتشابريد 1% . إيي"
+      },
+      {
+        "en": "PREDSOL FORTE 15MG/5ML SYRUP 100ML",
+        "ar": "بريدسول فورتي /"
+      },
+      {
+        "en": "PEDICORT FORTE 15MG/5ML SYP. 100 ML",
+        "ar": "بيديكورت فورتي / سيب"
+      },
+      {
+        "en": "METHYLPREDNISOLONE MYLAN 1G 10 VIALS",
+        "ar": ""
       }
     ],
     "edaPrices": [
+      4.3,
+      5.5,
+      6,
+      6.5,
+      7,
+      7.5,
+      8,
+      8.5,
+      9.5,
+      10,
+      11.5,
+      12,
       13.2,
+      15,
+      16,
+      18,
+      22,
       24,
-      115
+      26,
+      29,
+      34,
+      38,
+      39,
+      40,
+      43,
+      45,
+      49,
+      52,
+      54,
+      57,
+      63,
+      69,
+      72,
+      74,
+      76,
+      79.5,
+      84,
+      104,
+      115,
+      116,
+      142,
+      180,
+      202.5,
+      214,
+      250,
+      360,
+      400,
+      1225,
+      2250
     ],
     "edaManufacturers": [
+      "GLOBAL NAPI PHARMACEUTICALS",
+      "RAMEDA",
+      "AMMAN PHARMACEUTICAL CO - JORDAN > ADM FOR TRADING & PROJECTS-EGYPT",
+      "EPCI > ANDALOUS PHARMA",
+      "ANDALOUS PHARMA",
+      "NOVARTIS > NOVARTIS SCIENTIFIC OFFICE",
+      "EIPICO",
+      "SANOFI",
       "PHARCO",
-      "ARAB DRUG COMPANY (ADCO)"
+      "JAMJOOM PHARMACEUTICALS",
+      "ORCHIDIA PHARMACEUTICAL INDUSTRIES > ORCHIDIA",
+      "AL ESRAA PHARMACEUTICAL OPTIMA",
+      "RAMEDA > PHARCO",
+      "ALLERGAN > SOFICOPHARM",
+      "KAHIRA",
+      "PHAROPHARMA",
+      "ARAB DRUG COMPANY (ADCO)",
+      "EVA PHARMA",
+      "BORG",
+      "SANOFI WINTHROP > SANOFI",
+      "UNIPHARMA CO. > UNIPHARMA",
+      "EUROPEAN EGYPTIAN PHARM. IND.",
+      "AMOUN",
+      "SIGMA TEC",
+      "RAMEDA > ALCON",
+      "MISR",
+      "EIPICO > PFIZER",
+      "CHEMIPHARM > PHARCO B",
+      "GLOBAL PHARMACEUTICAL INDUSTRIES",
+      "MYLAN S.A.S-FRANCE > RAMCO",
+      "PFIZER",
+      "EIPICO > ALLERGAN",
+      "RAMEDA > LABORATOIRES OF DOCTOR E.BOUCHARA",
+      "SANOFI AVENTIS > SANOFI",
+      "PENTA PHARMA"
     ],
     "verified": true
   },
@@ -4415,18 +4718,358 @@ export const edaSupplement = [
     "id": "21",
     "nameEn": "Ciprofloxacin",
     "nameAr": "سيبروفلوكساسين",
-    "prices": [],
+    "prices": [
+      {
+        "form": "أقراص",
+        "formEn": "Tablets",
+        "price": 30.5,
+        "unit": "EGP"
+      }
+    ],
     "brandAliases": [
       {
-        "en": "CIPROFLOXACIN 200MG/100ML VIAL",
-        "ar": "سيبروفلوكساسين /"
+        "en": "CIPRO PLUS 10 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "CONAZ C 20 F.C.TABS.",
+        "ar": ""
+      },
+      {
+        "en": "TINIFLOXACIN 10 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "TINIFLOXACIN 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "TARIVAN 200MG 10 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "OFLOXACIN 200MG 10 TAB",
+        "ar": ""
+      },
+      {
+        "en": "CIPROFOX  0.3% EYE DROP",
+        "ar": ""
+      },
+      {
+        "en": "MIFOXIN 250 MG 10 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "OTOXIN 3MG/ML EAR DROPS",
+        "ar": ""
+      },
+      {
+        "en": "ZONACIP EAR DROPS 15 ML",
+        "ar": ""
+      },
+      {
+        "en": "RANCIF 250MG 10 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "RANCIF 500MG 10 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "TARIFLOX 200 MG 10 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "TARIFLOX 400 MG 10 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "CIPRO 500 MG 10 F.C.TABS.",
+        "ar": ""
+      },
+      {
+        "en": "CIPRO 500 MG 20 F.C.TABS.",
+        "ar": ""
+      },
+      {
+        "en": "QUINOSPAN 500 MG 10 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "RANCIF 200 MG/100 ML VIAL",
+        "ar": ""
+      },
+      {
+        "en": "KIROLL 200MG 10 F.C. TAB.",
+        "ar": ""
+      },
+      {
+        "en": "OFLICIN 200MG 10 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "OFLOX 0.3% EYE DROPS 5 ML",
+        "ar": ""
+      },
+      {
+        "en": "OFLOXIN 200MG 10 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "BACTIFLOX 250MG 10 LACTAB.",
+        "ar": ""
+      },
+      {
+        "en": "BACTIFLOX 500MG 10 LACTAB.",
+        "ar": ""
+      },
+      {
+        "en": "CIPRO 0.3% EAR DROPS 10 ML",
+        "ar": ""
+      },
+      {
+        "en": "CIPROBAY 250MG 10 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "CIPROBAY 500MG 10 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "CIPROBAY 750MG 10 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "CIPROCIN 500MG 10 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "TARIVID 200MG 10 F.C. TAB.",
+        "ar": ""
+      },
+      {
+        "en": "FLOXOTINAZOLE 10 F.C.TABS.",
+        "ar": ""
+      },
+      {
+        "en": "CIPROCORT OTIC DROPS 10 ML",
+        "ar": ""
+      },
+      {
+        "en": "DROPIFLOX OTIC DROPS 15 ML",
+        "ar": ""
+      },
+      {
+        "en": "PEOPO-OTIC EAR DROPS 15 ML",
+        "ar": ""
+      },
+      {
+        "en": "CIPROFAR 250MG 10 F.C.TAB.",
+        "ar": "سيبروفار"
+      },
+      {
+        "en": "CIPROFAR 500MG 10 F.C.TAB.",
+        "ar": "سيبروفار"
+      },
+      {
+        "en": "MIFOXIN 500MG 10 F.C. TAB.",
+        "ar": "ميفوكسين"
+      },
+      {
+        "en": "ROCINOMEX 200MG/100ML VIAL",
+        "ar": "روسينوميكس /"
+      },
+      {
+        "en": "OCUFLOX 0.3% EYE DROPS 5 ML",
+        "ar": ""
+      },
+      {
+        "en": "OFLICIN 0.3% EYE DROPS 5 ML",
+        "ar": ""
+      },
+      {
+        "en": "OFLOGUIDE 400MG 10 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "OFLOXIN 0.3% EYE DROPS 5 ML",
+        "ar": ""
+      },
+      {
+        "en": "DROPIFLOX OTIC DROPS 7.5 ML",
+        "ar": ""
+      },
+      {
+        "en": "CIPROCIN 250MG 10 F.C. TAB.",
+        "ar": "سيبروسين"
+      },
+      {
+        "en": "CIPROCIN 750MG 10 F.C. TAB.",
+        "ar": "سيبروسين"
+      },
+      {
+        "en": "CIPROFAR 750MG 10 F.C. TAB.",
+        "ar": "سيبروفار"
+      },
+      {
+        "en": "SERVIFLOX 500MG 10 F.C.TAB.",
+        "ar": "سيرفيفلوكس"
+      },
+      {
+        "en": "FLOXA WEST 300MG 14 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "DEXACIPAREX OTIC SUSP. 15 ML",
+        "ar": ""
+      },
+      {
+        "en": "CIPROFAR 0.3% EYE DROPS 5 ML",
+        "ar": "سيبروفار 0.3% إيي"
       }
     ],
     "edaPrices": [
-      30.5
+      3.75,
+      6,
+      7,
+      7.5,
+      8,
+      9,
+      10,
+      10.5,
+      11,
+      12,
+      13.5,
+      15,
+      16,
+      17.76,
+      18,
+      19.2,
+      19.5,
+      19.8,
+      20,
+      20.4,
+      21,
+      21.6,
+      22,
+      24,
+      24.5,
+      26,
+      26.25,
+      26.4,
+      27,
+      28,
+      28.8,
+      29,
+      30,
+      30.5,
+      30.75,
+      31,
+      31.5,
+      32.5,
+      33.6,
+      34,
+      34.5,
+      35.64,
+      36,
+      37,
+      38,
+      38.5,
+      39,
+      43.25,
+      44,
+      45,
+      46,
+      47,
+      48,
+      48.75,
+      50,
+      52,
+      53,
+      54,
+      60,
+      62,
+      63,
+      68.5,
+      69,
+      74,
+      76,
+      77,
+      82,
+      86,
+      89,
+      91,
+      111,
+      124,
+      128,
+      148,
+      152
     ],
     "edaManufacturers": [
-      "AMRIYA"
+      "ARABCOMED",
+      "HIGH PERFORMANCE PHARMA (HP PHARMA)",
+      "MUP > ACINO",
+      "ALCON > NOVARTIS SCIENTIFIC OFFICE",
+      "CID",
+      "MEMPHIS",
+      "PHARMACEUTICAL SOLUTION INDUSTRIES > AL KAMAL IMPORTING & MARKETING CO",
+      "HIKMA PHARMA > BAYER SCHERING",
+      "EIPICO",
+      "PHARCO B > EUROPEAN EGYPTIAN PHARM. IND.",
+      "PHARCO",
+      "AMRIYA",
+      "EUROPEAN EGYPTIAN PHARM. IND.",
+      "ORGANOPHARMA > ORGANO",
+      "DEBEIKY > NALI PHARMA INTERNATIONAL",
+      "ALFACURE PHARMACEUTICALS",
+      "SPIMACO > SPIMACO-EGYPT",
+      "MASH PREMIERE",
+      "UNIPHARMA",
+      "UNIPHARMA CO. > UNIPHARMA",
+      "NAPCO > NOVELL PHARMA",
+      "EL-OBOUR > ADVOCURE",
+      "FUTURE PHARMACEUTICAL INDUSTRIES (FPI) > EGYPTIAN CANADIAN PHARMACEUTICAL",
+      "EGPI > SEA PHARM",
+      "GRAND PHARMA > VODACHEM",
+      "EGPI > HERO PHARM",
+      "KAHIRA > MODERN OFFICE FOR IMPORT",
+      "TABUK PHARMACEUTICAL MANUFACTURING COMPANY > AL ANSAR FOR MARKETING",
+      "PHARMED HEALTHCARE",
+      "MISR",
+      "PHAROPHARMA",
+      "EPCI > ROXXEN",
+      "GYPTO PHARMA",
+      "CID > RANBAXY",
+      "GLOBAL PHARMACEUTICAL INDUSTRIES",
+      "NOVARTIS",
+      "AL ROWAD PHARMACEUTICAL INDUSTRIAL CO.",
+      "ARAB CAPS > MASTER MED PHARMA",
+      "WESTERN PHARMACEUTICALS INDUSTRIES > WESTERN PHARMA",
+      "DELTA GRAND PHARMA",
+      "EGPI > HEALTH WELL EGYPT",
+      "JEDCO INT. CO. FOR PHARMACEUTICALS",
+      "GLAXO SMITHKLINE",
+      "DELTA GRAND PHARMA > EL NILE.",
+      "ALEXANDRIA",
+      "BIORIGINAL INTERNATIONAL GROUP PHARMA > GENESIS PHARMACEUTICALS",
+      "CHEMIPHARM",
+      "ALLERGAN > SOFICOPHARM",
+      "SIGMA TEC",
+      "SEDICO",
+      "KAHIRA",
+      "JAMJOOM PHARMACEUTICALS-K.S.A > JAMJOOM PHARMA",
+      "BORG",
+      "SANOFI",
+      "FUTURE PHARMACEUTICAL INDUSTRIES (FPI)",
+      "FUTURE PHARMACEUTICAL INDUSTRIES (FPI) > WOCKHARDT",
+      "EL OBOUR MODERN PHARMA > ADVOCURE",
+      "FUTURE PHARMACEUTICAL INDUSTRIES > QUEEN PHARM INTERNATIONAL",
+      "MINA PHARM",
+      "HP PHARMA",
+      "GRAND PHARMA > DELTA GRAND PHARMA",
+      "DELTA GRAND PHARMA > MARCYRL PHARMACEUTICAL INDUSTRIES (MPI)",
+      "RAMEDA > CONCORD PHARMACEUTICAL INDUSTRIES",
+      "GRAND PHARMA > GLENMARK PHARMACEUTICALS"
     ],
     "verified": true
   },
@@ -4434,18 +5077,298 @@ export const edaSupplement = [
     "id": "22",
     "nameEn": "Metronidazole",
     "nameAr": "ميترونيدازول",
-    "prices": [],
+    "prices": [
+      {
+        "form": "أقراص",
+        "formEn": "Tablets",
+        "price": 20,
+        "unit": "EGP"
+      }
+    ],
     "brandAliases": [
       {
-        "en": "METRONIDAZOLE 500MG /100ML I.V. INFUSION (N/A)",
-        "ar": "ميترونيدازولي /"
+        "en": "DILOZOLE 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "FURAZOLE 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "FLAGIMIDE 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "SPIRAZOLE 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "FLAGYL 250MG 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "FLAGYL 500MG 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "DIMETROL SUSP. 100ML",
+        "ar": ""
+      },
+      {
+        "en": "FIPCODAZOLE 10 MG GEL",
+        "ar": ""
+      },
+      {
+        "en": "DILOZOLE SUSP. 120 ML",
+        "ar": ""
+      },
+      {
+        "en": "GEDAZOLE 500MG 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "ZOLGUARD 500MG 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "NYSTAZOLE 10 VAG.TABS.",
+        "ar": ""
+      },
+      {
+        "en": "DIMETROL-N 20 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "FLAGYMYCIN 20 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "FLAGICURE 250MG 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "METROZOLE 250MG 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "ROSAGEL 0.75% GEL 20 GM",
+        "ar": ""
+      },
+      {
+        "en": "TRICHOCID 250MG 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "AMRIZOLE-N 5 VAG. SUPP.",
+        "ar": ""
+      },
+      {
+        "en": "SPIRAZOLE FORTE 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "AMRIZOLE 250 MG 20 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "AMRIZOLE 500 MG 20 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "TRICHOGYL 250 MG 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "BISPYLLER 120 H.G. CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "SPIROMETRO 30 F.C. TABS.",
+        "ar": ""
+      },
+      {
+        "en": "UNISPIRA-M 20 F.C. TABS.",
+        "ar": ""
+      },
+      {
+        "en": "FLAGYL 0.5% I.V. INFUSION",
+        "ar": ""
+      },
+      {
+        "en": "FARCOZOL PLUS SUSP. 120ML",
+        "ar": ""
+      },
+      {
+        "en": "FLAGYMYCIN DS 10 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "SPIREX PLUS 20 F.C. TABS.",
+        "ar": ""
+      },
+      {
+        "en": "PARAMIBE COMPOUND 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "TRIGASTCARE 120 H.G. CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "AMRIZOLE 500 MG VIAL 100 ML",
+        "ar": ""
+      },
+      {
+        "en": "BUMEXAZOLE 0.5% VIAL 100 ML",
+        "ar": ""
+      },
+      {
+        "en": "SPECTRAGYN 10 VAGINAL SUPP.",
+        "ar": ""
+      },
+      {
+        "en": "DUMOZOL 500MG 20 F.C. TABS.",
+        "ar": "دوموزول"
+      },
+      {
+        "en": "FLAGICURE 500MG 10 VAG.TABS",
+        "ar": "فلاجيكوري 10 فاج"
+      },
+      {
+        "en": "TRICHOGYL 500MG 12 F.C.TAB.",
+        "ar": "تريتشوجيل"
+      },
+      {
+        "en": "FLAGIMIDE SUSP. FOR CHILDREN",
+        "ar": ""
+      },
+      {
+        "en": "AMRIZOLE 1 GM 5 RECTAL SUPP.",
+        "ar": "أمريزولي 5 سوبب"
+      },
+      {
+        "en": "AMRIZOLE 500 MG 5 VAG. SUPP.",
+        "ar": "أمريزولي 5 فاج. سوبب"
+      },
+      {
+        "en": "METRON 0.75 % VAG. GEL 40 GM",
+        "ar": "ميترون 0.75 % فاج"
+      },
+      {
+        "en": "DUMOZOL 125MG/5ML SUSP. 125ML",
+        "ar": "دوموزول /"
+      },
+      {
+        "en": "ENTOPHAR 500 MG 5 VAG. OVULES",
+        "ar": "إنتوفار 5 فاج. أوفوليس"
+      },
+      {
+        "en": "FURAZOLE PEDIATRIC SUSP. 100ML",
+        "ar": ""
+      },
+      {
+        "en": "ENTOPHAR 125MG/5ML SUSP. 120ML",
+        "ar": "إنتوفار /"
+      },
+      {
+        "en": "FLAGYL 500MG 10 VAGINAL OVULES",
+        "ar": "فلاجيل 10 أوفوليس"
+      },
+      {
+        "en": "AMRIZOLE 125MG/5ML SUSP. 120 ML",
+        "ar": "أمريزولي /"
+      },
+      {
+        "en": "FLAZOL 500MG/100ML I.V.INFUSION",
+        "ar": "فلازول /"
+      },
+      {
+        "en": "TRICHOGYL 0.5% I.V. INF. 100 ML",
+        "ar": "تريتشوجيل 0.5%"
       }
     ],
     "edaPrices": [
-      20
+      2,
+      3.5,
+      4.3,
+      4.35,
+      5.5,
+      5.7,
+      5.75,
+      5.85,
+      6,
+      7,
+      8.5,
+      9,
+      10,
+      10.5,
+      11,
+      11.25,
+      11.5,
+      12,
+      13,
+      15,
+      16,
+      19,
+      19.5,
+      20,
+      20.4,
+      21.75,
+      22,
+      23,
+      25,
+      26,
+      29,
+      30,
+      31,
+      32,
+      34,
+      37,
+      40,
+      43.5,
+      47,
+      49,
+      50,
+      62,
+      142,
+      148,
+      651,
+      800
     ],
     "edaManufacturers": [
-      "PHARMACEUTICAL SOLUTION INDUSTRIES > AL KAMAL IMPORTING & MARKETING CO"
+      "AMRIYA",
+      "GRAND PHARMA > VODACHEM",
+      "COPAD PHARMA",
+      "MINA PHARM > ALPHARMA-DENMARK",
+      "PHAROPHARMA",
+      "D B K > BOSTON HEALTH",
+      "MUP",
+      "KAHIRA",
+      "AMRIYA > SANOFI",
+      "SANOFI",
+      "EL NILE.",
+      "JEDCO INT. CO. FOR PHARMACEUTICALS",
+      "ARABCOMED-EGYPT",
+      "GYPTO PHARMA",
+      "PHARMACEUTICAL SOLUTION INDUSTRIES > AL KAMAL IMPORTING & MARKETING CO",
+      "OTSUKA",
+      "SIGMA TEC",
+      "MEMPHIS",
+      "EVA PHARMA",
+      "CID",
+      "EL NASR > VODACHEM",
+      "EL NASR",
+      "UNIPHARMA CO. > UNIPHARMA",
+      "HIKMA PHARMA",
+      "MULTICARE",
+      "MINA PHARM",
+      "HP PHARMA",
+      "ALEXANDRIA",
+      "PHARCO",
+      "EIPICO",
+      "INTERNATIONAL DRUG INDUSTRIES > HAYA PHARM-EGYPT",
+      "MASH PREMIERE > BIOMED",
+      "EL-OBOUR"
     ],
     "verified": true
   },
@@ -4456,56 +5379,68 @@ export const edaSupplement = [
     "prices": [],
     "brandAliases": [
       {
-        "en": "ELTROXIN 100 MCG 100 TABS.",
-        "ar": "إلتروكسين"
-      },
-      {
-        "en": "ELTROXIN 50 MCG 100 TABS.",
-        "ar": "إلتروكسين"
-      },
-      {
-        "en": "EQUITHERA 100MCG 50 TABS.",
-        "ar": "إكويثيرا"
-      },
-      {
-        "en": "EQUITHERA 50MCG 50 TABS.",
-        "ar": "إكويثيرا"
-      },
-      {
-        "en": "EQUITHERA 75MCG 50 TABS.",
-        "ar": "إكويثيرا"
-      },
-      {
-        "en": "EUTHYROX 100MCG 100 TAB.",
-        "ar": "إوثيروكس"
-      },
-      {
-        "en": "EUTHYROX 100MCG 50 TAB. (N/A)",
-        "ar": "إوثيروكس"
-      },
-      {
         "en": "EUTHYROX 25MCG 50 TAB.",
-        "ar": "إوثيروكس"
-      },
-      {
-        "en": "EUTHYROX 50MCG 100 TAB.",
-        "ar": "إوثيروكس"
+        "ar": ""
       },
       {
         "en": "EUTHYROX 50MCG 50 TAB.",
-        "ar": "إوثيروكس"
+        "ar": ""
       },
       {
         "en": "EUTHYROX 75MCG 100TAB.",
-        "ar": "إوثيروكس"
+        "ar": ""
       },
       {
-        "en": "HYPOTHYRONOR 100 MCG 100 TABS.",
-        "ar": "هيبوثيرونور"
+        "en": "EUTHYROX 100MCG 50 TAB.",
+        "ar": ""
       },
       {
-        "en": "HYPOTHYRONOR 150 MCG 100 TABS.",
-        "ar": "هيبوثيرونور"
+        "en": "EUTHYROX 50MCG 100 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "EQUITHERA 50MCG 50 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "EQUITHERA 75MCG 50 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "EUTHYROX 100MCG 100 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "THYROXINE 50MCG 100 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "TYRAXINE 100MCG 100 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "ELTROXIN 50 MCG 100 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "EQUITHERA 100MCG 50 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "T4-THYRO 50 MCG 100 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "THYROXINE 100MCG 100 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "ELTROXIN 100 MCG 100 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "T4-THYRO 100 MCG 100 TABS.",
+        "ar": "ت4-ثيرو"
       },
       {
         "en": "HYPOTHYRONOR 25 MCG 100 TABS.",
@@ -4516,24 +5451,12 @@ export const edaSupplement = [
         "ar": "هيبوثيرونور"
       },
       {
-        "en": "T4-THYRO 100 MCG 100 TABS.",
-        "ar": "ت4-ثيرو"
+        "en": "HYPOTHYRONOR 100 MCG 100 TABS.",
+        "ar": "هيبوثيرونور"
       },
       {
-        "en": "T4-THYRO 50 MCG 100 TABS.",
-        "ar": "ت4-ثيرو"
-      },
-      {
-        "en": "THYROXINE 100MCG 100 TAB.",
-        "ar": "ثيروكسيني"
-      },
-      {
-        "en": "THYROXINE 50MCG 100 TAB.",
-        "ar": "ثيروكسيني"
-      },
-      {
-        "en": "TYRAXINE 100MCG 100 TAB.(N/A)",
-        "ar": "تيراكسيني"
+        "en": "HYPOTHYRONOR 150 MCG 100 TABS.",
+        "ar": "هيبوثيرونور"
       }
     ],
     "edaPrices": [
@@ -4571,24 +5494,190 @@ export const edaSupplement = [
     "id": "24",
     "nameEn": "Fluoxetine",
     "nameAr": "فلوكستين",
-    "prices": [],
+    "prices": [
+      {
+        "form": "أقراص",
+        "formEn": "Tablets",
+        "price": 8,
+        "unit": "EGP"
+      }
+    ],
     "brandAliases": [
       {
-        "en": "FLUOXETINE 20 MG  H.G.CAPS.",
-        "ar": "فلووكسيتيني ه.ج"
+        "en": "ALZAC 10MG 20 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "PROZAC 20MG 14 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "FLUOZAC 10MG 20 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "FLUOZAC 40MG 10 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "FLUTIN 20 MG 14 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "OCTOZAC 20MG 10 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "DEPREBAN 20MG 10 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "FLOROSIN 20MG 10 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "PHILOZAC 10MG 10 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "PHILOZAC 20MG 10 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "PHILOZAC 20MG 30 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "ELEVAMOOD 20 MG 14 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "ELEVAMOOD 20 MG 28 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "RAIBYAX 6/25 MG 30 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "RAIBYAX 6/50 MG 30 CAPS.",
+        "ar": ""
       },
       {
         "en": "FLUOXETINE 20 MG 10 CAPS.",
-        "ar": "فلووكسيتيني"
+        "ar": ""
+      },
+      {
+        "en": "RAIBYAX 12/25 MG 30 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "RAIBYAX 12/50 MG 30 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "FLUOXETINE 20 MG  H.G.CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "FLUNZAPINE 6/25 MG 20 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "FLUNZAPINE 6/50 MG 20 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "PSYCHOLANZ 3/25 MG 30 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "PSYCHOLANZ 6/25 MG 30 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "PSYCHOLANZ 6/50 MG 30 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "FLUNZAPINE 12/25 MG 20 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "FLUNZAPINE 12/50 MG 20 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "OCTOZINREEF 6/25 MG 30 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "PSYCHOLANZ 12/25 MG 30 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "PSYCHOLANZ 12/50 MG 30 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "FIESTO 90MG 4 DELAYED RELEASE CAPS.",
+        "ar": "فيستو 4 ديلاييد ريلياسي"
+      },
+      {
+        "en": "DEPEZAC 90 MG 4 DELAYED RELEASE TAB.",
+        "ar": "ديبيزاك 4 ديلاييد ريلياسي"
+      },
+      {
+        "en": "DURAZAC WEEKLY 90MG 4 DELAYED REL. CAPS.",
+        "ar": "دورازاك ويكلي 4 ديلاييد ريل"
       }
     ],
     "edaPrices": [
       8,
-      18.6
+      9,
+      11,
+      12,
+      14,
+      18,
+      18.6,
+      20.4,
+      21.6,
+      26,
+      48,
+      56,
+      75,
+      93,
+      100.5,
+      117,
+      118,
+      122,
+      144,
+      174,
+      200,
+      201,
+      216,
+      249,
+      306
     ],
     "edaManufacturers": [
+      "FUTURE PHARMACEUTICAL INDUSTRIES (FPI)",
+      "EPCI",
+      "AMRIYA",
+      "BIOPHARM EGYPT > ANDALOUS PHARMA",
+      "UNIPHARMA CO. > UNIPHARMA",
+      "UNIPHARMA",
+      "INTERNATIONAL DRUG AGENCY (IDI) > SINA PHARM",
+      "UP PHARMA",
       "SIGMA",
-      "MISR"
+      "MISR",
+      "JEDCO INT. CO. FOR PHARMACEUTICALS",
+      "EIPICO",
+      "OCTOBER PHARMA",
+      "AMOUN",
+      "ELI LILLY",
+      "DELTA PHARMA",
+      "MASH PREMIERE > BIOMED PHARMACEUTICALS",
+      "MARCYRL > RAMEDA"
     ],
     "verified": true
   },
@@ -4596,23 +5685,131 @@ export const edaSupplement = [
     "id": "25",
     "nameEn": "Sertraline",
     "nameAr": "سيرترالين",
-    "prices": [],
+    "prices": [
+      {
+        "form": "أقراص",
+        "formEn": "Tablets",
+        "price": 30,
+        "unit": "EGP"
+      }
+    ],
     "brandAliases": [
       {
-        "en": "SERTRALINE 20MG/ML ORAL CONCENTRATE 60 ML (N/A)",
-        "ar": "سيرتراليني /مل أورال كونسينتراتي"
+        "en": "SERTRAL 50MG 10 TAB.",
+        "ar": ""
       },
       {
-        "en": "SERTRALINE 25MG 20 F.C. TAB. (N/A)",
+        "en": "SESERINE 50MG 30 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "SERONORM 25 MG 10 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "AGRELOCIT 50 MG 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "DEPR-STAT 50MG 10 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "SERONORM 100 MG 10 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "SERONORM 100 MG 30 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "SERPASS 50MG 30 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "SIRTO 50MG 10 F.C. TABS.",
+        "ar": ""
+      },
+      {
+        "en": "LUSTRAL 50 MG 10 F.C.TABS.",
+        "ar": ""
+      },
+      {
+        "en": "LUSTRAL 50 MG 20 F.C.TABS.",
+        "ar": ""
+      },
+      {
+        "en": "MOODAPEX 50 MG 30 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "SERLIFT 100MG 10 F.C. TAB.",
+        "ar": ""
+      },
+      {
+        "en": "SERPASS 100MG 20 F.C. TAB.",
+        "ar": ""
+      },
+      {
+        "en": "SERPASS 100MG 30 F.C. TAB.",
+        "ar": ""
+      },
+      {
+        "en": "MOODAPEX 100 MG 30 F.C.TAB.",
+        "ar": "مودابيكس"
+      },
+      {
+        "en": "OPIRALINE 100MG 10 F.C.TAB.",
+        "ar": "أوبيراليني"
+      },
+      {
+        "en": "SERTRALINE 25MG 20 F.C. TAB.",
         "ar": "سيرتراليني"
+      },
+      {
+        "en": "OPIRALINE 50 MG 20 F.C. TABS.",
+        "ar": "أوبيراليني"
+      },
+      {
+        "en": "SERTRALINE 20MG/ML ORAL CONCENTRATE 60 ML",
+        "ar": "سيرتراليني /مل أورال كونسينتراتي"
       }
     ],
     "edaPrices": [
+      10,
+      19.2,
       20,
-      30
+      21.6,
+      29,
+      30,
+      32,
+      34,
+      34.8,
+      50.5,
+      74,
+      75,
+      81,
+      102,
+      111,
+      123,
+      135,
+      136,
+      177
     ],
     "edaManufacturers": [
-      "SIGMA"
+      "MEMPHIS > ATM PHARMACEUTICAL INDUSTRIES",
+      "MEMPHIS",
+      "PFIZER > VIATRIS EGYPT",
+      "VIATRIS",
+      "MULTI-APEX",
+      "EL-OBOUR",
+      "GLOBAL NAPI PHARMACEUTICALS > REXCEL",
+      "UNIPHARMA",
+      "GLOBAL NAPI PHARMACEUTICALS",
+      "PHARCO",
+      "SIGMA",
+      "ADWIA",
+      "HI-PHARM"
     ],
     "verified": true
   },
@@ -4624,31 +5821,31 @@ export const edaSupplement = [
     "brandAliases": [
       {
         "en": "AMITRIPTINE 50MG 30 TAB.",
-        "ar": "أميتريبتيني"
-      },
-      {
-        "en": "GRANITYLLIN 25MG/5ML SYP. 120 ML",
-        "ar": "جرانيتيللين / سيب"
-      },
-      {
-        "en": "TRYPTIZOL 10 MG 100 TABS. (N/A)",
-        "ar": "تريبتيزول"
+        "ar": ""
       },
       {
         "en": "TRYPTIZOL 10 MG 20 TABS.",
-        "ar": "تريبتيزول"
+        "ar": ""
       },
       {
         "en": "TRYPTIZOL 10 MG 60 TABS.",
-        "ar": "تريبتيزول"
+        "ar": ""
       },
       {
         "en": "TRYPTIZOL 25 MG 30 TABS.",
-        "ar": "تريبتيزول"
+        "ar": ""
+      },
+      {
+        "en": "TRYPTIZOL 10 MG 100 TABS.",
+        "ar": ""
       },
       {
         "en": "ZINOTRAVAL 25MG/5ML SYP. 120 ML",
-        "ar": "زينوترافال / سيب"
+        "ar": ""
+      },
+      {
+        "en": "GRANITYLLIN 25MG/5ML SYP. 120 ML",
+        "ar": ""
       }
     ],
     "edaPrices": [
@@ -4671,27 +5868,127 @@ export const edaSupplement = [
     "id": "27",
     "nameEn": "Phenytoin",
     "nameAr": "فينيتوين",
-    "prices": [],
+    "prices": [
+      {
+        "form": "أقراص",
+        "formEn": "Tablets",
+        "price": 16,
+        "unit": "EGP"
+      }
+    ],
     "brandAliases": [
       {
-        "en": "PHENYTOIN 100MG 40 CAPS.",
-        "ar": "فينيتوين"
+        "en": "COMIDAL-L 100 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "IPANTEN 50MG 50 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "EPANUTIN 100MG 50CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "IPANTEN 100MG 50 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "PHENYTIN 50MG 50 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "PHAROTOIN 50MG 10 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "PHENYTIN 100MG 50 CAPS.",
+        "ar": ""
       },
       {
         "en": "PHENYTOIN 50MG 40 CAPS.",
-        "ar": "فينيتوين"
+        "ar": ""
       },
       {
-        "en": "PHENYTOIN SODIUM 50MG/ML 10 AMPS.(N/A)",
+        "en": "PHENYTOIN 100MG 40 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "HEAL QUICK 2% CREAM 15 GM",
+        "ar": ""
+      },
+      {
+        "en": "PHENYTIN 100MG/2ML 1 AMP.",
+        "ar": ""
+      },
+      {
+        "en": "PHENYTIN 100MG/2ML 10 AMPS.",
+        "ar": ""
+      },
+      {
+        "en": "PHENYTIN 250MG/5ML 10 AMPS.",
+        "ar": ""
+      },
+      {
+        "en": "IPANTEN 30MG/5ML SUSP. 125ML",
+        "ar": ""
+      },
+      {
+        "en": "PHENYTIN 30MG/5ML SUSP. 120 ML",
+        "ar": ""
+      },
+      {
+        "en": "HEALOSOL 2% TOPICAL SPRAY 150 ML",
+        "ar": ""
+      },
+      {
+        "en": "PHENYTOIN SODIUM 50MG/ML 10 AMPS.",
         "ar": "فينيتوين سوديوم /مل"
+      },
+      {
+        "en": "PHENYTOIN-AIT TOPICAL SPRAY 150 ML",
+        "ar": "فينيتوين-أيت"
+      },
+      {
+        "en": "EPILOG 250MG/5ML 10 AMP. FOR I.V. INJ.",
+        "ar": "إبيلوج /"
+      },
+      {
+        "en": "PHENTOLEPT 250MG/5ML 5 AMP. FOR I.M. & SLOW I.V.",
+        "ar": "فينتوليبت / . . & سلوو"
       }
     ],
     "edaPrices": [
+      2,
+      9.5,
       13.5,
+      14.4,
       16,
-      90
+      19,
+      32,
+      33,
+      35,
+      37.5,
+      50,
+      51,
+      63,
+      87,
+      90,
+      95,
+      110,
+      300
     ],
     "edaManufacturers": [
+      "ALEXANDRIA",
+      "EL NILE. > PFIZER",
+      "MUP",
+      "UNIPHARMA CO. > AL HADIDI PHARMA",
+      "EGYPTIAN CO. FOR ADV. PHARMA. (ECAP) > ACDIMA INTERNATIONAL TRADING",
+      "ARAB CAPS > ACDIMA INTERNATIONAL TRADING",
+      "T3A PHARMA > ACDIMA INTERNATIONAL TRADING",
+      "PHAROPHARMA",
+      "ALEXANDRIA > EGYPHARMA-EGYPT",
+      "EL NILE.",
       "EL NASR",
       "SABEX INC.-CANADA > INCO PHARMA-EGYPT"
     ],
@@ -4704,176 +6001,68 @@ export const edaSupplement = [
     "prices": [],
     "brandAliases": [
       {
-        "en": "AZALIDE 200MG/5ML SUSP. 15ML",
-        "ar": "أزاليدي /"
-      },
-      {
-        "en": "AZALIDE 250MG 6 CAPS.",
-        "ar": "أزاليدي"
-      },
-      {
-        "en": "AZALIDE 500MG 3 CAPS.",
-        "ar": "أزاليدي"
-      },
-      {
-        "en": "AZATRIBACT 200MG/5ML SUSP. 22.5 ML",
-        "ar": "أزاتريباكت /"
-      },
-      {
-        "en": "AZATRIBACT 250MG 6 CAPS.",
-        "ar": "أزاتريباكت"
-      },
-      {
-        "en": "AZATRIBACT 500MG 3 CAPS.",
-        "ar": "أزاتريباكت"
-      },
-      {
-        "en": "AZI-ONCE 200MG/5ML SUSP. 15ML",
-        "ar": "أزي-أونسي /"
-      },
-      {
-        "en": "AZI-ONCE 200MG/5ML SUSP. 22.5ML",
-        "ar": "أزي-أونسي /"
-      },
-      {
-        "en": "AZI-ONCE 200MG/5ML SUSP. 30ML",
-        "ar": "أزي-أونسي /"
-      },
-      {
-        "en": "AZI-ONCE 250MG 6 CAPS.",
-        "ar": "أزي-أونسي"
-      },
-      {
-        "en": "AZIMACRON 500 MG 3 F.C. TABS.",
-        "ar": "أزيماكرون"
-      },
-      {
-        "en": "AZINDAMON 500MG 3 F.C.TAB.",
-        "ar": "أزيندامون"
-      },
-      {
-        "en": "AZIROWA 1000 MG 2 F.C. TABS.",
-        "ar": "أزيرووا"
-      },
-      {
-        "en": "AZITANAD 500 MG 3 F.C. TABS.",
-        "ar": "أزيتاناد"
-      },
-      {
-        "en": "AZITHROCHIDIA 1% EYE DROPS 15*0.4ML SDU",
-        "ar": "أزيثروتشيديا 1% إيي 15 سدو"
-      },
-      {
-        "en": "AZITHROGLOB 500 MG VIAL I.V. INF.",
-        "ar": "أزيثروجلوب"
-      },
-      {
-        "en": "AZITHROMASH 500 MG 3 F.C. TABS.",
-        "ar": "أزيثروماش"
-      },
-      {
-        "en": "AZITHROMASH 500 MG 6 F.C. TABS. (N/A)",
-        "ar": "أزيثروماش"
-      },
-      {
-        "en": "AZITHROMIN 250MG 6 CAPS.",
-        "ar": "أزيثرومين"
-      },
-      {
-        "en": "AZITHROMYCIN-AUG 500 MG 3 F.C.TABS. (N/A)",
-        "ar": "أزيثروميسين-أوج"
-      },
-      {
-        "en": "AZITHROMYCIN-AUG 500 MG 6 F.C.TABS.",
-        "ar": "أزيثروميسين-أوج"
-      },
-      {
-        "en": "AZITHROTREAT 2GM/60ML PD. FOR ORAL SUSP.",
-        "ar": "أزيثروتريات / بد. أورال"
-      },
-      {
-        "en": "AZIWOK 200MG/5ML SUSP. 15ML",
-        "ar": "أزيووك /"
+        "en": "ZERAMERATE 500 MG",
+        "ar": ""
       },
       {
         "en": "AZIWOK 250MG 6 CAPS.",
-        "ar": "أزيووك"
+        "ar": ""
       },
       {
-        "en": "AZOMYCIN 200MG/5ML SUSP. 15ML",
-        "ar": "أزوميسين /"
+        "en": "GLOZITHRO 500MG VIAL",
+        "ar": ""
       },
       {
-        "en": "AZOMYCIN 250MG 6 CAPS.",
-        "ar": "أزوميسين"
+        "en": "AZALIDE 250MG 6 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "AZALIDE 500MG 3 CAPS.",
+        "ar": ""
       },
       {
         "en": "AZROLANTA 500 MG VIAL",
-        "ar": "أزرولانتا"
+        "ar": ""
       },
       {
-        "en": "AZROLID 200MG/5ML PD. FOR ORAL SUSP. 15ML",
-        "ar": "أزروليد / بد. أورال"
+        "en": "AZI-ONCE 250MG 6 CAPS.",
+        "ar": ""
       },
       {
-        "en": "AZROLID 200MG/5ML PD. FOR ORAL SUSP. 22.5ML",
-        "ar": "أزروليد / بد. أورال"
+        "en": "AZOMYCIN 250MG 6 CAPS.",
+        "ar": ""
       },
       {
-        "en": "AZROLID 200MG/5ML PD. FOR ORAL SUSP. 30ML",
-        "ar": "أزروليد / بد. أورال"
+        "en": "GIGAZOCIN 500MG 5 CAPS.",
+        "ar": ""
       },
       {
-        "en": "AZROLID 500 MG 3 F.C.TABS.",
-        "ar": "أزروليد"
+        "en": "NEOZOLID 250 MG 6 TABS.",
+        "ar": ""
       },
       {
-        "en": "AZROLID 500 MG 6 F.C.TABS.",
-        "ar": "أزروليد"
+        "en": "NEOZOLID 600 MG 3 TABS.",
+        "ar": ""
       },
       {
-        "en": "BADOZITHRO 200MG/5ML PD. FOR ORAL SUSP. 15 ML",
-        "ar": "بادوزيثرو / بد. أورال"
+        "en": "ZISROCIN 500 MG 3 CAPS.",
+        "ar": ""
       },
       {
-        "en": "CYANARO 1% EYE DROPS 2.5 ML",
-        "ar": "سيانارو 1% إيي"
+        "en": "ZITHROMAX 250MG 6 CAPS.",
+        "ar": ""
       },
       {
-        "en": "DELZOSIN 500 MG 3 F.C.TABS. (N/A)",
-        "ar": "ديلزوسين"
+        "en": "AZATRIBACT 250MG 6 CAPS.",
+        "ar": ""
       },
       {
-        "en": "DELZOSIN 500 MG 6 F.C.TABS.",
-        "ar": "ديلزوسين"
+        "en": "AZATRIBACT 500MG 3 CAPS.",
+        "ar": ""
       },
       {
-        "en": "DELZOSIN 600 MG 3 F.C.TABS. (N/A)",
-        "ar": "ديلزوسين"
-      },
-      {
-        "en": "DELZOSIN 600 MG 6 F.C.TABS.",
-        "ar": "ديلزوسين"
-      },
-      {
-        "en": "DISTABCIN 250 MG 6 DISPERSIBLE TABS.",
-        "ar": "ديستابسين 6 ديسبيرسيبلي"
-      },
-      {
-        "en": "DISTABCIN 500 MG 3 DISPERSIBLE TABS.",
-        "ar": "ديستابسين 3 ديسبيرسيبلي"
-      },
-      {
-        "en": "ELIAZITHROX 1% EYE DROPS 2.5 ML",
-        "ar": "إليازيثروكس 1% إيي"
-      },
-      {
-        "en": "EPIZITHRO 200MG/5ML 15ML SUSP.",
-        "ar": "إبيزيثرو /"
-      },
-      {
-        "en": "EPIZITHRO 200MG/5ML 30ML SUSP.",
-        "ar": "إبيزيثرو /"
+        "en": "AZITHROMIN 250MG 6 CAPS.",
+        "ar": ""
       },
       {
         "en": "EPIZITHRO 500 MG 3 CAPS.",
@@ -4884,68 +6073,12 @@ export const edaSupplement = [
         "ar": "إبيزيثرو"
       },
       {
-        "en": "GIGAZOCIN 200MG/5ML PD. ORAL SUSP. 25 ML",
-        "ar": "جيجازوسين / بد. أورال"
-      },
-      {
-        "en": "GIGAZOCIN 500MG 5 CAPS.",
-        "ar": "جيجازوسين"
-      },
-      {
-        "en": "HYCYANARO 1.5 % EYE DROPS 5 ML",
-        "ar": "هيسيانارو 1.5 % إيي"
-      },
-      {
-        "en": "INFECTOMYCIN 500MG 6 F.C. TABS.",
-        "ar": "إنفيكتوميسين"
-      },
-      {
-        "en": "NEOZOLID 250 MG 6 TABS.",
-        "ar": "نيوزوليد"
-      },
-      {
-        "en": "NEOZOLID 600 MG 3 TABS.",
-        "ar": "نيوزوليد"
-      },
-      {
-        "en": "RAME-ZITHRO 1% EYE DROPS 2.5 ML",
-        "ar": "رامي-زيثرو 1% إيي"
-      },
-      {
-        "en": "RAME-ZITHRO 200MG/5ML SUSP. 15 ML",
-        "ar": "رامي-زيثرو /"
-      },
-      {
-        "en": "RAME-ZITHRO 200MG/5ML SUSP. 30 ML",
-        "ar": "رامي-زيثرو /"
-      },
-      {
-        "en": "RAME-ZITHRO 500 MG 3 F.C.TABS.",
-        "ar": "رامي-زيثرو"
-      },
-      {
-        "en": "RAME-ZITHRO 500 MG 6 F.C.TABS.",
-        "ar": "رامي-زيثرو"
-      },
-      {
-        "en": "RAME-ZITHRO 500MG PD. FOR I.V. INF. (HOSPITALS ONLY)",
-        "ar": "رامي-زيثرو بد"
-      },
-      {
         "en": "SYSTYMYCIN 500MG 3 CAPS.",
         "ar": "سيستيميسين"
       },
       {
         "en": "SYSTYMYCIN 500MG 5 CAPS.",
         "ar": "سيستيميسين"
-      },
-      {
-        "en": "UNIZITHRIN 100MG/5ML SUSP. 30ML",
-        "ar": "أونيزيثرين /"
-      },
-      {
-        "en": "UNIZITHRIN 200MG/5ML SUSP. 30ML",
-        "ar": "أونيزيثرين /"
       },
       {
         "en": "UNIZITHRIN 500MG 3 CAPS.",
@@ -4956,104 +6089,12 @@ export const edaSupplement = [
         "ar": "أونيزيثرين"
       },
       {
-        "en": "UNIZITHROCURE 200MG/5ML PD. FOR ORAL SUSP. 15ML",
-        "ar": "أونيزيثروكوري / بد. أورال"
-      },
-      {
-        "en": "XEREXOMAIR 100MG/5ML PD. FOR ORAL SUSP. 30ML",
-        "ar": "كسيريكسوماير / بد. أورال"
-      },
-      {
-        "en": "XEREXOMAIR 500MG 3 F.C.TABS.",
-        "ar": "كسيريكسوماير"
-      },
-      {
-        "en": "XITHROBIOTIC 500 MG 3 CAPS.",
-        "ar": "كسيثروبيوتيك"
-      },
-      {
-        "en": "XITHROBIOTIC OPHTHALMIC SOL. 2.5 ML",
-        "ar": "كسيثروبيوتيك أوفثالميك"
-      },
-      {
-        "en": "XITHRONE 200 MG/5ML SUSP. 15ML",
-        "ar": "كسيثروني /"
-      },
-      {
-        "en": "XITHRONE 200 MG/5ML SUSP. 25ML",
-        "ar": "كسيثروني /"
-      },
-      {
-        "en": "XITHRONE 500 MG PD. FOR I.V. INF. VIAL",
-        "ar": "كسيثروني بد"
-      },
-      {
-        "en": "XITHRONE 500MG 3 F.C.TAB.",
-        "ar": "كسيثروني"
-      },
-      {
-        "en": "XITHRONE 500MG 5 F.C.TAB.",
-        "ar": "كسيثروني"
-      },
-      {
-        "en": "ZALIPRITZ 500MG VIAL I.V. INF.",
-        "ar": "زاليبريتز"
-      },
-      {
-        "en": "ZATHROTRUE 500 MG 3 F.C. TABS.",
-        "ar": "زاثروتروي"
-      },
-      {
-        "en": "ZATHROTRUE 500 MG 6 F.C. TABS.",
-        "ar": "زاثروتروي"
-      },
-      {
-        "en": "ZERAMERATE 500 MG",
-        "ar": "زيراميراتي"
-      },
-      {
-        "en": "ZISROCIN 100MG/5ML SUSP. 30ML",
-        "ar": "زيسروسين /"
-      },
-      {
-        "en": "ZISROCIN 500 MG 3 CAPS.",
-        "ar": "زيسروسين"
-      },
-      {
         "en": "ZITHOTRAC 500 MG 3 TABS.",
         "ar": "زيثوتراك"
       },
       {
-        "en": "ZITHRODOSE 100MG/5ML SUSP. 15ML",
-        "ar": "زيثرودوسي /"
-      },
-      {
-        "en": "ZITHRODOSE 100MG/5ML SUSP. 30ML",
-        "ar": "زيثرودوسي /"
-      },
-      {
-        "en": "ZITHRODOSE 100MG/5ML SUSP. 45ML",
-        "ar": "زيثرودوسي /"
-      },
-      {
-        "en": "ZITHRODOSE 100MG/5ML SUSP. 60ML",
-        "ar": "زيثرودوسي /"
-      },
-      {
-        "en": "ZITHRODOSE 2GM/60ML PD.FOR ORAL SUSP.",
-        "ar": "زيثرودوسي / بد. أورال"
-      },
-      {
         "en": "ZITHRODOSE 500MG 5 CAPS.",
         "ar": "زيثرودوسي"
-      },
-      {
-        "en": "ZITHROKAN 100MG/5ML PD. FOR ORAL SUSP. 15 ML",
-        "ar": "زيثروكان / بد. أورال"
-      },
-      {
-        "en": "ZITHROKAN 200MG/5ML PD. FOR ORAL SUSP. 15 ML",
-        "ar": "زيثروكان / بد. أورال"
       },
       {
         "en": "ZITHROKAN 500 MG 3 CAPS.",
@@ -5064,48 +6105,100 @@ export const edaSupplement = [
         "ar": "زيثروكان"
       },
       {
-        "en": "ZITHROMAX 1200MG/30ML (200MG/5ML) SUSP.",
+        "en": "XITHRONE 500MG 3 F.C.TAB.",
+        "ar": "كسيثروني"
+      },
+      {
+        "en": "XITHRONE 500MG 5 F.C.TAB.",
+        "ar": "كسيثروني"
+      },
+      {
+        "en": "AZINDAMON 500MG 3 F.C.TAB.",
+        "ar": "أزيندامون"
+      },
+      {
+        "en": "AZROLID 500 MG 3 F.C.TABS.",
+        "ar": "أزروليد"
+      },
+      {
+        "en": "AZROLID 500 MG 6 F.C.TABS.",
+        "ar": "أزروليد"
+      },
+      {
+        "en": "ZITHROMAX 600MG/15ML SUSP.",
         "ar": "زيثروماكس /"
       },
       {
-        "en": "ZITHROMAX 250MG 6 CAPS.",
-        "ar": "زيثروماكس"
+        "en": "CYANARO PLUS EYE DROPS 5 ML",
+        "ar": ""
+      },
+      {
+        "en": "AZIWOK 200MG/5ML SUSP. 15ML",
+        "ar": "أزيووك /"
+      },
+      {
+        "en": "CYANARO 1% EYE DROPS 2.5 ML",
+        "ar": "سيانارو 1% إيي"
+      },
+      {
+        "en": "DELZOSIN 500 MG 3 F.C.TABS.",
+        "ar": "ديلزوسين"
+      },
+      {
+        "en": "DELZOSIN 500 MG 6 F.C.TABS.",
+        "ar": "ديلزوسين"
+      },
+      {
+        "en": "DELZOSIN 600 MG 3 F.C.TABS.",
+        "ar": "ديلزوسين"
+      },
+      {
+        "en": "DELZOSIN 600 MG 6 F.C.TABS.",
+        "ar": "ديلزوسين"
+      },
+      {
+        "en": "XITHROBIOTIC 500 MG 3 CAPS.",
+        "ar": "كسيثروبيوتيك"
+      },
+      {
+        "en": "ZITHROMAX 1200MG/30ML SUSP.",
+        "ar": "زيثروماكس /"
+      },
+      {
+        "en": "AZALIDE 200MG/5ML SUSP. 15ML",
+        "ar": "أزاليدي /"
+      },
+      {
+        "en": "AZIROWA 1000 MG 2 F.C. TABS.",
+        "ar": "أزيرووا"
+      },
+      {
+        "en": "AZITANAD 500 MG 3 F.C. TABS.",
+        "ar": "أزيتاناد"
+      },
+      {
+        "en": "XEREXOMAIR 500MG 3 F.C.TABS.",
+        "ar": "كسيريكسوماير"
       },
       {
         "en": "ZITHROMAX 500 MG 3 F.C.TABS.",
         "ar": "زيثروماكس"
       },
       {
-        "en": "ZITHROMAX 500 MG VIAL I.V. INF.",
-        "ar": "زيثروماكس"
-      },
-      {
-        "en": "ZITHROMAX 600MG/15ML (200MG/5ML) SUSP.",
+        "en": "ZITHROMAX 900MG/22.5ML SUSP.",
         "ar": "زيثروماكس /"
       },
       {
-        "en": "ZITHROMAX 900MG/22.5ML (200MG/5ML) SUSP.",
-        "ar": "زيثروماكس /"
+        "en": "AZI-ONCE 200MG/5ML SUSP. 15ML",
+        "ar": "أزي-أونسي /"
       },
       {
-        "en": "ZITHROPHATE 200MG/5ML SUSP. 15ML",
-        "ar": "زيثروفاتي /"
+        "en": "AZI-ONCE 200MG/5ML SUSP. 30ML",
+        "ar": "أزي-أونسي /"
       },
       {
-        "en": "ZITHROPRO 500 MG 6 F.C. TABS.",
-        "ar": "زيثروبرو"
-      },
-      {
-        "en": "ZMAXE 2 GM E.R. 1 BOTTLE SUSP. (N/A)",
-        "ar": "زماكسي إ.ر. 1 بوتتلي"
-      },
-      {
-        "en": "CYANARO PLUS EYE DROPS 5 ML",
-        "ar": "سيانارو بلوس إيي"
-      },
-      {
-        "en": "GLOZITHRO 500MG VIAL",
-        "ar": "جلوزيثرو"
+        "en": "AZIMACRON 500 MG 3 F.C. TABS.",
+        "ar": "أزيماكرون"
       }
     ],
     "edaPrices": [
@@ -5228,50 +6321,199 @@ export const edaSupplement = [
     "id": "29",
     "nameEn": "Methotrexate",
     "nameAr": "ميثوتركسيت",
-    "prices": [],
+    "prices": [
+      {
+        "form": "أقراص",
+        "formEn": "Tablets",
+        "price": 333.5,
+        "unit": "EGP"
+      }
+    ],
     "brandAliases": [
       {
-        "en": "METHOTREXATE (ACDIMA) 2.5MG 100 TABS.",
-        "ar": "ميثوتريكساتي"
+        "en": "MTX  25MG/ML VIAL",
+        "ar": ""
       },
       {
-        "en": "METHOTREXATE (ACDIMA) 50MG PD. FOR INJ. VIAL",
+        "en": "METHOCIP 50MG/2ML VIAL",
+        "ar": ""
+      },
+      {
+        "en": "MTX  25MG/ML 50MG VIAL",
+        "ar": ""
+      },
+      {
+        "en": "IMUTREXATE 5 MG 10 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "EMTHEXATE PF 25MG/ML VIAL",
+        "ar": ""
+      },
+      {
+        "en": "IMUTREXATE 10 MG 10 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "IMUTREXATE 15 MG 10 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "METHOTREXATE 25MG/ML VIAL",
+        "ar": ""
+      },
+      {
+        "en": "EMTHEXATE PF 100MG/ML VIAL",
+        "ar": ""
+      },
+      {
+        "en": "IMUTREXATE 2.5 MG 10 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "IMUTREXATE 7.5 MG 10 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "METHOTREXATE 2.5MG 100 TAB",
+        "ar": ""
+      },
+      {
+        "en": "METHOTREXATE 2.5MG 30 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "METHOTREXATE 2.5MG 100 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "METHOTREXATE-EBEWE 50MG/5ML VIAL",
+        "ar": ""
+      },
+      {
+        "en": "METHOTREXATE-EBEWE 5GM/50ML VIAL",
+        "ar": "ميثوتريكساتي-إبيوي /"
+      },
+      {
+        "en": "TUMICHEM 50MG/2ML I.M./I.V. VIAL",
+        "ar": "توميتشيم / ./"
+      },
+      {
+        "en": "METHOTREXATE-EBEWE  2.5MG  50 TAB.",
+        "ar": "ميثوتريكساتي-إبيوي"
+      },
+      {
+        "en": "UNITREXATE 50 MG 5 I.M. I.V. VIALS",
+        "ar": "أونيتريكساتي 5"
+      },
+      {
+        "en": "METHOTREXATE 50MG PD. FOR INJ. VIAL",
         "ar": "ميثوتريكساتي بد"
       },
       {
-        "en": "METHOTREXATE 2.5MG 100 TAB (ORION)",
-        "ar": "ميثوتريكساتي"
-      },
-      {
-        "en": "METHOTREXATE 2.5MG 30 TAB. (ORION)",
-        "ar": "ميثوتريكساتي"
-      },
-      {
-        "en": "METHOTREXATE 25MG/ML (20ML=500MG) VIAL",
-        "ar": "ميثوتريكساتي /مل"
-      },
-      {
-        "en": "METHOTREXATE 25MG/ML (2ML=50MG) VIAL",
-        "ar": "ميثوتريكساتي /مل"
+        "en": "METHOTREXATE-MYLAN 50MG/2ML 10 VIAL",
+        "ar": "ميثوتريكساتي-ميلان /"
       },
       {
         "en": "METHOTREXATE 500MG PD. FOR INJ. VIAL",
         "ar": "ميثوتريكساتي بد"
+      },
+      {
+        "en": "METHOTREXATE-EBEWE 100MG/ML VIAL 5 ML",
+        "ar": "ميثوتريكساتي-إبيوي /مل"
+      },
+      {
+        "en": "METHOTREXATE-MYLAN 500MG/20ML 10 VIAL",
+        "ar": "ميثوتريكساتي-ميلان /"
+      },
+      {
+        "en": "UNITREXATE 1 GM SOL. FOR I.M. I.V. INJ. I.V. INF.",
+        "ar": "أونيتريكساتي"
+      },
+      {
+        "en": "UNITREXATE 5 GM SOL. FOR I.M. I.V. INJ. I.V. INF.",
+        "ar": "أونيتريكساتي"
+      },
+      {
+        "en": "UNITREXATE 500 MG SOL. FOR I.M. I.V. INJ. I.V. INF.",
+        "ar": "أونيتريكساتي"
+      },
+      {
+        "en": "METOJECT 10 MG/0.2 ML I.M./I.V./S.C. PREFILLED SYRINGE",
+        "ar": "ميتوجيكت / ./ ./ . بريفيلليد سيرينجي"
+      },
+      {
+        "en": "METOJECT 15 MG/0.3 ML I.M./I.V./S.C. PREFILLED SYRINGE",
+        "ar": "ميتوجيكت / ./ ./ . بريفيلليد سيرينجي"
+      },
+      {
+        "en": "METOJECT 20 MG/0.4 ML I.M./I.V./S.C. PREFILLED SYRINGE",
+        "ar": "ميتوجيكت / ./ ./ . بريفيلليد سيرينجي"
+      },
+      {
+        "en": "METOJECT 25 MG/0.5 ML I.M./I.V./S.C. PREFILLED SYRINGE",
+        "ar": "ميتوجيكت / ./ ./ . بريفيلليد سيرينجي"
+      },
+      {
+        "en": "METOJECT 7.5 MG/0.15 ML I.M./I.V./S.C. PREFILLED SYRINGE",
+        "ar": "ميتوجيكت / ./ ./ . بريفيلليد سيرينجي"
+      },
+      {
+        "en": "METOJECT 12.5 MG/0.25 ML I.M./I.V./S.C. PREFILLED SYRINGE",
+        "ar": "ميتوجيكت / ./ ./ . بريفيلليد سيرينجي"
       }
     ],
     "edaPrices": [
+      14,
+      16,
+      16.8,
       26.4,
       32,
+      51,
+      60,
+      72,
+      77,
       84,
+      89,
+      90,
       95,
+      100,
       119,
+      120,
       130.25,
-      333.5
+      136,
+      195,
+      205,
+      248,
+      250,
+      275.5,
+      295,
+      300,
+      316,
+      333.5,
+      385,
+      391,
+      500,
+      625,
+      780,
+      1330,
+      1897
     ],
     "edaManufacturers": [
+      "PHARMACHEMIE-NETHERLANDS > COPAD PHARMA",
+      "EVA PHARMA",
+      "CIPLA LTD. - INDIA > STAR INTERNATIONAL COMPANY",
       "SHANGHAI SINE PHARMACEUTICAL CORPORATION LTD > ACDIMA INTERNATIONAL TRADING",
       "SHANXI PUDE PHARM. > ACDIMA INTERNATIONAL TRADING",
-      "ORION PHARMA-FINLAND > S.M. PHARMA"
+      "ORION PHARMA-FINLAND > S.M. PHARMA",
+      "SANDOZ > NOVARTIS SCIENTIFIC OFFICE",
+      "EBEWE > NOVARTIS SCIENTIFIC OFFICE",
+      "SANDOZ > NOVARTIS PHARMA SANDOZ DIVISION",
+      "MYLAN S.A.S-FRANCE > RAMCO",
+      "MEDAC > SUNNY MEDICAL",
+      "CHOONGWAE PHARMA-KOREA > GENERAL TECHNOLOGY-EGYPT",
+      "SEDICO",
+      "HIKMA SPECIALIZED PHARMACEUTICALS"
     ],
     "verified": true
   },
@@ -5283,55 +6525,55 @@ export const edaSupplement = [
     "brandAliases": [
       {
         "en": "ALLOBEN 30 TABLETS",
-        "ar": "أللوبين"
+        "ar": ""
       },
       {
-        "en": "HARPAGIN 30 F.C.TAB. (N/A)",
-        "ar": "هارباجين"
-      },
-      {
-        "en": "CRYSTASOL 300MG 10 TAB.",
-        "ar": "كريستاسول"
-      },
-      {
-        "en": "HIGH PURE 200MG 30 TAB.",
-        "ar": "هيغ بوري"
+        "en": "HARPAGIN 30 F.C.TAB.",
+        "ar": ""
       },
       {
         "en": "LESSURIC 100MG 20 TAB.",
-        "ar": "ليسسوريك"
+        "ar": ""
       },
       {
         "en": "LESSURIC 300MG 12 TAB.",
-        "ar": "ليسسوريك"
+        "ar": ""
+      },
+      {
+        "en": "CRYSTASOL 300MG 10 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "HIGH PURE 200MG 30 TAB.",
+        "ar": ""
       },
       {
         "en": "NO-URIC 100 MG 50 TABS.",
-        "ar": "نو-أوريك"
+        "ar": ""
       },
       {
         "en": "NO-URIC 300 MG 20 TABS.",
-        "ar": "نو-أوريك"
+        "ar": ""
       },
       {
         "en": "PURINOL 300MG S.R.CAPS.",
-        "ar": "بورينول"
+        "ar": ""
       },
       {
         "en": "URIC PURE 100MG 50 TAB.",
-        "ar": "أوريك بوري"
-      },
-      {
-        "en": "URIC PURE 300MG 30 TABS.",
-        "ar": "أوريك بوري"
+        "ar": ""
       },
       {
         "en": "ZYLORIC 100 MG 30 TABS.",
-        "ar": "زيلوريك"
+        "ar": ""
       },
       {
         "en": "ZYLORIC 300 MG 30 TABS.",
-        "ar": "زيلوريك"
+        "ar": ""
+      },
+      {
+        "en": "URIC PURE 300MG 30 TABS.",
+        "ar": ""
       }
     ],
     "edaPrices": [
@@ -5367,48 +6609,76 @@ export const edaSupplement = [
     "prices": [],
     "brandAliases": [
       {
-        "en": "ANDAGRA 100 MG 12 F.C. TABS.",
-        "ar": "أنداجرا"
-      },
-      {
-        "en": "ANSELAFIL 10MG/ML PWD. FOR ORAL SUSP. 120 ML",
-        "ar": "أنسيلافيل /مل بود. أورال"
-      },
-      {
-        "en": "BRILLIANT 100MG 8 F.C.TAB",
-        "ar": "بريلليانت"
-      },
-      {
-        "en": "DORECTAFIL 100 MG 12 CHEW. TAB.",
-        "ar": "دوريكتافيل 12 تشيو"
-      },
-      {
-        "en": "ECTAGOR 100 MG 12 F.C. TABS.",
-        "ar": "إكتاجور"
-      },
-      {
-        "en": "ECTAGOR 50 MG 4 F.C. TABS.",
-        "ar": "إكتاجور"
-      },
-      {
-        "en": "EREC 100 MG 12 F.C. TABS.",
-        "ar": "إريك"
+        "en": "REKTALONG 30/50 2 TAB",
+        "ar": ""
       },
       {
         "en": "ERECTON 75MG 4 F.C.TAB",
-        "ar": "إريكتون"
+        "ar": ""
+      },
+      {
+        "en": "VEORA  25MG  1F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "VIGORAN 50MG 4 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "EZEQUEL 50 MG 4 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "NAPIFIT 100MG 4 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "NAPIFIT 100MG 8 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "PHRAGRA 25 MG 4 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "SILANIL 100MG 2 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "SILDEN 25 MG 10 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "SPIKA 100MG 12 F.C. TAB.",
+        "ar": ""
+      },
+      {
+        "en": "VIAGRA 50 MG 4 F.C.TABS.",
+        "ar": ""
+      },
+      {
+        "en": "VIGADOL 100MG 4 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "VIGOREX 50MG 4 F.C.TABS.",
+        "ar": ""
+      },
+      {
+        "en": "BRILLIANT 100MG 8 F.C.TAB",
+        "ar": ""
+      },
+      {
+        "en": "EREC 100 MG 12 F.C. TABS.",
+        "ar": ""
+      },
+      {
+        "en": "SILDENAMAX 100 MG 8 TABS.",
+        "ar": ""
       },
       {
         "en": "EZEQUEL 100 MG 9 F.C.TAB.",
         "ar": "إزيكويل"
-      },
-      {
-        "en": "EZEQUEL 50 MG 4 F.C.TAB.",
-        "ar": "إزيكويل"
-      },
-      {
-        "en": "FAROVIGA 100MG 12 F.C.TAB.",
-        "ar": "فاروفيجا"
       },
       {
         "en": "FAROVIGA 100MG 8 F.C.TAB.",
@@ -5419,68 +6689,52 @@ export const edaSupplement = [
         "ar": "فاروفيجا"
       },
       {
+        "en": "SILDEN 50 MG 4 F.C. TABS.",
+        "ar": "سيلدين"
+      },
+      {
+        "en": "SILVIGO 50MG 5 F.C. TABS.",
+        "ar": "سيلفيجو"
+      },
+      {
+        "en": "V-GONE 100 MG 8 F.C. TAB.",
+        "ar": "ف-جوني"
+      },
+      {
+        "en": "V-GONE 50 MG 10 F.C. TAB.",
+        "ar": "ف-جوني"
+      },
+      {
+        "en": "VIAGRA 100 MG 4 F.C.TABS.",
+        "ar": "فياجرا"
+      },
+      {
+        "en": "VIAVAG 25 MG 10 F.C.TABS.",
+        "ar": "فيافاج"
+      },
+      {
+        "en": "REKTALONG 60/100 2 TABLETS",
+        "ar": ""
+      },
+      {
+        "en": "SILDENAMAX 100 MG 24 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "ECTAGOR 50 MG 4 F.C. TABS.",
+        "ar": "إكتاجور"
+      },
+      {
+        "en": "FAROVIGA 100MG 12 F.C.TAB.",
+        "ar": "فاروفيجا"
+      },
+      {
         "en": "KEMAGRA 100 MG 4 F.C. TAB.",
         "ar": "كيماجرا"
       },
       {
-        "en": "KEMAGRA 100 MG 8 CHEW. TABS.",
-        "ar": "كيماجرا 8 تشيو"
-      },
-      {
-        "en": "NAPIFIT 100MG 4 F.C.TAB. (N/A)",
-        "ar": "نابيفيت"
-      },
-      {
-        "en": "NAPIFIT 100MG 8 F.C.TAB.",
-        "ar": "نابيفيت"
-      },
-      {
-        "en": "NERHASILDA 25 MG 16 ORODISPERSIBLE FILMS (N/A)",
-        "ar": "نيرهاسيلدا 16 أوروديسبيرسيبلي فيلمس"
-      },
-      {
-        "en": "NERHASILDA 50 MG 16 ORODISPERSIBLE FILMS",
-        "ar": "نيرهاسيلدا 16 أوروديسبيرسيبلي فيلمس"
-      },
-      {
-        "en": "NERHASILDA 75 MG 8 ORODISPERSIBLE FILMS",
-        "ar": "نيرهاسيلدا 8 أوروديسبيرسيبلي فيلمس"
-      },
-      {
-        "en": "ORAGAWELL 100MG 6 SCORED F.C. TABS.",
-        "ar": "أوراجاويلل 6 سكوريد"
-      },
-      {
-        "en": "ORGODENAFIL 100 MG 9 F.C.TAB.",
-        "ar": "أورجودينافيل"
-      },
-      {
-        "en": "PHRAGRA 25 MG 4 F.C.TAB.",
-        "ar": "فراجرا"
-      },
-      {
-        "en": "RESPATIO 20 MG 20 F.C.TABS.",
-        "ar": "ريسباتيو"
-      },
-      {
-        "en": "SATENAFIL 100 MG 16 F.C. TABS.",
-        "ar": "ساتينافيل"
-      },
-      {
         "en": "SILAGRA 25 MG 10 F.C. TAB.",
         "ar": "سيلاجرا"
-      },
-      {
-        "en": "SILANIL 100MG 2 F.C.TAB.",
-        "ar": "سيلانيل"
-      },
-      {
-        "en": "SILDATRONA 100 MG 12 F.C.TABS.",
-        "ar": "سيلداترونا"
-      },
-      {
-        "en": "SILDATRONA 100 MG 8 F.C.TABS.",
-        "ar": "سيلداترونا"
       },
       {
         "en": "SILDAVA 100MG 12 F.C. TAB.",
@@ -5495,148 +6749,64 @@ export const edaSupplement = [
         "ar": "سيلدين"
       },
       {
-        "en": "SILDEN 25 MG 10 F.C.TAB.",
-        "ar": "سيلدين"
-      },
-      {
-        "en": "SILDEN 50 MG 4 F.C. TABS.",
-        "ar": "سيلدين"
-      },
-      {
-        "en": "SILDEN 50 MG 4 ORODISPERSIBLE TABS.",
-        "ar": "سيلدين 4 أوروديسبيرسيبلي"
-      },
-      {
-        "en": "SILDENAROCK 100 MG 12 F.C. TABS",
-        "ar": "سيلديناروك"
-      },
-      {
-        "en": "SILDINAX 100 MG 3 F.C. TABS.",
-        "ar": "سيلديناكس"
-      },
-      {
-        "en": "SILDINOVA 10 MG PD. FOR SUSP. 120 ML",
-        "ar": "سيلدينوفا بد"
-      },
-      {
         "en": "SILVAGRA 100MG 10 F.C.TAB.",
         "ar": "سيلفاجرا"
-      },
-      {
-        "en": "SILVIGO 50MG 5 F.C. TABS.",
-        "ar": "سيلفيجو"
-      },
-      {
-        "en": "SPIKA 100MG 12 F.C. TAB.",
-        "ar": "سبيكا"
-      },
-      {
-        "en": "STIMU-MAX 100 MG 5 F.C.TABS.",
-        "ar": "ستيمو-ماكس"
-      },
-      {
-        "en": "V-GONE 100 MG 8 F.C. TAB.",
-        "ar": "ف-جوني"
-      },
-      {
-        "en": "V-GONE 50 MG 10 F.C. TAB.",
-        "ar": "ف-جوني"
-      },
-      {
-        "en": "VEORA  25MG  1F.C.TAB.",
-        "ar": "فيورا"
-      },
-      {
-        "en": "VETOYAGRA 100 MG 12 ORO-DISPERSIBLE TABS.",
-        "ar": "فيتوياجرا 12 أورو-ديسبيرسيبلي"
-      },
-      {
-        "en": "VETOYAGRA 100 MG 15 F.C. TABS.",
-        "ar": "فيتوياجرا"
-      },
-      {
-        "en": "VETOYAGRA 100 MG 5 F.C. TABS. (N/A)",
-        "ar": "فيتوياجرا"
-      },
-      {
-        "en": "VETOYAGRA 50 MG 5 F.C. TABS. (N/A)",
-        "ar": "فيتوياجرا"
-      },
-      {
-        "en": "VIAGRA 100 MG 4 F.C.TABS.",
-        "ar": "فياجرا"
-      },
-      {
-        "en": "VIAGRA 50 MG 4 F.C.TABS.",
-        "ar": "فياجرا"
-      },
-      {
-        "en": "VIAVAG 100 MG  10 F.C.TABS.",
-        "ar": "فيافاج"
-      },
-      {
-        "en": "VIAVAG 25 MG 10 F.C.TABS.",
-        "ar": "فيافاج"
-      },
-      {
-        "en": "VIGADOL 100MG 4 F.C.TAB.",
-        "ar": "فيجادول"
-      },
-      {
-        "en": "VIGORAMA 100 MG 4 F.C.TABS.",
-        "ar": "فيجوراما"
       },
       {
         "en": "VIGORAMA 50 MG 4 F.C.TABS.",
         "ar": "فيجوراما"
       },
       {
-        "en": "VIGORAN 50MG 4 F.C.TAB.",
-        "ar": "فيجوران"
-      },
-      {
         "en": "VIGOREX 100MG 12 F.C.TABS.",
         "ar": "فيجوريكس"
       },
       {
-        "en": "VIGOREX 50MG 4 F.C.TABS.",
-        "ar": "فيجوريكس"
+        "en": "RESPATIO 20 MG 20 F.C.TABS.",
+        "ar": "ريسباتيو"
+      },
+      {
+        "en": "VIAVAG 100 MG  10 F.C.TABS.",
+        "ar": "فيافاج"
+      },
+      {
+        "en": "VIGORAMA 100 MG 4 F.C.TABS.",
+        "ar": "فيجوراما"
       },
       {
         "en": "VIRECTA 100 MG 12 F.C.TABS.",
         "ar": "فيريكتا"
       },
       {
-        "en": "BIOLEGAM 100/60 MG 8 F.C. TABS.",
-        "ar": "بيوليجام 100/"
-      },
-      {
-        "en": "BIOLEGAM 50/30 MG 8 F.C. TABS.",
-        "ar": "بيوليجام 50/"
-      },
-      {
         "en": "EZOKO 100/60 MG 8 F.C. TABS.",
-        "ar": "إزوكو 100/"
+        "ar": ""
       },
       {
-        "en": "VIRECTA PLUS 100/60 MG 4 F.C.TABS.",
-        "ar": "فيريكتا بلوس 100/"
+        "en": "ANDAGRA 100 MG 12 F.C. TABS.",
+        "ar": "أنداجرا"
       },
       {
-        "en": "REKTALONG 30/50 2 TAB",
-        "ar": "ريكتالونج 30/50"
+        "en": "ECTAGOR 100 MG 12 F.C. TABS.",
+        "ar": "إكتاجور"
       },
       {
-        "en": "REKTALONG 60/100 2 TABLETS",
-        "ar": "ريكتالونج 60/100"
+        "en": "KEMAGRA 100 MG 8 CHEW. TABS.",
+        "ar": "كيماجرا 8 تشيو"
       },
       {
-        "en": "SILDENAMAX 100 MG 24 TABS.",
-        "ar": "سيلديناماكس"
+        "en": "SILDINAX 100 MG 3 F.C. TABS.",
+        "ar": "سيلديناكس"
       },
       {
-        "en": "SILDENAMAX 100 MG 8 TABS.",
-        "ar": "سيلديناماكس"
+        "en": "STIMU-MAX 100 MG 5 F.C.TABS.",
+        "ar": "ستيمو-ماكس"
+      },
+      {
+        "en": "VETOYAGRA 50 MG 5 F.C. TABS.",
+        "ar": "فيتوياجرا"
+      },
+      {
+        "en": "ORGODENAFIL 100 MG 9 F.C.TAB.",
+        "ar": "أورجودينافيل"
       }
     ],
     "edaPrices": [
@@ -5742,75 +6912,346 @@ export const edaSupplement = [
     "id": "32",
     "nameEn": "Augmentin",
     "nameAr": "أوجمنتين",
-    "prices": [],
+    "prices": [
+      {
+        "form": "أقراص",
+        "formEn": "Tablets",
+        "price": 210,
+        "unit": "EGP"
+      }
+    ],
     "brandAliases": [
+      {
+        "en": "AMOCLAWIN 1 GM 7 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "HIBIOTIC 1 GM 16 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "KLAVOX 1GM 14 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "MAGNABIOTIC 600MG VIAL",
+        "ar": ""
+      },
+      {
+        "en": "CURAM 625MG 12 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "E-MOXCLAV 625MG 10 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "AUGRAM 1 GM 14 F.C.TABS.",
+        "ar": ""
+      },
+      {
+        "en": "AUGRAM 1 GM 7 F.C. TABS.",
+        "ar": ""
+      },
+      {
+        "en": "CURAM 1 GM 12 F.C. TABS.",
+        "ar": ""
+      },
+      {
+        "en": "HIBIOTIC 375 MG 20 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "HIBIOTIC 625 MG 16 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "JULMENTIN 2X 1GM 15 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "MAGNABIOTIC 625MG 8 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "MEGAMOX 228MG SUSP. 70ML",
+        "ar": ""
+      },
+      {
+        "en": "AUGMENTIN 375 MG 10 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "AUJED 625 MG 12 F.C. TAB.",
+        "ar": "أوجيد"
+      },
+      {
+        "en": "CLAVUCIN 1.2 G M I.V.VIAL",
+        "ar": "كلافوسين م"
+      },
+      {
+        "en": "CLAVUCIN 600 MG I.V. VIAL",
+        "ar": "كلافوسين"
+      },
+      {
+        "en": "E-MOXCLAV 1G 10 F.C. TAB.",
+        "ar": "إ-موكسكلاف"
+      },
+      {
+        "en": "MAGNABIOTIC 375MG 10 TAB.",
+        "ar": "ماجنابيوتيك"
+      },
+      {
+        "en": "XICLAV 1 GM 14 F.C. TABS.",
+        "ar": "كسيكلاف"
+      },
+      {
+        "en": "CLAVIMOX 1 GM 12 F.C.TABS.",
+        "ar": "كلافيموكس"
+      },
+      {
+        "en": "CLAVIMOX 1 GM 16 F.C.TABS.",
+        "ar": "كلافيموكس"
+      },
+      {
+        "en": "DELTACLAV 1 GM 14 F.C.TAB.",
+        "ar": "ديلتاكلاف"
+      },
+      {
+        "en": "MACLAVEX 1 GM 14 F.C.TABS.",
+        "ar": "ماكلافيكس"
+      },
+      {
+        "en": "MEGAMOX 1 GM 14 F.C. TABS.",
+        "ar": "ميجاموكس"
+      },
       {
         "en": "AUGMENTIN 1 GM 14 F.C.TABS.",
         "ar": "أوجمينتين"
       },
       {
-        "en": "AUGMENTIN 1.2G VIAL FOR I.V. INJ./INF.",
-        "ar": "أوجمينتين . ./"
+        "en": "E-MOXCLAV 457MG SUSP. 70 ML",
+        "ar": "إ-موكسكلاف"
       },
       {
-        "en": "AUGMENTIN 156 MG/5 ML SUSP. 80 ML",
-        "ar": "أوجمينتين /"
+        "en": "KLAVOX 228MG/5ML SUSP. 70ML",
+        "ar": "كلافوكس /"
       },
       {
-        "en": "AUGMENTIN 312 MG/5ML SUSP. 80 ML",
-        "ar": "أوجمينتين /"
+        "en": "KLAVOX 457MG/5ML SUSP. 70ML",
+        "ar": "كلافوكس /"
       },
       {
-        "en": "AUGMENTIN 375 MG 10 TABS.",
-        "ar": "أوجمينتين"
+        "en": "MEGAMOX 625MG 14 F.C. TABS.",
+        "ar": "ميجاموكس"
       },
       {
-        "en": "AUGMENTIN 457MG/5ML SUSP. 70 ML",
-        "ar": "أوجمينتين /"
+        "en": "ULTRAMOX 1 GM  12 F.C.TABS.",
+        "ar": "أولتراموكس"
       },
       {
-        "en": "AUGMENTIN 600 MG VIAL FOR I.V. INF.",
-        "ar": "أوجمينتين"
+        "en": "XICLAV 625 GM 10 F.C. TABS.",
+        "ar": "كسيكلاف"
       },
       {
-        "en": "AUGMENTIN 62.5MG/ML INFANT DROPS 20 ML",
-        "ar": "أوجمينتين /مل إنفانت"
+        "en": "CLAVIMOX 625 MG 12 F.C.TABS.",
+        "ar": "كلافيموكس"
+      },
+      {
+        "en": "CLAVUCIN 375 MG 10 F.C.TABS.",
+        "ar": "كلافوسين"
+      },
+      {
+        "en": "CLAVUCIN 625 MG 10 F.C.TABS.",
+        "ar": "كلافوسين"
+      },
+      {
+        "en": "DELTACLAV 625 MG 10 F.C.TAB.",
+        "ar": "ديلتاكلاف"
+      },
+      {
+        "en": "DEXICLAVE 1 GM 10 F.C. TABS.",
+        "ar": "ديكسيكلافي"
+      },
+      {
+        "en": "E-MOXCLAV 375MG 10 F.C. TAB.",
+        "ar": "إ-موكسكلاف"
+      },
+      {
+        "en": "FONDACLAV 1 GM 12 F.C. TABS.",
+        "ar": "فونداكلاف"
+      },
+      {
+        "en": "HIBIOTIC N 600 MG SUSP. 80ML",
+        "ar": "هيبيوتيك ن"
+      },
+      {
+        "en": "MACLAVEX 625 MG 12 F.C.TABS.",
+        "ar": "ماكلافيكس"
+      },
+      {
+        "en": "MAGNABIOTIC 1.2 GM I.V. VIAL",
+        "ar": "ماجنابيوتيك"
+      },
+      {
+        "en": "MEGAMOX 457MG/5ML SUSP. 70ML",
+        "ar": "ميجاموكس /"
+      },
+      {
+        "en": "NEW-CLAV 1 GM 10 DISP. TABS.",
+        "ar": "نيو-كلاف 10 ديسب"
       },
       {
         "en": "AUGMENTIN 625 MG 10 F.C.TABS.",
         "ar": "أوجمينتين"
       },
       {
-        "en": "AUGMENTIN ADULTS 1GM/125MG 12 PWD. ORAL SUSP. SACHETS",
-        "ar": "أوجمينتين أدولتس / 12 بود. أورال . ساتشيتس"
+        "en": "NEW-CLAV 457MG/5ML SUSP. 80ML",
+        "ar": "نيو-كلاف /"
       },
       {
-        "en": "AUGMENTIN DUO 228MG/5ML SUSP. 70 ML",
-        "ar": "أوجمينتين دوو /"
+        "en": "ULTRAMOX 625 MG 12 F.C. TABS.",
+        "ar": "أولتراموكس"
       },
       {
-        "en": "AUGMENTIN ES-600 PD. FOR ORAL SUSP. 75 ML",
-        "ar": "أوجمينتين إس-600 بد. أورال"
+        "en": "DEXICLAVE 375 MG 10 F.C. TABS.",
+        "ar": "ديكسيكلافي"
+      },
+      {
+        "en": "DEXICLAVE 625 MG 12 F.C. TABS.",
+        "ar": "ديكسيكلافي"
       }
     ],
     "edaPrices": [
+      8,
+      10,
+      12,
+      12.6,
+      13.25,
+      14,
+      14.4,
+      15.6,
+      16.2,
+      17.5,
+      18,
+      19,
+      19.2,
+      20.4,
       20.75,
+      21.5,
+      21.6,
+      21.75,
+      22,
+      22.5,
+      24,
+      25,
+      25.25,
+      27.5,
+      28.5,
+      30,
+      30.75,
+      31.5,
+      32.5,
+      34.5,
       36,
+      36.5,
       36.8,
+      37,
+      37.5,
+      38.5,
+      39.75,
+      45,
+      46.5,
+      47,
+      47.5,
+      48,
+      53,
+      54,
+      56,
+      57,
+      57.5,
+      62,
+      64,
+      65,
+      67,
+      70,
+      73,
+      75,
+      76,
+      78,
+      80,
+      82,
       86,
+      87,
+      88,
+      89,
+      90,
+      92,
+      97,
       99,
+      100,
+      104,
+      105,
+      106,
       107,
+      108,
+      113,
       117,
+      118,
       120,
+      130,
+      132,
+      136,
       137,
+      143,
+      151,
+      152,
       169,
-      210
+      171,
+      173,
+      178,
+      182,
+      210,
+      216
     ],
     "edaManufacturers": [
+      "SEDICO > SANOFI",
+      "DELTA PHARMA > DEBEIKY",
+      "MEPACO",
       "MUP > SMITHKLINE BEECHAM",
       "MUP > GLAXO SMITHKLINE",
       "MUP > BEECHAM GROUP",
-      "GLAXO SMITHKLINE"
+      "GLAXO SMITHKLINE",
+      "RAMEDA",
+      "SIGMA TEC > JEDCO INT. CO. FOR PHARMACEUTICALS",
+      "ARAB CAPS > AVERROES PHARMA-EGYPT",
+      "SIGMATEC > AVERROES PHARMA-EGYPT",
+      "RAMEDA > CARDINAL PHARMACEUTICAL",
+      "PHARCO",
+      "RAMEDA > ORGANOPHARMA",
+      "SIGMA TEC",
+      "UP PHARMA",
+      "SANDOZ > NOVARTIS",
+      "PHARCO > NOVARTIS",
+      "SIGMA TEC > DELTA PHARMA",
+      "MISR > DELTA PHARMA",
+      "SEDICO > DELTA PHARMA",
+      "RAMEDA > NOVELL PHARMA",
+      "EIPICO",
+      "GYPTO PHARMA",
+      "RAMEDA > ALFACURE PHARMACEUTICALS",
+      "AMOUN",
+      "JULPHAR",
+      "SPIMACO > EIMC",
+      "MISR > AL ROWAD PHARMACEUTICAL INDUSTRIAL CO.",
+      "MASH PREMIERE",
+      "SEDICO",
+      "CID",
+      "AL JAZEERA PHARMACEUTICAL > HIKMA PHARMA",
+      "RAMEDA > ANDALOUS PHARMA",
+      "SIGMA TEC > ANDALOUS PHARMA",
+      "PHARCO > AMRIYA",
+      "RAMEDA > PHARMACREDO"
     ],
     "verified": true
   },
@@ -5822,47 +7263,47 @@ export const edaSupplement = [
     "brandAliases": [
       {
         "en": "MAXIPAN 30 F.C. TAB.",
-        "ar": "ماكسيبان"
-      },
-      {
-        "en": "MYOPROX 250MG 20 F.C.TAB.",
-        "ar": "ميوبروكس"
-      },
-      {
-        "en": "NALEVE 375 MG 10 ENTERIC COATED TAB.",
-        "ar": "ناليفي 10 إنتيريك كواتيد"
-      },
-      {
-        "en": "NAPROFEN 250MG 10 TAB.",
-        "ar": "نابروفين"
-      },
-      {
-        "en": "NAPROFEN 500MG 10 TAB.",
-        "ar": "نابروفين"
-      },
-      {
-        "en": "NAPROFEN 500MG 20 TAB.",
-        "ar": "نابروفين"
-      },
-      {
-        "en": "NAPROSYN 250 MG 20 TAB.",
-        "ar": "نابروسين"
-      },
-      {
-        "en": "NAPROSYN 500 MG 10 TAB.",
-        "ar": "نابروسين"
-      },
-      {
-        "en": "NAPROSYN 500 MG 5 SUPP.",
-        "ar": "نابروسين 5 سوبب"
-      },
-      {
-        "en": "ORGOPROXEN 500 MG 20 TAB.",
-        "ar": "أورجوبروكسين"
+        "ar": ""
       },
       {
         "en": "SUPUSAN 500MG 5 SUPP.",
-        "ar": "سوبوسان 5 سوبب"
+        "ar": ""
+      },
+      {
+        "en": "NAPROFEN 250MG 10 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "NAPROFEN 500MG 10 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "NAPROFEN 500MG 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "NAPROSYN 250 MG 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "NAPROSYN 500 MG 10 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "NAPROSYN 500 MG 5 SUPP.",
+        "ar": ""
+      },
+      {
+        "en": "MYOPROX 250MG 20 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "ORGOPROXEN 500 MG 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "NALEVE 375 MG 10 ENTERIC COATED TAB.",
+        "ar": ""
       }
     ],
     "edaPrices": [
@@ -5895,11 +7336,99 @@ export const edaSupplement = [
     "prices": [],
     "brandAliases": [
       {
+        "en": "DIFLUCAN 50 MG 7 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "FLOCAZOLE 50 MG 7CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "NAZOWELL 150 MG 1 CAP.",
+        "ar": ""
+      },
+      {
+        "en": "TRICONAL 50 MG 7 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "DIFLUCAN 150 MG 1 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "FLUCORAL 150 MG 2 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "FLUCORAL 150 MG 4 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "FUNGICAN 150 MG 2 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "JENFUNGA 150 MG 1 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "NAVILUCA 150 MG 2 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "NAVILUCA 150 MG 6 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "NAVILUCA 200 MG 7 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "NAVILUCA 50 MG 21 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "NAZOWELL 150 MG 3 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "TRICONAL 150 MG 1 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "UNIFUNGI 150 MG 2 CAPS.",
+        "ar": "أونيفونجي"
+      },
+      {
+        "en": "ALKANAZOLE 150MG 1 CAPS.",
+        "ar": "ألكانازولي"
+      },
+      {
+        "en": "AMRIFLUCAN 50 MG 7 CAPS.",
+        "ar": "أمريفلوكان"
+      },
+      {
+        "en": "FLOCAZOLE 150 MG 1 CAPS.",
+        "ar": "فلوكازولي"
+      },
+      {
+        "en": "NAVILUCA 200 MG 14 CAPS.",
+        "ar": "نافيلوكا"
+      },
+      {
+        "en": "NAVILUCA 200 MG 21 CAPS.",
+        "ar": "نافيلوكا"
+      },
+      {
+        "en": "TREFLUCAN 150 MG 1 CAPS.",
+        "ar": "تريفلوكان"
+      },
+      {
         "en": "ACTRIAZOLE 200 MG 2 CAPS.",
         "ar": "أكتريازولي"
       },
       {
-        "en": "ACTRIAZOLE 200 MG 7 CAPS. (N/A)",
+        "en": "ACTRIAZOLE 200 MG 7 CAPS.",
         "ar": "أكتريازولي"
       },
       {
@@ -5907,96 +7436,8 @@ export const edaSupplement = [
         "ar": "ألكانازولي"
       },
       {
-        "en": "ALKANAZOLE 150MG 1 CAPS.",
-        "ar": "ألكانازولي"
-      },
-      {
         "en": "AMRIFLUCAN 150 MG 2 CAPS.",
         "ar": "أمريفلوكان"
-      },
-      {
-        "en": "AMRIFLUCAN 50 MG 7 CAPS.",
-        "ar": "أمريفلوكان"
-      },
-      {
-        "en": "ANESTACON 2MG/ML (100ML) I.V. INFUSION",
-        "ar": "أنيستاكون /مل"
-      },
-      {
-        "en": "ANESTACON 2MG/ML (25ML) I.V. INFUSION",
-        "ar": "أنيستاكون /مل"
-      },
-      {
-        "en": "ANESTACON 2MG/ML (50ML) I.V. INFUSION",
-        "ar": "أنيستاكون /مل"
-      },
-      {
-        "en": "CANDEURAZOLE 150 MG 2 CAPS.",
-        "ar": "كانديورازولي"
-      },
-      {
-        "en": "DEPACOFUNG 200MG/5ML PWD. FOR SUSP. 35 ML",
-        "ar": "ديباكوفونج / بود"
-      },
-      {
-        "en": "DIFLUCAN 150 MG 1 CAPS.",
-        "ar": "ديفلوكان"
-      },
-      {
-        "en": "DIFLUCAN 2MG/ML (100ML) I.V. INFUSION",
-        "ar": "ديفلوكان /مل"
-      },
-      {
-        "en": "DIFLUCAN 2MG/ML (50ML) I.V. INFUSION",
-        "ar": "ديفلوكان /مل"
-      },
-      {
-        "en": "DIFLUCAN 50 MG 7 CAPS.",
-        "ar": "ديفلوكان"
-      },
-      {
-        "en": "DIFLUCAN 5MG/ML SYRUP 70ML",
-        "ar": "ديفلوكان /مل"
-      },
-      {
-        "en": "DIFLUNAZOLE 25MG/5ML SYRUP 70ML",
-        "ar": "ديفلونازولي /"
-      },
-      {
-        "en": "FLOCAZOLE 150 MG 1 CAPS.",
-        "ar": "فلوكازولي"
-      },
-      {
-        "en": "FLOCAZOLE 50 MG 7CAPS.",
-        "ar": "فلوكازولي"
-      },
-      {
-        "en": "FLUCAND 2MG/ML VIAL FOR INF.",
-        "ar": "فلوكاند /مل"
-      },
-      {
-        "en": "FLUCAZONIL 25MG/5ML SYRUP 70 ML",
-        "ar": "فلوكازونيل /"
-      },
-      {
-        "en": "FLUCORAL 150 MG 2 CAPS.",
-        "ar": "فلوكورال"
-      },
-      {
-        "en": "FLUCORAL 150 MG 4 CAPS.",
-        "ar": "فلوكورال"
-      },
-      {
-        "en": "FLUCTOBAR 2MG/ML VIAL FOR I.V. INF.",
-        "ar": "فلوكتوبار /مل"
-      },
-      {
-        "en": "FLUDCONRIZOLE 150 MG 1 CAPS.",
-        "ar": "فلودكونريزولي"
-      },
-      {
-        "en": "FUNGICAN 150 MG 2 CAPS.",
-        "ar": "فونجيكان"
       },
       {
         "en": "FUNGICLEAR 200 MG 2 CAPS.",
@@ -6007,35 +7448,55 @@ export const edaSupplement = [
         "ar": "فونجيكليار"
       },
       {
-        "en": "JENFUNGA 150 MG 1 CAPS.",
-        "ar": "جينفونجا"
+        "en": "RAMEFLUZOLE 150MG 1 CAPS.",
+        "ar": "راميفلوزولي"
       },
       {
-        "en": "NAVILUCA 150 MG 2 CAPS.",
-        "ar": "نافيلوكا"
+        "en": "DIFLUCAN 5MG/ML SYRUP 70ML",
+        "ar": "ديفلوكان /مل"
       },
       {
-        "en": "NAVILUCA 150 MG 6 CAPS.",
-        "ar": "نافيلوكا"
+        "en": "CANDEURAZOLE 150 MG 2 CAPS.",
+        "ar": "كانديورازولي"
       },
       {
-        "en": "NAVILUCA 200 MG 14 CAPS. (N/A)",
-        "ar": "نافيلوكا"
+        "en": "FLUCAND 2MG/ML VIAL FOR INF.",
+        "ar": "فلوكاند /مل"
       },
       {
-        "en": "NAVILUCA 200 MG 21 CAPS. (N/A)",
-        "ar": "نافيلوكا"
+        "en": "FLUDCONRIZOLE 150 MG 1 CAPS.",
+        "ar": "فلودكونريزولي"
       },
       {
-        "en": "NAVILUCA 200 MG 7 CAPS.",
-        "ar": "نافيلوكا"
+        "en": "DIFLUCAN 2MG/ML I.V. INFUSION",
+        "ar": "ديفلوكان /مل"
       },
       {
-        "en": "NAVILUCA 2MG/ML VIAL FOR I.V. INF. 100 ML",
-        "ar": "نافيلوكا /مل"
+        "en": "ANESTACON 2MG/ML I.V. INFUSION",
+        "ar": "أنيستاكون /مل"
       },
       {
-        "en": "NAVILUCA 2MG/ML VIAL FOR I.V. INF. 25 ML(N/A YET)",
+        "en": "PROTICACONAZOLE 150 MG 2 CAPS.",
+        "ar": "بروتيكاكونازولي"
+      },
+      {
+        "en": "DIFLUNAZOLE 25MG/5ML SYRUP 70ML",
+        "ar": "ديفلونازولي /"
+      },
+      {
+        "en": "FLUCAZONIL 25MG/5ML SYRUP 70 ML",
+        "ar": "فلوكازونيل /"
+      },
+      {
+        "en": "FLUCTOBAR 2MG/ML VIAL FOR I.V. INF.",
+        "ar": "فلوكتوبار /مل"
+      },
+      {
+        "en": "SUNNYFUNGAL 2MG/ML VIAL FOR I.V. INF.",
+        "ar": "سوننيفونجال /مل"
+      },
+      {
+        "en": "NAVILUCA 2MG/ML VIAL FOR I.V. INF. 25 ML",
         "ar": "نافيلوكا /مل"
       },
       {
@@ -6043,44 +7504,12 @@ export const edaSupplement = [
         "ar": "نافيلوكا /مل"
       },
       {
-        "en": "NAVILUCA 50 MG 21 CAPS.",
-        "ar": "نافيلوكا"
+        "en": "DEPACOFUNG 200MG/5ML PWD. FOR SUSP. 35 ML",
+        "ar": "ديباكوفونج / بود"
       },
       {
-        "en": "NAZOWELL 150 MG 1 CAP.",
-        "ar": "نازوويلل"
-      },
-      {
-        "en": "NAZOWELL 150 MG 3 CAPS.",
-        "ar": "نازوويلل"
-      },
-      {
-        "en": "PROTICACONAZOLE 150 MG 2 CAPS.",
-        "ar": "بروتيكاكونازولي"
-      },
-      {
-        "en": "RAMEFLUZOLE 150MG 1 CAPS.",
-        "ar": "راميفلوزولي"
-      },
-      {
-        "en": "SUNNYFUNGAL 2MG/ML VIAL FOR I.V. INF.",
-        "ar": "سوننيفونجال /مل"
-      },
-      {
-        "en": "TREFLUCAN 150 MG 1 CAPS.",
-        "ar": "تريفلوكان"
-      },
-      {
-        "en": "TRICONAL 150 MG 1 CAPS.",
-        "ar": "تريكونال"
-      },
-      {
-        "en": "TRICONAL 50 MG 7 CAPS.",
-        "ar": "تريكونال"
-      },
-      {
-        "en": "UNIFUNGI 150 MG 2 CAPS.",
-        "ar": "أونيفونجي"
+        "en": "NAVILUCA 2MG/ML VIAL FOR I.V. INF. 100 ML",
+        "ar": "نافيلوكا /مل"
       }
     ],
     "edaPrices": [
@@ -6163,643 +7592,83 @@ export const edaSupplement = [
     "prices": [],
     "brandAliases": [
       {
-        "en": "AIG ESOMEPRAZOLE 40 MG 21 CAPS.",
-        "ar": "أيج إسوميبرازولي"
-      },
-      {
-        "en": "AIG ESOMEPRAZOLE 40 MG 28 CAPS.",
-        "ar": "أيج إسوميبرازولي"
-      },
-      {
-        "en": "ARDOXIMAG 40 MG 14 TABS.",
-        "ar": "أردوكسيماج"
-      },
-      {
-        "en": "ATMIPRAZOLE 20 MG 20 CAPS.",
-        "ar": "أتميبرازولي"
-      },
-      {
-        "en": "ATMIPRAZOLE 40 MG 20 CAPS.",
-        "ar": "أتميبرازولي"
-      },
-      {
-        "en": "BIORAZO 20MG 14 CAPS.",
-        "ar": "بيورازو"
-      },
-      {
-        "en": "BIORAZO 20MG 7 CAPS. (N/A)",
-        "ar": "بيورازو"
-      },
-      {
-        "en": "BIORAZO 40MG 14 CAPS.",
-        "ar": "بيورازو"
-      },
-      {
-        "en": "BIORAZO 40MG 7 CAPS. (N/A)",
-        "ar": "بيورازو"
-      },
-      {
-        "en": "ESMATAC 20 MG 14 D.R. CAPS.",
-        "ar": "إسماتاك 14 د.ر"
-      },
-      {
-        "en": "ESMATAC 20 MG 7 D.R. CAPS. (N/A)",
-        "ar": "إسماتاك 7 د.ر"
-      },
-      {
-        "en": "ESMATAC 40 MG 14 D.R. CAPS. (N/A)",
-        "ar": "إسماتاك 14 د.ر"
-      },
-      {
-        "en": "ESMATAC 40 MG 28 D.R. CAPS.",
-        "ar": "إسماتاك 28 د.ر"
-      },
-      {
-        "en": "ESMOPROTON 20 MG 20 CAPS.",
-        "ar": "إسموبروتون"
-      },
-      {
-        "en": "ESMOPROTON 40 MG 20 CAPS.",
-        "ar": "إسموبروتون"
-      },
-      {
-        "en": "ESMOPUMP 20 MG 14 E.C.TABS.",
-        "ar": "إسموبومب 14 إ.ك"
-      },
-      {
-        "en": "ESMOPUMP 40 MG 14 F.C. TABS.",
-        "ar": "إسموبومب"
-      },
-      {
-        "en": "ESMORAP 10 MG 7 SACHETS",
-        "ar": "إسموراب"
-      },
-      {
-        "en": "ESMORAP 20 MG 14 CAPS.",
-        "ar": "إسموراب"
-      },
-      {
-        "en": "ESMORAP 20 MG 7 SACHETS",
-        "ar": "إسموراب"
-      },
-      {
-        "en": "ESMORAP 40 MG 14 CAPS.",
-        "ar": "إسموراب"
-      },
-      {
-        "en": "ESMORAP 40 MG 28 CAPS.",
-        "ar": "إسموراب"
-      },
-      {
-        "en": "ESMORAP 40 MG 7 SACHETS",
-        "ar": "إسموراب"
-      },
-      {
-        "en": "ESMORAP 40 MG POWDER FOR I.V. INF. VIAL",
-        "ar": "إسموراب"
-      },
-      {
-        "en": "ESO-PROTOCOL 20 MG 10 CAPS.",
-        "ar": "إسو-بروتوكول"
-      },
-      {
-        "en": "ESO-PROTOCOL 40MG 10 CAPS.",
-        "ar": "إسو-بروتوكول"
-      },
-      {
-        "en": "ESOGERDAZOLE 40 MG 14 DR. CAPS.",
-        "ar": "إسوجيردازولي 14 در"
-      },
-      {
-        "en": "ESOMELODAN 20MG 20 E.C. TABS. (N/A)",
-        "ar": "إسوميلودان 20 إ.ك"
-      },
-      {
-        "en": "ESOMELODAN 40MG 20 E.C. TABS.(N/A)",
-        "ar": "إسوميلودان 20 إ.ك"
-      },
-      {
-        "en": "ESOMELODAN 40MG 3 POWDER FOR I.V. INF. VIAL (N/A)",
-        "ar": "إسوميلودان 3"
-      },
-      {
-        "en": "ESOMEPEX 40 MG 14 ENTERIC COATED TAB.",
-        "ar": "إسوميبيكس 14 إنتيريك كواتيد"
-      },
-      {
-        "en": "ESOMEPEX 40 MG POWDER FOR I.V. INF. VIAL",
-        "ar": "إسوميبيكس"
-      },
-      {
-        "en": "ESOMEPRAZOLE-EVA 20MG 20 E.C. TABS.",
-        "ar": "إسوميبرازولي-إفا 20 إ.ك"
-      },
-      {
-        "en": "ESOMEPRAZOLE-EVA 40MG 20 E.C. TABS.",
-        "ar": "إسوميبرازولي-إفا 20 إ.ك"
-      },
-      {
-        "en": "ESOMEPRAZOLE-EVA 40MG 3 POWDER FOR I.V. INF. VIAL",
-        "ar": "إسوميبرازولي-إفا 3"
-      },
-      {
-        "en": "ESOMESALIX 40 MG 14 CAPS.",
-        "ar": "إسوميساليكس"
-      },
-      {
-        "en": "ESOMIUM 40MG 7 S.R. CAPS. (N/A)",
-        "ar": "إسوميوم"
-      },
-      {
-        "en": "ESOPIROXAN 20 MG 14 DEL. REL. H.G. CAPS.",
-        "ar": "إسوبيروكسان 14 ديل. ريل. ه.ج"
-      },
-      {
-        "en": "ESOPIROXAN 40 MG 14 DEL. REL. H.G. CAPS.",
-        "ar": "إسوبيروكسان 14 ديل. ريل. ه.ج"
-      },
-      {
-        "en": "ESOVAXOLE 20 MG 28 CAPS.",
-        "ar": "إسوفاكسولي"
-      },
-      {
-        "en": "ESOVAXOLE 40 MG 28 CAPS.",
-        "ar": "إسوفاكسولي"
-      },
-      {
-        "en": "EXEEDOGAST 40 MG 20 CAPS.",
-        "ar": "إكسيدوجاست"
-      },
-      {
-        "en": "EZOGAST 20MG 14 DELA. REL. CAPS.",
-        "ar": "إزوجاست 14 ديلا. ريل"
-      },
-      {
-        "en": "EZOGAST 40MG 14 DELA. REL. CAPS.",
-        "ar": "إزوجاست 14 ديلا. ريل"
-      },
-      {
-        "en": "EZOGAST 40MG 28 DELA. REL. CAPS.",
-        "ar": "إزوجاست 28 ديلا. ريل"
-      },
-      {
-        "en": "FULPRAZAL 40 MG 14 CAPS.",
-        "ar": "فولبرازال"
-      },
-      {
-        "en": "FULPRAZAL 40 MG 20 CAPS.",
-        "ar": "فولبرازال"
-      },
-      {
-        "en": "GESOMEZOL 40 MG 14 CAPS.",
-        "ar": "جيسوميزول"
-      },
-      {
-        "en": "KLEMAZICE 40MG 14 CAPS.",
-        "ar": "كليمازيسي"
-      },
-      {
-        "en": "MEGAPRAZOLE 20 MG POWDER FOR I.V. INF. VIAL",
-        "ar": "ميجابرازولي"
-      },
-      {
-        "en": "MEGAPRAZOLE 40 MG POWDER FOR I.V. INF. VIAL",
-        "ar": "ميجابرازولي"
-      },
-      {
-        "en": "MEPRADEB 40 MG 14 DEL. REL. CAPS.",
-        "ar": "ميبراديب 14 ديل. ريل"
-      },
-      {
-        "en": "MERAZODEL 20 MG POWDER FOR I.V. INF. VIAL (N/A)",
-        "ar": "ميرازوديل"
-      },
-      {
-        "en": "MERAZODEL 40 MG POWDER FOR I.V. INF. VIAL",
-        "ar": "ميرازوديل"
-      },
-      {
-        "en": "NEXICURE 10 MG 14 SACHETS",
-        "ar": "نيكسيكوري"
-      },
-      {
-        "en": "NEXICURE 2.5 MG 28 SACHETS",
-        "ar": "نيكسيكوري"
-      },
-      {
-        "en": "NEXICURE 20 MG 14 F.C.TABS.",
-        "ar": "نيكسيكوري"
-      },
-      {
-        "en": "NEXICURE 20 MG 20 F.C.TABS. (N/A)",
-        "ar": "نيكسيكوري"
-      },
-      {
-        "en": "NEXICURE 40 MG 20 F.C.TABS.",
-        "ar": "نيكسيكوري"
-      },
-      {
-        "en": "NEXICURE 5 MG 28 SACHETS",
-        "ar": "نيكسيكوري"
-      },
-      {
-        "en": "NEXIMASH 40 MG 14 CAPS.",
-        "ar": "نيكسيماش"
-      },
-      {
-        "en": "NEXIMASH 40 MG 28 CAPS.",
-        "ar": "نيكسيماش"
-      },
-      {
-        "en": "NEXIMASH 40 MG 7 CAPS.",
-        "ar": "نيكسيماش"
-      },
-      {
-        "en": "NEXIMERICAN 20 MG 14 CAPS.",
-        "ar": "نيكسيميريكان"
-      },
-      {
-        "en": "NEXIMERICAN 20 MG 21 CAPS. (N/A)",
-        "ar": "نيكسيميريكان"
-      },
-      {
-        "en": "NEXIMERICAN 20 MG 7 CAPS. (N/A)",
-        "ar": "نيكسيميريكان"
-      },
-      {
-        "en": "NEXIMERICAN 40 MG 14 CAPS.",
-        "ar": "نيكسيميريكان"
-      },
-      {
-        "en": "NEXIMERICAN 40 MG 21 CAPS. (N/A)",
-        "ar": "نيكسيميريكان"
-      },
-      {
-        "en": "NEXIMERICAN 40 MG 7 CAPS. (N/A)",
-        "ar": "نيكسيميريكان"
-      },
-      {
-        "en": "NEXIUM 10 MG 28 SACHETS",
-        "ar": "نيكسيوم"
-      },
-      {
-        "en": "NEXIUM 20 MG 14 F.C.TABS. (N/A)",
-        "ar": "نيكسيوم"
-      },
-      {
-        "en": "NEXIUM 20 MG 28 F.C.TABS.",
-        "ar": "نيكسيوم"
-      },
-      {
-        "en": "NEXIUM 40 MG 14 F.C.TABS. (N/A)",
-        "ar": "نيكسيوم"
-      },
-      {
-        "en": "NEXIUM 40 MG 28 F.C.TABS.",
-        "ar": "نيكسيوم"
-      },
-      {
-        "en": "NEXIUM 40 MG POWDER FOR I.V. INF. VIAL",
-        "ar": "نيكسيوم"
-      },
-      {
-        "en": "NIXPRAZOLE 40 MG 14 DELAYED REL. CAPS.",
-        "ar": "نيكسبرازولي 14 ديلاييد ريل"
-      },
-      {
-        "en": "ORGIXIUM 20 MG DR 21 CAPS.",
-        "ar": "أورجيكسيوم در"
-      },
-      {
-        "en": "ORGIXIUM 40 MG DR 21 CAPS.",
-        "ar": "أورجيكسيوم در"
-      },
-      {
-        "en": "PACIFIAL 20MG 21 DELA. REL. CAPS.",
-        "ar": "باسيفيال 21 ديلا. ريل"
-      },
-      {
-        "en": "PACIFIAL 40MG 21 DELA. REL. CAPS.",
-        "ar": "باسيفيال 21 ديلا. ريل"
-      },
-      {
-        "en": "PROTOPAN 20 MG 14 CAPS. (N/A)",
-        "ar": "بروتوبان"
-      },
-      {
-        "en": "PROTOPAN 20 MG 21 CAPS.",
-        "ar": "بروتوبان"
-      },
-      {
-        "en": "PROTOPAN 40 MG 14 CAPS. (N/A)",
-        "ar": "بروتوبان"
-      },
-      {
-        "en": "PROTOPAN 40 MG 21 CAPS.",
-        "ar": "بروتوبان"
-      },
-      {
-        "en": "RAZOPUMP 20 MG 14 DEL. REL. H.G. CAPS.",
-        "ar": "رازوبومب 14 ديل. ريل. ه.ج"
-      },
-      {
-        "en": "RAZOPUMP 40 MG 14 DEL. REL. H.G. CAPS.",
-        "ar": "رازوبومب 14 ديل. ريل. ه.ج"
-      },
-      {
-        "en": "REFLUTINAL 40 MG 28 H.G. CAPS",
-        "ar": "ريفلوتينال 28 ه.ج"
-      },
-      {
-        "en": "SERIOPRAZOLE 40 MG 20 CAPS.",
-        "ar": "سيريوبرازولي"
-      },
-      {
-        "en": "STOMICOPE 40 MG 30 CAPS.",
-        "ar": "ستوميكوبي"
-      },
-      {
-        "en": "STOMOPRAL 20 MG 14 CAPS.",
-        "ar": "ستوموبرال"
-      },
-      {
-        "en": "STOMOPRAL 40 MG 14 CAPS.",
-        "ar": "ستوموبرال"
-      },
-      {
-        "en": "ZOMEGIPRAL 40MG POWDER FOR I.V. INF. VIAL",
-        "ar": "زوميجيبرال"
-      },
-      {
-        "en": "AZGOVANC 20MG 7 CAPS.",
-        "ar": "أزجوفانك"
-      },
-      {
-        "en": "AZGOVANC 40MG 7 CAPS.",
-        "ar": "أزجوفانك"
-      },
-      {
-        "en": "DOWNOPRAZOL 20/1100MG 14 CAPS.",
-        "ar": "دوونوبرازول 20/"
-      },
-      {
-        "en": "DOWNOPRAZOL 20/1680MG PD. FOR ORAL SUSP. 30 SACHETS",
-        "ar": "دوونوبرازول 20/ بد. أورال"
-      },
-      {
-        "en": "DOWNOPRAZOL 20/1680MG PD. FOR ORAL SUSP. 7 SACHETS",
-        "ar": "دوونوبرازول 20/ بد. أورال"
-      },
-      {
-        "en": "DOWNOPRAZOL 40/1100MG 14 CAPS.",
-        "ar": "دوونوبرازول 40/"
-      },
-      {
-        "en": "DOWNOPRAZOL 40/1680MG PD. FOR ORAL SUSP. 30 SACHETS",
-        "ar": "دوونوبرازول 40/ بد. أورال"
-      },
-      {
-        "en": "DOWNOPRAZOL 40/1680MG PD. FOR ORAL SUSP. 7 SACHETS",
-        "ar": "دوونوبرازول 40/ بد. أورال"
-      },
-      {
-        "en": "DUDOMEZ 40/1100MG 10 CAPS.",
-        "ar": "دودوميز 40/"
-      },
-      {
-        "en": "DUDOMEZ 40/1680MG PD. FOR ORAL SUSP. 10 SACHET",
-        "ar": "دودوميز 40/ بد. أورال"
-      },
-      {
-        "en": "NEXIPRO 20/1680MG 7 SACHETS",
-        "ar": "نيكسيبرو 20/"
-      },
-      {
-        "en": "OMECARBEX 20/1100MG 20 CAPS.",
-        "ar": "أوميكاربيكس 20/"
-      },
-      {
-        "en": "OMECARBEX 40/1100MG 20 CAPS.",
-        "ar": "أوميكاربيكس 40/"
-      },
-      {
-        "en": "OMEHEALTH 40/1100 MG 7 CAPS.",
-        "ar": "أوميهيالث 40/"
-      },
-      {
-        "en": "OPRANATE 20/1100MG 10 CAPS.",
-        "ar": "أوبراناتي 20/"
-      },
-      {
-        "en": "OPRANATE 20/1680MG PD. FOR ORAL SUSP. 5 SACHET",
-        "ar": "أوبراناتي 20/ بد. أورال"
-      },
-      {
-        "en": "OPRANATE 40/1100MG 10 CAPS.",
-        "ar": "أوبراناتي 40/"
-      },
-      {
-        "en": "OPRANATE 40/1680MG PD. FOR ORAL SUSP. 5 SACHET",
-        "ar": "أوبراناتي 40/ بد. أورال"
-      },
-      {
-        "en": "STOMIGAS 20/1100 MG 20 CAPS.",
-        "ar": "ستوميجاس 20/"
-      },
-      {
-        "en": "STOMIGAS 20/1680MG PD. FOR ORAL SUSP. 10 SACHET",
-        "ar": "ستوميجاس 20/ بد. أورال"
-      },
-      {
-        "en": "STOMIGAS 40/1100 MG 20 CAPS.",
-        "ar": "ستوميجاس 40/"
-      },
-      {
-        "en": "STOMIGAS 40/1680MG PD. FOR ORAL SUSP. 10 SACHET",
-        "ar": "ستوميجاس 40/ بد. أورال"
-      },
-      {
-        "en": "TREATO-ULC 20/1100MG 14 CAPS.",
-        "ar": "ترياتو-أولك 20/"
-      },
-      {
-        "en": "TREATO-ULC 40/1100MG 14 CAPS.",
-        "ar": "ترياتو-أولك 40/"
-      },
-      {
-        "en": "WELGAZOLE 40/1100MG 20 H.G. CAPS.",
-        "ar": "ويلجازولي 40/ 20 ه.ج"
-      },
-      {
-        "en": "ZARROPRAZOLE 20/1100MG 28 CAPS.",
-        "ar": "زارروبرازولي 20/"
-      },
-      {
-        "en": "ZARROPRAZOLE 20/1680MG 10 SACHETS",
-        "ar": "زارروبرازولي 20/"
-      },
-      {
-        "en": "ZARROPRAZOLE 20/1680MG 30 SACHETS (N/A)",
-        "ar": "زارروبرازولي 20/"
-      },
-      {
-        "en": "ZARROPRAZOLE 40/1100 MG 28 CAPS",
-        "ar": "زارروبرازولي 40/"
-      },
-      {
-        "en": "EPIRAZOLE 20MG 14CAPS.",
-        "ar": "إبيرازولي"
-      },
-      {
-        "en": "ESTOHALT 10 MG 14 CAPS. (N/A)",
-        "ar": "إستوهالت"
-      },
-      {
-        "en": "ESTOHALT 40 MG 14 CAPS.",
-        "ar": "إستوهالت"
-      },
-      {
-        "en": "FASTCURE 10 MG 21 CAPS.",
-        "ar": "فاستكوري"
-      },
-      {
-        "en": "FASTCURE 20MG 14 CAPS.",
-        "ar": "فاستكوري"
-      },
-      {
-        "en": "FASTCURE 40MG 14 CAPS.",
-        "ar": "فاستكوري"
-      },
-      {
-        "en": "GASEC 20 MG 14 CAPS.",
-        "ar": "جاسيك"
-      },
-      {
-        "en": "GASEC 20 MG 7 CAPS.",
-        "ar": "جاسيك"
-      },
-      {
-        "en": "GASTRAZOLE 20 MG 14 CAPS.",
-        "ar": "جاسترازولي"
-      },
-      {
-        "en": "GASTROLOC 40MG 20 CAPS.",
-        "ar": "جاسترولوك"
-      },
-      {
-        "en": "HEALSEC 10 MG 14 CAPS.",
-        "ar": "هيالسيك"
-      },
-      {
-        "en": "HEALSEC 20 MG 14 CAPS.",
-        "ar": "هيالسيك"
-      },
-      {
-        "en": "HEALSEC 40 MG 14 CAPS.",
-        "ar": "هيالسيك"
-      },
-      {
-        "en": "HYPOSEC 20MG 14CAPS.",
-        "ar": "هيبوسيك"
-      },
-      {
-        "en": "LOSEC 20MG 7 CAPS.(CANCELLED)",
-        "ar": "لوسيك"
-      },
-      {
-        "en": "LOSEC 40MG/ML PWD. FOR I.V. INF. VIAL(CANCELLED)",
-        "ar": "لوسيك /مل بود"
-      },
-      {
-        "en": "LOSEC MUPS 10 MG 7 GASTRO-RESISTANT TABS.(CANCELLED)",
-        "ar": "لوسيك موبس 7 جاسترو-ريسيستانت"
-      },
-      {
-        "en": "NAPIZOLE 20MG 14 CAPS.",
-        "ar": "نابيزولي"
-      },
-      {
-        "en": "NAPIZOLE 40MG 14 CAPS.",
-        "ar": "نابيزولي"
-      },
-      {
-        "en": "NAPIZOLE 40MG/ML PWD. FOR I.V. INF. VIAL",
-        "ar": "نابيزولي /مل بود"
-      },
-      {
-        "en": "OMEGASTAZOLE 20MG 14 CAPS.",
-        "ar": "أوميجاستازولي"
-      },
-      {
-        "en": "OMEPAK 10 MG 14 CAPS.",
-        "ar": "أوميباك"
-      },
-      {
-        "en": "OMEPAK 20 MG 14 CAPS.",
-        "ar": "أوميباك"
-      },
-      {
-        "en": "OMEPAK 20 MG 7 CAPS.",
-        "ar": "أوميباك"
-      },
-      {
-        "en": "OMEPAK 40 MG 14 CAPS.",
-        "ar": "أوميباك"
-      },
-      {
-        "en": "OMEPAK 40 MG 7 CAPS.(N/A)",
-        "ar": "أوميباك"
-      },
-      {
-        "en": "OMEPRAL 20MG 14 CAPS.",
-        "ar": "أوميبرال"
-      },
-      {
-        "en": "OMEPRAZOLE-SPLENDID PHARMA 40 MG PWD. FOR I.V. INF. VIAL",
-        "ar": "أوميبرازولي-سبلينديد فارما بود"
+        "en": "LOSEC 20MG 7 CAPS.",
+        "ar": ""
       },
       {
         "en": "OMEZ 10MG 14 CAPS.",
-        "ar": "أوميز"
+        "ar": ""
       },
       {
         "en": "OMEZ 20MG 14 CAPS.",
-        "ar": "أوميز"
+        "ar": ""
       },
       {
         "en": "OMEZ 40MG 10 CAPS.",
-        "ar": "أوميز"
+        "ar": ""
       },
       {
         "en": "OMEZ 40MG 20 CAPS.",
-        "ar": "أوميز"
+        "ar": ""
       },
       {
-        "en": "OMEZ 40MG PWD. FOR I.V. INF. VIAL",
-        "ar": "أوميز بود"
+        "en": "TRIO-CLAR 42 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "GASEC 20 MG 7 CAPS.",
+        "ar": ""
       },
       {
         "en": "OMISEC 20MG 14CAPS.",
-        "ar": "أوميسيك"
-      },
-      {
-        "en": "PEPZOL 20 MG 14 CAPS.",
-        "ar": "بيبزول"
-      },
-      {
-        "en": "PEPZOL 40MG 14 CAPS.",
-        "ar": "بيبزول"
+        "ar": ""
       },
       {
         "en": "PEPZOL 40MG 7 CAPS.",
-        "ar": "بيبزول"
-      },
-      {
-        "en": "RISEK 10 MG 14 CAPS.",
-        "ar": "ريسيك"
+        "ar": ""
       },
       {
         "en": "RISEK 10 MG 7 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "RISEK 40 MG 7 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "BIORAZO 20MG 7 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "BIORAZO 40MG 7 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "GASEC 20 MG 14 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "HYPOSEC 20MG 14CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "OMEPAK 20 MG 7 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "OMEPAK 40 MG 7 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "PEPZOL 40MG 14 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "ZONELOCK 14 CAPSULES",
+        "ar": ""
+      },
+      {
+        "en": "RISEK 10 MG 14 CAPS.",
         "ar": "ريسيك"
       },
       {
@@ -6815,60 +7684,112 @@ export const edaSupplement = [
         "ar": "ريسيك"
       },
       {
-        "en": "RISEK 40 MG 7 CAPS.",
-        "ar": "ريسيك"
-      },
-      {
-        "en": "RISEK 40 MG PD. FOR I.V. INF. VIAL",
-        "ar": "ريسيك بد"
-      },
-      {
         "en": "ULSTOP 20MG 14 CAPS.",
         "ar": "أولستوب"
       },
       {
-        "en": "ESOMIUM 40MG 14 S.R. CAPS.",
-        "ar": "إسوميوم"
+        "en": "BIORAZO 20MG 14 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "BIORAZO 40MG 14 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "AZGOVANC 20MG 7 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "AZGOVANC 40MG 7 CAPS.",
+        "ar": ""
       },
       {
         "en": "SCORCH 20 MG 30 CAPS.",
-        "ar": "سكورتش"
+        "ar": ""
       },
       {
         "en": "SCORCH 40 MG 30 CAPS.",
-        "ar": "سكورتش"
+        "ar": ""
       },
       {
-        "en": "HELI-CURE 250/20/500 MG 14 ENTERIC COATED TAB.",
-        "ar": "هيلي-كوري 250/20/ 14 إنتيريك كواتيد"
+        "en": "OMEPAK 10 MG 14 CAPS.",
+        "ar": "أوميباك"
       },
       {
-        "en": "HELI-CURE 500/20/500 MG 14 ENTERIC COATED TAB.",
-        "ar": "هيلي-كوري 500/20/ 14 إنتيريك كواتيد"
+        "en": "OMEPAK 20 MG 14 CAPS.",
+        "ar": "أوميباك"
       },
       {
-        "en": "PEPTIC CARE 250 MG 14 E.C.TABS.",
-        "ar": "بيبتيك كاري 14 إ.ك"
+        "en": "OMEPAK 40 MG 14 CAPS.",
+        "ar": "أوميباك"
       },
       {
-        "en": "PEPTIC CARE 500 MG 14 E.C.TABS.",
-        "ar": "بيبتيك كاري 14 إ.ك"
+        "en": "OMEPRAL 20MG 14 CAPS.",
+        "ar": "أوميبرال"
       },
       {
-        "en": "TRIO-CLAR 42 CAPS.",
-        "ar": "تريو-كلار"
+        "en": "PEPZOL 20 MG 14 CAPS.",
+        "ar": "بيبزول"
       },
       {
-        "en": "NEXICURE PLUS 20 MG/1680MG 14 SACHETS",
-        "ar": "نيكسيكوري بلوس /"
+        "en": "ESMORAP 20 MG 14 CAPS.",
+        "ar": ""
       },
       {
-        "en": "NEXICURE PLUS 40 MG/1680 MG 14 SACHETS",
-        "ar": "نيكسيكوري بلوس /"
+        "en": "ESMORAP 40 MG 14 CAPS.",
+        "ar": ""
       },
       {
-        "en": "ZONELOCK 14 CAPSULES",
-        "ar": "زونيلوك"
+        "en": "ESMORAP 40 MG 28 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "NEXIMASH 40 MG 7 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "EPIRAZOLE 20MG 14CAPS.",
+        "ar": "إبيرازولي"
+      },
+      {
+        "en": "FASTCURE 20MG 14 CAPS.",
+        "ar": "فاستكوري"
+      },
+      {
+        "en": "FASTCURE 40MG 14 CAPS.",
+        "ar": "فاستكوري"
+      },
+      {
+        "en": "HEALSEC 10 MG 14 CAPS.",
+        "ar": "هيالسيك"
+      },
+      {
+        "en": "HEALSEC 20 MG 14 CAPS.",
+        "ar": "هيالسيك"
+      },
+      {
+        "en": "HEALSEC 40 MG 14 CAPS.",
+        "ar": "هيالسيك"
+      },
+      {
+        "en": "NAPIZOLE 20MG 14 CAPS.",
+        "ar": "نابيزولي"
+      },
+      {
+        "en": "NAPIZOLE 40MG 14 CAPS.",
+        "ar": "نابيزولي"
+      },
+      {
+        "en": "ESMORAP 10 MG 7 SACHETS",
+        "ar": ""
+      },
+      {
+        "en": "ESMORAP 20 MG 7 SACHETS",
+        "ar": ""
+      },
+      {
+        "en": "ESMORAP 40 MG 7 SACHETS",
+        "ar": ""
       }
     ],
     "edaPrices": [
@@ -7075,24 +7996,288 @@ export const edaSupplement = [
     "id": "36",
     "nameEn": "Glimepiride",
     "nameAr": "جلوكوفان",
-    "prices": [],
+    "prices": [
+      {
+        "form": "أقراص",
+        "formEn": "Tablets",
+        "price": 32.5,
+        "unit": "EGP"
+      }
+    ],
     "brandAliases": [
       {
-        "en": "GLIMEPIRIDE PLUS 2/30 MG 20 TABS.",
-        "ar": "جليميبيريدي بلوس 2/"
+        "en": "CONIDA 4MG 30 TAB.",
+        "ar": ""
       },
       {
-        "en": "GLIMEPIRIDE PLUS 4/30 MG 30 TABS.",
-        "ar": "جليميبيريدي بلوس 4/"
+        "en": "DOLCYL 1MG 30 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "DOLCYL 2MG 30 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "DOLCYL 3MG 30 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "DOLCYL 4MG 30 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "DOLCYL 6MG 30 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "GLARYL 3 MG 30 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "GLARYL 4 MG 30 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "GLARYL 6 MG 30 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "AMARYL 1 MG 30 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "AMARYL 2 MG 30 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "AMARYL 3 MG 30 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "AMARYL 4 MG 30 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "DIABETO 2 MG 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "DIABRIDE 1MG 10 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "DIABRIDE 2MG 10 TAB.",
+        "ar": "ديابريدي"
+      },
+      {
+        "en": "DIABRIDE 3MG 10 TAB.",
+        "ar": "ديابريدي"
+      },
+      {
+        "en": "GLARYL 1 MG 30 TABS.",
+        "ar": "جلاريل"
+      },
+      {
+        "en": "GLARYL 2 MG 30 TABS.",
+        "ar": "جلاريل"
+      },
+      {
+        "en": "GLIMARYL 2MG 30 TAB.",
+        "ar": "جليماريل"
+      },
+      {
+        "en": "GLIMARYL 3MG 30 TAB.",
+        "ar": "جليماريل"
+      },
+      {
+        "en": "GLIMEPIR 3MG 10 TAB.",
+        "ar": "جليميبير"
+      },
+      {
+        "en": "GLIMEPIR 4MG 10 TAB.",
+        "ar": "جليميبير"
+      },
+      {
+        "en": "REGLIDIB 2MG 30 TAB.",
+        "ar": "ريجليديب"
+      },
+      {
+        "en": "REGLIDIB 3MG 30 TAB.",
+        "ar": "ريجليديب"
+      },
+      {
+        "en": "DIABRIDE 6 MG 10 TAB.",
+        "ar": "ديابريدي"
+      },
+      {
+        "en": "GEDIMADEL 2MG 30 TAB.",
+        "ar": "جيديماديل"
+      },
+      {
+        "en": "GEDIMADEL 3MG 30 TAB.",
+        "ar": "جيديماديل"
+      },
+      {
+        "en": "GLIMARYL 1 MG 30 TAB.",
+        "ar": "جليماريل"
+      },
+      {
+        "en": "DIABENOR 1 MG 10 TABS.",
+        "ar": "ديابينور"
+      },
+      {
+        "en": "DIABENOR 2 MG 30 TABS.",
+        "ar": "ديابينور"
+      },
+      {
+        "en": "DIABENOR 3 MG 30 TABS.",
+        "ar": "ديابينور"
+      },
+      {
+        "en": "GEDIMADEL 1 MG 10 TAB.",
+        "ar": "جيديماديل"
+      },
+      {
+        "en": "GEDIMADEL 4 MG 30 TAB.",
+        "ar": "جيديماديل"
+      },
+      {
+        "en": "GLEMAX 4 MG 30 CAPLETS",
+        "ar": "جليماكس 30 كابليتس"
+      },
+      {
+        "en": "GLIMITOID 2MG 30 TABS.",
+        "ar": "جليميتويد"
+      },
+      {
+        "en": "GLIMITOID 4MG 30 TABS.",
+        "ar": "جليميتويد"
+      },
+      {
+        "en": "GLUCOLESS 2MG 20 TABS.",
+        "ar": "جلوكوليسس"
+      },
+      {
+        "en": "GLUCOLESS 3MG 20 TABS.",
+        "ar": "جلوكوليسس"
+      },
+      {
+        "en": "GLUCOLESS 4MG 20 TABS.",
+        "ar": "جلوكوليسس"
+      },
+      {
+        "en": "GLIMITOID 1 MG 30 TABS.",
+        "ar": "جليميتويد"
+      },
+      {
+        "en": "SUGARFALL 1 MG 10 TABS.",
+        "ar": "سوجارفالل"
+      },
+      {
+        "en": "SUGARFALL 2 MG 30 TABS.",
+        "ar": "سوجارفالل"
+      },
+      {
+        "en": "SUGARFALL 3 MG 30 TABS.",
+        "ar": "سوجارفالل"
+      },
+      {
+        "en": "ZANOGLIDE 2/30 MG 30 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "ZANOGLIDE 4/30 MG 30 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "GLIMADEL 1MG 30 F.C.TABS.",
+        "ar": "جليماديل"
+      },
+      {
+        "en": "GLIMADEL 2MG 30 F.C.TABS.",
+        "ar": "جليماديل"
+      },
+      {
+        "en": "GLIMADEL 3MG 30 F.C.TABS.",
+        "ar": "جليماديل"
+      },
+      {
+        "en": "GLIMADEL 4MG 30 F.C.TABS.",
+        "ar": "جليماديل"
       }
     ],
     "edaPrices": [
+      3.5,
+      4,
+      4.5,
+      5,
+      6,
+      6.5,
+      8,
+      9,
+      10.5,
+      13,
+      13.5,
+      15,
+      15.75,
+      16,
+      18,
+      19.5,
+      20.25,
+      21,
+      24,
+      27,
+      30,
+      31.5,
       32.5,
+      33,
+      34,
+      36,
+      40,
+      40.5,
+      42,
+      45,
+      48,
+      51,
+      54,
+      58.5,
+      61,
+      66,
+      69,
+      78,
+      87,
+      93,
+      102,
+      108,
       123
     ],
     "edaManufacturers": [
+      "EVA PHARMA > NEXT PHARMA",
+      "SEDICO > APIC",
       "ANDALOUS PHARMA",
-      "BIOPHARM EGYPT > ANDALOUS PHARMA"
+      "BIOPHARM EGYPT > ANDALOUS PHARMA",
+      "AVERROES PHARMA-EGYPT",
+      "EVA PHARMA",
+      "SANOFI",
+      "MEDIZEN PHARMACEUTICAL INDUSTRIES",
+      "EGPI > ABBOTT",
+      "BIORIGINAL INTERNATIONAL GROUP PHARMA EGYPT",
+      "HI-PHARM",
+      "SEDICO",
+      "MUP",
+      "JEDCO INT. CO. FOR PHARMACEUTICALS",
+      "GLOBAL NAPI PHARMACEUTICALS",
+      "JOSWE MEDICAL-JORDAN > SPACE MEDICAL",
+      "DELTA PHARMA",
+      "UP PHARMA",
+      "BIOPHARM EGYPT",
+      "OCTOBER PHARMA",
+      "ATCO PHARMA > GROWTH PHARMA",
+      "SIGMA",
+      "COPAD PHARMA",
+      "HANDOK PHARMACEUTICALS > SANOFI",
+      "DEBEIKY > GROWTH PHARMA",
+      "AL ESRAA PHARMACEUTICAL OPTIMA"
     ],
     "verified": true
   },
@@ -7103,148 +8288,84 @@ export const edaSupplement = [
     "prices": [],
     "brandAliases": [
       {
-        "en": "ASMAKAST 10 MG 30 F.C.TABS.",
-        "ar": "أسماكاست"
+        "en": "ASMALAIR 5MG 10 TAB.",
+        "ar": ""
       },
       {
-        "en": "ASMAKAST 5 MG 30 CHEWABLE TABS.",
-        "ar": "أسماكاست 30 تشيوابلي"
-      },
-      {
-        "en": "ASMAKAST PAEDIATRIC 4MG ORAL GRANULES 10 SACHETS",
-        "ar": "أسماكاست بايدياتريك أورال"
+        "en": "KAST 4 MG 14 SACHETS",
+        "ar": ""
       },
       {
         "en": "ASMALAIR 10MG 10 TAB.",
-        "ar": "أسمالاير"
+        "ar": ""
       },
       {
-        "en": "ASMALAIR 5MG 10 TAB.",
-        "ar": "أسمالاير"
+        "en": "MONTEKAL 10MG 10 TAB.",
+        "ar": ""
       },
       {
         "en": "CLEAR AIR 10MG 14 TAB.",
-        "ar": "كليار أير"
-      },
-      {
-        "en": "CLEAR AIR 4MG 14 CHEWABLE TAB.",
-        "ar": "كليار أير 14 تشيوابلي"
+        "ar": ""
       },
       {
         "en": "CLEAR AIR 4MG 7 SACHETS",
-        "ar": "كليار أير"
-      },
-      {
-        "en": "CLEAR AIR 5 MG 21 CHEWABLE TAB. (N/A)",
-        "ar": "كليار أير 21 تشيوابلي"
-      },
-      {
-        "en": "DELMONKAST 10MG 14 F.C. TABS.",
-        "ar": "ديلمونكاست"
-      },
-      {
-        "en": "DELMONKAST 5MG 14 CHEWABLE TABS.",
-        "ar": "ديلمونكاست 14 تشيوابلي"
+        "ar": ""
       },
       {
         "en": "IDULAIR 10MG 7 F.C.TAB.",
-        "ar": "إدولاير"
+        "ar": ""
+      },
+      {
+        "en": "KAST 10 MG 10 F.C. TAB.",
+        "ar": ""
+      },
+      {
+        "en": "KAST 5 MG 14 CHEW. TAB.",
+        "ar": ""
+      },
+      {
+        "en": "INLETAIR 4 MG 14 SACHETS",
+        "ar": ""
+      },
+      {
+        "en": "WESTAIR 4 MG 14 SACHETS.",
+        "ar": ""
+      },
+      {
+        "en": "KOKAST 10 MG 10 F.C.TABS.",
+        "ar": ""
+      },
+      {
+        "en": "MONTEL 10 MG 10 F.C. TAB.",
+        "ar": ""
+      },
+      {
+        "en": "INLETAIR 10 MG 10 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "MONTEKAL 5MG 10 CHEW. TAB.",
+        "ar": ""
+      },
+      {
+        "en": "SEDOKAST 10MG 10 F.C. TAB.",
+        "ar": "سيدوكاست"
+      },
+      {
+        "en": "ASMAKAST 10 MG 30 F.C.TABS.",
+        "ar": "أسماكاست"
       },
       {
         "en": "IDULAIR 5MG 7 CHEWABLE TAB.",
         "ar": "إدولاير 7 تشيوابلي"
       },
       {
-        "en": "INLETAIR 10 MG 10 F.C.TAB.",
-        "ar": "إنليتاير"
-      },
-      {
-        "en": "INLETAIR 4 MG 14 SACHETS",
-        "ar": "إنليتاير"
-      },
-      {
-        "en": "KAST 10 MG 10 F.C. TAB.",
-        "ar": "كاست"
-      },
-      {
-        "en": "KAST 4 MG 14 SACHETS",
-        "ar": "كاست"
-      },
-      {
-        "en": "KAST 5 MG 14 CHEW. TAB.",
-        "ar": "كاست 14 تشيو"
-      },
-      {
-        "en": "KOKAST 10 MG 10 F.C.TABS.",
-        "ar": "كوكاست"
-      },
-      {
-        "en": "KOKAST 4 MG 7 CHEWABLE TABS.",
-        "ar": "كوكاست 7 تشيوابلي"
-      },
-      {
         "en": "LELIPEL 10 MG 20 F.C. TABS.",
         "ar": "ليليبيل"
       },
       {
-        "en": "LELIPEL 4MG 14 ORAL GRANULES IN SACHETS",
-        "ar": "ليليبيل 14 أورال إن ساتشيتس"
-      },
-      {
         "en": "LELIPEL 5 MG 20 CHEW. TABS.",
         "ar": "ليليبيل 20 تشيو"
-      },
-      {
-        "en": "MONTEARAB 10 MG 20 F.C. TABS.",
-        "ar": "مونتياراب"
-      },
-      {
-        "en": "MONTEKAL 10MG 10 TAB.",
-        "ar": "مونتيكال"
-      },
-      {
-        "en": "MONTEKAL 5MG 10 CHEW. TAB.",
-        "ar": "مونتيكال 10 تشيو"
-      },
-      {
-        "en": "MONTEL 10 MG 10 F.C. TAB.",
-        "ar": "مونتيل"
-      },
-      {
-        "en": "MONTELAIR 4 MG 14 ORAL GRANULES IN SACHETS",
-        "ar": "مونتيلاير 14 أورال إن ساتشيتس"
-      },
-      {
-        "en": "MONTELAIR 4 MG 20 CHEWABLE TAB.",
-        "ar": "مونتيلاير 20 تشيوابلي"
-      },
-      {
-        "en": "MONTELAIR 4 MG 28 ORAL GRANULES IN SACHETS",
-        "ar": "مونتيلاير 28 أورال إن ساتشيتس"
-      },
-      {
-        "en": "MONTELAIR 5 MG 20 CHEWABLE TAB.",
-        "ar": "مونتيلاير 20 تشيوابلي"
-      },
-      {
-        "en": "MONTELOSAB 10 MG 14 F.C. TABS.",
-        "ar": "مونتيلوساب"
-      },
-      {
-        "en": "MONTELOSAB 4 MG 14 CHEWABLE TAB.",
-        "ar": "مونتيلوساب 14 تشيوابلي"
-      },
-      {
-        "en": "MONTELOSAB 5 MG 14 CHEWABLE TAB.",
-        "ar": "مونتيلوساب 14 تشيوابلي"
-      },
-      {
-        "en": "MONTELURAMA 10 MG 20 F.C. TABS.",
-        "ar": "مونتيلوراما"
-      },
-      {
-        "en": "OPIKAST 10 MG 14 SCORED F.C. TABS.",
-        "ar": "أوبيكاست 14 سكوريد"
       },
       {
         "en": "OPIKAST 4 MG 14 CHEW. TABS.",
@@ -7255,56 +8376,116 @@ export const edaSupplement = [
         "ar": "أوبيكاست 21 تشيو"
       },
       {
-        "en": "PIRONTAGONIST 10MG 20 F.C. TABS.",
-        "ar": "بيرونتاجونيست"
-      },
-      {
-        "en": "RELIKAST 5MG 10 CHEWABLE TAB.",
-        "ar": "ريليكاست 10 تشيوابلي"
-      },
-      {
-        "en": "SEDOKAST 10MG 10 F.C. TAB.",
-        "ar": "سيدوكاست"
-      },
-      {
-        "en": "SEDOKAST 4MG 7 CHEWABLE TABS.",
-        "ar": "سيدوكاست 7 تشيوابلي"
-      },
-      {
-        "en": "SINGUKAST 5MG 10 CHEWABLE TAB.",
-        "ar": "سينجوكاست 10 تشيوابلي"
+        "en": "KOKAST 4 MG 7 CHEWABLE TABS.",
+        "ar": "كوكاست 7 تشيوابلي"
       },
       {
         "en": "SINGULAIR 10 MG 14 F.C. TAB.",
         "ar": "سينجولاير"
       },
       {
-        "en": "SINGULAIR 4 MG PAED. 14 CHEW. TABS.",
-        "ar": "سينجولاير بايد. 14 تشيو"
-      },
-      {
-        "en": "SINGULAIR 4 MG PAED. ORAL GRAN. 14 SACHETS",
-        "ar": "سينجولاير بايد. أورال جران"
-      },
-      {
         "en": "SINGULAIR 5 MG 14 CHEW. TAB.",
         "ar": "سينجولاير 14 تشيو"
       },
       {
-        "en": "STATUKAST 10 MG 10 SCORED F.C. TABS.",
-        "ar": "ستاتوكاست 10 سكوريد"
+        "en": "DELMONKAST 10MG 14 F.C. TABS.",
+        "ar": "ديلمونكاست"
       },
       {
-        "en": "STATUKAST 4 MG ORAL GRANULES 10 SACHETS",
-        "ar": "ستاتوكاست أورال"
+        "en": "MONTEARAB 10 MG 20 F.C. TABS.",
+        "ar": "مونتياراب"
+      },
+      {
+        "en": "RELIKAST 5MG 10 CHEWABLE TAB.",
+        "ar": "ريليكاست 10 تشيوابلي"
+      },
+      {
+        "en": "SEDOKAST 4MG 7 CHEWABLE TABS.",
+        "ar": "سيدوكاست 7 تشيوابلي"
+      },
+      {
+        "en": "CLEAR AIR 4MG 14 CHEWABLE TAB.",
+        "ar": "كليار أير 14 تشيوابلي"
+      },
+      {
+        "en": "MONTELOSAB 10 MG 14 F.C. TABS.",
+        "ar": "مونتيلوساب"
+      },
+      {
+        "en": "SINGUKAST 5MG 10 CHEWABLE TAB.",
+        "ar": "سينجوكاست 10 تشيوابلي"
       },
       {
         "en": "VENTASTHMA 10 MG 14 F.C. TABS.",
         "ar": "فينتاسثما"
       },
       {
-        "en": "WESTAIR 4 MG 14 SACHETS.",
-        "ar": "ويستاير"
+        "en": "ASMAKAST 5 MG 30 CHEWABLE TABS.",
+        "ar": "أسماكاست 30 تشيوابلي"
+      },
+      {
+        "en": "CLEAR AIR 5 MG 21 CHEWABLE TAB.",
+        "ar": "كليار أير 21 تشيوابلي"
+      },
+      {
+        "en": "MONTELAIR 4 MG 20 CHEWABLE TAB.",
+        "ar": "مونتيلاير 20 تشيوابلي"
+      },
+      {
+        "en": "MONTELAIR 5 MG 20 CHEWABLE TAB.",
+        "ar": "مونتيلاير 20 تشيوابلي"
+      },
+      {
+        "en": "MONTELURAMA 10 MG 20 F.C. TABS.",
+        "ar": "مونتيلوراما"
+      },
+      {
+        "en": "DELMONKAST 5MG 14 CHEWABLE TABS.",
+        "ar": "ديلمونكاست 14 تشيوابلي"
+      },
+      {
+        "en": "MONTELOSAB 4 MG 14 CHEWABLE TAB.",
+        "ar": "مونتيلوساب 14 تشيوابلي"
+      },
+      {
+        "en": "MONTELOSAB 5 MG 14 CHEWABLE TAB.",
+        "ar": "مونتيلوساب 14 تشيوابلي"
+      },
+      {
+        "en": "PIRONTAGONIST 10MG 20 F.C. TABS.",
+        "ar": "بيرونتاجونيست"
+      },
+      {
+        "en": "OPIKAST 10 MG 14 SCORED F.C. TABS.",
+        "ar": "أوبيكاست 14 سكوريد"
+      },
+      {
+        "en": "SINGULAIR 4 MG PAED. 14 CHEW. TABS.",
+        "ar": "سينجولاير بايد. 14 تشيو"
+      },
+      {
+        "en": "STATUKAST 10 MG 10 SCORED F.C. TABS.",
+        "ar": "ستاتوكاست 10 سكوريد"
+      },
+      {
+        "en": "LELIPEL 4MG 14 ORAL GRANULES IN SACHETS",
+        "ar": "ليليبيل 14 أورال إن ساتشيتس"
+      },
+      {
+        "en": "STATUKAST 4 MG ORAL GRANULES 10 SACHETS",
+        "ar": "ستاتوكاست أورال"
+      },
+      {
+        "en": "MONTELAIR 4 MG 14 ORAL GRANULES IN SACHETS",
+        "ar": "مونتيلاير 14 أورال إن ساتشيتس"
+      },
+      {
+        "en": "MONTELAIR 4 MG 28 ORAL GRANULES IN SACHETS",
+        "ar": "مونتيلاير 28 أورال إن ساتشيتس"
+      },
+      {
+        "en": "SINGULAIR 4 MG PAED. ORAL GRAN. 14 SACHETS",
+        "ar": "سينجولاير بايد. أورال جران"
       }
     ],
     "edaPrices": [
@@ -7386,23 +8567,106 @@ export const edaSupplement = [
     "id": "38",
     "nameEn": "Ipratropium",
     "nameAr": "أتروفنت",
-    "prices": [],
+    "prices": [
+      {
+        "form": "أقراص",
+        "formEn": "Tablets",
+        "price": 74,
+        "unit": "EGP"
+      }
+    ],
     "brandAliases": [
       {
-        "en": "IPRATROPIUM VIATRIS 0.25MG/ML (CHILDREN) 10 UNIT DOSE VIAL",
-        "ar": "إبراتروبيوم فياتريس /مل 10 أونيت دوسي"
+        "en": "ASTHMATROL  1 PACK /200 INHALER",
+        "ar": ""
       },
       {
-        "en": "IPRATROPIUM VIATRIS 0.5MG/2ML (ADULTS) 10 UNIT DOSE VIAL",
-        "ar": "إبراتروبيوم فياتريس / 10 أونيت دوسي"
+        "en": "COMBIVENT 20 UNIT DOSE INH. VIAL",
+        "ar": ""
+      },
+      {
+        "en": "AEROTROPA NEBULIZER SOLN. 10 AMP. 2.5ML",
+        "ar": ""
+      },
+      {
+        "en": "AEROTROPA NEBULIZER SOLN. 20 AMP. 2.5ML",
+        "ar": ""
+      },
+      {
+        "en": "SWABIVENT NEBULIZER SOLN. 20 AMP. 2.5ML",
+        "ar": ""
+      },
+      {
+        "en": "BREATHOVANCE NEBULIZER SOLN. 20 AMP. 2.5ML",
+        "ar": ""
+      },
+      {
+        "en": "IPRAVENT-S AEROSOL FOR INHALATION 200 DOSES",
+        "ar": ""
+      },
+      {
+        "en": "ATROVENT 250MCG/2ML 20 UNIT DOSE INH. VIAL.",
+        "ar": ""
+      },
+      {
+        "en": "ASMATROPIM 250MCG/ML 20 NEBULIZER VIAL SOLN.",
+        "ar": ""
+      },
+      {
+        "en": "ATROVENT 500 MCG/2ML 20 UNIT DOSE INH. VIAL.",
+        "ar": ""
+      },
+      {
+        "en": "ASMATROPIM 500MCG/2ML 20 NEBULIZER VIAL SOLN.",
+        "ar": ""
+      },
+      {
+        "en": "IPRATROPIUM VIATRIS 0.25MG/ML 10 UNIT DOSE VIAL",
+        "ar": ""
+      },
+      {
+        "en": "IPRATROPIUM VIATRIS 0.5MG/2ML 10 UNIT DOSE VIAL",
+        "ar": ""
+      },
+      {
+        "en": "ATROVENT COMB HFA 20/50 MCG 200 METERED DOSE INHALER",
+        "ar": ""
+      },
+      {
+        "en": "LUNGOTROPIUM 250MCG/1ML 20 UNIT DOSE VIAL NEBULIZER SOLN",
+        "ar": ""
+      },
+      {
+        "en": "LUNGOTROPIUM 500MCG/2ML 20 UNIT DOSE VIAL NEBULIZER SOLN",
+        "ar": ""
       }
     ],
     "edaPrices": [
+      65,
+      70,
       74,
-      80
+      80,
+      86.5,
+      90,
+      94,
+      112.5,
+      125,
+      130,
+      152,
+      164,
+      176,
+      286
     ],
     "edaManufacturers": [
-      "LABORATOIRE UNITHER > ONE PHARMA MEDICS"
+      "PHARCO B > EUROPEAN EGYPTIAN PHARM. IND.",
+      "GLOBAL ADVANCED PHARMACEUTICALS (GAP)",
+      "BOEHRINGER INGELHEIM",
+      "ARAB DRUG COMPANY (ADCO)",
+      "UNISWAB > VODACHEM",
+      "GLOBAL ADVANCED PHARMACEUTICALS (GAP) > GLOBAL PHARMACEUTICAL INDUSTRIES",
+      "LABORATOIRE UNITHER > ONE PHARMA MEDICS",
+      "EVA PHARMA",
+      "THE ARAB DRUG COMPANY (ADCO)"
     ],
     "verified": true
   },
@@ -7410,29 +8674,303 @@ export const edaSupplement = [
     "id": "39",
     "nameEn": "Prednisolone",
     "nameAr": "سولوبريد",
-    "prices": [],
+    "prices": [
+      {
+        "form": "أقراص",
+        "formEn": "Tablets",
+        "price": 13.2,
+        "unit": "EGP"
+      }
+    ],
     "brandAliases": [
+      {
+        "en": "M.P.A 40MG/ML VIAL",
+        "ar": ""
+      },
+      {
+        "en": "ACECZEMA CREAM 15 GM",
+        "ar": ""
+      },
+      {
+        "en": "PREDILONE 5MG 10 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "TETRACORT OINT. 20 GM",
+        "ar": ""
+      },
+      {
+        "en": "URBASON 4 MG 10 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "NEO-HAEMORRHAN 6 SUPP.",
+        "ar": ""
+      },
+      {
+        "en": "XILOPRED 4 MG 20 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "XILOPRED 16 MG 20 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "CORTIPHEN EYE DROPS 3 ML",
+        "ar": ""
+      },
+      {
+        "en": "CORTIPHEN EYE OINT. 5 GM",
+        "ar": ""
+      },
+      {
+        "en": "DEPO-MEDROL 40MG/ML VIAL",
+        "ar": ""
+      },
+      {
+        "en": "HOSTACORTIN H 5MG 30 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "TERGYNAN 10 VAGINAL TABS.",
+        "ar": ""
+      },
+      {
+        "en": "ACETASEE 1% EYE DROPS 5 ML",
+        "ar": ""
+      },
+      {
+        "en": "PREDNISOLONE 5 MG 20 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "PREDSOL 5MG/5ML SYRUP 50ML",
+        "ar": ""
+      },
+      {
+        "en": "XILONE 5MG/5ML SYRUP 100ML",
+        "ar": ""
+      },
+      {
+        "en": "PHENAMIDE-P EYE DROPS 5 ML",
+        "ar": ""
+      },
+      {
+        "en": "APICORTE FORTE 1% EYE DROPS",
+        "ar": ""
+      },
+      {
+        "en": "ORCHAPRED 0.5% EYE GEL 5 ML",
+        "ar": ""
+      },
+      {
+        "en": "PREDSOL 5MG/5ML SYRUP 125ML",
+        "ar": ""
+      },
+      {
+        "en": "PHAROGENTONE EAR DROPS 5 ML",
+        "ar": ""
+      },
+      {
+        "en": "PEDICORT 5MG/5ML SYP. 100 ML",
+        "ar": ""
+      },
+      {
+        "en": "PRED FORTE 1% EYE DROPS 5 ML",
+        "ar": ""
+      },
+      {
+        "en": "PREDNIS 5MG/5ML SYRUP 100 ML",
+        "ar": ""
+      },
+      {
+        "en": "APIGENT-P EYE/EAR DROPS 5 ML",
+        "ar": ""
+      },
+      {
+        "en": "APIGENT-P EYE/EAR OINT. 5 GM",
+        "ar": ""
+      },
+      {
+        "en": "ISOMAXIN EYE/EAR DROPS 10 ML",
+        "ar": ""
+      },
+      {
+        "en": "URBASON RETARD 4 MG 10 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "URBASON RETARD 8 MG 10 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "PHARMA PRED 1% EYE DROPS 5 ML",
+        "ar": ""
+      },
+      {
+        "en": "UNIPRIDOL 5MG/5ML SYP. 100 ML",
+        "ar": ""
+      },
+      {
+        "en": "SOLU-MEDROL 1GM I.M./I.V.VIAL",
+        "ar": ""
+      },
+      {
+        "en": "NEOPRED-P EYE/EAR SUSP. 10 ML",
+        "ar": ""
+      },
+      {
+        "en": "HOSTAPRED 5MG/5ML SYRUP 100 ML",
+        "ar": ""
+      },
+      {
+        "en": "ISOPTO CETAPRED EYE DROPS 5 ML",
+        "ar": ""
+      },
       {
         "en": "PREDNISOLONE 1% EYE DROPS 5 ML",
         "ar": "بريدنيسولوني 1% إيي"
       },
       {
-        "en": "PREDNISOLONE 20 MG 20 ORODISPERSIBLE TABS.",
-        "ar": "بريدنيسولوني 20 أوروديسبيرسيبلي"
+        "en": "SOLU-MEDROL 500MG I.M./I.V.VIAL",
+        "ar": ""
       },
       {
-        "en": "PREDNISOLONE 5 MG 20 TABS.",
-        "ar": "بريدنيسولوني"
+        "en": "ISOPTO STEROFRIN EYE DROPS 5 ML",
+        "ar": ""
+      },
+      {
+        "en": "OPTIPRED 10MG/ML EYE DROPS 5 ML",
+        "ar": "أوبتيبريد /مل إيي"
+      },
+      {
+        "en": "SALCODIN 10MG/ML EYE DROPS 5 ML",
+        "ar": "سالكودين /مل إيي"
+      },
+      {
+        "en": "ECONOPRED PLUS 1% EYE DROPS 5 ML",
+        "ar": "إكونوبريد بلوس 1% إيي"
+      },
+      {
+        "en": "CORTIBIOTAN EYE SUSP. DROPS 10 ML",
+        "ar": ""
+      },
+      {
+        "en": "NEO-HAEMORRHAN RECTAL OINT. 12 GM",
+        "ar": ""
+      },
+      {
+        "en": "PREDSOL FORTE 15MG/5ML SYRUP 60ML",
+        "ar": "بريدسول فورتي /"
+      },
+      {
+        "en": "XILONE FORTE 15MG/5ML SYRUP 100ML",
+        "ar": "كسيلوني فورتي /"
+      },
+      {
+        "en": "ORCHAPRED 1% SUSP. EYE DROPS 10 ML",
+        "ar": "أورتشابريد 1% . إيي"
+      },
+      {
+        "en": "PREDSOL FORTE 15MG/5ML SYRUP 100ML",
+        "ar": "بريدسول فورتي /"
+      },
+      {
+        "en": "PEDICORT FORTE 15MG/5ML SYP. 100 ML",
+        "ar": "بيديكورت فورتي / سيب"
+      },
+      {
+        "en": "METHYLPREDNISOLONE MYLAN 1G 10 VIALS",
+        "ar": ""
       }
     ],
     "edaPrices": [
+      4.3,
+      5.5,
+      6,
+      6.5,
+      7,
+      7.5,
+      8,
+      8.5,
+      9.5,
+      10,
+      11.5,
+      12,
       13.2,
+      15,
+      16,
+      18,
+      22,
       24,
-      115
+      26,
+      29,
+      34,
+      38,
+      39,
+      40,
+      43,
+      45,
+      49,
+      52,
+      54,
+      57,
+      63,
+      69,
+      72,
+      74,
+      76,
+      79.5,
+      84,
+      104,
+      115,
+      116,
+      142,
+      180,
+      202.5,
+      214,
+      250,
+      360,
+      400,
+      1225,
+      2250
     ],
     "edaManufacturers": [
+      "GLOBAL NAPI PHARMACEUTICALS",
+      "RAMEDA",
+      "AMMAN PHARMACEUTICAL CO - JORDAN > ADM FOR TRADING & PROJECTS-EGYPT",
+      "EPCI > ANDALOUS PHARMA",
+      "ANDALOUS PHARMA",
+      "NOVARTIS > NOVARTIS SCIENTIFIC OFFICE",
+      "EIPICO",
+      "SANOFI",
       "PHARCO",
-      "ARAB DRUG COMPANY (ADCO)"
+      "JAMJOOM PHARMACEUTICALS",
+      "ORCHIDIA PHARMACEUTICAL INDUSTRIES > ORCHIDIA",
+      "AL ESRAA PHARMACEUTICAL OPTIMA",
+      "RAMEDA > PHARCO",
+      "ALLERGAN > SOFICOPHARM",
+      "KAHIRA",
+      "PHAROPHARMA",
+      "ARAB DRUG COMPANY (ADCO)",
+      "EVA PHARMA",
+      "BORG",
+      "SANOFI WINTHROP > SANOFI",
+      "UNIPHARMA CO. > UNIPHARMA",
+      "EUROPEAN EGYPTIAN PHARM. IND.",
+      "AMOUN",
+      "SIGMA TEC",
+      "RAMEDA > ALCON",
+      "MISR",
+      "EIPICO > PFIZER",
+      "CHEMIPHARM > PHARCO B",
+      "GLOBAL PHARMACEUTICAL INDUSTRIES",
+      "MYLAN S.A.S-FRANCE > RAMCO",
+      "PFIZER",
+      "EIPICO > ALLERGAN",
+      "RAMEDA > LABORATOIRES OF DOCTOR E.BOUCHARA",
+      "SANOFI AVENTIS > SANOFI",
+      "PENTA PHARMA"
     ],
     "verified": true
   },
@@ -7450,31 +8988,261 @@ export const edaSupplement = [
     ],
     "brandAliases": [
       {
-        "en": "QUETIAPINE 100MG 30 F.C. TAB.",
-        "ar": "كويتيابيني"
+        "en": "SEROQUEL 25MG 10 TAB.",
+        "ar": ""
       },
       {
-        "en": "QUETIAPINE 200MG 30 F.C. TABS.",
-        "ar": "كويتيابيني"
+        "en": "SEROQUEL 100MG 10 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "SEROQUEL 100MG 30 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "SEROQUEL 200MG 10 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "SEROQUEL 200MG 30 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "PSYQUEL 25MG 10 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "QUADEL 100MG 20 F.C. TABS",
+        "ar": ""
+      },
+      {
+        "en": "QUADEL 25 MG 20 F.C. TABS",
+        "ar": ""
+      },
+      {
+        "en": "SEROQUEL XR 200MG 10 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "SEROQUEL XR 300MG 30 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "SEROQUEL XR 400MG 30 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "SEROQUEL XR 50 MG 10 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "KEEPQUET 25MG 10 F.C. TAB.",
+        "ar": ""
+      },
+      {
+        "en": "QUEBOLM 25 MG 20 F.C. TABS.",
+        "ar": ""
+      },
+      {
+        "en": "QUETIAZIC XR 50 MG 30 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "QUITAPEX 25 MG 30 F.C.TABS.",
+        "ar": "كويتابيكس"
+      },
+      {
+        "en": "QUEDRESS 25 MG 10 F.C. TABS.",
+        "ar": "كويدريسس"
       },
       {
         "en": "QUETIAPINE 25MG 30 F.C. TAB.",
         "ar": "كويتيابيني"
       },
       {
+        "en": "QUETIASU 25 MG 30 F.C. TABS.",
+        "ar": "كويتياسو"
+      },
+      {
+        "en": "QUETIAZIC XR 150 MG 30 TABS.",
+        "ar": "كويتيازيك كسر"
+      },
+      {
+        "en": "QUETIAZIC XR 300 MG 30 TABS.",
+        "ar": "كويتيازيك كسر"
+      },
+      {
+        "en": "QUETIAZIC XR 400 MG 30 TABS.",
+        "ar": "كويتيازيك كسر"
+      },
+      {
+        "en": "QUITAPEX 100 MG 30 F.C.TABS.",
+        "ar": "كويتابيكس"
+      },
+      {
+        "en": "QUITAPEX 200 MG 30 F.C.TABS.",
+        "ar": "كويتابيكس"
+      },
+      {
+        "en": "QUITIADEL 25 MG 30 F.C. TAB.",
+        "ar": "كويتياديل"
+      },
+      {
+        "en": "SPIRAQUET 25 MG 20 F.C.TABS.",
+        "ar": "سبيراكويت"
+      },
+      {
+        "en": "QUEDRESS 100 MG 10 F.C. TABS.",
+        "ar": "كويدريسس"
+      },
+      {
+        "en": "QUEDRESS 200 MG 10 F.C. TABS.",
+        "ar": "كويدريسس"
+      },
+      {
+        "en": "QUETIAPINE 100MG 30 F.C. TAB.",
+        "ar": "كويتيابيني"
+      },
+      {
+        "en": "QUETIASU 100 MG 30 F.C. TABS.",
+        "ar": "كويتياسو"
+      },
+      {
+        "en": "QUETIASU 200 MG 30 F.C. TABS.",
+        "ar": "كويتياسو"
+      },
+      {
+        "en": "QUETIASU 300 MG 30 F.C. TABS.",
+        "ar": "كويتياسو"
+      },
+      {
+        "en": "QUITIADEL 200 MG 10 F.C. TAB.",
+        "ar": "كويتياديل"
+      },
+      {
+        "en": "QUITIADEL 200 MG 30 F.C. TAB.",
+        "ar": "كويتياديل"
+      },
+      {
+        "en": "SPIRAQUET 100 MG 20 F.C.TABS.",
+        "ar": "سبيراكويت"
+      },
+      {
+        "en": "SPIRAQUET 200 MG 20 F.C.TABS.",
+        "ar": "سبيراكويت"
+      },
+      {
+        "en": "QUETIAPINE 200MG 30 F.C. TABS.",
+        "ar": "كويتيابيني"
+      },
+      {
         "en": "QUETIAPINE 300MG 30 F.C. TABS.",
         "ar": "كويتيابيني"
+      },
+      {
+        "en": "QUITAPEX 50 MG XR 30 F.C.TABS.",
+        "ar": "كويتابيكس كسر"
+      },
+      {
+        "en": "QUITAPEX 150 MG XR 30 F.C.TABS.",
+        "ar": "كويتابيكس كسر"
+      },
+      {
+        "en": "QUITAPEX 300 MG XR 30 F.C.TABS.",
+        "ar": "كويتابيكس كسر"
+      },
+      {
+        "en": "QUITAPEX 400 MG XR 30 F.C.TABS.",
+        "ar": "كويتابيكس كسر"
+      },
+      {
+        "en": "PSYQUEL 200MG 10 SCORED F.C TAB.",
+        "ar": "بسيكويل 10 سكوريد"
+      },
+      {
+        "en": "ANDEQUEPINE 200MG 20 EXT. REL. F.C. TAB.",
+        "ar": "أنديكويبيني 20 إكست. ريل"
+      },
+      {
+        "en": "QUITCOOL XR 50MG 30 EXT. REL. F.C. TABS.",
+        "ar": "كويتكول كسر 30 إكست. ريل"
+      },
+      {
+        "en": "QUITCOOL XR 150MG 30 EXT. REL. F.C. TABS.",
+        "ar": "كويتكول كسر 30 إكست. ريل"
+      },
+      {
+        "en": "QUITCOOL XR 200MG 30 EXT. REL. F.C. TABS.",
+        "ar": "كويتكول كسر 30 إكست. ريل"
+      },
+      {
+        "en": "QUITCOOL XR 300MG 30 EXT. REL. F.C. TABS.",
+        "ar": "كويتكول كسر 30 إكست. ريل"
+      },
+      {
+        "en": "QUITCOOL XR 400MG 30 EXT. REL. F.C. TABS.",
+        "ar": "كويتكول كسر 30 إكست. ريل"
       }
     ],
     "edaPrices": [
+      11,
+      13.25,
+      14.4,
+      26.4,
+      35,
+      38,
+      44.5,
+      57,
+      58,
+      60,
+      66.5,
+      70,
+      80,
       87,
+      108,
+      110,
+      111,
+      113.5,
+      116.5,
+      135,
+      143,
+      148,
+      186,
+      195,
+      201,
+      210,
       222,
+      240,
+      243,
+      261,
+      264,
       291,
-      336
+      309,
+      321,
+      336,
+      349.5,
+      387,
+      402,
+      429,
+      759,
+      915
     ],
     "edaManufacturers": [
+      "ANDALOUS PHARMA",
+      "MEMPHIS",
+      "CHEMIPHARM",
+      "DELTA PHARMA",
+      "MEDIZEN PHARMACEUTICAL INDUSTRIES > MEDISAVE DEVELOPED",
+      "MARCYRL PHARMACEUTICAL INDUSTRIES (MPI) > PHARMACREDO",
       "GLOBAL NAPI PHARMACEUTICALS > FUTURE PHARMACEUTICAL INDUSTRIES (FPI)",
-      "FUTURE PHARMACEUTICAL INDUSTRIES (FPI)"
+      "FUTURE PHARMACEUTICAL INDUSTRIES (FPI)",
+      "SUN PHARMA EGYPT LIMITED",
+      "AL ROWAD PHARMACEUTICAL INDUSTRIAL CO. > INSPIRE PHARMACEUTICAL COMPANY",
+      "MULTI-APEX",
+      "HIKMA PHARMA",
+      "HOCHSTER PHARMACEUTICAL INDUSTRIES > ELIXIR PHARMA",
+      "ASTRA ZENECA",
+      "MEDIZEN PHARMACEUTICAL INDUSTRIES"
     ],
     "verified": true
   },
@@ -7492,48 +9260,48 @@ export const edaSupplement = [
     ],
     "brandAliases": [
       {
-        "en": "EPIVAL 10 MG 20 TABS.",
-        "ar": "إبيفال"
-      },
-      {
-        "en": "EPIVAL 10MG/2ML 3 AMP.",
-        "ar": "إبيفال /"
-      },
-      {
-        "en": "FARCOZEPAM 5MG 20 TAB.",
-        "ar": "فاركوزيبام"
-      },
-      {
-        "en": "NEURIL 10MG/2ML 5 AMP.",
-        "ar": "نيوريل /"
-      },
-      {
         "en": "NEURIL 2MG 10 TAB.",
-        "ar": "نيوريل"
+        "ar": ""
       },
       {
         "en": "NEURIL 5MG 20TABS.",
-        "ar": "نيوريل"
-      },
-      {
-        "en": "VALINIL 5MG 30TABS.",
-        "ar": "فالينيل"
+        "ar": ""
       },
       {
         "en": "VALPAM 2MG 10 TAB.",
-        "ar": "فالبام"
-      },
-      {
-        "en": "VALPAM 2MG/5ML SYRUP 120ML",
-        "ar": "فالبام /"
-      },
-      {
-        "en": "VALPAM 5 MG/ML 3 AMP.",
-        "ar": "فالبام /مل"
+        "ar": ""
       },
       {
         "en": "VALPAM 5MG 10 TAB.",
-        "ar": "فالبام"
+        "ar": ""
+      },
+      {
+        "en": "VALINIL 5MG 30TABS.",
+        "ar": ""
+      },
+      {
+        "en": "EPIVAL 10 MG 20 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "VALPAM 5 MG/ML 3 AMP.",
+        "ar": ""
+      },
+      {
+        "en": "EPIVAL 10MG/2ML 3 AMP.",
+        "ar": ""
+      },
+      {
+        "en": "FARCOZEPAM 5MG 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "NEURIL 10MG/2ML 5 AMP.",
+        "ar": ""
+      },
+      {
+        "en": "VALPAM 2MG/5ML SYRUP 120ML",
+        "ar": ""
       }
     ],
     "edaPrices": [
@@ -7572,31 +9340,31 @@ export const edaSupplement = [
     "brandAliases": [
       {
         "en": "AMITRIPTINE 50MG 30 TAB.",
-        "ar": "أميتريبتيني"
-      },
-      {
-        "en": "GRANITYLLIN 25MG/5ML SYP. 120 ML",
-        "ar": "جرانيتيللين / سيب"
-      },
-      {
-        "en": "TRYPTIZOL 10 MG 100 TABS. (N/A)",
-        "ar": "تريبتيزول"
+        "ar": ""
       },
       {
         "en": "TRYPTIZOL 10 MG 20 TABS.",
-        "ar": "تريبتيزول"
+        "ar": ""
       },
       {
         "en": "TRYPTIZOL 10 MG 60 TABS.",
-        "ar": "تريبتيزول"
+        "ar": ""
       },
       {
         "en": "TRYPTIZOL 25 MG 30 TABS.",
-        "ar": "تريبتيزول"
+        "ar": ""
+      },
+      {
+        "en": "TRYPTIZOL 10 MG 100 TABS.",
+        "ar": ""
       },
       {
         "en": "ZINOTRAVAL 25MG/5ML SYP. 120 ML",
-        "ar": "زينوترافال / سيب"
+        "ar": ""
+      },
+      {
+        "en": "GRANITYLLIN 25MG/5ML SYP. 120 ML",
+        "ar": ""
       }
     ],
     "edaPrices": [
@@ -7629,20 +9397,121 @@ export const edaSupplement = [
     ],
     "brandAliases": [
       {
-        "en": "SERTRALINE 20MG/ML ORAL CONCENTRATE 60 ML (N/A)",
-        "ar": "سيرتراليني /مل أورال كونسينتراتي"
+        "en": "SERTRAL 50MG 10 TAB.",
+        "ar": ""
       },
       {
-        "en": "SERTRALINE 25MG 20 F.C. TAB. (N/A)",
+        "en": "SESERINE 50MG 30 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "SERONORM 25 MG 10 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "AGRELOCIT 50 MG 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "DEPR-STAT 50MG 10 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "SERONORM 100 MG 10 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "SERONORM 100 MG 30 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "SERPASS 50MG 30 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "SIRTO 50MG 10 F.C. TABS.",
+        "ar": ""
+      },
+      {
+        "en": "LUSTRAL 50 MG 10 F.C.TABS.",
+        "ar": ""
+      },
+      {
+        "en": "LUSTRAL 50 MG 20 F.C.TABS.",
+        "ar": ""
+      },
+      {
+        "en": "MOODAPEX 50 MG 30 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "SERLIFT 100MG 10 F.C. TAB.",
+        "ar": ""
+      },
+      {
+        "en": "SERPASS 100MG 20 F.C. TAB.",
+        "ar": ""
+      },
+      {
+        "en": "SERPASS 100MG 30 F.C. TAB.",
+        "ar": ""
+      },
+      {
+        "en": "MOODAPEX 100 MG 30 F.C.TAB.",
+        "ar": "مودابيكس"
+      },
+      {
+        "en": "OPIRALINE 100MG 10 F.C.TAB.",
+        "ar": "أوبيراليني"
+      },
+      {
+        "en": "SERTRALINE 25MG 20 F.C. TAB.",
         "ar": "سيرتراليني"
+      },
+      {
+        "en": "OPIRALINE 50 MG 20 F.C. TABS.",
+        "ar": "أوبيراليني"
+      },
+      {
+        "en": "SERTRALINE 20MG/ML ORAL CONCENTRATE 60 ML",
+        "ar": "سيرتراليني /مل أورال كونسينتراتي"
       }
     ],
     "edaPrices": [
+      10,
+      19.2,
       20,
-      30
+      21.6,
+      29,
+      30,
+      32,
+      34,
+      34.8,
+      50.5,
+      74,
+      75,
+      81,
+      102,
+      111,
+      123,
+      135,
+      136,
+      177
     ],
     "edaManufacturers": [
-      "SIGMA"
+      "MEMPHIS > ATM PHARMACEUTICAL INDUSTRIES",
+      "MEMPHIS",
+      "PFIZER > VIATRIS EGYPT",
+      "VIATRIS",
+      "MULTI-APEX",
+      "EL-OBOUR",
+      "GLOBAL NAPI PHARMACEUTICALS > REXCEL",
+      "UNIPHARMA",
+      "GLOBAL NAPI PHARMACEUTICALS",
+      "PHARCO",
+      "SIGMA",
+      "ADWIA",
+      "HI-PHARM"
     ],
     "verified": true
   },
@@ -7660,11 +9529,99 @@ export const edaSupplement = [
     ],
     "brandAliases": [
       {
+        "en": "DIFLUCAN 50 MG 7 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "FLOCAZOLE 50 MG 7CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "NAZOWELL 150 MG 1 CAP.",
+        "ar": ""
+      },
+      {
+        "en": "TRICONAL 50 MG 7 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "DIFLUCAN 150 MG 1 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "FLUCORAL 150 MG 2 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "FLUCORAL 150 MG 4 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "FUNGICAN 150 MG 2 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "JENFUNGA 150 MG 1 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "NAVILUCA 150 MG 2 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "NAVILUCA 150 MG 6 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "NAVILUCA 200 MG 7 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "NAVILUCA 50 MG 21 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "NAZOWELL 150 MG 3 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "TRICONAL 150 MG 1 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "UNIFUNGI 150 MG 2 CAPS.",
+        "ar": "أونيفونجي"
+      },
+      {
+        "en": "ALKANAZOLE 150MG 1 CAPS.",
+        "ar": "ألكانازولي"
+      },
+      {
+        "en": "AMRIFLUCAN 50 MG 7 CAPS.",
+        "ar": "أمريفلوكان"
+      },
+      {
+        "en": "FLOCAZOLE 150 MG 1 CAPS.",
+        "ar": "فلوكازولي"
+      },
+      {
+        "en": "NAVILUCA 200 MG 14 CAPS.",
+        "ar": "نافيلوكا"
+      },
+      {
+        "en": "NAVILUCA 200 MG 21 CAPS.",
+        "ar": "نافيلوكا"
+      },
+      {
+        "en": "TREFLUCAN 150 MG 1 CAPS.",
+        "ar": "تريفلوكان"
+      },
+      {
         "en": "ACTRIAZOLE 200 MG 2 CAPS.",
         "ar": "أكتريازولي"
       },
       {
-        "en": "ACTRIAZOLE 200 MG 7 CAPS. (N/A)",
+        "en": "ACTRIAZOLE 200 MG 7 CAPS.",
         "ar": "أكتريازولي"
       },
       {
@@ -7672,96 +9629,8 @@ export const edaSupplement = [
         "ar": "ألكانازولي"
       },
       {
-        "en": "ALKANAZOLE 150MG 1 CAPS.",
-        "ar": "ألكانازولي"
-      },
-      {
         "en": "AMRIFLUCAN 150 MG 2 CAPS.",
         "ar": "أمريفلوكان"
-      },
-      {
-        "en": "AMRIFLUCAN 50 MG 7 CAPS.",
-        "ar": "أمريفلوكان"
-      },
-      {
-        "en": "ANESTACON 2MG/ML (100ML) I.V. INFUSION",
-        "ar": "أنيستاكون /مل"
-      },
-      {
-        "en": "ANESTACON 2MG/ML (25ML) I.V. INFUSION",
-        "ar": "أنيستاكون /مل"
-      },
-      {
-        "en": "ANESTACON 2MG/ML (50ML) I.V. INFUSION",
-        "ar": "أنيستاكون /مل"
-      },
-      {
-        "en": "CANDEURAZOLE 150 MG 2 CAPS.",
-        "ar": "كانديورازولي"
-      },
-      {
-        "en": "DEPACOFUNG 200MG/5ML PWD. FOR SUSP. 35 ML",
-        "ar": "ديباكوفونج / بود"
-      },
-      {
-        "en": "DIFLUCAN 150 MG 1 CAPS.",
-        "ar": "ديفلوكان"
-      },
-      {
-        "en": "DIFLUCAN 2MG/ML (100ML) I.V. INFUSION",
-        "ar": "ديفلوكان /مل"
-      },
-      {
-        "en": "DIFLUCAN 2MG/ML (50ML) I.V. INFUSION",
-        "ar": "ديفلوكان /مل"
-      },
-      {
-        "en": "DIFLUCAN 50 MG 7 CAPS.",
-        "ar": "ديفلوكان"
-      },
-      {
-        "en": "DIFLUCAN 5MG/ML SYRUP 70ML",
-        "ar": "ديفلوكان /مل"
-      },
-      {
-        "en": "DIFLUNAZOLE 25MG/5ML SYRUP 70ML",
-        "ar": "ديفلونازولي /"
-      },
-      {
-        "en": "FLOCAZOLE 150 MG 1 CAPS.",
-        "ar": "فلوكازولي"
-      },
-      {
-        "en": "FLOCAZOLE 50 MG 7CAPS.",
-        "ar": "فلوكازولي"
-      },
-      {
-        "en": "FLUCAND 2MG/ML VIAL FOR INF.",
-        "ar": "فلوكاند /مل"
-      },
-      {
-        "en": "FLUCAZONIL 25MG/5ML SYRUP 70 ML",
-        "ar": "فلوكازونيل /"
-      },
-      {
-        "en": "FLUCORAL 150 MG 2 CAPS.",
-        "ar": "فلوكورال"
-      },
-      {
-        "en": "FLUCORAL 150 MG 4 CAPS.",
-        "ar": "فلوكورال"
-      },
-      {
-        "en": "FLUCTOBAR 2MG/ML VIAL FOR I.V. INF.",
-        "ar": "فلوكتوبار /مل"
-      },
-      {
-        "en": "FLUDCONRIZOLE 150 MG 1 CAPS.",
-        "ar": "فلودكونريزولي"
-      },
-      {
-        "en": "FUNGICAN 150 MG 2 CAPS.",
-        "ar": "فونجيكان"
       },
       {
         "en": "FUNGICLEAR 200 MG 2 CAPS.",
@@ -7772,35 +9641,55 @@ export const edaSupplement = [
         "ar": "فونجيكليار"
       },
       {
-        "en": "JENFUNGA 150 MG 1 CAPS.",
-        "ar": "جينفونجا"
+        "en": "RAMEFLUZOLE 150MG 1 CAPS.",
+        "ar": "راميفلوزولي"
       },
       {
-        "en": "NAVILUCA 150 MG 2 CAPS.",
-        "ar": "نافيلوكا"
+        "en": "DIFLUCAN 5MG/ML SYRUP 70ML",
+        "ar": "ديفلوكان /مل"
       },
       {
-        "en": "NAVILUCA 150 MG 6 CAPS.",
-        "ar": "نافيلوكا"
+        "en": "CANDEURAZOLE 150 MG 2 CAPS.",
+        "ar": "كانديورازولي"
       },
       {
-        "en": "NAVILUCA 200 MG 14 CAPS. (N/A)",
-        "ar": "نافيلوكا"
+        "en": "FLUCAND 2MG/ML VIAL FOR INF.",
+        "ar": "فلوكاند /مل"
       },
       {
-        "en": "NAVILUCA 200 MG 21 CAPS. (N/A)",
-        "ar": "نافيلوكا"
+        "en": "FLUDCONRIZOLE 150 MG 1 CAPS.",
+        "ar": "فلودكونريزولي"
       },
       {
-        "en": "NAVILUCA 200 MG 7 CAPS.",
-        "ar": "نافيلوكا"
+        "en": "DIFLUCAN 2MG/ML I.V. INFUSION",
+        "ar": "ديفلوكان /مل"
       },
       {
-        "en": "NAVILUCA 2MG/ML VIAL FOR I.V. INF. 100 ML",
-        "ar": "نافيلوكا /مل"
+        "en": "ANESTACON 2MG/ML I.V. INFUSION",
+        "ar": "أنيستاكون /مل"
       },
       {
-        "en": "NAVILUCA 2MG/ML VIAL FOR I.V. INF. 25 ML(N/A YET)",
+        "en": "PROTICACONAZOLE 150 MG 2 CAPS.",
+        "ar": "بروتيكاكونازولي"
+      },
+      {
+        "en": "DIFLUNAZOLE 25MG/5ML SYRUP 70ML",
+        "ar": "ديفلونازولي /"
+      },
+      {
+        "en": "FLUCAZONIL 25MG/5ML SYRUP 70 ML",
+        "ar": "فلوكازونيل /"
+      },
+      {
+        "en": "FLUCTOBAR 2MG/ML VIAL FOR I.V. INF.",
+        "ar": "فلوكتوبار /مل"
+      },
+      {
+        "en": "SUNNYFUNGAL 2MG/ML VIAL FOR I.V. INF.",
+        "ar": "سوننيفونجال /مل"
+      },
+      {
+        "en": "NAVILUCA 2MG/ML VIAL FOR I.V. INF. 25 ML",
         "ar": "نافيلوكا /مل"
       },
       {
@@ -7808,44 +9697,12 @@ export const edaSupplement = [
         "ar": "نافيلوكا /مل"
       },
       {
-        "en": "NAVILUCA 50 MG 21 CAPS.",
-        "ar": "نافيلوكا"
+        "en": "DEPACOFUNG 200MG/5ML PWD. FOR SUSP. 35 ML",
+        "ar": "ديباكوفونج / بود"
       },
       {
-        "en": "NAZOWELL 150 MG 1 CAP.",
-        "ar": "نازوويلل"
-      },
-      {
-        "en": "NAZOWELL 150 MG 3 CAPS.",
-        "ar": "نازوويلل"
-      },
-      {
-        "en": "PROTICACONAZOLE 150 MG 2 CAPS.",
-        "ar": "بروتيكاكونازولي"
-      },
-      {
-        "en": "RAMEFLUZOLE 150MG 1 CAPS.",
-        "ar": "راميفلوزولي"
-      },
-      {
-        "en": "SUNNYFUNGAL 2MG/ML VIAL FOR I.V. INF.",
-        "ar": "سوننيفونجال /مل"
-      },
-      {
-        "en": "TREFLUCAN 150 MG 1 CAPS.",
-        "ar": "تريفلوكان"
-      },
-      {
-        "en": "TRICONAL 150 MG 1 CAPS.",
-        "ar": "تريكونال"
-      },
-      {
-        "en": "TRICONAL 50 MG 7 CAPS.",
-        "ar": "تريكونال"
-      },
-      {
-        "en": "UNIFUNGI 150 MG 2 CAPS.",
-        "ar": "أونيفونجي"
+        "en": "NAVILUCA 2MG/ML VIAL FOR I.V. INF. 100 ML",
+        "ar": "نافيلوكا /مل"
       }
     ],
     "edaPrices": [
@@ -7935,15 +9792,185 @@ export const edaSupplement = [
     ],
     "brandAliases": [
       {
+        "en": "TEGRETOL 200MG 30 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "ARBATEG 2% SUSP. 100 ML",
+        "ar": ""
+      },
+      {
+        "en": "ARBATEG 200 MG 30 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "MAZEMAL 200 MG 20 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "NEUROTOP 200MG 100 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "NEUROTOP 400MG 100 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "TEGRETOL 2% SYRUP 100ML",
+        "ar": ""
+      },
+      {
+        "en": "TONOCLONE 200MG 30 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "TONOCLONE 400MG 30 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "CARBAPEX 200 MG 30 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "CARBATOL 200 MG 20 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "TEGRAPIN 400 MG XR 10 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "CARBAPEX 200 MG CR 30 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "CARBAPEX 400 MG CR 30 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "TEGRAL 200 MG 50 SCORED TABS.",
+        "ar": ""
+      },
+      {
         "en": "CARBAMAZEPINE 200MG XR 10 TAB.",
         "ar": "كاربامازيبيني كسر"
+      },
+      {
+        "en": "MAZEMAL 200 C.R. 20 F.C. TABS.",
+        "ar": "مازيمال 200 ك.ر"
+      },
+      {
+        "en": "MAZEMAL 400 C.R. 20 F.C. TABS.",
+        "ar": "مازيمال 400 ك.ر"
+      },
+      {
+        "en": "TEGRAPIN 100MG/5ML SUSP. 120ML",
+        "ar": "تيجرابين /"
+      },
+      {
+        "en": "EPIMAZEPINE 2% ORAL SUSP. 100ML",
+        "ar": "إبيمازيبيني 2% أورال"
+      },
+      {
+        "en": "ARBATEG 400 MG 10 EXT. REL. TABS.",
+        "ar": "أرباتيج 10 إكست. ريل"
+      },
+      {
+        "en": "CARBAPEX 100 MG 30 CHEWABLE TABS.",
+        "ar": "كاربابيكس 30 تشيوابلي"
+      },
+      {
+        "en": "ALEXTOL 100MG/5ML ORAL SUSP. 100ML",
+        "ar": "أليكستول / أورال"
+      },
+      {
+        "en": "CARBAMAZEPIN 200MG 10 TAB.U.S.P.33",
+        "ar": "كاربامازيبين .أو.س.ب.33"
+      },
+      {
+        "en": "NEUROFUTAL SR 400 MG 10 F.C. TABS.",
+        "ar": "نيوروفوتال سر"
+      },
+      {
+        "en": "TEGRETOL CR 200MG 20 F.C. DIVITAB.",
+        "ar": "تيجريتول كر ديفيتاب"
+      },
+      {
+        "en": "TEGRETOL CR 400MG 20 F.C. DIVITABS",
+        "ar": "تيجريتول كر ديفيتابس"
+      },
+      {
+        "en": "NEUROTOP RETARD 300MG 100 S.R. TAB.",
+        "ar": "نيوروتوب ريتارد"
+      },
+      {
+        "en": "NEUROTOP RETARD 600MG 100 S.R. TAB.",
+        "ar": "نيوروتوب ريتارد"
+      },
+      {
+        "en": "TONOCLONE RETARD 200MG C.R. 10 F.C. TAB.",
+        "ar": "تونوكلوني ريتارد ك.ر"
+      },
+      {
+        "en": "TONOCLONE RETARD 400MG C.R. 10 F.C. TAB.",
+        "ar": "تونوكلوني ريتارد ك.ر"
+      },
+      {
+        "en": "EPIMAZEPINE CR 200 MG 10 CONTROLLED RELEASE F.C. TABS.",
+        "ar": "إبيمازيبيني كر 10 كونترولليد ريلياسي"
+      },
+      {
+        "en": "EPIMAZEPINE CR 400 MG 10 CONTROLLED RELEASE F.C. TABS.",
+        "ar": "إبيمازيبيني كر 10 كونترولليد ريلياسي"
       }
     ],
     "edaPrices": [
-      4
+      3,
+      4,
+      5.25,
+      5.5,
+      6,
+      6.5,
+      7.5,
+      8,
+      8.5,
+      9.5,
+      10,
+      13.5,
+      16.5,
+      19.5,
+      24,
+      35,
+      37,
+      38,
+      52,
+      61,
+      75,
+      81,
+      89,
+      92,
+      106,
+      111,
+      140,
+      260,
+      410,
+      450,
+      720
     ],
     "edaManufacturers": [
-      "SIGMA"
+      "ALEXANDRIA",
+      "MEDIZEN PHARMACEUTICAL INDUSTRIES",
+      "SEDICO",
+      "SIGMA",
+      "MULTI-APEX",
+      "AMOUN",
+      "EIPICO",
+      "UNIPHARMA",
+      "FUTURE PHARMACEUTICAL INDUSTRIES (FPI)",
+      "GEROT PHARMA > B.P PHARMA",
+      "CID",
+      "NOVARTIS",
+      "UP PHARMA"
     ],
     "verified": true
   },
@@ -7962,63 +9989,63 @@ export const edaSupplement = [
     "brandAliases": [
       {
         "en": "CONVULEX 150MG 40 CAPS.",
-        "ar": "كونفوليكس"
+        "ar": ""
       },
       {
         "en": "CONVULEX 300MG 40 CAPS.",
-        "ar": "كونفوليكس"
-      },
-      {
-        "en": "DAVIKEN 500MG SR 30 F.C.TAB.",
-        "ar": "دافيكين سر"
-      },
-      {
-        "en": "DEPACOM 500MG 30 EXTENDED RELEASE  F.C.TAB.",
-        "ar": "ديباكوم 30 إكستينديد ريلياسي"
-      },
-      {
-        "en": "DEPAKINE 57.64MG/ML SYP. 125 ML",
-        "ar": "ديباكيني /مل سيب"
-      },
-      {
-        "en": "DEPALEPT 500MG/5ML VIAL FOR I.V. INF.",
-        "ar": "ديباليبت /"
-      },
-      {
-        "en": "MENTAVERS 250MG/5ML SYRUP 100ML",
-        "ar": "مينتافيرس /"
-      },
-      {
-        "en": "SEIZOLOW 250MG/5ML SYRUP 120ML",
-        "ar": "سايزولوو /"
-      },
-      {
-        "en": "VALPROEX CR 500 MG 30 F.C.TABS.",
-        "ar": "فالبرويكس كر"
-      },
-      {
-        "en": "VEDGE 5GM/100ML SYRUP 100ML",
-        "ar": "فيدجي /"
-      },
-      {
-        "en": "XOPLICT 250MG/5ML SYRUP 100ML",
-        "ar": "كسوبليكت /"
-      },
-      {
-        "en": "DEPAKINE CHRONO 500MG 30 SCORED PROLONGED REL. F.C. TAB.",
-        "ar": "ديباكيني تشرونو 30 سكوريد برولونجيد ريل"
-      },
-      {
-        "en": "VALPOEAST-SR  500MG 20 TAB.",
-        "ar": "فالبوياست-سر"
+        "ar": ""
       },
       {
         "en": "VALPOKINE 500MG 10 TAB.",
-        "ar": "فالبوكيني"
+        "ar": ""
+      },
+      {
+        "en": "VEDGE 5GM/100ML SYRUP 100ML",
+        "ar": ""
+      },
+      {
+        "en": "VALPOEAST-SR  500MG 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "DAVIKEN 500MG SR 30 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "XOPLICT 250MG/5ML SYRUP 100ML",
+        "ar": ""
+      },
+      {
+        "en": "SEIZOLOW 250MG/5ML SYRUP 120ML",
+        "ar": ""
+      },
+      {
+        "en": "DEPAKINE 57.64MG/ML SYP. 125 ML",
+        "ar": ""
+      },
+      {
+        "en": "MENTAVERS 250MG/5ML SYRUP 100ML",
+        "ar": ""
+      },
+      {
+        "en": "VALPROEX CR 500 MG 30 F.C.TABS.",
+        "ar": ""
+      },
+      {
+        "en": "DEPALEPT 500MG/5ML VIAL FOR I.V. INF.",
+        "ar": ""
       },
       {
         "en": "VEDGE 500MG 30 ENTERIC COATED S.R. TAB.",
-        "ar": "فيدجي 30 إنتيريك كواتيد"
+        "ar": ""
+      },
+      {
+        "en": "DEPACOM 500MG 30 EXTENDED RELEASE  F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "DEPAKINE CHRONO 500MG 30 SCORED PROLONGED REL. F.C. TAB.",
+        "ar": ""
       }
     ],
     "edaPrices": [
@@ -8069,24 +10096,117 @@ export const edaSupplement = [
     ],
     "brandAliases": [
       {
-        "en": "PHENYTOIN 100MG 40 CAPS.",
-        "ar": "فينيتوين"
+        "en": "COMIDAL-L 100 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "IPANTEN 50MG 50 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "EPANUTIN 100MG 50CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "IPANTEN 100MG 50 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "PHENYTIN 50MG 50 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "PHAROTOIN 50MG 10 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "PHENYTIN 100MG 50 CAPS.",
+        "ar": ""
       },
       {
         "en": "PHENYTOIN 50MG 40 CAPS.",
-        "ar": "فينيتوين"
+        "ar": ""
       },
       {
-        "en": "PHENYTOIN SODIUM 50MG/ML 10 AMPS.(N/A)",
+        "en": "PHENYTOIN 100MG 40 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "HEAL QUICK 2% CREAM 15 GM",
+        "ar": ""
+      },
+      {
+        "en": "PHENYTIN 100MG/2ML 1 AMP.",
+        "ar": ""
+      },
+      {
+        "en": "PHENYTIN 100MG/2ML 10 AMPS.",
+        "ar": ""
+      },
+      {
+        "en": "PHENYTIN 250MG/5ML 10 AMPS.",
+        "ar": ""
+      },
+      {
+        "en": "IPANTEN 30MG/5ML SUSP. 125ML",
+        "ar": ""
+      },
+      {
+        "en": "PHENYTIN 30MG/5ML SUSP. 120 ML",
+        "ar": ""
+      },
+      {
+        "en": "HEALOSOL 2% TOPICAL SPRAY 150 ML",
+        "ar": ""
+      },
+      {
+        "en": "PHENYTOIN SODIUM 50MG/ML 10 AMPS.",
         "ar": "فينيتوين سوديوم /مل"
+      },
+      {
+        "en": "PHENYTOIN-AIT TOPICAL SPRAY 150 ML",
+        "ar": "فينيتوين-أيت"
+      },
+      {
+        "en": "EPILOG 250MG/5ML 10 AMP. FOR I.V. INJ.",
+        "ar": "إبيلوج /"
+      },
+      {
+        "en": "PHENTOLEPT 250MG/5ML 5 AMP. FOR I.M. & SLOW I.V.",
+        "ar": "فينتوليبت / . . & سلوو"
       }
     ],
     "edaPrices": [
+      2,
+      9.5,
       13.5,
+      14.4,
       16,
-      90
+      19,
+      32,
+      33,
+      35,
+      37.5,
+      50,
+      51,
+      63,
+      87,
+      90,
+      95,
+      110,
+      300
     ],
     "edaManufacturers": [
+      "ALEXANDRIA",
+      "EL NILE. > PFIZER",
+      "MUP",
+      "UNIPHARMA CO. > AL HADIDI PHARMA",
+      "EGYPTIAN CO. FOR ADV. PHARMA. (ECAP) > ACDIMA INTERNATIONAL TRADING",
+      "ARAB CAPS > ACDIMA INTERNATIONAL TRADING",
+      "T3A PHARMA > ACDIMA INTERNATIONAL TRADING",
+      "PHAROPHARMA",
+      "ALEXANDRIA > EGYPHARMA-EGYPT",
+      "EL NILE.",
       "EL NASR",
       "SABEX INC.-CANADA > INCO PHARMA-EGYPT"
     ],
@@ -8106,15 +10226,217 @@ export const edaSupplement = [
     ],
     "brandAliases": [
       {
+        "en": "EFANOL 10 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "EMERAL 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "ASMACID 30 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "ASMOLIN 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "TEPEDRONE 20 TAB",
+        "ar": ""
+      },
+      {
+        "en": "BRONCHALIN 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "TRI-BROXOL 10 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "EMERAL 5 ADULT SUPP.",
+        "ar": ""
+      },
+      {
+        "en": "EMERAL 5 PAED. SUPP.",
+        "ar": ""
+      },
+      {
+        "en": "FARCOSOLVIN 24 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "TRI-BROXOL SYRUP 100ML",
+        "ar": ""
+      },
+      {
+        "en": "THEOFAR 200MG S.R.CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "FARCOSOLVIN SYRUP 120ML",
+        "ar": ""
+      },
+      {
+        "en": "TUSSIPECT-N SYRUP 100ML",
+        "ar": ""
+      },
+      {
+        "en": "THEO 100MG S.R. 20 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "THEO 200MG S.R. 20 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "THEO 300MG S.R. 10 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "THEOFAR 100MG S.R. CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "THEOFAR 300MG S.R. CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "CIDOPHYLLINE I.V. 6 AMP.",
+        "ar": ""
+      },
+      {
+        "en": "GLUCOLYNAMINE I.V 6 AMPS.",
+        "ar": ""
+      },
+      {
+        "en": "AMRIPHYLLINE 100MG 5 SUPP.",
+        "ar": ""
+      },
+      {
+        "en": "AMRIPHYLLINE 300MG 5 SUPP.",
+        "ar": ""
+      },
+      {
+        "en": "QUIBRON T/SR 300MG 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "THEOPHYL -12 200MG 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "XANTHIUM SR 400MG 10 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "QUIBRON T/SR 300MG 100 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "NEO-MINOPHYLLINE SYRUP 120ML",
+        "ar": ""
+      },
+      {
+        "en": "VENTOPHYL 100MG S.R. 16 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "VENTOPHYL 200MG S.R. 16 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "MINOPHYLLINE 300MG 30 S.R.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "ETAPHYLLINE 500 MG/ 5ML 6 AMP.",
+        "ar": ""
+      },
+      {
+        "en": "TRISOLVIN 10 SOFT GELATIN CAPS.",
+        "ar": ""
+      },
+      {
         "en": "THEOPHYLLINE 200MG S.R. 20 TAB.",
         "ar": "ثيوفيلليني س.ر"
+      },
+      {
+        "en": "FARCOPHYLLINE 125MG 5 PAED.SUPP.",
+        "ar": ""
+      },
+      {
+        "en": "MINOPHYLLINE 350MG 5 ADULT SUPP.",
+        "ar": ""
+      },
+      {
+        "en": "CIDOPHYLLINE 300MG/5ML I.M. 6 AMP.",
+        "ar": "سيدوفيلليني /"
+      },
+      {
+        "en": "AMRIPHYLLINE 0.05GM/5ML SYRUP 120ML",
+        "ar": ""
+      },
+      {
+        "en": "MINOPHYLLINE 125MG 5 INFANTILE SUPP.",
+        "ar": ""
+      },
+      {
+        "en": "UNIPHYLLIN CONTINUS 300 MG 20 CONTR.R.TABS.",
+        "ar": "أونيفيللين كونتينوس 20 كونتر.ر"
+      },
+      {
+        "en": "UNIPHYLLIN CONTINUS 400 MG 20 CONTR.R.TABS.",
+        "ar": "أونيفيللين كونتينوس 20 كونتر.ر"
       }
     ],
     "edaPrices": [
-      14.5
+      2.25,
+      2.6,
+      2.7,
+      2.75,
+      3,
+      3.5,
+      3.75,
+      4,
+      4.4,
+      4.75,
+      4.8,
+      5,
+      5.1,
+      5.2,
+      6,
+      6.25,
+      6.5,
+      6.7,
+      7.5,
+      9.2,
+      10,
+      11.75,
+      14.5,
+      15,
+      15.25,
+      21,
+      26,
+      30,
+      43,
+      90,
+      132
     ],
     "edaManufacturers": [
-      "AMRIYA"
+      "AMRIYA",
+      "CID",
+      "ALEXANDRIA",
+      "SMITHKLINE BEECHAM",
+      "GLAXO SMITHKLINE",
+      "PHARCO",
+      "MEMPHIS",
+      "EL NILE. > MUNDIPHARMA",
+      "DEBEIKY > SMB LABORATOIRES-BELGIUM",
+      "EIPICO",
+      "SIGMA > FUTURE PHARMACEUTICAL INDUSTRIES (FPI)",
+      "GLOBAL NAPI PHARMACEUTICALS > FUTURE PHARMACEUTICAL INDUSTRIES (FPI)",
+      "MISR"
     ],
     "verified": true
   },
@@ -8132,148 +10454,84 @@ export const edaSupplement = [
     ],
     "brandAliases": [
       {
-        "en": "ASMAKAST 10 MG 30 F.C.TABS.",
-        "ar": "أسماكاست"
+        "en": "ASMALAIR 5MG 10 TAB.",
+        "ar": ""
       },
       {
-        "en": "ASMAKAST 5 MG 30 CHEWABLE TABS.",
-        "ar": "أسماكاست 30 تشيوابلي"
-      },
-      {
-        "en": "ASMAKAST PAEDIATRIC 4MG ORAL GRANULES 10 SACHETS",
-        "ar": "أسماكاست بايدياتريك أورال"
+        "en": "KAST 4 MG 14 SACHETS",
+        "ar": ""
       },
       {
         "en": "ASMALAIR 10MG 10 TAB.",
-        "ar": "أسمالاير"
+        "ar": ""
       },
       {
-        "en": "ASMALAIR 5MG 10 TAB.",
-        "ar": "أسمالاير"
+        "en": "MONTEKAL 10MG 10 TAB.",
+        "ar": ""
       },
       {
         "en": "CLEAR AIR 10MG 14 TAB.",
-        "ar": "كليار أير"
-      },
-      {
-        "en": "CLEAR AIR 4MG 14 CHEWABLE TAB.",
-        "ar": "كليار أير 14 تشيوابلي"
+        "ar": ""
       },
       {
         "en": "CLEAR AIR 4MG 7 SACHETS",
-        "ar": "كليار أير"
-      },
-      {
-        "en": "CLEAR AIR 5 MG 21 CHEWABLE TAB. (N/A)",
-        "ar": "كليار أير 21 تشيوابلي"
-      },
-      {
-        "en": "DELMONKAST 10MG 14 F.C. TABS.",
-        "ar": "ديلمونكاست"
-      },
-      {
-        "en": "DELMONKAST 5MG 14 CHEWABLE TABS.",
-        "ar": "ديلمونكاست 14 تشيوابلي"
+        "ar": ""
       },
       {
         "en": "IDULAIR 10MG 7 F.C.TAB.",
-        "ar": "إدولاير"
+        "ar": ""
+      },
+      {
+        "en": "KAST 10 MG 10 F.C. TAB.",
+        "ar": ""
+      },
+      {
+        "en": "KAST 5 MG 14 CHEW. TAB.",
+        "ar": ""
+      },
+      {
+        "en": "INLETAIR 4 MG 14 SACHETS",
+        "ar": ""
+      },
+      {
+        "en": "WESTAIR 4 MG 14 SACHETS.",
+        "ar": ""
+      },
+      {
+        "en": "KOKAST 10 MG 10 F.C.TABS.",
+        "ar": ""
+      },
+      {
+        "en": "MONTEL 10 MG 10 F.C. TAB.",
+        "ar": ""
+      },
+      {
+        "en": "INLETAIR 10 MG 10 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "MONTEKAL 5MG 10 CHEW. TAB.",
+        "ar": ""
+      },
+      {
+        "en": "SEDOKAST 10MG 10 F.C. TAB.",
+        "ar": "سيدوكاست"
+      },
+      {
+        "en": "ASMAKAST 10 MG 30 F.C.TABS.",
+        "ar": "أسماكاست"
       },
       {
         "en": "IDULAIR 5MG 7 CHEWABLE TAB.",
         "ar": "إدولاير 7 تشيوابلي"
       },
       {
-        "en": "INLETAIR 10 MG 10 F.C.TAB.",
-        "ar": "إنليتاير"
-      },
-      {
-        "en": "INLETAIR 4 MG 14 SACHETS",
-        "ar": "إنليتاير"
-      },
-      {
-        "en": "KAST 10 MG 10 F.C. TAB.",
-        "ar": "كاست"
-      },
-      {
-        "en": "KAST 4 MG 14 SACHETS",
-        "ar": "كاست"
-      },
-      {
-        "en": "KAST 5 MG 14 CHEW. TAB.",
-        "ar": "كاست 14 تشيو"
-      },
-      {
-        "en": "KOKAST 10 MG 10 F.C.TABS.",
-        "ar": "كوكاست"
-      },
-      {
-        "en": "KOKAST 4 MG 7 CHEWABLE TABS.",
-        "ar": "كوكاست 7 تشيوابلي"
-      },
-      {
         "en": "LELIPEL 10 MG 20 F.C. TABS.",
         "ar": "ليليبيل"
       },
       {
-        "en": "LELIPEL 4MG 14 ORAL GRANULES IN SACHETS",
-        "ar": "ليليبيل 14 أورال إن ساتشيتس"
-      },
-      {
         "en": "LELIPEL 5 MG 20 CHEW. TABS.",
         "ar": "ليليبيل 20 تشيو"
-      },
-      {
-        "en": "MONTEARAB 10 MG 20 F.C. TABS.",
-        "ar": "مونتياراب"
-      },
-      {
-        "en": "MONTEKAL 10MG 10 TAB.",
-        "ar": "مونتيكال"
-      },
-      {
-        "en": "MONTEKAL 5MG 10 CHEW. TAB.",
-        "ar": "مونتيكال 10 تشيو"
-      },
-      {
-        "en": "MONTEL 10 MG 10 F.C. TAB.",
-        "ar": "مونتيل"
-      },
-      {
-        "en": "MONTELAIR 4 MG 14 ORAL GRANULES IN SACHETS",
-        "ar": "مونتيلاير 14 أورال إن ساتشيتس"
-      },
-      {
-        "en": "MONTELAIR 4 MG 20 CHEWABLE TAB.",
-        "ar": "مونتيلاير 20 تشيوابلي"
-      },
-      {
-        "en": "MONTELAIR 4 MG 28 ORAL GRANULES IN SACHETS",
-        "ar": "مونتيلاير 28 أورال إن ساتشيتس"
-      },
-      {
-        "en": "MONTELAIR 5 MG 20 CHEWABLE TAB.",
-        "ar": "مونتيلاير 20 تشيوابلي"
-      },
-      {
-        "en": "MONTELOSAB 10 MG 14 F.C. TABS.",
-        "ar": "مونتيلوساب"
-      },
-      {
-        "en": "MONTELOSAB 4 MG 14 CHEWABLE TAB.",
-        "ar": "مونتيلوساب 14 تشيوابلي"
-      },
-      {
-        "en": "MONTELOSAB 5 MG 14 CHEWABLE TAB.",
-        "ar": "مونتيلوساب 14 تشيوابلي"
-      },
-      {
-        "en": "MONTELURAMA 10 MG 20 F.C. TABS.",
-        "ar": "مونتيلوراما"
-      },
-      {
-        "en": "OPIKAST 10 MG 14 SCORED F.C. TABS.",
-        "ar": "أوبيكاست 14 سكوريد"
       },
       {
         "en": "OPIKAST 4 MG 14 CHEW. TABS.",
@@ -8284,56 +10542,116 @@ export const edaSupplement = [
         "ar": "أوبيكاست 21 تشيو"
       },
       {
-        "en": "PIRONTAGONIST 10MG 20 F.C. TABS.",
-        "ar": "بيرونتاجونيست"
-      },
-      {
-        "en": "RELIKAST 5MG 10 CHEWABLE TAB.",
-        "ar": "ريليكاست 10 تشيوابلي"
-      },
-      {
-        "en": "SEDOKAST 10MG 10 F.C. TAB.",
-        "ar": "سيدوكاست"
-      },
-      {
-        "en": "SEDOKAST 4MG 7 CHEWABLE TABS.",
-        "ar": "سيدوكاست 7 تشيوابلي"
-      },
-      {
-        "en": "SINGUKAST 5MG 10 CHEWABLE TAB.",
-        "ar": "سينجوكاست 10 تشيوابلي"
+        "en": "KOKAST 4 MG 7 CHEWABLE TABS.",
+        "ar": "كوكاست 7 تشيوابلي"
       },
       {
         "en": "SINGULAIR 10 MG 14 F.C. TAB.",
         "ar": "سينجولاير"
       },
       {
-        "en": "SINGULAIR 4 MG PAED. 14 CHEW. TABS.",
-        "ar": "سينجولاير بايد. 14 تشيو"
-      },
-      {
-        "en": "SINGULAIR 4 MG PAED. ORAL GRAN. 14 SACHETS",
-        "ar": "سينجولاير بايد. أورال جران"
-      },
-      {
         "en": "SINGULAIR 5 MG 14 CHEW. TAB.",
         "ar": "سينجولاير 14 تشيو"
       },
       {
-        "en": "STATUKAST 10 MG 10 SCORED F.C. TABS.",
-        "ar": "ستاتوكاست 10 سكوريد"
+        "en": "DELMONKAST 10MG 14 F.C. TABS.",
+        "ar": "ديلمونكاست"
       },
       {
-        "en": "STATUKAST 4 MG ORAL GRANULES 10 SACHETS",
-        "ar": "ستاتوكاست أورال"
+        "en": "MONTEARAB 10 MG 20 F.C. TABS.",
+        "ar": "مونتياراب"
+      },
+      {
+        "en": "RELIKAST 5MG 10 CHEWABLE TAB.",
+        "ar": "ريليكاست 10 تشيوابلي"
+      },
+      {
+        "en": "SEDOKAST 4MG 7 CHEWABLE TABS.",
+        "ar": "سيدوكاست 7 تشيوابلي"
+      },
+      {
+        "en": "CLEAR AIR 4MG 14 CHEWABLE TAB.",
+        "ar": "كليار أير 14 تشيوابلي"
+      },
+      {
+        "en": "MONTELOSAB 10 MG 14 F.C. TABS.",
+        "ar": "مونتيلوساب"
+      },
+      {
+        "en": "SINGUKAST 5MG 10 CHEWABLE TAB.",
+        "ar": "سينجوكاست 10 تشيوابلي"
       },
       {
         "en": "VENTASTHMA 10 MG 14 F.C. TABS.",
         "ar": "فينتاسثما"
       },
       {
-        "en": "WESTAIR 4 MG 14 SACHETS.",
-        "ar": "ويستاير"
+        "en": "ASMAKAST 5 MG 30 CHEWABLE TABS.",
+        "ar": "أسماكاست 30 تشيوابلي"
+      },
+      {
+        "en": "CLEAR AIR 5 MG 21 CHEWABLE TAB.",
+        "ar": "كليار أير 21 تشيوابلي"
+      },
+      {
+        "en": "MONTELAIR 4 MG 20 CHEWABLE TAB.",
+        "ar": "مونتيلاير 20 تشيوابلي"
+      },
+      {
+        "en": "MONTELAIR 5 MG 20 CHEWABLE TAB.",
+        "ar": "مونتيلاير 20 تشيوابلي"
+      },
+      {
+        "en": "MONTELURAMA 10 MG 20 F.C. TABS.",
+        "ar": "مونتيلوراما"
+      },
+      {
+        "en": "DELMONKAST 5MG 14 CHEWABLE TABS.",
+        "ar": "ديلمونكاست 14 تشيوابلي"
+      },
+      {
+        "en": "MONTELOSAB 4 MG 14 CHEWABLE TAB.",
+        "ar": "مونتيلوساب 14 تشيوابلي"
+      },
+      {
+        "en": "MONTELOSAB 5 MG 14 CHEWABLE TAB.",
+        "ar": "مونتيلوساب 14 تشيوابلي"
+      },
+      {
+        "en": "PIRONTAGONIST 10MG 20 F.C. TABS.",
+        "ar": "بيرونتاجونيست"
+      },
+      {
+        "en": "OPIKAST 10 MG 14 SCORED F.C. TABS.",
+        "ar": "أوبيكاست 14 سكوريد"
+      },
+      {
+        "en": "SINGULAIR 4 MG PAED. 14 CHEW. TABS.",
+        "ar": "سينجولاير بايد. 14 تشيو"
+      },
+      {
+        "en": "STATUKAST 10 MG 10 SCORED F.C. TABS.",
+        "ar": "ستاتوكاست 10 سكوريد"
+      },
+      {
+        "en": "LELIPEL 4MG 14 ORAL GRANULES IN SACHETS",
+        "ar": "ليليبيل 14 أورال إن ساتشيتس"
+      },
+      {
+        "en": "STATUKAST 4 MG ORAL GRANULES 10 SACHETS",
+        "ar": "ستاتوكاست أورال"
+      },
+      {
+        "en": "MONTELAIR 4 MG 14 ORAL GRANULES IN SACHETS",
+        "ar": "مونتيلاير 14 أورال إن ساتشيتس"
+      },
+      {
+        "en": "MONTELAIR 4 MG 28 ORAL GRANULES IN SACHETS",
+        "ar": "مونتيلاير 28 أورال إن ساتشيتس"
+      },
+      {
+        "en": "SINGULAIR 4 MG PAED. ORAL GRAN. 14 SACHETS",
+        "ar": "سينجولاير بايد. أورال جران"
       }
     ],
     "edaPrices": [
@@ -8425,26 +10743,293 @@ export const edaSupplement = [
     ],
     "brandAliases": [
       {
+        "en": "M.P.A 40MG/ML VIAL",
+        "ar": ""
+      },
+      {
+        "en": "ACECZEMA CREAM 15 GM",
+        "ar": ""
+      },
+      {
+        "en": "PREDILONE 5MG 10 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "TETRACORT OINT. 20 GM",
+        "ar": ""
+      },
+      {
+        "en": "URBASON 4 MG 10 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "NEO-HAEMORRHAN 6 SUPP.",
+        "ar": ""
+      },
+      {
+        "en": "XILOPRED 4 MG 20 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "XILOPRED 16 MG 20 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "CORTIPHEN EYE DROPS 3 ML",
+        "ar": ""
+      },
+      {
+        "en": "CORTIPHEN EYE OINT. 5 GM",
+        "ar": ""
+      },
+      {
+        "en": "DEPO-MEDROL 40MG/ML VIAL",
+        "ar": ""
+      },
+      {
+        "en": "HOSTACORTIN H 5MG 30 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "TERGYNAN 10 VAGINAL TABS.",
+        "ar": ""
+      },
+      {
+        "en": "ACETASEE 1% EYE DROPS 5 ML",
+        "ar": ""
+      },
+      {
+        "en": "PREDNISOLONE 5 MG 20 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "PREDSOL 5MG/5ML SYRUP 50ML",
+        "ar": ""
+      },
+      {
+        "en": "XILONE 5MG/5ML SYRUP 100ML",
+        "ar": ""
+      },
+      {
+        "en": "PHENAMIDE-P EYE DROPS 5 ML",
+        "ar": ""
+      },
+      {
+        "en": "APICORTE FORTE 1% EYE DROPS",
+        "ar": ""
+      },
+      {
+        "en": "ORCHAPRED 0.5% EYE GEL 5 ML",
+        "ar": ""
+      },
+      {
+        "en": "PREDSOL 5MG/5ML SYRUP 125ML",
+        "ar": ""
+      },
+      {
+        "en": "PHAROGENTONE EAR DROPS 5 ML",
+        "ar": ""
+      },
+      {
+        "en": "PEDICORT 5MG/5ML SYP. 100 ML",
+        "ar": ""
+      },
+      {
+        "en": "PRED FORTE 1% EYE DROPS 5 ML",
+        "ar": ""
+      },
+      {
+        "en": "PREDNIS 5MG/5ML SYRUP 100 ML",
+        "ar": ""
+      },
+      {
+        "en": "APIGENT-P EYE/EAR DROPS 5 ML",
+        "ar": ""
+      },
+      {
+        "en": "APIGENT-P EYE/EAR OINT. 5 GM",
+        "ar": ""
+      },
+      {
+        "en": "ISOMAXIN EYE/EAR DROPS 10 ML",
+        "ar": ""
+      },
+      {
+        "en": "URBASON RETARD 4 MG 10 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "URBASON RETARD 8 MG 10 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "PHARMA PRED 1% EYE DROPS 5 ML",
+        "ar": ""
+      },
+      {
+        "en": "UNIPRIDOL 5MG/5ML SYP. 100 ML",
+        "ar": ""
+      },
+      {
+        "en": "SOLU-MEDROL 1GM I.M./I.V.VIAL",
+        "ar": ""
+      },
+      {
+        "en": "NEOPRED-P EYE/EAR SUSP. 10 ML",
+        "ar": ""
+      },
+      {
+        "en": "HOSTAPRED 5MG/5ML SYRUP 100 ML",
+        "ar": ""
+      },
+      {
+        "en": "ISOPTO CETAPRED EYE DROPS 5 ML",
+        "ar": ""
+      },
+      {
         "en": "PREDNISOLONE 1% EYE DROPS 5 ML",
         "ar": "بريدنيسولوني 1% إيي"
       },
       {
-        "en": "PREDNISOLONE 20 MG 20 ORODISPERSIBLE TABS.",
-        "ar": "بريدنيسولوني 20 أوروديسبيرسيبلي"
+        "en": "SOLU-MEDROL 500MG I.M./I.V.VIAL",
+        "ar": ""
       },
       {
-        "en": "PREDNISOLONE 5 MG 20 TABS.",
-        "ar": "بريدنيسولوني"
+        "en": "ISOPTO STEROFRIN EYE DROPS 5 ML",
+        "ar": ""
+      },
+      {
+        "en": "OPTIPRED 10MG/ML EYE DROPS 5 ML",
+        "ar": "أوبتيبريد /مل إيي"
+      },
+      {
+        "en": "SALCODIN 10MG/ML EYE DROPS 5 ML",
+        "ar": "سالكودين /مل إيي"
+      },
+      {
+        "en": "ECONOPRED PLUS 1% EYE DROPS 5 ML",
+        "ar": "إكونوبريد بلوس 1% إيي"
+      },
+      {
+        "en": "CORTIBIOTAN EYE SUSP. DROPS 10 ML",
+        "ar": ""
+      },
+      {
+        "en": "NEO-HAEMORRHAN RECTAL OINT. 12 GM",
+        "ar": ""
+      },
+      {
+        "en": "PREDSOL FORTE 15MG/5ML SYRUP 60ML",
+        "ar": "بريدسول فورتي /"
+      },
+      {
+        "en": "XILONE FORTE 15MG/5ML SYRUP 100ML",
+        "ar": "كسيلوني فورتي /"
+      },
+      {
+        "en": "ORCHAPRED 1% SUSP. EYE DROPS 10 ML",
+        "ar": "أورتشابريد 1% . إيي"
+      },
+      {
+        "en": "PREDSOL FORTE 15MG/5ML SYRUP 100ML",
+        "ar": "بريدسول فورتي /"
+      },
+      {
+        "en": "PEDICORT FORTE 15MG/5ML SYP. 100 ML",
+        "ar": "بيديكورت فورتي / سيب"
+      },
+      {
+        "en": "METHYLPREDNISOLONE MYLAN 1G 10 VIALS",
+        "ar": ""
       }
     ],
     "edaPrices": [
+      4.3,
+      5.5,
+      6,
+      6.5,
+      7,
+      7.5,
+      8,
+      8.5,
+      9.5,
+      10,
+      11.5,
+      12,
       13.2,
+      15,
+      16,
+      18,
+      22,
       24,
-      115
+      26,
+      29,
+      34,
+      38,
+      39,
+      40,
+      43,
+      45,
+      49,
+      52,
+      54,
+      57,
+      63,
+      69,
+      72,
+      74,
+      76,
+      79.5,
+      84,
+      104,
+      115,
+      116,
+      142,
+      180,
+      202.5,
+      214,
+      250,
+      360,
+      400,
+      1225,
+      2250
     ],
     "edaManufacturers": [
+      "GLOBAL NAPI PHARMACEUTICALS",
+      "RAMEDA",
+      "AMMAN PHARMACEUTICAL CO - JORDAN > ADM FOR TRADING & PROJECTS-EGYPT",
+      "EPCI > ANDALOUS PHARMA",
+      "ANDALOUS PHARMA",
+      "NOVARTIS > NOVARTIS SCIENTIFIC OFFICE",
+      "EIPICO",
+      "SANOFI",
       "PHARCO",
-      "ARAB DRUG COMPANY (ADCO)"
+      "JAMJOOM PHARMACEUTICALS",
+      "ORCHIDIA PHARMACEUTICAL INDUSTRIES > ORCHIDIA",
+      "AL ESRAA PHARMACEUTICAL OPTIMA",
+      "RAMEDA > PHARCO",
+      "ALLERGAN > SOFICOPHARM",
+      "KAHIRA",
+      "PHAROPHARMA",
+      "ARAB DRUG COMPANY (ADCO)",
+      "EVA PHARMA",
+      "BORG",
+      "SANOFI WINTHROP > SANOFI",
+      "UNIPHARMA CO. > UNIPHARMA",
+      "EUROPEAN EGYPTIAN PHARM. IND.",
+      "AMOUN",
+      "SIGMA TEC",
+      "RAMEDA > ALCON",
+      "MISR",
+      "EIPICO > PFIZER",
+      "CHEMIPHARM > PHARCO B",
+      "GLOBAL PHARMACEUTICAL INDUSTRIES",
+      "MYLAN S.A.S-FRANCE > RAMCO",
+      "PFIZER",
+      "EIPICO > ALLERGAN",
+      "RAMEDA > LABORATOIRES OF DOCTOR E.BOUCHARA",
+      "SANOFI AVENTIS > SANOFI",
+      "PENTA PHARMA"
     ],
     "verified": true
   },
@@ -8462,15 +11047,304 @@ export const edaSupplement = [
     ],
     "brandAliases": [
       {
-        "en": "DEXAMETHASONE 0.1MG/ML SYP. 100 ML",
-        "ar": "ديكساميثاسوني /مل سيب"
+        "en": "APIDONE SYRUP 125ML",
+        "ar": ""
+      },
+      {
+        "en": "OTAL EAR DROPS 5 ML",
+        "ar": ""
+      },
+      {
+        "en": "PAIN FREE GEL 20 GM",
+        "ar": ""
+      },
+      {
+        "en": "DEXAPHEN SYRUP 120ML",
+        "ar": ""
+      },
+      {
+        "en": "VENDEXINE SYRUP 125ML",
+        "ar": ""
+      },
+      {
+        "en": "DEXONIUM 8MG/2ML AMP.",
+        "ar": ""
+      },
+      {
+        "en": "PHENADONE SYRUP 100 ML",
+        "ar": ""
+      },
+      {
+        "en": "PHENADONE SYRUP 125 ML",
+        "ar": ""
+      },
+      {
+        "en": "DEXAPANTHEN CREAM 15 GM",
+        "ar": ""
+      },
+      {
+        "en": "ZONACIP EAR DROPS 15 ML",
+        "ar": ""
+      },
+      {
+        "en": "ORAZONE 0.5 MG 20 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "DEXAFLOX EYE DROPS 5 ML",
+        "ar": ""
+      },
+      {
+        "en": "DEXATROL EYE OINT. 5 GM",
+        "ar": ""
+      },
+      {
+        "en": "F-CORTEN 4MG/ML 3 AMPS.",
+        "ar": ""
+      },
+      {
+        "en": "ALEX-PANTHEN CREAM 20 GM",
+        "ar": ""
+      },
+      {
+        "en": "TOBRACOID EYE DROPS 5 ML",
+        "ar": ""
+      },
+      {
+        "en": "SPERSADEX COMP EYE DROPS",
+        "ar": ""
+      },
+      {
+        "en": "DELTASONE 0.75MG 30 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "DEXAZONE 0.5 MG 20 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "DEXAZONE 0.5 MG 60 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "DEXAGRAND EYE DROPS 5 ML",
+        "ar": ""
+      },
+      {
+        "en": "EPIDRON 4MG/ML VIAL 2 ML",
+        "ar": ""
+      },
+      {
+        "en": "DEXATHALM EYE DROPS 5 ML",
+        "ar": ""
+      },
+      {
+        "en": "NAUDIBACT EAR DROPS 5 ML",
+        "ar": ""
+      },
+      {
+        "en": "CO- AVAZIR EYE OINT. 5 GM",
+        "ar": ""
+      },
+      {
+        "en": "DEXATOBRIN EYE OINT. 5 GM",
+        "ar": ""
+      },
+      {
+        "en": "OPTIDEX -T EYE DROPS 5 ML",
+        "ar": ""
+      },
+      {
+        "en": "TOBRADEX EYE OINT. 3.5 GM",
+        "ar": ""
+      },
+      {
+        "en": "OCCUMYCINE EYE DROPS 5 ML",
+        "ar": ""
+      },
+      {
+        "en": "IZODAXINOL EYE DROPS 5 ML",
+        "ar": ""
+      },
+      {
+        "en": "MAXITROL EYE OINT. 3.5 GM",
+        "ar": ""
+      },
+      {
+        "en": "NEOPOLYDEX EYE SUSP. 5 ML",
+        "ar": ""
+      },
+      {
+        "en": "DROPIFLOX OTIC DROPS 15 ML",
+        "ar": ""
+      },
+      {
+        "en": "PEOPO-OTIC EAR DROPS 15 ML",
+        "ar": ""
+      },
+      {
+        "en": "COMPICHLOR EYE DROPS 10 ML",
+        "ar": ""
+      },
+      {
+        "en": "DEXARON PLUS EYE/EAR OINT.",
+        "ar": ""
+      },
+      {
+        "en": "DEXANOCORTEN 8MG/2ML 3 AMP",
+        "ar": ""
+      },
+      {
+        "en": "DROPIFLOX OTIC DROPS 7.5 ML",
+        "ar": ""
+      },
+      {
+        "en": "T GRAND PLUS EYE DROPS 5 ML",
+        "ar": ""
+      },
+      {
+        "en": "CYANARO PLUS EYE DROPS 5 ML",
+        "ar": ""
+      },
+      {
+        "en": "DUOEFFECTUM EYE DROPS 10 ML",
+        "ar": ""
+      },
+      {
+        "en": "DEXATROL EYE/EAR DROPS 5 ML",
+        "ar": ""
+      },
+      {
+        "en": "MYCUTIN D TOP. CREAM. 15 GM",
+        "ar": ""
+      },
+      {
+        "en": "ORCHADEXOLINE EYE DROPS 5 ML",
+        "ar": ""
+      },
+      {
+        "en": "DEXACIPAREX OTIC SUSP. 15 ML",
+        "ar": ""
+      },
+      {
+        "en": "ORAZONE 0.1MG/ML SYRUP 120ML",
+        "ar": ""
+      },
+      {
+        "en": "FORTYMOX PLUS EYE DROPS 5 ML",
+        "ar": ""
+      },
+      {
+        "en": "OCUPHENICOL-D  EYE DROPS 5 ML",
+        "ar": ""
+      },
+      {
+        "en": "SELECTOMYCIN D EYE DROPS 5 ML",
+        "ar": ""
+      },
+      {
+        "en": "TOBRADEX EYE SUSP. DROPS 5 ML",
+        "ar": ""
       }
     ],
     "edaPrices": [
-      4.5
+      4.5,
+      5,
+      5.5,
+      6,
+      6.75,
+      7,
+      8,
+      8.5,
+      9,
+      9.75,
+      10,
+      10.5,
+      11.5,
+      12,
+      12.5,
+      13,
+      15,
+      16,
+      16.2,
+      17,
+      18.5,
+      19,
+      20,
+      21,
+      22,
+      24,
+      26.5,
+      27,
+      29,
+      30,
+      32,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      45,
+      46,
+      48,
+      50,
+      51,
+      53,
+      60,
+      63,
+      64,
+      65,
+      72,
+      73,
+      74,
+      76,
+      82,
+      93,
+      136,
+      18353
     ],
     "edaManufacturers": [
-      "MEMPHIS"
+      "ALEXANDRIA",
+      "EL NILE.",
+      "AMOUN",
+      "PHARCO",
+      "UNISWAB",
+      "ARAB DRUG COMPANY (ADCO)",
+      "EVA PHARMA",
+      "RAMEDA > TALENT PHARMA",
+      "ORCHIDIA PHARMACEUTICAL INDUSTRIES > ORCHIDIA",
+      "GRAND PHARMA > DELTA GRAND PHARMA",
+      "DELTA GRAND PHARMA > MARCYRL PHARMACEUTICAL INDUSTRIES (MPI)",
+      "RAMEDA > CONCORD PHARMACEUTICAL INDUSTRIES",
+      "GRAND PHARMA > GLENMARK PHARMACEUTICALS",
+      "PHAROPHARMA",
+      "EIPICO",
+      "JAMJOOM PHARMACEUTICALS",
+      "RAMEDA",
+      "DELTA GRAND PHARMA",
+      "SIGMA TEC",
+      "RAMEDA > HIKMA PHARMA",
+      "ALCON > NOVARTIS SCIENTIFIC OFFICE",
+      "NOVARTIS > NOVARTIS SCIENTIFIC OFFICE",
+      "EXCELVISION AG  SWITZERLAND > NOVARTIS",
+      "MINA PHARM > DR.MANN-GERMANY",
+      "MEMPHIS",
+      "INAD PHARMA",
+      "KAHIRA",
+      "FUTURE PHARMACEUTICAL INDUSTRIES (FPI) > BIOCAPITAL PHARMA",
+      "ALLERGAN",
+      "CHEMIPHARM",
+      "RAMEDA > PHARCO",
+      "AMRIYA",
+      "MUP",
+      "MEMPHIS > PHAROPHARMA",
+      "MERCK KGAA  F.R.GERMANY > UNITED COMPANY FOR DISTRIBUTION",
+      "HIKMA SPECIALIZED PHARMACEUTICALS",
+      "GLOBAL ADVANCED PHARMACEUTICALS (GAP) > MONOPHARMA PHARMACEUTICALS",
+      "MINA PHARM",
+      "SEDICO > SCHERING PLOUGH",
+      "EUROPEAN EGYPTIAN PHARM. IND."
     ],
     "verified": true
   },
@@ -8488,47 +11362,189 @@ export const edaSupplement = [
     ],
     "brandAliases": [
       {
-        "en": "METHOTREXATE (ACDIMA) 2.5MG 100 TABS.",
-        "ar": "ميثوتريكساتي"
+        "en": "MTX  25MG/ML VIAL",
+        "ar": ""
       },
       {
-        "en": "METHOTREXATE (ACDIMA) 50MG PD. FOR INJ. VIAL",
+        "en": "METHOCIP 50MG/2ML VIAL",
+        "ar": ""
+      },
+      {
+        "en": "MTX  25MG/ML 50MG VIAL",
+        "ar": ""
+      },
+      {
+        "en": "IMUTREXATE 5 MG 10 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "EMTHEXATE PF 25MG/ML VIAL",
+        "ar": ""
+      },
+      {
+        "en": "IMUTREXATE 10 MG 10 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "IMUTREXATE 15 MG 10 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "METHOTREXATE 25MG/ML VIAL",
+        "ar": ""
+      },
+      {
+        "en": "EMTHEXATE PF 100MG/ML VIAL",
+        "ar": ""
+      },
+      {
+        "en": "IMUTREXATE 2.5 MG 10 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "IMUTREXATE 7.5 MG 10 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "METHOTREXATE 2.5MG 100 TAB",
+        "ar": ""
+      },
+      {
+        "en": "METHOTREXATE 2.5MG 30 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "METHOTREXATE 2.5MG 100 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "METHOTREXATE-EBEWE 50MG/5ML VIAL",
+        "ar": ""
+      },
+      {
+        "en": "METHOTREXATE-EBEWE 5GM/50ML VIAL",
+        "ar": "ميثوتريكساتي-إبيوي /"
+      },
+      {
+        "en": "TUMICHEM 50MG/2ML I.M./I.V. VIAL",
+        "ar": "توميتشيم / ./"
+      },
+      {
+        "en": "METHOTREXATE-EBEWE  2.5MG  50 TAB.",
+        "ar": "ميثوتريكساتي-إبيوي"
+      },
+      {
+        "en": "UNITREXATE 50 MG 5 I.M. I.V. VIALS",
+        "ar": "أونيتريكساتي 5"
+      },
+      {
+        "en": "METHOTREXATE 50MG PD. FOR INJ. VIAL",
         "ar": "ميثوتريكساتي بد"
       },
       {
-        "en": "METHOTREXATE 2.5MG 100 TAB (ORION)",
-        "ar": "ميثوتريكساتي"
-      },
-      {
-        "en": "METHOTREXATE 2.5MG 30 TAB. (ORION)",
-        "ar": "ميثوتريكساتي"
-      },
-      {
-        "en": "METHOTREXATE 25MG/ML (20ML=500MG) VIAL",
-        "ar": "ميثوتريكساتي /مل"
-      },
-      {
-        "en": "METHOTREXATE 25MG/ML (2ML=50MG) VIAL",
-        "ar": "ميثوتريكساتي /مل"
+        "en": "METHOTREXATE-MYLAN 50MG/2ML 10 VIAL",
+        "ar": "ميثوتريكساتي-ميلان /"
       },
       {
         "en": "METHOTREXATE 500MG PD. FOR INJ. VIAL",
         "ar": "ميثوتريكساتي بد"
+      },
+      {
+        "en": "METHOTREXATE-EBEWE 100MG/ML VIAL 5 ML",
+        "ar": "ميثوتريكساتي-إبيوي /مل"
+      },
+      {
+        "en": "METHOTREXATE-MYLAN 500MG/20ML 10 VIAL",
+        "ar": "ميثوتريكساتي-ميلان /"
+      },
+      {
+        "en": "UNITREXATE 1 GM SOL. FOR I.M. I.V. INJ. I.V. INF.",
+        "ar": "أونيتريكساتي"
+      },
+      {
+        "en": "UNITREXATE 5 GM SOL. FOR I.M. I.V. INJ. I.V. INF.",
+        "ar": "أونيتريكساتي"
+      },
+      {
+        "en": "UNITREXATE 500 MG SOL. FOR I.M. I.V. INJ. I.V. INF.",
+        "ar": "أونيتريكساتي"
+      },
+      {
+        "en": "METOJECT 10 MG/0.2 ML I.M./I.V./S.C. PREFILLED SYRINGE",
+        "ar": "ميتوجيكت / ./ ./ . بريفيلليد سيرينجي"
+      },
+      {
+        "en": "METOJECT 15 MG/0.3 ML I.M./I.V./S.C. PREFILLED SYRINGE",
+        "ar": "ميتوجيكت / ./ ./ . بريفيلليد سيرينجي"
+      },
+      {
+        "en": "METOJECT 20 MG/0.4 ML I.M./I.V./S.C. PREFILLED SYRINGE",
+        "ar": "ميتوجيكت / ./ ./ . بريفيلليد سيرينجي"
+      },
+      {
+        "en": "METOJECT 25 MG/0.5 ML I.M./I.V./S.C. PREFILLED SYRINGE",
+        "ar": "ميتوجيكت / ./ ./ . بريفيلليد سيرينجي"
+      },
+      {
+        "en": "METOJECT 7.5 MG/0.15 ML I.M./I.V./S.C. PREFILLED SYRINGE",
+        "ar": "ميتوجيكت / ./ ./ . بريفيلليد سيرينجي"
+      },
+      {
+        "en": "METOJECT 12.5 MG/0.25 ML I.M./I.V./S.C. PREFILLED SYRINGE",
+        "ar": "ميتوجيكت / ./ ./ . بريفيلليد سيرينجي"
       }
     ],
     "edaPrices": [
+      14,
+      16,
+      16.8,
       26.4,
       32,
+      51,
+      60,
+      72,
+      77,
       84,
+      89,
+      90,
       95,
+      100,
       119,
+      120,
       130.25,
-      333.5
+      136,
+      195,
+      205,
+      248,
+      250,
+      275.5,
+      295,
+      300,
+      316,
+      333.5,
+      385,
+      391,
+      500,
+      625,
+      780,
+      1330,
+      1897
     ],
     "edaManufacturers": [
+      "PHARMACHEMIE-NETHERLANDS > COPAD PHARMA",
+      "EVA PHARMA",
+      "CIPLA LTD. - INDIA > STAR INTERNATIONAL COMPANY",
       "SHANGHAI SINE PHARMACEUTICAL CORPORATION LTD > ACDIMA INTERNATIONAL TRADING",
       "SHANXI PUDE PHARM. > ACDIMA INTERNATIONAL TRADING",
-      "ORION PHARMA-FINLAND > S.M. PHARMA"
+      "ORION PHARMA-FINLAND > S.M. PHARMA",
+      "SANDOZ > NOVARTIS SCIENTIFIC OFFICE",
+      "EBEWE > NOVARTIS SCIENTIFIC OFFICE",
+      "SANDOZ > NOVARTIS PHARMA SANDOZ DIVISION",
+      "MYLAN S.A.S-FRANCE > RAMCO",
+      "MEDAC > SUNNY MEDICAL",
+      "CHOONGWAE PHARMA-KOREA > GENERAL TECHNOLOGY-EGYPT",
+      "SEDICO",
+      "HIKMA SPECIALIZED PHARMACEUTICALS"
     ],
     "verified": true
   },
@@ -8546,52 +11562,52 @@ export const edaSupplement = [
     ],
     "brandAliases": [
       {
-        "en": "FINASTURA 5MG 30 F.C.TAB.",
-        "ar": "فيناستورا"
-      },
-      {
-        "en": "FINCAR 5MG 10 F.C. TAB.",
-        "ar": "فينكار"
-      },
-      {
-        "en": "FINJUVE 2.275 MG/ML TOPICAL SPRAY 18 ML",
-        "ar": "فينجوفي /مل"
-      },
-      {
-        "en": "MIXOSTERIDE 5 MG 14 F.C. TAB.",
-        "ar": "ميكسوستيريدي"
+        "en": "PROHAIR 1 MG 30 TAB.",
+        "ar": ""
       },
       {
         "en": "NOPECIA 1 MG 30 CAPS.",
-        "ar": "نوبيسيا"
-      },
-      {
-        "en": "PROHAIR 1 MG 30 TAB.",
-        "ar": "بروهاير"
-      },
-      {
-        "en": "PROSCAR 5MG 28 F.C. TAB.",
-        "ar": "بروسكار"
-      },
-      {
-        "en": "PROSTAT 5MG 14 F.C. TABS.",
-        "ar": "بروستات"
-      },
-      {
-        "en": "PROSTEC 5 MG 14 F.C.TAB.",
-        "ar": "بروستيك"
+        "ar": ""
       },
       {
         "en": "PROSTRIDE 5MG 30 CAPS.",
-        "ar": "بروستريدي"
+        "ar": ""
       },
       {
-        "en": "ROYALSTERIDE 5 MG 20 F.C. TABS. (N/A)",
-        "ar": "رويالستيريدي"
+        "en": "FINCAR 5MG 10 F.C. TAB.",
+        "ar": ""
+      },
+      {
+        "en": "PROSCAR 5MG 28 F.C. TAB.",
+        "ar": ""
+      },
+      {
+        "en": "PROSTEC 5 MG 14 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "FINASTURA 5MG 30 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "PROSTAT 5MG 14 F.C. TABS.",
+        "ar": ""
+      },
+      {
+        "en": "MIXOSTERIDE 5 MG 14 F.C. TAB.",
+        "ar": ""
+      },
+      {
+        "en": "ROYALSTERIDE 5 MG 20 F.C. TABS.",
+        "ar": ""
       },
       {
         "en": "ROYALSTERIDE 5 MG 30 F.C. TABS.",
-        "ar": "رويالستيريدي"
+        "ar": ""
+      },
+      {
+        "en": "FINJUVE 2.275 MG/ML TOPICAL SPRAY 18 ML",
+        "ar": ""
       }
     ],
     "edaPrices": [
@@ -8635,48 +11651,76 @@ export const edaSupplement = [
     ],
     "brandAliases": [
       {
-        "en": "ANDAGRA 100 MG 12 F.C. TABS.",
-        "ar": "أنداجرا"
-      },
-      {
-        "en": "ANSELAFIL 10MG/ML PWD. FOR ORAL SUSP. 120 ML",
-        "ar": "أنسيلافيل /مل بود. أورال"
-      },
-      {
-        "en": "BRILLIANT 100MG 8 F.C.TAB",
-        "ar": "بريلليانت"
-      },
-      {
-        "en": "DORECTAFIL 100 MG 12 CHEW. TAB.",
-        "ar": "دوريكتافيل 12 تشيو"
-      },
-      {
-        "en": "ECTAGOR 100 MG 12 F.C. TABS.",
-        "ar": "إكتاجور"
-      },
-      {
-        "en": "ECTAGOR 50 MG 4 F.C. TABS.",
-        "ar": "إكتاجور"
-      },
-      {
-        "en": "EREC 100 MG 12 F.C. TABS.",
-        "ar": "إريك"
+        "en": "REKTALONG 30/50 2 TAB",
+        "ar": ""
       },
       {
         "en": "ERECTON 75MG 4 F.C.TAB",
-        "ar": "إريكتون"
+        "ar": ""
+      },
+      {
+        "en": "VEORA  25MG  1F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "VIGORAN 50MG 4 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "EZEQUEL 50 MG 4 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "NAPIFIT 100MG 4 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "NAPIFIT 100MG 8 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "PHRAGRA 25 MG 4 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "SILANIL 100MG 2 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "SILDEN 25 MG 10 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "SPIKA 100MG 12 F.C. TAB.",
+        "ar": ""
+      },
+      {
+        "en": "VIAGRA 50 MG 4 F.C.TABS.",
+        "ar": ""
+      },
+      {
+        "en": "VIGADOL 100MG 4 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "VIGOREX 50MG 4 F.C.TABS.",
+        "ar": ""
+      },
+      {
+        "en": "BRILLIANT 100MG 8 F.C.TAB",
+        "ar": ""
+      },
+      {
+        "en": "EREC 100 MG 12 F.C. TABS.",
+        "ar": ""
+      },
+      {
+        "en": "SILDENAMAX 100 MG 8 TABS.",
+        "ar": ""
       },
       {
         "en": "EZEQUEL 100 MG 9 F.C.TAB.",
         "ar": "إزيكويل"
-      },
-      {
-        "en": "EZEQUEL 50 MG 4 F.C.TAB.",
-        "ar": "إزيكويل"
-      },
-      {
-        "en": "FAROVIGA 100MG 12 F.C.TAB.",
-        "ar": "فاروفيجا"
       },
       {
         "en": "FAROVIGA 100MG 8 F.C.TAB.",
@@ -8687,68 +11731,52 @@ export const edaSupplement = [
         "ar": "فاروفيجا"
       },
       {
+        "en": "SILDEN 50 MG 4 F.C. TABS.",
+        "ar": "سيلدين"
+      },
+      {
+        "en": "SILVIGO 50MG 5 F.C. TABS.",
+        "ar": "سيلفيجو"
+      },
+      {
+        "en": "V-GONE 100 MG 8 F.C. TAB.",
+        "ar": "ف-جوني"
+      },
+      {
+        "en": "V-GONE 50 MG 10 F.C. TAB.",
+        "ar": "ف-جوني"
+      },
+      {
+        "en": "VIAGRA 100 MG 4 F.C.TABS.",
+        "ar": "فياجرا"
+      },
+      {
+        "en": "VIAVAG 25 MG 10 F.C.TABS.",
+        "ar": "فيافاج"
+      },
+      {
+        "en": "REKTALONG 60/100 2 TABLETS",
+        "ar": ""
+      },
+      {
+        "en": "SILDENAMAX 100 MG 24 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "ECTAGOR 50 MG 4 F.C. TABS.",
+        "ar": "إكتاجور"
+      },
+      {
+        "en": "FAROVIGA 100MG 12 F.C.TAB.",
+        "ar": "فاروفيجا"
+      },
+      {
         "en": "KEMAGRA 100 MG 4 F.C. TAB.",
         "ar": "كيماجرا"
       },
       {
-        "en": "KEMAGRA 100 MG 8 CHEW. TABS.",
-        "ar": "كيماجرا 8 تشيو"
-      },
-      {
-        "en": "NAPIFIT 100MG 4 F.C.TAB. (N/A)",
-        "ar": "نابيفيت"
-      },
-      {
-        "en": "NAPIFIT 100MG 8 F.C.TAB.",
-        "ar": "نابيفيت"
-      },
-      {
-        "en": "NERHASILDA 25 MG 16 ORODISPERSIBLE FILMS (N/A)",
-        "ar": "نيرهاسيلدا 16 أوروديسبيرسيبلي فيلمس"
-      },
-      {
-        "en": "NERHASILDA 50 MG 16 ORODISPERSIBLE FILMS",
-        "ar": "نيرهاسيلدا 16 أوروديسبيرسيبلي فيلمس"
-      },
-      {
-        "en": "NERHASILDA 75 MG 8 ORODISPERSIBLE FILMS",
-        "ar": "نيرهاسيلدا 8 أوروديسبيرسيبلي فيلمس"
-      },
-      {
-        "en": "ORAGAWELL 100MG 6 SCORED F.C. TABS.",
-        "ar": "أوراجاويلل 6 سكوريد"
-      },
-      {
-        "en": "ORGODENAFIL 100 MG 9 F.C.TAB.",
-        "ar": "أورجودينافيل"
-      },
-      {
-        "en": "PHRAGRA 25 MG 4 F.C.TAB.",
-        "ar": "فراجرا"
-      },
-      {
-        "en": "RESPATIO 20 MG 20 F.C.TABS.",
-        "ar": "ريسباتيو"
-      },
-      {
-        "en": "SATENAFIL 100 MG 16 F.C. TABS.",
-        "ar": "ساتينافيل"
-      },
-      {
         "en": "SILAGRA 25 MG 10 F.C. TAB.",
         "ar": "سيلاجرا"
-      },
-      {
-        "en": "SILANIL 100MG 2 F.C.TAB.",
-        "ar": "سيلانيل"
-      },
-      {
-        "en": "SILDATRONA 100 MG 12 F.C.TABS.",
-        "ar": "سيلداترونا"
-      },
-      {
-        "en": "SILDATRONA 100 MG 8 F.C.TABS.",
-        "ar": "سيلداترونا"
       },
       {
         "en": "SILDAVA 100MG 12 F.C. TAB.",
@@ -8763,148 +11791,64 @@ export const edaSupplement = [
         "ar": "سيلدين"
       },
       {
-        "en": "SILDEN 25 MG 10 F.C.TAB.",
-        "ar": "سيلدين"
-      },
-      {
-        "en": "SILDEN 50 MG 4 F.C. TABS.",
-        "ar": "سيلدين"
-      },
-      {
-        "en": "SILDEN 50 MG 4 ORODISPERSIBLE TABS.",
-        "ar": "سيلدين 4 أوروديسبيرسيبلي"
-      },
-      {
-        "en": "SILDENAROCK 100 MG 12 F.C. TABS",
-        "ar": "سيلديناروك"
-      },
-      {
-        "en": "SILDINAX 100 MG 3 F.C. TABS.",
-        "ar": "سيلديناكس"
-      },
-      {
-        "en": "SILDINOVA 10 MG PD. FOR SUSP. 120 ML",
-        "ar": "سيلدينوفا بد"
-      },
-      {
         "en": "SILVAGRA 100MG 10 F.C.TAB.",
         "ar": "سيلفاجرا"
-      },
-      {
-        "en": "SILVIGO 50MG 5 F.C. TABS.",
-        "ar": "سيلفيجو"
-      },
-      {
-        "en": "SPIKA 100MG 12 F.C. TAB.",
-        "ar": "سبيكا"
-      },
-      {
-        "en": "STIMU-MAX 100 MG 5 F.C.TABS.",
-        "ar": "ستيمو-ماكس"
-      },
-      {
-        "en": "V-GONE 100 MG 8 F.C. TAB.",
-        "ar": "ف-جوني"
-      },
-      {
-        "en": "V-GONE 50 MG 10 F.C. TAB.",
-        "ar": "ف-جوني"
-      },
-      {
-        "en": "VEORA  25MG  1F.C.TAB.",
-        "ar": "فيورا"
-      },
-      {
-        "en": "VETOYAGRA 100 MG 12 ORO-DISPERSIBLE TABS.",
-        "ar": "فيتوياجرا 12 أورو-ديسبيرسيبلي"
-      },
-      {
-        "en": "VETOYAGRA 100 MG 15 F.C. TABS.",
-        "ar": "فيتوياجرا"
-      },
-      {
-        "en": "VETOYAGRA 100 MG 5 F.C. TABS. (N/A)",
-        "ar": "فيتوياجرا"
-      },
-      {
-        "en": "VETOYAGRA 50 MG 5 F.C. TABS. (N/A)",
-        "ar": "فيتوياجرا"
-      },
-      {
-        "en": "VIAGRA 100 MG 4 F.C.TABS.",
-        "ar": "فياجرا"
-      },
-      {
-        "en": "VIAGRA 50 MG 4 F.C.TABS.",
-        "ar": "فياجرا"
-      },
-      {
-        "en": "VIAVAG 100 MG  10 F.C.TABS.",
-        "ar": "فيافاج"
-      },
-      {
-        "en": "VIAVAG 25 MG 10 F.C.TABS.",
-        "ar": "فيافاج"
-      },
-      {
-        "en": "VIGADOL 100MG 4 F.C.TAB.",
-        "ar": "فيجادول"
-      },
-      {
-        "en": "VIGORAMA 100 MG 4 F.C.TABS.",
-        "ar": "فيجوراما"
       },
       {
         "en": "VIGORAMA 50 MG 4 F.C.TABS.",
         "ar": "فيجوراما"
       },
       {
-        "en": "VIGORAN 50MG 4 F.C.TAB.",
-        "ar": "فيجوران"
-      },
-      {
         "en": "VIGOREX 100MG 12 F.C.TABS.",
         "ar": "فيجوريكس"
       },
       {
-        "en": "VIGOREX 50MG 4 F.C.TABS.",
-        "ar": "فيجوريكس"
+        "en": "RESPATIO 20 MG 20 F.C.TABS.",
+        "ar": "ريسباتيو"
+      },
+      {
+        "en": "VIAVAG 100 MG  10 F.C.TABS.",
+        "ar": "فيافاج"
+      },
+      {
+        "en": "VIGORAMA 100 MG 4 F.C.TABS.",
+        "ar": "فيجوراما"
       },
       {
         "en": "VIRECTA 100 MG 12 F.C.TABS.",
         "ar": "فيريكتا"
       },
       {
-        "en": "BIOLEGAM 100/60 MG 8 F.C. TABS.",
-        "ar": "بيوليجام 100/"
-      },
-      {
-        "en": "BIOLEGAM 50/30 MG 8 F.C. TABS.",
-        "ar": "بيوليجام 50/"
-      },
-      {
         "en": "EZOKO 100/60 MG 8 F.C. TABS.",
-        "ar": "إزوكو 100/"
+        "ar": ""
       },
       {
-        "en": "VIRECTA PLUS 100/60 MG 4 F.C.TABS.",
-        "ar": "فيريكتا بلوس 100/"
+        "en": "ANDAGRA 100 MG 12 F.C. TABS.",
+        "ar": "أنداجرا"
       },
       {
-        "en": "REKTALONG 30/50 2 TAB",
-        "ar": "ريكتالونج 30/50"
+        "en": "ECTAGOR 100 MG 12 F.C. TABS.",
+        "ar": "إكتاجور"
       },
       {
-        "en": "REKTALONG 60/100 2 TABLETS",
-        "ar": "ريكتالونج 60/100"
+        "en": "KEMAGRA 100 MG 8 CHEW. TABS.",
+        "ar": "كيماجرا 8 تشيو"
       },
       {
-        "en": "SILDENAMAX 100 MG 24 TABS.",
-        "ar": "سيلديناماكس"
+        "en": "SILDINAX 100 MG 3 F.C. TABS.",
+        "ar": "سيلديناكس"
       },
       {
-        "en": "SILDENAMAX 100 MG 8 TABS.",
-        "ar": "سيلديناماكس"
+        "en": "STIMU-MAX 100 MG 5 F.C.TABS.",
+        "ar": "ستيمو-ماكس"
+      },
+      {
+        "en": "VETOYAGRA 50 MG 5 F.C. TABS.",
+        "ar": "فيتوياجرا"
+      },
+      {
+        "en": "ORGODENAFIL 100 MG 9 F.C.TAB.",
+        "ar": "أورجودينافيل"
       }
     ],
     "edaPrices": [
@@ -9020,56 +11964,68 @@ export const edaSupplement = [
     ],
     "brandAliases": [
       {
-        "en": "ELTROXIN 100 MCG 100 TABS.",
-        "ar": "إلتروكسين"
-      },
-      {
-        "en": "ELTROXIN 50 MCG 100 TABS.",
-        "ar": "إلتروكسين"
-      },
-      {
-        "en": "EQUITHERA 100MCG 50 TABS.",
-        "ar": "إكويثيرا"
-      },
-      {
-        "en": "EQUITHERA 50MCG 50 TABS.",
-        "ar": "إكويثيرا"
-      },
-      {
-        "en": "EQUITHERA 75MCG 50 TABS.",
-        "ar": "إكويثيرا"
-      },
-      {
-        "en": "EUTHYROX 100MCG 100 TAB.",
-        "ar": "إوثيروكس"
-      },
-      {
-        "en": "EUTHYROX 100MCG 50 TAB. (N/A)",
-        "ar": "إوثيروكس"
-      },
-      {
         "en": "EUTHYROX 25MCG 50 TAB.",
-        "ar": "إوثيروكس"
-      },
-      {
-        "en": "EUTHYROX 50MCG 100 TAB.",
-        "ar": "إوثيروكس"
+        "ar": ""
       },
       {
         "en": "EUTHYROX 50MCG 50 TAB.",
-        "ar": "إوثيروكس"
+        "ar": ""
       },
       {
         "en": "EUTHYROX 75MCG 100TAB.",
-        "ar": "إوثيروكس"
+        "ar": ""
       },
       {
-        "en": "HYPOTHYRONOR 100 MCG 100 TABS.",
-        "ar": "هيبوثيرونور"
+        "en": "EUTHYROX 100MCG 50 TAB.",
+        "ar": ""
       },
       {
-        "en": "HYPOTHYRONOR 150 MCG 100 TABS.",
-        "ar": "هيبوثيرونور"
+        "en": "EUTHYROX 50MCG 100 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "EQUITHERA 50MCG 50 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "EQUITHERA 75MCG 50 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "EUTHYROX 100MCG 100 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "THYROXINE 50MCG 100 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "TYRAXINE 100MCG 100 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "ELTROXIN 50 MCG 100 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "EQUITHERA 100MCG 50 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "T4-THYRO 50 MCG 100 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "THYROXINE 100MCG 100 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "ELTROXIN 100 MCG 100 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "T4-THYRO 100 MCG 100 TABS.",
+        "ar": "ت4-ثيرو"
       },
       {
         "en": "HYPOTHYRONOR 25 MCG 100 TABS.",
@@ -9080,24 +12036,12 @@ export const edaSupplement = [
         "ar": "هيبوثيرونور"
       },
       {
-        "en": "T4-THYRO 100 MCG 100 TABS.",
-        "ar": "ت4-ثيرو"
+        "en": "HYPOTHYRONOR 100 MCG 100 TABS.",
+        "ar": "هيبوثيرونور"
       },
       {
-        "en": "T4-THYRO 50 MCG 100 TABS.",
-        "ar": "ت4-ثيرو"
-      },
-      {
-        "en": "THYROXINE 100MCG 100 TAB.",
-        "ar": "ثيروكسيني"
-      },
-      {
-        "en": "THYROXINE 50MCG 100 TAB.",
-        "ar": "ثيروكسيني"
-      },
-      {
-        "en": "TYRAXINE 100MCG 100 TAB.(N/A)",
-        "ar": "تيراكسيني"
+        "en": "HYPOTHYRONOR 150 MCG 100 TABS.",
+        "ar": "هيبوثيرونور"
       }
     ],
     "edaPrices": [
@@ -9145,241 +12089,1003 @@ export const edaSupplement = [
     ],
     "brandAliases": [
       {
-        "en": "VITAMIN A & E SOFT GELATIN 24 CAPS. (N/A)",
-        "ar": "فيتامين أ & إ سوفت جيلاتين"
+        "en": "JEXO-VIT",
+        "ar": ""
       },
       {
-        "en": "VITAMIN A 10  000 IU 100 SOFTGELS (ILLEGAL IMPORT)",
-        "ar": "فيتامين أ 10 100 سوفتجيلس"
+        "en": "PIGMAZOR",
+        "ar": ""
       },
       {
-        "en": "VITAMIN B 20 TABLETS",
-        "ar": "فيتامين ب"
+        "en": "L.C FORTE",
+        "ar": ""
       },
       {
-        "en": "VITAMIN B COMPLEX 200 SUGAR COATED TAB. (N/A)",
-        "ar": "فيتامين ب كومبليكس 200 سوجار كواتيد"
+        "en": "MINDVIGORA",
+        "ar": ""
       },
       {
-        "en": "VITAMIN B-12 2500 MCG 60 SUBLINGUAL MICROLOZENGES (ILLEGAL IMPORT)",
-        "ar": "فيتامين ب-12 60 سوبلينجوال ميكرولوزينجيس"
+        "en": "Q HEALTH  D3",
+        "ar": ""
       },
       {
-        "en": "VITAMIN B-COMPLEX AND VITAMIN B-12 180 TABLETS (ILLEGAL IMPORT)",
-        "ar": "فيتامين ب-كومبليكس أند فيتامين ب-12"
+        "en": "BONDX 30 TABS",
+        "ar": ""
       },
       {
-        "en": "VITAMIN B-COMPLEX AND VITAMIN B-12 90 TABLETS (PURITANS PRIDE)",
-        "ar": "فيتامين ب-كومبليكس أند فيتامين ب-12"
+        "en": "CODY 30 CAPS.",
+        "ar": ""
       },
       {
-        "en": "VITAMIN B12 1000 MCG 30 F.C.TABS. UBM",
-        "ar": "فيتامين ب12 . أوبم"
+        "en": "DALRAS 30TABS",
+        "ar": ""
       },
       {
-        "en": "VITAMIN C 1000 MG 100 CAPLETS (PURITANS PRIDE)",
-        "ar": "فيتامين ك 100 كابليتس"
+        "en": "FLORAX 20 CAP",
+        "ar": ""
       },
       {
-        "en": "VITAMIN C 1000 MG 20 EFF. TABS.",
-        "ar": "فيتامين ك 20 إفف"
+        "en": "FORPE 20 TABS",
+        "ar": ""
       },
       {
-        "en": "VITAMIN C 240 MG 20 EFF. TABS.",
-        "ar": "فيتامين ك 20 إفف"
+        "en": "GUSTO 30 TABS",
+        "ar": ""
       },
       {
-        "en": "VITAMIN C 500 MG 30 CHEW. TABS. (NEW BOSTON)",
-        "ar": "فيتامين ك 30 تشيو"
+        "en": "KIPRO 30 TABS",
+        "ar": ""
       },
       {
-        "en": "VITAMIN C 500 MG 30 TABS. (NEW BOSTON)",
-        "ar": "فيتامين ك"
+        "en": "LC DROPS 5 ML",
+        "ar": ""
       },
       {
-        "en": "VITAMIN C 500MG 20 CAPS.",
-        "ar": "فيتامين ك"
+        "en": "MANEW 30 TABS",
+        "ar": ""
       },
       {
-        "en": "VITAMIN C PLUS SEDICO 10 EFF. SACHETS (N/A)",
-        "ar": "فيتامين ك بلوس سيديكو 10 إفف. ساتشيتس"
+        "en": "MIXORA 20 CAP",
+        "ar": ""
       },
       {
-        "en": "VITAMIN C SEDICO 1G 10 EFF. SACHETS (N/A)",
-        "ar": "فيتامين ك سيديكو 10 إفف. ساتشيتس"
+        "en": "OSTEOGALTINOR",
+        "ar": ""
       },
       {
-        "en": "VITAMIN D 2000IU 30ML ORAL DROPS",
-        "ar": "فيتامين د أورال"
+        "en": "RENOVO D3 TAB",
+        "ar": ""
       },
       {
-        "en": "VITAMIN D KIDS 200IU 15 ML DROPS",
-        "ar": "فيتامين د كيدس"
+        "en": "TERNA 30 TABS",
+        "ar": ""
       },
       {
-        "en": "VITAMIN D&K 30 TABS",
-        "ar": "فيتامين د&ك"
+        "en": "TOOGERA SYRUP",
+        "ar": ""
       },
       {
-        "en": "VITAMIN D3 & K2 30 TABS",
-        "ar": "فيتامين د3 & ك2"
+        "en": "VEVAL 15 TABS",
+        "ar": ""
       },
       {
-        "en": "VITAMIN D3 10.000 I.U. 120 SOFTGELS (NOW)",
-        "ar": "فيتامين د3 10.000 إ.أو. 120 سوفتجيلس"
+        "en": "ARTHOJO 30TABS",
+        "ar": ""
       },
       {
-        "en": "VITAMIN D3 10.000 IU 100 SOFTGELS (PURITANS PRIDE)",
-        "ar": "فيتامين د3 100 سوفتجيلس"
+        "en": "CAMAGO 24 TABS",
+        "ar": ""
       },
       {
-        "en": "VITAMIN D3 10.000 IU 30 SOFTGELS (VITACARE)",
-        "ar": "فيتامين د3 30 سوفتجيلس"
+        "en": "CARO 20 PIECES",
+        "ar": ""
       },
       {
-        "en": "VITAMIN D3 10.000 IU 60 TABS. (NATROL)",
-        "ar": "فيتامين د3"
+        "en": "DULAMIN 20 FCT",
+        "ar": ""
       },
       {
-        "en": "VITAMIN D3 1000 IU 100 SOFTGELS (PURITANS PRIDE)",
-        "ar": "فيتامين د3 100 سوفتجيلس"
+        "en": "JOILASK 20 TAB",
+        "ar": ""
       },
       {
-        "en": "VITAMIN D3 2000 I.U. 120 SOFTGELS (NOW)",
-        "ar": "فيتامين د3 2000 إ.أو. 120 سوفتجيلس"
+        "en": "LECA 20 PIECES",
+        "ar": ""
       },
       {
-        "en": "VITAMIN D3 240.000 IU 15 ML DROPS",
-        "ar": "فيتامين د3"
+        "en": "MILKITA 30 TAB",
+        "ar": ""
       },
       {
-        "en": "VITAMIN D3 2400 I.U./ML ORAL DROPS 30 ML",
-        "ar": "فيتامين د3 2400 إ.أو./مل أورال"
+        "en": "RANDU 10 PILLS",
+        "ar": ""
       },
       {
-        "en": "VITAMIN D3 5000 I.U. 30 H.G. CAPS. (NEW BOSTON)",
-        "ar": "فيتامين د3 5000 إ.أو. 30 ه.ج"
+        "en": "RANDU 30 PILLS",
+        "ar": ""
       },
       {
-        "en": "VITAMIN D3 5000 IU 100 CAPS. (ALFA)",
-        "ar": "فيتامين د3"
+        "en": "SENDOBEN 30TAB",
+        "ar": ""
       },
       {
-        "en": "VITAMIN D3 5000 IU 100 SOFTGELS (PURITANS PRIDE)",
-        "ar": "فيتامين د3 100 سوفتجيلس"
+        "en": "TULKAL 20 TABS",
+        "ar": ""
       },
       {
-        "en": "VITAMIN D3 5000 IU 90 TABS. (NATROL)",
-        "ar": "فيتامين د3"
+        "en": "ADOX 10 SACHETS",
+        "ar": ""
       },
       {
-        "en": "VITAMIN D3 DROPS",
-        "ar": "فيتامين د3"
+        "en": "ALAFLIC 20 CAPS",
+        "ar": ""
       },
       {
-        "en": "VITAMIN D3 LIPOSOMAL 400 IU /DROP 15 ML ORAL DROP",
-        "ar": "فيتامين د3 ليبوسومال / أورال"
+        "en": "DETHREA D 10 ML",
+        "ar": ""
       },
       {
-        "en": "VITAMIN D3 ON TARGET 30 TABS",
-        "ar": "فيتامين د3 أون تارجيت"
+        "en": "AXICA  20 PILLS",
+        "ar": ""
       },
       {
-        "en": "VITAMIN D3 SUBLINGUAL 30 TABLETS",
-        "ar": "فيتامين د3 سوبلينجوال"
+        "en": "CARTY 30 PIECES",
+        "ar": ""
       },
       {
-        "en": "VITAMIN E 1000MG 24 CAPS.",
-        "ar": "فيتامين إ"
+        "en": "SAMALVI 30 TABS",
+        "ar": ""
       },
       {
-        "en": "VITAMIN E 400 MG 24 S.G. CAPS.",
-        "ar": "فيتامين إ 24 س.ج"
+        "en": "BONYROK 20 TABS",
+        "ar": ""
       },
       {
-        "en": "VITAMIN E FORTE 400 I.U. 20 CAPS.",
-        "ar": "فيتامين إ فورتي 400 إ.أو"
+        "en": "BRANCA 20 TABS.",
+        "ar": ""
       },
       {
-        "en": "VITAMIN E-400 IU 100 SOFTGELS (PURITANS PRIDE)",
-        "ar": "فيتامين إ- 100 سوفتجيلس"
+        "en": "BUTAWIN 30 TABS",
+        "ar": ""
       },
       {
-        "en": "VITAMIN K 10MG 10 CHEW. TABS. (N/A)",
-        "ar": "فيتامين ك 10 تشيو"
+        "en": "VERACA  30 TABS",
+        "ar": ""
       },
       {
-        "en": "VITAMIN K-2 (MENAQ7) 50 MCG 30 SOFTGELS (ILLEGAL IMPORT)",
-        "ar": "فيتامين ك-2 30 سوفتجيلس"
+        "en": "TITECH 20 PILLS",
+        "ar": ""
+      },
+      {
+        "en": "PICASTO 30 TABS",
+        "ar": ""
+      },
+      {
+        "en": "CALODO 20 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "CALPEND 30 TABS",
+        "ar": ""
+      },
+      {
+        "en": "CALUSA 30 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "CDZPEX 30 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "CODE 30 GUMMIES",
+        "ar": ""
+      },
+      {
+        "en": "CODE 60 GUMMIES",
+        "ar": ""
+      },
+      {
+        "en": "SEDA D3 30 TABS",
+        "ar": ""
       }
     ],
     "edaPrices": [
+      1.85,
       4,
-      7,
+      5,
+      6,
+      6.5,
+      7.5,
+      8,
+      10.75,
+      12,
       13.5,
-      16,
+      14.4,
+      15,
+      17.95,
+      18,
+      19,
+      20.25,
+      21,
+      21.6,
+      22,
+      22.5,
+      22.8,
+      24,
+      25,
+      26,
+      27,
+      28,
       30,
+      32,
+      32.4,
+      33,
+      33.6,
+      34,
+      34.25,
+      34.75,
       35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      40.5,
+      42,
+      43,
+      44,
+      44.9,
       45,
       46,
+      46.5,
+      47,
+      48,
+      49,
+      49.5,
+      49.75,
       50,
-      53,
+      52,
+      52.5,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      59.95,
       60,
+      61,
+      62,
       63,
+      64,
       65,
+      65.5,
+      65.9,
       66,
+      67,
+      68,
+      69,
       70,
+      71,
+      72,
+      74,
+      75,
+      76,
+      77,
+      78,
       79,
       80,
+      81,
+      82.5,
+      84,
+      84.5,
+      85,
+      87,
+      88,
       89,
+      90,
+      92,
+      94,
+      95,
+      96,
       98,
+      99,
+      100,
+      102,
+      105,
+      109,
       110,
+      114,
+      115,
+      116,
+      119,
       120,
+      125,
+      127,
+      128,
+      129,
+      129.9,
+      130,
+      132,
       135,
+      139,
+      140,
+      144,
+      145,
+      147,
+      148,
+      149,
       150,
+      155,
+      156,
+      157,
       160,
       165,
+      168,
+      169,
+      170,
+      175,
+      177,
+      179,
+      180,
+      185,
+      190,
+      195,
+      198,
+      199,
+      200,
+      210,
+      219,
+      220,
+      225,
+      230,
+      240,
+      243,
+      245,
+      250,
+      260,
+      265,
       270,
+      275,
+      277,
+      280,
+      285,
+      290,
+      295,
+      299,
+      300,
+      318.75,
+      320,
+      327,
+      330,
+      339,
+      340,
+      345,
+      350,
+      360,
+      375,
+      380,
+      385,
+      390,
+      395,
       399,
+      400,
+      410,
+      420,
+      425,
+      430,
+      435,
+      440,
+      450,
+      460,
       475,
+      490,
       500,
+      520,
+      550,
+      570,
+      585,
+      590,
+      600,
       650,
-      675,
+      690,
+      750,
       775,
+      785,
       850,
-      900,
+      890,
       999,
-      1300
+      1250,
+      1300,
+      2200,
+      2250,
+      4100,
+      4700,
+      5200
     ],
     "edaManufacturers": [
-      "PHARCO",
-      "PURITANS PRIDE",
+      "NUTRIXIA > GLAXO HEALTH PHARMA",
+      "ORGANIX FOR FOOD SUPPLEMENTS > MASA GROUP",
+      "ORGANIX > DIAMOND PHARMA",
+      "ORGANIX > MEDTRONIC",
+      "DAWA EGYPT INTERNATIONAL > TANA PHARMA",
+      "WELLBIOTICS > GLOBAL HEALTH",
+      "ORGANIX FOOD SUPPLEMENTS > IMPRESS PHARMA",
+      "ORGANO PHARMA > ALTAYSEER",
+      "MEDCARE > SALIX PHARMA",
+      "DOPPELHERZ > DEUTSCHE PHARMA",
+      "NUTRIXIX > GEOMARK",
+      "ORGANIX > GENERICA PHARMA",
+      "SIGMA > ASPIN PHARMACEUTICAL",
+      "OCTOBER PHARMA",
+      "MASH PREMIERE",
+      "CHEMIPHARM",
+      "DEBEIKY > ANDALOUS PHARMA",
+      "EGPI > JASPER FOR PHARMACEUTICAL INDUSTRIES",
+      "DEBEIKY",
+      "FUTURE PHARMACEUTICAL INDUSTRIES (FPI) > UTOPIA",
+      "EGYPHAR",
+      "MERCK SHARP & DOHME > GLOBAL NAPI PHARMACEUTICALS",
+      "ADWIA",
+      "EUROPEAN EGYPTIAN PHARM. IND. > PHARMA-TECH",
+      "ARAB CAPS > ALPHA GROUP COMPANY",
+      "VITANE PHARMA > ROTABIOGEN",
+      "AL ROWAD PHARMACEUTICAL INDUSTRIAL CO. > AL ESRAA PHARMACEUTICAL OPTIMA",
+      "AL ESRAA PHARMACEUTICAL OPTIMA",
+      "MASH PREMIERE > INCANDESCE",
+      "U.C.P > NEW EGYPT PHARMA",
+      "VITABIOTICS",
+      "SIGMA > IBN SINA",
+      "SIGMA > INTERNATIONAL TRADING OFFICE",
+      "PHAROPHARMA",
+      "MODERN PHARMACUTICAL  CENTER",
+      "ORGANIX > DOCTOMED",
+      "PRAXO PHARM",
       "DAWA EGYPT INTERNATIONAL > ALICO PHARMA",
-      "ALEXANDRIA",
-      "PURITANS PRIDE > ARAB IMPORTERS TRADING (AIT)",
-      "COPAD > UBM PHARMA",
+      "ALLMED LTD",
+      "AMOUN",
+      "> ARAX PHARM. IND.",
+      "MASH PREMIERE > BIOMED",
+      "> BIONIL",
+      "DULEXLAB > ROTABIOGEN",
+      "ORGANIX > ROTABIOGEN",
+      "> NEW BOSTON PHARMACEUTICALS",
+      "BRAND NUTRITION",
+      "MEDCARE > VORTEX",
+      "AMCOMED FOR PHARMACEUTICAL AND CHEMICAL INDUSTRIES > BROMED",
+      "MUP > POTEX PHARMA",
+      "BRAND NUTRITION > BRAND INTERNATIONAL PHARMA",
+      "COPAD PHARMA",
+      "COPAD EGYPT > IBM PHARMA",
+      "ORGANICS > TORRENT PHARMA",
+      "D.DEP > GLOBE INTERNATIONAL PHARMACEUTICALS",
+      "NAPCO",
+      "EL DELTA FOR SWEETS AND FOOD INDUSTRIES > DEVARTLAB PHARMA",
+      "PANAX PHARMA",
+      "COPAD > PRIME PHARMA",
+      "> TAG PHARMA",
+      "PHARMAZAD > LA PORTE PHARMA",
+      "COPAD EGYPT > THERAPY INC. INTERNATIONAL",
+      "DULEXLAB > LUKAN PHARMA",
+      "MUP",
+      "MINA PHARM",
+      "COPAD EGYPT > WELLNESS PHARMA",
+      "> PLASMA PHARM",
+      "CHEMIPHARM > MEMPHIS",
+      "DEVARTLAB PHARMA",
+      "DEVA",
+      "SAFE LIFE",
+      "> NUTRIPHARMA",
+      "ORCHIDIA PHARMACEUTICAL INDUSTRIES",
+      "AMCOMED > FUTINNOVA",
+      "COPAD EGYPT > GENESIS PHARMA",
+      "> HERO MEA TRADING",
+      "HP PHARMA",
+      "COPAD EGYPT > HOFFMANN PHARM",
+      "PRO-BIO PHARMA >",
+      "> NEW LIFE PHARMA",
+      "EVA PHARMA",
+      "HOCHSTER PHARMACEUTICAL INDUSTRIES",
       "MADDOX PHARMA",
-      "COPAD > NEW BOSTON PHARMACEUTICALS",
-      "> HELIAN",
-      "SEDICO",
+      "> MERVA PHARM",
+      "TADAWENA",
+      "MARCYRL PHARMACEUTICAL INDUSTRIES (MPI)",
+      "ORGANIX > BIOTEC",
+      "PHARMAZAD > PHARMA ONE",
+      "EL OUBOR FACTORY > BEWELL MEDICAL FOR MEDICINE TRADING",
+      "HIKMA",
+      "AUG PHARMA",
+      "EPIFARMA > SANDOZ",
+      "COPAD > EGYCAN PHARMA - ELWTANIA",
+      "ORGANIX > DRUG PHARMA EGYPT",
+      "HI-PHARM",
+      "HAPPY SWEET FOR NUTRITIONAL IND. > INFINITY CLINIC PHARMA",
+      "COPAD EGYPT > PEXPHARMA",
+      "NERHADOU INTERNATIONAL CO.",
+      "NOW FOODS > SOFICOPHARM",
+      "PURITANS PRIDE > ARAB IMPORTERS TRADING (AIT)",
+      "VITACARE > VITALIFE",
+      "NATROL",
+      "ALFA VITAMINS LABORATORIES > ARAB IMPORTERS TRADING (AIT)",
+      "> WARNEX",
+      "BRAND NUTRITION > MARKETOVA PHARMA HEALTH CARE",
+      "NUTRIXIA > INFINITY PHARM",
+      "MULTICARE",
+      "HORUS FOR PHARMACEUTICAL PRODUCTS",
+      "MEDCARE > INFINITY PHARM",
+      "DEBEIKY > GOLDEN QUEEN",
+      "MED CARE > GEPARD PHARMA",
+      "BRAND NUTRITION > PHARMA GRAM",
+      "PHARMA ZAD > XTRA MED",
+      "UNIPHARMA CO. > AL HADIDI PHARMA",
+      "ARAB CAPS > MASTER MED PHARMA",
+      "BRAND FSC > 2MS PHARMA",
+      "ORGANOPHARMA > PLANET CURE",
+      "EGYPHARMA",
+      "ORGANIX > ALPHABET PHARMA",
+      "ANDALOUS PHARMA",
+      "AMCOMED",
+      "COPAD EGYPT > DOLLS PHARMA",
+      "FUTURE PHARMACEUTICAL INDUSTRIES (FPI)",
+      "PHARMAZAD > ELSEBAEY",
+      "MED VARE > SPIRIT PHARM",
+      "DAWA EGYPT INTERNATIONAL > PHYTOMED",
+      "GRAND PHARMA",
+      "PHARMA ZAD > BEE GROUP & PHARMATREAT",
+      "LIFE SAVER INTERNATIONAL FOR FOOD SUPPLEMENTS > ASTRA ZED PHARMACEUTICAL",
+      "ORGANIX COMPANY > EL-NOR PHARMACECEUTICAL COMPANY",
+      "MED CARE > BIO BRAND",
+      "ORGANIX > THREE MED PHARMA",
+      "BRAND PHARMA > MASTER PHARMA",
+      "ORGANIX COMPANY > MASA GROUP",
+      "COPAD EGYPT > ESSPERO PHARMA",
+      "ORGANIX INDUSTRY > MEDI CURE",
+      "PHARMAZAD > HEALTH PALACE PHARMA",
+      "PHARMA ZAD > HEMALIFE PHARMACEUTICALS",
+      "COPAD > VIGOR MED PHARAMA",
+      "OBAID PHARMA COMPANY",
+      "DAWA EGYPT INTERNATIONAL > CETCOMED",
+      "COPAD EGYPT > CORE PHARM",
+      "ORGANIX > ZYMA BEAUTY PHARMA",
+      "COPAD EGYPT > MULLAN COSMETICS",
+      "ORGANIX > PEDIA PHARM",
+      "ORGANIX > UNITED INTERNATIONAL PHARMA",
+      "ALWEFAK ALSOODI > ROVA-MED",
+      "COPAD EGYPT > DAWAA COMPANY FOR PHARMACEUTICAL INDUSTRIES",
+      "COPAD > DUBAI PHARMA",
+      "KARMAN FOR PHARMACEUTICAL INDUSTRIES > PDRTC",
+      "PHARMAZAD > BEE GROUP & PHARMATREAT",
       "ORGANIX > SOUL PHARMA",
+      "ORGANIX > ATLANTIS PHARMA",
+      "HAPPY SWEET CO. FOR FOOD INDUSTRIES > AVANTGARDE PHARMA EGYPT",
+      "AVERROES PHARMA",
+      "NUTRIXIA > AVICENNA PHARM",
+      "BRAND INTERNATIONAL > AUC PHARMA",
+      "PHARMA ZAD > NOUVITAPHARM",
+      "GRANTY FOOD INDUSTRIES > GENERICA PHARMA",
+      "ORGANIX > BAP PHARMA FOR TRADING AND EXPORT",
+      "NUTRIXIA > PHARMA LIFE",
+      "FAMILY PHARMACIA > ARAZAINI CHEMICALS",
+      "PHARMAZAD > TRUENESTA",
+      "EUROPEAN EGYPTIAN PHARM. IND.",
+      "ORGANIX > EP PHARMA",
+      "ORGANIX FOR DIETARY SUPPLEMENTS > UNICHIMA",
+      "ORGANIX > BEWELL MEDICAL FOR MEDICINE TRADING",
+      "FUSION PHARM",
+      "PHARMA ZAD > GOOD HEALTH",
+      "COPAD EGYPT > GENIO PHARMA",
+      "ORGANIX > ALKINDI",
+      "LIFE SAVER > UPTOWN PHARMA EGYPT",
+      "PHARMAZAD > SAFE MED",
+      "BIOMED",
+      "KARMAN FOR PHARMACEUTICAL INDUSTRIES > ASENA PHARMA",
+      "> CIRA PHARMA",
+      "> BIOWORLD",
+      "> TRISTAR",
+      "PHARMAZAD > RENOVO",
+      "NAPCO > NOVELL PHARMA",
+      "MED CARE > ORGANIX PHARMA",
+      "BRAND NUTRITION > PERLA PHARMA",
+      "> SAFE LIFE",
+      "> CORE PHARM",
+      "ORGANIX > HYALOMED",
+      "PHARMAZAD > BEAUTY PHENOMENA",
+      "KARMAN PHARMACEUTICAL > NUTRABIO",
+      "PHARMA ZAD > J.C.PHARM",
+      "ORGANIX > ICONIC PHARMACEUTICAL",
+      "GLOBE INTERNATIONAL PHARMACEUTICALS",
+      "> INTEGRA PHARM",
+      "COPAD > IBM PHARMA",
+      "HEALTHY TECH PHARMA > NUTR-MED PHARMA",
+      "ORGANIX FOR DIETARY SUPPLEMENTS > HEALTHY SUPPLEMENT COMPANY",
+      "ORGANIX FOR FOOD SUPPLEMENTS > ROTABIOGEN",
+      "> DAWAK PHARM",
+      "MED CARE > GLOBAL HEALTH",
+      "COPAD EGYPT > PLASMA PHARM",
+      "RAMEDA",
+      "PHARMAZAD > NEUTRA COMPANY",
+      "PHARMAZAD > SEMAF PHARMA",
+      "GRAND PHARMA > NOVELL PHARMA",
+      "PHARMA ZAD > RESIPI PHARMA",
+      "PHARMA ZAD > SAMANTA GROUP",
+      "> DILIGENT PHARMACEUTICLAS",
+      "> FALCON GROUP",
+      "PHARMAZAD > CHEMAHERB",
+      "ORGANOPHARMA",
+      "COPAD > PHARMAMIX FOR NAMRDA",
+      "ORGANIX > MR EGYPT",
+      "ORGANIX > HAYAH",
+      "> MARVEL",
+      "BRAND NUTRITION > FORCE PHARMA",
+      "DELTA PHARMA > DEVARTLAB PHARMA",
+      "ORGANIX > BRONZE CALCIUM",
+      "MARVEL PHARMA GROUP > BUTA PHARM",
+      "COPAD > UBM PHARMA",
+      "DEBEIKY > API PHARMA",
+      "ORGANICS PHARMA > PRITTO PHARMA",
+      "MISR",
+      "IDI > EGYPHARMA",
+      "PHARMA ZAD > BIONIL",
+      "> SKY PHARMA",
+      "B.M. > MAXBEN PHARMACEUTICAL",
+      "DULEXLAB",
+      "> NOVATEC",
+      "PHARMA ZAD > ALWADI PHARMA",
+      "COPAD EGYPT > HEALTH POINT",
+      "FAMILY PHARMACIA > VAMIRA PHARMACEUTICALS",
+      "NUTRIXIA > GEOMARK",
+      "MED CARE > NUTRA PHARM",
+      "ORI DU > GIANT PHARMA",
+      "ELITE PHARMA",
+      "HIKMA PHARMA",
+      "SIGMA",
+      "EGPI",
+      "ECCOTRAVIN > TAKEDA",
+      "ORGANIX COMPANY > MASA",
+      "NUTRIXIA > DRUG PHARMA EGYPT",
+      "SMARTEC > PRIVADO PHARMA",
+      "OBAID PHARMA",
+      "FAMILY PHARMACIA > SPHINX PHARMA",
+      "MEDCARE > DAWA EGYPT PHARM",
+      "SEDICO",
+      "PHARMAZAD > DAWATECH",
+      "MEPACO",
+      "NUTRIXIA > WARNEX",
+      "COPAD > TRINITY PHARMA EGYPT",
+      "PHARMAZAD > BIOHEALTH COMPANY FOR MEDICINES",
+      "PHARMA ZAD GROUP > VENDOR PHARMA",
+      "COPAD > DOCTOR PHARMA",
+      "DELTA PHARMA",
+      "PHARMAZAD > INCOMMING",
+      "DAWA EGYPT > PRIME SOLUTIONS",
+      "ORGANIX NUTRITIONAL SUPPLEMENTS > DIAMOND LABS",
+      "NAPCO > MEDIX PHARM",
+      "MEDCARE > BIONEXT PHARMA",
+      "MEDCARE ELOBOUR > S3R PHARMA",
+      "PHARMAZAD > BRAND DRUG PHARMA",
+      "MEDCARE > PHOENIX PHARMA COMPANY",
+      "DAWA EGYPT > FRONTEDA",
+      "DAWA EGYPT INTERNATIONAL > FRONTEDA",
+      "COPAD PHARMA > MASTER MED PHARMA",
+      "MEDCARE > SCIENTIFIC CENTER",
+      "ORGANIX FOR FOOD SUPPLEMENT > MAGIC DOSE PHARMA",
+      "DAWA EGYPT > HEALTH&WELLNESS",
+      "BRAND NUTRITION > DRUG LAB PHARMACEUTICALS",
+      "NUTRIXIA > LINKOPHARM",
+      "ORGANIC PHARMA > RK PHARMA",
+      "COPAD > CURANNOVA PHARMACEUTICAL",
+      "LIVE INTERNATIONAL > INNOVAROO CEUTICAL",
+      "COPAD EGYPT > PEX PHARMA",
+      "NUTRIXIA > PASTEUR",
+      "COPAD",
+      "COPAD > AL ANSAR FOR MARKETING",
+      "DAWA EGYPT > KEY PHARMA",
+      "> GLOBE ALLIANCE MEDICA",
+      "ORGANIX > ACS",
+      "P&C > DILIGENT",
+      "ORGANIX FOR FOOD SUPPLEMENTS > SKILL INTERNATIONAL PHARMACEUTICAL",
+      "PHARMAZAD > ADVOCURE",
+      "ARAB CAPS > GOLDEN QUEEN",
+      "AL ESRAA PHARMACEUTICAL OPTIMA > BROTHER PHARMA",
+      "PHARMA ZAD > MG PHARMA",
+      "NUTRIXIA > BETA PHARMA",
+      "PHARMA ZAD > DAWA EGYPT PHARM",
+      "PHARMA ZAD > SPIRIT PHARM",
+      "NUTRIXIA > BESTRADE PHARMA",
+      "INFINITY PHARM",
+      "ORGANIC > TOTAL FUTURE",
+      "COPAD EGYPT",
+      "MARVEL",
+      "> BIOMED",
+      "ORGANIX > BIOMED",
+      "DAWA EGYPT INTERNATIONAL > NUTRAMED",
+      "PHARMA VITAL > LOXYMORE PHARMA",
+      "DAWA EGYPT > GLOBE INTERNATIONAL",
+      "DAWA EGYPT > QUAD PHARMACEUTICALS",
+      "KARMAN PHARMACEUTICAL INDUSTRIES > JAXTER PHARMACEUTICALS",
+      "ORGANIX FOR DIETARY SUPPLEMENTS > FAMILA",
+      "LIFE SAVER > FACT PHARMA",
+      "PHARMACIA PHARMACEUTICAL > PREVACURE PHARMA",
+      "DAWA EGYPT INTERNATIONAL > ROYAL CARE PHARMA",
+      "DAWA EGYPT INTERNET > MEDI DRUG PHARMA",
+      "SMARTEC PHARMACEUTICAL AND COSMETICS > MEDIXIR PHARMA",
+      "ORGANEX > OPTIMED",
+      "ORGANIX > ORIGINAL GROUP",
+      "P&C PELLETS AND CR PRODUCTS > NUTRA MEDICAL",
+      "PHARMA ZAD > HELIOPOLIS FOR PHARMACEUTICAL INDUSTRIES",
+      "ORGANIX > HOECHST",
+      "SMARTEC > MC PHARMA",
+      "ORGANIX > SALUS PHARMACEUTICAL",
+      "COPAD > SEDAR PHARMA",
+      "ORGANIX > GLIMMAR PHARMA",
+      "ORGANIX > SEHHA PHARMA",
+      "NEUTRA CARE > MULTI-INSIGHT PHARMA",
+      "ORGANIX NUTRITIONAL SUPPLEMENTS COMPANY > 4S PHARMA",
+      "INAD PHARMA",
+      "ORGANIX FOR FOOD > GEO PHARMACEUTICALS",
+      "DAWA EGYPT INTERNATIONAL > GLOBE INTERNATIONAL PHARMACEUTICALS",
+      "ORGANIX > EVOKA PHARMA",
+      "DAWA EGYPT > SAVI PHARMA",
+      "ORGANIX FOR DIETARY SUPPLEMENTS > XACCELL",
+      "SMARTEC FOR PHARMAMIX > PHARMAMIX",
+      "ORGANIX > NEBRAS PHARMA",
+      "PHARMAZAD > EGY MINDS",
+      "PHARMAZAD > ASIA PHARMACEUTICAL INDUSTRIES",
+      "DELTA GRAND PHARMA > DAWAA PHARMA",
+      "DAWAA PHARMA",
+      "AMRIYA",
+      "ORGANIX > SHIELD",
+      "ORGANIX FOR SUPPLEMENTS > EURO PHARMACEUTICAL",
+      "ORGANIX COMPANY > IVORY CARE PHARMA",
+      "COPAD EGYPT > PHARMAKEIA",
+      "ORGANIX > MH GROUP PHARMA",
+      "ORGANIX PHARMA > REMEDIUM PHARMACEUTICAL",
+      "MINAPHARM",
+      "ORGANIX PHARMA > GAPI PHARMA",
+      "DAWAA EGYPT > DELOITTE PHARMA",
+      "ORGANIX > CEVANO",
+      "ARAB CAPS > MULTICARE",
+      "ORGANIC PHARMA > EVENO PHARM",
+      "ORGANIX > MEDICOLENA",
+      "KARMAN > OBAID PHARMA",
+      "UTOPIA PHARMA",
+      "PHARMA ZAD > SQUIBAL",
+      "ORGANIX > DUOMED PHARMA",
+      "ORGANIX FOR FOOD SUPPLEMENTS > MEDCARE PHARMACEUTICALS",
+      "DULEX LAB",
+      "MEDCARE > WEA PHARMA",
+      "ORGANIX FOR FOOD SUPPLEMENTS > DUO LIFE FOR FOOD SUPPLEMENTS",
+      "ORGANIC PHARMA > SHEFAA EGYPT PHARMA",
+      "ZAD PHARMA GROUP > OBAID PHARMA EGYPT",
+      "DAWA EGYPT PHARMA > ROYAL CARE PHARMA",
+      "COPAD > GLORY MEDICAL",
+      "DAWA EGYPT INTERNATIONAL > ASTRATECH",
+      "ORGANIX > ENAR PHARMA",
+      "COPAD > PARKVILLE",
+      "ORGANO PHARMACUTICAL & CHEMICALS INDUSTRIES > EPICARE",
+      "ORGANIX DIETARY SUPPLEMENTS > ERA EGYPT PHARMA",
+      "DESMA PHARMA > PLATINUM PHARMA",
+      "PHARMA ZAD > PYRAMID PHARMA",
+      "NUTRIXIA > FALCON GROUP",
+      "DAWA EGYPT > MIAR PHARMA",
+      "ORGANIX > INCEPTA PHARMA",
+      "SUNLIFE PRODUCTIONS > ADVOCURE",
+      "COPAD > INTEGRA PHARM",
+      "PHARMAZAD > SAFE LIFE",
+      "> NEXUS INTERNATIONAL PHARMACEUTICALS",
+      "PHARMAZAD > SANTEX PHARMA",
+      "NUTRIXIA > LIBRA VALE",
+      "PHARMAZAD > NOVOGEN",
+      "GELITA HEALTH > BIOTECH PHARMA LTD.",
+      "ORGANIX FOR DIETARY SUPPLEMENT > MEDICAL SHINE",
+      "COPAD PHARMA > PLASMA PHARM",
+      "LOXYMORE PHARMA > MADDOX PHARMA",
+      "ORGANIX > OTH PHARMA",
+      "ORGANIX > MASTER PHARMA",
+      "PHARMAZAD > UNITED INTERNATIONAL PHARMA",
+      "EL OBOUR PHARMACEUTICAL INDUSTRIES > DIAMOND PHARMA COMPANY",
+      "OPTIMUM NUTRITION > RAMCO",
+      "DAWA EGYPT > HI-HEALTH PHARMACEUTICAL",
+      "ORGANIX PHARMA > GUERISON PHARMA",
+      "BMS PHARMA",
+      "ORGANIX FOR SUPPLEMENTS > PHARMA PENTA AGRO",
+      "> HANZA PHARMA",
+      "ORGANIX > ULTRA PHARMA",
+      "ORGANIX > TETRACARE LIMITED",
+      "LIFE SAVER > HEALZA PHARMA",
+      "ORGANICS > HEBTA PHARM",
+      "TADAWINA > HORIZON PHARMA",
+      "EL-OBOUR MODERN PHARM. IND. > SWA INTERNATIONAL",
+      "HERBALAND NATURALS INC. > PHARMA VISION",
+      "PHARMAZAD > DAWA EGYPT PHARM",
+      "> MEDIFACT GROUP",
+      "PREMIER INTERNATIONAL",
+      "MARCYRL",
+      "CONSUMED > RX HEALTHCARE",
+      "COPAD > INCANDESCE",
+      "MEDCARE > EXPLORE PHARM",
+      "COPAD > BIOGENIC PHARMA",
+      "COPAD > JANSO PHARM",
+      "FAMILY PHARMACIA > TOP Z",
+      "DEBEIKY > THERAPY INC. INTERNATIONAL",
+      "COPAD EGYPT > MASTER PHARMA",
+      "PHARMA ZAD > HEALING PHARMA",
+      "ORGANIX > PHARMA-ONE",
+      "DAWA EGYPT INTERNATIONAL > KARMED PHARM",
+      "ORGANIX > ZOLOX",
+      "ORGANIX FOOD SUPPLEMENTS COMPANY > EGY BIOTICS",
+      "AMCOMED > VARDEN PHARMACEUTICALS",
+      "AMCOMED > ORIGINAL GROUP",
+      "MED CARE > ADVANOVA PHARMA",
+      "COPAD EGYPT > DRUG PHARMA EGYPT",
+      "APEX PHARMA",
+      "COPAD > ADVOCURE BIO PHARMACEUTICAL",
+      "NUTRIXIA > HEALING PHARMA",
+      "BRAND INTERNATIONAL FSC > OPTIMA PHARMA",
+      "PHARMA ZAD > THYMUS PHARMA",
+      "MED CARE ELBOUR > MIRACLE GROUP PHARMACEUTICAL",
+      "ORGANIX > DRUGPHARMA EGYPT",
+      "ZAKORO > MEDIX PHARM",
+      "PHARMAZAD > PREMIUM PHARM",
+      "ORGANIX > TULKA PHARM GROUP",
+      "MEDCARE > VIOLINA",
+      "EMCO MED > ELGHAZY",
+      "ORGANIC PHARMA > DILIGENT PHARMACEUTICALS",
+      "DAWA EGYPT > MEDICA",
+      "SCIENTIFIC CENTER > ESSENCE PHARMA",
+      "PHARMA ZAD > PROVAK INTERNATIONAL FOR PHARMACEUTICAL IND",
+      "PHARMA ZAD > IBM PHARMA",
+      "ORGANIX FOR DIETARY SUPPLEMENTS > POLY CARE FOR FOOD SUPPLEMENT",
+      "NUTRIXIA > HEALTH FOR LIFE INTERNATIONAL PHARMACEUTICAL",
+      "MEDLINE FOR PHARMACEUTICAL INDUSTRY > LORAN PHARMA",
+      "ORGANIX > MAPCO",
+      "PHARMA ZAD > HEALTHY MEDICINE",
+      "PHARMA ZAD > NUTRIVILLE PHARMA",
+      "MARNYS > WALFARM",
+      "PHARMA ZAD > BME PHARMA",
+      "PHARMAZAD > EMC",
+      "> PARKVILLE PHARMACEUTICALS",
+      "GRANTY FOR FOOD INDUSTRIES > SOLOVIT FOR DIETARY SUPPLEMENT",
+      "> SMAFY PHARMA",
+      "MED CARE > CHEMIST PHARMA",
+      "PHARMAZAD > TEJEDA PHARMA",
+      "ORGANIX > GRAND EGYPT PHARMA",
+      "MEDCARE > SKY CARE PHARMA",
+      "> BLUEBELL PHARMACEUTICALS",
+      "MEDCARE > XANAX PHARMA",
+      "SWIVEL NUTRIENT INTERNATIONAL > NUTRILLION INTERNATIONAL FOR PHARMACEUTICAL AND FOOD SUPPLEMENT",
+      "COPAD EGYPT PHARMA > MODERN EGYPT PHARMA",
+      "ORGANIX > IPI",
+      "PHARMAZAD > JUSTIN PHARMA",
+      "ALVERTON > MOUNTAIN HEALTH",
+      "> INCANDESCE",
+      "PHARMAZAD > ESSENCE PHARMA",
+      "MEDCARE > DREAM PHARMA INTERNATIONAL",
+      "MEMPHIS",
+      "ORGANIX > NOVACURE",
+      "ECC NUTRITION HUB > MYVI",
+      "DAWA EGYPT INTERNATIONAL > HEXAGONPHARM",
+      "SMARTEC > VOLPE CURE",
+      "PRO-BIO PHARMA",
+      "BIOBOTS",
+      "ORGANIX FOR DIETARY SUPPLEMENTS > DREAM PHARMA INTERNATIONAL",
+      "ORGANIX > NORGESKA",
+      "LIFE SAVER INTERNATIONAL > BE HEALTHY MEDICINE - BHM",
+      "ORGANIX PHARMA > DIAMOND LABS",
+      "ORGANIX > ULTRA PHARMA FOR PHARMACEUTICAL INDUSTRIES",
+      "HEALTH WAVE > INNOVIA PHARMA",
+      "NUTRIXIA > TRUST PHARMA",
+      "DAWA EGYPT > SO WELL",
+      "ORGANIC  EGYPT > PHYTOMED PHARMA",
+      "PHARMA ZAD > SITA PHARMA",
+      "MED CARE > GLOBAL SMITH",
+      "DAWA EGYPT > PHYTOMED PHARMA",
+      "ORGANIX > DRUGPHARMA",
+      "GRANTY FOOD > EGY LUMERE",
+      "COPAD EGYPT > UTP",
+      "PHARMAZAD > NUTRA MEDICAL",
+      "ORGANIX > CELENOVA PHARMACEUTICAL",
+      "GLORIA PHARMA COMPANY > PARISHIA PHARMA",
+      "DAWA EGYPT INTERNATIONAL > RAND PHARMA",
+      "ORGANIX > TOP CARE PHAMA",
+      "PHARMAZAD > REXALL",
+      "MEDCARE > GLOBALSMITH",
+      "MEDCARE > NUTRIPHARMA",
+      "MED CARE > MEPCO PHARMA",
+      "COPAD > DRUG PHARMA EGYPT",
+      "LIFE SAVER INTERNATIONAL > ELSEBAEYPHARMA",
+      "ORGANIX COMPANY FOR FOOD SUPPLEMENTS > MEDCARE PHARMACEUTICALS",
+      "P&C PELLETS AND CR PRODUCTS > TWINS GROUP",
+      "ORGANIX > SANOMEDICINE",
+      "MED CARE > MEDICAL TRUST",
+      "AMS (AMERICA MEDIC&SCIENCE)",
+      "> MAJESTIC BIOPHARMA",
+      "LIFE SAVER > CHEFAA MEDICAL",
+      "MEDCARE > GLOBAL HEALTH",
+      "DULEX LAB > EGY PHARMA",
+      "COPAD EGYPT > QUALITY HEALTH",
+      "ORGANEX > TOP CARE PHARMA",
+      "NILE (NPCI) > MEDIORA PHARMA",
+      "BRAND NUTRITION > BEAUTY & BEYOND INTERNATIONAL",
+      "NUTRIXIA > NEW CHAPTER",
+      "AMCOMED > RENOVO-EGYPT",
+      "NILE PHARMACEUTICAL AND COSMETIC INDUSTRIES COMPANY \"NPCI\" > SPG PHARMA",
+      "MEDCARE > LIFE HEALTH",
+      "DAWA Egypt > SEJO PHARMA",
+      "SANO PHARMA",
+      "PHARMAZAD > NPMT",
+      "PHARMA ZAD > FALCON GROUP",
+      "MED CARE > UNITED GROUP UGP",
+      "GRANTY FOOD INDUSTRIES > AVANTIC",
+      "SAJA PHARMA",
+      "ORGANIX > BEPURE PHARMA",
+      "ORGANIX > SALUS",
+      "DULEXLAB > SANO PHARMA",
+      "SANOTACT GMBH",
+      "DAWA EGYPT INTERNATIONAL > SAVI PHARMA",
+      "ATOS PHARMA",
+      "PHARMA ZAD > DOLAVET PHARMA",
+      "GLORIA PHARMA > DIAMOND LABS",
+      "MEDCARE > GUERISON PHARMA",
+      "PHARMANUTRA SPA > AL ESRAA PHARMACEUTICAL OPTIMA",
+      "MEDCARE > SILAJ",
+      "HI-CARE > NP PHARMACEUTICALS",
+      "ORGANIX FOR DIETARY SUPPLEMENTS > SINZACURE",
+      "ORGANIX FOR FOOD SUPPLEMENTS > PROXY-CARE+ORGANIKA",
+      "ORGANIX > ELEVENTA",
+      "ORGANIX > ALOMAR",
+      "> ADVANCED CARE PHARMA",
+      "DULEXLAB > MIRA INTERNATIONAL",
+      "ORGANIX > LOREMED PHARMA",
+      "BRAND NUTRITION > DRUG PHARMA EGYPT",
+      "NOURISH LIFE LLC > NUTRIMED",
+      "MEDCARE > XAINTYLIA PHARMACEUTICALS",
+      "DAWA EGYPT INTERNATIONAL > INNOVAROO CEUTICAL",
+      "> STAR GROUP",
+      "ORGANO PHARMA > MPCO",
+      "INTEGRA PHARM",
+      "MEDCARE > FAMILA",
+      "COPAD EGYPT > SYMMETRY PHARMACEUTICAL COMPANY",
+      "MEDCARE > MERVA PHARM",
+      "ORGANIC > REVAX GROUP - ZIAX",
+      "COPAD EGYPT > BONNET",
+      "AMCOMED > DRUGPHARMA",
+      "PHARMACIA > NOVACURE",
+      "DAWA EGYPT INTERNATIONAL > PHI PHARMA",
+      "PHARMA ZAD > LEVAXO",
+      "ORGANIX FOR FOOD SUPPLEMENTS > BIOCTIVA PHARMA",
+      "ECC NUTRITION > INNOVEC PHARMACEUTICAL",
+      "ALLMED LTD > WALFARM",
+      "PHARMACIA > OCTABIOTIC PHARMA",
+      "PHARMA ZAD > TROYA PHARMA",
+      "BIORIGINAL INTERNATIONAL GROUP PHARMA EGYPT > PHOENIX GROUP",
+      "ORGANIX FOOD SUPPLEMENTS > OXENER PHARM",
+      "ORGANIC PHARMA > LAROSE PHARMA",
+      "> DRUG PHARMA EGYPT",
+      "ORGANIX > UTP",
+      "ORGANIX > ASTRAMED",
+      "COPAD EGYPT > TRENDY FOR MANUFACTURING SPECIALISED NUTRITION AND DIETARY SUPPLEMENTS",
+      "ORGANIX FOOD > OXENER PHARM",
+      "CONSUMED > ABBOTT",
+      "PHARMA ZAD > STAY GREEN",
+      "NUTRIXIA > BEAUTY & BEYOND INTERNATIONAL",
+      "IDI > VIOMIX",
+      "COPAD > DORADO",
       "ORGANIX > ORGENIA PHARMA",
       "SWIEVEL NUTRIENT INTERNATIONAL > NUTRILLION INTERNATIONAL FOR PHARMACEUTICAL AND FOOD SUPPLEMENT",
       "LIFE SAVER INTERNATIONAL > ELIA PHARMA",
-      "NOW FOODS > SOFICOPHARM",
-      "VITACARE > VITALIFE",
-      "NATROL",
-      "ORGANIX > SEHHA PHARMA",
-      "NAPCO",
-      "> NEW BOSTON PHARMACEUTICALS",
-      "ALFA VITAMINS LABORATORIES > ARAB IMPORTERS TRADING (AIT)",
-      "ORGANIX > A N PHARMA",
-      "ORGANIX PHARMA > REMEDIUM PHARMACEUTICAL",
       "PHARMA ZAD > JOUVA PHARMA",
-      "KARMAN FOR PHARMACEUTICAL INDUSTRIES > PDRTC",
-      "SAFE PHARMA > PHARCO",
-      "MEDIZEN PHARMACEUTICAL INDUSTRIES > MEPACO",
-      "EUROPEAN EGYPTIAN PHARM. IND."
+      "PHARMA ZAD > BIOGEN",
+      "NATURE MED EG > NUEVA CAPITAL PHARMA",
+      "ORGANIX > ASPEX PHARMA",
+      "DAWA EGYPT INTERNATIONAL > WE PHARMA",
+      "COPAD > WELLNESS PHARMA",
+      "SAJA PHARMA PHARMACEUTICALS EGYPT > NPC ACTIVE",
+      "COPAD PHARMA > ROVEX PHARMA",
+      "COPAD > PHARMA MOON",
+      "COPAD > HAWY PHARMA GROUP (H. P. G)",
+      "ORGANIX DIETARY SUPPLEMENTS > ZOONIX PHARM",
+      "COPAD EGYPT > ADVENT PHARMA"
     ],
     "verified": true
   },
@@ -9397,79 +13103,949 @@ export const edaSupplement = [
     ],
     "brandAliases": [
       {
-        "en": "FOLIC 0.8MG 50 TAB.",
-        "ar": "فوليك"
+        "en": "JEXO-VIT",
+        "ar": ""
       },
       {
-        "en": "FOLIC ACID (EIPICO) 5 MG 20 TAB.",
-        "ar": "فوليك أسيد"
+        "en": "SOLLIGINS",
+        "ar": ""
       },
       {
-        "en": "FOLIC ACID (EL NILE) 5 MG 30 TAB.",
-        "ar": "فوليك أسيد"
+        "en": "HEMA BRAND",
+        "ar": ""
       },
       {
-        "en": "FOLIC ACID (EL NILE) 5 MG 50 TAB.",
-        "ar": "فوليك أسيد"
+        "en": "FRIT 20 TAB",
+        "ar": ""
       },
       {
-        "en": "FOLIC ACID (MEMPHIS) 5 MG 30 TAB.",
-        "ar": "فوليك أسيد"
+        "en": "GRAMBER CAP",
+        "ar": ""
       },
       {
-        "en": "FOLIC ACID (MEPACO) 500 MCG 20 TABS.",
-        "ar": "فوليك أسيد"
+        "en": "DOMY 30 TABS",
+        "ar": ""
       },
       {
-        "en": "FOLIC ACID 400 MCG 250 TABLETS (ILLEGAL IMPORT)",
-        "ar": "فوليك أسيد"
+        "en": "FOJI 30 TABS",
+        "ar": ""
       },
       {
-        "en": "FOLIC ACID 800 MCG 250 TABLETS (PURITANS PRIDE)",
-        "ar": "فوليك أسيد"
+        "en": "GLOBA 20 TAB",
+        "ar": ""
       },
       {
-        "en": "FOLIC ACID GELVISA 120 MLSYRUP",
-        "ar": "فوليك أسيد جيلفيسا 120 ملسيروب"
+        "en": "OMEGAHAL SYR",
+        "ar": ""
       },
       {
-        "en": "FOLIC B COMPLEX 20 ODF",
-        "ar": "فوليك ب كومبليكس 20 أودف"
+        "en": "TERA 30 TABS",
+        "ar": ""
       },
       {
-        "en": "FOLIC B COMPLEX 20 TABS",
-        "ar": "فوليك ب كومبليكس"
+        "en": "YOTA 30 TABS",
+        "ar": ""
       },
       {
-        "en": "FOLIC OLEY 30 F.C. TABS.",
-        "ar": "فوليك أولي"
+        "en": "JERN 30 PILLS",
+        "ar": ""
+      },
+      {
+        "en": "MEMZY 30 CAPS",
+        "ar": ""
+      },
+      {
+        "en": "MENTU 30 TABS",
+        "ar": ""
+      },
+      {
+        "en": "TRI-B 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "ROSON 20 TABS",
+        "ar": ""
+      },
+      {
+        "en": "SKYNOR 20 CAP",
+        "ar": ""
+      },
+      {
+        "en": "TERNA 30 TABS",
+        "ar": ""
+      },
+      {
+        "en": "VORFO 30 TABS",
+        "ar": ""
+      },
+      {
+        "en": "ARTHOJO 30TABS",
+        "ar": ""
+      },
+      {
+        "en": "AXIRED 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "BIMAGDENA CAPS",
+        "ar": ""
+      },
+      {
+        "en": "OLVITA 30 TABS",
+        "ar": ""
+      },
+      {
+        "en": "DOMANTI 20 CAP",
+        "ar": ""
+      },
+      {
+        "en": "PRIMOFOL 30TAB",
+        "ar": ""
+      },
+      {
+        "en": "TOROTUS 20 TAB",
+        "ar": ""
+      },
+      {
+        "en": "FOLIFO 30 TABS",
+        "ar": ""
+      },
+      {
+        "en": "FOTON 20 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "HEMSI 20 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "IROREG 30 CAPS",
+        "ar": ""
+      },
+      {
+        "en": "IROZOX 30 CAPS",
+        "ar": ""
+      },
+      {
+        "en": "JOINTA 30 TABS",
+        "ar": ""
+      },
+      {
+        "en": "MIZA 30 PIECES",
+        "ar": ""
+      },
+      {
+        "en": "MAVEY 30 CAPS.",
+        "ar": ""
+      },
+      {
+        "en": "MECITEC 30 TAB",
+        "ar": ""
+      },
+      {
+        "en": "MERON 20 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "RANDU 10 PILLS",
+        "ar": ""
+      },
+      {
+        "en": "RANDU 30 PILLS",
+        "ar": ""
+      },
+      {
+        "en": "REBO 10 SACHET",
+        "ar": ""
+      },
+      {
+        "en": "SORTI 20 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "TECAFO 30 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "ALETA 10 SACHET",
+        "ar": ""
+      },
+      {
+        "en": "AM GINKO 30 TAB",
+        "ar": ""
+      },
+      {
+        "en": "ASEROPIX 20 CAP",
+        "ar": ""
+      },
+      {
+        "en": "AVEFOX 30 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "AVIRON 24 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "BALOF 10 SACHET",
+        "ar": ""
+      },
+      {
+        "en": "CEZAL 30 TABLET",
+        "ar": ""
+      },
+      {
+        "en": "CODE 30 GUMMIES",
+        "ar": ""
+      },
+      {
+        "en": "CODE 60 GUMMIES",
+        "ar": ""
       }
     ],
     "edaPrices": [
+      2,
+      3.1,
+      5,
+      6,
+      7.2,
+      11,
+      12,
+      12.6,
+      13,
       13.5,
+      15.6,
       15.75,
+      16,
+      16.5,
+      18,
+      20,
+      21.6,
+      21.75,
+      22,
       24,
+      25,
       26,
       26.25,
+      26.4,
+      27,
+      28,
+      30,
+      31.5,
+      33,
+      35,
+      35.25,
       36,
+      37.5,
+      38,
+      39,
+      39.75,
       40,
+      40.5,
+      42,
+      44,
+      45,
+      48,
+      49,
+      49.5,
+      50,
+      54,
+      55,
+      56,
+      57,
+      58,
+      60,
+      62,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      74,
+      75,
+      78,
+      79,
+      80,
+      81,
+      84,
+      84.5,
+      85,
+      85.9,
+      86,
+      88.5,
+      89,
+      89.99,
       90,
+      92,
+      94,
+      95,
+      96,
+      97,
+      98,
       99,
+      100,
+      105,
+      109,
+      110,
+      114,
+      115,
+      117,
+      118,
+      118.5,
+      119,
+      120,
+      123,
+      124,
       125,
+      126,
+      128,
+      129,
+      130,
+      135,
+      137,
+      138,
+      139,
+      140,
+      141,
+      144,
+      145,
+      147,
+      148,
+      149,
+      150,
+      155,
+      159,
+      160,
+      165,
+      170,
+      175,
+      177,
+      179,
+      180,
+      185,
+      186,
       190,
-      525
+      195,
+      198,
+      200,
+      207,
+      210,
+      215,
+      216,
+      220,
+      225,
+      230,
+      235,
+      240,
+      249,
+      250,
+      253,
+      258,
+      260,
+      265,
+      270,
+      275,
+      280,
+      285,
+      290,
+      295,
+      300,
+      310,
+      312,
+      315,
+      320,
+      325,
+      330,
+      340,
+      345,
+      350,
+      360,
+      370,
+      375,
+      379,
+      380,
+      385,
+      390,
+      395,
+      400,
+      410,
+      420,
+      430,
+      440,
+      450,
+      460,
+      478,
+      485,
+      490,
+      500,
+      525,
+      550,
+      595,
+      600,
+      630,
+      650,
+      685,
+      730,
+      750,
+      800,
+      950,
+      1250,
+      1475,
+      1600,
+      4100,
+      4700
     ],
     "edaManufacturers": [
-      "PHAROPHARMA",
+      "DOPPELHERZ > DEUTSCHE PHARMA",
+      "MED CARE > HEALTH LIFE",
+      "COPAD EGYPT > MIDDLE EAST PHARMACEUTICAL",
+      "KOPAD > ALLIANCE PHARMACEUTICAL COMPANY",
+      "BRAND NUTRITION > MARKETOVA PHARMA HEALTH CARE",
+      "COPAD PHARMA",
+      "DAWA EGYPT > AM ESSENCE PHARMACEUTICALS",
+      "MED CARE > PHARMA LAND",
+      "ORGANIX FOR DIETARY SUPPLEMENTS > CARE THERAPUTICA FOR PHARMACEUTICALS",
+      "PHARMAZAD > ELSEBAEY",
+      "DAWA EGYPT INTERNATIONAL > PHYTOMED",
+      "PHARMA ZAD > BEE GROUP & PHARMATREAT",
+      "KARMAN FOR PHARMACEUTICAL INDUSTRIES > ASENA PHARMA",
+      "ORGANIX > KARMED PHARM",
+      "MASH PREMIERE > ED PHARMA",
+      "ORGANIX > ATLANTIS PHARMA",
+      "ORGANIX > AVANTGARDE PHARMA EGYPT",
+      "PHARMA ZAD > HEALING PHARMA",
+      "AVERROES PHARMA",
+      "NUTRIXIA > AVICENNA PHARM",
+      "NUTRICIA > OLITS PHARMA",
+      "PHARMA ZAD > ITA PHARMA",
+      "NUTRIXIA > WARNEX",
+      "NUTRIXIA > THERAPY INC. INTERNATIONAL",
+      "BRAND NUTRITION > PHARMA GRAM",
+      "SAVVYMIX NUTRITION > PERLA PHARMA",
+      "COPAD",
+      "COPAD EGYPT > TRINITY PHARMA",
+      "PHARMA ZAD > NOUVITAPHARM",
+      "MED CARE > ASTRA PHARMA",
+      "PHARMAZAD > TRUENESTA",
+      "MASH PREMIERE",
+      "ORGANIX NUTRITIONAL SUPPLEMENTS COMPANY > 4S PHARMA",
+      "MEDCARE > SOUL PHARMA",
+      "P&C PELLETS AND CR PRODUCTS > TWINS GROUP",
+      "ORGANIX > GENERICA PHARMA",
+      "PHARMA ZAD > ROYALCARE PHARM",
+      "DAWA EGYPT INTERNATIONAL > SITA PHARMA",
+      "FUSION PHARM",
+      "PHARMA ZAD > PHARMAKEIA",
+      "ORGANICS > AN PHARMA",
+      "MUP",
+      "EPCI",
+      "MARVEL",
+      "DEBEIKY > LAMAR PHARMA",
+      "KARMAN > K AND M PHARMA",
+      "DAWA EGYPT INTERNATIONAL > ASTRATEC",
+      "ORGANIX > P.MEDEX",
+      "PHARMAZAD > BEAUTY PHENOMENA",
+      "MED CARE > MEDICAL TRUST",
+      "FOODWEST OY > PARKVILLE",
+      "PHARMA ZAD > PROMOMED PHARMA",
+      "COPAD > EGYMED FOR TRADING AND DISTRIBUTION",
+      "COPAD > EGYCAN PHARMA - ELWTANIA",
+      "LEMACO EGYPT > AGLAN PHARMA",
+      "SPIMACO MISR > NOVELL PHARMA",
+      "BRAND NUTRITION > TAGAMO3 SAIDALY (TAJ)",
+      "MEDCARE > SCIENTIFIC CENTER",
+      "EL-OBOUR > COPAD PHARMA",
+      "COPAD > MULLAN COSMETICS",
+      "LIFE SAVER INTERNATIONAL > MULTI-INSIGHT PHARMA",
+      "EVA PHARMA",
+      "BRAND NUTRITION > DRUG LAB PHARMACEUTICALS",
+      "MEDCARE > THREE ONE PHARMA",
+      "MEDCARE > NEUTRA COMPANY",
+      "COPAD EGYPT > COPAD PHARMA",
+      "ORGANIX > OSTAVA PHARMA",
+      "MEDCARE > RECOVERY PHARM",
+      "P&C > NEUTRA",
+      "AMRIYA",
+      "MED CARE > SKY CARE PHARMA",
+      "FAMILY PHARMACIA > PUREX HEALTH CARE",
+      "MEDCARE > BEAUTY PHENOMENA",
+      "MED CARE > VIM MEDICINE",
+      "NILE COSMETICS-EGYPT > EUREKA PHARMACEUTICAL",
+      "GLOBAL NAPI PHARMACEUTICALS",
+      "PHARMA ZAD > SPIRIT PHARM",
+      "LIFE SAVER > TOTAL FUTURE",
+      "COPAD EGYPT > CORE PHARM",
+      "DELTA GRAND PHARMA > OMEGA PHARMA OPCI",
+      "SIGMA TEC",
+      "RAMEDA",
+      "MED CARE > GLOBAL HEALTH",
+      "> STEMYA",
+      "UNIPRO SP. Z O.O. > SOFICOPHARM",
+      "COPAD > DELPHI PHARMA",
+      "PHARMA ZAD > BIOVIDA INTERNATIONAL COMPANY",
+      "COPAD > GENNECS PHARMACEUTICALS",
+      "ORGANEX > HEALTH WAY",
+      "ORGANIX FOR DIETARY SUPPLEMENT > UNICHIMA",
+      "INCANDESCE",
+      "ORGANIX > DIAMOND PHARMA",
+      "SWIVEL NUTRIENT INTERNATIONAL > SWIVEL MED",
+      "MEDCARE > DRUG PHARMA EGYPT",
+      "COPAD > DOLLS PHARMA",
+      "COPAD > MEDA PHARM",
+      "MED CARE > ( U. S. O) UNITED SCIENTIFIC OFFICE",
+      "COPAD EGYPT > HOFFMANN PHARM",
+      "ORGANIX FOR SUPPLEMENTS > VALID AND PURE PHARMA",
+      "ORGANIX FOR FOOD SUPPLEMENTS > DUO LIFE FOR FOOD SUPPLEMENTS",
+      "PURITANS PRIDE > ARAB IMPORTERS TRADING (AIT)",
+      "NUTRIXIA > BIOCURE COMPANY",
+      "NUTRIXIA > SANTEX PHARMA",
+      "COPAD > GLORY MEDICAL",
+      "COPAD NUTRITION > EGY LUMIERE PHARMA",
+      "BRAND NUTRITION > FORCE PHARMA",
+      "MEDCARE > PLANET CURE",
+      "BMS PHARMA",
+      "PHARMA ZAD > ELIXIR PHARMA",
+      "PHARMA ZAD INDUSTRY > ASTRA MRC PHARMA",
+      "> ENAR PHARMA",
+      "ORGANIX > ASTRAMED",
+      "SWIEVEL NUTRIENT INTERNATIONAL > NUTRILLION INTERNATIONAL FOR PHARMACEUTICAL AND FOOD SUPPLEMENT",
+      "KMT PHARMA",
+      "ORGANIX > BIOMERIC",
+      "ORGANIX > ENAR PHARMA",
+      "NUTRISET > ZETA PHARM",
+      "MARCYRL PHARMACEUTICAL INDUSTRIES (MPI)",
       "EIPICO",
+      "MULTICARE",
+      "NUTRIXIA > DIAMOND PHARMA",
+      "PHARMAZAD > MG PHARMA",
+      "BRAND NUTRITION > BEAUTY & BEYOND INTERNATIONAL",
+      "MED CARE EL-OBOUR > J.C.PHARMA",
+      "AMCOMED FOR PHARMACEUTICAL AND CHEMICALS   ORGANIX > ZAHRAT AL JABAL",
+      "PHARMA ZAD > MEDINZA PHARM",
+      "ORGANIX > EURO PHARMACEUTICAL",
+      "PHARMA ZAD > HEALTH FOR LIFE INTERNATIONAL PHARMACEUTICAL",
+      "NUTRIXIA > HEALTH FOR LIFE INTERNATIONAL PHARMACEUTICAL",
+      "MEDCARE > DIAMOND  PHARMA COMPANY",
+      "MEDCARE > DIAMOND PHARMA COMPANY",
+      "NUTRIXIA > FALCON GROUP",
+      "ORGANIX > ARKOPHARM",
+      "NUTRIXIA > MULTI-INSIGHT PHARMA",
+      "ORGANIX > ZYMA PHARMA",
+      "MED CARE > ESSPERO  PHARMA",
+      "ORGANIX > BEPURE PHARMA",
+      "PHARMAZAD > RENOVO",
+      "MED CARE > DRUG PHARMA EGYPT",
+      "NUTRIXIA > NEUTRA COMPANY",
+      "PHARMAZAD > ROYAL CARE",
+      "EL SHOROK > NUEVA CAPITAL PHARMA",
+      "VITABIOTICS",
+      "ORGANIX > EGYPT CARE PHARMA",
+      "> BIO-N PHARMA",
+      "MEDIZEN PHARMACEUTICAL INDUSTRIES",
+      "ORGANIX > AMAZINGPHARMA",
+      "PHARMAZAD > INCOMMING",
+      "MEDCARE > BRO MEDICAL",
+      "EGYPTIAN PHARMACEUTICAL CENTER > UNITED GROUP UGP",
+      "COPAD PHARMA > ROVEX PHARMA",
+      "SPIMACO > EIMC",
+      "MINA PHARM > ROBAPHARM",
+      "ORGANIX > TALENO PHARMA.",
+      "ORGANICS > PRITTO PHARMA",
+      "MED CARE > HEXA PHARMA",
+      "MAXEL PHARMA > LOURAN PHARMA",
+      "MIRACLE > MEDICAL GROUP PHARMA",
+      "MINA PHARM > SCHWARZ",
+      "MINA PHARM",
+      "NUTRIXIA > RAND PHARM",
+      "PHARCO",
+      "SAFE PHARMA > PHARCO",
+      "SAJA PHARMACEUTICALS",
+      "EGYPHAR",
+      "ERBOZETA S.P.A > GLOBE INTERNATIONAL PHARMACEUTICALS",
+      "KARMAN > OBAID PHARMA",
+      "JULPHAR",
+      "ORGANIX > BIOVERA PHARMA",
+      "ORGANIX > HEALTHY MED PHARM",
+      "AMOUN",
+      "MISR",
+      "NUTRIXIA > HEALTHY TEC M.Z PHARMA",
+      "> UNIMACK",
+      "UNIPHARMA CO. > AL HADIDI PHARMA",
+      "ORGANIX > PHARMA-ONE",
+      "ORGANIX > CELENOVA PHARMACEUTICAL",
+      "AMCOMED > AL.TAYSEER",
+      "NAPCO",
+      "HOCHSTER PHARMACEUTICAL INDUSTRIES",
+      "DAWA EGYPT > BIOGEN",
+      "EIMC > NERHADOU INTERNATIONAL CO.",
+      "NERHADOU INTERNATIONAL CO.",
+      "NUTRIXIA > KMT PHARMA",
+      "ORGANIX > INCEPTA PHARMA",
+      "> INCANDESCE",
+      "NILE PHARMACEUTICALS & COSMETIC INDUSTRIES (N.P.C.I) > PADOVA PHARMA",
+      "SUNLIFE PRODUCTIONS > ADVOCURE",
+      "COPAD MANUFACTRER > EXCELLENCE PHARM",
+      "COPAD > INTEGRA PHARM",
+      "> LANOVA PHARMA",
+      "MEDCARE > CORE PHARM",
+      "P&C LABS PELLETS AND CR PRODUCTS > ERVIN PHARMACEUTICALS",
+      "PHARMAZAD > SANTEX PHARMA",
+      "PHARMA ZAD > CHALLENGE PHARMACEUTICAL",
+      "> VICOMED",
+      "ORGANIX > MEDTRONIC",
+      "MEDCARE > VORTEX",
+      "ORGANIX > SPHINX",
+      "> ADVANCED CARE PHARMA",
+      "PHARMAZAD > CHEMAHERB",
+      "PHARMA ZAD > MEDIXIR PHARMA",
+      "ORGANIX FOR FOOD SUPPLEMENTS > MASA GROUP",
+      "ORGANIX FOR FOOD SUPPLEMENTS > SKILL INTERNATIONAL PHARMACEUTICAL",
+      "PHARMAZAD > SAFE MED",
+      "NOW FOODS > SOFICOPHARM",
+      "ORGANIX FOR DIETARY SUPPLEMENTS > NOUR HEALTH SERVICES (NHS)",
+      "PHARMA ZAD > ORALINES",
+      "LIFE SAVER INTERNATIONAL > BE HEALTHY MEDICINE - BHM",
+      "ORGANIX > GLIMMAR PHARMA",
+      "ORGANIX > STEMYA PHARMA",
+      "ORGANIX > BIOMERIC PHARM",
+      "EGPI > DKT",
+      "PHAROPHARMA",
       "EL NILE.",
       "MEMPHIS",
       "MEPACO",
       "PURITANS PRIDE",
-      "PURITANS PRIDE > ARAB IMPORTERS TRADING (AIT)",
+      "INAD PHARMA",
+      "MADDOX PHARMA",
+      "HP PHARMA",
+      "AUG PHARMA",
+      "MEDCARE > ALBARONY",
       "LIFE SAVER INTERNATIONAL > GELVISA PHARMACEUTICALS",
-      "PHARMAZAD > PROXYCARE",
-      "MARVEL"
+      "NAPCO  PHARMA / DAWA EGYPT > PHOENIX PHARMA",
+      "ORGANIX > BLUE LINE PHARMA",
+      "PHARMA ZAD > FAMILA",
+      "ORGANIX FOR SUPPLEMENTS > PHARMA PENTA AGRO",
+      "PHARMA ZAD > HEALTHY HOUSE",
+      "ORCHIDIA PHARMACEUTICAL INDUSTRIES",
+      "MEDCARE > NOVOTEC PHARMA",
+      "DAWA EGYPT > TESLA PHARMACEUTICALS",
+      "MEDCARE > SKY CARE PHARMA",
+      "COPAD > HEALTH POINT PHARMA",
+      "DAWA EGYPT INTERNATIONAL > RAND PHARMA",
+      "ORGANIX > OTH PHARMA",
+      "PHARMA ZAD > GIANT PHARMA",
+      "ALEXANDRIA",
+      "MEDIACARE > PURITY PHARMA",
+      "MEDCARE > SWIVEL MED",
+      "MEDCARE > VERTVIA PHARMA",
+      "ORGANO PHARMACEUTICAL COMPANY > NUTRAMED",
+      "MEDCARE > ALTDAWY",
+      "> RONY TRADE",
+      "COPAD EGYPT > GENESIS PHARMA",
+      "PHARMAZAD > HEALTHY LIFE PHARMA",
+      "PHARMAZAD > EGY MINDS",
+      "MED CARE > AUC",
+      "MEDCARE > DOCTORS TRADING & DISTR.",
+      "PHARMA ZAD > BIOTOP PHARMA",
+      "PHARMA ZAD > THERATICA PHARMA",
+      "DAWA EGYPT INTERNATIONAL > REDA PHARMA GROUP",
+      "OPTIMUM NUTRITION > RAMCO",
+      "PHARMA ZAD > DOLAVET PHARMA",
+      "BRAND NUTRITION > PHARMAGRAM",
+      "PHARMA ZAD > CHEMIPEDIA PHARMA",
+      "PHARMA ZAD > ALZAD PHARMA",
+      "EL-OBOUR MODERN PHARM. IND. > DR. KHAIRY COMPANY FOR EXPORT",
+      "DAWA EGYPT INTERNATIONAL > GUTEN TAG PHARMA",
+      "MARVEL PHARMA GROUP > GLOBAL HEALTH",
+      "PHARMACIA > NOVACURE",
+      "PHARMACIA PHARMACEUTICAL > ARTILIFE HEALTH",
+      "DELTA GRAND PHARMA > NOBEL PHARM. INDUSTRIES",
+      "OCTOBER PHARMA",
+      "DULEXLAB > ROTABIOGEN",
+      "ORGANIX > SHIELD",
+      "KARMAN > PIONEER PHARMA",
+      "GLAXO SMITHKLINE",
+      "SIGMA > INTERNATIONAL TRADING OFFICE",
+      "GLORIA PHARMA COMPANY > PARISHIA PHARMA",
+      "DULEX LAB > IMPULSE PHARMA",
+      "> HANZA PHARMA",
+      "ORGANIX > ULTRA PHARMA",
+      "ORGANIX > TETRACARE LIMITED",
+      "COPAD > HEALTHY MED PHARM",
+      "LIFE SAVER > HEALZA PHARMA",
+      "> TALENT CARE PHARMA",
+      "SMARTEC",
+      "> HELIAN",
+      "BRAND NUTRITION > MASTER PHARMA",
+      "ORGANEX > CHEFAA MEDICAL",
+      "MED CARE > B2R / PRIVATE THERAPY",
+      "PHARMAZAD > NUTRA MEDICAL",
+      "ORGANIX > BAP PHARMA FOR TRADING AND EXPORT",
+      "MEDLINE > UPLAND",
+      "HEALTHY TECH PHARMA > NUTR-MED PHARMA",
+      "EL-OBOUR MODERN PHARM. IND. > SWA INTERNATIONAL",
+      "HERBALAND NATURALS INC. > PHARMA VISION",
+      "ORGANIX > BIOVERA PHARM",
+      "COPAD PHARMA > HOFFMANN PHARM",
+      "COPAD PHARM > HOPKINS  PHARMACEUTICALS",
+      "ORGANIX > S AND Q PHARMA",
+      "> HEALTH LINE INTERNATIONAL",
+      "ORGANIX > ICONIC PHARMACEUTICAL",
+      "DAWA EGYPT > I. C. S PHARMA",
+      "MAXEL PHARMA FOR PHARMACEUTICALS > LOURAN PHARMA",
+      "ORGANIX > MASTER PHARMA",
+      "EGPI",
+      "COPAD > FORTIS",
+      "BRAND NUTRITION > ADVANCE PHARMA",
+      "SWIVEL NUTRIENT INTERNATIONAL > SWIVEL MED COMPANY",
+      "GLOBE INTERNATIONAL PHARMACEUTICALS",
+      "LO.LI. PHARMA > MARCYRL PHARMACEUTICAL INDUSTRIES (MPI)",
+      "ORGANIX FOR FOODS SUPPLEMENT > INTRACARE PHARMACEUTICAL INDUSTRY",
+      "ORGANIX > IPI",
+      "MEDCARE > MERVA PHARM",
+      "COPAD > MERVA PHARM",
+      "ORGANEX > TOP CARE PHARMA",
+      "MEDCARE > KARMA CARE",
+      "EGYPTIAN PHARMACEUTICAL INDUSTRY > ALSAMA PHARM",
+      "LIFE SAVER INTERNATIONAL EGYPT > MEDICAMO FOR PHARMACEUTICAL INDUSTRIES COMPANY",
+      "PHARMA ZAD > VALUE PHARM",
+      "COPAD EGYPT > MIDDLE EAST PHARMACEUTICALS",
+      "PAXAL",
+      "ORGANIX > OBJECTIVE PHARM",
+      "> FUTURE PHARM",
+      "ORGANIX > ALKINDI",
+      "EGPI > PHARMA MOON",
+      "COVERTINA > AMOUN TEC",
+      "PHARMA ZAD > VITALOGY PHARMA",
+      "DAWA Egypt > SEJO",
+      "PHARMA ZAD > SAFE LIFE",
+      "AMCOMED > ULTRAMED",
+      "INTEGRA PHARM",
+      "ORGANIX PHARM > OBJECTIVE PHARM",
+      "SAVVYMIX > SANTE PHARM",
+      "EL-OBOUR > DR. KHAIRY COMPANY FOR EXPORT",
+      "PHARMACIA PHARMACEUTICAL > DOLLS PHARMA",
+      "ORI DU > GIANT PHARMA",
+      "COPAD EGYPT > MASTER PHARMA",
+      "DBK > ELIXIR PHARMA",
+      "ORGANIX > VITERRA",
+      "ORGANIX > JUSTIN PHARMA",
+      "AMCOMED",
+      "BRAND NUTRITION > PERLA PHARMA",
+      "PHARMAZAD > ZIAX",
+      "MEDCARE > S3R PHARMA",
+      "SWIVEL NUTRIENT > URMED PHARMA",
+      "MED CARE > S3R PHARMA",
+      "COPAD > ROVYMEDX",
+      "FARMACIA PRO > DART LAB",
+      "BRAND INTERNATIONAL FSC > OPTIMA PHARMA",
+      "MED CARE > BRILLIANCE PHARMACEUTICALS",
+      "BRAND NUTRITION > AUC PHARMA",
+      "PHARMAZAD > DIAMOND LABS",
+      "MEDCARE ELOBOUR FOR A2M MEDICAL > A2M MEDICAL",
+      "MED CARE ELBOUR > MIRACLE GROUP PHARMACEUTICAL",
+      "PHARMAZAD > ELGAREEB PHARMA",
+      "COPAD EGYPT > LEVANA",
+      "NUTRIXIA FOR SUPPLEMENTS MANUFACTURING > DAM PHARM",
+      "MED CARE > IX PHARMA",
+      "MED CARE EGYPT > GENUINE PHARMACEUTICAL COMPANY",
+      "> VORTEX",
+      "KERMAN FACTORY AND BMS > LUMINA PHARMA",
+      "PHARMA ZAD > POTEX PHARMA",
+      "ZAD > POTEX PHARMA",
+      "ORGANIC PHARMA > REVIVE INTERNATIONAL PHARMACEUTICAL",
+      "MEDCARE > EXCELLENCE PHARM",
+      "ORGANIX > ALOMAR",
+      "ORGANIX > MAPCO",
+      "MARNYS > WALFARM",
+      "COPAD EGYPT > INNOMED",
+      "> SMAFY PHARMA",
+      "TOPEX NEUTRINOS > CHEMIST PHARMA",
+      "MED CARE > MB PHARMA",
+      "ORGANO PHARM > MBO PHARMA",
+      "BRAND NUTRITION > RECOVERY PHARM",
+      "DAWA EGYPT INTERNATIONAL > MEDI DRUG PHARMA",
+      "ORGANIX > MEDIPHA PHARMA",
+      "ORGANIX > CHEMIPEDIA PHARMA",
+      "PHARMAZAD > TEJEDA PHARMA",
+      "ORGANICS > PHARO FOR SUPPLEMENTS",
+      "ORGANIX > BIOTEC",
+      "MEDCARE > LARIMAR",
+      "ZAKURO > MERCY PHARMA",
+      "MEDCARE > NOVOGEN",
+      "ORGANIX > STRUCTURE COMPANY",
+      "COPAD EGYPT > ORCHIDIA PHARMACEUTICAL INDUSTRIES",
+      "MEDCARE > ULTRA PHARMA PLUS",
+      "DREAMS EL HABBOBA > WELLMED",
+      "PHARMA ZAD > MAXWELL",
+      "ORGANICS > TORRENT PHARMA",
+      "PHARMA ZAD > BME PHARMA",
+      "ORGANIX > PREMIUM PHARM",
+      "PHARMA ZAD > XTRAMED",
+      "PHARMAZAD > JUSTIN PHARMA",
+      "DAWA EGYPT INTERNATIONAL > EMPIRE PHARMACEUTICAL COMPANY",
+      "ORGANIX > GRINTA PHARMA",
+      "COPAD > V MED",
+      "ORGANIX > NOVACURE",
+      "PHARMA ZAD > GEOXIL PHARMA",
+      "DAWA EGYPT INTERNATIONAL > HEXAGONPHARM",
+      "ORGANIX > NEBRAS PHARMA",
+      "> NEBRAS PHARMACEUTICAL",
+      "> DILIGENT PHARMACEUTICLAS",
+      "PHARMAZAD > ASIA PHARMACEUTICAL INDUSTRIES",
+      "> GROW PHARMA",
+      "TADAWENA > TETRACARE LIMITED",
+      "MARVEL PHARMA GROUP COMPANY > PROLIFE EGYPT",
+      "ORGANIX > MEDICOLENA",
+      "ORGANIX FOOD SUPPLEMENTS > 2M WHITES PHARMA",
+      "OBAID PHARMA COMPANY",
+      "LIFE SAVER INTERNATIONAL > ROGENDA PHARMACEUTICAL INDUSTRIES",
+      "INTERNATIONAL DRUG AGENCY (IDI) > NOVELL PHARMA",
+      "BORG",
+      "> NEUTRA COMPANY",
+      "PHARMAZAD > SANVIX PHARMA",
+      "MEDCARE > TOP CARE PHARMA",
+      "PHARMA ZAD > NUTRIPHARMA-EG",
+      "SWIFEL NUTRANT > GRAND EGYPT PHARMA",
+      "MEDIX PHARM",
+      "DAWA EGYPT > SO WELL",
+      "DAWA EGYPT INTERNATIONAL > SO WELL",
+      "MEDCARE > IBM",
+      "ORGANIX > YOJEEN",
+      "ORGANIX FOR FOOD > GEO PHARMACEUTICALS",
+      "ORGANIX > OPTAVIT PHARMA",
+      "MEDCARE > AL-JUDI MEDICAL PHARMA",
+      "ORGANIX > ALPHA MISR INTERNATIONAL",
+      "SAJA PHARMA PHARMACEUTICALS EGYPT > NPC ACTIVE",
+      "AMS (AMERICA MEDIC&SCIENCE)",
+      "MEDCARE > INFINITY PHARM",
+      "ORGANIX > RMPC PHARMA",
+      "DAWA EGYPT INTERNATIONAL > BIOTREATS PHARMACEUTICALS",
+      "MEDCARE > PHOENIX PHARMA COMPANY",
+      "> HEALTH WISE EGYPT",
+      "BRAND > PHYTO PHARM EGYPT",
+      "MED CARE > BIOCARE PHARMA",
+      "DAWA EGYPT INTERNATIONAL > DOCTORS PHARMA",
+      "DAWA EGYPT > MONARCH PHARMA",
+      "NAPCO > ALS",
+      "> MAJESTIC BIOPHARMA",
+      "ORGANIX FOR DIETARY SUPPLEMENT > MEDICAL SHINE",
+      "PHARMAZAD > ICONIC PHARMACEUTICAL",
+      "PARKVILLE PHARMACEUTICALS",
+      "SOHO FLORDIS INTERNATIONAL > POLY PHARM",
+      "MEDCARE > VIOLINA",
+      "MARVEL PHARMA > PROLIFE EGYPT",
+      "PHARMA ZAD > DERMA SUN",
+      "SWIVEL MED > KYAN EGYPT",
+      "ORGANIX > AVANTGARDE PHARMA",
+      "ALFASIGMA > NILE PHARMA FOOD",
+      "DULEXLAB > EGYPHARMA",
+      "NILE (NPCI) > MEDIORA PHARMA",
+      "MED CARE > NUTRA PHARM",
+      "RAFADA TWO RS",
+      "MEDCARE > AKITA MEDICO",
+      "NUTRIXIA > NEW CHAPTER",
+      "TOPIX > REGISTRY",
+      "MED CARE > SHEFAA EGYPT PHARMA",
+      "COPAD EGYPT > HOPKINS",
+      "PREMIER INTERNATIONAL PHARMACEUTICAL > INTEGRA PHARM",
+      "COPAD EGYPT FOR TRISTAR MEDICAL GROUP > TRISTAR MEDICAL GROUP",
+      "ORGANIX PHARMA > REMEDIUM PHARMACEUTICAL",
+      "AMCOMED > RENOVO",
+      "NILE PHARMACEUTICAL AND COSMETIC INDUSTRIES COMPANY \"NPCI\" > SPG PHARMA",
+      "ORGANIXS > PHENOMENA PHARMA --> BIOELIXIR PHARMA",
+      "EL OBOUR PHARMACEUTICAL INDUSTRIES > DIAMOND PHARMA COMPANY",
+      "MED CARE- ELOBOUR > J.C.PHARMA",
+      "PHARMAZAD > BIOHEALTH COMPANY FOR MEDICINES",
+      "SANO PHARMA",
+      "MED CARE > UNITED GROUP UGP",
+      "BIOCARE PHARMA",
+      "PHARMA ZAD > OBJECTIVE PHARM",
+      "ORGANIX > JANSO PHARM",
+      "MED CARE > VILATRIQ",
+      "MEDCARE > MERCY PHARMA",
+      "MEDCARE > DAWA EGYPT PHARM",
+      "NUTRIXIA > MANSA PHARMA",
+      "MED CARE > ESSPERO PHARMA",
+      "MEDCARE > GLOB HEALTH PHARMACEUTICALS",
+      "ORGANIX > GLOBE HEALTH PHARMACEUTICAL",
+      "EL SHOROUK > ZETA BIO",
+      "SANOTACT GMBH",
+      "PHARMA ZAD > SEMAF PHARMA",
+      "PHARMANUTRA SPA > AL ESRAA PHARMACEUTICAL OPTIMA",
+      "PHARMA ZAD > SQUIBAL",
+      "ORGANIX > EMPATHY PHARMA",
+      "ORGANIX > MSG PHARMA",
+      "DAWA EGYPT INTERNATIONAL > CETCOMED PHARM",
+      "ORGANIC PHARMA > EVENO PHARM",
+      "RAFADA 2RS > ELSAID SALIY PHARMA",
+      "LIFE SAVER INTERNATIONAL > ELSAID SALIY PHARMA",
+      "OREGANO PHARMA > MASTER PHARMA",
+      "FRESENIUS KABI",
+      "NUTRIXIA > LINKOPHARM",
+      "MEDCARE > RONY TRADE",
+      "COPAD > RONY TRADE",
+      "PHARMA ZAD > PROVAK INTERNATIONAL FOR PHARMACEUTICAL IND",
+      "ORGANIX > MPCO",
+      "LANOVA PHARMA > SODIC NUTRITION",
+      "ROYAL LINK PHARMA",
+      "SIGMA > HEALTH AID PHARMADASS LTD",
+      "MEDCARE > SALIX PHARMA",
+      "PHARMA ZAD GROUP > VENDOR PHARMA",
+      "ZANON VITMAC INC. > H CARE INTERNATIONAL GROUP",
+      "MEDCARE > GUERISON PHARMA",
+      "MED CARE > DAWA EGYPT PHARMA",
+      "COPAD EGYPT > SEROL PHARMA",
+      "DAWA EGYPT INTERNATIONAL > TESLA",
+      "MED CARE > MSA PHARMA",
+      "PHARMA ZAD > GRAND EGYPT PHARMA",
+      "ORGANIX > DOCTOMED",
+      "MEDCARE > WELLMED",
+      "SWIVEL NUTRIENT > WELLMED",
+      "PHARMA ZAD > HEMALIFE PHARMACEUTICALS",
+      "PHARMA ZAD > TROYA PHARMA",
+      "ORGANIX PHARMA > GAPI PHARMA",
+      "BRAND NUTRITION > LAUNCH",
+      "EGYPTIAN COMPANY FOR COSMETICS > TEJEDA PHARMA",
+      "PRAXO PHARM",
+      "ORGANIC PHARMA > LAROSE PHARMA",
+      "> PURE PHARMA",
+      "FUTURE PHARMACEUTICAL INDUSTRIES (FPI) > UTOPIA",
+      "MEDIZEN PHARMACEUTICAL INDUSTRIES > UTOPIA",
+      "ORGANIX > UTP",
+      "COPAD EGYPT > TRENDY COMPANY",
+      "COPAD EGYPT > TRENDY FOR MANUFACTURING SPECIALISED NUTRITION AND DIETARY SUPPLEMENTS",
+      "ORGANIX FOR DIETARY SUPPLEMENTS > VEEXIA PHARMACEUTICAL INDUSTRIES",
+      "MED CARE > VICOMED FOR PHARMACEUTICALS",
+      "KARMAN FOR PHARMACEUTICAL INDUSTRIES > PDRTC",
+      "ORGANIX > HYALOMED",
+      "COPAD > VIOMIX",
+      "COPAD > DORADO",
+      "LIFE SAVER INTERNATIONAL > MEDICAMO FOR PHARMACEUTICAL INDUSTRIES COMPANY",
+      "> ORIGINAL GROUP",
+      "COPAD > TREATO PHARM",
+      "MEDCARE > IBM PHARMA",
+      "MED CARE > VORTEX",
+      "PHARMA ZAD > BIOGEN",
+      "MULTI-APEX",
+      "MED CARE > BIOVIL",
+      "SPANISH NUTRITION > SHEFAA EGYPT PHARMA",
+      "MEDCARE > ABBOTT LABORATORIES",
+      "PREMIER INTERNATIONAL PHARMACEUTICALS > M.H. SYNTHON PHARMACEUTICAL",
+      "DAWA EGYPT INTERNATIONAL > WE PHARMA",
+      "> CORE PHARM",
+      "ORGANIX > YG MED",
+      "MARVEL PHARMA GROUP > BUTA PHARM",
+      "LIFE SAVER INTERNATIONAL > ELIA PHARMA",
+      "DAWA EGYPT INTERNATIONAL > UNITRADE PHARMA",
+      "> SAFE LIFE",
+      "MEDCARE > GEOMARK",
+      "PHARMA ZAD > ZIAX",
+      "ORGANIC PHARMA > REVAX GROUP -ZIAX",
+      "NUTRIXIA > HEALING PHARMA"
     ],
     "verified": true
   },
@@ -9487,30 +14063,182 @@ export const edaSupplement = [
     ],
     "brandAliases": [
       {
-        "en": "DOMPERIDONE 10MG 20 TAB.",
-        "ar": "دومبيريدوني"
+        "en": "VERTIGUN 12 TAB.",
+        "ar": ""
       },
       {
-        "en": "DOMPERIDONE 10MG SUPP. (CANCELLED)",
-        "ar": "دومبيريدوني سوبب"
+        "en": "CINNARIDONE 10 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "MOTINORM 60MG SUPP.",
+        "ar": ""
+      },
+      {
+        "en": "DOMPIDONE 60 MG SUPP.",
+        "ar": ""
+      },
+      {
+        "en": "MOTINORM 30MG 5 SUPP.",
+        "ar": ""
+      },
+      {
+        "en": "DOMPERIDONE 10MG SUPP.",
+        "ar": ""
+      },
+      {
+        "en": "DOMPERIDONE 60MG SUPP.",
+        "ar": ""
+      },
+      {
+        "en": "GASTROMOTIL 60MG SUPP.",
+        "ar": ""
+      },
+      {
+        "en": "MOTINORM 10MG 30 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "DOMPIDONE 10 MG 30 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "DOMPIDONE 30 MG 6 SUPP.",
+        "ar": ""
+      },
+      {
+        "en": "SYNCHROGIT 10MG 20 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "NO-MIGRAIN 20 F.C. TAB.",
+        "ar": ""
+      },
+      {
+        "en": "NO-MIGRAIN 30 F.C. TAB.",
+        "ar": ""
+      },
+      {
+        "en": "DOMI-GEST 10MG 6 SACHETS",
+        "ar": ""
+      },
+      {
+        "en": "DOMPERIDONE 10MG 20 TAB.",
+        "ar": ""
       },
       {
         "en": "DOMPERIDONE 30MG 6 SUPP.",
-        "ar": "دومبيريدوني 6 سوبب"
+        "ar": ""
       },
       {
-        "en": "DOMPERIDONE 60MG SUPP. (CANCELLED)",
-        "ar": "دومبيريدوني سوبب"
+        "en": "GASTROMOTIL 10MG 5 SUPP.",
+        "ar": ""
+      },
+      {
+        "en": "GASTROMOTIL 30MG 5 SUPP.",
+        "ar": ""
+      },
+      {
+        "en": "GASTRONORM 10MG 5 SACHET",
+        "ar": "جاسترونورم"
+      },
+      {
+        "en": "MOTILIUM 10MG 40 F.C.TAB.",
+        "ar": "موتيليوم"
+      },
+      {
+        "en": "FARCOTILIUM 10 MG 24 CAPS.",
+        "ar": "فاركوتيليوم"
+      },
+      {
+        "en": "MOTINORM 10MG INFANT SUPP.",
+        "ar": "موتينورم إنفانت سوبب"
+      },
+      {
+        "en": "MOTILIUM 1MG/ML SUSP. 100ML",
+        "ar": "موتيليوم /مل"
+      },
+      {
+        "en": "GASTROMOTIL 10MG 20 F.C. TAB.",
+        "ar": "جاستروموتيل"
+      },
+      {
+        "en": "FARCOTILIUM 1MG/ML SUSP. 120ML",
+        "ar": "فاركوتيليوم /مل"
+      },
+      {
+        "en": "MOTINORM 5 MG/5ML SUSP. 125 ML",
+        "ar": "موتينورم /"
+      },
+      {
+        "en": "FARCOTILIUM 10MG INFANTILE SUPP.",
+        "ar": "فاركوتيليوم إنفانتيلي سوبب"
+      },
+      {
+        "en": "MOTIL FAST 10 MG 10 EFF. SACHETS",
+        "ar": "موتيل فاست 10 إفف. ساتشيتس"
+      },
+      {
+        "en": "FARCOTILIUM 10 MG 10 EFF. SACHETS",
+        "ar": "فاركوتيليوم 10 إفف. ساتشيتس"
+      },
+      {
+        "en": "GASTROMOTIL 1MG/ML ORAL SUSP. 200ML",
+        "ar": "جاستروموتيل /مل أورال"
+      },
+      {
+        "en": "DONARAX 10 MG 30 ORODISPERSIBLE TABS.",
+        "ar": "دوناراكس 30 أوروديسبيرسيبلي"
+      },
+      {
+        "en": "DOMPIDONE 100MG/100ML ORAL SUSP. 100ML",
+        "ar": "دومبيدوني / أورال"
+      },
+      {
+        "en": "MORLIMIN 10MG 30 ORALLY DISINTEGRATING TABS.",
+        "ar": "مورليمين 30 أوراللي ديسينتيجراتينج"
       }
     ],
     "edaPrices": [
+      4.5,
       5,
+      5.5,
+      6,
+      7,
+      7.75,
       8,
+      9,
+      10,
+      11,
+      12,
+      12.75,
       13.2,
-      26
+      15,
+      15.75,
+      17.25,
+      22.5,
+      24,
+      26,
+      28.25,
+      31,
+      34,
+      39,
+      67,
+      100
     ],
     "edaManufacturers": [
-      "SEDICO"
+      "ARAB DRUG COMPANY (ADCO)",
+      "SIGMA",
+      "PHAROPHARMA",
+      "SEDICO",
+      "JEDCO INT. CO. FOR PHARMACEUTICALS > ARAX PHARM. IND.",
+      "PHARCO",
+      "EIPICO",
+      "GLOBAL NAPI PHARMACEUTICALS",
+      "AMOUN",
+      "MINA PHARM > JANSSEN CILAG",
+      "GLAXO SMITHKLINE",
+      "RAMEDA"
     ],
     "verified": true
   },
@@ -9528,15 +14256,282 @@ export const edaSupplement = [
     ],
     "brandAliases": [
       {
+        "en": "PEPTOLOC 40MG 7 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "PANTOLOC 40MG 14 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "PEPTOLOC 40MG 14 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "ANTOPRAL 20 MG 14 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "ANTOPRAL 40 MG 14 TAB.",
+        "ar": ""
+      },
+      {
+        "en": "PANTONAP 20 MG 20 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "PANTONAP 40 MG 14 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "PANTONAP 40 MG 20 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "PERLOC 40MG 14 F.C.TAB.",
+        "ar": ""
+      },
+      {
+        "en": "PANGESTAZOL 40MG 14 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "PANGESTAZOL 40MG 28 TABS.",
+        "ar": ""
+      },
+      {
+        "en": "DELPANTO 20MG 14 E.C.TABS.",
+        "ar": ""
+      },
+      {
+        "en": "DELPANTO 40MG 14 E.C.TABS.",
+        "ar": ""
+      },
+      {
+        "en": "FUTAPAN 20 MG 14 E.C.TABS.",
+        "ar": ""
+      },
+      {
+        "en": "FUTAPAN 40 MG 28 E.C.TABS.",
+        "ar": ""
+      },
+      {
+        "en": "PANTOLOC 20MG 14 E.C. TAB.",
+        "ar": "بانتولوك 14 إ.ك"
+      },
+      {
+        "en": "PANTOPI 20 MG 20 E.C. TABS.",
+        "ar": "بانتوبي 20 إ.ك"
+      },
+      {
+        "en": "PANTOPI 40 MG 14 E.C. TABS.",
+        "ar": "بانتوبي 14 إ.ك"
+      },
+      {
         "en": "PANTOPRAZOLE 40 MG 14 TABS.",
         "ar": "بانتوبرازولي"
+      },
+      {
+        "en": "PROTOFIX 20 MG 14 E.C.TABS.",
+        "ar": "بروتوفيكس 14 إ.ك"
+      },
+      {
+        "en": "PROTOFIX 40 MG 14 E.C.TABS.",
+        "ar": "بروتوفيكس 14 إ.ك"
+      },
+      {
+        "en": "PROTOLOC 20 MG 14 E.C.TABS.",
+        "ar": "بروتولوك 14 إ.ك"
+      },
+      {
+        "en": "PROTOLOC 40 MG 14 E.C.TABS.",
+        "ar": "بروتولوك 14 إ.ك"
+      },
+      {
+        "en": "JERDAZOLIN 40MG 14 E.C. TABS.",
+        "ar": "جيردازولين 14 إ.ك"
+      },
+      {
+        "en": "MAALOX CONTROL 20 MG 14 TABS.",
+        "ar": "مالوكس كونترول"
+      },
+      {
+        "en": "STRINGAZOLE 40MG 20 E.C. TAB.",
+        "ar": "سترينجازولي 20 إ.ك"
+      },
+      {
+        "en": "STRINGAZOLE 40MG 21 E.C. TAB.",
+        "ar": "سترينجازولي 21 إ.ك"
+      },
+      {
+        "en": "PANTOMEDRA 20 MG 28 E.C. TABS.",
+        "ar": "بانتوميدرا 28 إ.ك"
+      },
+      {
+        "en": "PANTOMEDRA 40 MG 28 E.C. TABS.",
+        "ar": "بانتوميدرا 28 إ.ك"
+      },
+      {
+        "en": "PANTOMERICAN 20 MG 14 F.C. TABS.",
+        "ar": "بانتوميريكان"
+      },
+      {
+        "en": "PANTOMERICAN 20 MG 21 F.C. TABS.",
+        "ar": "بانتوميريكان"
+      },
+      {
+        "en": "PANTOMERICAN 40 MG 14 F.C. TABS.",
+        "ar": "بانتوميريكان"
+      },
+      {
+        "en": "PANTOMERICAN 40 MG 21 F.C. TABS.",
+        "ar": "بانتوميريكان"
+      },
+      {
+        "en": "PANTAZOL 40MG 14 ENTERIC COATED TAB.",
+        "ar": "بانتازول 14 إنتيريك كواتيد"
+      },
+      {
+        "en": "NOVAPANTOLIX 20 MG 14 DEL. REL. TABS.",
+        "ar": "نوفابانتوليكس 14 ديل. ريل"
+      },
+      {
+        "en": "NOVAPANTOLIX 40 MG 14 DEL. REL. TABS.",
+        "ar": "نوفابانتوليكس 14 ديل. ريل"
+      },
+      {
+        "en": "PERLOC 40MG POWDER FOR I.V. INF. VIAL",
+        "ar": "بيرلوك"
+      },
+      {
+        "en": "ZURCAL 40MG POWDER FOR I.V. INF. VIAL",
+        "ar": "زوركال"
+      },
+      {
+        "en": "ZURCAL 20 MG 14 GASTRO-RESISTANT TABS.",
+        "ar": "زوركال 14 جاسترو-ريسيستانت"
+      },
+      {
+        "en": "ZURCAL 40 MG 14 GASTRO-RESISTANT TABS.",
+        "ar": "زوركال 14 جاسترو-ريسيستانت"
+      },
+      {
+        "en": "ZURCAL 40 MG 28 GASTRO-RESISTANT TABS.",
+        "ar": "زوركال 28 جاسترو-ريسيستانت"
+      },
+      {
+        "en": "ANTOPRAL 40MG POWDER FOR I.V. INF. VIAL",
+        "ar": "أنتوبرال"
+      },
+      {
+        "en": "FUTAPAN 40 MG POWDER FOR I.V. INF. VIAL",
+        "ar": "فوتابان"
+      },
+      {
+        "en": "PANTAZOL 40MG POWDER FOR I.V. INF. VIAL",
+        "ar": "بانتازول"
+      },
+      {
+        "en": "PANTOLOC 40MG POWDER FOR I.V. INF. VIAL",
+        "ar": "بانتولوك"
+      },
+      {
+        "en": "CONTROLOC 20MG 14 GASTRO-RESISTANT TABS.",
+        "ar": "كونترولوك 14 جاسترو-ريسيستانت"
+      },
+      {
+        "en": "CONTROLOC 40MG 14 GASTRO-RESISTANT TABS.",
+        "ar": "كونترولوك 14 جاسترو-ريسيستانت"
+      },
+      {
+        "en": "CONTROLOC 40MG POWDER FOR I.V. INF. VIAL",
+        "ar": "كونترولوك"
+      },
+      {
+        "en": "EKIROZ  40 MG 14 GASTRO RESISTANT TABLET",
+        "ar": "إكيروز 14 جاسترو ريسيستانت"
+      },
+      {
+        "en": "PROTOFIX 40 MG POWDER FOR I.V. INF. VIAL",
+        "ar": "بروتوفيكس"
       }
     ],
     "edaPrices": [
-      90
+      21,
+      25.5,
+      30,
+      35,
+      38.25,
+      41.75,
+      44,
+      46,
+      56,
+      58.5,
+      59.5,
+      62,
+      66,
+      70,
+      72,
+      75,
+      76,
+      81,
+      82,
+      84,
+      85,
+      86,
+      88,
+      89,
+      90,
+      94,
+      96,
+      98,
+      100,
+      102,
+      104,
+      110,
+      116,
+      118,
+      126,
+      144,
+      146,
+      168,
+      188,
+      192,
+      204,
+      208
     ],
     "edaManufacturers": [
-      "PHAROPHARMA"
+      "NOVARTIS",
+      "GLOBAL NAPI PHARMACEUTICALS > NOVARTIS",
+      "ACINO > EGYPTIAN PHARMACEUTICAL TRADING COMPANY",
+      "ACINO > PHARMA OVER SEAS",
+      "DELTA PHARMA",
+      "HP PHARMA",
+      "FUTURE PHARMACEUTICAL INDUSTRIES (FPI)",
+      "EGPI > BIOXELL PHARMA",
+      "SANOFI",
+      "NAPCO PHARMA > ZETA PHARMA",
+      "MULTICARE EGYPT PHARMACEUTICAL",
+      "SIGMA > SOVALUE PHARMA",
+      "MUP",
+      "SIGMA TEC > MUP",
+      "P AND C LABS > BIOMED PHARMACEUTICALS",
+      "AL ROWAD PHARMACEUTICAL INDUSTRIAL CO. > BIOMED PHARMACEUTICALS",
+      "SIGMA > PAXAL",
+      "RAMEDA > PAXAL",
+      "NAPCO",
+      "EL-OBOUR",
+      "PHAROPHARMA",
+      "GLOBAL NAPI PHARMACEUTICALS > GLOBAL PHARMACEUTICAL INDUSTRIES",
+      "KAHIRA > MULTIPHARMA",
+      "EUROPEAN EGYPTIAN PHARM. IND.",
+      "CHEMIPHARM > EUROPEAN EGYPTIAN PHARM. IND.",
+      "RAMEDA",
+      "EVA PHARMA > PENTA PHARMA",
+      "SEDICO > SERIO PHARM",
+      "AUG PHARMA",
+      "EL NILE. > AUG PHARMA",
+      "EL OBOUR > ART PHARMA FOR PHARMACEUTICAL INDUSTRIES"
     ],
     "verified": true
   }

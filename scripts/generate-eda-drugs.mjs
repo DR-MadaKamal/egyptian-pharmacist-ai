@@ -46,7 +46,7 @@ async function main() {
   }
 
   const out = Array.from(map.entries()).map(([key, d]) => {
-    const brands = [...d.brands].slice(0, 5).filter(b => b)
+    const brands = [...d.brands].filter(b => b).sort((a, b) => a.length - b.length).slice(0, 15)
     const mfrs = [...d.mfrs].filter(Boolean).slice(0, 3)
     const prices = d.prices.length > 0 ? [Math.min(...d.prices), Math.max(...d.prices)] : []
     const routes = [...d.routes].filter(Boolean)
