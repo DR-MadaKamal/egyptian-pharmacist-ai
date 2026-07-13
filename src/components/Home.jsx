@@ -1,6 +1,13 @@
+import { useState } from 'react'
 import { severityConfig } from '../utils/interactions.js'
 
-export default function Home({ drugs, diseases, recentlyViewed, onBrowse, onInterview, onPrices, onPharmacopeia }) {
+export default function Home({ drugs, diseases, recentlyViewed, onBrowse, onInterview, onPrices, onPharmacopeia, onSearch }) {
+  const [quickQuery, setQuickQuery] = useState('')
+  const suggestions = drugs.filter(d => {
+    if (!quickQuery.trim() || quickQuery.length < 2) return false
+    const q = quickQuery.toLowerCase()
+    return d.nameEn?.toLowerCase().includes(q) || d.nameAr?.includes(q)
+  }).slice(0, 5)
   const totalInteractions = drugs.reduce((s, d) => s + d.drugInteractions.length + d.diseaseInteractions.length, 0)
   const contraindicated = drugs.reduce((s, d) =>
     s + d.drugInteractions.filter(i => i.severity === 'contraindicated').length +
@@ -90,7 +97,32 @@ export default function Home({ drugs, diseases, recentlyViewed, onBrowse, onInte
                 <div className="text-2xl mb-1">{drug.formEmoji || '💊'}</div>
                 <div className="font-bold text-nile text-sm">{drug.nameAr}</div>
                 <div className="text-xs text-gray-500">{drug.nameEn}</div>
-              </div>
+        <div className="max-w-md mx-auto mt-4 relative">
+          <input
+            type="text"
+            value={quickQuery}
+            onChange={e => setQuickQuery(e.target.value)}
+            onKeyDown={e => { if (e.key === 'Enter' && quickQuery.trim()) { onSearch(quickQuery.trim()); setQuickQuery('') } }}
+            placeholder="ابحث عن دواء... / Search for a drug..."
+            className="w-full px-4 py-2.5 border border-sand-dark rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-gold text-right"
+            dir="auto"
+          />
+          {quickQuery.length >= 2 && suggestions.length > 0 && (
+            <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-sand-dark rounded-xl shadow-lg z-10 overflow-hidden">
+              {suggestions.map(d => (
+                <button
+                  key={d.id}
+                  onMouseDown={() => { onSearch(quickQuery.trim()); setQuickQuery('') }}
+                  className="w-full text-right px-4 py-2 text-sm hover:bg-sand transition-colors border-b border-gray-100 last:border-b-0"
+                >
+                  <span className="text-gray-800">{d.nameAr}</span>
+                  <span className="text-gray-400 mr-2 text-xs">{d.nameEn}</span>
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
             ))}
           </div>
         </div>

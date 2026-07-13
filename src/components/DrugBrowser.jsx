@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { drugCategories, drugCategoriesAr } from '../data/drugs.js'
 import { edaSupplement } from '../data/eda-supplement.js'
 import Highlight from './Highlight.jsx'
@@ -46,7 +46,13 @@ function getFormLabel(routeStr) {
 }
 
 export default function DrugBrowser({ drugs, onViewDrug }) {
-  const [query, setQuery] = useState('')
+  const [query, setQuery] = useState(() => {
+    try { return sessionStorage.getItem('home-search') || '' } catch { return '' }
+  })
+
+  useEffect(() => {
+    try { sessionStorage.removeItem('home-search') } catch {}
+  }, [])
   const [category, setCategory] = useState('')
   const [routeFilter, setRouteFilter] = useState('')
   const [mfrFilter, setMfrFilter] = useState('')
