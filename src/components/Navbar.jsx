@@ -47,8 +47,12 @@ export default function Navbar({ tabs, activeTab, onTabChange }) {
           </button>
         </div>
 
-        {mobileOpen && (
-          <div className="md:hidden pb-3 space-y-1">
+        <div
+          className={`md:hidden overflow-hidden transition-all duration-300 ${
+            mobileOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+          }`}
+        >
+          <div className="pb-3 space-y-1">
             {tabKeys.map(key => (
               <button
                 key={key}
@@ -63,7 +67,7 @@ export default function Navbar({ tabs, activeTab, onTabChange }) {
               </button>
             ))}
           </div>
-        )}
+        </div>
       </div>
     </nav>
   )
