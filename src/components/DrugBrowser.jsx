@@ -49,6 +49,7 @@ export default function DrugBrowser({ drugs, onViewDrug }) {
   const [query, setQuery] = useState('')
   const [category, setCategory] = useState('')
   const [routeFilter, setRouteFilter] = useState('')
+  const [mfrFilter, setMfrFilter] = useState('')
   const [page, setPage] = useState(1)
   const [showEda, setShowEda] = useState(false)
   const [focused, setFocused] = useState(false)
@@ -61,6 +62,15 @@ export default function DrugBrowser({ drugs, onViewDrug }) {
     const routes = new Set()
     drugs.forEach(d => getDrugRouteNorm(d).forEach(r => routes.add(r)))
     return [...routes].sort()
+  }, [drugs])
+
+  const allManufacturers = useMemo(() => {
+    const mfrs = new Set()
+    drugs.forEach(d => {
+      if (d.manufacturerEn) mfrs.add(d.manufacturerEn)
+      if (d.manufacturerAr) mfrs.add(d.manufacturerAr)
+    })
+    return [...mfrs].sort()
   }, [drugs])
 
   const filteredEnriched = useMemo(() => {
@@ -83,6 +93,9 @@ export default function DrugBrowser({ drugs, onViewDrug }) {
     }
     if (routeFilter) {
       result = result.filter(d => getDrugRouteNorm(d).includes(routeFilter))
+    }
+    if (mfrFilter) {
+      result = result.filter(d => d.manufacturerEn === mfrFilter || d.manufacturerAr === mfrFilter)
     }
     return result
   }, [enriched, query, routeFilter])
@@ -193,6 +206,16 @@ export default function DrugBrowser({ drugs, onViewDrug }) {
             <option key={r} value={r}>{ROUTE_LABELS[r] || r} {ROUTE_EMOJI[r] || ''}</option>
           ))}
         </select>
+        <select
+          value={mfrFilter}
+          onChange={e => { setMfrFilter(e.target.value); setPage(1) }}
+          className="px-4 py-2.5 border border-sand-dark rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-gold"
+        >
+          <option value="">كل الشركات / All Manufacturers</option>
+          {allManufacturers.map(m => (
+            <option key={m} value={m}>{m}</option>
+          ))}
+        </select>
       </div>
 
       <div className="flex items-center justify-between">
@@ -291,7 +314,7 @@ export default function DrugBrowser({ drugs, onViewDrug }) {
         ))}
       </div>
 
-      {(query || category || routeFilter) && (
+      {(query || category || routeFilter || mfrFilter) && (
         <div className="flex flex-wrap gap-1.5 items-center">
           {query && (
             <span className="inline-flex items-center gap-1 bg-blue-50 text-blue-700 px-2 py-1 rounded-full text-xs">
@@ -311,8 +334,14 @@ export default function DrugBrowser({ drugs, onViewDrug }) {
               <button onClick={() => { setRouteFilter(''); setPage(1) }} className="hover:text-purple-900">✕</button>
             </span>
           )}
+          {mfrFilter && (
+            <span className="inline-flex items-center gap-1 bg-orange-50 text-orange-700 px-2 py-1 rounded-full text-xs">
+              {mfrFilter}
+              <button onClick={() => { setMfrFilter(''); setPage(1) }} className="hover:text-orange-900">✕</button>
+            </span>
+          )}
           <button
-            onClick={() => { setQuery(''); setCategory(''); setRouteFilter(''); setShowEda(false); setPage(1) }}
+            onClick={() => { setQuery(''); setCategory(''); setRouteFilter(''); setMfrFilter(''); setShowEda(false); setPage(1) }}
             className="text-xs text-red-500 hover:text-red-700 mr-2"
           >
             مسح الكل / Clear all
