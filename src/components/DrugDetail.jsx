@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { getDrugById, getDrugInteractions, getDiseaseInteractions, severityConfig } from '../utils/interactions.js'
 import { edaSupplement } from '../data/eda-supplement.js'
 
@@ -20,6 +20,14 @@ function getMfrIcon(name) {
   return '🏭'
 }
 
+function useLastSync() {
+  const [sync, setSync] = useState(null)
+  useEffect(() => {
+    fetch('/egyptian-pharmacist-ai/data/sync-manifest.json').then(r => r.json()).then(d => setSync(d.lastSync)).catch(() => {})
+  }, [])
+  return sync
+}
+
 export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug }) {
   const drug = getDrugById(drugs, drugId)
   if (!drug) return <div className="text-center py-12 text-red-500">الدواء غير موجود / Drug not found</div>
@@ -27,6 +35,13 @@ export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug
   const drugInts = getDrugInteractions(drugs, drugId)
   const diseaseInts = getDiseaseInteractions(drugs, diseases, drugId)
   const [detailTab, setDetailTab] = useState('info')
+  const lastSync = useLastSync()
+
+  const formatDate = (iso) => {
+    if (!iso) return null
+    const d = new Date(iso)
+    return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' })
+  }
 
   const Section = ({ title, children }) => (
     <div className="bg-white border border-sand-dark rounded-xl p-4">
@@ -111,6 +126,7 @@ export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug
                   <span className="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-xs">{drug.edaGroups[0]}</span>
                 )}
               </div>
+              {lastSync && <p className="text-[10px] text-gray-300 mt-2">آخر تحديث / Last sync: {formatDate(lastSync)}</p>}
             </div>
           </div>
         </div>
@@ -237,6 +253,7 @@ export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug
                 </span>
               )}
             </div>
+            {lastSync && <p className="text-[10px] text-gray-300 mt-2">آخر تحديث / Last sync: {formatDate(lastSync)}</p>}
           </div>
         </div>
       </div>

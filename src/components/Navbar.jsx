@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import DarkModeToggle from './DarkModeToggle.jsx'
+import LangToggle from './LangToggle.jsx'
 
 export default function Navbar({ tabs, activeTab, onTabChange }) {
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -36,6 +37,7 @@ export default function Navbar({ tabs, activeTab, onTabChange }) {
           </div>
 
           <div className="flex items-center gap-1">
+            <LangToggle />
             <DarkModeToggle />
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
