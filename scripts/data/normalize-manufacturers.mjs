@@ -381,6 +381,19 @@ const KNOWN_CORRECTIONS = {
   'EGYPHARMA EGYPT': 'EGYPHARMA',
 }
 
+export const NORMALIZE_ROUTE = {
+  'ORAL': 'ORAL',
+  'TOPICAL': 'TOPICAL',
+  'INJECTION': 'INJECTION',
+  'SPRAY': 'SPRAY',
+  'OPHTHALMIC': 'OPHTHALMIC',
+  'OTIC': 'OTIC',
+  'VAGINAL': 'VAGINAL',
+  'RECTAL': 'RECTAL',
+  'SOAP': 'SOAP',
+  'EFF': 'EFF',
+}
+
 export function normalizeManufacturer(name) {
   if (!name || !name.trim()) return ''
   let n = name.trim()

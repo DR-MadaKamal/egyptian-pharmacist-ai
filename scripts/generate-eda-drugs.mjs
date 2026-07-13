@@ -1,6 +1,36 @@
 import fs from 'fs'
 import path from 'path'
-import { normalizeManufacturer } from './data/normalize-manufacturers.mjs'
+import { normalizeManufacturer, NORMALIZE_ROUTE } from './data/normalize-manufacturers.mjs'
+
+const ROUTE_FORM_MAP = {
+  'ORAL.SOLID': { r: 'ORAL', f: 'SOLID' },
+  'ORAL.LIQUID': { r: 'ORAL', f: 'LIQUID' },
+  'TOPICAL': { r: 'TOPICAL', f: 'TOPICAL' },
+  'INJECTION': { r: 'INJECTION', f: 'INJECTION' },
+  'EFF': { r: 'ORAL', f: 'EFF' },
+  'SPRAY': { r: 'SPRAY', f: 'SPRAY' },
+  'EYE': { r: 'OPHTHALMIC', f: 'EYE' },
+  'VAGINAL': { r: 'VAGINAL', f: 'VAGINAL' },
+  'MOUTH': { r: 'ORAL', f: 'MOUTH' },
+  'RECTAL': { r: 'RECTAL', f: 'RECTAL' },
+  'SOAP': { r: 'TOPICAL', f: 'SOAP' },
+  'EAR': { r: 'OTIC', f: 'EAR' },
+}
+
+function parseRoute(routeStr) {
+  const u = routeStr.toUpperCase().trim()
+  if (ROUTE_FORM_MAP[u]) return ROUTE_FORM_MAP[u]
+  if (u.includes('.')) {
+    const [rr, ff] = u.split('.', 2)
+    return { r: rr, f: ff }
+  }
+  return { r: u, f: u }
+}
+
+function normalizeRoute(routeStr) {
+  const p = parseRoute(routeStr)
+  return NORMALIZE_ROUTE[p.r] || p.r
+}
 
 const EDA_URL = 'https://raw.githubusercontent.com/karem505/egyptian-drug-database/main/data/egyptian-drugs.json'
 const EDA_FILE = process.argv[2] || resolveEdaPath()
@@ -101,6 +131,9 @@ async function main() {
         mfrs: new Set(),
         prices: [],
         routes: new Set(),
+        routePrices: {},   // { "ORAL.SOLID": [p1, p2, ...], ... }
+        routeForms: {},    // { "ORAL.SOLID": "ORAL", ... }
+        routeRaw: {},      // { "ORAL.SOLID": { r: "ORAL", f: "SOLID" }, ... }
         constituents: [],
       })
     }
@@ -117,7 +150,19 @@ async function main() {
     if (brand) d.brands.add(brand)
     if (r.manufacturer) d.mfrs.add(cleanManufacturer(r.manufacturer))
     if (r.price_egp) d.prices.push(r.price_egp)
-    if (r.route && r.route !== 'UNKNOWN') d.routes.add(r.route)
+    if (r.route && r.route !== 'UNKNOWN') {
+      const rt = r.route.trim()
+      d.routes.add(rt)
+      if (r.price_egp) {
+        if (!d.routePrices[rt]) d.routePrices[rt] = []
+        d.routePrices[rt].push(r.price_egp)
+      }
+      if (!d.routeRaw[rt]) {
+        const parsed = parseRoute(rt)
+        d.routeRaw[rt] = parsed
+        d.routeForms[rt] = normalizeRoute(rt)
+      }
+    }
 
     if (!hasSci) missingSciCount++
 
@@ -149,6 +194,41 @@ async function main() {
       )].slice(0, 10)
 
       const o = { s: d.s || key }
+
+      // Per-route/form prices
+      if (d.routes.size > 1 || Object.keys(d.routePrices).length > 0) {
+        const rfMap = new Map()
+        for (const rt of d.routes) {
+          const prs = d.routePrices[rt]
+          if (prs && prs.length > 0) {
+            const parsed = d.routeRaw[rt] || parseRoute(rt)
+            const k = parsed.r + '.' + parsed.f
+            const rp = [Math.min(...prs), Math.max(...prs)]
+            if (!rfMap.has(k)) {
+              rfMap.set(k, [parsed.r, parsed.f, rp[0], rp[1]])
+            } else {
+              const e = rfMap.get(k)
+              e[2] = Math.min(e[2], rp[0])
+              e[3] = Math.max(e[3], rp[1])
+            }
+          } else if (prices.length >= 2) {
+            // Route exists but no per-route prices; use global
+            const parsed = d.routeRaw[rt] || parseRoute(rt)
+            const k = parsed.r + '.' + parsed.f
+            if (!rfMap.has(k)) {
+              rfMap.set(k, [parsed.r, parsed.f, prices[0], prices[1]])
+            }
+          }
+        }
+        if (rfMap.size > 1) {
+          o.rf = [...rfMap.values()]
+        } else if (rfMap.size === 1) {
+          const only = [...rfMap.values()][0]
+          if (prices.length >= 2 && (only[2] !== prices[0] || only[3] !== prices[1])) {
+            o.rf = [only]
+          }
+        }
+      }
       if (brands.length) o.b = brands
       if (mfrs.length) o.m = mfrs.slice(0, 3)
       if (prices.length) o.p = prices

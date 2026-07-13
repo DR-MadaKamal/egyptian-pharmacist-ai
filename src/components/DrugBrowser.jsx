@@ -5,39 +5,94 @@ import { searchEda } from '../utils/edaLoader.js'
 
 const PAGE_SIZE = 50
 
+const ROUTE_EMOJI = {
+  'ORAL': '💊', 'TOPICAL': '🧴', 'INJECTION': '💉', 'SPRAY': '🌫️',
+  'OPHTHALMIC': '👁️', 'OTIC': '👂', 'VAGINAL': '🩺', 'RECTAL': '🩺',
+  'EFF': '💊', 'SOAP': '🧼',
+}
+
+const ROUTE_LABELS = {
+  'ORAL': 'فموي / Oral', 'TOPICAL': 'موضعي / Topical', 'INJECTION': 'حقن / Injection',
+  'SPRAY': 'رذاذ / Spray', 'OPHTHALMIC': 'عين / Ophthalmic', 'OTIC': 'أذن / Otic',
+  'VAGINAL': 'مهبلي / Vaginal', 'RECTAL': 'شرجي / Rectal', 'EFF': 'فوار / Effervescent',
+  'SOAP': 'صابون / Soap',
+}
+
+function getDrugRoutes(d) {
+  if (d.edaRoutes && d.edaRoutes.length > 0) return d.edaRoutes
+  if (d.edaRf) return d.edaRf.map(r => r[0] + '.' + r[1])
+  if (d.prices) return d.prices.map(p => p.formEn || p.form)
+  return []
+}
+
+function getDrugRouteNorm(d) {
+  const routes = getDrugRoutes(d)
+  const norm = new Set()
+  for (const r of routes) {
+    const parts = r.split('.')
+    norm.add(parts[0])
+  }
+  return [...norm]
+}
+
+function getFormLabel(routeStr) {
+  const parts = routeStr.split('.')
+  if (parts.length === 2) {
+    const base = ROUTE_LABELS[parts[0]] || parts[0]
+    const form = parts[1]
+    return form === parts[0] ? base : base + ' (' + form + ')'
+  }
+  return ROUTE_LABELS[routeStr] || routeStr
+}
+
 export default function DrugBrowser({ drugs, onViewDrug }) {
   const [query, setQuery] = useState('')
   const [category, setCategory] = useState('')
+  const [routeFilter, setRouteFilter] = useState('')
   const [page, setPage] = useState(1)
   const [showEda, setShowEda] = useState(false)
 
   const enriched = useMemo(() => drugs.filter(d => !d.edaOnly), [drugs])
   const edaOnly = useMemo(() => drugs.filter(d => d.edaOnly), [drugs])
 
+  const allRoutes = useMemo(() => {
+    const routes = new Set()
+    drugs.forEach(d => getDrugRouteNorm(d).forEach(r => routes.add(r)))
+    return [...routes].sort()
+  }, [drugs])
+
   const filteredEnriched = useMemo(() => {
     const q = query.toLowerCase().trim()
-    if (!q) return enriched
-    return enriched.filter(d => {
-      if (d.nameEn.toLowerCase().includes(q) || d.nameAr.includes(q)) return true
-      if (d.category.toLowerCase().includes(q) || d.categoryAr.includes(q)) return true
-      if (d.scientificNameEn?.toLowerCase().includes(q) || d.scientificNameAr?.includes(q)) return true
-      if (d.activeIngredientEn?.toLowerCase().includes(q) || d.activeIngredientAr?.includes(q)) return true
-      // Search individual constituents in scientific name (multi-ingredient drugs)
-      if (d.scientificNameEn) {
-        const parts = d.scientificNameEn.split('+').map(s => s.trim())
-        if (parts.some(p => p.toLowerCase().includes(q))) return true
-      }
-      // Search EDA supplement brand aliases
-      if ((edaSupplement.find(e => e.id === d.id)?.brandAliases || []).some(a =>
-        (a.en || a.ar).toLowerCase().includes(q))) return true
-      return false
-    })
-  }, [enriched, query])
+    let result = enriched
+    if (q) {
+      result = enriched.filter(d => {
+        if (d.nameEn.toLowerCase().includes(q) || d.nameAr.includes(q)) return true
+        if (d.category.toLowerCase().includes(q) || d.categoryAr.includes(q)) return true
+        if (d.scientificNameEn?.toLowerCase().includes(q) || d.scientificNameAr?.includes(q)) return true
+        if (d.activeIngredientEn?.toLowerCase().includes(q) || d.activeIngredientAr?.includes(q)) return true
+        if (d.scientificNameEn) {
+          const parts = d.scientificNameEn.split('+').map(s => s.trim())
+          if (parts.some(p => p.toLowerCase().includes(q))) return true
+        }
+        if ((edaSupplement.find(e => e.id === d.id)?.brandAliases || []).some(a =>
+          (a.en || a.ar).toLowerCase().includes(q))) return true
+        return false
+      })
+    }
+    if (routeFilter) {
+      result = result.filter(d => getDrugRouteNorm(d).includes(routeFilter))
+    }
+    return result
+  }, [enriched, query, routeFilter])
 
   const filteredEda = useMemo(() => {
-    if (!query.trim()) return showEda ? edaOnly : []
-    return searchEda(edaOnly, query)
-  }, [edaOnly, query, showEda])
+    if (!query.trim() && !routeFilter) return showEda ? edaOnly : []
+    let result = query.trim() ? searchEda(edaOnly, query) : edaOnly
+    if (routeFilter) {
+      result = result.filter(d => getDrugRouteNorm(d).includes(routeFilter))
+    }
+    return showEda || query.trim() ? result : []
+  }, [edaOnly, query, routeFilter, showEda])
 
   const allFiltered = useMemo(() => {
     let result = [...filteredEnriched, ...filteredEda]
@@ -73,6 +128,16 @@ export default function DrugBrowser({ drugs, onViewDrug }) {
           <option value="">كل التصنيفات / All Categories</option>
           {drugCategories.map((cat, i) => (
             <option key={cat} value={cat}>{cat} | {drugCategoriesAr[i]}</option>
+          ))}
+        </select>
+        <select
+          value={routeFilter}
+          onChange={e => { setRouteFilter(e.target.value); setPage(1) }}
+          className="px-4 py-2.5 border border-sand-dark rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-gold"
+        >
+          <option value="">كل طرق التعاطي / All Routes</option>
+          {allRoutes.map(r => (
+            <option key={r} value={r}>{ROUTE_LABELS[r] || r} {ROUTE_EMOJI[r] || ''}</option>
           ))}
         </select>
       </div>
@@ -123,6 +188,15 @@ export default function DrugBrowser({ drugs, onViewDrug }) {
                 )}
                 {drug.edaMfrs && drug.edaMfrs.length > 0 && (
                   <div className="mt-1">🏭 {drug.edaMfrs.join(', ')}</div>
+                )}
+                {drug.edaRoutes && drug.edaRoutes.length > 0 && (
+                  <div className="mt-1 flex flex-wrap gap-1">
+                    {drug.edaRoutes.map(rt => (
+                      <span key={rt} className="inline-block bg-gray-100 text-gray-600 px-1.5 py-0.5 rounded text-[10px]">
+                        {getFormLabel(rt)}
+                      </span>
+                    ))}
+                  </div>
                 )}
               </div>
             ) : (

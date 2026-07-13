@@ -49,6 +49,7 @@ export async function loadEdaDrugs() {
     edaBrands: item.b || [],
     edaMfrs: item.m || [],
     edaRoutes: item.r || [],
+    edaRf: item.rf || null,
     edaPriceRange: item.p || [],
     constituents: item.c || [],
   }))
@@ -89,6 +90,7 @@ export async function loadEdaDrugs() {
     edaBrands: item.b || [],
     edaMfrs: item.m || [],
     edaRoutes: item.r || [],
+    edaRf: item.rf || null,
     edaPriceRange: item.p || [],
     edaGroups: item.g || [],
     pharmacology: item.h || '',
@@ -115,6 +117,7 @@ export function searchEda(edaDrugs, query) {
     if (d.constituents && d.constituents.some(c => c.toLowerCase().includes(q))) return true
     if (d.edaGroups && d.edaGroups.some(g => g.toLowerCase().includes(q))) return true
     if (d.pharmacology && d.pharmacology.toLowerCase().includes(q)) return true
+    if (d.edaRoutes && d.edaRoutes.some(r => r.toLowerCase().includes(q))) return true
     return false
   })
 }

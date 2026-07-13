@@ -71,7 +71,17 @@ export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug
             {drug.edaRoutes && drug.edaRoutes.length > 0 && (
               <div className="bg-gray-50 rounded-lg p-3">
                 <span className="text-xs font-bold text-gray-400 uppercase">📦 طرق التعاطي / Routes</span>
-                <div className="text-sm text-gray-700 mt-1">{drug.edaRoutes.join(', ')}</div>
+                <div className="flex flex-wrap gap-1.5 mt-1">
+                  {drug.edaRoutes.map(rt => {
+                    const parts = rt.split('.')
+                    const emoji = {'ORAL':'💊','TOPICAL':'🧴','INJECTION':'💉','SPRAY':'🌫️','OPHTHALMIC':'👁️','OTIC':'👂','VAGINAL':'🩺','RECTAL':'🩸','EFF':'💊'}[parts[0]] || '📦'
+                    return (
+                      <span key={rt} className="inline-flex items-center gap-1 bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">
+                        {emoji} {parts[1] === parts[0] ? parts[0] : rt}
+                      </span>
+                    )
+                  })}
+                </div>
               </div>
             )}
             {drug.edaGroups && drug.edaGroups.length > 0 && (
@@ -91,14 +101,34 @@ export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug
 
         {drug.edaPriceRange && drug.edaPriceRange.length > 0 && (
           <Section title="💰 الأسعار / Prices">
-            <div className="text-lg font-bold text-gold-dark">
-              EGP {drug.edaPriceRange[0]} – {drug.edaPriceRange[1]}
-            </div>
-            <p className="text-xs text-gray-500 mt-1">
-              {drug.dataSource === 'MOHMED'
-                ? 'السعر حسب دليل الأدوية 2024 (قد يكون قديماً) / Price from 2024 Drug Guide (may be outdated)'
-                : 'نطاق سعر معتمد من هيئة الدواء المصرية / Price range verified by the Egyptian Drug Authority'}
-            </p>
+            {drug.edaRf && drug.edaRf.length > 0 ? (
+              <div className="space-y-2">
+                {drug.edaRf.map(([route, form, pmin, pmax], i) => (
+                  <div key={i} className="flex items-center justify-between bg-gray-50 rounded-lg px-3 py-2">
+                    <span className="font-bold text-gold-dark text-sm">
+                      EGP {pmin}{pmin !== pmax ? ` – ${pmax}` : ''}
+                    </span>
+                    <span className="text-xs text-gray-600">{route} / {form}</span>
+                  </div>
+                ))}
+                <p className="text-xs text-gray-500 mt-1">
+                  {drug.dataSource === 'MOHMED'
+                    ? 'السعر حسب دليل الأدوية 2024 (قد يكون قديماً) / Price from 2024 Drug Guide (may be outdated)'
+                    : 'نطاق سعر معتمد من هيئة الدواء المصرية / Price range verified by the Egyptian Drug Authority'}
+                </p>
+              </div>
+            ) : (
+              <>
+                <div className="text-lg font-bold text-gold-dark">
+                  EGP {drug.edaPriceRange[0]} – {drug.edaPriceRange[1]}
+                </div>
+                <p className="text-xs text-gray-500 mt-1">
+                  {drug.dataSource === 'MOHMED'
+                    ? 'السعر حسب دليل الأدوية 2024 (قد يكون قديماً) / Price from 2024 Drug Guide (may be outdated)'
+                    : 'نطاق سعر معتمد من هيئة الدواء المصرية / Price range verified by the Egyptian Drug Authority'}
+                </p>
+              </>
+            )}
           </Section>
         )}
 

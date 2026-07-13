@@ -1,10 +1,39 @@
 import { useState, useMemo } from 'react'
 
+const ROUTE_LABELS = {
+  'ORAL': 'فموي', 'TOPICAL': 'موضعي', 'INJECTION': 'حقن', 'SPRAY': 'رذاذ',
+  'OPHTHALMIC': 'عين', 'OTIC': 'أذن', 'VAGINAL': 'مهبلي', 'RECTAL': 'شرجي', 'EFF': 'فوار',
+}
+
+function getDrugRoutes(d) {
+  if (d.edaRf) return d.edaRf.map(r => r[0] + '.' + r[1])
+  if (d.edaRoutes && d.edaRoutes.length > 0) return d.edaRoutes
+  if (d.prices) return d.prices.map(p => p.formEn || p.form)
+  return []
+}
+
+function getDrugRouteNorm(d) {
+  const routes = getDrugRoutes(d)
+  const norm = new Set()
+  for (const r of routes) {
+    const parts = r.split('.')
+    norm.add(parts[0])
+  }
+  return [...norm]
+}
+
 export default function PriceList({ drugs, onViewDrug }) {
   const [query, setQuery] = useState('')
+  const [routeFilter, setRouteFilter] = useState('')
   const [sortBy, setSortBy] = useState('name')
   const [page, setPage] = useState(1)
   const PAGE_SIZE = 100
+
+  const allRoutes = useMemo(() => {
+    const routes = new Set()
+    drugs.forEach(d => getDrugRouteNorm(d).forEach(r => routes.add(r)))
+    return [...routes].sort()
+  }, [drugs])
 
   const sorted = useMemo(() => {
     let result = [...drugs].filter(d => d.prices && d.prices.length > 0)
@@ -15,6 +44,9 @@ export default function PriceList({ drugs, onViewDrug }) {
         (d.manufacturerEn || '').toLowerCase().includes(q) ||
         (d.edaBrands || []).some(b => b.toLowerCase().includes(q))
       )
+    }
+    if (routeFilter) {
+      result = result.filter(d => getDrugRouteNorm(d).includes(routeFilter))
     }
     switch (sortBy) {
       case 'price-asc': result.sort((a, b) => {
@@ -30,7 +62,7 @@ export default function PriceList({ drugs, onViewDrug }) {
       default: result.sort((a, b) => a.nameEn.localeCompare(b.nameEn))
     }
     return result
-  }, [drugs, query, sortBy])
+  }, [drugs, query, routeFilter, sortBy])
 
   const pageItems = sorted.slice(0, page * PAGE_SIZE)
 
@@ -47,6 +79,16 @@ export default function PriceList({ drugs, onViewDrug }) {
           className="flex-1 px-4 py-2.5 border border-sand-dark rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-gold text-right"
           dir="auto"
         />
+        <select
+          value={routeFilter}
+          onChange={e => { setRouteFilter(e.target.value); setPage(1) }}
+          className="px-4 py-2.5 border border-sand-dark rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-gold"
+        >
+          <option value="">كل الطرق / All Routes</option>
+          {allRoutes.map(r => (
+            <option key={r} value={r}>{ROUTE_LABELS[r] || r}</option>
+          ))}
+        </select>
         <select
           value={sortBy}
           onChange={e => setSortBy(e.target.value)}
@@ -80,10 +122,21 @@ export default function PriceList({ drugs, onViewDrug }) {
             </div>
             <div className="text-left shrink-0 mr-3">
               {drug.edaOnly ? (
-                drug.edaPriceRange.length > 0 && (
-                  <div className="text-sm font-bold text-gold-dark">
-                    EGP {drug.edaPriceRange[0]} – {drug.edaPriceRange[1]}
+                drug.edaRf && drug.edaRf.length > 0 ? (
+                  <div className="text-right">
+                    {drug.edaRf.map(([route, form, pmin, pmax], i) => (
+                      <div key={i} className="text-xs whitespace-nowrap">
+                        <span className="font-bold text-gold-dark">EGP {pmin}{pmin !== pmax ? `-${pmax}` : ''}</span>
+                        <span className="text-gray-500 mr-1">| {route}/{form}</span>
+                      </div>
+                    ))}
                   </div>
+                ) : (
+                  drug.edaPriceRange.length > 0 && (
+                    <div className="text-sm font-bold text-gold-dark">
+                      EGP {drug.edaPriceRange[0]} – {drug.edaPriceRange[1]}
+                    </div>
+                  )
                 )
               ) : (
                 drug.prices.map((p, i) => (
