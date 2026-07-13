@@ -2,11 +2,13 @@ import { useState, useEffect } from 'react'
 import DrugBrowser from './DrugBrowser.jsx'
 import PriceList from './PriceList.jsx'
 import InteractionHub from './InteractionHub.jsx'
+import DrugCompare from './DrugCompare.jsx'
 
 const SUB_TABS = {
   browse: { label: 'تصفح', labelEn: 'Browse', icon: '🔍' },
   prices: { label: 'الأسعار', labelEn: 'Prices', icon: '💰' },
   interactions: { label: 'التفاعلات', labelEn: 'Interactions', icon: '⚡' },
+  compare: { label: 'مقارنة', labelEn: 'Compare', icon: '⚖️' },
 }
 
 const STORAGE_KEY = 'drughub-subtab'
@@ -45,6 +47,7 @@ export default function DrugHub({ drugs, diseases, onViewDrug }) {
       {subTab === 'browse' && <DrugBrowser drugs={drugs} onViewDrug={onViewDrug} />}
       {subTab === 'prices' && <PriceList drugs={drugs} onViewDrug={onViewDrug} />}
       {subTab === 'interactions' && <InteractionHub drugs={drugs} diseases={diseases} onViewDrug={onViewDrug} />}
+      {subTab === 'compare' && <DrugCompare drugs={drugs} />}
     </div>
   )
 }

@@ -6,6 +6,7 @@ export default function AdminPanel({ allDrugs, onLogout, onViewDrug }) {
   const [subTab, setSubTab] = useState('dashboard')
   const [refreshKey, setRefreshKey] = useState(0)
   const [syncInfo, setSyncInfo] = useState(null)
+  const [editDrug, setEditDrug] = useState(null)
 
   useEffect(() => {
     fetch('/egyptian-pharmacist-ai/data/sync-manifest.json').then(r => r.json()).then(setSyncInfo).catch(() => {})
@@ -32,6 +33,11 @@ export default function AdminPanel({ allDrugs, onLogout, onViewDrug }) {
     const complete = enriched.filter(d => d.nameAr && d.nameEn && d.manufacturerEn && d.category && (d.prices?.length > 0 || d.edaRf?.length > 0))
     return Math.round((complete.length / enriched.length) * 100)
   }, [allDrugs])
+
+  const handleEdit = (drug) => {
+    setEditDrug(drug)
+    setSubTab('add')
+  }
 
   return (
     <div className="space-y-4">
@@ -127,6 +133,12 @@ export default function AdminPanel({ allDrugs, onLogout, onViewDrug }) {
                       عرض / View
                     </button>
                     <button
+                      onClick={() => handleEdit(d)}
+                      className="text-xs text-green-600 hover:text-green-800 px-2 py-1 rounded hover:bg-green-50"
+                    >
+                      تعديل / Edit
+                    </button>
+                    <button
                       onClick={() => handleDelete(d.id)}
                       className="text-xs text-red-600 hover:text-red-800 px-2 py-1 rounded hover:bg-red-50"
                     >
@@ -156,8 +168,11 @@ export default function AdminPanel({ allDrugs, onLogout, onViewDrug }) {
       {subTab === 'add' && (
         <div className="max-w-lg mx-auto">
           <div className="bg-white border border-sand-dark rounded-xl p-6">
-            <h3 className="text-lg font-bold text-nile mb-4">➕ إضافة دواء جديد / Add New Drug</h3>
-            <DrugForm onSuccess={handleAddDrug} />
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-lg font-bold text-nile">{editDrug ? '✏️ تعديل الدواء / Edit Drug' : '➕ إضافة دواء جديد / Add New Drug'}</h3>
+              {editDrug && <button onClick={() => { setEditDrug(null); setSubTab('dashboard') }} className="text-xs text-gray-400 hover:text-gray-600">إلغاء / Cancel</button>}
+            </div>
+            <DrugForm key={editDrug?.id || 'new'} initialData={editDrug} onSuccess={() => { setEditDrug(null); handleAddDrug() }} onSave={() => { setEditDrug(null) }} />
           </div>
         </div>
       )}

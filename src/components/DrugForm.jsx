@@ -1,23 +1,44 @@
-import { useState, useRef } from 'react'
-import { addUserDrug } from '../utils/store.js'
+import { useState } from 'react'
+import { addUserDrug, updateUserDrug } from '../utils/store.js'
 
-const initialState = {
-  nameAr: '', nameEn: '',
-  scientificNameAr: '', scientificNameEn: '',
-  activeIngredientAr: '', activeIngredientEn: '',
-  category: '', categoryAr: '',
-  formEmoji: '💊',
-  description: '', descriptionAr: '',
-  indicationEn: '', indicationAr: '',
-  mechanismEn: '', mechanismAr: '',
-  sideEffectsEn: '', sideEffectsAr: '',
-  dosageEn: '', dosageAr: '',
-  pregnancyEn: '', pregnancyAr: '',
-  breastfeedingEn: '', breastfeedingAr: '',
-  manufacturerEn: '', manufacturerAr: '',
-  prices: [],
-  imageUrl: '',
+function buildInitial(edit) {
+  if (!edit) return {
+    nameAr: '', nameEn: '',
+    scientificNameAr: '', scientificNameEn: '',
+    activeIngredientAr: '', activeIngredientEn: '',
+    category: '', categoryAr: '',
+    formEmoji: '💊',
+    description: '', descriptionAr: '',
+    indicationEn: '', indicationAr: '',
+    mechanismEn: '', mechanismAr: '',
+    sideEffectsEn: '', sideEffectsAr: '',
+    dosageEn: '', dosageAr: '',
+    pregnancyEn: '', pregnancyAr: '',
+    breastfeedingEn: '', breastfeedingAr: '',
+    manufacturerEn: '', manufacturerAr: '',
+    prices: [],
+    imageUrl: '',
+  }
+  return {
+    nameAr: edit.nameAr || '', nameEn: edit.nameEn || '',
+    scientificNameAr: edit.scientificNameAr || '', scientificNameEn: edit.scientificNameEn || '',
+    activeIngredientAr: edit.activeIngredientAr || '', activeIngredientEn: edit.activeIngredientEn || '',
+    category: edit.category || '', categoryAr: edit.categoryAr || '',
+    formEmoji: edit.formEmoji || '💊',
+    description: edit.description || '', descriptionAr: edit.descriptionAr || '',
+    indicationEn: edit.indicationEn || '', indicationAr: edit.indicationAr || '',
+    mechanismEn: edit.mechanismEn || '', mechanismAr: edit.mechanismAr || '',
+    sideEffectsEn: edit.sideEffectsEn || '', sideEffectsAr: edit.sideEffectsAr || '',
+    dosageEn: edit.dosageEn || '', dosageAr: edit.dosageAr || '',
+    pregnancyEn: edit.pregnancyEn || '', pregnancyAr: edit.pregnancyAr || '',
+    breastfeedingEn: edit.breastfeedingEn || '', breastfeedingAr: edit.breastfeedingAr || '',
+    manufacturerEn: edit.manufacturerEn || '', manufacturerAr: edit.manufacturerAr || '',
+    prices: edit.prices || [],
+    imageUrl: edit.imageUrl || '',
+  }
 }
+
+const initialState = buildInitial()
 
 const formEmojis = ['💊', '💉', '💧', '🩹', '💨', '🧴', '🍬']
 
@@ -38,10 +59,10 @@ const commonCategories = [
   { en: 'Other', ar: 'أخرى' },
 ]
 
-export default function DrugForm({ onSuccess }) {
-  const [form, setForm] = useState(initialState)
-  const [interactions, setInteractions] = useState([])
-  const [diseaseInts, setDiseaseInts] = useState([])
+export default function DrugForm({ initialData, onSuccess, onSave }) {
+  const [form, setForm] = useState(() => buildInitial(initialData))
+  const [interactions, setInteractions] = useState(initialData?.drugInteractions || [])
+  const [diseaseInts, setDiseaseInts] = useState(initialData?.diseaseInteractions || [])
   const [newInter, setNewInter] = useState({ drugName: '', severity: 'moderate', description: '' })
   const [newDisease, setNewDisease] = useState({ name: '', severity: 'moderate', description: '' })
   const [newPrice, setNewPrice] = useState({ form: '', formEn: '', price: '', unit: 'EGP' })
@@ -85,8 +106,13 @@ export default function DrugForm({ onSuccess }) {
         description: d.description
       }))
     }
-    addUserDrug(drug)
-    onSuccess()
+    if (initialData) {
+      updateUserDrug(initialData.id, drug)
+      if (onSave) onSave(drug)
+    } else {
+      addUserDrug(drug)
+    }
+    if (onSuccess) onSuccess()
   }
 
   const Field = ({ label, field, dir, required }) => (
@@ -287,7 +313,7 @@ export default function DrugForm({ onSuccess }) {
 
         <button type="submit" disabled={!form.nameAr || !form.nameEn || submitting}
           className="w-full bg-gold text-nile py-3 rounded-xl font-bold text-lg hover:bg-gold-light transition-colors disabled:opacity-50">
-          {submitting ? 'جاري الحفظ...' : '💾 حفظ الدواء / Save Drug'}
+          {submitting ? 'جاري الحفظ...' : initialData ? '💾 تحديث الدواء / Update Drug' : '💾 حفظ الدواء / Save Drug'}
         </button>
       </form>
     </div>

@@ -2,12 +2,31 @@ import { useState } from 'react'
 import { getDrugById, getDrugInteractions, getDiseaseInteractions, severityConfig } from '../utils/interactions.js'
 import { edaSupplement } from '../data/eda-supplement.js'
 
+const MFR_ICONS = new Map([
+  ['glaxo', '🧬'], ['gsk', '🧬'], ['pfizer', '🔵'], ['novartis', '🔴'], ['sanofi', '🟦'],
+  ['bayer', '➕'], ['roche', '🔬'], ['johnson', '🤱'], ['abbott', '🅰️'], ['merck', '⬇️'],
+  ['novo nordisk', '🩸'], ['astrazeneca', '🟢'], ['takeda', '🔶'], ['lilly', '💉'],
+  ['boehringer', '🫁'], ['sandoz', '🟣'], ['tev', '💊'], ['hikma', '🔷'], ['eipico', '🇪🇬'],
+  ['alexandria', '🏛️'], ['misr', '🇪🇬'], ['sigma', 'Σ'], ['memphis', '🏺'],
+  ['arabic', '🌙'], ['pharco', '🔺'], ['amoun', '🟠'],
+])
+
+function getMfrIcon(name) {
+  if (!name) return '🏭'
+  const n = name.toLowerCase()
+  for (const [key, icon] of MFR_ICONS) {
+    if (n.includes(key)) return icon
+  }
+  return '🏭'
+}
+
 export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug }) {
   const drug = getDrugById(drugs, drugId)
   if (!drug) return <div className="text-center py-12 text-red-500">الدواء غير موجود / Drug not found</div>
 
   const drugInts = getDrugInteractions(drugs, drugId)
   const diseaseInts = getDiseaseInteractions(drugs, diseases, drugId)
+  const [detailTab, setDetailTab] = useState('info')
 
   const Section = ({ title, children }) => (
     <div className="bg-white border border-sand-dark rounded-xl p-4">
@@ -48,6 +67,12 @@ export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug
     )
   }
 
+  const PrintBtn = () => (
+    <button onClick={() => window.print()} className="text-xs text-gray-400 hover:text-nile mr-2 shrink-0 no-print" title="طباعة / Print">
+      🖨️
+    </button>
+  )
+
   const Biline = ({ label, ar, en }) => (
     <div className="mb-2">
       <span className="text-xs font-bold text-gray-400 uppercase">{label}</span>
@@ -72,6 +97,7 @@ export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug
               <h2 className="text-2xl md:text-3xl font-bold text-nile">
                 {drug.nameAr}
                 <ShareBtn drug={drug} />
+                <PrintBtn />
                 <CopyBtn text={`${drug.nameAr} - ${drug.nameEn}`} />
               </h2>
               <p className="text-gray-500 text-lg">{drug.nameEn}</p>
@@ -101,7 +127,7 @@ export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug
             </div>
             <div className="bg-gray-50 rounded-lg p-3">
               <span className="text-xs font-bold text-gray-400 uppercase">🏭 الشركات المصنعة / Manufacturers</span>
-              <div className="text-sm text-gray-700 mt-1">{(drug.edaMfrs && drug.edaMfrs.length > 0) ? drug.edaMfrs.join(', ') : 'غير متوفر / N/A'}</div>
+              <div className="text-sm text-gray-700 mt-1">{(drug.edaMfrs && drug.edaMfrs.length > 0) ? drug.edaMfrs.map(m => `${getMfrIcon(m)} ${m}`).join(', ') : 'غير متوفر / N/A'}</div>
             </div>
             {drug.edaRoutes && drug.edaRoutes.length > 0 && (
               <div className="bg-gray-50 rounded-lg p-3">
@@ -198,6 +224,7 @@ export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug
             <h2 className="text-2xl md:text-3xl font-bold text-nile">
               {drug.nameAr}
               <ShareBtn drug={drug} />
+              <PrintBtn />
               <CopyBtn text={`${drug.nameAr} - ${drug.nameEn}`} />
             </h2>
             <p className="text-gray-500 text-lg">{drug.nameEn}</p>
@@ -214,6 +241,23 @@ export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug
         </div>
       </div>
 
+      {/* detail tab bar */}
+      <div className="flex gap-1 bg-sand rounded-lg p-0.5 overflow-x-auto no-print">
+        {[
+          { key: 'info', label: 'ℹ️ معلومات / Info' },
+          { key: 'clinical', label: '⚕️ سريري / Clinical' },
+          { key: 'pricing', label: '💰 أسعار / Pricing' },
+          { key: 'interact', label: '⚡ تفاعلات / Interactions' },
+        ].map(t => (
+          <button key={t.key} onClick={() => setDetailTab(t.key)}
+            className={`px-3 py-1.5 rounded-md text-xs font-medium whitespace-nowrap transition-colors ${
+              detailTab === t.key ? 'bg-white text-nile shadow-sm' : 'text-gray-500 hover:text-nile'
+            }`}>{t.label}</button>
+        ))}
+      </div>
+
+      {detailTab === 'info' && (
+      <>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <Section title="🔬 الاسم العلمي / Scientific Name">
           <Biline label="" ar={drug.scientificNameAr} en={drug.scientificNameEn} />
@@ -231,7 +275,11 @@ export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug
       <Section title="🩺 الاستخدامات / Indications">
         <Biline label="" ar={drug.indicationAr} en={drug.indicationEn} />
       </Section>
+      </>
+      )}
 
+      {detailTab === 'clinical' && (
+      <>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <Section title="⚙️ آلية العمل / Mechanism">
           <Biline label="" ar={drug.mechanismAr} en={drug.mechanismEn} />
@@ -255,11 +303,14 @@ export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug
           <Biline label="" ar={drug.breastfeedingAr} en={drug.breastfeedingEn} />
         </Section>
         <Section title="🏭 الشركة المصنعة / Manufacturer">
-          <Biline label="" ar={drug.manufacturerAr} en={drug.manufacturerEn} />
+          <Biline label="" ar={drug.manufacturerAr} en={`${getMfrIcon(drug.manufacturerEn)} ${drug.manufacturerEn}`} />
         </Section>
       </div>
+      </>
+      )}
 
-      {(drug.prices && drug.prices.length > 0) || (drug.edaRf && drug.edaRf.length > 0) ? (
+      {detailTab === 'pricing' && (
+      <>
         <Section title="💰 الأسعار / Prices">
           <div className="space-y-1">
             {drug.edaRf && drug.edaRf.length > 0 ? (
@@ -276,11 +327,38 @@ export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug
                   <span className="text-gray-600">{p.form}</span>
                 </div>
               ))
-            ) : null}
+            ) : (
+              <p className="text-gray-400 text-sm">لا توجد أسعار متاحة / No prices available</p>
+            )}
           </div>
         </Section>
-      ) : null}
 
+        {drug.category && (
+          <Section title="🔄 أدوية بديلة / Drug Alternatives">
+            {(() => {
+              const alternatives = drugs.filter(d =>
+                d.id !== drug.id && d.category === drug.category && !d.edaOnly
+              ).slice(0, 6)
+              if (alternatives.length === 0) return <p className="text-gray-400 text-sm">لا توجد بدائل متاحة / No alternatives available</p>
+              return (
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  {alternatives.map(alt => (
+                    <button key={alt.id} onClick={() => onViewDrug(alt.id)}
+                      className="text-right bg-gray-50 hover:bg-sand rounded-lg p-3 transition-colors">
+                      <div className="font-bold text-nile text-sm">{alt.formEmoji || '💊'} {alt.nameAr}</div>
+                      <div className="text-xs text-gray-500">{alt.nameEn}</div>
+                      {alt.manufacturerEn && <div className="text-[10px] text-gray-400 mt-0.5">{getMfrIcon(alt.manufacturerEn)} {alt.manufacturerEn}</div>}
+                    </button>
+                  ))}
+                </div>
+              )
+            })()}
+          </Section>
+        )}
+      </>
+      )}
+
+      {detailTab === 'interact' && (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <Section title="⚡ التفاعلات الدوائية / Drug Interactions">
           {drugInts.length === 0 ? (
@@ -331,6 +409,7 @@ export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug
           )}
         </Section>
       </div>
+      )}
     </div>
   )
 }

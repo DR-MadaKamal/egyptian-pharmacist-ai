@@ -38,3 +38,14 @@ main > * {
 .severity-pulse {
   animation: pulse-severity 2s ease-in-out infinite;
 }
+
+@media print {
+  nav, footer, .no-print, button, [class*="ScrollToTop"], .animate-\[fade-in\] { display: none !important; }
+  body, .dark body { background: white !important; color: black !important; }
+  .bg-white, .bg-sand, .bg-nile { background: white !important; color: black !important; }
+  a { color: #000 !important; text-decoration: underline !important; }
+  .max-w-6xl { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+  .rounded-xl { border: 1px solid #ccc !important; border-radius: 4px !important; }
+  .shadow-lg, .shadow-md { box-shadow: none !important; }
+  @page { margin: 1cm; }
+}

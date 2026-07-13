@@ -12,6 +12,7 @@ import Pharmacopeia from './components/Pharmacopeia.jsx'
 import AdminLogin from './components/AdminLogin.jsx'
 import AdminPanel from './components/AdminPanel.jsx'
 import ScrollToTop from './components/ScrollToTop.jsx'
+import NetworkStatus from './components/NetworkStatus.jsx'
 
 const TABS = {
   home: { label: 'الرئيسية', labelEn: 'Home', icon: '🏠' },
@@ -101,6 +102,7 @@ export default function App() {
   return (
     <div className="min-h-screen flex flex-col" dir="auto">
       <Navbar tabs={TABS} activeTab={tab} onTabChange={setTab} />
+      <NetworkStatus />
 
       <main className="flex-1 max-w-6xl w-full mx-auto px-3 sm:px-4 md:px-6 py-4 md:py-6">
         {tab === 'home' && (

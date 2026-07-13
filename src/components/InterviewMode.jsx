@@ -1,15 +1,24 @@
-import { useState, useMemo, useCallback } from 'react'
+import { useState, useMemo, useCallback, useEffect, useRef } from 'react'
 import { severityConfig } from '../utils/interactions.js'
 import { generateMixedQuestions } from '../utils/quiz.js'
 
-function QuestionCard({ question, index, total, onAnswer, answered }) {
+function QuestionCard({ question, index, total, onAnswer, answered, onSkip }) {
+  const severityColors = { contraindicated: 'bg-red-600', severe: 'bg-orange-500', moderate: 'bg-yellow-500', mild: 'bg-blue-500' }
+  const severityAr = { contraindicated: 'ممنوع', severe: 'شديد', moderate: 'متوسط', mild: 'خفيف' }
   return (
     <div className="bg-white border border-sand-dark rounded-xl p-4 md:p-6">
       <div className="flex items-center justify-between mb-3">
         <span className="text-xs text-gray-400">سؤال {index + 1} / {total}</span>
-        <span className="bg-nile text-white text-xs px-2 py-1 rounded">
-          {question.type === 'drug-drug' ? 'تفاعل دوائي' : 'تفاعل مرضي'}
-        </span>
+        <div className="flex items-center gap-2">
+          {question.severity && (
+            <span className={`text-xs font-bold px-2 py-0.5 rounded-full text-white ${severityColors[question.severity] || 'bg-gray-500'}`}>
+              {severityAr[question.severity] || question.severity}
+            </span>
+          )}
+          <span className="bg-nile text-white text-xs px-2 py-1 rounded">
+            {question.type === 'drug-drug' ? 'تفاعل دوائي' : 'تفاعل مرضي'}
+          </span>
+        </div>
       </div>
 
       <div className="text-right mb-4">
@@ -83,6 +92,8 @@ export default function InterviewMode({ drugs, diseases }) {
   const [current, setCurrent] = useState(0)
   const [answers, setAnswers] = useState([])
   const [answered, setAnswered] = useState(null)
+  const [timeLeft, setTimeLeft] = useState(null)
+  const timerRef = useRef(null)
 
   const enoughData = drugs.filter(d => d.drugInteractions.length > 0).length > 1
 
@@ -93,8 +104,24 @@ export default function InterviewMode({ drugs, diseases }) {
     setCurrent(0)
     setAnswers([])
     setAnswered(null)
+    setTimeLeft(questionCount * 30)
     setPhase('quiz')
   }, [drugs, diseases, questionCount])
+
+  useEffect(() => {
+    if (phase !== 'quiz' || timeLeft === null || timeLeft <= 0) {
+      if (timeLeft === 0) setPhase('results')
+      return
+    }
+    timerRef.current = setTimeout(() => setTimeLeft(t => t - 1), 1000)
+    return () => clearTimeout(timerRef.current)
+  }, [phase, timeLeft])
+
+  const formatTime = (s) => {
+    const m = Math.floor(s / 60)
+    const sec = s % 60
+    return `${m}:${sec.toString().padStart(2, '0')}`
+  }
 
   const handleAnswer = (opt) => {
     setAnswered(opt)
@@ -165,8 +192,13 @@ export default function InterviewMode({ drugs, diseases }) {
           <div className="bg-gold h-2 rounded-full transition-all duration-300"
             style={{ width: `${(answered ? current + 1 : current) / questions.length * 100}%` }} />
         </div>
-        <div className="text-center text-sm text-gray-500">
-          التقدم: {answered ? current + 1 : current} / {questions.length}
+        <div className="flex items-center justify-between text-sm">
+          <span className="text-gray-500">التقدم: {answered ? current + 1 : current} / {questions.length}</span>
+          {timeLeft !== null && (
+            <span className={`font-mono font-bold ${timeLeft < 30 ? 'text-red-500 animate-pulse' : 'text-gray-500'}`}>
+              ⏱ {formatTime(timeLeft)}
+            </span>
+          )}
         </div>
 
         <QuestionCard
@@ -177,18 +209,52 @@ export default function InterviewMode({ drugs, diseases }) {
           answered={answered}
         />
 
-        {answered && (
+        {answered ? (
           <button onClick={nextQuestion}
             className="w-full bg-nile text-white py-3 rounded-xl font-bold hover:bg-nile-light transition-colors">
             {current + 1 < questions.length ? '→ السؤال التالي / Next Question' : '📊 عرض النتائج / View Results'}
+          </button>
+        ) : (
+          <button onClick={() => { setAnswers(prev => [...prev, { question, selected: null, correct: false, skipped: true }]); setCurrent(c => c + 1) }}
+            className="w-full bg-gray-100 text-gray-500 py-2 rounded-xl font-medium text-sm hover:bg-gray-200 transition-colors">
+            ⏭ تخطي / Skip
           </button>
         )}
       </div>
     )
   }
 
+  const [reviewIndex, setReviewIndex] = useState(null)
+
   const grade = percentage >= 90 ? 'ممتاز / Excellent' : percentage >= 75 ? 'جيد جداً / Very Good' : percentage >= 60 ? 'جيد / Good' : percentage >= 40 ? 'مقبول / Fair' : 'ضعيف / Needs Improvement'
   const gradeEmoji = percentage >= 90 ? '🌟' : percentage >= 75 ? '🎉' : percentage >= 60 ? '👍' : percentage >= 40 ? '📚' : '💪'
+
+  if (reviewIndex !== null) {
+    const r = answers[reviewIndex]
+    const q = r?.question
+    if (!q) return null
+    const correctOpt = q.options.find(o => o.correct)
+    return (
+      <div className="space-y-4 max-w-2xl mx-auto">
+        <QuestionCard question={q} index={reviewIndex} total={answers.length} onAnswer={() => {}} answered={r.selected && r} />
+        {(!r.correct || r.skipped) && (
+          <div className="bg-green-50 border border-green-200 rounded-xl p-3 text-sm text-green-700">
+            {r.skipped ? '⏭ تم التخطي — ' : ''}الإجابة الصحيحة: {correctOpt?.drug?.nameAr || correctOpt?.disease?.nameAr} ({correctOpt?.drug?.nameEn || correctOpt?.disease?.nameEn})
+          </div>
+        )}
+        <div className="flex gap-2">
+          {reviewIndex > 0 && (
+            <button onClick={() => setReviewIndex(i => i - 1)} className="flex-1 bg-sand text-nile py-2 rounded-xl font-bold hover:bg-sand-dark transition-colors">← السابق / Previous</button>
+          )}
+          {reviewIndex < answers.length - 1 ? (
+            <button onClick={() => setReviewIndex(i => i + 1)} className="flex-1 bg-nile text-white py-2 rounded-xl font-bold hover:bg-nile-light transition-colors">التالي / Next →</button>
+          ) : (
+            <button onClick={() => setReviewIndex(null)} className="flex-1 bg-nile text-white py-2 rounded-xl font-bold hover:bg-nile-light transition-colors">📊 العودة للنتائج / Back to Results</button>
+          )}
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className="space-y-6 max-w-2xl mx-auto">
@@ -213,25 +279,62 @@ export default function InterviewMode({ drugs, diseases }) {
           </div>
         </div>
 
+        {timeLeft !== null && timeLeft > 0 && (
+          <p className="text-xs text-gray-400 mb-4">الوقت المستغرق: {formatTime(questionCount * 30 - timeLeft)}</p>
+        )}
+
+        {/* Knowledge gap heatmap */}
+        {(() => {
+          const bySeverity = {}
+          answers.forEach(a => {
+            const sev = a.question.severity || 'unknown'
+            if (!bySeverity[sev]) bySeverity[sev] = { total: 0, correct: 0 }
+            bySeverity[sev].total++
+            if (a.correct) bySeverity[sev].correct++
+          })
+          const heatColors = { contraindicated: 'bg-red-100 text-red-800', severe: 'bg-orange-100 text-orange-800', moderate: 'bg-yellow-100 text-yellow-800', mild: 'bg-blue-100 text-blue-800' }
+          const heatLabels = { contraindicated: 'ممنوع / CI', severe: 'شديد / Severe', moderate: 'متوسط / Moderate', mild: 'خفيف / Mild' }
+          return Object.keys(bySeverity).length > 0 && (
+            <div className="mb-6">
+              <p className="text-sm font-bold text-gray-500 mb-2">📊 فجوات المعرفة حسب الشدة / Knowledge Gaps by Severity</p>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                {Object.entries(bySeverity).map(([sev, { total, correct }]) => {
+                  const pct = Math.round((correct / total) * 100)
+                  return (
+                    <div key={sev} className={`rounded-xl p-3 text-center ${heatColors[sev] || 'bg-gray-100 text-gray-700'}`}>
+                      <div className="text-lg font-bold">{pct}%</div>
+                      <div className="text-xs">{heatLabels[sev] || sev}</div>
+                      <div className="text-[10px] opacity-70">{correct}/{total}</div>
+                    </div>
+                  )
+                })}
+              </div>
+            </div>
+          )
+        })()}
+
         <div className="space-y-2 mb-6 text-right">
           {answers.map((a, i) => (
-            <div key={i} className={`text-sm p-2 rounded-lg ${a.correct ? 'bg-green-50 text-green-700' : 'bg-red-50 text-red-700'}`}>
-              <span>{a.correct ? '✅' : '❌'}</span>
+            <button key={i} onClick={() => setReviewIndex(i)}
+              className={`w-full text-right text-sm p-2 rounded-lg cursor-pointer hover:opacity-80 transition-opacity ${a.correct ? 'bg-green-50 text-green-700' : 'bg-red-50 text-red-700'}`}>
+              <span>{a.correct ? '✅' : a.skipped ? '⏭️' : '❌'}</span>
               {' '}
               {a.question.drug.nameAr}: {a.correct
                 ? (a.question.answer.nameAr || a.question.answer.nameEn)
-                : `❌ ${a.selected.drug?.nameAr || a.selected.disease?.nameAr || ''} ← ✓ ${a.question.answer.nameAr || a.question.answer.nameEn}`
+                : a.skipped
+                  ? `⏭ تم التخطي ← ${a.question.answer.nameAr || a.question.answer.nameEn}`
+                  : `❌ ${a.selected?.drug?.nameAr || a.selected?.disease?.nameAr || ''} ← ${a.question.answer.nameAr || a.question.answer.nameEn}`
               }
-            </div>
+            </button>
           ))}
         </div>
 
         <div className="flex gap-3">
-          <button onClick={() => setPhase('setup')}
+          <button onClick={() => { setPhase('setup'); setReviewIndex(null) }}
             className="flex-1 bg-sand text-nile py-3 rounded-xl font-bold hover:bg-sand-dark transition-colors">
             🔄 إعادة / Retry
           </button>
-          <button onClick={() => setPhase('setup')}
+          <button onClick={() => { setPhase('setup'); setReviewIndex(null) }}
             className="flex-1 bg-nile text-white py-3 rounded-xl font-bold hover:bg-nile-light transition-colors">
             🏠 القائمة الرئيسية / Main Menu
           </button>

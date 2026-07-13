@@ -1,7 +1,25 @@
-import { useState, useMemo, useEffect } from 'react'
+import { useState, useMemo, useEffect, useRef } from 'react'
 import { drugCategories, drugCategoriesAr } from '../data/drugs.js'
 import { edaSupplement } from '../data/eda-supplement.js'
 import Highlight from './Highlight.jsx'
+
+const MFR_ICONS = new Map([
+  ['glaxo', '🧬'], ['gsk', '🧬'], ['pfizer', '🔵'], ['novartis', '🔴'], ['sanofi', '🟦'],
+  ['bayer', '➕'], ['roche', '🔬'], ['johnson', '🤱'], ['abbott', '🅰️'], ['merck', '⬇️'],
+  ['novo nordisk', '🩸'], ['astrazeneca', '🟢'], ['takeda', '🔶'], ['lilly', '💉'],
+  ['boehringer', '🫁'], ['sandoz', '🟣'], ['tev', '💊'], ['hikma', '🔷'], ['eipico', '🇪🇬'],
+  ['alexandria', '🏛️'], ['misr', '🇪🇬'], ['sigma', 'Σ'], ['memphis', '🏺'],
+  ['arabic', '🌙'], ['pharco', '🔺'], ['amoun', '🟠'],
+])
+
+const getMfrIcon = (name) => {
+  if (!name) return '🏭'
+  const n = name.toLowerCase()
+  for (const [key, icon] of MFR_ICONS) {
+    if (n.includes(key)) return icon
+  }
+  return '🏭'
+}
 
 const PAGE_SIZE = 50
 
@@ -141,6 +159,19 @@ export default function DrugBrowser({ drugs, onViewDrug }) {
 
   const handleLoadMore = () => setPage(p => p + 1)
 
+  const sentinelRef = useRef(null)
+  useEffect(() => {
+    const el = sentinelRef.current
+    if (!el) return
+    const obs = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting && pageItems.length < allFiltered.length) {
+        handleLoadMore()
+      }
+    }, { rootMargin: '200px' })
+    obs.observe(el)
+    return () => obs.disconnect()
+  }, [pageItems.length, allFiltered.length])
+
   const handleSuggestionClick = (name) => {
     setQuery(name)
     setFocused(false)
@@ -235,11 +266,12 @@ export default function DrugBrowser({ drugs, onViewDrug }) {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-        {pageItems.map(drug => (
+        {pageItems.map((drug, i) => (
           <div
             key={drug.id}
             onClick={() => onViewDrug(drug.id)}
-            className={`bg-white border rounded-xl p-4 hover:shadow-md transition-all cursor-pointer ${drug.edaOnly ? 'border-gray-200 hover:border-gray-400' : 'border-sand-dark hover:border-gold'}`}
+            style={{ animationDelay: `${i * 30}ms` }}
+            className={`animate-[fade-in_0.4s_ease-out_both] bg-white border rounded-xl p-4 hover:shadow-md transition-all cursor-pointer ${drug.edaOnly ? 'border-gray-200 hover:border-gray-400' : 'border-sand-dark hover:border-gold'}`}
           >
             <div className="flex items-start justify-between gap-2">
               <div className="text-right flex-1">
@@ -293,7 +325,7 @@ export default function DrugBrowser({ drugs, onViewDrug }) {
                   </span>
                 )}
               </div>
-              <span className="text-xs text-gray-400">{drug.manufacturerEn || ''}</span>
+              <span className="text-xs text-gray-400">{getMfrIcon(drug.manufacturerEn)} {drug.manufacturerEn || ''}</span>
             </div>
             {drug.edaOnly ? (
               drug.edaRf && drug.edaRf.length > 0 ? (
@@ -373,13 +405,9 @@ export default function DrugBrowser({ drugs, onViewDrug }) {
       )}
 
       {pageItems.length < allFiltered.length && (
-        <div className="text-center">
-          <button
-            onClick={handleLoadMore}
-            className="px-6 py-2 bg-gold text-white rounded-xl hover:bg-gold-dark transition-colors"
-          >
-            عرض المزيد / Load More ({allFiltered.length - pageItems.length} متبقي)
-          </button>
+        <div ref={sentinelRef} className="text-center py-4">
+          <div className="inline-block w-6 h-6 border-2 border-gold border-t-transparent rounded-full animate-spin" />
+          <p className="text-xs text-gray-400 mt-2">جاري تحميل المزيد... / Loading more...</p>
         </div>
       )}
 
