@@ -277,7 +277,7 @@ export default function DrugBrowser({ drugs, onViewDrug }) {
       </div>
 
       {(query || category || routeFilter) && (
-        <div className="flex flex-wrap gap-1.5">
+        <div className="flex flex-wrap gap-1.5 items-center">
           {query && (
             <span className="inline-flex items-center gap-1 bg-blue-50 text-blue-700 px-2 py-1 rounded-full text-xs">
               بحث: {query}
@@ -296,6 +296,12 @@ export default function DrugBrowser({ drugs, onViewDrug }) {
               <button onClick={() => { setRouteFilter(''); setPage(1) }} className="hover:text-purple-900">✕</button>
             </span>
           )}
+          <button
+            onClick={() => { setQuery(''); setCategory(''); setRouteFilter(''); setShowEda(false); setPage(1) }}
+            className="text-xs text-red-500 hover:text-red-700 mr-2"
+          >
+            مسح الكل / Clear all
+          </button>
         </div>
       )}
 
