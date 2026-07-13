@@ -293,20 +293,37 @@ export default function DrugBrowser({ drugs, onViewDrug }) {
               drug.edaRf && drug.edaRf.length > 0 ? (
                 <div className="mt-1 space-y-0.5">
                   {drug.edaRf.map(([route, _form, pmin, pmax], i) => (
-                    <div key={i} className="text-[10px] text-gold-dark font-bold">
-                      EGP {pmin}{pmin !== pmax ? `-${pmax}` : ''} | {route}
+                    <div key={i}>
+                      <div className="text-[10px] text-gold-dark font-bold">
+                        EGP {pmin}{pmin !== pmax ? `-${pmax}` : ''} | {route}
+                      </div>
+                      {pmin && pmax && pmin !== pmax && (
+                        <div className="w-full h-1 bg-gray-100 rounded-full mt-0.5 overflow-hidden">
+                          <div className="h-full bg-gold rounded-full" style={{ width: `${Math.min(100, (pmax / 200) * 100)}%` }} />
+                        </div>
+                      )}
                     </div>
                   ))}
                 </div>
               ) : drug.edaPriceRange && drug.edaPriceRange.length > 0 ? (
-                <div className="mt-1 text-xs text-gold-dark font-bold">
-                  EGP {drug.edaPriceRange[0]} – {drug.edaPriceRange[1]}
+                <div className="mt-1">
+                  <div className="text-xs text-gold-dark font-bold">
+                    EGP {drug.edaPriceRange[0]} – {drug.edaPriceRange[1]}
+                  </div>
+                  <div className="w-full h-1 bg-gray-100 rounded-full mt-0.5 overflow-hidden">
+                    <div className="h-full bg-gold rounded-full" style={{ width: `${Math.min(100, (drug.edaPriceRange[1] / 200) * 100)}%` }} />
+                  </div>
                 </div>
               ) : null
             ) : (
               drug.prices && drug.prices.length > 0 && (
-                <div className="mt-1 text-xs text-gold-dark font-bold">
-                  {drug.prices[0].price} {drug.prices[0].unit}{drug.prices.length > 1 ? ` (+${drug.prices.length - 1})` : ''}
+                <div className="mt-1">
+                  <div className="text-xs text-gold-dark font-bold">
+                    {drug.prices[0].price} {drug.prices[0].unit}{drug.prices.length > 1 ? ` (+${drug.prices.length - 1})` : ''}
+                  </div>
+                  <div className="w-full h-1 bg-gray-100 rounded-full mt-0.5 overflow-hidden">
+                    <div className="h-full bg-gold rounded-full" style={{ width: `${Math.min(100, (drug.prices[0].price / 200) * 100)}%` }} />
+                  </div>
                 </div>
               )
             )}
