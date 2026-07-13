@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-gold: #C9A84C;
   --color-gold-light: #E8D48B;
@@ -12,4 +14,9 @@
   --color-severity-severe: #D32F2F;
   --color-severity-moderate: #F57C00;
   --color-severity-minor: #FFA000;
+}
+
+.dark body {
+  background-color: #1a1a2e;
+  color: #e0e0e0;
 }
