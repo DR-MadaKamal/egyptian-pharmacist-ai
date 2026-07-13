@@ -52,6 +52,7 @@ export default function DrugBrowser({ drugs, onViewDrug }) {
   const [page, setPage] = useState(1)
   const [showEda, setShowEda] = useState(false)
   const [focused, setFocused] = useState(false)
+  const [catFocused, setCatFocused] = useState(false)
 
   const enriched = useMemo(() => drugs.filter(d => !d.edaOnly), [drugs])
   const edaOnly = useMemo(() => drugs.filter(d => d.edaOnly), [drugs])
@@ -158,16 +159,30 @@ export default function DrugBrowser({ drugs, onViewDrug }) {
             </div>
           )}
         </div>
-        <select
-          value={category}
-          onChange={e => { setCategory(e.target.value); setPage(1) }}
-          className="px-4 py-2.5 border border-sand-dark rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-gold"
-        >
-          <option value="">كل التصنيفات / All Categories</option>
-          {drugCategories.map((cat, i) => (
-            <option key={cat} value={cat}>{cat} | {drugCategoriesAr[i]}</option>
-          ))}
-        </select>
+        <div className="relative">
+          <input
+            type="text"
+            value={category}
+            onChange={e => { setCategory(e.target.value); setPage(1) }}
+            onFocus={() => setCatFocused(true)}
+            onBlur={() => setTimeout(() => setCatFocused(false), 200)}
+            placeholder="التصنيف / Category..."
+            className="w-full px-4 py-2.5 border border-sand-dark rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-gold"
+          />
+          {catFocused && (category ? drugCategories.filter(c => c.toLowerCase().includes(category.toLowerCase())).length > 0 : true) && (
+            <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-sand-dark rounded-xl shadow-lg z-10 overflow-hidden max-h-48 overflow-y-auto">
+              {(category ? drugCategories.filter(c => c.toLowerCase().includes(category.toLowerCase())) : drugCategories).map((cat, i) => (
+                <button
+                  key={cat}
+                  onMouseDown={() => { setCategory(cat); setPage(1) }}
+                  className="w-full text-right px-4 py-2 text-sm hover:bg-sand transition-colors border-b border-gray-100 last:border-b-0"
+                >
+                  {cat} | {drugCategoriesAr[i]}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
         <select
           value={routeFilter}
           onChange={e => { setRouteFilter(e.target.value); setPage(1) }}
