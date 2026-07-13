@@ -80,7 +80,19 @@ export default function App() {
   const handleViewDrug = (id) => {
     setSelectedDrugId(id)
     setTab('detail')
+    try {
+      const prev = JSON.parse(sessionStorage.getItem('recent-drugs') || '[]')
+      const updated = [id, ...prev.filter(x => x !== id)].slice(0, 10)
+      sessionStorage.setItem('recent-drugs', JSON.stringify(updated))
+    } catch {}
   }
+
+  const recentlyViewed = useMemo(() => {
+    try {
+      const ids = JSON.parse(sessionStorage.getItem('recent-drugs') || '[]')
+      return ids.map(id => allDrugs.find(d => d.id === id)).filter(Boolean)
+    } catch { return [] }
+  }, [tab])
 
   const handleDrugsTab = () => {
     setTab('drugs')
@@ -95,6 +107,7 @@ export default function App() {
           <Home
             drugs={allDrugs}
             diseases={allDiseases}
+            recentlyViewed={recentlyViewed}
             onBrowse={() => setTab('drugs')}
             onInterview={() => setTab('interview')}
             onPrices={() => setTab('drugs')}
