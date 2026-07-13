@@ -26,6 +26,13 @@ export default function AdminPanel({ allDrugs, onLogout, onViewDrug }) {
   const edaDrugsCount = useMemo(() => allDrugs.filter(d => d.edaOnly).length, [allDrugs])
   const enrichedCount = useMemo(() => allDrugs.filter(d => !d.edaOnly && !d.id?.startsWith('user_')).length, [allDrugs])
 
+  const qualityScore = useMemo(() => {
+    const enriched = allDrugs.filter(d => !d.edaOnly)
+    if (!enriched.length) return 0
+    const complete = enriched.filter(d => d.nameAr && d.nameEn && d.manufacturerEn && d.category && (d.prices?.length > 0 || d.edaRf?.length > 0))
+    return Math.round((complete.length / enriched.length) * 100)
+  }, [allDrugs])
+
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between border-b border-sand-dark pb-3">
@@ -88,6 +95,17 @@ export default function AdminPanel({ allDrugs, onLogout, onViewDrug }) {
               </div>
             </div>
           )}
+
+          <div className="bg-white border border-sand-dark rounded-xl p-4">
+            <h3 className="font-bold text-nile text-sm mb-2">📊 جودة البيانات / Data Quality</h3>
+            <div className="flex items-center gap-3">
+              <div className="flex-1 h-3 bg-gray-100 rounded-full overflow-hidden">
+                <div className="h-full bg-gold rounded-full transition-all duration-700" style={{ width: `${qualityScore}%` }} />
+              </div>
+              <span className="text-sm font-bold text-nile">{qualityScore}%</span>
+            </div>
+            <p className="text-xs text-gray-400 mt-1">النسبة المئوية للأدوية المكتملة / Percentage of complete drug records</p>
+          </div>
 
           {userDrugs.length > 0 && (
             <div className="bg-white border border-sand-dark rounded-xl overflow-hidden">
