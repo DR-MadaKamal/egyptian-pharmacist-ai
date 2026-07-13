@@ -249,6 +249,17 @@ export default function DrugBrowser({ drugs, onViewDrug }) {
         </div>
       )}
 
+      {allFiltered.length > PAGE_SIZE && (
+        <div className="text-center">
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="text-xs text-gray-400 hover:text-gray-600"
+          >
+            ↑ العودة للأعلى / Back to top
+          </button>
+        </div>
+      )}
+
       {allFiltered.length === 0 && (
         <div className="text-center py-12 text-gray-500">
           <div className="text-4xl mb-3">🔍</div>
