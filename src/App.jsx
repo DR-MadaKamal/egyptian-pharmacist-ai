@@ -20,10 +20,19 @@ const TABS = {
   pharmacopeia: { label: 'الدستور واللوائح', labelEn: 'Pharmacopeia', icon: '📋' },
 }
 
+const TAB_TITLES = {
+  home: 'الرئيسية / Home',
+  drugs: 'الأدوية / Drugs',
+  interview: 'المقابلة / Interview',
+  pharmacopeia: 'الدستور واللوائح / Pharmacopeia',
+  'admin-login': 'دخول المشرف / Admin Login',
+  admin: 'لوحة التحكم / Admin Panel',
+}
+
 export default function App() {
   const [tab, setTab] = useState('home')
   const [selectedDrugId, setSelectedDrugId] = useState(null)
-  const [refreshKey, setRefreshKey] = useState(0)
+  const [refreshKey, _setRefreshKey] = useState(0)
   const [edaDrugs, setEdaDrugs] = useState(null)
   const [isAdmin, setIsAdmin] = useState(false)
 
@@ -40,6 +49,21 @@ export default function App() {
   const allDiseases = useMemo(() => {
     return [...builtInDiseases, ...getUserDiseases()]
   }, [refreshKey])
+
+  const selectedDrug = useMemo(() => {
+    if (!selectedDrugId) return null
+    return allDrugs.find(d => d.id === selectedDrugId) || null
+  }, [selectedDrugId, allDrugs])
+
+  useEffect(() => {
+    if (tab === 'detail' && selectedDrug) {
+      document.title = `${selectedDrug.nameAr} - Pharma AI`
+    } else if (tab === 'home') {
+      document.title = 'Complete Egyptian Pharmacist AI - الصيدلي المصري الشامل'
+    } else {
+      document.title = `${TAB_TITLES[tab] || 'Pharma AI'} - Pharma AI`
+    }
+  })
 
   const handleViewDrug = (id) => {
     setSelectedDrugId(id)
