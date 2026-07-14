@@ -62,7 +62,7 @@ function getRouteBadge(route) {
 
 const ITEMS_PER_PAGE = 50
 
-export default function DrugEncyclopedia({ onBack }) {
+export default function DrugEncyclopedia({ onBack, onViewDrug, allDrugs }) {
   const [drugs, setDrugs] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
@@ -263,42 +263,58 @@ export default function DrugEncyclopedia({ onBack }) {
             <p className="text-gray-400 text-sm mt-1">جرب تغيير معايير البحث / Try changing search criteria</p>
           </div>
         ) : (
-          visibleDrugs.map((drug, i) => (
-            <div key={i} className="bg-white border border-sand-dark rounded-xl p-4 hover:border-gold hover:shadow-sm transition-all">
-              <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3">
-                <div className="flex-1 min-w-0" dir="auto">
-                  <h3 className="font-bold text-nile text-sm md:text-base truncate">{drug.commercial_name_en}</h3>
-                  {drug.commercial_name_ar && (
-                    <p className="text-gray-600 text-sm mt-0.5 truncate">{drug.commercial_name_ar}</p>
-                  )}
-                  {drug.scientific_name && (
-                    <p className="text-gold-dark text-xs mt-1 truncate italic">{drug.scientific_name}</p>
-                  )}
-                  <div className="flex flex-wrap items-center gap-2 mt-2">
-                    {drug.manufacturer && (
-                      <span className="text-gray-400 text-xs">🏭 {drug.manufacturer}</span>
+          visibleDrugs.map((drug, i) => {
+            const matchDrug = allDrugs?.find(d =>
+              d.nameEn && drug.commercial_name_en && d.nameEn.toUpperCase() === drug.commercial_name_en.toUpperCase()
+            )
+            const Wrapper = matchDrug && onViewDrug ? 'button' : 'div'
+            return (
+              <Wrapper
+                key={i}
+                {...(matchDrug && onViewDrug ? { onClick: () => onViewDrug(matchDrug.id) } : {})}
+                className={`w-full text-left bg-white border border-sand-dark rounded-xl p-4 transition-all ${
+                  matchDrug && onViewDrug
+                    ? 'hover:border-gold hover:shadow-md cursor-pointer'
+                    : ''
+                }`}
+              >
+                <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3">
+                  <div className="flex-1 min-w-0" dir="auto">
+                    <h3 className={`font-bold text-sm md:text-base truncate ${matchDrug && onViewDrug ? 'text-nile hover:text-gold-dark' : 'text-nile'}`}>
+                      {matchDrug && onViewDrug ? '🔗 ' : ''}{drug.commercial_name_en}
+                    </h3>
+                    {drug.commercial_name_ar && (
+                      <p className="text-gray-600 text-sm mt-0.5 truncate">{drug.commercial_name_ar}</p>
                     )}
-                    {drug.drug_class && (
-                      <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${getClassColor(drug.drug_class)}`}>
-                        {drug.drug_class}
-                      </span>
+                    {drug.scientific_name && (
+                      <p className="text-gold-dark text-xs mt-1 truncate italic">{drug.scientific_name}</p>
                     )}
-                    {drug.route && (
-                      <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${getRouteBadge(drug.route)}`}>
-                        {drug.route}
-                      </span>
-                    )}
+                    <div className="flex flex-wrap items-center gap-2 mt-2">
+                      {drug.manufacturer && (
+                        <span className="text-gray-400 text-xs">🏭 {drug.manufacturer}</span>
+                      )}
+                      {drug.drug_class && (
+                        <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${getClassColor(drug.drug_class)}`}>
+                          {drug.drug_class}
+                        </span>
+                      )}
+                      {drug.route && (
+                        <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${getRouteBadge(drug.route)}`}>
+                          {drug.route}
+                        </span>
+                      )}
+                    </div>
                   </div>
+                  {drug.price_egp != null && drug.price_egp > 0 && (
+                    <div className="flex-shrink-0 bg-gold/10 border border-gold/30 rounded-lg px-3 py-2 text-center sm:text-right">
+                      <span className="text-nile font-bold text-lg">{drug.price_egp}</span>
+                      <span className="text-gray-500 text-xs block">ج.م / EGP</span>
+                    </div>
+                  )}
                 </div>
-                {drug.price_egp != null && drug.price_egp > 0 && (
-                  <div className="flex-shrink-0 bg-gold/10 border border-gold/30 rounded-lg px-3 py-2 text-center sm:text-right">
-                    <span className="text-nile font-bold text-lg">{drug.price_egp}</span>
-                    <span className="text-gray-500 text-xs block">ج.م / EGP</span>
-                  </div>
-                )}
-              </div>
-            </div>
-          ))
+              </Wrapper>
+            )
+          })
         )}
       </div>
 

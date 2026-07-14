@@ -130,7 +130,7 @@ export default function App() {
           />
         )}
         {tab === 'interview' && (
-          <InterviewMode drugs={allDrugs} diseases={allDiseases} />
+          <InterviewMode drugs={allDrugs} diseases={allDiseases} onViewDrug={handleViewDrug} />
         )}
         {tab === 'pharmacopeia' && (
           <Pharmacopeia drugs={allDrugs} />

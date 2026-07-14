@@ -139,7 +139,24 @@ export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <div className="bg-gray-50 rounded-lg p-3">
               <span className="text-xs font-bold text-gray-400 uppercase">🏷 العلامات التجارية / Brand Names</span>
-              <div className="text-sm text-gray-700 mt-1">{(drug.edaBrands && drug.edaBrands.length > 0) ? drug.edaBrands.join(', ') : 'غير متوفر / N/A'}</div>
+              <div className="flex flex-wrap gap-1.5 mt-1">
+                {(drug.edaBrands && drug.edaBrands.length > 0) ? drug.edaBrands.map((brand, i) => {
+                  const match = drugs.find(d => d.nameEn && d.nameEn.toUpperCase() === brand.toUpperCase() && d.id !== drug.id)
+                  if (match) {
+                    return (
+                      <button key={i} onClick={() => onViewDrug(match.id)}
+                        className="text-xs bg-nile/10 text-nile hover:bg-gold/20 hover:text-gold-dark px-2 py-1 rounded-lg transition-colors font-medium border border-nile/20 hover:border-gold/40">
+                        {brand}
+                      </button>
+                    )
+                  }
+                  return (
+                    <span key={i} className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-lg border border-gray-200">
+                      {brand}
+                    </span>
+                  )
+                }) : <span className="text-sm text-gray-400">غير متوفر / N/A</span>}
+              </div>
             </div>
             <div className="bg-gray-50 rounded-lg p-3">
               <span className="text-xs font-bold text-gray-400 uppercase">🏭 الشركات المصنعة / Manufacturers</span>

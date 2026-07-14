@@ -216,7 +216,7 @@ function KnowledgeBank({ onBack }) {
   )
 }
 
-export default function InterviewMode({ drugs, diseases }) {
+export default function InterviewMode({ drugs, diseases, onViewDrug }) {
   const [mode, setMode] = useState(null)
   const [phase, setPhase] = useState('setup')
   const [questionCount, setQuestionCount] = useState(10)
@@ -339,7 +339,7 @@ export default function InterviewMode({ drugs, diseases }) {
   }
 
   if (mode === 'encyclopedia') {
-    return <DrugEncyclopedia onBack={() => setMode(null)} />
+    return <DrugEncyclopedia onBack={() => setMode(null)} onViewDrug={onViewDrug} allDrugs={drugs} />
   }
 
   if (phase === 'setup') {
