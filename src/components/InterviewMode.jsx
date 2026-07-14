@@ -3,6 +3,7 @@ import { severityConfig } from '../utils/interactions.js'
 import { generateMixedQuestions } from '../utils/quiz.js'
 import FlashcardQuiz from './FlashcardQuiz.jsx'
 import LearningMode from './LearningMode.jsx'
+import DrugEncyclopedia from './DrugEncyclopedia.jsx'
 import { FLASHCARD_CATEGORIES, FLASHCARDS, GOLDEN_TIPS } from '../data/flashcards.js'
 
 function QuestionCard({ question, index, total, onAnswer, answered, onSkip }) {
@@ -312,6 +313,14 @@ export default function InterviewMode({ drugs, diseases }) {
             <p className="text-xs text-gray-400 mt-2">مرجع شامل من 35 مصدر صيدلاني</p>
             <p className="text-xs text-gray-400">Comprehensive reference from 35 pharmacy sources</p>
           </button>
+          <button onClick={() => setMode('encyclopedia')}
+            className="bg-white border-2 border-sand-dark hover:border-gold rounded-xl p-6 text-center transition-all hover:shadow-lg group">
+            <div className="text-4xl mb-3">🏥</div>
+            <h3 className="font-bold text-nile text-lg group-hover:text-gold-dark transition-colors">دليل الأدوية المصري</h3>
+            <p className="text-sm text-gray-500 mt-1">Drug Encyclopedia</p>
+            <p className="text-xs text-gray-400 mt-2">25,070 دواء مسجل في مصر مع الأسعار</p>
+            <p className="text-xs text-gray-400">25,070 registered Egyptian medicines with prices</p>
+          </button>
         </div>
       </div>
     )
@@ -327,6 +336,10 @@ export default function InterviewMode({ drugs, diseases }) {
 
   if (mode === 'learning') {
     return <LearningMode onBack={() => setMode(null)} />
+  }
+
+  if (mode === 'encyclopedia') {
+    return <DrugEncyclopedia onBack={() => setMode(null)} />
   }
 
   if (phase === 'setup') {
