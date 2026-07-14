@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { getDrugById, getDrugInteractions, getDiseaseInteractions, severityConfig } from '../utils/interactions.js'
 import { edaSupplement } from '../data/eda-supplement.js'
+import { findSimilarDrugs } from '../utils/searchUtils.js'
 
 const MFR_ICONS = new Map([
   ['glaxo', '🧬'], ['gsk', '🧬'], ['pfizer', '🔵'], ['novartis', '🔴'], ['sanofi', '🟦'],
@@ -36,6 +37,7 @@ export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug
   const diseaseInts = getDiseaseInteractions(drugs, diseases, drugId)
   const [detailTab, setDetailTab] = useState('info')
   const lastSync = useLastSync()
+  const { alternatives, similars } = useMemo(() => findSimilarDrugs(drug, drugs), [drug, drugs])
 
   const formatDate = (iso) => {
     if (!iso) return null
@@ -238,6 +240,41 @@ export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug
               : 'This drug is registered in the Egyptian Drug Authority database. No detailed clinical information is available. Please consult a physician or pharmacist for additional information.'}
           </p>
         </Section>
+
+        {alternatives.length > 0 && (
+          <Section title="🔄 بدائل بنفس المادة الفعالة / Alternatives (Same Active Ingredient)">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              {alternatives.map(alt => (
+                <button key={alt.id} onClick={() => onViewDrug(alt.id)}
+                  className="text-right bg-gray-50 hover:bg-sand rounded-lg p-3 transition-colors border border-transparent hover:border-gold/30">
+                  <div className="font-bold text-nile text-sm">{alt.formEmoji || '💊'} {alt.nameAr}</div>
+                  <div className="text-xs text-gray-500">{alt.nameEn}</div>
+                  <div className="flex items-center gap-2 mt-1">
+                    {alt.manufacturerEn && <span className="text-[10px] text-gray-400">{getMfrIcon(alt.manufacturerEn)} {alt.manufacturerEn}</span>}
+                  </div>
+                </button>
+              ))}
+            </div>
+          </Section>
+        )}
+
+        {similars.length > 0 && (
+          <Section title="💊 أدوية مشابهة / Similar Drugs (Same Category)">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              {similars.map(alt => (
+                <button key={alt.id} onClick={() => onViewDrug(alt.id)}
+                  className="text-right bg-gray-50 hover:bg-sand rounded-lg p-3 transition-colors border border-transparent hover:border-gold/30">
+                  <div className="font-bold text-nile text-sm">{alt.formEmoji || '💊'} {alt.nameAr}</div>
+                  <div className="text-xs text-gray-500">{alt.nameEn}</div>
+                  <div className="flex items-center gap-2 mt-1">
+                    {alt.manufacturerEn && <span className="text-[10px] text-gray-400">{getMfrIcon(alt.manufacturerEn)} {alt.manufacturerEn}</span>}
+                    {alt.categoryAr && <span className="text-[10px] bg-sand text-nile px-1.5 py-0.5 rounded">{alt.categoryAr}</span>}
+                  </div>
+                </button>
+              ))}
+            </div>
+          </Section>
+        )}
       </div>
     )
   }
@@ -367,26 +404,45 @@ export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug
           </div>
         </Section>
 
-        {drug.category && (
-          <Section title="🔄 أدوية بديلة / Drug Alternatives">
-            {(() => {
-              const alternatives = drugs.filter(d =>
-                d.id !== drug.id && d.category === drug.category && !d.edaOnly
-              ).slice(0, 6)
-              if (alternatives.length === 0) return <p className="text-gray-400 text-sm">لا توجد بدائل متاحة / No alternatives available</p>
-              return (
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                  {alternatives.map(alt => (
-                    <button key={alt.id} onClick={() => onViewDrug(alt.id)}
-                      className="text-right bg-gray-50 hover:bg-sand rounded-lg p-3 transition-colors">
-                      <div className="font-bold text-nile text-sm">{alt.formEmoji || '💊'} {alt.nameAr}</div>
-                      <div className="text-xs text-gray-500">{alt.nameEn}</div>
-                      {alt.manufacturerEn && <div className="text-[10px] text-gray-400 mt-0.5">{getMfrIcon(alt.manufacturerEn)} {alt.manufacturerEn}</div>}
-                    </button>
-                  ))}
-                </div>
-              )
-            })()}
+        {alternatives.length > 0 && (
+          <Section title="🔄 بدائل بنفس المادة الفعالة / Alternatives (Same Active Ingredient)">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              {alternatives.map(alt => (
+                <button key={alt.id} onClick={() => onViewDrug(alt.id)}
+                  className="text-right bg-gray-50 hover:bg-sand rounded-lg p-3 transition-colors border border-transparent hover:border-gold/30">
+                  <div className="font-bold text-nile text-sm">{alt.formEmoji || '💊'} {alt.nameAr}</div>
+                  <div className="text-xs text-gray-500">{alt.nameEn}</div>
+                  <div className="flex items-center gap-2 mt-1">
+                    {alt.manufacturerEn && <span className="text-[10px] text-gray-400">{getMfrIcon(alt.manufacturerEn)} {alt.manufacturerEn}</span>}
+                    {alt.edaBrands?.length > 0 && <span className="text-[10px] bg-blue-50 text-blue-600 px-1.5 py-0.5 rounded">{alt.edaBrands.length} brands</span>}
+                  </div>
+                </button>
+              ))}
+            </div>
+          </Section>
+        )}
+
+        {similars.length > 0 && (
+          <Section title="💊 أدوية مشابهة / Similar Drugs (Same Category)">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              {similars.map(alt => (
+                <button key={alt.id} onClick={() => onViewDrug(alt.id)}
+                  className="text-right bg-gray-50 hover:bg-sand rounded-lg p-3 transition-colors border border-transparent hover:border-gold/30">
+                  <div className="font-bold text-nile text-sm">{alt.formEmoji || '💊'} {alt.nameAr}</div>
+                  <div className="text-xs text-gray-500">{alt.nameEn}</div>
+                  <div className="flex items-center gap-2 mt-1">
+                    {alt.manufacturerEn && <span className="text-[10px] text-gray-400">{getMfrIcon(alt.manufacturerEn)} {alt.manufacturerEn}</span>}
+                    {alt.categoryAr && <span className="text-[10px] bg-sand text-nile px-1.5 py-0.5 rounded">{alt.categoryAr}</span>}
+                  </div>
+                </button>
+              ))}
+            </div>
+          </Section>
+        )}
+
+        {alternatives.length === 0 && similars.length === 0 && (
+          <Section title="🔄 بدائل وأدوية مشابهة / Alternatives & Similar Drugs">
+            <p className="text-gray-400 text-sm">لا توجد بدائل متاحة / No alternatives available in database</p>
           </Section>
         )}
       </>

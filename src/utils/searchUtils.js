@@ -113,17 +113,20 @@ function computeRelevance(drug, query) {
   const brands = (drug.edaBrands || []).map(b => b.toLowerCase())
   const latinName = arabicToLatin(nameAr).toLowerCase()
 
-  if (nameEn === q || nameAr === query) score += 1000
-  if (nameEn.startsWith(q) || nameAr.startsWith(query)) score += 500
-  if (nameEn.includes(q)) score += 300
-  if (nameAr.includes(query)) score += 300
-  if (sciEn.includes(q)) score += 200
-  if (activeEn.includes(q) || activeAr.includes(query)) score += 200
-  if (latinName.includes(ql)) score += 150
-  if (brands.some(b => b.includes(q))) score += 150
-  if (drug.manufacturerEn?.toLowerCase().includes(q)) score += 100
-  if (drug.categoryAr?.includes(query)) score += 80
-  if (drug.category?.toLowerCase().includes(q)) score += 80
+  if (nameEn === q || nameAr === query) score += 5000
+  if (nameEn.startsWith(q) || nameAr.startsWith(query)) score += 3000
+  if (brands.some(b => b === q)) score += 4000
+  if (brands.some(b => b.startsWith(q))) score += 3500
+  if (brands.some(b => b.includes(q))) score += 2500
+  if (nameEn.includes(q)) score += 1500
+  if (nameAr.includes(query)) score += 1500
+  if (sciEn === q || activeEn === q || activeAr === query) score += 1200
+  if (sciEn.includes(q)) score += 800
+  if (activeEn.includes(q) || activeAr.includes(query)) score += 800
+  if (latinName.includes(ql)) score += 700
+  if (drug.manufacturerEn?.toLowerCase().includes(q)) score += 400
+  if (drug.categoryAr?.includes(query)) score += 300
+  if (drug.category?.toLowerCase().includes(q)) score += 300
 
   return score
 }
@@ -366,4 +369,61 @@ export function generateShareUrl(query) {
 export function copyShareUrl(query) {
   const url = generateShareUrl(query)
   return navigator.clipboard.writeText(url).then(() => url).catch(() => null)
+}
+
+function normalizeForComparison(text) {
+  if (!text) return ''
+  return text.toLowerCase().trim()
+    .replace(/[^a-z0-9\u0600-\u06FF]/g, '')
+}
+
+export function findSimilarDrugs(drug, allDrugs, maxResults = 8) {
+  if (!drug) return []
+  const scores = []
+  const currentId = drug.id
+  const currentActiveEn = normalizeForComparison(drug.activeIngredientEn || drug.scientificNameEn || '')
+  const currentActiveAr = normalizeForComparison(drug.activeIngredientAr || drug.scientificNameAr || '')
+  const currentCategory = normalizeForComparison(drug.category || '')
+  const currentConstituents = (drug.constituents || []).map(c => normalizeForComparison(c))
+  const currentGroups = (drug.edaGroups || []).map(g => normalizeForComparison(g))
+
+  for (const other of allDrugs) {
+    if (other.id === currentId) continue
+    let score = 0
+
+    const otherActiveEn = normalizeForComparison(other.activeIngredientEn || other.scientificNameEn || '')
+    const otherActiveAr = normalizeForComparison(other.activeIngredientAr || other.scientificNameAr || '')
+
+    if (currentActiveEn && otherActiveEn && currentActiveEn === otherActiveEn) score += 1000
+    else if (currentActiveAr && otherActiveAr && currentActiveAr === otherActiveAr) score += 1000
+    else if (currentActiveEn && otherActiveEn && currentActiveEn.length >= 3 && otherActiveEn.includes(currentActiveEn)) score += 800
+    else if (currentActiveAr && otherActiveAr && currentActiveAr.includes(otherActiveAr)) score += 800
+
+    const otherConstituents = (other.constituents || []).map(c => normalizeForComparison(c))
+    const otherGroups = (other.edaGroups || []).map(g => normalizeForComparison(g))
+
+    if (currentConstituents.length > 0 && otherConstituents.length > 0) {
+      const overlap = currentConstituents.filter(c => otherConstituents.some(oc => c && oc && (c.includes(oc) || oc.includes(c)))).length
+      score += overlap * 200
+    }
+
+    if (currentGroups.length > 0 && otherGroups.length > 0) {
+      const overlap = currentGroups.filter(g => otherGroups.some(og => g && og && (g.includes(og) || og.includes(g)))).length
+      score += overlap * 100
+    }
+
+    const otherCategory = normalizeForComparison(other.category || '')
+    if (currentCategory && otherCategory && currentCategory === otherCategory) score += 50
+
+    if (!drug.edaOnly && !other.edaOnly && score > 0) score += 30
+
+    if (score > 0) {
+      scores.push({ drug: other, score, type: score >= 1000 ? 'alternative' : 'similar' })
+    }
+  }
+
+  scores.sort((a, b) => b.score - a.score)
+  const alternatives = scores.filter(s => s.type === 'alternative').slice(0, 4)
+  const similars = scores.filter(s => s.type === 'similar').slice(0, 4)
+  return { alternatives: alternatives.map(s => s.drug), similars: similars.map(s => s.drug) }
 }
