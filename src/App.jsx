@@ -84,7 +84,7 @@ export default function App() {
     } else {
       document.title = `${TAB_TITLES[tab] || 'Pharma AI'} - Pharma AI`
     }
-  })
+  }, [tab, selectedDrug])
 
   useEffect(() => {
     const handler = (e) => {

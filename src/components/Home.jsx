@@ -288,13 +288,13 @@ export default function Home({ drugs, diseases, recentlyViewed, onBrowse, onInte
     return () => clearInterval(interval)
   }, [drugs])
 
-  const totalInteractions = drugs.reduce((s, d) => s + d.drugInteractions.length + d.diseaseInteractions.length, 0)
+  const totalInteractions = drugs.reduce((s, d) => s + (d.drugInteractions || []).length + (d.diseaseInteractions || []).length, 0)
   const contraindicated = drugs.reduce((s, d) =>
-    s + d.drugInteractions.filter(i => i.severity === 'contraindicated').length +
-    d.diseaseInteractions.filter(i => i.severity === 'contraindicated').length, 0)
+    s + (d.drugInteractions || []).filter(i => i.severity === 'contraindicated').length +
+    (d.diseaseInteractions || []).filter(i => i.severity === 'contraindicated').length, 0)
   const severe = drugs.reduce((s, d) =>
-    s + d.drugInteractions.filter(i => i.severity === 'severe').length +
-    d.diseaseInteractions.filter(i => i.severity === 'severe').length, 0)
+    s + (d.drugInteractions || []).filter(i => i.severity === 'severe').length +
+    (d.diseaseInteractions || []).filter(i => i.severity === 'severe').length, 0)
   const categories = [...new Set(drugs.map(d => d.category))].length
 
   return (

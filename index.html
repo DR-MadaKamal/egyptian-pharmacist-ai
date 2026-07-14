@@ -8,6 +8,17 @@
   </head>
   <body class="bg-[#FFF8E7] text-[#2C3E50]">
     <div id="root"></div>
+    <script>
+      window.onerror = function(msg, src, line, col, err) {
+        var el = document.getElementById('root');
+        if (el && el.innerHTML.trim() === '') {
+          el.innerHTML = '<div style="padding:2rem;text-align:center;font-family:sans-serif"><h2 style="color:red">⚠️ Error Loading App</h2><p style="color:#666">' + msg + '</p><p style="color:#999;font-size:12px">' + (src||'') + ':' + line + ':' + col + '</p><button onclick="location.reload()" style="margin-top:1rem;padding:0.5rem 1.5rem;border-radius:8px;background:#2C5F7C;color:white;border:none;cursor:pointer">Reload</button></div>';
+        }
+      };
+      window.addEventListener('unhandledrejection', function(e) {
+        console.error('[unhandledrejection]', e.reason);
+      });
+    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

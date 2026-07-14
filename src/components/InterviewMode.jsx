@@ -227,7 +227,7 @@ export default function InterviewMode({ drugs, diseases, onViewDrug }) {
   const [timeLeft, setTimeLeft] = useState(null)
   const timerRef = useRef(null)
 
-  const enoughData = drugs.filter(d => d.drugInteractions.length > 0).length > 1
+  const enoughData = drugs.filter(d => (d.drugInteractions || []).length > 0).length > 1
 
   const startInterview = useCallback(() => {
     const qs = generateMixedQuestions(drugs, diseases, questionCount)

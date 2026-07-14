@@ -314,14 +314,14 @@ export default function DrugBrowser({ drugs, onViewDrug }) {
             )}
             <div className="flex items-center justify-between mt-2">
               <div className="flex gap-2 text-xs">
-                {!drug.edaOnly && drug.drugInteractions.length > 0 && (
+                {!drug.edaOnly && (drug.drugInteractions || []).length > 0 && (
                   <span className="bg-orange-100 text-orange-700 px-2 py-0.5 rounded">
-                    {drug.drugInteractions.length} تفاعل دوائي
+                    {(drug.drugInteractions || []).length} تفاعل دوائي
                   </span>
                 )}
-                {!drug.edaOnly && drug.diseaseInteractions.length > 0 && (
+                {!drug.edaOnly && (drug.diseaseInteractions || []).length > 0 && (
                   <span className="bg-blue-100 text-blue-700 px-2 py-0.5 rounded">
-                    {drug.diseaseInteractions.length} تفاعل مرضي
+                    {(drug.diseaseInteractions || []).length} تفاعل مرضي
                   </span>
                 )}
               </div>
