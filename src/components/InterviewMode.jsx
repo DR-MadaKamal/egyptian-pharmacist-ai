@@ -2,6 +2,7 @@ import { useState, useMemo, useCallback, useEffect, useRef } from 'react'
 import { severityConfig } from '../utils/interactions.js'
 import { generateMixedQuestions } from '../utils/quiz.js'
 import FlashcardQuiz from './FlashcardQuiz.jsx'
+import { FLASHCARD_CATEGORIES, FLASHCARDS, GOLDEN_TIPS } from '../data/flashcards.js'
 
 function QuestionCard({ question, index, total, onAnswer, answered, onSkip }) {
   const severityColors = { contraindicated: 'bg-red-600', severe: 'bg-orange-500', moderate: 'bg-yellow-500', mild: 'bg-blue-500' }
@@ -86,6 +87,133 @@ function QuestionCard({ question, index, total, onAnswer, answered, onSkip }) {
   )
 }
 
+function KnowledgeBank({ onBack }) {
+  const [expandedId, setExpandedId] = useState(null)
+  const [filterCat, setFilterCat] = useState('all')
+  const [filterDiff, setFilterDiff] = useState('all')
+  const [searchQ, setSearchQ] = useState('')
+
+  const filtered = useMemo(() => {
+    let cards = FLASHCARDS
+    if (filterCat !== 'all') cards = cards.filter(c => c.cat === filterCat)
+    if (filterDiff !== 'all') cards = cards.filter(c => c.difficulty === filterDiff)
+    if (searchQ.trim()) {
+      const q = searchQ.trim().toLowerCase()
+      cards = cards.filter(c =>
+        c.q.toLowerCase().includes(q) || c.qEn.toLowerCase().includes(q) ||
+        c.a.toLowerCase().includes(q) || c.aEn.toLowerCase().includes(q)
+      )
+    }
+    return cards
+  }, [filterCat, filterDiff, searchQ])
+
+  const diffConfig = { easy: { ar: 'سهل', color: 'bg-green-100 text-green-700' }, medium: { ar: 'متوسط', color: 'bg-yellow-100 text-yellow-700' }, hard: { ar: 'صعب', color: 'bg-red-100 text-red-700' } }
+
+  return (
+    <div className="space-y-4">
+      <div className="flex items-center justify-between">
+        <h2 className="text-2xl font-bold text-nile">📖 بنك الأسئلة / Question Bank</h2>
+        <button onClick={onBack} className="text-sm bg-gray-100 text-gray-500 px-3 py-1.5 rounded-lg hover:bg-gray-200 transition-colors">← العودة / Back</button>
+      </div>
+
+      <div className="bg-white border border-sand-dark rounded-xl p-4 space-y-3">
+        <input type="text" value={searchQ} onChange={e => setSearchQ(e.target.value)}
+          placeholder="🔍 ابحث في الأسئلة والإجابات... / Search questions & answers..."
+          className="w-full px-4 py-2 border border-sand-dark rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gold" dir="auto" />
+
+        <div className="flex flex-wrap gap-2">
+          <button onClick={() => setFilterCat('all')}
+            className={`px-3 py-1 rounded-lg text-xs font-bold transition-colors ${filterCat === 'all' ? 'bg-nile text-white' : 'bg-sand text-nile hover:bg-sand-dark'}`}>
+            الكل ({FLASHCARDS.length})
+          </button>
+          {FLASHCARD_CATEGORIES.map(cat => {
+            const count = FLASHCARDS.filter(c => c.cat === cat.id).length
+            return (
+              <button key={cat.id} onClick={() => setFilterCat(cat.id)}
+                className={`px-3 py-1 rounded-lg text-xs font-bold transition-colors ${filterCat === cat.id ? `${cat.color} text-white` : 'bg-sand text-nile hover:bg-sand-dark'}`}>
+                {cat.icon} {cat.ar} ({count})
+              </button>
+            )
+          })}
+        </div>
+
+        <div className="flex gap-2">
+          {['all', 'easy', 'medium', 'hard'].map(d => (
+            <button key={d} onClick={() => setFilterDiff(d)}
+              className={`px-3 py-1 rounded-lg text-xs font-bold transition-colors ${
+                filterDiff === d ? (d === 'all' ? 'bg-gray-600 text-white' : diffConfig[d]?.color.replace('100', '600').replace('text-', 'text-white ')) : 'bg-sand text-nile hover:bg-sand-dark'
+              }`}>
+              {d === 'all' ? 'كل المستويات' : diffConfig[d]?.ar}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <p className="text-sm text-gray-500">{filtered.length} سؤال / questions</p>
+
+      <div className="space-y-3">
+        {filtered.map(card => {
+          const cat = FLASHCARD_CATEGORIES.find(c => c.id === card.cat)
+          const diff = diffConfig[card.difficulty]
+          const isExpanded = expandedId === card.id
+          return (
+            <div key={card.id} className="bg-white border border-sand-dark rounded-xl overflow-hidden">
+              <button onClick={() => setExpandedId(isExpanded ? null : card.id)}
+                className="w-full text-right p-4 flex items-start gap-3 hover:bg-gray-50 transition-colors">
+                <span className="text-xl shrink-0 mt-0.5">{cat?.icon}</span>
+                <div className="flex-1 min-w-0">
+                  <p className="font-bold text-nile text-sm md:text-base leading-relaxed">{card.q}</p>
+                  <p className="text-xs text-gray-500 mt-0.5">{card.qEn}</p>
+                  <div className="flex items-center gap-2 mt-2">
+                    <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${diff?.color}`}>{diff?.ar}</span>
+                    <span className="text-[10px] text-gray-400">{cat?.ar}</span>
+                    <span className="text-[10px] text-gold-dark italic">💡 {card.hint}</span>
+                  </div>
+                </div>
+                <span className={`text-gray-400 text-lg transition-transform shrink-0 ${isExpanded ? 'rotate-180' : ''}`}>▼</span>
+              </button>
+              {isExpanded && (
+                <div className="border-t border-gray-100 bg-green-50/50 p-4 space-y-2">
+                  <div className="text-right">
+                    <p className="text-sm font-bold text-green-700 mb-1">✅ الإجابة بالعربي:</p>
+                    <p className="text-sm text-nile leading-relaxed">{card.a}</p>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-sm font-bold text-green-600 mb-1">English Answer:</p>
+                    <p className="text-xs text-gray-600 leading-relaxed">{card.aEn}</p>
+                  </div>
+                </div>
+              )}
+            </div>
+          )
+        })}
+        {filtered.length === 0 && (
+          <div className="text-center py-8 text-gray-400">
+            <p className="text-lg">🔍 لا توجد نتائج / No results</p>
+          </div>
+        )}
+      </div>
+
+      {GOLDEN_TIPS.length > 0 && (
+        <div className="mt-8 space-y-3">
+          <h3 className="text-lg font-bold text-nile">💡 نصائح ذهبية لمقابلات السلاسل / Golden Tips for Chain Interviews</h3>
+          {GOLDEN_TIPS.map(tip => (
+            <div key={tip.id} className="bg-amber-50 border border-amber-200 rounded-xl p-4">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-xl">{tip.icon}</span>
+                <span className="font-bold text-amber-800 text-sm">{tip.title}</span>
+                <span className="text-xs text-amber-600">/ {tip.titleEn}</span>
+              </div>
+              <p className="text-sm text-amber-900 leading-relaxed">{tip.content}</p>
+              <p className="text-xs text-amber-700 mt-1 leading-relaxed">{tip.contentEn}</p>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  )
+}
+
 export default function InterviewMode({ drugs, diseases }) {
   const [mode, setMode] = useState(null)
   const [phase, setPhase] = useState('setup')
@@ -150,7 +278,7 @@ export default function InterviewMode({ drugs, diseases }) {
           <p className="text-gray-500">اختر طريقة التدريب / Choose your training mode</p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-lg mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
           <button onClick={() => setMode('quiz')}
             className="bg-white border-2 border-sand-dark hover:border-gold rounded-xl p-6 text-center transition-all hover:shadow-lg group">
             <div className="text-4xl mb-3">📝</div>
@@ -164,8 +292,16 @@ export default function InterviewMode({ drugs, diseases }) {
             <div className="text-4xl mb-3">🃏</div>
             <h3 className="font-bold text-nile text-lg group-hover:text-gold-dark transition-colors">بطاقات مراجعة</h3>
             <p className="text-sm text-gray-500 mt-1">Flashcards</p>
-            <p className="text-xs text-gray-400 mt-2">50 بطاقة في 5 مواضيع: بيع، OTC، كوزموتيكس، مزمنة</p>
-            <p className="text-xs text-gray-400">50 cards: sales, OTC, cosmetics, chronic</p>
+            <p className="text-xs text-gray-400 mt-2">{FLASHCARDS.length} بطاقة في {FLASHCARD_CATEGORIES.length} مواضيع</p>
+            <p className="text-xs text-gray-400">{FLASHCARDS.length} cards across {FLASHCARD_CATEGORIES.length} topics</p>
+          </button>
+          <button onClick={() => setMode('browse')}
+            className="bg-white border-2 border-sand-dark hover:border-gold rounded-xl p-6 text-center transition-all hover:shadow-lg group">
+            <div className="text-4xl mb-3">📖</div>
+            <h3 className="font-bold text-nile text-lg group-hover:text-gold-dark transition-colors">بنك الأسئلة</h3>
+            <p className="text-sm text-gray-500 mt-1">Question Bank</p>
+            <p className="text-xs text-gray-400 mt-2">تصفح كل الأسئلة والإجابات كمرجع</p>
+            <p className="text-xs text-gray-400">Browse all Q&A as a reference</p>
           </button>
         </div>
       </div>
@@ -174,6 +310,10 @@ export default function InterviewMode({ drugs, diseases }) {
 
   if (mode === 'flashcards') {
     return <FlashcardQuiz onBack={() => setMode(null)} />
+  }
+
+  if (mode === 'browse') {
+    return <KnowledgeBank onBack={() => setMode(null)} />
   }
 
   if (phase === 'setup') {

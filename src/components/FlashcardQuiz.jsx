@@ -20,7 +20,6 @@ export default function FlashcardQuiz({ onBack }) {
   const [phase, setPhase] = useState('setup')
   const [selectedCats, setSelectedCats] = useState(new Set(FLASHCARD_CATEGORIES.map(c => c.id)))
   const [selectedDiff, setSelectedDiff] = useState(new Set(['easy', 'medium', 'hard']))
-  const [shuffleCards, setShuffleCards] = useState(true)
   const [cards, setCards] = useState([])
   const [currentIdx, setCurrentIdx] = useState(0)
   const [showAnswer, setShowAnswer] = useState(false)
@@ -51,14 +50,14 @@ export default function FlashcardQuiz({ onBack }) {
 
   const startFlashcards = useCallback(() => {
     let pool = FLASHCARDS.filter(c => selectedCats.has(c.cat) && selectedDiff.has(c.difficulty))
-    if (shuffleCards) pool = shuffle(pool)
+    pool = shuffle(pool)
     if (pool.length === 0) return
     setCards(pool)
     setCurrentIdx(0)
     setShowAnswer(false)
     setResults([])
     setPhase('cards')
-  }, [selectedCats, selectedDiff, shuffleCards])
+  }, [selectedCats, selectedDiff])
 
   const markResult = (known) => {
     setResults(prev => [...prev, { card: cards[currentIdx], known }])
@@ -119,14 +118,6 @@ export default function FlashcardQuiz({ onBack }) {
               </button>
             ))}
           </div>
-        </div>
-
-        <div className="bg-white border border-sand-dark rounded-xl p-4 flex items-center justify-between">
-          <label className="font-bold text-nile text-sm">🔀 خلط عشوائي / Shuffle</label>
-          <button onClick={() => setShuffleCards(s => !s)}
-            className={`w-12 h-6 rounded-full transition-colors relative ${shuffleCards ? 'bg-nile' : 'bg-gray-300'}`}>
-            <span className={`absolute top-0.5 w-5 h-5 rounded-full bg-white shadow transition-transform ${shuffleCards ? 'left-[26px]' : 'left-0.5'}`} />
-          </button>
         </div>
 
         <div className="text-center">

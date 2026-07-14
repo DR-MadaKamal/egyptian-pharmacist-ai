@@ -4,6 +4,10 @@ export const FLASHCARD_CATEGORIES = [
   { id: 'cosmetics', ar: 'الكوزموتيكس والبشرة', en: 'Dermocosmetics', icon: '🧴', color: 'bg-purple-600' },
   { id: 'chronic', ar: 'الأمراض المزمنة والحمل', en: 'Chronic & Pregnancy', icon: '🩺', color: 'bg-red-600' },
   { id: 'sales', ar: 'مهارات البيع', en: 'Sales & Cross-Selling', icon: '🛒', color: 'bg-gold-dark' },
+  { id: 'corporate', ar: 'عقلية السلسلة', en: 'Corporate Mindset', icon: '🏢', color: 'bg-indigo-600' },
+  { id: 'advSales', ar: 'البيع المتقدم والأداء', en: 'Advanced Sales & Performance', icon: '📈', color: 'bg-emerald-600' },
+  { id: 'crisis', ar: 'المواقف الحرجة', en: 'High-Stakes Scenarios', icon: '🚨', color: 'bg-rose-700' },
+  { id: 'advTech', ar: 'أسئلة تقنية متقدمة', en: 'Advanced Technical', icon: '🔬', color: 'bg-amber-700' },
 ]
 
 export const FLASHCARDS = [
@@ -383,5 +387,128 @@ export const FLASHCARDS = [
     a: 'GLP-1 تسبب إمساك شديد ونقص تغذية. Cross-sell: (1) فيتامينات متعددة + Vitamin D3 لتعويض قلة الشهية، (2) ألياف تذوب أو أكياس ملينة للإمساك، (3) كريم لشد الترهلات + مكملات كولاجين للحفاظ على نضارة الجلد.',
     aEn: 'GLP-1s cause severe constipation and nutritional deficiency. Cross-sell: (1) multivitamins + Vitamin D3 for appetite loss, (2) fiber or laxative sachets for constipation, (3) skin tightening cream + collagen for skin firmness.',
     hint: 'Multivitamins + Laxatives + Collagen',
+  },
+
+  // ─── CATEGORY 6: Corporate Mindset (عقلية السلسلة) ───
+  {
+    id: 'corp1', cat: 'corporate', difficulty: 'medium',
+    q: 'كيف تتعامل مع "الكاشير" والزحام الشديد في وقت الذروة؟',
+    qEn: 'How do you handle the cashier and heavy rush hour crowds?',
+    a: 'أقوم بتقسيم المهام: الصيدلي الذي يجهز الروشتة (Back office) يركز في دقة الصرف، والصيدلي على الكاشير يركز في سرعة البيع المتقاطع (Cross-selling) وخدمة العملاء، مع تبادل الأدوار بذكاء.',
+    aEn: 'I divide tasks: the pharmacist preparing prescriptions (Back office) focuses on dispensing accuracy, while the pharmacist at the cashier focuses on fast cross-selling and customer service, with smart role rotation.',
+    hint: 'Multitasking + smart role rotation',
+  },
+  {
+    id: 'corp2', cat: 'corporate', difficulty: 'hard',
+    q: 'ماذا تفعل إذا وجدت أنك حققت "تارجت" مبيعات كبيراً من خلال تقديم نصائح طبية خاطئة؟',
+    qEn: 'What if you achieved a big sales target through wrong medical advice?',
+    a: 'السمعة هي أصلنا الثابت. تحقيق التارجت على حساب صحة المريض سيكلفنا خسارة العميل للابد وقد يعرض الشركة لمساءلة قانونية. البيع الحقيقي هو إقناع المريض بالمنتج الأفضل لحالته فعلاً.',
+    aEn: 'Reputation is our fixed asset. Hitting targets at the expense of patient health will cost us the customer forever and may expose the company to legal liability. Real sales means convincing the patient with the product truly best for their condition.',
+    hint: 'Reputation > targets. This is a trap!',
+  },
+  {
+    id: 'corp3', cat: 'corporate', difficulty: 'medium',
+    q: 'ما هي أهمية الـ (SOP) في صيدليات السلسلة؟',
+    qEn: 'What is the importance of SOPs in chain pharmacies?',
+    a: 'هي الدستور الذي يحمي الشركة ويضمن تقديم خدمة موحدة الجودة في كل الفروع. الالتزام بها يقلل الأخطاء الطبية ويضمن ثبات مستوى الخدمة.',
+    aEn: 'SOPs are the charter that protects the company and ensures uniform quality service across all branches. Compliance reduces medical errors and ensures consistent service standards.',
+    hint: 'SOP = Standard Operating Procedure. Protects + unifies.',
+  },
+
+  // ─── CATEGORY 7: Advanced Sales & Performance (المهارات البيعية المتقدمة) ───
+  {
+    id: 'advS1', cat: 'advSales', difficulty: 'medium',
+    q: 'عندنا "عروض" على صنف معين، والمريض يطلب صنفاً آخر، كيف تتصرف؟',
+    qEn: 'We have offers on a specific product, but the customer wants another. What do you do?',
+    a: 'سأصرف له ما طلبه أولاً لضمان ثقته، ثم أقول: بالمناسبة يا فندم، هذا الصنف عليه عرض ممتاز حالياً كبديل/مكمل، ومناسب جداً لحالتك، هل تحب أن تجربه؟',
+    aEn: 'I dispense what they asked for first to ensure trust, then say: by the way, this product has an excellent offer right now as an alternative/complement, very suitable for your condition, would you like to try it?',
+    hint: 'Never force. Give what they want, then suggest.',
+  },
+  {
+    id: 'advS2', cat: 'advSales', difficulty: 'medium',
+    q: 'كيف تقنع مريضاً يرفض دفع ثمن كيس الصيدلية أو رسوم التوصيل؟',
+    qEn: 'How do you convince a patient who refuses to pay for the pharmacy bag or delivery fee?',
+    a: 'نحن نقدم خدمة مميزة وتغليفاً يحافظ على سلامة الأدوية. الخدمة الاحترافية تتطلب موارد، والهدف هو وصول الدواء لحضرتك في أفضل حالة.',
+    aEn: 'We provide a premium service with packaging that preserves medication safety. Professional service requires resources, and the goal is delivering the medicine to you in the best condition.',
+    hint: 'Value-based justification: safety + professionalism',
+  },
+  {
+    id: 'advS3', cat: 'advSales', difficulty: 'hard',
+    q: 'ما هي استراتيجيتك لجعل العميل يكرر زيارته لنا وليس للصيدلية المنافسة؟',
+    qEn: 'What is your strategy to make customers return to you and not the competitor?',
+    a: 'العميل يعود للصيدلية التي يجد فيها صيدلياً يثق في علمه، ويشعر بالاهتمام الشخصي (حفظ تاريخه المرضي)، بالإضافة لتوفر الأصناف والخدمة السريعة.',
+    aEn: 'Customers return to a pharmacy where they find a pharmacist they trust scientifically, feel personal attention (keeping their medical history), plus product availability and fast service.',
+    hint: 'Trust + personal attention + availability + speed',
+  },
+
+  // ─── CATEGORY 8: High-Stakes Scenarios (المواقف الحرجة) ───
+  {
+    id: 'crisis1', cat: 'crisis', difficulty: 'hard',
+    q: 'اكتشفت أن زميلك في الفترة الصباحية تلاعب في الـ (POS) أو سرق من الدرج، ماذا تفعل؟',
+    qEn: 'You discovered your morning shift colleague tampered with the POS or stole from the register. What do you do?',
+    a: 'أبلغ مدير الفرع فوراً وأكتب تقريراً بالواقعة. التستر على الخطأ هو اشتراك فيه، والشركة لا تقبل بوجود عناصر غير أمينة.',
+    aEn: 'I report to the branch manager immediately and write a report. Covering up is complicity, and the company does not tolerate dishonest individuals.',
+    hint: 'Report immediately. Covering up = complicity.',
+  },
+  {
+    id: 'crisis2', cat: 'crisis', difficulty: 'hard',
+    q: 'مدير الفرع طلب منك تغيير بيانات في الـ (Stock) لتقليل العجز، ماذا تفعل؟',
+    qEn: 'The branch manager asked you to change stock data to reduce a shortage. What do you do?',
+    a: 'أرفض هذا الطلب بكل احترام وأوضح أن التلاعب في الجرد سيظهر عاجلاً أم آجلاً، والحل الصحيح هو إجراء جرد دقيق ومعرفة سبب العجز الحقيقي لمعالجته.',
+    aEn: 'I refuse respectfully and explain that tampering with inventory will be discovered sooner or later. The correct solution is an accurate inventory count and identifying the real cause of the shortage.',
+    hint: 'Red line! Never tamper with inventory data.',
+  },
+  {
+    id: 'crisis3', cat: 'crisis', difficulty: 'medium',
+    q: 'عميل اشتكى على الصفحة الرسمية للشركة من "سوء معاملة" في فرعك، والمدير يحملك المسؤولية.',
+    qEn: 'A customer complained on the company\'s official page about "bad treatment" at your branch, and the manager holds you responsible.',
+    a: 'أتحمل مسؤولية العمل في الفرع. سأقوم فوراً بالتواصل مع العميل إذا كان معروفاً، وأراجع ما حدث في ذلك التوقيت، وأضع خطة تصحيحية لمنع تكرار الشكوى، وأعتذر للعميل بمهنية.',
+    aEn: 'I take responsibility for working at the branch. I will immediately contact the customer if identifiable, review what happened at that time, create a corrective plan to prevent recurrence, and apologize professionally.',
+    hint: 'Own it + investigate + fix + apologize professionally.',
+  },
+
+  // ─── CATEGORY 9: Advanced Technical (أسئلة تقنية متقدمة) ───
+  {
+    id: 'advT1', cat: 'advTech', difficulty: 'hard',
+    q: 'مريض سكر يأخذ SGLT2 inhibitors مثل Jardiance/Forxiga، ما هو التحذير الذي يجب أن تقدمه له؟',
+    qEn: 'A diabetic patient takes SGLT2 inhibitors like Jardiance/Forxiga. What warning should you give?',
+    a: 'خطر حدوث التهابات فطرية بولية/تناسلية (Genital mycotic infections) بسبب خروج السكر في البول. يجب النصيحة بشرب الماء بكثرة والاهتمام الفائق بالنظافة الشخصية.',
+    aEn: 'Risk of genital mycotic infections due to glucose excretion in urine. Advise drinking plenty of water and meticulous personal hygiene.',
+    hint: 'SGLT2 → sugar in urine → fungal infections. Hydrate + hygiene.',
+  },
+  {
+    id: 'advT2', cat: 'advTech', difficulty: 'hard',
+    q: 'كيف تعالج مريضاً يأخذ PPIs لفترة طويلة ولديه نقص في فيتامين ب12؟',
+    qEn: 'How do you treat a patient on long-term PPIs with vitamin B12 deficiency?',
+    a: 'الحموضة ضرورية لامتصاص ب12 من الطعام. الحل ليس بزيادة الجرعة فقط، بل يجب مراجعة الطبيب لتقليل جرعة الـ PPI أو الاعتماد على مكملات ب12 (تعطى غالباً بالحقن لتجاوز المعدة).',
+    aEn: 'Stomach acid is essential for B12 absorption from food. The solution isn\'t just increasing the dose — the doctor should review and reduce the PPI dose or rely on B12 supplements (often injected to bypass the stomach).',
+    hint: 'PPI → low acid → poor B12 absorption. Inject B12 to bypass stomach.',
+  },
+]
+
+export const GOLDEN_TIPS = [
+  {
+    id: 'tip1',
+    title: 'مظهر الصيدلي',
+    titleEn: 'Pharmacist Appearance',
+    content: 'سلاسل مثل النهدي أو العزبي: يهتمون جداً بـ "مظهر الصيدلي" و "لباقته". ادخل المقابلة بهدوء، ثقة، وبزي مهندم (زي الصيدلية إذا أمكن).',
+    contentEn: 'Chains like Nahdi/El-Ezby care deeply about pharmacist appearance and politeness. Enter the interview calmly, confidently, and in a neat uniform (pharmacy coat if possible).',
+    icon: '👔',
+  },
+  {
+    id: 'tip2',
+    title: 'رجل فريق',
+    titleEn: 'Team Player',
+    content: 'في قسم الأسئلة الشخصية: دائماً أظهر أنك "رجل فريق" (Team Player) وأن "نمو الشركة" هو هدفك الأول.',
+    contentEn: 'In personal questions: always show you are a "Team Player" and that "company growth" is your top priority.',
+    icon: '🤝',
+  },
+  {
+    id: 'tip3',
+    title: 'الإجابة عن العيوب',
+    titleEn: 'Answering Weakness Questions',
+    content: 'عند سؤالك عن العيوب: لا تقل "أنا عصبي" أو "أنا لا أحب الزحام". قل: "أنا أسعى للكمال في جرد الصيدلية مما يأخذ وقتاً، لكنني أتعلم الآن التوازن".',
+    contentEn: 'When asked about weaknesses: never say "I\'m short-tempered" or "I don\'t like crowds." Say: "I strive for perfection in pharmacy inventory which takes time, but I\'m now learning to balance."',
+    icon: '⚖️',
   },
 ]
