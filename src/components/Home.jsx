@@ -66,6 +66,7 @@ export default function Home({ drugs, diseases, recentlyViewed, onBrowse, onInte
   const [showFilters, setShowFilters] = useState(false)
   const [activeQuickFilter, setActiveQuickFilter] = useState('')
   const [suggestionIdx, setSuggestionIdx] = useState(-1)
+  const [sourceFilter, setSourceFilter] = useState('')
   const [activeFilters, setActiveFilters] = useState({ priceRange: null, manufacturer: '', category: '', route: '' })
   const [showHelp, setShowHelp] = useState(false)
   const [isVoiceActive, setIsVoiceActive] = useState(false)
