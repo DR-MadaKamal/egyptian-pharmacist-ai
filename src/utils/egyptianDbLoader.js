@@ -17,7 +17,10 @@ export async function loadEgyptianDrugs() {
 
   let data;
   try {
-    const res = await fetch(DB_URL);
+    const ctrl = new AbortController()
+    const timer = setTimeout(() => ctrl.abort(), 20000)
+    const res = await fetch(DB_URL, { signal: ctrl.signal });
+    clearTimeout(timer)
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     data = await res.json();
   } catch {

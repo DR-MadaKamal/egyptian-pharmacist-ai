@@ -1,19 +1,30 @@
 let edaCache = null
 let mohmedCache = null
+let rawEdaJson = null
+let rawMohmedJson = null
 
 async function fetchJson(url) {
-  const res = await fetch(url)
-  if (!res.ok) return []
-  return res.json()
+  try {
+    const ctrl = new AbortController()
+    const timer = setTimeout(() => ctrl.abort(), 15000)
+    const res = await fetch(url, { signal: ctrl.signal })
+    clearTimeout(timer)
+    if (!res.ok) return []
+    return res.json()
+  } catch {
+    return []
+  }
 }
 
 export async function loadEdaDrugs() {
   if (edaCache) return edaCache
   const [list, mohmed] = await Promise.all([
-    fetchJson('/egyptian-pharmacist-ai/data/eda-drugs.json'),
-    fetchJson('/egyptian-pharmacist-ai/data/mohmed-supplement.json'),
+    fetchJson(import.meta.env.BASE_URL + 'data/eda-drugs.json'),
+    fetchJson(import.meta.env.BASE_URL + 'data/mohmed-supplement.json'),
   ])
-  edaCache = (list || []).map((item, i) => ({
+  rawEdaJson = list || []
+  rawMohmedJson = mohmed || []
+  edaCache = rawEdaJson.map((item, i) => ({
     id: 'eda_' + i,
     nameEn: item.s,
     nameAr: item.s,
@@ -125,3 +136,6 @@ export function searchEda(edaDrugs, query) {
     return false
   })
 }
+
+export function getRawEdaJson() { return rawEdaJson || [] }
+export function getRawMohmedJson() { return rawMohmedJson || [] }

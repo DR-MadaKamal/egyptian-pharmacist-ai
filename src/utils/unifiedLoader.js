@@ -5,52 +5,40 @@ function normalize(text) {
   return text.toLowerCase().trim().replace(/[^a-z0-9\u0600-\u06FF]/g, '')
 }
 
-function buildKey(nameEn, nameAr, sciName) {
-  const candidates = [nameEn, nameAr, sciName].filter(Boolean)
-  return candidates.map(normalize).filter(Boolean)
-}
-
-function matchScore(a, b) {
-  if (!a || !b) return 0
-  const na = normalize(a)
-  const nb = normalize(b)
-  if (na === nb) return 100
-  if (na.includes(nb) || nb.includes(na)) return 80
-  return 0
+function extractIngredients(text) {
+  if (!text) return []
+  const normalized = text.toLowerCase()
+    .replace(/\([^)]*\)/g, ' ')
+    .replace(/\+/g, ' ')
+    .replace(/[,;/]/g, ' ')
+  return normalized.split(/\s+/).filter(w => w.length >= 3)
 }
 
 function mergeDrug(existing, newData, source) {
-  if (!existing || !newData) return existing
+  if (!existing || !newData) return existing || newData
   const merged = { ...existing, dataSources: [...(existing.dataSources || []), source] }
 
-  const fields = {
-    nameEn: 'nameEn', nameAr: 'nameAr',
-    scientificNameEn: 'scientificNameEn', scientificNameAr: 'scientificNameAr',
-    activeIngredientEn: 'activeIngredientEn', activeIngredientAr: 'activeIngredientAr',
-    category: 'category', categoryAr: 'categoryAr',
-    manufacturerEn: 'manufacturerEn', manufacturerAr: 'manufacturerAr',
-    description: 'description', descriptionAr: 'descriptionAr',
-    indicationEn: 'indicationEn', indicationAr: 'indicationAr',
-    mechanismEn: 'mechanismEn', mechanismAr: 'mechanismAr',
-    sideEffectsEn: 'sideEffectsEn', sideEffectsAr: 'sideEffectsAr',
-    dosageEn: 'dosageEn', dosageAr: 'dosageAr',
-    pregnancyEn: 'pregnancyEn', pregnancyAr: 'pregnancyAr',
-    breastfeedingEn: 'breastfeedingEn', breastfeedingAr: 'breastfeedingAr',
-    formEmoji: 'formEmoji', imageUrl: 'imageUrl',
-    pharmacology: 'pharmacology',
-  }
+  const simpleFields = [
+    'nameEn', 'nameAr', 'scientificNameEn', 'scientificNameAr',
+    'activeIngredientEn', 'activeIngredientAr', 'category', 'categoryAr',
+    'manufacturerEn', 'manufacturerAr', 'description', 'descriptionAr',
+    'indicationEn', 'indicationAr', 'mechanismEn', 'mechanismAr',
+    'sideEffectsEn', 'sideEffectsAr', 'dosageEn', 'dosageAr',
+    'pregnancyEn', 'pregnancyAr', 'breastfeedingEn', 'breastfeedingAr',
+    'formEmoji', 'imageUrl', 'pharmacology', 'route', 'drug_class',
+  ]
 
-  for (const [key, target] of Object.entries(fields)) {
-    const newVal = newData[key]
-    if (newVal && (!merged[target] || merged[target] === '' || merged[target] === 'غير متوفر')) {
-      merged[target] = newVal
+  for (const key of simpleFields) {
+    const v = newData[key]
+    if (v && (!merged[key] || merged[key] === '' || merged[key] === 'غير متوفر')) {
+      merged[key] = v
     }
   }
 
-  if (newData.drugInteractions?.length > 0 && merged.drugInteractions?.length === 0) {
+  if (newData.drugInteractions?.length > 0 && (!merged.drugInteractions || merged.drugInteractions.length === 0)) {
     merged.drugInteractions = newData.drugInteractions
   }
-  if (newData.diseaseInteractions?.length > 0 && merged.diseaseInteractions?.length === 0) {
+  if (newData.diseaseInteractions?.length > 0 && (!merged.diseaseInteractions || merged.diseaseInteractions.length === 0)) {
     merged.diseaseInteractions = newData.diseaseInteractions
   }
 
@@ -67,29 +55,13 @@ function mergeDrug(existing, newData, source) {
     merged.price_egp = newData.price_egp
   }
 
-  if (newData.edaBrands?.length > 0) {
-    const existing = merged.edaBrands || []
-    merged.edaBrands = [...new Set([...existing, ...newData.edaBrands])]
+  const arrayFields = ['edaBrands', 'edaMfrs', 'edaRoutes', 'edaGroups', 'constituents']
+  for (const f of arrayFields) {
+    if (newData[f]?.length > 0) {
+      const existing = merged[f] || []
+      merged[f] = [...new Set([...existing, ...newData[f]])]
+    }
   }
-  if (newData.edaMfrs?.length > 0) {
-    const existing = merged.edaMfrs || []
-    merged.edaMfrs = [...new Set([...existing, ...newData.edaMfrs])]
-  }
-  if (newData.edaRoutes?.length > 0) {
-    const existing = merged.edaRoutes || []
-    merged.edaRoutes = [...new Set([...existing, ...newData.edaRoutes])]
-  }
-  if (newData.edaGroups?.length > 0) {
-    const existing = merged.edaGroups || []
-    merged.edaGroups = [...new Set([...existing, ...newData.edaGroups])]
-  }
-  if (newData.constituents?.length > 0) {
-    const existing = merged.constituents || []
-    merged.constituents = [...new Set([...existing, ...newData.constituents])]
-  }
-
-  if (newData.route && !merged.route) merged.route = newData.route
-  if (newData.drug_class && !merged.drug_class) merged.drug_class = newData.drug_class
 
   if (source === 'karem505') {
     merged.karem505 = newData.karem505
@@ -103,8 +75,9 @@ function mergeDrug(existing, newData, source) {
 }
 
 function toUnifiedKarem505(item) {
+  if (!item) return null
   return {
-    id: 'k505_' + item.commercial_name_en,
+    id: 'k505_' + (item.commercial_name_en || Math.random()),
     nameEn: item.commercial_name_en || '',
     nameAr: item.commercial_name_ar || item.commercial_name_en || '',
     scientificNameEn: item.scientific_name || '',
@@ -157,6 +130,7 @@ function toUnifiedKarem505(item) {
 }
 
 function toUnifiedEnriched(drug) {
+  if (!drug) return null
   return {
     ...drug,
     dataSource: 'enriched',
@@ -167,14 +141,15 @@ function toUnifiedEnriched(drug) {
 }
 
 function toUnifiedEda(item, i) {
+  if (!item) return null
   return {
     id: 'eda_' + i,
-    nameEn: item.s,
-    nameAr: item.s,
-    scientificNameEn: item.s,
-    scientificNameAr: item.s,
-    activeIngredientEn: item.s,
-    activeIngredientAr: item.s,
+    nameEn: item.s || '',
+    nameAr: item.s || '',
+    scientificNameEn: item.s || '',
+    scientificNameAr: item.s || '',
+    activeIngredientEn: item.s || '',
+    activeIngredientAr: item.s || '',
     category: 'EDA Listed',
     categoryAr: 'مسجل بهيئة الدواء المصرية',
     formEmoji: '💊',
@@ -186,10 +161,10 @@ function toUnifiedEda(item, i) {
     dosageEn: '', dosageAr: '',
     pregnancyEn: '', pregnancyAr: '',
     breastfeedingEn: '', breastfeedingAr: '',
-    manufacturerEn: (item.m || [])[0] || 'غير متوفر',
+    manufacturerEn: (item.m || [])[0] || '',
     manufacturerAr: '',
     prices: (item.p || []).length >= 2
-      ? [{ form: 'نطاق سعري', formEn: 'Price range', price: '' + item.p[0] + ' - ' + item.p[1], unit: 'EGP' }]
+      ? [{ form: 'Price range', formEn: 'Price range', price: '' + item.p[0] + ' - ' + item.p[1], unit: 'EGP' }]
       : [],
     imageUrl: '',
     drugInteractions: [],
@@ -210,29 +185,30 @@ function toUnifiedEda(item, i) {
 }
 
 function toUnifiedMohmed(item, i) {
+  if (!item) return null
   return {
     id: 'moh_' + i,
-    nameEn: item.s,
-    nameAr: item.s,
-    scientificNameEn: item.s,
-    scientificNameAr: item.s,
-    activeIngredientEn: item.s,
-    activeIngredientAr: item.s,
+    nameEn: item.s || '',
+    nameAr: item.s || '',
+    scientificNameEn: item.s || '',
+    scientificNameAr: item.s || '',
+    activeIngredientEn: item.s || '',
+    activeIngredientAr: item.s || '',
     category: 'Drug Guide 2024',
     categoryAr: 'دليل الأدوية 2024',
     formEmoji: '💊',
     description: item.h || 'Listed in Egypt Drugs Guide (2024 prices)',
-    descriptionAr: item.h ? item.h.slice(0, 100) : 'مسجل في دليل الأدوية المصري (أسعار 2024)',
+    descriptionAr: item.h ? item.h.slice(0, 100) : 'مسجل في دليل الأدوية المصري',
     indicationEn: '', indicationAr: '',
     mechanismEn: '', mechanismAr: '',
     sideEffectsEn: '', sideEffectsAr: '',
     dosageEn: '', dosageAr: '',
     pregnancyEn: '', pregnancyAr: '',
     breastfeedingEn: '', breastfeedingAr: '',
-    manufacturerEn: (item.m || [])[0] || 'غير متوفر',
+    manufacturerEn: (item.m || [])[0] || '',
     manufacturerAr: '',
     prices: (item.p || []).length >= 2
-      ? [{ form: 'نطاق سعري', formEn: 'Price range', price: '' + item.p[0] + ' - ' + item.p[1], unit: 'EGP' }]
+      ? [{ form: 'Price range', formEn: 'Price range', price: '' + item.p[0] + ' - ' + item.p[1], unit: 'EGP' }]
       : [],
     imageUrl: '',
     drugInteractions: [],
@@ -254,117 +230,71 @@ function toUnifiedMohmed(item, i) {
   }
 }
 
-function mergeByKeys(existing, candidates, keyFn, source) {
-  let merged = { ...existing }
-  const matchKeys = keyFn(merged)
+function ingestList(unifiedMap, list, toUnifiedFn, source) {
+  for (let i = 0; i < list.length; i++) {
+    try {
+      const entry = toUnifiedFn(list[i], i)
+      if (!entry) continue
+      const keys = [
+        normalize(entry.nameEn),
+        normalize(entry.nameAr),
+        normalize(entry.scientificNameEn || ''),
+        ...(entry.constituents || []).map(c => normalize(c)),
+        ...(entry.edaGroups || []).map(g => normalize(g)),
+      ].filter(Boolean)
 
-  for (const candidate of candidates) {
-    const candKeys = keyFn(candidate)
-    let matched = false
-    for (const mk of matchKeys) {
-      for (const ck of candKeys) {
-        if (mk && ck && mk === ck) { matched = true; break }
+      const primary = keys[0] || entry.id
+      if (unifiedMap.has(primary)) {
+        unifiedMap.set(primary, mergeDrug(unifiedMap.get(primary), entry, source))
+      } else {
+        unifiedMap.set(primary, entry)
       }
-      if (matched) break
-    }
-    if (!matched) {
-      for (const mk of matchKeys) {
-        for (const ck of candKeys) {
-          if (mk && ck && (mk.includes(ck) || ck.includes(mk)) && mk.length >= 3 && ck.length >= 3) {
-            matched = true; break
-          }
-        }
-        if (matched) break
+      for (const k of keys) {
+        if (!unifiedMap.has(k)) unifiedMap.set(k, entry)
       }
-    }
-    if (matched) {
-      merged = mergeDrug(merged, candidate, source)
+    } catch {
+      // skip individual broken entries
     }
   }
-  return merged
 }
 
 export async function loadUnifiedDrugs() {
   if (unifiedCache) return unifiedCache
 
-  const { drugs: enrichedDrugs } = await import(/* @vite-ignore */ '../data/drugs.js')
-  const { loadEdaDrugs, getEdaCache, getMohmedCache } = await import('./edaLoader.js')
-  const { loadEgyptianDrugs } = await import('./egyptianDbLoader.js')
+  let enrichedDrugs = []
+  let edaList = []
+  let mohmedList = []
+  let karem505Raw = []
 
-  const [edaMohmed, karem505Raw] = await Promise.all([
-    loadEdaDrugs(),
-    loadEgyptianDrugs(),
-  ])
+  try {
+    const mod = await import('../data/drugs.js')
+    enrichedDrugs = mod.drugs || []
+  } catch {
+    // enriched drugs failed — continue with empty
+  }
 
-  const edaList = getEdaCache() || []
-  const mohmedList = getMohmedCache() || []
+  try {
+    const { loadEdaDrugs, getRawEdaJson, getRawMohmedJson } = await import('./edaLoader.js')
+    await loadEdaDrugs()
+    edaList = getRawEdaJson() || []
+    mohmedList = getRawMohmedJson() || []
+  } catch {
+    // EDA/MOHMED failed — continue with empty
+  }
+
+  try {
+    const { loadEgyptianDrugs } = await import('./egyptianDbLoader.js')
+    karem505Raw = await loadEgyptianDrugs()
+  } catch {
+    // karem505 failed — continue with empty
+  }
 
   const unifiedMap = new Map()
 
-  for (const d of enrichedDrugs) {
-    const entry = toUnifiedEnriched(d)
-    const keys = [normalize(d.nameEn), normalize(d.nameAr), normalize(d.scientificNameEn)].filter(Boolean)
-    let merged = entry
-    for (const k of keys) {
-      if (!unifiedMap.has(k)) unifiedMap.set(k, merged)
-    }
-    const primary = keys[0] || keys[1] || keys[2] || entry.id
-    if (unifiedMap.has(primary)) {
-      unifiedMap.set(primary, mergeDrug(unifiedMap.get(primary), entry, 'enriched'))
-    } else {
-      unifiedMap.set(primary, merged)
-    }
-  }
-
-  for (let i = 0; i < edaList.length; i++) {
-    const entry = toUnifiedEda(edaList[i], i)
-    const keys = [normalize(entry.nameEn), normalize(entry.nameAr), ...entry.constituents.map(c => normalize(c))].filter(Boolean)
-    let merged = entry
-    for (const k of keys) {
-      if (!unifiedMap.has(k)) unifiedMap.set(k, merged)
-    }
-    const primary = keys[0] || entry.id
-    if (unifiedMap.has(primary)) {
-      unifiedMap.set(primary, mergeDrug(unifiedMap.get(primary), entry, 'eda'))
-    } else {
-      unifiedMap.set(primary, merged)
-    }
-  }
-
-  for (let i = 0; i < mohmedList.length; i++) {
-    const entry = toUnifiedMohmed(mohmedList[i], i)
-    const keys = [normalize(entry.nameEn), normalize(entry.nameAr), ...(entry.edaGroups || []).map(g => normalize(g))].filter(Boolean)
-    let merged = entry
-    for (const k of keys) {
-      if (!unifiedMap.has(k)) unifiedMap.set(k, merged)
-    }
-    const primary = keys[0] || entry.id
-    if (unifiedMap.has(primary)) {
-      unifiedMap.set(primary, mergeDrug(unifiedMap.get(primary), entry, 'mohmed'))
-    } else {
-      unifiedMap.set(primary, merged)
-    }
-  }
-
-  for (let i = 0; i < karem505Raw.length; i++) {
-    const item = karem505Raw[i]
-    const entry = toUnifiedKarem505(item)
-    const keys = [
-      normalize(item.commercial_name_en),
-      normalize(item.commercial_name_ar),
-      normalize(item.scientific_name),
-    ].filter(Boolean)
-    let merged = entry
-    for (const k of keys) {
-      if (!unifiedMap.has(k)) unifiedMap.set(k, merged)
-    }
-    const primary = keys[0] || entry.id
-    if (unifiedMap.has(primary)) {
-      unifiedMap.set(primary, mergeDrug(unifiedMap.get(primary), entry, 'karem505'))
-    } else {
-      unifiedMap.set(primary, merged)
-    }
-  }
+  ingestList(unifiedMap, enrichedDrugs, toUnifiedEnriched, 'enriched')
+  ingestList(unifiedMap, edaList, toUnifiedEda, 'eda')
+  ingestList(unifiedMap, mohmedList, toUnifiedMohmed, 'mohmed')
+  ingestList(unifiedMap, karem505Raw, toUnifiedKarem505, 'karem505')
 
   const finalList = [...unifiedMap.values()]
 

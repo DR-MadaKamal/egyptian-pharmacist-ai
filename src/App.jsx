@@ -35,10 +35,13 @@ export default function App() {
   const [selectedDrugId, setSelectedDrugId] = useState(null)
   const [refreshKey, _setRefreshKey] = useState(0)
   const [unifiedDrugs, setUnifiedDrugs] = useState(null)
+  const [loadingUnified, setLoadingUnified] = useState(true)
   const [isAdmin, setIsAdmin] = useState(false)
 
   useEffect(() => {
-    loadUnifiedDrugs().then(setUnifiedDrugs)
+    loadUnifiedDrugs()
+      .then(data => { setUnifiedDrugs(data); setLoadingUnified(false) })
+      .catch(() => { setLoadingUnified(false) })
   }, [])
 
   const allDrugs = useMemo(() => {
@@ -105,7 +108,21 @@ export default function App() {
       <NetworkStatus />
 
       <main className="flex-1 max-w-6xl w-full mx-auto px-3 sm:px-4 md:px-6 py-4 md:py-6">
-        {tab === 'home' && (
+        {loadingUnified && (
+          <div className="text-center py-20">
+            <div className="text-5xl mb-4 animate-bounce">💊</div>
+            <p className="text-lg font-bold text-nile">جاري تحميل قاعدة البيانات...</p>
+            <p className="text-sm text-gray-500 mt-1">Loading drug database...</p>
+            <div className="mt-4 flex justify-center gap-1">
+              <div className="w-2 h-2 bg-gold rounded-full animate-bounce" style={{animationDelay:'0ms'}}></div>
+              <div className="w-2 h-2 bg-gold rounded-full animate-bounce" style={{animationDelay:'150ms'}}></div>
+              <div className="w-2 h-2 bg-gold rounded-full animate-bounce" style={{animationDelay:'300ms'}}></div>
+            </div>
+            <p className="text-xs text-gray-400 mt-3">~40,000 drugs from EDA, MOHMED & karem505 databases</p>
+          </div>
+        )}
+
+        {!loadingUnified && tab === 'home' && (
           <Home
             drugs={allDrugs}
             diseases={allDiseases}
@@ -117,10 +134,10 @@ export default function App() {
             onViewDrug={handleViewDrug}
           />
         )}
-        {tab === 'drugs' && (
+        {!loadingUnified && tab === 'drugs' && (
           <DrugHub drugs={allDrugs} diseases={allDiseases} onViewDrug={handleViewDrug} />
         )}
-        {tab === 'detail' && selectedDrugId && (
+        {!loadingUnified && tab === 'detail' && selectedDrugId && (
           <DrugDetail
             drugId={selectedDrugId}
             drugs={allDrugs}
@@ -129,16 +146,16 @@ export default function App() {
             onViewDrug={handleViewDrug}
           />
         )}
-        {tab === 'interview' && (
+        {!loadingUnified && tab === 'interview' && (
           <InterviewMode drugs={allDrugs} diseases={allDiseases} onViewDrug={handleViewDrug} />
         )}
-        {tab === 'pharmacopeia' && (
+        {!loadingUnified && tab === 'pharmacopeia' && (
           <Pharmacopeia drugs={allDrugs} />
         )}
         {tab === 'admin-login' && (
           <AdminLogin onLogin={() => { setIsAdmin(true); setTab('admin') }} />
         )}
-        {tab === 'admin' && isAdmin && (
+        {!loadingUnified && tab === 'admin' && isAdmin && (
           <AdminPanel allDrugs={allDrugs} onLogout={() => { setIsAdmin(false); setTab('home') }} onViewDrug={handleViewDrug} />
         )}
       </main>
