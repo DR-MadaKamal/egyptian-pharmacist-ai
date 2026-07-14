@@ -1,9 +1,8 @@
 import { useState, useEffect, useRef, useMemo, useCallback } from 'react'
 import { severityConfig } from '../utils/interactions.js'
-import { searchEda } from '../utils/edaLoader.js'
 import Highlight from './Highlight.jsx'
 import {
-  searchDrugs, sortResults, getSourceCounts, arabicToLatin,
+  searchDrugs, sortResults, arabicToLatin,
   getSearchHistory, addSearchHistory, removeSearchHistory, clearSearchHistory,
   getSearchBookmarks, addSearchBookmark, removeSearchBookmark,
   getQuickFilters, getPopularSearches, exportSearchResults, copyShareUrl,
@@ -51,7 +50,7 @@ export default function Home({ drugs, diseases, recentlyViewed, onBrowse, onInte
     try { return sessionStorage.getItem('tip-dismissed') === 'true' } catch { return false }
   })
   const [featuredDrugs, setFeaturedDrugs] = useState(() => {
-    return [...drugs.filter(d => !d.edaOnly)].sort(() => Math.random() - 0.5).slice(0, 6)
+    return [...drugs].sort(() => Math.random() - 0.5).slice(0, 6)
   })
   const [expandedDrug, setExpandedDrug] = useState(null)
   const [placeholderIdx, setPlaceholderIdx] = useState(0)
@@ -65,7 +64,6 @@ export default function Home({ drugs, diseases, recentlyViewed, onBrowse, onInte
   const [compareIds, setCompareIds] = useState(new Set())
   const [showExportMenu, setShowExportMenu] = useState(false)
   const [showFilters, setShowFilters] = useState(false)
-  const [sourceFilter, setSourceFilter] = useState('')
   const [activeQuickFilter, setActiveQuickFilter] = useState('')
   const [suggestionIdx, setSuggestionIdx] = useState(-1)
   const [activeFilters, setActiveFilters] = useState({ priceRange: null, manufacturer: '', category: '', route: '' })
@@ -74,14 +72,12 @@ export default function Home({ drugs, diseases, recentlyViewed, onBrowse, onInte
   const [loading, setLoading] = useState(false)
   const [copiedUrl, setCopiedUrl] = useState(false)
   const [correctedQuery, setCorrectedQuery] = useState(null)
-  const [resultSourceCounts, setResultSourceCounts] = useState({ enriched: 0, eda: 0, mohmed: 0 })
   const [totalResultCount, setTotalResultCount] = useState(0)
   const inputRef = useRef(null)
   const suggestionsRef = useRef(null)
   const debounceRef = useRef(null)
 
-  const enriched = useMemo(() => drugs.filter(d => !d.edaOnly), [drugs])
-  const edaOnlyDrugs = useMemo(() => drugs.filter(d => d.edaOnly), [drugs])
+  const enriched = useMemo(() => drugs, [drugs])
 
   const placeholder = PLACEHOLDERS[placeholderIdx]
   const quickFilters = useMemo(() => getQuickFilters(), [])
@@ -110,26 +106,16 @@ export default function Home({ drugs, diseases, recentlyViewed, onBrowse, onInte
   const suggestions = useMemo(() => {
     const q = query.trim().toLowerCase()
     if (!q || q.length < 2) return []
-    const fromEnriched = enriched.filter(d =>
+    return drugs.filter(d =>
       d.nameEn?.toLowerCase().includes(q) || d.nameAr?.includes(q) ||
       d.scientificNameEn?.toLowerCase().includes(q) || d.categoryAr?.includes(q) ||
-      d.manufacturerEn?.toLowerCase().includes(q)
-    ).slice(0, 4)
-    const fromEda = searchEda(edaOnlyDrugs, q).slice(0, 4)
-    return [...fromEnriched, ...fromEda]
-  }, [query, enriched, edaOnlyDrugs])
+      d.manufacturerEn?.toLowerCase().includes(q) || d.edaBrands?.some(b => b.toLowerCase().includes(q))
+    ).slice(0, 8)
+  }, [query, drugs])
 
   const searchResults = useMemo(() => {
     const q = query.trim()
     if (!searchMode || !q || q.length < 2) return []
-
-    const enrichedResults = enriched.filter(d =>
-      d.nameEn?.toLowerCase().includes(q.toLowerCase()) || d.nameAr?.includes(q) ||
-      d.scientificNameEn?.toLowerCase().includes(q.toLowerCase()) || d.scientificNameAr?.includes(q) ||
-      d.category?.toLowerCase().includes(q.toLowerCase()) || d.categoryAr?.includes(q) ||
-      d.manufacturerEn?.toLowerCase().includes(q.toLowerCase()) || d.manufacturerAr?.includes(q) ||
-      d.activeIngredientEn?.toLowerCase().includes(q.toLowerCase()) || d.activeIngredientAr?.includes(q)
-    )
 
     const { results: advancedResults, totalCount, correctedQuery: cq } = searchDrugs(drugs, q, {
       fuzzyEnabled: true,
@@ -143,20 +129,16 @@ export default function Home({ drugs, diseases, recentlyViewed, onBrowse, onInte
       maxResults: 200,
     })
 
-    const merged = advancedResults.length > 0 ? advancedResults :
-      [...enrichedResults, ...searchEda(edaOnlyDrugs, q.toLowerCase())]
-
     const deduped = []
     const seen = new Set()
-    for (const d of merged) {
+    for (const d of advancedResults) {
       if (!seen.has(d.id)) { seen.add(d.id); deduped.push(d) }
     }
 
     if (cq) setCorrectedQuery(cq)
-    setResultSourceCounts(getSourceCounts(deduped))
     setTotalResultCount(deduped.length || totalCount)
     return deduped.slice(0, 200)
-  }, [query, searchMode, enriched, edaOnlyDrugs, drugs, activeFilters, sourceFilter])
+  }, [query, searchMode, drugs, activeFilters, sourceFilter])
 
   const sortedResults = useMemo(() => sortResults(searchResults, sortBy), [searchResults, sortBy])
 
@@ -301,10 +283,10 @@ export default function Home({ drugs, diseases, recentlyViewed, onBrowse, onInte
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setFeaturedDrugs([...enriched].sort(() => Math.random() - 0.5).slice(0, 6))
+      setFeaturedDrugs([...drugs].sort(() => Math.random() - 0.5).slice(0, 6))
     }, 15000)
     return () => clearInterval(interval)
-  }, [enriched])
+  }, [drugs])
 
   const totalInteractions = drugs.reduce((s, d) => s + d.drugInteractions.length + d.diseaseInteractions.length, 0)
   const contraindicated = drugs.reduce((s, d) =>
@@ -398,18 +380,12 @@ export default function Home({ drugs, diseases, recentlyViewed, onBrowse, onInte
           )}
         </div>
 
-        {/* Character count + Source indicator */}
+        {/* Character count */}
         {query.length > 0 && (
           <div className="flex items-center justify-between mt-1 px-1">
             <span className="text-[10px] text-gray-400">{charCount} حرف / chars</span>
             {searchMode && totalResultCount > 0 && (
-              <span className="text-[10px] text-gray-400">
-                {resultSourceCounts.enriched > 0 && <span className="text-green-600">{resultSourceCounts.enriched} غني</span>}
-                {resultSourceCounts.enriched > 0 && resultSourceCounts.eda > 0 && ' + '}
-                {resultSourceCounts.eda > 0 && <span className="text-blue-600">{resultSourceCounts.eda} EDA</span>}
-                {(resultSourceCounts.enriched > 0 || resultSourceCounts.eda > 0) && resultSourceCounts.mohmed > 0 && ' + '}
-                {resultSourceCounts.mohmed > 0 && <span className="text-purple-600">{resultSourceCounts.mohmed} MOHMED</span>}
-              </span>
+              <span className="text-[10px] text-gray-400">{totalResultCount} نتيجة / results</span>
             )}
           </div>
         )}
@@ -440,13 +416,7 @@ export default function Home({ drugs, diseases, recentlyViewed, onBrowse, onInte
         {showSuggestions && !searchMode && query.length >= 2 && suggestions.length > 0 && (
           <div id="search-suggestions" ref={suggestionsRef}
             className="absolute top-full left-0 right-0 mt-1 bg-white border border-sand-dark rounded-xl shadow-lg z-20 overflow-hidden max-h-96 overflow-y-auto">
-            {/* Enriched section */}
-            {suggestions.some(s => !s.edaOnly) && (
-              <div className="px-3 py-1.5 bg-green-50 border-b border-green-100">
-                <span className="text-[10px] font-medium text-green-700">💚 أدوية مُغنّاة / Enriched Drugs</span>
-              </div>
-            )}
-            {suggestions.filter(s => !s.edaOnly).map((d, idx) => (
+            {suggestions.map((d, idx) => (
               <button key={d.id} id={`suggestion-${idx}`}
                 onMouseDown={() => { setQuery(d.nameAr || d.nameEn); doSearch(d.nameAr || d.nameEn) }}
                 className={`w-full text-right px-4 py-3 text-sm transition-colors border-b border-gray-50 last:border-b-0 flex items-center justify-between gap-2 ${
@@ -466,34 +436,6 @@ export default function Home({ drugs, diseases, recentlyViewed, onBrowse, onInte
                     <Highlight text={d.nameAr} query={query} />
                   </span>
                   <span className="text-xl">{d.formEmoji || '💊'}</span>
-                </span>
-              </button>
-            ))}
-
-            {/* EDA section */}
-            {suggestions.some(s => s.edaOnly) && (
-              <div className="px-3 py-1.5 bg-blue-50 border-b border-blue-100">
-                <span className="text-[10px] font-medium text-blue-700">🏛️ قاعدة بيانات EDA / EDA Database</span>
-              </div>
-            )}
-            {suggestions.filter(s => s.edaOnly).map((d, idx) => (
-              <button key={d.id}
-                onMouseDown={() => { setQuery(d.nameAr || d.nameEn); doSearch(d.nameAr || d.nameEn) }}
-                className="w-full text-right px-4 py-3 text-sm hover:bg-sand transition-colors border-b border-gray-50 last:border-b-0 flex items-center justify-between gap-2">
-                <span className="text-gray-400 text-xs shrink-0">
-                  <Highlight text={d.nameEn} query={query} /> (EDA)
-                </span>
-                <span className="flex items-center gap-2 flex-1 justify-end">
-                  {d.edaBrands?.length > 0 && (
-                    <span className="text-[10px] bg-gray-100 text-gray-500 px-1.5 py-0.5 rounded-full">{d.edaBrands.length} brands</span>
-                  )}
-                  {d.edaRoutes?.length > 0 && (
-                    <span className="text-[10px] bg-gray-100 text-gray-500 px-1.5 py-0.5 rounded-full">{d.edaRoutes[0]}</span>
-                  )}
-                  <span className="font-medium text-nile">
-                    <Highlight text={d.nameAr} query={query} />
-                  </span>
-                  <span className="text-xl">💊</span>
                 </span>
               </button>
             ))}
@@ -599,17 +541,7 @@ export default function Home({ drugs, diseases, recentlyViewed, onBrowse, onInte
           {/* Advanced filters panel */}
           {showFilters && (
             <div className="bg-white border border-sand-dark rounded-xl p-4 space-y-3">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                <div>
-                  <label className="text-xs text-gray-500 block mb-1">المصدر / Source</label>
-                  <select value={sourceFilter} onChange={e => setSourceFilter(e.target.value)}
-                    className="w-full text-sm border border-gray-200 rounded-lg px-3 py-2 bg-white">
-                    <option value="">الكل / All</option>
-                    <option value="enriched">💚 مُغنّاة / Enriched</option>
-                    <option value="eda">🏛 EDA</option>
-                    <option value="mohmed">📖 MOHMED</option>
-                  </select>
-                </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                 <div>
                   <label className="text-xs text-gray-500 block mb-1">النطاق السعري / Price Range (EGP)</label>
                   <div className="flex gap-1">
@@ -636,7 +568,7 @@ export default function Home({ drugs, diseases, recentlyViewed, onBrowse, onInte
                     className="w-full text-sm border border-gray-200 rounded-lg px-3 py-2" />
                 </div>
               </div>
-              <button onClick={() => { setActiveFilters({ priceRange: null, manufacturer: '', category: '', route: '' }); setSourceFilter('') }}
+              <button onClick={() => setActiveFilters({ priceRange: null, manufacturer: '', category: '', route: '' })}
                 className="text-xs text-red-500 hover:text-red-700">🔄 إعادة ضبط الفلاتر / Reset Filters</button>
             </div>
           )}
@@ -918,51 +850,51 @@ function DrugCard({ drug, query, onViewDrug, compareIds, onToggleCompare }) {
             <Highlight text={drug.nameEn} query={query} />
           </div>
           <div className="flex items-center gap-1.5 mt-1 flex-wrap">
-            {drug.edaOnly ? (
-              <span className="bg-blue-50 text-blue-700 text-xs px-2 py-0.5 rounded-full">
-                {drug.dataSource === 'MOHMED' ? '📖 Drug Guide 2024' : '🏛 EDA Listed'}
-              </span>
-            ) : (
-              <>
-                <span className="bg-sand text-nile text-xs px-2 py-0.5 rounded-full">{drug.categoryAr}</span>
-                {drug.scientificNameEn && (
-                  <span className="text-[10px] text-gray-400 italic">{drug.scientificNameEn}</span>
-                )}
-              </>
+            {drug.categoryAr && (
+              <span className="bg-sand text-nile text-xs px-2 py-0.5 rounded-full">{drug.categoryAr}</span>
+            )}
+            {drug.scientificNameEn && (
+              <span className="text-[10px] text-gray-400 italic">{drug.scientificNameEn}</span>
+            )}
+            {drug.manufacturerEn && (
+              <span className="text-[10px] text-gray-400">{drug.manufacturerEn}</span>
             )}
           </div>
         </div>
         <div className="text-4xl">{drug.formEmoji || '💊'}</div>
       </div>
 
-      {drug.edaOnly ? (
-        <div className="text-xs text-gray-500 mt-2 space-y-0.5">
-          {drug.edaBrands?.length > 0 && (
-            <div>🏷 {drug.edaBrands.slice(0, 3).join(', ')}{drug.edaBrands.length > 3 ? ` +${drug.edaBrands.length - 3}` : ''}</div>
-          )}
-          {drug.manufacturerEn && <div>🏭 {drug.manufacturerEn}</div>}
-          {drug.edaRoutes?.length > 0 && (
-            <div className="flex flex-wrap gap-1 mt-1">
-              {drug.edaRoutes.slice(0, 3).map(r => (
-                <span key={r} className="inline-block bg-gray-100 text-gray-600 px-1.5 py-0.5 rounded text-[10px]">{r}</span>
-              ))}
-            </div>
-          )}
-        </div>
-      ) : (
-        <p className="text-xs text-gray-500 mt-2 line-clamp-2">{drug.description || drug.descriptionAr}</p>
-      )}
+      <div className="text-xs text-gray-500 mt-2 space-y-0.5">
+        {drug.edaBrands?.length > 0 && (
+          <div>🏷 {drug.edaBrands.slice(0, 3).join(', ')}{drug.edaBrands.length > 3 ? ` +${drug.edaBrands.length - 3}` : ''}</div>
+        )}
+        {drug.description && (
+          <p className="line-clamp-2">{drug.description}</p>
+        )}
+        {drug.edaRoutes?.length > 0 && (
+          <div className="flex flex-wrap gap-1 mt-1">
+            {drug.edaRoutes.slice(0, 3).map(r => (
+              <span key={r} className="inline-block bg-gray-100 text-gray-600 px-1.5 py-0.5 rounded text-[10px]">{r}</span>
+            ))}
+          </div>
+        )}
+      </div>
 
       <div className="flex items-center justify-between mt-2 pt-2 border-t border-gray-100">
         <div className="flex gap-2 text-xs">
-          {!drug.edaOnly && drug.drugInteractions?.length > 0 && (
+          {drug.drugInteractions?.length > 0 && (
             <span className="bg-orange-100 text-orange-700 px-2 py-0.5 rounded">{drug.drugInteractions.length} تفاعل دوائي</span>
           )}
-          {!drug.edaOnly && drug.diseaseInteractions?.length > 0 && (
+          {drug.diseaseInteractions?.length > 0 && (
             <span className="bg-blue-100 text-blue-700 px-2 py-0.5 rounded">{drug.diseaseInteractions.length} تفاعل مرضي</span>
           )}
+          {drug.dataSources && drug.dataSources.length > 1 && (
+            <span className="bg-green-50 text-green-700 px-2 py-0.5 rounded">{drug.dataSources.length} مصادر</span>
+          )}
         </div>
-        {drug.edaRf && drug.edaRf.length > 0 ? (
+        {drug.price_egp != null ? (
+          <span className="text-xs text-gold-dark font-bold">EGP {drug.price_egp}</span>
+        ) : drug.edaRf && drug.edaRf.length > 0 ? (
           <span className="text-xs text-gold-dark font-bold">EGP {drug.edaRf[0][2]}</span>
         ) : drug.prices?.length > 0 ? (
           <span className="text-xs text-gold-dark font-bold">{drug.prices[0].price} {drug.prices[0].unit}</span>
@@ -971,7 +903,6 @@ function DrugCard({ drug, query, onViewDrug, compareIds, onToggleCompare }) {
         ) : null}
       </div>
 
-      {/* Compare checkbox */}
       <button onClick={(e) => { e.stopPropagation(); onToggleCompare(drug.id) }}
         className={`absolute top-2 left-2 w-5 h-5 rounded border-2 flex items-center justify-center text-[10px] transition-all ${
           inCompare ? 'bg-nile border-nile text-white' : 'bg-white border-gray-300 text-transparent hover:border-gold'
@@ -980,7 +911,6 @@ function DrugCard({ drug, query, onViewDrug, compareIds, onToggleCompare }) {
         {inCompare ? '✓' : ''}
       </button>
 
-      {/* View detail button */}
       <button onClick={(e) => { e.stopPropagation(); onViewDrug(drug.id) }}
         className="mt-2 w-full text-center text-xs bg-nile/5 text-nile py-1.5 rounded-lg hover:bg-nile/10 transition-colors font-medium">
         عرض التفاصيل / View Details →
@@ -1016,17 +946,14 @@ function DrugListItem({ drug, query, onViewDrug, compareIds, onToggleCompare }) 
           </span>
         </div>
         <div className="flex items-center gap-1.5 mt-0.5 flex-wrap">
-          {drug.edaOnly ? (
-            <span className="bg-blue-50 text-blue-700 text-[10px] px-1.5 py-0.5 rounded-full">
-              {drug.dataSource === 'MOHMED' ? '📖' : '🏛'} {drug.manufacturerEn || 'EDA'}
-            </span>
-          ) : (
-            <>
-              <span className="bg-sand text-nile text-[10px] px-1.5 py-0.5 rounded-full">{drug.categoryAr}</span>
-              {drug.drugInteractions?.length > 0 && (
-                <span className="bg-orange-100 text-orange-700 text-[10px] px-1.5 py-0.5 rounded-full">{drug.drugInteractions.length} int.</span>
-              )}
-            </>
+          {drug.categoryAr && (
+            <span className="bg-sand text-nile text-[10px] px-1.5 py-0.5 rounded-full">{drug.categoryAr}</span>
+          )}
+          {drug.manufacturerEn && (
+            <span className="text-[10px] text-gray-400">{drug.manufacturerEn}</span>
+          )}
+          {drug.drugInteractions?.length > 0 && (
+            <span className="bg-orange-100 text-orange-700 text-[10px] px-1.5 py-0.5 rounded-full">{drug.drugInteractions.length} int.</span>
           )}
           {drug.edaBrands?.length > 0 && (
             <span className="text-[10px] text-gray-400 truncate">🏷 {drug.edaBrands.slice(0, 2).join(', ')}</span>
@@ -1035,7 +962,9 @@ function DrugListItem({ drug, query, onViewDrug, compareIds, onToggleCompare }) 
       </div>
 
       <div className="text-right shrink-0">
-        {drug.edaRf?.length > 0 ? (
+        {drug.price_egp != null ? (
+          <span className="text-xs text-gold-dark font-bold">EGP {drug.price_egp}</span>
+        ) : drug.edaRf?.length > 0 ? (
           <span className="text-xs text-gold-dark font-bold">EGP {drug.edaRf[0][2]}</span>
         ) : drug.prices?.length > 0 ? (
           <span className="text-xs text-gold-dark font-bold">{drug.prices[0].price} {drug.prices[0].unit}</span>

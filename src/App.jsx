@@ -2,7 +2,7 @@ import { useState, useMemo, useEffect } from 'react'
 import { drugs as builtInDrugs } from './data/drugs.js'
 import { diseases as builtInDiseases } from './data/diseases.js'
 import { getUserDrugs, getUserDiseases } from './utils/store.js'
-import { loadEdaDrugs } from './utils/edaLoader.js'
+import { loadUnifiedDrugs } from './utils/unifiedLoader.js'
 import Navbar from './components/Navbar.jsx'
 import Home from './components/Home.jsx'
 import DrugHub from './components/DrugHub.jsx'
@@ -34,18 +34,18 @@ export default function App() {
   const [tab, setTab] = useState('home')
   const [selectedDrugId, setSelectedDrugId] = useState(null)
   const [refreshKey, _setRefreshKey] = useState(0)
-  const [edaDrugs, setEdaDrugs] = useState(null)
+  const [unifiedDrugs, setUnifiedDrugs] = useState(null)
   const [isAdmin, setIsAdmin] = useState(false)
 
   useEffect(() => {
-    loadEdaDrugs().then(setEdaDrugs)
+    loadUnifiedDrugs().then(setUnifiedDrugs)
   }, [])
 
   const allDrugs = useMemo(() => {
-    const base = [...builtInDrugs, ...getUserDrugs()]
-    if (edaDrugs) return [...base, ...edaDrugs]
-    return base
-  }, [refreshKey, edaDrugs])
+    const userAdded = getUserDrugs()
+    if (unifiedDrugs) return [...unifiedDrugs, ...userAdded]
+    return [...builtInDrugs, ...userAdded]
+  }, [refreshKey, unifiedDrugs])
 
   const allDiseases = useMemo(() => {
     return [...builtInDiseases, ...getUserDiseases()]
