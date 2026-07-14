@@ -1,6 +1,7 @@
 import { useState, useMemo, useCallback, useEffect, useRef } from 'react'
 import { severityConfig } from '../utils/interactions.js'
 import { generateMixedQuestions } from '../utils/quiz.js'
+import FlashcardQuiz from './FlashcardQuiz.jsx'
 
 function QuestionCard({ question, index, total, onAnswer, answered, onSkip }) {
   const severityColors = { contraindicated: 'bg-red-600', severe: 'bg-orange-500', moderate: 'bg-yellow-500', mild: 'bg-blue-500' }
@@ -86,6 +87,7 @@ function QuestionCard({ question, index, total, onAnswer, answered, onSkip }) {
 }
 
 export default function InterviewMode({ drugs, diseases }) {
+  const [mode, setMode] = useState(null)
   const [phase, setPhase] = useState('setup')
   const [questionCount, setQuestionCount] = useState(10)
   const [questions, setQuestions] = useState([])
@@ -140,11 +142,45 @@ export default function InterviewMode({ drugs, diseases }) {
   const correctCount = answers.filter(a => a.correct).length
   const percentage = answers.length > 0 ? Math.round((correctCount / answers.length) * 100) : 0
 
-  if (phase === 'setup') {
+  if (!mode) {
     return (
       <div className="space-y-6">
         <div className="text-center py-6 md:py-10">
           <h2 className="text-3xl font-bold text-nile mb-2">🎓 المقابلة / Interview Mode</h2>
+          <p className="text-gray-500">اختر طريقة التدريب / Choose your training mode</p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-lg mx-auto">
+          <button onClick={() => setMode('quiz')}
+            className="bg-white border-2 border-sand-dark hover:border-gold rounded-xl p-6 text-center transition-all hover:shadow-lg group">
+            <div className="text-4xl mb-3">📝</div>
+            <h3 className="font-bold text-nile text-lg group-hover:text-gold-dark transition-colors">اختبار تفاعلي</h3>
+            <p className="text-sm text-gray-500 mt-1">Interactive Quiz</p>
+            <p className="text-xs text-gray-400 mt-2">أسئلة اختيار من متعدد مع تقييم وtimer</p>
+            <p className="text-xs text-gray-400">Multiple choice with scoring & timer</p>
+          </button>
+          <button onClick={() => setMode('flashcards')}
+            className="bg-white border-2 border-sand-dark hover:border-gold rounded-xl p-6 text-center transition-all hover:shadow-lg group">
+            <div className="text-4xl mb-3">🃏</div>
+            <h3 className="font-bold text-nile text-lg group-hover:text-gold-dark transition-colors">بطاقات مراجعة</h3>
+            <p className="text-sm text-gray-500 mt-1">Flashcards</p>
+            <p className="text-xs text-gray-400 mt-2">50 بطاقة في 5 مواضيع: بيع، OTC، كوزموتيكس، مزمنة</p>
+            <p className="text-xs text-gray-400">50 cards: sales, OTC, cosmetics, chronic</p>
+          </button>
+        </div>
+      </div>
+    )
+  }
+
+  if (mode === 'flashcards') {
+    return <FlashcardQuiz onBack={() => setMode(null)} />
+  }
+
+  if (phase === 'setup') {
+    return (
+      <div className="space-y-6">
+        <div className="text-center py-6 md:py-10">
+          <h2 className="text-3xl font-bold text-nile mb-2">📝 اختبار تفاعلي / Interactive Quiz</h2>
           <p className="text-gray-500">اختبر معرفتك في التفاعلات الدوائية / Test your knowledge of drug interactions</p>
         </div>
 
@@ -174,6 +210,10 @@ export default function InterviewMode({ drugs, diseases }) {
           <button onClick={startInterview} disabled={!enoughData}
             className="w-full bg-gold text-nile py-3 rounded-xl font-bold text-lg hover:bg-gold-light transition-colors disabled:opacity-50">
             🎯 ابدأ المقابلة / Start Interview
+          </button>
+          <button onClick={() => setMode(null)}
+            className="w-full mt-2 bg-gray-100 text-gray-500 py-2 rounded-xl font-medium text-sm hover:bg-gray-200 transition-colors">
+            ← العودة / Back
           </button>
         </div>
       </div>
@@ -334,7 +374,7 @@ export default function InterviewMode({ drugs, diseases }) {
             className="flex-1 bg-sand text-nile py-3 rounded-xl font-bold hover:bg-sand-dark transition-colors">
             🔄 إعادة / Retry
           </button>
-          <button onClick={() => { setPhase('setup'); setReviewIndex(null) }}
+          <button onClick={() => { setPhase('setup'); setMode(null); setReviewIndex(null) }}
             className="flex-1 bg-nile text-white py-3 rounded-xl font-bold hover:bg-nile-light transition-colors">
             🏠 القائمة الرئيسية / Main Menu
           </button>
