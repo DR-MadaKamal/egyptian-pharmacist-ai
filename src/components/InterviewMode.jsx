@@ -4,6 +4,7 @@ import { generateMixedQuestions } from '../utils/quiz.js'
 import FlashcardQuiz from './FlashcardQuiz.jsx'
 import LearningMode from './LearningMode.jsx'
 import DrugEncyclopedia from './DrugEncyclopedia.jsx'
+import InsulinGuide from './InsulinGuide.jsx'
 import { FLASHCARD_CATEGORIES, FLASHCARDS, GOLDEN_TIPS } from '../data/flashcards.js'
 
 function QuestionCard({ question, index, total, onAnswer, answered, onSkip }) {
@@ -321,6 +322,14 @@ export default function InterviewMode({ drugs, diseases, onViewDrug }) {
             <p className="text-xs text-gray-400 mt-2">25,070 دواء مسجل في مصر مع الأسعار</p>
             <p className="text-xs text-gray-400">25,070 registered Egyptian medicines with prices</p>
           </button>
+          <button onClick={() => setMode('insulin')}
+            className="bg-white border-2 border-sand-dark hover:border-gold rounded-xl p-6 text-center transition-all hover:shadow-lg group">
+            <div className="text-4xl mb-3">💉</div>
+            <h3 className="font-bold text-nile text-lg group-hover:text-gold-dark transition-colors">دليل الإنسولين</h3>
+            <p className="text-sm text-gray-500 mt-1">Insulin Guide</p>
+            <p className="text-xs text-gray-400 mt-2">15 إنسولين في 5 فئات مع معلومات شاملة</p>
+            <p className="text-xs text-gray-400">15 insulins in 5 categories with full details</p>
+          </button>
         </div>
       </div>
     )
@@ -340,6 +349,10 @@ export default function InterviewMode({ drugs, diseases, onViewDrug }) {
 
   if (mode === 'encyclopedia') {
     return <DrugEncyclopedia onBack={() => setMode(null)} onViewDrug={onViewDrug} allDrugs={drugs} />
+  }
+
+  if (mode === 'insulin') {
+    return <InsulinGuide onBack={() => setMode(null)} />
   }
 
   if (phase === 'setup') {
