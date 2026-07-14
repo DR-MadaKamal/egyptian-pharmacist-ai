@@ -1,5 +1,5 @@
 {
-  "lastSync": "2026-07-13T11:41:23.723Z",
+  "lastSync": "2026-07-14T08:01:30.722Z",
   "sources": {
     "eddb": {
       "id": "eddb",
@@ -7,10 +7,10 @@
       "nameAr": "قاعدة بيانات الأدوية المصرية",
       "url": "http://eservices.edaegypt.gov.eg/EDASearch/SearchRegDrugs.aspx",
       "type": "web_search",
-      "status": "active",
+      "status": "ok",
       "syncFrequency": "daily",
       "currentlyConsumed": true,
-      "lastSync": "2026-07-13T11:41:23.722Z",
+      "lastSync": "2026-07-14T08:01:04.546Z",
       "dataFields": [
         "trade_name",
         "scientific_name",
@@ -30,10 +30,10 @@
       "nameAr": "قاعدة بيانات التشغيلات المنصرفة",
       "url": "http://eservices.edaegypt.gov.eg/EDASearch/EDA_LBReleased.aspx",
       "type": "web_search",
-      "status": "active",
+      "status": "reachable",
       "syncFrequency": "daily",
       "currentlyConsumed": false,
-      "lastSync": null,
+      "lastSync": "2026-07-14T08:01:15.032Z",
       "dataFields": [
         "product_name",
         "company",
@@ -42,7 +42,7 @@
         "manufacture_date",
         "expiry_date"
       ],
-      "reachable": null
+      "reachable": true
     },
     "herbal-monograph": {
       "id": "herbal-monograph",
@@ -50,10 +50,10 @@
       "nameAr": "دليل الأعشاب الطبية المصري",
       "url": "http://eservices.edaegypt.gov.eg/Monograph/",
       "type": "web_portal_pdf",
-      "status": "active",
+      "status": "reachable",
       "syncFrequency": "yearly",
       "currentlyConsumed": false,
-      "lastSync": null,
+      "lastSync": "2026-07-14T08:01:18.795Z",
       "dataFields": [
         "plant_name",
         "arabic_name",
@@ -63,7 +63,7 @@
         "contraindications",
         "interactions"
       ],
-      "reachable": null
+      "reachable": false
     },
     "service-portal": {
       "id": "service-portal",
@@ -71,17 +71,17 @@
       "nameAr": "شبابيك هيئة الدواء - بوابة الخدمات الموحدة",
       "url": "https://serviceportal.edaegypt.gov.eg/",
       "type": "web_portal",
-      "status": "active",
+      "status": "reachable",
       "syncFrequency": "continuous",
       "currentlyConsumed": false,
-      "lastSync": null,
+      "lastSync": "2026-07-14T08:01:19.465Z",
       "dataFields": [
         "company_registration",
         "license_applications",
         "inspection_requests",
         "service_status"
       ],
-      "reachable": null
+      "reachable": true
     },
     "search-licenses": {
       "id": "search-licenses",
@@ -89,10 +89,10 @@
       "nameAr": "البحث عن التراخيص",
       "url": "http://eservices.edaegypt.gov.eg/EDASearch/SearchLicences.aspx",
       "type": "web_search",
-      "status": "active",
+      "status": "reachable",
       "syncFrequency": "daily",
       "currentlyConsumed": false,
-      "lastSync": null,
+      "lastSync": "2026-07-14T08:01:20.013Z",
       "dataFields": [
         "entity_name",
         "license_type",
@@ -100,7 +100,7 @@
         "entity_type",
         "status"
       ],
-      "reachable": null
+      "reachable": true
     },
     "public-identity": {
       "id": "public-identity",
@@ -108,17 +108,17 @@
       "nameAr": "خدمات هيئة الدواء - الاستعلام عن الخدمات",
       "url": "https://publicidentity.edaegypt.gov.eg/",
       "type": "web_portal",
-      "status": "active",
+      "status": "reachable",
       "syncFrequency": "continuous",
       "currentlyConsumed": false,
-      "lastSync": null,
+      "lastSync": "2026-07-14T08:01:21.290Z",
       "dataFields": [
         "service_requests",
         "application_status",
         "payment_info",
         "documents"
       ],
-      "reachable": null
+      "reachable": true
     },
     "variation-tool": {
       "id": "variation-tool",
@@ -126,17 +126,17 @@
       "nameAr": "أداة الاسترشاد بالتغييرات",
       "url": "http://eservices.edaegypt.gov.eg/EDAVariationTool/",
       "type": "web_tool",
-      "status": "active",
+      "status": "reachable",
       "syncFrequency": "continuous",
       "currentlyConsumed": false,
-      "lastSync": null,
+      "lastSync": "2026-07-14T08:01:23.024Z",
       "dataFields": [
         "variation_type",
         "product_type",
         "guidelines",
         "requirements"
       ],
-      "reachable": null
+      "reachable": true
     },
     "similars": {
       "id": "similars",
@@ -144,17 +144,17 @@
       "nameAr": "المثائل والبدائل",
       "url": "http://eservices.edaegypt.gov.eg/EDASimilars/",
       "type": "web_search",
-      "status": "active",
+      "status": "reachable",
       "syncFrequency": "daily",
       "currentlyConsumed": false,
-      "lastSync": null,
+      "lastSync": "2026-07-14T08:01:25.997Z",
       "dataFields": [
         "product_name",
         "alternatives",
         "therapeutic_group",
         "disease"
       ],
-      "reachable": null
+      "reachable": true
     },
     "api-search": {
       "id": "api-search",
@@ -162,16 +162,16 @@
       "nameAr": "أداة البحث API",
       "url": "http://eservices.edaegypt.gov.eg/EDASearch/EDAservices.aspx",
       "type": "web_portal",
-      "status": "active",
+      "status": "reachable",
       "syncFrequency": "continuous",
       "currentlyConsumed": false,
-      "lastSync": null,
+      "lastSync": "2026-07-14T08:01:26.302Z",
       "dataFields": [
         "central_administration",
         "service_type",
         "service_cost"
       ],
-      "reachable": null
+      "reachable": true
     },
     "egyptian-pharmacopoeia": {
       "id": "egyptian-pharmacopoeia",
@@ -179,17 +179,17 @@
       "nameAr": "الدستور الدوائي المصري",
       "url": "https://edaegypt-my.sharepoint.com/personal/pharmacopoeia_edaegypt_gov_eg/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fpharmacopoeia%5Fedaegypt%5Fgov%5Feg%2FDocuments%2FEgyptian%20Pharmacopoeia&ga=1",
       "type": "sharepoint_document_library",
-      "status": "active",
+      "status": "reachable",
       "syncFrequency": "yearly",
       "currentlyConsumed": false,
-      "lastSync": null,
+      "lastSync": "2026-07-14T08:01:26.744Z",
       "dataFields": [
         "monographs",
         "quality_standards",
         "specifications",
         "test_methods"
       ],
-      "reachable": null
+      "reachable": true
     },
     "cosmetics-egycosma": {
       "id": "cosmetics-egycosma",
@@ -197,17 +197,17 @@
       "nameAr": "قاعدة بيانات مستحضرات التجميل",
       "url": "https://www.edaegypt.gov.eg/en/services/pharmaceutical-biological-products-and-medical-device/",
       "type": "web_portal",
-      "status": "active",
+      "status": "reachable",
       "syncFrequency": "daily",
       "currentlyConsumed": false,
-      "lastSync": null,
+      "lastSync": "2026-07-14T08:01:27.681Z",
       "dataFields": [
         "cosmetic_products",
         "ingredients",
         "companies",
         "registration_status"
       ],
-      "reachable": null
+      "reachable": true
     },
     "medical-device": {
       "id": "medical-device",
@@ -215,10 +215,10 @@
       "nameAr": "بوابة المستلزمات الطبية",
       "url": "https://medevice.edaegypt.gov.eg/",
       "type": "web_portal",
-      "status": "active",
+      "status": "reachable",
       "syncFrequency": "daily",
       "currentlyConsumed": false,
-      "lastSync": null,
+      "lastSync": "2026-07-14T08:01:28.622Z",
       "dataFields": [
         "device_name",
         "manufacturer",
@@ -226,7 +226,7 @@
         "approval_status",
         "import_permits"
       ],
-      "reachable": null
+      "reachable": true
     },
     "track-and-trace": {
       "id": "track-and-trace",
@@ -234,10 +234,10 @@
       "nameAr": "منظومة التتبع الدوائي",
       "url": "https://www.edaegypt.gov.eg/en/",
       "type": "national_system",
-      "status": "active",
+      "status": "reachable",
       "syncFrequency": "real_time",
       "currentlyConsumed": false,
-      "lastSync": null,
+      "lastSync": "2026-07-14T08:01:29.151Z",
       "dataFields": [
         "serial_number",
         "product_code",
@@ -247,7 +247,7 @@
         "pharmacy",
         "patient"
       ],
-      "reachable": null
+      "reachable": true
     },
     "pricing-submission": {
       "id": "pricing-submission",
@@ -255,10 +255,10 @@
       "nameAr": "بوابة تقديم الأسعار",
       "url": "http://eservices.edaegypt.gov.eg/Pricing/",
       "type": "web_portal_authenticated",
-      "status": "active",
+      "status": "reachable",
       "syncFrequency": "continuous",
       "currentlyConsumed": false,
-      "lastSync": null,
+      "lastSync": "2026-07-14T08:01:29.526Z",
       "dataFields": [
         "product_name",
         "price",
@@ -266,7 +266,7 @@
         "submission_status",
         "approval_date"
       ],
-      "reachable": null
+      "reachable": true
     },
     "naming-checker": {
       "id": "naming-checker",
@@ -274,17 +274,17 @@
       "nameAr": "مدقق الأسماء الدوائية",
       "url": "https://www.edaegypt.gov.eg/ar/المركز-الاعلامي/الإعلانات/إتاحة-برنامج-eda-naming-checker/",
       "type": "web_tool",
-      "status": "active",
+      "status": "reachable",
       "syncFrequency": "continuous",
       "currentlyConsumed": false,
-      "lastSync": null,
+      "lastSync": "2026-07-14T08:01:30.721Z",
       "dataFields": [
         "proposed_name",
         "availability",
         "similar_names",
         "guidelines"
       ],
-      "reachable": null
+      "reachable": true
     }
   },
   "summary": {
@@ -292,7 +292,7 @@
     "active": 15,
     "consumed": 1,
     "pending": 14,
-    "ok": 0,
+    "ok": 15,
     "failed": 0
   }
 }
