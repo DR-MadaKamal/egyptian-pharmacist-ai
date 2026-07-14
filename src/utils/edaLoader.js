@@ -1,7 +1,5 @@
-let edaCache = null
-let mohmedCache = null
-let rawEdaJson = null
-let rawMohmedJson = null
+const CACHE_KEY = 'eda_mohmed_data_v1'
+const CACHE_TTL = 7 * 24 * 60 * 60 * 1000 // 7 days
 
 async function fetchJson(url) {
   try {
@@ -16,111 +14,130 @@ async function fetchJson(url) {
   }
 }
 
-export async function loadEdaDrugs() {
-  if (edaCache) return edaCache
-  const [list, mohmed] = await Promise.all([
+function tryLoadCache() {
+  try {
+    const raw = localStorage.getItem(CACHE_KEY)
+    if (!raw) return null
+    const { timestamp, eda, mohmed } = JSON.parse(raw)
+    if (Date.now() - timestamp > CACHE_TTL) return null
+    return { eda, mohmed }
+  } catch {
+    return null
+  }
+}
+
+function trySaveCache(eda, mohmed) {
+  try {
+    localStorage.setItem(CACHE_KEY, JSON.stringify({ timestamp: Date.now(), eda, mohmed }))
+  } catch {}
+}
+
+export async function loadRawEdaMohmed() {
+  const cached = tryLoadCache()
+  if (cached) return cached
+
+  const [eda, mohmed] = await Promise.all([
     fetchJson(import.meta.env.BASE_URL + 'data/eda-drugs.json'),
     fetchJson(import.meta.env.BASE_URL + 'data/mohmed-supplement.json'),
   ])
-  rawEdaJson = list || []
-  rawMohmedJson = mohmed || []
-  edaCache = rawEdaJson.map((item, i) => ({
-    id: 'eda_' + i,
-    nameEn: item.s,
-    nameAr: item.s,
-    scientificNameEn: item.s,
-    scientificNameAr: item.s,
-    activeIngredientEn: item.s,
-    activeIngredientAr: item.s,
-    category: 'EDA Listed',
-    categoryAr: 'مسجل بهيئة الدواء المصرية',
-    formEmoji: '💊',
-    description: 'Registered in the Egyptian Drug Authority database',
-    descriptionAr: 'مسجل في قاعدة بيانات هيئة الدواء المصرية',
-    indicationEn: '',
-    indicationAr: '',
-    mechanismEn: '',
-    mechanismAr: '',
-    sideEffectsEn: '',
-    sideEffectsAr: '',
-    dosageEn: '',
-    dosageAr: '',
-    pregnancyEn: '',
-    pregnancyAr: '',
-    breastfeedingEn: '',
-    breastfeedingAr: '',
-    manufacturerEn: (item.m || [])[0] || 'غير متوفر',
-    manufacturerAr: '',
-    prices: (item.p || []).length >= 2
-      ? [{ form: 'نطاق سعري', formEn: 'Price range', price: '' + item.p[0] + ' - ' + item.p[1], unit: 'EGP' }]
-      : [],
-    imageUrl: '',
-    drugInteractions: [],
-    diseaseInteractions: [],
-    edaOnly: true,
-    dataSource: 'EDA',
-    edaBrands: item.b || [],
-    edaMfrs: item.m || [],
-    edaRoutes: item.r || [],
-    edaRf: item.rf || null,
-    edaPriceRange: item.p || [],
-    constituents: item.c || [],
-  }))
 
-  mohmedCache = (mohmed || []).map((item, i) => ({
-    id: 'moh_' + i,
-    nameEn: item.s,
-    nameAr: item.s,
-    scientificNameEn: item.s,
-    scientificNameAr: item.s,
-    activeIngredientEn: item.s,
-    activeIngredientAr: item.s,
-    category: 'Drug Guide 2024',
-    categoryAr: 'دليل الأدوية 2024',
-    formEmoji: '💊',
-    description: item.h || 'Listed in Egypt Drugs Guide (2024 prices)',
-    descriptionAr: item.h ? item.h.slice(0, 100) : 'مسجل في دليل الأدوية المصري (أسعار 2024)',
-    indicationEn: '',
-    indicationAr: '',
-    mechanismEn: '',
-    mechanismAr: '',
-    sideEffectsEn: '',
-    sideEffectsAr: '',
-    dosageEn: '',
-    dosageAr: '',
-    pregnancyEn: '',
-    pregnancyAr: '',
-    breastfeedingEn: '',
-    breastfeedingAr: '',
-    manufacturerEn: (item.m || [])[0] || 'غير متوفر',
-    manufacturerAr: '',
-    prices: (item.p || []).length >= 2
-      ? [{ form: 'نطاق سعري', formEn: 'Price range', price: '' + item.p[0] + ' - ' + item.p[1], unit: 'EGP' }]
-      : [],
-    imageUrl: '',
-    drugInteractions: [],
-    diseaseInteractions: [],
-    edaOnly: true,
-    dataSource: 'MOHMED',
-    edaBrands: item.b || [],
-    edaMfrs: item.m || [],
-    edaRoutes: item.r || [],
-    edaRf: item.rf || null,
-    edaPriceRange: item.p || [],
-    edaGroups: item.g || [],
-    pharmacology: item.h || '',
-    constituents: [],
-  }))
+  if (eda.length > 0 || mohmed.length > 0) {
+    trySaveCache(eda, mohmed)
+  }
 
-  return [...edaCache, ...mohmedCache]
+  return { eda, mohmed }
 }
 
-export function getEdaCache() {
-  return edaCache
-}
-
-export function getMohmedCache() {
-  return mohmedCache
+export async function loadEdaDrugs() {
+  const { eda, mohmed } = await loadRawEdaMohmed()
+  return [
+    ...eda.map((item, i) => ({
+      id: 'eda_' + i,
+      nameEn: item.s,
+      nameAr: item.s,
+      scientificNameEn: item.s,
+      scientificNameAr: item.s,
+      activeIngredientEn: item.s,
+      activeIngredientAr: item.s,
+      category: 'EDA Listed',
+      categoryAr: 'مسجل بهيئة الدواء المصرية',
+      formEmoji: '💊',
+      description: 'Registered in the Egyptian Drug Authority database',
+      descriptionAr: 'مسجل في قاعدة بيانات هيئة الدواء المصرية',
+      indicationEn: '',
+      indicationAr: '',
+      mechanismEn: '',
+      mechanismAr: '',
+      sideEffectsEn: '',
+      sideEffectsAr: '',
+      dosageEn: '',
+      dosageAr: '',
+      pregnancyEn: '',
+      pregnancyAr: '',
+      breastfeedingEn: '',
+      breastfeedingAr: '',
+      manufacturerEn: (item.m || [])[0] || 'غير متوفر',
+      manufacturerAr: '',
+      prices: (item.p || []).length >= 2
+        ? [{ form: 'نطاق سعري', formEn: 'Price range', price: '' + item.p[0] + ' - ' + item.p[1], unit: 'EGP' }]
+        : [],
+      imageUrl: '',
+      drugInteractions: [],
+      diseaseInteractions: [],
+      edaOnly: true,
+      dataSource: 'EDA',
+      edaBrands: item.b || [],
+      edaMfrs: item.m || [],
+      edaRoutes: item.r || [],
+      edaRf: item.rf || null,
+      edaPriceRange: item.p || [],
+      constituents: item.c || [],
+    })),
+    ...mohmed.map((item, i) => ({
+      id: 'moh_' + i,
+      nameEn: item.s,
+      nameAr: item.s,
+      scientificNameEn: item.s,
+      scientificNameAr: item.s,
+      activeIngredientEn: item.s,
+      activeIngredientAr: item.s,
+      category: 'Drug Guide 2024',
+      categoryAr: 'دليل الأدوية 2024',
+      formEmoji: '💊',
+      description: item.h || 'Listed in Egypt Drugs Guide (2024 prices)',
+      descriptionAr: item.h ? item.h.slice(0, 100) : 'مسجل في دليل الأدوية المصري (أسعار 2024)',
+      indicationEn: '',
+      indicationAr: '',
+      mechanismEn: '',
+      mechanismAr: '',
+      sideEffectsEn: '',
+      sideEffectsAr: '',
+      dosageEn: '',
+      dosageAr: '',
+      pregnancyEn: '',
+      pregnancyAr: '',
+      breastfeedingEn: '',
+      breastfeedingAr: '',
+      manufacturerEn: (item.m || [])[0] || 'غير متوفر',
+      manufacturerAr: '',
+      prices: (item.p || []).length >= 2
+        ? [{ form: 'نطاق سعري', formEn: 'Price range', price: '' + item.p[0] + ' - ' + item.p[1], unit: 'EGP' }]
+        : [],
+      imageUrl: '',
+      drugInteractions: [],
+      diseaseInteractions: [],
+      edaOnly: true,
+      dataSource: 'MOHMED',
+      edaBrands: item.b || [],
+      edaMfrs: item.m || [],
+      edaRoutes: item.r || [],
+      edaRf: item.rf || null,
+      edaPriceRange: item.p || [],
+      edaGroups: item.g || [],
+      pharmacology: item.h || '',
+      constituents: [],
+    })),
+  ]
 }
 
 export function searchEda(edaDrugs, query) {
@@ -136,6 +153,3 @@ export function searchEda(edaDrugs, query) {
     return false
   })
 }
-
-export function getRawEdaJson() { return rawEdaJson || [] }
-export function getRawMohmedJson() { return rawMohmedJson || [] }

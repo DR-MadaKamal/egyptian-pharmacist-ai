@@ -5,15 +5,6 @@ function normalize(text) {
   return text.toLowerCase().trim().replace(/[^a-z0-9\u0600-\u06FF]/g, '')
 }
 
-function extractIngredients(text) {
-  if (!text) return []
-  const normalized = text.toLowerCase()
-    .replace(/\([^)]*\)/g, ' ')
-    .replace(/\+/g, ' ')
-    .replace(/[,;/]/g, ' ')
-  return normalized.split(/\s+/).filter(w => w.length >= 3)
-}
-
 function mergeDrug(existing, newData, source) {
   if (!existing || !newData) return existing || newData
   const merged = { ...existing, dataSources: [...(existing.dataSources || []), source] }
@@ -41,7 +32,6 @@ function mergeDrug(existing, newData, source) {
   if (newData.diseaseInteractions?.length > 0 && (!merged.diseaseInteractions || merged.diseaseInteractions.length === 0)) {
     merged.diseaseInteractions = newData.diseaseInteractions
   }
-
   if (newData.prices?.length > 0 && (!merged.prices || merged.prices.length === 0)) {
     merged.prices = newData.prices
   }
@@ -55,11 +45,9 @@ function mergeDrug(existing, newData, source) {
     merged.price_egp = newData.price_egp
   }
 
-  const arrayFields = ['edaBrands', 'edaMfrs', 'edaRoutes', 'edaGroups', 'constituents']
-  for (const f of arrayFields) {
+  for (const f of ['edaBrands', 'edaMfrs', 'edaRoutes', 'edaGroups', 'constituents']) {
     if (newData[f]?.length > 0) {
-      const existing = merged[f] || []
-      merged[f] = [...new Set([...existing, ...newData[f]])]
+      merged[f] = [...new Set([...(merged[f] || []), ...newData[f]])]
     }
   }
 
@@ -72,6 +60,107 @@ function mergeDrug(existing, newData, source) {
   }
 
   return merged
+}
+
+function toUnifiedEnriched(drug) {
+  if (!drug) return null
+  return {
+    ...drug,
+    dataSource: 'enriched',
+    edaOnly: false,
+    dataSources: ['enriched'],
+    price_egp: drug.prices?.length > 0 ? parseFloat(drug.prices[0].price) || null : null,
+  }
+}
+
+function toUnifiedEda(item, i) {
+  if (!item) return null
+  return {
+    id: 'eda_' + i,
+    nameEn: item.s || '',
+    nameAr: item.s || '',
+    scientificNameEn: item.s || '',
+    scientificNameAr: item.s || '',
+    activeIngredientEn: item.s || '',
+    activeIngredientAr: item.s || '',
+    category: 'EDA Listed',
+    categoryAr: 'مسجل بهيئة الدواء المصرية',
+    formEmoji: '💊',
+    description: 'Registered in the Egyptian Drug Authority database',
+    descriptionAr: 'مسجل في قاعدة بيانات هيئة الدواء المصرية',
+    indicationEn: '', indicationAr: '',
+    mechanismEn: '', mechanismAr: '',
+    sideEffectsEn: '', sideEffectsAr: '',
+    dosageEn: '', dosageAr: '',
+    pregnancyEn: '', pregnancyAr: '',
+    breastfeedingEn: '', breastfeedingAr: '',
+    manufacturerEn: (item.m || [])[0] || '',
+    manufacturerAr: '',
+    prices: (item.p || []).length >= 2
+      ? [{ form: 'Price range', formEn: 'Price range', price: '' + item.p[0] + ' - ' + item.p[1], unit: 'EGP' }]
+      : [],
+    imageUrl: '',
+    drugInteractions: [],
+    diseaseInteractions: [],
+    edaOnly: true,
+    dataSource: 'eda',
+    dataSources: ['eda'],
+    edaBrands: item.b || [],
+    edaMfrs: item.m || [],
+    edaRoutes: item.r || [],
+    edaRf: item.rf || null,
+    edaPriceRange: item.p || [],
+    constituents: item.c || [],
+    route: '',
+    drug_class: '',
+    price_egp: item.p?.[0] || null,
+  }
+}
+
+function toUnifiedMohmed(item, i) {
+  if (!item) return null
+  return {
+    id: 'moh_' + i,
+    nameEn: item.s || '',
+    nameAr: item.s || '',
+    scientificNameEn: item.s || '',
+    scientificNameAr: item.s || '',
+    activeIngredientEn: item.s || '',
+    activeIngredientAr: item.s || '',
+    category: 'Drug Guide 2024',
+    categoryAr: 'دليل الأدوية 2024',
+    formEmoji: '💊',
+    description: item.h || 'Listed in Egypt Drugs Guide (2024 prices)',
+    descriptionAr: item.h ? item.h.slice(0, 100) : 'مسجل في دليل الأدوية المصري',
+    indicationEn: '', indicationAr: '',
+    mechanismEn: '', mechanismAr: '',
+    sideEffectsEn: '', sideEffectsAr: '',
+    dosageEn: '', dosageAr: '',
+    pregnancyEn: '', pregnancyAr: '',
+    breastfeedingEn: '', breastfeedingAr: '',
+    manufacturerEn: (item.m || [])[0] || '',
+    manufacturerAr: '',
+    prices: (item.p || []).length >= 2
+      ? [{ form: 'Price range', formEn: 'Price range', price: '' + item.p[0] + ' - ' + item.p[1], unit: 'EGP' }]
+      : [],
+    imageUrl: '',
+    drugInteractions: [],
+    diseaseInteractions: [],
+    edaOnly: true,
+    dataSource: 'MOHMED',
+    dataSources: ['mohmed'],
+    edaBrands: item.b || [],
+    edaMfrs: item.m || [],
+    edaRoutes: item.r || [],
+    edaRf: item.rf || null,
+    edaPriceRange: item.p || [],
+    edaGroups: item.g || [],
+    pharmacology: item.h || '',
+    constituents: [],
+    route: '',
+    drug_class: '',
+    price_egp: item.p?.[0] || null,
+  }
 }
 
 function toUnifiedKarem505(item) {
@@ -129,111 +218,10 @@ function toUnifiedKarem505(item) {
   }
 }
 
-function toUnifiedEnriched(drug) {
-  if (!drug) return null
-  return {
-    ...drug,
-    dataSource: 'enriched',
-    edaOnly: false,
-    dataSources: ['enriched'],
-    price_egp: drug.prices?.length > 0 ? parseFloat(drug.prices[0].price) || null : null,
-  }
-}
-
-function toUnifiedEda(item, i) {
-  if (!item) return null
-  return {
-    id: 'eda_' + i,
-    nameEn: item.s || '',
-    nameAr: item.s || '',
-    scientificNameEn: item.s || '',
-    scientificNameAr: item.s || '',
-    activeIngredientEn: item.s || '',
-    activeIngredientAr: item.s || '',
-    category: 'EDA Listed',
-    categoryAr: 'مسجل بهيئة الدواء المصرية',
-    formEmoji: '💊',
-    description: 'Registered in the Egyptian Drug Authority database',
-    descriptionAr: 'مسجل في قاعدة بيانات هيئة الدواء المصرية',
-    indicationEn: '', indicationAr: '',
-    mechanismEn: '', mechanismAr: '',
-    sideEffectsEn: '', sideEffectsAr: '',
-    dosageEn: '', dosageAr: '',
-    pregnancyEn: '', pregnancyAr: '',
-    breastfeedingEn: '', breastfeedingAr: '',
-    manufacturerEn: (item.m || [])[0] || '',
-    manufacturerAr: '',
-    prices: (item.p || []).length >= 2
-      ? [{ form: 'Price range', formEn: 'Price range', price: '' + item.p[0] + ' - ' + item.p[1], unit: 'EGP' }]
-      : [],
-    imageUrl: '',
-    drugInteractions: [],
-    diseaseInteractions: [],
-    edaOnly: false,
-    dataSource: 'unified',
-    dataSources: ['eda'],
-    edaBrands: item.b || [],
-    edaMfrs: item.m || [],
-    edaRoutes: item.r || [],
-    edaRf: item.rf || null,
-    edaPriceRange: item.p || [],
-    constituents: item.c || [],
-    route: '',
-    drug_class: '',
-    price_egp: item.p?.[0] || null,
-  }
-}
-
-function toUnifiedMohmed(item, i) {
-  if (!item) return null
-  return {
-    id: 'moh_' + i,
-    nameEn: item.s || '',
-    nameAr: item.s || '',
-    scientificNameEn: item.s || '',
-    scientificNameAr: item.s || '',
-    activeIngredientEn: item.s || '',
-    activeIngredientAr: item.s || '',
-    category: 'Drug Guide 2024',
-    categoryAr: 'دليل الأدوية 2024',
-    formEmoji: '💊',
-    description: item.h || 'Listed in Egypt Drugs Guide (2024 prices)',
-    descriptionAr: item.h ? item.h.slice(0, 100) : 'مسجل في دليل الأدوية المصري',
-    indicationEn: '', indicationAr: '',
-    mechanismEn: '', mechanismAr: '',
-    sideEffectsEn: '', sideEffectsAr: '',
-    dosageEn: '', dosageAr: '',
-    pregnancyEn: '', pregnancyAr: '',
-    breastfeedingEn: '', breastfeedingAr: '',
-    manufacturerEn: (item.m || [])[0] || '',
-    manufacturerAr: '',
-    prices: (item.p || []).length >= 2
-      ? [{ form: 'Price range', formEn: 'Price range', price: '' + item.p[0] + ' - ' + item.p[1], unit: 'EGP' }]
-      : [],
-    imageUrl: '',
-    drugInteractions: [],
-    diseaseInteractions: [],
-    edaOnly: false,
-    dataSource: 'unified',
-    dataSources: ['mohmed'],
-    edaBrands: item.b || [],
-    edaMfrs: item.m || [],
-    edaRoutes: item.r || [],
-    edaRf: item.rf || null,
-    edaPriceRange: item.p || [],
-    edaGroups: item.g || [],
-    pharmacology: item.h || '',
-    constituents: [],
-    route: '',
-    drug_class: '',
-    price_egp: item.p?.[0] || null,
-  }
-}
-
-function ingestList(unifiedMap, list, toUnifiedFn, source) {
+function ingestList(map, list, toFn, source) {
   for (let i = 0; i < list.length; i++) {
     try {
-      const entry = toUnifiedFn(list[i], i)
+      const entry = toFn(list[i], i)
       if (!entry) continue
       const keys = [
         normalize(entry.nameEn),
@@ -242,63 +230,82 @@ function ingestList(unifiedMap, list, toUnifiedFn, source) {
         ...(entry.constituents || []).map(c => normalize(c)),
         ...(entry.edaGroups || []).map(g => normalize(g)),
       ].filter(Boolean)
-
       const primary = keys[0] || entry.id
-      if (unifiedMap.has(primary)) {
-        unifiedMap.set(primary, mergeDrug(unifiedMap.get(primary), entry, source))
+      if (map.has(primary)) {
+        map.set(primary, mergeDrug(map.get(primary), entry, source))
       } else {
-        unifiedMap.set(primary, entry)
+        map.set(primary, entry)
       }
       for (const k of keys) {
-        if (!unifiedMap.has(k)) unifiedMap.set(k, entry)
+        if (!map.has(k)) map.set(k, entry)
       }
-    } catch {
-      // skip individual broken entries
+    } catch {}
+  }
+}
+
+function mergeIntoUnified(base, newMap) {
+  for (const [key, entry] of newMap) {
+    if (base.has(key)) {
+      base.set(key, mergeDrug(base.get(key), entry, entry.dataSources?.[0] || 'unknown'))
+    } else {
+      base.set(key, entry)
     }
   }
 }
 
-export async function loadUnifiedDrugs() {
+function getKarem505Cache() {
+  try {
+    const raw = localStorage.getItem('egyptian_drug_db_v1')
+    if (!raw) return null
+    const { timestamp, data } = JSON.parse(raw)
+    if (Date.now() - timestamp > 24 * 60 * 60 * 1000) return null
+    return data
+  } catch {
+    return null
+  }
+}
+
+function saveKarem505Cache(data) {
+  try {
+    localStorage.setItem('egyptian_drug_db_v1', JSON.stringify({ timestamp: Date.now(), data }))
+  } catch {}
+}
+
+export async function loadUnifiedDrugs(onProgress) {
   if (unifiedCache) return unifiedCache
-
-  let enrichedDrugs = []
-  let edaList = []
-  let mohmedList = []
-  let karem505Raw = []
-
-  try {
-    const mod = await import('../data/drugs.js')
-    enrichedDrugs = mod.drugs || []
-  } catch {
-    // enriched drugs failed — continue with empty
-  }
-
-  try {
-    const { loadEdaDrugs, getRawEdaJson, getRawMohmedJson } = await import('./edaLoader.js')
-    await loadEdaDrugs()
-    edaList = getRawEdaJson() || []
-    mohmedList = getRawMohmedJson() || []
-  } catch {
-    // EDA/MOHMED failed — continue with empty
-  }
-
-  try {
-    const { loadEgyptianDrugs } = await import('./egyptianDbLoader.js')
-    karem505Raw = await loadEgyptianDrugs()
-  } catch {
-    // karem505 failed — continue with empty
-  }
-
+  const emit = onProgress || (() => {})
   const unifiedMap = new Map()
 
-  ingestList(unifiedMap, enrichedDrugs, toUnifiedEnriched, 'enriched')
-  ingestList(unifiedMap, edaList, toUnifiedEda, 'eda')
-  ingestList(unifiedMap, mohmedList, toUnifiedMohmed, 'mohmed')
-  ingestList(unifiedMap, karem505Raw, toUnifiedKarem505, 'karem505')
+  const { drugs: enrichedDrugs } = await import('../data/drugs.js')
+  ingestList(unifiedMap, enrichedDrugs || [], toUnifiedEnriched, 'enriched')
+  emit([...unifiedMap.values()])
+
+  const karem505Cache = getKarem505Cache()
+
+  const [edaMohmedResult, karem505Result] = await Promise.allSettled([
+    import('./edaLoader.js').then(m => m.loadRawEdaMohmed()),
+    karem505Cache
+      ? Promise.resolve(karem505Cache)
+      : import('./egyptianDbLoader.js').then(m => m.loadEgyptianDrugs()),
+  ])
+
+  if (edaMohmedResult.status === 'fulfilled') {
+    const { eda, mohmed } = edaMohmedResult.value
+    ingestList(unifiedMap, eda || [], toUnifiedEda, 'eda')
+    ingestList(unifiedMap, mohmed || [], toUnifiedMohmed, 'mohmed')
+  }
+
+  if (karem505Result.status === 'fulfilled') {
+    const karem505Raw = karem505Result.value || []
+    ingestList(unifiedMap, karem505Raw, toUnifiedKarem505, 'karem505')
+    if (!karem505Cache && karem505Raw.length > 0) {
+      saveKarem505Cache(karem505Raw)
+    }
+  }
 
   const finalList = [...unifiedMap.values()]
-
   unifiedCache = finalList
+  emit(finalList)
   return finalList
 }
 

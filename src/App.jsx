@@ -35,13 +35,30 @@ export default function App() {
   const [selectedDrugId, setSelectedDrugId] = useState(null)
   const [refreshKey, _setRefreshKey] = useState(0)
   const [unifiedDrugs, setUnifiedDrugs] = useState(null)
-  const [loadingUnified, setLoadingUnified] = useState(true)
+  const [isLoading, setIsLoading] = useState(true)
+  const [drugCount, setDrugCount] = useState(0)
   const [isAdmin, setIsAdmin] = useState(false)
 
   useEffect(() => {
-    loadUnifiedDrugs()
-      .then(data => { setUnifiedDrugs(data); setLoadingUnified(false) })
-      .catch(() => { setLoadingUnified(false) })
+    let settled = false
+    loadUnifiedDrugs((partial) => {
+      if (partial && partial.length > 0) {
+        setUnifiedDrugs(partial)
+        setDrugCount(partial.length)
+      }
+    }).then(() => {
+      settled = true
+      setIsLoading(false)
+    }).catch(() => {
+      settled = true
+      setIsLoading(false)
+    })
+
+    const fallback = setTimeout(() => {
+      if (!settled) setIsLoading(false)
+    }, 30000)
+
+    return () => clearTimeout(fallback)
   }, [])
 
   const allDrugs = useMemo(() => {
@@ -108,7 +125,13 @@ export default function App() {
       <NetworkStatus />
 
       <main className="flex-1 max-w-6xl w-full mx-auto px-3 sm:px-4 md:px-6 py-4 md:py-6">
-        {loadingUnified && (
+        {isLoading && drugCount > 0 && (
+          <div className="bg-gold/10 border-b border-gold/20 text-center text-xs text-nile py-1 px-2">
+            ⏳ Loading... {drugCount.toLocaleString()} drugs loaded
+          </div>
+        )}
+
+        {isLoading && drugCount === 0 && (
           <div className="text-center py-20">
             <div className="text-5xl mb-4 animate-bounce">💊</div>
             <p className="text-lg font-bold text-nile">جاري تحميل قاعدة البيانات...</p>
@@ -118,46 +141,45 @@ export default function App() {
               <div className="w-2 h-2 bg-gold rounded-full animate-bounce" style={{animationDelay:'150ms'}}></div>
               <div className="w-2 h-2 bg-gold rounded-full animate-bounce" style={{animationDelay:'300ms'}}></div>
             </div>
-            <p className="text-xs text-gray-400 mt-3">~40,000 drugs from EDA, MOHMED & karem505 databases</p>
           </div>
         )}
 
-        {!loadingUnified && tab === 'home' && (
-          <Home
-            drugs={allDrugs}
-            diseases={allDiseases}
-            recentlyViewed={recentlyViewed}
-            onBrowse={() => setTab('drugs')}
-            onInterview={() => setTab('interview')}
-            onPrices={() => setTab('drugs')}
-            onPharmacopeia={() => setTab('pharmacopeia')}
-            onViewDrug={handleViewDrug}
-          />
-        )}
-        {!loadingUnified && tab === 'drugs' && (
-          <DrugHub drugs={allDrugs} diseases={allDiseases} onViewDrug={handleViewDrug} />
-        )}
-        {!loadingUnified && tab === 'detail' && selectedDrugId && (
-          <DrugDetail
-            drugId={selectedDrugId}
-            drugs={allDrugs}
-            diseases={allDiseases}
-            onBack={handleDrugsTab}
-            onViewDrug={handleViewDrug}
-          />
-        )}
-        {!loadingUnified && tab === 'interview' && (
-          <InterviewMode drugs={allDrugs} diseases={allDiseases} onViewDrug={handleViewDrug} />
-        )}
-        {!loadingUnified && tab === 'pharmacopeia' && (
-          <Pharmacopeia drugs={allDrugs} />
-        )}
-        {tab === 'admin-login' && (
-          <AdminLogin onLogin={() => { setIsAdmin(true); setTab('admin') }} />
-        )}
-        {!loadingUnified && tab === 'admin' && isAdmin && (
-          <AdminPanel allDrugs={allDrugs} onLogout={() => { setIsAdmin(false); setTab('home') }} onViewDrug={handleViewDrug} />
-        )}
+        {tab === 'home' && (
+        <Home
+          drugs={allDrugs}
+          diseases={allDiseases}
+          recentlyViewed={recentlyViewed}
+          onBrowse={() => setTab('drugs')}
+          onInterview={() => setTab('interview')}
+          onPrices={() => setTab('drugs')}
+          onPharmacopeia={() => setTab('pharmacopeia')}
+          onViewDrug={handleViewDrug}
+        />
+      )}
+      {tab === 'drugs' && (
+        <DrugHub drugs={allDrugs} diseases={allDiseases} onViewDrug={handleViewDrug} />
+      )}
+      {tab === 'detail' && selectedDrugId && (
+        <DrugDetail
+          drugId={selectedDrugId}
+          drugs={allDrugs}
+          diseases={allDiseases}
+          onBack={handleDrugsTab}
+          onViewDrug={handleViewDrug}
+        />
+      )}
+      {tab === 'interview' && (
+        <InterviewMode drugs={allDrugs} diseases={allDiseases} onViewDrug={handleViewDrug} />
+      )}
+      {tab === 'pharmacopeia' && (
+        <Pharmacopeia drugs={allDrugs} />
+      )}
+      {tab === 'admin-login' && (
+        <AdminLogin onLogin={() => { setIsAdmin(true); setTab('admin') }} />
+      )}
+      {tab === 'admin' && isAdmin && (
+        <AdminPanel allDrugs={allDrugs} onLogout={() => { setIsAdmin(false); setTab('home') }} onViewDrug={handleViewDrug} />
+      )}
       </main>
 
       <footer className="bg-nile text-white/70 text-center text-sm py-3 px-4">
