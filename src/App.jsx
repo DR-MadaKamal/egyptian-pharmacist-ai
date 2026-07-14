@@ -111,10 +111,10 @@ export default function App() {
             diseases={allDiseases}
             recentlyViewed={recentlyViewed}
             onBrowse={() => setTab('drugs')}
-            onSearch={(q) => { try { sessionStorage.setItem('home-search', q) } catch {}; setTab('drugs') }}
             onInterview={() => setTab('interview')}
             onPrices={() => setTab('drugs')}
             onPharmacopeia={() => setTab('pharmacopeia')}
+            onViewDrug={handleViewDrug}
           />
         )}
         {tab === 'drugs' && (
