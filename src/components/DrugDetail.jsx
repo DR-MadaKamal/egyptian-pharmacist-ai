@@ -37,7 +37,7 @@ export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug
   const diseaseInts = getDiseaseInteractions(drugs, diseases, drugId)
   const [detailTab, setDetailTab] = useState('info')
   const lastSync = useLastSync()
-  const { alternatives, similars } = useMemo(() => findSimilarDrugs(drug, drugs), [drug, drugs])
+  const { alternatives, similars } = useMemo(() => findSimilarDrugs(drug, drugs, 8), [drug, drugs])
 
   const formatDate = (iso) => {
     if (!iso) return null
@@ -242,15 +242,16 @@ export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug
         </Section>
 
         {alternatives.length > 0 && (
-          <Section title="🔄 بدائل بنفس المادة الفعالة / Alternatives (Same Active Ingredient)">
+          <Section title={`🔄 بدائل بنفس المادة الفعالة / Alternatives (${alternatives.length})`}>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               {alternatives.map(alt => (
                 <button key={alt.id} onClick={() => onViewDrug(alt.id)}
                   className="text-right bg-gray-50 hover:bg-sand rounded-lg p-3 transition-colors border border-transparent hover:border-gold/30">
                   <div className="font-bold text-nile text-sm">{alt.formEmoji || '💊'} {alt.nameAr}</div>
                   <div className="text-xs text-gray-500">{alt.nameEn}</div>
-                  <div className="flex items-center gap-2 mt-1">
+                  <div className="flex items-center gap-2 mt-1 flex-wrap">
                     {alt.manufacturerEn && <span className="text-[10px] text-gray-400">{getMfrIcon(alt.manufacturerEn)} {alt.manufacturerEn}</span>}
+                    {alt.price_egp != null && <span className="text-[10px] text-gold-dark font-bold">EGP {alt.price_egp}</span>}
                   </div>
                 </button>
               ))}
@@ -259,15 +260,16 @@ export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug
         )}
 
         {similars.length > 0 && (
-          <Section title="💊 أدوية مشابهة / Similar Drugs (Same Category)">
+          <Section title={`💊 أدوية مشابهة / Similar Drugs (${similars.length})`}>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               {similars.map(alt => (
                 <button key={alt.id} onClick={() => onViewDrug(alt.id)}
                   className="text-right bg-gray-50 hover:bg-sand rounded-lg p-3 transition-colors border border-transparent hover:border-gold/30">
                   <div className="font-bold text-nile text-sm">{alt.formEmoji || '💊'} {alt.nameAr}</div>
                   <div className="text-xs text-gray-500">{alt.nameEn}</div>
-                  <div className="flex items-center gap-2 mt-1">
+                  <div className="flex items-center gap-2 mt-1 flex-wrap">
                     {alt.manufacturerEn && <span className="text-[10px] text-gray-400">{getMfrIcon(alt.manufacturerEn)} {alt.manufacturerEn}</span>}
+                    {alt.price_egp != null && <span className="text-[10px] text-gold-dark font-bold">EGP {alt.price_egp}</span>}
                     {alt.categoryAr && <span className="text-[10px] bg-sand text-nile px-1.5 py-0.5 rounded">{alt.categoryAr}</span>}
                   </div>
                 </button>
@@ -405,15 +407,16 @@ export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug
         </Section>
 
         {alternatives.length > 0 && (
-          <Section title="🔄 بدائل بنفس المادة الفعالة / Alternatives (Same Active Ingredient)">
+          <Section title={`🔄 بدائل بنفس المادة الفعالة / Alternatives (${alternatives.length})`}>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               {alternatives.map(alt => (
                 <button key={alt.id} onClick={() => onViewDrug(alt.id)}
                   className="text-right bg-gray-50 hover:bg-sand rounded-lg p-3 transition-colors border border-transparent hover:border-gold/30">
                   <div className="font-bold text-nile text-sm">{alt.formEmoji || '💊'} {alt.nameAr}</div>
                   <div className="text-xs text-gray-500">{alt.nameEn}</div>
-                  <div className="flex items-center gap-2 mt-1">
+                  <div className="flex items-center gap-2 mt-1 flex-wrap">
                     {alt.manufacturerEn && <span className="text-[10px] text-gray-400">{getMfrIcon(alt.manufacturerEn)} {alt.manufacturerEn}</span>}
+                    {alt.price_egp != null && <span className="text-[10px] text-gold-dark font-bold">EGP {alt.price_egp}</span>}
                     {alt.edaBrands?.length > 0 && <span className="text-[10px] bg-blue-50 text-blue-600 px-1.5 py-0.5 rounded">{alt.edaBrands.length} brands</span>}
                   </div>
                 </button>
@@ -423,15 +426,16 @@ export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug
         )}
 
         {similars.length > 0 && (
-          <Section title="💊 أدوية مشابهة / Similar Drugs (Same Category)">
+          <Section title={`💊 أدوية مشابهة / Similar Drugs (${similars.length})`}>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               {similars.map(alt => (
                 <button key={alt.id} onClick={() => onViewDrug(alt.id)}
                   className="text-right bg-gray-50 hover:bg-sand rounded-lg p-3 transition-colors border border-transparent hover:border-gold/30">
                   <div className="font-bold text-nile text-sm">{alt.formEmoji || '💊'} {alt.nameAr}</div>
                   <div className="text-xs text-gray-500">{alt.nameEn}</div>
-                  <div className="flex items-center gap-2 mt-1">
+                  <div className="flex items-center gap-2 mt-1 flex-wrap">
                     {alt.manufacturerEn && <span className="text-[10px] text-gray-400">{getMfrIcon(alt.manufacturerEn)} {alt.manufacturerEn}</span>}
+                    {alt.price_egp != null && <span className="text-[10px] text-gold-dark font-bold">EGP {alt.price_egp}</span>}
                     {alt.categoryAr && <span className="text-[10px] bg-sand text-nile px-1.5 py-0.5 rounded">{alt.categoryAr}</span>}
                   </div>
                 </button>

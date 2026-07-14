@@ -377,13 +377,23 @@ function normalizeForComparison(text) {
     .replace(/[^a-z0-9\u0600-\u06FF]/g, '')
 }
 
-export function findSimilarDrugs(drug, allDrugs, maxResults = 8) {
+function extractIngredients(text) {
+  if (!text) return []
+  const normalized = text.toLowerCase()
+    .replace(/\([^)]*\)/g, ' ')
+    .replace(/\+/g, ' ')
+    .replace(/[,;/]/g, ' ')
+  return normalized.split(/\s+/).filter(w => w.length >= 3)
+}
+
+export function findSimilarDrugs(drug, allDrugs, maxResults = 12) {
   if (!drug) return []
   const scores = []
   const currentId = drug.id
   const currentActiveEn = normalizeForComparison(drug.activeIngredientEn || drug.scientificNameEn || '')
   const currentActiveAr = normalizeForComparison(drug.activeIngredientAr || drug.scientificNameAr || '')
-  const currentCategory = normalizeForComparison(drug.category || '')
+  const currentCategory = normalizeForComparison(drug.category || drug.drug_class || '')
+  const currentIngredients = extractIngredients(drug.activeIngredientEn || drug.scientificNameEn || '')
   const currentConstituents = (drug.constituents || []).map(c => normalizeForComparison(c))
   const currentGroups = (drug.edaGroups || []).map(g => normalizeForComparison(g))
 
@@ -393,11 +403,30 @@ export function findSimilarDrugs(drug, allDrugs, maxResults = 8) {
 
     const otherActiveEn = normalizeForComparison(other.activeIngredientEn || other.scientificNameEn || '')
     const otherActiveAr = normalizeForComparison(other.activeIngredientAr || other.scientificNameAr || '')
+    const otherIngredients = extractIngredients(other.activeIngredientEn || other.scientificNameEn || '')
 
-    if (currentActiveEn && otherActiveEn && currentActiveEn === otherActiveEn) score += 1000
-    else if (currentActiveAr && otherActiveAr && currentActiveAr === otherActiveAr) score += 1000
-    else if (currentActiveEn && otherActiveEn && currentActiveEn.length >= 3 && otherActiveEn.includes(currentActiveEn)) score += 800
-    else if (currentActiveAr && otherActiveAr && currentActiveAr.includes(otherActiveAr)) score += 800
+    if (currentActiveEn && otherActiveEn && currentActiveEn === otherActiveEn) {
+      score += 1000
+    } else if (currentActiveAr && otherActiveAr && currentActiveAr === otherActiveAr) {
+      score += 1000
+    } else {
+      let ingredientMatch = false
+      for (const ci of currentIngredients) {
+        for (const oi of otherIngredients) {
+          if (ci === oi || ci.includes(oi) || oi.includes(ci)) {
+            ingredientMatch = true
+            score += 500
+            break
+          }
+        }
+        if (ingredientMatch) break
+      }
+
+      if (!ingredientMatch) {
+        if (currentActiveEn && otherActiveEn && currentActiveEn.length >= 3 && otherActiveEn.includes(currentActiveEn)) score += 300
+        else if (currentActiveAr && otherActiveAr && currentActiveAr.includes(otherActiveAr)) score += 300
+      }
+    }
 
     const otherConstituents = (other.constituents || []).map(c => normalizeForComparison(c))
     const otherGroups = (other.edaGroups || []).map(g => normalizeForComparison(g))
@@ -412,18 +441,16 @@ export function findSimilarDrugs(drug, allDrugs, maxResults = 8) {
       score += overlap * 100
     }
 
-    const otherCategory = normalizeForComparison(other.category || '')
+    const otherCategory = normalizeForComparison(other.category || other.drug_class || '')
     if (currentCategory && otherCategory && currentCategory === otherCategory) score += 50
 
-    if (!drug.edaOnly && !other.edaOnly && score > 0) score += 30
-
     if (score > 0) {
-      scores.push({ drug: other, score, type: score >= 1000 ? 'alternative' : 'similar' })
+      scores.push({ drug: other, score, type: score >= 500 ? 'alternative' : 'similar' })
     }
   }
 
   scores.sort((a, b) => b.score - a.score)
-  const alternatives = scores.filter(s => s.type === 'alternative').slice(0, 4)
-  const similars = scores.filter(s => s.type === 'similar').slice(0, 4)
+  const alternatives = scores.filter(s => s.type === 'alternative').slice(0, maxResults)
+  const similars = scores.filter(s => s.type === 'similar').slice(0, maxResults)
   return { alternatives: alternatives.map(s => s.drug), similars: similars.map(s => s.drug) }
 }
