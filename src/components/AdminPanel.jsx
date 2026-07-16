@@ -7,9 +7,13 @@ export default function AdminPanel({ allDrugs, onLogout, onViewDrug }) {
   const [refreshKey, setRefreshKey] = useState(0)
   const [syncInfo, setSyncInfo] = useState(null)
   const [editDrug, setEditDrug] = useState(null)
+  const [dbMeta, setDbMeta] = useState(null)
+  const [updating, setUpdating] = useState(false)
+  const [updateMsg, setUpdateMsg] = useState('')
 
   useEffect(() => {
     fetch('/egyptian-pharmacist-ai/data/sync-manifest.json').then(r => r.json()).then(setSyncInfo).catch(() => {})
+    fetch('/egyptian-pharmacist-ai/data/drugs-database-meta.json').then(r => r.json()).then(setDbMeta).catch(() => {})
   }, [])
 
   const userDrugs = useMemo(() => getUserDrugs(), [refreshKey])
@@ -90,15 +94,49 @@ export default function AdminPanel({ allDrugs, onLogout, onViewDrug }) {
             </div>
           </div>
 
-          {syncInfo && (
+          {dbMeta && (
             <div className="bg-white border border-sand-dark rounded-xl p-4">
-              <h3 className="font-bold text-nile text-sm mb-2">🔄 آخر تحديث / Last Sync</h3>
+              <h3 className="font-bold text-nile text-sm mb-2">🗄️ قاعدة البيانات الموحدة / Unified Database</h3>
               <div className="text-xs text-gray-500 space-y-1">
-                <p>آخر مزامنة: {syncInfo.lastSync || 'غير متوفر'}</p>
-                {syncInfo.sources && (
-                  <p>المصادر المتاحة: {syncInfo.sources.filter(s => s.healthy).length} / {syncInfo.sources.length}</p>
+                <p>إجمالي الأدوية: {dbMeta.totalDrugs?.toLocaleString()}</p>
+                <p>أدوية بأسعار: {dbMeta.withPrices?.toLocaleString()}</p>
+                <p>أدوية بcontraindications: {dbMeta.withIndications}</p>
+                <p>آخر تحديث: {dbMeta.version ? new Date(dbMeta.version).toLocaleDateString('ar-EG') : 'غير متوفر'}</p>
+                {dbMeta.sources && (
+                  <div className="mt-2 pt-2 border-t border-gray-100">
+                    <p className="font-medium text-nile mb-1">المصادر / Sources:</p>
+                    {Object.entries(dbMeta.sources).map(([src, count]) => (
+                      <span key={src} className="inline-block bg-gray-100 rounded px-2 py-0.5 mr-1 mb-1 text-[10px]">
+                        {src}: {count.toLocaleString()}
+                      </span>
+                    ))}
+                  </div>
                 )}
               </div>
+              <button
+                onClick={async () => {
+                  if (!confirm('تحديث قاعدة البيانات؟ سيتم حذف الكاش المحلي')) return
+                  setUpdating(true)
+                  setUpdateMsg('')
+                  try {
+                    localStorage.removeItem('pharma_db_v2')
+                    localStorage.removeItem('egyptian_drug_db_v1')
+                    localStorage.removeItem('eda_mohmed_data_v1')
+                    setUpdateMsg('تم حذف الكاش. أعد تحميل الصفحة لتحميل البيانات المحدثة.')
+                  } catch (e) {
+                    setUpdateMsg('خطأ: ' + e.message)
+                  }
+                  setUpdating(false)
+                }}
+                disabled={updating}
+                className="mt-3 px-3 py-1.5 bg-nile text-white rounded-lg text-xs font-medium hover:bg-nile/90 disabled:opacity-50"
+              >
+                {updating ? '⏳ جاري التحديث...' : '🔄 مسح الكاش المحلي / Clear Local Cache'}
+              </button>
+              <p className="text-[10px] text-gray-400 mt-1">
+                للتحديث الكامل: شغّل scripts/weekly-update.mjs على السيرفر
+              </p>
+              {updateMsg && <p className="text-xs text-green-600 mt-2">{updateMsg}</p>}
             </div>
           )}
 

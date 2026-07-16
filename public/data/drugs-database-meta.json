@@ -1,0 +1,15 @@
+{
+  "version": "2026-07-16T08:03:00.394Z",
+  "totalDrugs": 36188,
+  "withPrices": 33343,
+  "withIndications": 192,
+  "withPharmacology": 836,
+  "withBrands": 13693,
+  "sources": {
+    "eda": 8670,
+    "karem505": 33339,
+    "eda_formulary": 260,
+    "mohmed": 3695,
+    "enriched": 45
+  }
+}

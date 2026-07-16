@@ -1,0 +1,55 @@
+name: Weekly Database Update
+
+on:
+  schedule:
+    # Every Monday at 2 AM UTC
+    - cron: '0 2 * * 1'
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Force update even with uncommitted changes'
+        required: false
+        default: 'false'
+        type: boolean
+
+permissions:
+  contents: write
+
+jobs:
+  update-database:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run weekly update
+        run: node scripts/weekly-update.mjs ${{ github.event.inputs.force == 'true' && '--force' || '' }}
+
+      - name: Push changes
+        if: success()
+        run: git push origin main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## Weekly Database Update" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- **Triggered by:** ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Date:** $(date -u)" >> $GITHUB_STEP_SUMMARY
+          if [ -f public/data/drugs-database-meta.json ]; then
+            echo "- **Total drugs:** $(jq -r '.totalDrugs' public/data/drugs-database-meta.json)" >> $GITHUB_STEP_SUMMARY
+            echo "- **With prices:** $(jq -r '.withPrices' public/data/drugs-database-meta.json)" >> $GITHUB_STEP_SUMMARY
+            echo "- **With indications:** $(jq -r '.withIndications' public/data/drugs-database-meta.json)" >> $GITHUB_STEP_SUMMARY
+          fi
