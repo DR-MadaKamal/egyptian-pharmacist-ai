@@ -195,6 +195,19 @@ export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug
           </Section>
         )}
 
+        {drug.atcCode && (
+          <div className="bg-blue-50 rounded-lg px-3 py-2">
+            <span className="text-xs font-bold text-blue-600 uppercase">ATC Code</span>
+            <p className="text-sm text-blue-800 font-mono">{drug.atcCode}</p>
+          </div>
+        )}
+
+        {drug.dosageForms && (
+          <Section title="💊 الأشكال الدوائية / Dosage Forms">
+            <p className="text-sm text-gray-700">{drug.dosageForms}</p>
+          </Section>
+        )}
+
         {drug.edaPriceRange && drug.edaPriceRange.length > 0 && (
           <Section title="💰 الأسعار / Prices">
             {drug.edaRf && drug.edaRf.length > 0 ? (

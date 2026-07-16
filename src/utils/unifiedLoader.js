@@ -163,6 +163,59 @@ function toUnifiedMohmed(item, i) {
   }
 }
 
+function toUnifiedFormulary(item, i) {
+  if (!item) return null
+  const isOtc = item.t === 'otc'
+  return {
+    id: 'form_' + i,
+    nameEn: item.n || '',
+    nameAr: item.n || '',
+    scientificNameEn: item.n || '',
+    scientificNameAr: item.n || '',
+    activeIngredientEn: item.n || '',
+    activeIngredientAr: item.n || '',
+    category: isOtc ? 'OTC Medication' : (item.c || 'Antimicrobial'),
+    categoryAr: isOtc ? 'دواء بدون وصفة طبية' : (item.c || 'مضاد ميكروبي'),
+    formEmoji: isOtc ? '🏪' : '💉',
+    description: isOtc ? (item.o || 'Egyptian OTC medication') : (item.i || item.c || 'Egyptian EDA Formulary drug'),
+    descriptionAr: isOtc ? 'دواء بدون وصفة طبية مسجل بهيئة الدواء المصرية' : 'مضاد ميكروبي مسجل في الدليل المصري 2023',
+    indicationEn: item.i || '',
+    indicationAr: '',
+    mechanismEn: '',
+    mechanismAr: '',
+    sideEffectsEn: '',
+    sideEffectsAr: '',
+    dosageEn: item.f || '',
+    dosageAr: '',
+    pregnancyEn: '',
+    pregnancyAr: '',
+    breastfeedingEn: '',
+    breastfeedingAr: '',
+    manufacturerEn: '',
+    manufacturerAr: '',
+    prices: [],
+    imageUrl: '',
+    drugInteractions: [],
+    diseaseInteractions: [],
+    route: item.r || '',
+    drug_class: item.c || '',
+    price_egp: null,
+    edaBrands: [],
+    edaMfrs: [],
+    edaRoutes: item.r ? item.r.split(',').map(s => s.trim()) : [],
+    edaRf: null,
+    edaPriceRange: [],
+    edaGroups: [],
+    constituents: [],
+    pharmacology: item.c || '',
+    atcCode: item.a || '',
+    dosageForms: item.f || '',
+    dataSource: 'eda_formulary',
+    edaOnly: true,
+    dataSources: ['eda_formulary'],
+  }
+}
+
 function toUnifiedKarem505(item) {
   if (!item) return null
   return {
@@ -278,6 +331,9 @@ export async function loadUnifiedDrugs(onProgress) {
 
   const { drugs: enrichedDrugs } = await import('../data/drugs.js')
   ingestList(unifiedMap, enrichedDrugs || [], toUnifiedEnriched, 'enriched')
+
+  const { edaFormularyDrugs } = await import('../data/edaFormulary.js')
+  ingestList(unifiedMap, edaFormularyDrugs || [], toUnifiedFormulary, 'eda_formulary')
   emit([...unifiedMap.values()])
 
   const karem505Cache = getKarem505Cache()
