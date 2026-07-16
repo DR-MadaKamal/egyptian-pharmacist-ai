@@ -838,6 +838,8 @@ export default function Home({ drugs, diseases, recentlyViewed, onBrowse, onInte
 /* ========== Drug Card (Grid) ========== */
 function DrugCard({ drug, query, onViewDrug, compareIds, onToggleCompare }) {
   const inCompare = compareIds.has(drug.id)
+  const brandName = drug.edaBrands?.[0] || drug.nameEn
+  const otherBrands = drug.edaBrands?.slice(1, 4) || []
   return (
     <div className={`bg-white border rounded-xl p-4 transition-all group relative ${
       inCompare ? 'border-nile ring-2 ring-nile shadow-md' : 'border-sand-dark hover:shadow-md hover:border-gold'
@@ -845,17 +847,21 @@ function DrugCard({ drug, query, onViewDrug, compareIds, onToggleCompare }) {
       <div className="flex items-start justify-between gap-2">
         <div className="text-right flex-1">
           <div className="font-bold text-nile text-lg group-hover:text-gold-dark transition-colors">
-            <Highlight text={drug.nameAr} query={query} />
+            <Highlight text={brandName || drug.nameAr} query={query} />
           </div>
-          <div className="text-sm text-gray-500">
-            <Highlight text={drug.nameEn} query={query} />
-          </div>
+          {brandName && brandName !== drug.nameAr && (
+            <div className="text-sm text-gray-500">
+              <Highlight text={drug.nameAr} query={query} />
+            </div>
+          )}
+          {!brandName && drug.nameEn !== drug.nameAr && (
+            <div className="text-sm text-gray-500">
+              <Highlight text={drug.nameEn} query={query} />
+            </div>
+          )}
           <div className="flex items-center gap-1.5 mt-1 flex-wrap">
             {drug.categoryAr && (
               <span className="bg-sand text-nile text-xs px-2 py-0.5 rounded-full">{drug.categoryAr}</span>
-            )}
-            {drug.scientificNameEn && (
-              <span className="text-[10px] text-gray-400 italic">{drug.scientificNameEn}</span>
             )}
             {drug.manufacturerEn && (
               <span className="text-[10px] text-gray-400">{drug.manufacturerEn}</span>
@@ -866,8 +872,18 @@ function DrugCard({ drug, query, onViewDrug, compareIds, onToggleCompare }) {
       </div>
 
       <div className="text-xs text-gray-500 mt-2 space-y-0.5">
-        {drug.edaBrands?.length > 0 && (
-          <div>🏷 {drug.edaBrands.slice(0, 3).join(', ')}{drug.edaBrands.length > 3 ? ` +${drug.edaBrands.length - 3}` : ''}</div>
+        {otherBrands.length > 0 && (
+          <div className="flex flex-wrap gap-1">
+            {otherBrands.map((b, i) => (
+              <span key={i} className="inline-block bg-nile/5 text-nile px-1.5 py-0.5 rounded text-[10px]">{b}</span>
+            ))}
+            {drug.edaBrands.length > 4 && (
+              <span className="text-[10px] text-gray-400">+{drug.edaBrands.length - 3} أخرى</span>
+            )}
+          </div>
+        )}
+        {drug.scientificNameEn && drug.scientificNameEn !== brandName && drug.scientificNameEn !== drug.nameAr && (
+          <div className="text-[10px] text-gray-400 italic">{drug.scientificNameEn}</div>
         )}
         {drug.description && (
           <p className="line-clamp-2">{drug.description}</p>
@@ -888,9 +904,6 @@ function DrugCard({ drug, query, onViewDrug, compareIds, onToggleCompare }) {
           )}
           {drug.diseaseInteractions?.length > 0 && (
             <span className="bg-blue-100 text-blue-700 px-2 py-0.5 rounded">{drug.diseaseInteractions.length} تفاعل مرضي</span>
-          )}
-          {drug.dataSources && drug.dataSources.length > 1 && (
-            <span className="bg-green-50 text-green-700 px-2 py-0.5 rounded">{drug.dataSources.length} مصادر</span>
           )}
         </div>
         {drug.price_egp != null ? (
@@ -923,6 +936,7 @@ function DrugCard({ drug, query, onViewDrug, compareIds, onToggleCompare }) {
 /* ========== Drug List Item ========== */
 function DrugListItem({ drug, query, onViewDrug, compareIds, onToggleCompare }) {
   const inCompare = compareIds.has(drug.id)
+  const brandName = drug.edaBrands?.[0] || drug.nameEn
   return (
     <div onClick={() => onViewDrug(drug.id)}
       className={`bg-white border rounded-xl p-3 flex items-center gap-3 cursor-pointer transition-all ${
@@ -940,11 +954,13 @@ function DrugListItem({ drug, query, onViewDrug, compareIds, onToggleCompare }) 
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-2">
           <span className="font-bold text-nile text-sm truncate">
-            <Highlight text={drug.nameAr} query={query} />
+            <Highlight text={brandName || drug.nameAr} query={query} />
           </span>
-          <span className="text-xs text-gray-400 truncate">
-            <Highlight text={drug.nameEn} query={query} />
-          </span>
+          {brandName && brandName !== drug.nameAr && (
+            <span className="text-xs text-gray-400 truncate">
+              <Highlight text={drug.nameAr} query={query} />
+            </span>
+          )}
         </div>
         <div className="flex items-center gap-1.5 mt-0.5 flex-wrap">
           {drug.categoryAr && (
@@ -956,8 +972,8 @@ function DrugListItem({ drug, query, onViewDrug, compareIds, onToggleCompare }) 
           {drug.drugInteractions?.length > 0 && (
             <span className="bg-orange-100 text-orange-700 text-[10px] px-1.5 py-0.5 rounded-full">{drug.drugInteractions.length} int.</span>
           )}
-          {drug.edaBrands?.length > 0 && (
-            <span className="text-[10px] text-gray-400 truncate">🏷 {drug.edaBrands.slice(0, 2).join(', ')}</span>
+          {drug.edaBrands?.length > 1 && (
+            <span className="text-[10px] text-gray-400 truncate">+{drug.edaBrands.length - 1} brands</span>
           )}
         </div>
       </div>

@@ -276,9 +276,14 @@ export default function DrugBrowser({ drugs, onViewDrug }) {
             <div className="flex items-start justify-between gap-2">
               <div className="text-right flex-1">
                 <div className={`font-bold text-nile ${drug.edaOnly ? 'text-base' : 'text-lg'}`}>
-                  <Highlight text={drug.nameAr} query={query} />
+                  <Highlight text={drug.edaBrands?.[0] || drug.nameAr} query={query} />
                 </div>
-                <div className="text-sm text-gray-500"><Highlight text={drug.nameEn} query={query} /></div>
+                {drug.edaBrands?.[0] && drug.edaBrands[0] !== drug.nameAr && (
+                  <div className="text-sm text-gray-500"><Highlight text={drug.nameAr} query={query} /></div>
+                )}
+                {!drug.edaBrands?.[0] && drug.nameEn !== drug.nameAr && (
+                  <div className="text-sm text-gray-500"><Highlight text={drug.nameEn} query={query} /></div>
+                )}
                 <div className="flex items-center gap-1.5 mt-1">
                   {drug.edaOnly ? (
                     <span className="bg-blue-50 text-blue-700 text-xs px-2 py-0.5 rounded-full">EDA Listed</span>

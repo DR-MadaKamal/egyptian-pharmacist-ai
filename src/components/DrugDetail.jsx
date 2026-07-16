@@ -260,8 +260,10 @@ export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug
               {alternatives.map(alt => (
                 <button key={alt.id} onClick={() => onViewDrug(alt.id)}
                   className="text-right bg-gray-50 hover:bg-sand rounded-lg p-3 transition-colors border border-transparent hover:border-gold/30">
-                  <div className="font-bold text-nile text-sm">{alt.formEmoji || '💊'} {alt.nameAr}</div>
-                  <div className="text-xs text-gray-500">{alt.nameEn}</div>
+                  <div className="font-bold text-nile text-sm">{alt.formEmoji || '💊'} {alt.edaBrands?.[0] || alt.nameAr}</div>
+                  {alt.edaBrands?.[0] && alt.edaBrands[0] !== alt.nameAr && (
+                    <div className="text-xs text-gray-500">{alt.nameAr}</div>
+                  )}
                   <div className="flex items-center gap-2 mt-1 flex-wrap">
                     {alt.manufacturerEn && <span className="text-[10px] text-gray-400">{getMfrIcon(alt.manufacturerEn)} {alt.manufacturerEn}</span>}
                     {alt.price_egp != null && <span className="text-[10px] text-gold-dark font-bold">EGP {alt.price_egp}</span>}
@@ -278,8 +280,10 @@ export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug
               {similars.map(alt => (
                 <button key={alt.id} onClick={() => onViewDrug(alt.id)}
                   className="text-right bg-gray-50 hover:bg-sand rounded-lg p-3 transition-colors border border-transparent hover:border-gold/30">
-                  <div className="font-bold text-nile text-sm">{alt.formEmoji || '💊'} {alt.nameAr}</div>
-                  <div className="text-xs text-gray-500">{alt.nameEn}</div>
+                  <div className="font-bold text-nile text-sm">{alt.formEmoji || '💊'} {alt.edaBrands?.[0] || alt.nameAr}</div>
+                  {alt.edaBrands?.[0] && alt.edaBrands[0] !== alt.nameAr && (
+                    <div className="text-xs text-gray-500">{alt.nameAr}</div>
+                  )}
                   <div className="flex items-center gap-2 mt-1 flex-wrap">
                     {alt.manufacturerEn && <span className="text-[10px] text-gray-400">{getMfrIcon(alt.manufacturerEn)} {alt.manufacturerEn}</span>}
                     {alt.price_egp != null && <span className="text-[10px] text-gold-dark font-bold">EGP {alt.price_egp}</span>}
@@ -344,6 +348,40 @@ export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug
 
       {detailTab === 'info' && (
       <>
+      {drug.edaBrands && drug.edaBrands.length > 0 && (
+        <Section title={`🏷 الأسماء التجارية / Brand Names (${drug.edaBrands.length})`}>
+          <div className="flex flex-wrap gap-2">
+            {drug.edaBrands.map((brand, i) => {
+              const match = allDrugs.find(d => d.nameEn && d.nameEn.toUpperCase() === brand.toUpperCase() && d.id !== drug.id)
+              return match ? (
+                <button key={i} onClick={() => onViewDrug(match.id)}
+                  className="bg-nile/5 hover:bg-nile/10 text-nile px-3 py-1.5 rounded-lg text-sm font-medium transition-colors border border-nile/20 hover:border-nile/40">
+                  {brand} →
+                </button>
+              ) : (
+                <span key={i} className="bg-gray-100 text-gray-700 px-3 py-1.5 rounded-lg text-sm">{brand}</span>
+              )
+            })}
+          </div>
+        </Section>
+      )}
+
+      {drug.edaRf && drug.edaRf.length > 0 && (
+        <Section title="💉 التركيزات والأشكال / Concentrations & Forms">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            {drug.edaRf.map(([route, form, pmin, pmax], i) => (
+              <div key={i} className="flex items-center justify-between bg-gray-50 rounded-lg px-3 py-2">
+                <div>
+                  <span className="text-sm font-medium text-nile">{route}</span>
+                  <span className="text-xs text-gray-500 mr-2">/ {form}</span>
+                </div>
+                <span className="text-xs text-gold-dark font-bold">EGP {pmin}{pmin !== pmax ? ` – ${pmax}` : ''}</span>
+              </div>
+            ))}
+          </div>
+        </Section>
+      )}
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <Section title="🔬 الاسم العلمي / Scientific Name">
           <Biline label="" ar={drug.scientificNameAr} en={drug.scientificNameEn} />
@@ -425,12 +463,14 @@ export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug
               {alternatives.map(alt => (
                 <button key={alt.id} onClick={() => onViewDrug(alt.id)}
                   className="text-right bg-gray-50 hover:bg-sand rounded-lg p-3 transition-colors border border-transparent hover:border-gold/30">
-                  <div className="font-bold text-nile text-sm">{alt.formEmoji || '💊'} {alt.nameAr}</div>
-                  <div className="text-xs text-gray-500">{alt.nameEn}</div>
+                  <div className="font-bold text-nile text-sm">{alt.formEmoji || '💊'} {alt.edaBrands?.[0] || alt.nameAr}</div>
+                  {alt.edaBrands?.[0] && alt.edaBrands[0] !== alt.nameAr && (
+                    <div className="text-xs text-gray-500">{alt.nameAr}</div>
+                  )}
                   <div className="flex items-center gap-2 mt-1 flex-wrap">
                     {alt.manufacturerEn && <span className="text-[10px] text-gray-400">{getMfrIcon(alt.manufacturerEn)} {alt.manufacturerEn}</span>}
                     {alt.price_egp != null && <span className="text-[10px] text-gold-dark font-bold">EGP {alt.price_egp}</span>}
-                    {alt.edaBrands?.length > 0 && <span className="text-[10px] bg-blue-50 text-blue-600 px-1.5 py-0.5 rounded">{alt.edaBrands.length} brands</span>}
+                    {alt.edaBrands?.length > 1 && <span className="text-[10px] bg-blue-50 text-blue-600 px-1.5 py-0.5 rounded">+{alt.edaBrands.length - 1} brands</span>}
                   </div>
                 </button>
               ))}
@@ -444,8 +484,10 @@ export default function DrugDetail({ drugId, drugs, diseases, onBack, onViewDrug
               {similars.map(alt => (
                 <button key={alt.id} onClick={() => onViewDrug(alt.id)}
                   className="text-right bg-gray-50 hover:bg-sand rounded-lg p-3 transition-colors border border-transparent hover:border-gold/30">
-                  <div className="font-bold text-nile text-sm">{alt.formEmoji || '💊'} {alt.nameAr}</div>
-                  <div className="text-xs text-gray-500">{alt.nameEn}</div>
+                  <div className="font-bold text-nile text-sm">{alt.formEmoji || '💊'} {alt.edaBrands?.[0] || alt.nameAr}</div>
+                  {alt.edaBrands?.[0] && alt.edaBrands[0] !== alt.nameAr && (
+                    <div className="text-xs text-gray-500">{alt.nameAr}</div>
+                  )}
                   <div className="flex items-center gap-2 mt-1 flex-wrap">
                     {alt.manufacturerEn && <span className="text-[10px] text-gray-400">{getMfrIcon(alt.manufacturerEn)} {alt.manufacturerEn}</span>}
                     {alt.price_egp != null && <span className="text-[10px] text-gold-dark font-bold">EGP {alt.price_egp}</span>}
